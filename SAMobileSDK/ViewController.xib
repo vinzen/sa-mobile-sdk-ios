@@ -15,9 +15,9 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IM9-QA-NLE">
-                    <rect key="frame" x="32" y="225" width="246" height="39"/>
+                    <rect key="frame" x="32" y="308" width="246" height="39"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" image="sign_in_with_sa.png">
+                    <state key="normal" image="sa_login.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -31,6 +31,6 @@
         </view>
     </objects>
     <resources>
-        <image name="sign_in_with_sa.png" width="313" height="46"/>
+        <image name="sa_login.png" width="313" height="46"/>
     </resources>
 </document>

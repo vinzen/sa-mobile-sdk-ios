@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		8AF30A29655A4A9EB9B25A3E /* libPods-SAMobileSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A60F40D7A3D540608A9F4B27 /* libPods-SAMobileSDK.a */; };
-		980E5F21198F8F8F00608828 /* sign_in_with_sa.png in Resources */ = {isa = PBXBuildFile; fileRef = 980E5F20198F8F8F00608828 /* sign_in_with_sa.png */; };
 		980E5F3C198FCD2000608828 /* login in Resources */ = {isa = PBXBuildFile; fileRef = 980E5F3B198FCD2000608828 /* login */; };
 		9856D98F1987D86B00B6804C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9856D98E1987D86B00B6804C /* Foundation.framework */; };
 		9856D9911987D86B00B6804C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9856D9901987D86B00B6804C /* CoreGraphics.framework */; };
@@ -54,6 +53,7 @@
 		98CF2015198B9EE600FD5896 /* SALoginWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98CF2013198B9EE600FD5896 /* SALoginWebViewController.m */; };
 		98CF2016198B9EE600FD5896 /* SALoginWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98CF2014198B9EE600FD5896 /* SALoginWebViewController.xib */; };
 		98DA4B1519894EC300340E72 /* SAVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98DA4B1419894EC300340E72 /* SAVideoViewController.m */; };
+		98FF7A551990DF66003E87B0 /* sa_login.png in Resources */ = {isa = PBXBuildFile; fileRef = 98FF7A541990DF66003E87B0 /* sa_login.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,7 +68,6 @@
 
 /* Begin PBXFileReference section */
 		57F5CCA210A94DFB962966E6 /* Pods-SAMobileSDK.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SAMobileSDK.xcconfig"; path = "Pods/Pods-SAMobileSDK.xcconfig"; sourceTree = "<group>"; };
-		980E5F20198F8F8F00608828 /* sign_in_with_sa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sign_in_with_sa.png; path = "../../../../Projects/SuperAwesome/sa-platform-api/public/images/sign_in_with_sa.png"; sourceTree = "<group>"; };
 		980E5F3B198FCD2000608828 /* login */ = {isa = PBXFileReference; lastKnownFileType = folder; path = login; sourceTree = "<group>"; };
 		9856D98B1987D86B00B6804C /* SAMobileSDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SAMobileSDK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9856D98E1987D86B00B6804C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -124,6 +123,7 @@
 		98CF2014198B9EE600FD5896 /* SALoginWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SALoginWebViewController.xib; sourceTree = "<group>"; };
 		98DA4B1319894EC300340E72 /* SAVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAVideoViewController.h; sourceTree = "<group>"; };
 		98DA4B1419894EC300340E72 /* SAVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAVideoViewController.m; sourceTree = "<group>"; };
+		98FF7A541990DF66003E87B0 /* sa_login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sa_login.png; sourceTree = "<group>"; };
 		A60F40D7A3D540608A9F4B27 /* libPods-SAMobileSDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SAMobileSDK.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -292,8 +292,8 @@
 		98613FE91988ECC900C1E004 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				98FF7A541990DF66003E87B0 /* sa_login.png */,
 				980E5F3B198FCD2000608828 /* login */,
-				980E5F20198F8F8F00608828 /* sign_in_with_sa.png */,
 				987FF08E19890B8700578014 /* SABannerViewController.xib */,
 				98613FEA1988ECC900C1E004 /* ADTECHAdConfiguration.plist */,
 				98613FEB1988ECC900C1E004 /* ADTECHMobileSDK.bundle */,
@@ -382,11 +382,11 @@
 				98CF2011198B926100FD5896 /* ViewController.xib in Resources */,
 				987FF08F19890B8700578014 /* SABannerViewController.xib in Resources */,
 				9856D9991987D86B00B6804C /* InfoPlist.strings in Resources */,
-				980E5F21198F8F8F00608828 /* sign_in_with_sa.png in Resources */,
 				98613FED1988ECC900C1E004 /* ADTECHMobileSDK.bundle in Resources */,
 				9856D9A11987D86B00B6804C /* Images.xcassets in Resources */,
 				98613FEC1988ECC900C1E004 /* ADTECHAdConfiguration.plist in Resources */,
 				98CF2016198B9EE600FD5896 /* SALoginWebViewController.xib in Resources */,
+				98FF7A551990DF66003E87B0 /* sa_login.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		8AF30A29655A4A9EB9B25A3E /* libPods-SAMobileSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A60F40D7A3D540608A9F4B27 /* libPods-SAMobileSDK.a */; };
 		980E5F3C198FCD2000608828 /* login in Resources */ = {isa = PBXBuildFile; fileRef = 980E5F3B198FCD2000608828 /* login */; };
+		980E88AA199396D7009393DD /* SATokenResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 980E88A9199396D7009393DD /* SATokenResponse.m */; };
+		980E88AD1993974A009393DD /* SAUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 980E88AC1993974A009393DD /* SAUser.m */; };
+		980E88B1199399EB009393DD /* NSString+URLEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = 980E88B0199399EB009393DD /* NSString+URLEncode.m */; };
 		9856D98F1987D86B00B6804C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9856D98E1987D86B00B6804C /* Foundation.framework */; };
 		9856D9911987D86B00B6804C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9856D9901987D86B00B6804C /* CoreGraphics.framework */; };
 		9856D9931987D86B00B6804C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9856D9921987D86B00B6804C /* UIKit.framework */; };
@@ -69,6 +72,12 @@
 /* Begin PBXFileReference section */
 		57F5CCA210A94DFB962966E6 /* Pods-SAMobileSDK.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SAMobileSDK.xcconfig"; path = "Pods/Pods-SAMobileSDK.xcconfig"; sourceTree = "<group>"; };
 		980E5F3B198FCD2000608828 /* login */ = {isa = PBXFileReference; lastKnownFileType = folder; path = login; sourceTree = "<group>"; };
+		980E88A8199396D7009393DD /* SATokenResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SATokenResponse.h; sourceTree = "<group>"; };
+		980E88A9199396D7009393DD /* SATokenResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SATokenResponse.m; sourceTree = "<group>"; };
+		980E88AB1993974A009393DD /* SAUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAUser.h; sourceTree = "<group>"; };
+		980E88AC1993974A009393DD /* SAUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAUser.m; sourceTree = "<group>"; };
+		980E88AF199399EB009393DD /* NSString+URLEncode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncode.h"; sourceTree = "<group>"; };
+		980E88B0199399EB009393DD /* NSString+URLEncode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEncode.m"; sourceTree = "<group>"; };
 		9856D98B1987D86B00B6804C /* SAMobileSDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SAMobileSDK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9856D98E1987D86B00B6804C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9856D9901987D86B00B6804C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -173,6 +182,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		980E88AE199397AC009393DD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				980E88A8199396D7009393DD /* SATokenResponse.h */,
+				980E88A9199396D7009393DD /* SATokenResponse.m */,
+				980E88AB1993974A009393DD /* SAUser.h */,
+				980E88AC1993974A009393DD /* SAUser.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		9856D9821987D86B00B6804C = {
 			isa = PBXGroup;
 			children = (
@@ -234,6 +254,9 @@
 				98CF200D198B926100FD5896 /* ViewController.h */,
 				98CF200E198B926100FD5896 /* ViewController.m */,
 				98CF200F198B926100FD5896 /* ViewController.xib */,
+				980E88AF199399EB009393DD /* NSString+URLEncode.h */,
+				980E88B0199399EB009393DD /* NSString+URLEncode.m */,
+				980E88AE199397AC009393DD /* Models */,
 				98613FE01988EA3D00C1E004 /* Classes */,
 				98613FE91988ECC900C1E004 /* Resources */,
 				9856D9A01987D86B00B6804C /* Images.xcassets */,
@@ -439,8 +462,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				98CF2010198B926100FD5896 /* ViewController.m in Sources */,
+				980E88AA199396D7009393DD /* SATokenResponse.m in Sources */,
 				98CF200B198B91D000FD5896 /* SALoginViewController.m in Sources */,
 				9856D99F1987D86B00B6804C /* AppDelegate.m in Sources */,
+				980E88B1199399EB009393DD /* NSString+URLEncode.m in Sources */,
+				980E88AD1993974A009393DD /* SAUser.m in Sources */,
 				98613FE81988EA3D00C1E004 /* SuperAwesome.m in Sources */,
 				98DA4B1519894EC300340E72 /* SAVideoViewController.m in Sources */,
 				9856D99B1987D86B00B6804C /* main.m in Sources */,

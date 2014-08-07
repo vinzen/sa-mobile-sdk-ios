@@ -7,12 +7,23 @@
 //
 
 #import "ViewController.h"
+#import "SATokenResponse.h"
+#import "NSString+URLEncode.h"
 
 @interface ViewController ()
 
 @end
 
 @implementation ViewController
+
+- (void)fetchToken:(NSString*)token {
+    NSString *url = [NSString stringWithFormat:@"http://172.16.0.3/jsonp/app/superawesomegames/%@/token", [token urlencode]];
+    NSURL *jokesUrl = [NSURL URLWithString:url];
+    
+    [[[NSURLSession sharedSession] dataTaskWithURL:jokesUrl completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        SATokenResponse *resp = [[SATokenResponse alloc] initWithData:data error:&error];
+    }] resume];
+}
 
 - (IBAction)openLogin:(id)sender
 {
@@ -47,6 +58,7 @@
 - (void)loginViewController:(SALoginViewController *)loginVC didSucceedWithToken:(NSString *)token
 {
     NSLog(@"Login success! Token: %@", token);
+    [self fetchToken: token];
 }
 
 - (void)loginViewController:(SALoginViewController *)loginVC didFailWithError:(NSString *)error

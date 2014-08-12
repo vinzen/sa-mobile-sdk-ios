@@ -10,7 +10,10 @@
 #import "SATokenResponse.h"
 #import "NSString+URLEncode.h"
 
+
 @interface ViewController ()
+
+@property (nonatomic,strong) SAInterstitialView *interstitial;
 
 @end
 
@@ -32,6 +35,11 @@
     [self presentViewController:vc animated:YES completion:nil];
 }
 
+- (IBAction)presentInterstitionalAd:(id)sender
+{
+    [self.interstitial present];
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -45,6 +53,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    self.interstitial = [[SAInterstitialView alloc] initWithViewController:self];
 }
 
 - (void)didReceiveMemoryWarning

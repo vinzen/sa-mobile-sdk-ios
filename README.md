@@ -16,7 +16,7 @@ pod init # run in your project's directory
 The dependencies for your projects are specified in a single text file called a Podfile. CocoaPods will resolve dependencies between libraries, fetch the resulting source code, then link it together in an Xcode workspace to build your project.
 To download our SDK add the following line to your Podfile:
 ```
-pod 'AFNetworking', :git => 'https://github.com/balazskiss/SAMobileSDK.git'
+pod 'SAMobileSDK', :git => 'https://github.com/SuperAwesomeLTD/sa-mobile-sdk-ios.git'
 ```
 After the pod source has been added, update your project's dependecies by running the following command in the terminal:
 ```
@@ -26,7 +26,7 @@ Don't forget to use the .xcworkspace file to open your project in Xcode, instead
 
 We recommend using the stable releases of our SDK, but if you want to try out the developer preview versions modify your Podfile as follows:
 ```
-pod 'AFNetworking', :git => 'https://github.com/balazskiss/SAMobileSDK.git', :branch => 'dev'
+pod 'SAMobileSDK', :git => 'https://github.com/SuperAwesomeLTD/sa-mobile-sdk-ios.git', :branch => 'dev'
 ```
 
 Integrating the SuperAwesome Platform
@@ -66,6 +66,8 @@ Integrating SuperAwesome Advertising
 ###Displaying a Banner Ad Using Interface Builder
 
 Add the banner to the xib (or storyboard) file: Go to your xib file and add a UIView element to the view. In the Identity Inspector pane set the class of the view to SABannerView.
+
+![](images/custom_class.png?raw=true "Setting custom class to UIView")
 
 In the Size Inspector pane set the size of the banner. The following sizes are supported:
   * 320x50

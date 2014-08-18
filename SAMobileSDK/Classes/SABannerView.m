@@ -47,7 +47,7 @@
 
     configuration.networkID = 1486;
     configuration.subNetworkID = 1;
-    configuration.alias = @"default-banner-5";
+    configuration.alias = @"default-320x50-5";
 
     self.bannerView.configuration = configuration;
     self.bannerView.delegate = self;

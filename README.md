@@ -36,7 +36,7 @@ Integrating the SuperAwesome Platform
 
 The SuperAwesome SDK for iOS provides various login experiences that your app can use to authenticate someone. This document includes all the information you need to know in order to implement SuperAwesome login in your iOS app.
 
-![alt text](/doc_files/MobileSDK/signin.png "Signing In With SuperAwesome")
+![](images/sign_in.png?raw=true "Signing In With SuperAwesome")
 
 Sessions and permissions are stored in access tokens, which are cached automatically by the SDK so they are available when a logged in user returns to your app. The SDK provides prebuilt UI components that you can use to log people in and out of your app.
 

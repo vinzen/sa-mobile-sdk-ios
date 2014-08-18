@@ -63,3 +63,33 @@ By implementing the SALoginViewControllerDelegate protocol you can get notified 
 
 Integrating SuperAwesome Advertising
 ------------------------------------
+###Displaying a Banner Ad Using Interface Builder
+
+Add the banner to the xib (or storyboard) file: Go to your xib file and add a UIView element to the view. In the Identity Inspector pane set the class of the view to SABannerView.
+
+In the Size Inspector pane set the size of the banner. The following sizes are supported:
+  * 320x50
+  * 300x50
+  * 728x90 (tablet)
+
+###Displaying an Interstitial Ad
+```
+@interface ViewController ()
+@property (nonatomic,strong) SAInterstitialView *interstitial;
+@end
+
+...
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    // Do any additional setup after loading the view from its nib.
+    
+    self.interstitial = [[SAInterstitialView alloc] initWithViewController:self];
+}
+
+- (IBAction)presentInterstitionalAd:(id)sender
+{
+    [self.interstitial present];
+}
+```

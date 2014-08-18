@@ -38,10 +38,17 @@
 
 - (void)commonInit
 {
-    self.bannerView = [[ATBannerView alloc] initWithFrame:CGRectMake(0,0,300,50)];
+    self.bannerView = [[ATBannerView alloc] initWithFrame:CGRectMake(0,0,320,50)];
     ATAdtechAdConfiguration *configuration = [ATAdtechAdConfiguration configuration];
-    configuration.alias = @"home-top-5";
-    configuration.cacheableMediaExtensions = @[@"mp3", @"mp4", @"mkv"];
+    
+//    configuration.networkID = 23;
+//    configuration.subNetworkID = 4;
+//    configuration.alias = @"home-top-5";
+
+    configuration.networkID = 1486;
+    configuration.subNetworkID = 1;
+    configuration.alias = @"default-banner-5";
+
     self.bannerView.configuration = configuration;
     self.bannerView.delegate = self;
     [self addSubview:self.bannerView];
@@ -89,6 +96,17 @@
     if(self.delegate && [self.delegate respondsToSelector:@selector(willLeaveApplicationForAd:)]){
         [self.delegate willLeaveApplicationForAd:self];
     }
+}
+
+- (void)didFetchNextAd:(ATBannerView*)view signals:(NSArray *)signals
+{
+    NSLog(@"SA AD Success");
+}
+
+- (void)didFailFetchingAd:(ATBannerView*)view signals:(NSArray *)signals
+{
+    NSLog(@"SA AD Fail");
+    
 }
 
 @end

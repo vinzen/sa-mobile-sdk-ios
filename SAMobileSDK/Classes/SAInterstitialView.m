@@ -19,18 +19,17 @@
 - (instancetype)initWithViewController:(UIViewController *)viewController
 {
     if(self = [super init]){
-        // create an interstitial view
+
         self.interstitialView = [[ATInterstitialView alloc] init];
         self.interstitialView.delegate = self;
         self.interstitialView.viewController = viewController;
-        // configure it
+
         ATAdtechAdConfiguration *configuration = [ATAdtechAdConfiguration configuration];
+        configuration.networkID = 1486;
+        configuration.subNetworkID = 1;
         configuration.alias = @"interstitial-middle-5";
-        configuration.networkID = 23;
-        configuration.subNetworkID = 10;
         self.interstitialView.configuration = configuration;
-        // start the load process, you'll get callback on the delegate once the interstitial is loaded
-        // for a better user experience you should wait untill the interstitial is loaded before you display it
+
         [self.interstitialView load];
     }
     return self;

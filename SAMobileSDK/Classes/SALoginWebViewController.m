@@ -62,6 +62,7 @@
         [webView stringByEvaluatingJavaScriptFromString:@"window.open = function (url, d1, d2, d3, title, callback){ window.native_window_title = title; window.native_window_closed_callback = callback; window.location.assign('open://' + url); }"];
         NSString *appName = @"superawesomegames";
         NSString *customUrl = @"http://172.16.0.3";
+        customUrl = @"https://superawesome.club";
         NSString *js = [NSString stringWithFormat:@"login('%@', '%@')", appName, customUrl];
         [self.webView stringByEvaluatingJavaScriptFromString:js];
     }

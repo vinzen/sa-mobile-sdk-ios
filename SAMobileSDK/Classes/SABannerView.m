@@ -83,11 +83,11 @@
 - (CGSize)bannerSizeForType:(SABannerType)type
 {
     if(type == kBannerLarge){
-        return CGSizeMake(90, 728);
+        return CGSizeMake(728,90);
     }else if (type == kBannerMedium){
-        return CGSizeMake(50, 320);
+        return CGSizeMake(320,50);
     }else if (type == kBannerSmall){
-        return CGSizeMake(50, 300);
+        return CGSizeMake(300,50);
     }
     return CGSizeMake(0, 0);
 }
@@ -104,7 +104,23 @@
     return kBannerSmall;
 }
 
+- (void)configLoadedNotification:(NSNotification *) notification
+{
+    if ([[notification name] isEqualToString:@"SuperAwesomeConfigLoaded"]){
+        [self initBanner];
+    }
+}
+
 - (void)commonInit
+{
+    if([[SuperAwesome sharedManager] isLoadingConfiguration]){
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(configLoadedNotification:) name:@"SuperAwesomeConfigLoaded" object:nil];
+    }else{
+        [self initBanner];
+    }
+}
+
+- (void)initBanner
 {
     self.bannerView = [[ATBannerView alloc] initWithFrame:self.bounds];
     SABannerType type = [self bannerTypeForSize:self.bounds.size];
@@ -136,6 +152,11 @@
 {
     _visible = visible;
     self.bannerView.visible = visible;
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 #pragma mark ATBannerViewDelegate

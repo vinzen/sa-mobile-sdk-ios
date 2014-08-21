@@ -11,6 +11,8 @@
 
 @interface SuperAwesome ()
 
+@property (nonatomic,assign,getter = isLoadingConfiguration) BOOL loadingConfiguration;
+
 - (void)loadSettings;
 
 @end
@@ -30,6 +32,7 @@
 - (instancetype)init
 {
     if(self = [super init]){
+        _loadingConfiguration = YES;
         [ATBaseConfiguration setLoggingLevel:kATLogOff];
     }
     return self;
@@ -63,6 +66,9 @@
         if(resp.success){
             self.placements = resp.ads;
         }
+        
+        self.loadingConfiguration = NO;
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"SuperAwesomeConfigLoaded" object:self];
     }];
     
     [postDataTask resume];
@@ -71,7 +77,7 @@
 - (SAAdPlacement *)placementForSize:(CGSize)size
 {
     for (SAAdPlacement *placement in self.placements) {
-        if([placement.width floatValue] == size.width && [placement.height floatValue] == size.height){
+        if(([placement.width floatValue] == size.width) && ([placement.height floatValue] == size.height)){
             return placement;
         }
     }

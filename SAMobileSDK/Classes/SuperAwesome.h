@@ -14,6 +14,7 @@
 
 @property (nonatomic,strong) NSString *appID;
 @property (nonatomic,strong) NSArray *placements;
+@property (nonatomic,assign,readonly,getter = isLoadingConfiguration) BOOL loadingConfiguration;
 
 - (SAAdPlacement *)placementForSize:(CGSize)size;
 

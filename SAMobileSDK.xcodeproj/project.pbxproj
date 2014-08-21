@@ -12,6 +12,8 @@
 		980E88AA199396D7009393DD /* SATokenResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 980E88A9199396D7009393DD /* SATokenResponse.m */; };
 		980E88AD1993974A009393DD /* SAUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 980E88AC1993974A009393DD /* SAUser.m */; };
 		980E88B1199399EB009393DD /* NSString+URLEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = 980E88B0199399EB009393DD /* NSString+URLEncode.m */; };
+		984B378E19A605E4005386CC /* SAServerResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 984B378D19A605E4005386CC /* SAServerResponse.m */; };
+		984B379119A60678005386CC /* SAAdPlacement.m in Sources */ = {isa = PBXBuildFile; fileRef = 984B379019A60678005386CC /* SAAdPlacement.m */; };
 		9856D98F1987D86B00B6804C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9856D98E1987D86B00B6804C /* Foundation.framework */; };
 		9856D9911987D86B00B6804C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9856D9901987D86B00B6804C /* CoreGraphics.framework */; };
 		9856D9931987D86B00B6804C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9856D9921987D86B00B6804C /* UIKit.framework */; };
@@ -79,6 +81,10 @@
 		980E88AC1993974A009393DD /* SAUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAUser.m; sourceTree = "<group>"; };
 		980E88AF199399EB009393DD /* NSString+URLEncode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncode.h"; sourceTree = "<group>"; };
 		980E88B0199399EB009393DD /* NSString+URLEncode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEncode.m"; sourceTree = "<group>"; };
+		984B378C19A605E4005386CC /* SAServerResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAServerResponse.h; sourceTree = "<group>"; };
+		984B378D19A605E4005386CC /* SAServerResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAServerResponse.m; sourceTree = "<group>"; };
+		984B378F19A60678005386CC /* SAAdPlacement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAAdPlacement.h; sourceTree = "<group>"; };
+		984B379019A60678005386CC /* SAAdPlacement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAAdPlacement.m; sourceTree = "<group>"; };
 		9856D98B1987D86B00B6804C /* SAMobileSDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SAMobileSDK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9856D98E1987D86B00B6804C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9856D9901987D86B00B6804C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -196,6 +202,17 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		984B379219A60A98005386CC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				984B378C19A605E4005386CC /* SAServerResponse.h */,
+				984B378D19A605E4005386CC /* SAServerResponse.m */,
+				984B378F19A60678005386CC /* SAAdPlacement.h */,
+				984B379019A60678005386CC /* SAAdPlacement.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		9856D9821987D86B00B6804C = {
 			isa = PBXGroup;
 			children = (
@@ -303,6 +320,7 @@
 				98613FE41988EA3D00C1E004 /* SuperAwesome.h */,
 				98613FE51988EA3D00C1E004 /* SuperAwesome.m */,
 				98AAAABF19991E6200B7E2B2 /* Categories */,
+				984B379219A60A98005386CC /* Models */,
 				98AD4D21199A1EC000915410 /* Advertising */,
 				98AD4D22199A1ED900915410 /* Loyalty */,
 			);
@@ -524,7 +542,9 @@
 				98613FE81988EA3D00C1E004 /* SuperAwesome.m in Sources */,
 				98AAAABA19991A8000B7E2B2 /* SABannerView.m in Sources */,
 				9856D99B1987D86B00B6804C /* main.m in Sources */,
+				984B379119A60678005386CC /* SAAdPlacement.m in Sources */,
 				98AAAABE19991E5D00B7E2B2 /* UIView+FindUIViewController.m in Sources */,
+				984B378E19A605E4005386CC /* SAServerResponse.m in Sources */,
 				98CF2015198B9EE600FD5896 /* SALoginWebViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

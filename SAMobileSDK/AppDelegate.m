@@ -16,6 +16,9 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     // Override point for customization after application launch.
+    
+    [[SuperAwesome sharedManager] setAppID:@"12"];
+    
     ViewController *vc = [[ViewController alloc] initWithNibName:@"ViewController" bundle:[NSBundle mainBundle]];
     [self.window setRootViewController:vc];
     

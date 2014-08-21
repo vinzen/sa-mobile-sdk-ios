@@ -8,12 +8,15 @@
 
 #import "SABannerView.h"
 #import "UIView+FindUIViewController.h"
+#import "SuperAwesome.h"
 
 @interface SABannerView ()
 
 @property (nonatomic,strong) ATBannerView *bannerView;
 
-- (ATAdtechAdConfiguration *)bannerConfigurationForType:(SABannerType)bannerType;
+- (ATAdtechAdConfiguration *)configurationForType:(SABannerType)bannerType;
+- (ATAdtechAdConfiguration *)defaultConfigurationForType:(SABannerType)bannerType;
+- (CGSize)bannerSizeForType:(SABannerType)type;
 - (SABannerType)bannerTypeForSize:(CGSize)size;
 
 @end
@@ -39,7 +42,7 @@
     return self;
 }
 
-- (ATAdtechAdConfiguration *)bannerConfigurationForType:(SABannerType)bannerType
+- (ATAdtechAdConfiguration *)defaultConfigurationForType:(SABannerType)bannerType
 {
     if(bannerType == kBannerSmall){
         ATAdtechAdConfiguration *configuration = [ATAdtechAdConfiguration configuration];
@@ -63,6 +66,32 @@
     return nil;
 }
 
+- (ATAdtechAdConfiguration *)configurationForType:(SABannerType)bannerType
+{
+    CGSize size = [self bannerSizeForType:bannerType];
+    SAAdPlacement *placement = [[SuperAwesome sharedManager] placementForSize:size];
+    if(placement){
+        ATAdtechAdConfiguration *configuration = [ATAdtechAdConfiguration configuration];
+        configuration.networkID = [placement.networkId unsignedIntegerValue];
+        configuration.subNetworkID = [placement.subNetworkId unsignedIntegerValue];
+        configuration.alias = placement.alias;
+        return configuration;
+    }
+    return [self defaultConfigurationForType:bannerType];
+}
+
+- (CGSize)bannerSizeForType:(SABannerType)type
+{
+    if(type == kBannerLarge){
+        return CGSizeMake(90, 728);
+    }else if (type == kBannerMedium){
+        return CGSizeMake(50, 320);
+    }else if (type == kBannerSmall){
+        return CGSizeMake(50, 300);
+    }
+    return CGSizeMake(0, 0);
+}
+
 - (SABannerType)bannerTypeForSize:(CGSize)size
 {
     if(size.height>=90 && size.width>=728){
@@ -79,7 +108,7 @@
 {
     self.bannerView = [[ATBannerView alloc] initWithFrame:self.bounds];
     SABannerType type = [self bannerTypeForSize:self.bounds.size];
-    self.bannerView.configuration = [self bannerConfigurationForType:type];
+    self.bannerView.configuration = [self configurationForType:type];
     self.bannerView.delegate = self;
     [self addSubview:self.bannerView];
 }

@@ -8,7 +8,15 @@
 
 #import <Foundation/Foundation.h>
 #import <ADTECHMobileSDK/ADTECHMobileSDK.h>
+#import "SAAdPlacement.h"
 
 @interface SuperAwesome : NSObject
+
+@property (nonatomic,strong) NSString *appID;
+@property (nonatomic,strong) NSArray *placements;
+
+- (SAAdPlacement *)placementForSize:(CGSize)size;
+
++ (id)sharedManager;
 
 @end

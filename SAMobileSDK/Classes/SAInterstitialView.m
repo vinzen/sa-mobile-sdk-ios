@@ -12,9 +12,38 @@
 
 @property (nonatomic,strong) ATInterstitialView *interstitialView;
 
+- (ATAdtechAdConfiguration *)configurationForType:(SAInterstitialType)type;
+- (SAInterstitialType)typeForSize:(CGSize)size;
+
 @end
 
 @implementation SAInterstitialView
+
+- (ATAdtechAdConfiguration *)configurationForType:(SAInterstitialType)type
+{
+    if(type == kInterstitialSmall){
+        ATAdtechAdConfiguration *configuration = [ATAdtechAdConfiguration configuration];
+        configuration.networkID = 1486;
+        configuration.subNetworkID = 1;
+        configuration.alias = @"706332-320x480-5";
+        return configuration;
+    }else if(type == kInterstitialLarge){
+        ATAdtechAdConfiguration *configuration = [ATAdtechAdConfiguration configuration];
+        configuration.networkID = 1486;
+        configuration.subNetworkID = 1;
+        configuration.alias = @"706332-768x1024-5";
+        return configuration;
+    }
+    return nil;
+}
+
+- (SAInterstitialType)typeForSize:(CGSize)size
+{
+    if(size.height >= 1024 && size.width >= 768){
+        return kInterstitialLarge;
+    }
+    return kInterstitialSmall;
+}
 
 - (instancetype)initWithViewController:(UIViewController *)viewController
 {
@@ -24,11 +53,8 @@
         self.interstitialView.delegate = self;
         self.interstitialView.viewController = viewController;
 
-        ATAdtechAdConfiguration *configuration = [ATAdtechAdConfiguration configuration];
-        configuration.networkID = 1486;
-        configuration.subNetworkID = 1;
-        configuration.alias = @"interstitial-middle-5";
-        self.interstitialView.configuration = configuration;
+        SAInterstitialType type = [self typeForSize:[UIScreen mainScreen].bounds.size];
+        self.interstitialView.configuration = [self configurationForType:type];
 
         [self.interstitialView load];
     }
@@ -44,7 +70,9 @@
 
 - (void)didSuccessfullyFetchInterstitialAd:(ATInterstitialView*)view
 {
-    
+    if(self.delegate && [self.delegate respondsToSelector:@selector(didSuccessfullyFetchInterstitialAd:)]){
+        [self.delegate didSuccessfullyFetchInterstitialAd:self];
+    }
 }
 
 - (void)didHideInterstitialAd:(ATInterstitialView *)view

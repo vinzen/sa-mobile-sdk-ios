@@ -9,6 +9,12 @@
 #import <UIKit/UIKit.h>
 #import <ADTECHMobileSDK/ADTECHMobileSDK.h>
 
+typedef NS_ENUM(NSUInteger, SABannerType) {
+    kBannerSmall,
+    kBannerMedium,
+    kBannerLarge
+};
+
 @class SABannerView;
 
 @protocol SABannerViewDelegate <ATBannerViewDelegate>

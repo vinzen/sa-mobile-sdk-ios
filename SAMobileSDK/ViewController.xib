@@ -11,11 +11,11 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <rect key="frame" x="0.0" y="0.0" width="573" height="690"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IM9-QA-NLE">
-                    <rect key="frame" x="37" y="265" width="246" height="39"/>
+                    <rect key="frame" x="164" y="326" width="246" height="39"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="39" id="b3G-Rj-uol"/>
@@ -29,16 +29,16 @@
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ojI-2v-Ugz" customClass="SABannerView">
-                    <rect key="frame" x="0.0" y="518" width="320" height="50"/>
+                    <rect key="frame" x="137" y="640" width="300" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.86034443430656937" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="320" id="33z-he-ZQj"/>
+                        <constraint firstAttribute="width" constant="300" id="33z-he-ZQj"/>
                         <constraint firstAttribute="height" constant="50" id="VPE-RY-MDI"/>
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zSC-bK-tgb">
-                    <rect key="frame" x="81" y="472" width="149" height="30"/>
+                    <rect key="frame" x="208" y="594" width="149" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Show interstitional ad">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -58,7 +58,7 @@
                 <constraint firstItem="ojI-2v-Ugz" firstAttribute="top" secondItem="zSC-bK-tgb" secondAttribute="bottom" constant="16" id="fNI-6t-fSt"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
         </view>
     </objects>
     <resources>

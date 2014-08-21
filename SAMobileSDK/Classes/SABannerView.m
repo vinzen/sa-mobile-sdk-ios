@@ -13,6 +13,9 @@
 
 @property (nonatomic,strong) ATBannerView *bannerView;
 
+- (ATAdtechAdConfiguration *)bannerConfigurationForType:(SABannerType)bannerType;
+- (SABannerType)bannerTypeForSize:(CGSize)size;
+
 @end
 
 @implementation SABannerView
@@ -36,22 +39,53 @@
     return self;
 }
 
+- (ATAdtechAdConfiguration *)bannerConfigurationForType:(SABannerType)bannerType
+{
+    if(bannerType == kBannerSmall){
+        ATAdtechAdConfiguration *configuration = [ATAdtechAdConfiguration configuration];
+        configuration.networkID = 1486;
+        configuration.subNetworkID = 1;
+        configuration.alias = @"706332-300x50-5";
+        return configuration;
+    }else if (bannerType == kBannerMedium){
+        ATAdtechAdConfiguration *configuration = [ATAdtechAdConfiguration configuration];
+        configuration.networkID = 1486;
+        configuration.subNetworkID = 1;
+        configuration.alias = @"706332-320x50-5";
+        return configuration;
+    }else if (bannerType == kBannerLarge){
+        ATAdtechAdConfiguration *configuration = [ATAdtechAdConfiguration configuration];
+        configuration.networkID = 1486;
+        configuration.subNetworkID = 1;
+        configuration.alias = @"706332-728x90-5";
+        return configuration;
+    }
+    return nil;
+}
+
+- (SABannerType)bannerTypeForSize:(CGSize)size
+{
+    if(size.height>=90 && size.width>=728){
+        return kBannerLarge;
+    }else if(size.height>=50 && size.width>=320){
+        return kBannerMedium;
+    }else if(size.height>=50 && size.width>=300){
+        return kBannerSmall;
+    }
+    return kBannerSmall;
+}
+
 - (void)commonInit
 {
-    self.bannerView = [[ATBannerView alloc] initWithFrame:CGRectMake(0,0,320,50)];
-    ATAdtechAdConfiguration *configuration = [ATAdtechAdConfiguration configuration];
-    
-//    configuration.networkID = 23;
-//    configuration.subNetworkID = 4;
-//    configuration.alias = @"home-top-5";
-
-    configuration.networkID = 1486;
-    configuration.subNetworkID = 1;
-    configuration.alias = @"default-320x50-5";
-
-    self.bannerView.configuration = configuration;
+    self.bannerView = [[ATBannerView alloc] initWithFrame:self.bounds];
+    SABannerType type = [self bannerTypeForSize:self.bounds.size];
+    self.bannerView.configuration = [self bannerConfigurationForType:type];
     self.bannerView.delegate = self;
     [self addSubview:self.bannerView];
+}
+
+- (void)layoutSubviews{
+    [super layoutSubviews];
 }
 
 - (void)didMoveToWindow

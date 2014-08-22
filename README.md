@@ -136,3 +136,5 @@ The interstitial is presented modally over the viewController you configured it 
     [self.interstitial present];
 }
 ```
+###How to Use Video Ads
+TBD

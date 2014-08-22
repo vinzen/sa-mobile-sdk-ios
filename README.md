@@ -29,6 +29,14 @@ We recommend using the stable releases of our SDK, but if you want to try out th
 pod 'SAMobileSDK', :git => 'https://github.com/SuperAwesomeLTD/sa-mobile-sdk-ios.git', :branch => 'dev'
 ```
 
+Configure the Library
+----------------------------
+To configure the SuperAwesome library you have to set your application ID on the SuperAwesome class. The best place to do this is in your AppDelegate's `application: didFinishLaunchingWithOptions:` method:
+```
+// Override point for customization after application launch.
+[[SuperAwesome sharedManager] setAppID:@"your-app-id"];
+```
+
 Integrating the SuperAwesome Platform
 -------------------------------------
 

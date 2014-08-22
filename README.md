@@ -26,7 +26,7 @@ Don't forget to use the .xcworkspace file to open your project in Xcode, instead
 
 We recommend using the stable releases of our SDK, but if you want to try out the developer preview versions modify your Podfile as follows:
 ```
-pod 'SAMobileSDK', :git => 'https://github.com/SuperAwesomeLTD/sa-mobile-sdk-ios.git', :branch => 'dev'
+pod 'SAMobileSDK', :git => 'https://github.com/SuperAwesomeLTD/sa-mobile-sdk-ios.git', :branch => 'develop'
 ```
 
 Configure the Library

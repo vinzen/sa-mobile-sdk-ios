@@ -138,3 +138,7 @@ The interstitial is presented modally over the viewController you configured it 
 ```
 ###How to Use Video Ads
 TBD
+
+Technical Support
+=================
+If you have any questions or you need technical support, please, do not hesitate to contact us at devsupport@superawesome.tv. We will make every attempt to answer your inquiry as quickly as possible.

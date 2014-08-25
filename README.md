@@ -137,7 +137,25 @@ The interstitial is presented modally over the viewController you configured it 
 }
 ```
 ###How to Use Video Ads
-TBD
+The SDK uses the view property inherited from MPMoviePlayerViewController to display both the video content and ads. The ads are shown using AVFoundation rendered on a view placed on top of the view from the MPMoviePlayerController. You need to add the movie player instance’s view to your UI to get the video and ads shown.
+
+```
+- (void)viewDidLoad {
+	[super viewDidLoad];
+	moviePlayerController.view.frame = YOUR_FRAME; moviePlayerController.view.autoresizingMask = YOUR_AUTO_RESIZING_MASK;
+	[self.view addSubview:moviePlayerController.view];
+}
+```
+
+When entering fullscreen, the OS uses a different view for showing the content video. At that time, the SDK creates a new view placed on top of the window to be able to show the ads.
+
+####Starting playback
+Playback can be started at any time by calling
+```
+[moviePlayerController play];
+```
+or by letting the user start playback using the controls embedded on the player view.
+You can register for all the notifications provided by the MPMoviePlayerController system class and you can use any of the public methods and properties provided by it, with the exception of the `shouldAutoplay` property. Autoplay is not allowed on ATMoviePlayerController instances.
 
 Technical Support
 =================

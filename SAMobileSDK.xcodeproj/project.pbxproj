@@ -286,7 +286,7 @@
 				980E88AF199399EB009393DD /* NSString+URLEncode.h */,
 				980E88B0199399EB009393DD /* NSString+URLEncode.m */,
 				980E88AE199397AC009393DD /* Models */,
-				98613FE01988EA3D00C1E004 /* Classes */,
+				98613FE01988EA3D00C1E004 /* SDK Classes */,
 				98613FE91988ECC900C1E004 /* Resources */,
 				9856D9951987D86B00B6804C /* Supporting Files */,
 			);
@@ -322,7 +322,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		98613FE01988EA3D00C1E004 /* Classes */ = {
+		98613FE01988EA3D00C1E004 /* SDK Classes */ = {
 			isa = PBXGroup;
 			children = (
 				98613FE41988EA3D00C1E004 /* SuperAwesome.h */,
@@ -332,6 +332,7 @@
 				98AD4D21199A1EC000915410 /* Advertising */,
 				98AD4D22199A1ED900915410 /* Loyalty */,
 			);
+			name = "SDK Classes";
 			path = Classes;
 			sourceTree = "<group>";
 		};

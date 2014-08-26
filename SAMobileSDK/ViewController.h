@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "SALoginViewController.h"
-#import "SAInterstitialView.h"
+#import "SuperAwesome.h"
 
 @interface ViewController : UIViewController <SALoginViewControllerDelegate>
 

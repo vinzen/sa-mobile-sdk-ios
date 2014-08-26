@@ -12,13 +12,36 @@
 					<Path>index.html</Path>
 					<Subnodes>
 						<NodeRef refid="1"/>
+						<NodeRef refid="2"/>
+						<NodeRef refid="3"/>
+						<NodeRef refid="4"/>
 						
 					</Subnodes>
 				</Node>
 				
 				
                 
+				<Node>
+					<Name>Protocols</Name>
+					<Path>index.html</Path>
+					<Subnodes>
+						<NodeRef refid="5"/>
+						<NodeRef refid="6"/>
+						
+					</Subnodes>
+				</Node>
+				
                 
+				<Node>
+					<Name>Constants</Name>
+					<Path>index.html</Path>
+					<Subnodes>
+						<NodeRef refid="7"/>
+						<NodeRef refid="8"/>
+						
+					</Subnodes>
+				</Node>
+				
                 
 			</Subnodes>
         </Node>
@@ -26,17 +49,17 @@
 	<Library>
 		
 		<Node id="1" type="file" documentType="reference">
-            <Name>SAVideoViewController</Name>
-            <Path>Classes/SAVideoViewController.html</Path>
+            <Name>InterstitialViewController</Name>
+            <Path>Classes/InterstitialViewController.html</Path>
             
                 <Subnodes>
                 <Node type="section">
-                    <Path>Classes/SAVideoViewController.html</Path>
+                    <Path>Classes/InterstitialViewController.html</Path>
                     <Name>Overview</Name>
                     <Anchor>overview</Anchor>
                 </Node>
                 <Node type="section">
-                    <Path>Classes/SAVideoViewController.html</Path>
+                    <Path>Classes/InterstitialViewController.html</Path>
                     <Name>Tasks</Name>
                     <Anchor>tasks</Anchor>
                 </Node>
@@ -44,7 +67,106 @@
                 
                 
                 <Node type="section">
-                    <Path>Classes/SAVideoViewController.html</Path>
+                    <Path>Classes/InterstitialViewController.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="2" type="file" documentType="reference">
+            <Name>SABannerView</Name>
+            <Path>Classes/SABannerView.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/SABannerView.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/SABannerView.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/SABannerView.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="3" type="file" documentType="reference">
+            <Name>SAInterstitialView</Name>
+            <Path>Classes/SAInterstitialView.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/SAInterstitialView.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/SAInterstitialView.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/SAInterstitialView.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/SAInterstitialView.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="4" type="file" documentType="reference">
+            <Name>SuperAwesome</Name>
+            <Path>Classes/SuperAwesome.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/SuperAwesome.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/SuperAwesome.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/SuperAwesome.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                <Node type="section">
+                    <Path>Classes/SuperAwesome.html</Path>
+                    <Name>Class Methods</Name>
+                    <Anchor>class_methods</Anchor>
+                </Node>
+                
+                
+                <Node type="section">
+                    <Path>Classes/SuperAwesome.html</Path>
                     <Name>Instance Methods</Name>
                     <Anchor>instance_methods</Anchor>
                 </Node>
@@ -54,8 +176,72 @@
         </Node>
 		
 		
-        
-        
+        <Node id="5" type="file" documentType="reference">
+            <Name>SABannerViewDelegate</Name>
+            <Path>Protocols/SABannerViewDelegate.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Protocols/SABannerViewDelegate.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Protocols/SABannerViewDelegate.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Protocols/SABannerViewDelegate.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="6" type="file" documentType="reference">
+            <Name>SAInterstitialViewDelegate</Name>
+            <Path>Protocols/SAInterstitialViewDelegate.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Protocols/SAInterstitialViewDelegate.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Protocols/SAInterstitialViewDelegate.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Protocols/SAInterstitialViewDelegate.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		
+        <Node id="7" type="file" documentType="reference">
+            <Name>SABannerType</Name>
+            <Path>Constants/SABannerType.html</Path>
+            
+        </Node>
+		<Node id="8" type="file" documentType="reference">
+            <Name>SAInterstitialType</Name>
+            <Path>Constants/SAInterstitialType.html</Path>
+            
+        </Node>
+		
         
 	</Library>
 </DocSetNodes>

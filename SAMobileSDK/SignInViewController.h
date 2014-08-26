@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SALoginViewController.h"
+#import "SuperAwesome.h"
 
 @interface SignInViewController : UIViewController <SALoginViewControllerDelegate>
 

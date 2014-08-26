@@ -13,17 +13,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    [[SuperAwesome sharedManager] setAppID:@"your-app-id"];
     
-    // Override point for customization after application launch.
-    
-    [[SuperAwesome sharedManager] setAppID:@"12"];
-    
-    ViewController *vc = [[ViewController alloc] initWithNibName:@"ViewController" bundle:[NSBundle mainBundle]];
-    [self.window setRootViewController:vc];
-    
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
     return YES;
 }
 

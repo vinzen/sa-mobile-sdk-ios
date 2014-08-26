@@ -29,6 +29,14 @@ We recommend using the stable releases of our SDK, but if you want to try out th
 pod 'SAMobileSDK', :git => 'https://github.com/SuperAwesomeLTD/sa-mobile-sdk-ios.git', :branch => 'develop'
 ```
 
+Configure the Library
+----------------------------
+To configure the SuperAwesome library you have to set your application ID on the SuperAwesome class. The best place to do this is in your AppDelegate's `application: didFinishLaunchingWithOptions:` method:
+```
+// Override point for customization after application launch.
+[[SuperAwesome sharedManager] setAppID:@"your-app-id"];
+```
+
 Integrating the SuperAwesome Platform
 -------------------------------------
 
@@ -105,6 +113,9 @@ You should keep the visibility flag on YES when the banner is displayed and view
 ```
 
 ###Displaying an Interstitial Ad
+The indicated place to load an interstitial is when you create a new screen. Depending on your needs, you might want to show the interstitial each time when you enter the screen or only once. You should start loading the interstitial inside your `viewDidLoad` method. After the interstitial is loaded (you get notified of this through the delegate) you need to call present on it to be presented.
+
+The interstitial is presented modally over the viewController you configured it with. This means that when it is presented, your `viewWillDisapper:` method gets called and `viewWillAppear:` is called when the interstitial is dismissed. It a good idea not to automatically present the interstitial on `viewWillAppear:` or to destroy it on `viewWillDisappear:`, because this will lead to infinite loop and early dismisses of the interstitial.
 ```
 @interface ViewController ()
 @property (nonatomic,strong) SAInterstitialView *interstitial;
@@ -125,3 +136,27 @@ You should keep the visibility flag on YES when the banner is displayed and view
     [self.interstitial present];
 }
 ```
+###How to Use Video Ads
+The SDK uses the view property inherited from MPMoviePlayerViewController to display both the video content and ads. The ads are shown using AVFoundation rendered on a view placed on top of the view from the MPMoviePlayerController. You need to add the movie player instance’s view to your UI to get the video and ads shown.
+
+```
+- (void)viewDidLoad {
+	[super viewDidLoad];
+	moviePlayerController.view.frame = YOUR_FRAME; moviePlayerController.view.autoresizingMask = YOUR_AUTO_RESIZING_MASK;
+	[self.view addSubview:moviePlayerController.view];
+}
+```
+
+When entering fullscreen, the OS uses a different view for showing the content video. At that time, the SDK creates a new view placed on top of the window to be able to show the ads.
+
+####Starting playback
+Playback can be started at any time by calling
+```
+[moviePlayerController play];
+```
+or by letting the user start playback using the controls embedded on the player view.
+You can register for all the notifications provided by the MPMoviePlayerController system class and you can use any of the public methods and properties provided by it, with the exception of the `shouldAutoplay` property. Autoplay is not allowed on ATMoviePlayerController instances.
+
+Technical Support
+=================
+If you have any questions or you need technical support, please, do not hesitate to contact us at devsupport@superawesome.tv. We will make every attempt to answer your inquiry as quickly as possible.

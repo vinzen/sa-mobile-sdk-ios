@@ -12,6 +12,8 @@
 		980E88AA199396D7009393DD /* SATokenResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 980E88A9199396D7009393DD /* SATokenResponse.m */; };
 		980E88AD1993974A009393DD /* SAUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 980E88AC1993974A009393DD /* SAUser.m */; };
 		980E88B1199399EB009393DD /* NSString+URLEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = 980E88B0199399EB009393DD /* NSString+URLEncode.m */; };
+		984B378E19A605E4005386CC /* SAServerResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 984B378D19A605E4005386CC /* SAServerResponse.m */; };
+		984B379119A60678005386CC /* SAAdPlacement.m in Sources */ = {isa = PBXBuildFile; fileRef = 984B379019A60678005386CC /* SAAdPlacement.m */; };
 		9856D98F1987D86B00B6804C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9856D98E1987D86B00B6804C /* Foundation.framework */; };
 		9856D9911987D86B00B6804C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9856D9901987D86B00B6804C /* CoreGraphics.framework */; };
 		9856D9931987D86B00B6804C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9856D9921987D86B00B6804C /* UIKit.framework */; };
@@ -49,13 +51,16 @@
 		98613FEC1988ECC900C1E004 /* ADTECHAdConfiguration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 98613FEA1988ECC900C1E004 /* ADTECHAdConfiguration.plist */; };
 		98613FED1988ECC900C1E004 /* ADTECHMobileSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 98613FEB1988ECC900C1E004 /* ADTECHMobileSDK.bundle */; };
 		987FF08F19890B8700578014 /* SABannerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 987FF08E19890B8700578014 /* SABannerViewController.xib */; };
+		98A471C319AC02BF0068B5C8 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98A471C219AC02BF0068B5C8 /* Storyboard.storyboard */; };
+		98A4720719AC84DD0068B5C8 /* BannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A4720619AC84DD0068B5C8 /* BannerViewController.m */; };
+		98A4720A19AC84F40068B5C8 /* InterstitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A4720919AC84F40068B5C8 /* InterstitialViewController.m */; };
+		98A4720E19AC86850068B5C8 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A4720D19AC86850068B5C8 /* SignInViewController.m */; };
 		98AAAAB61998FB8100B7E2B2 /* SALoginWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98AAAAB51998FB8100B7E2B2 /* SALoginWebViewController.xib */; };
 		98AAAABA19991A8000B7E2B2 /* SABannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 98AAAAB919991A8000B7E2B2 /* SABannerView.m */; };
 		98AAAABE19991E5D00B7E2B2 /* UIView+FindUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98AAAABD19991E5D00B7E2B2 /* UIView+FindUIViewController.m */; };
 		98AD4D1E199A1EA000915410 /* SAInterstitialView.m in Sources */ = {isa = PBXBuildFile; fileRef = 98AD4D1D199A1EA000915410 /* SAInterstitialView.m */; };
 		98CF200B198B91D000FD5896 /* SALoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98CF2009198B91D000FD5896 /* SALoginViewController.m */; };
 		98CF2010198B926100FD5896 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98CF200E198B926100FD5896 /* ViewController.m */; };
-		98CF2011198B926100FD5896 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98CF200F198B926100FD5896 /* ViewController.xib */; };
 		98CF2015198B9EE600FD5896 /* SALoginWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98CF2013198B9EE600FD5896 /* SALoginWebViewController.m */; };
 		98FF7A551990DF66003E87B0 /* sa_login.png in Resources */ = {isa = PBXBuildFile; fileRef = 98FF7A541990DF66003E87B0 /* sa_login.png */; };
 /* End PBXBuildFile section */
@@ -79,6 +84,10 @@
 		980E88AC1993974A009393DD /* SAUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAUser.m; sourceTree = "<group>"; };
 		980E88AF199399EB009393DD /* NSString+URLEncode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncode.h"; sourceTree = "<group>"; };
 		980E88B0199399EB009393DD /* NSString+URLEncode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEncode.m"; sourceTree = "<group>"; };
+		984B378C19A605E4005386CC /* SAServerResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAServerResponse.h; sourceTree = "<group>"; };
+		984B378D19A605E4005386CC /* SAServerResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAServerResponse.m; sourceTree = "<group>"; };
+		984B378F19A60678005386CC /* SAAdPlacement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAAdPlacement.h; sourceTree = "<group>"; };
+		984B379019A60678005386CC /* SAAdPlacement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAAdPlacement.m; sourceTree = "<group>"; };
 		9856D98B1987D86B00B6804C /* SAMobileSDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SAMobileSDK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9856D98E1987D86B00B6804C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9856D9901987D86B00B6804C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -121,6 +130,13 @@
 		98613FEA1988ECC900C1E004 /* ADTECHAdConfiguration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ADTECHAdConfiguration.plist; sourceTree = "<group>"; };
 		98613FEB1988ECC900C1E004 /* ADTECHMobileSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ADTECHMobileSDK.bundle; sourceTree = "<group>"; };
 		987FF08E19890B8700578014 /* SABannerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SABannerViewController.xib; sourceTree = "<group>"; };
+		98A471C219AC02BF0068B5C8 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		98A4720519AC84DD0068B5C8 /* BannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerViewController.h; sourceTree = "<group>"; };
+		98A4720619AC84DD0068B5C8 /* BannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerViewController.m; sourceTree = "<group>"; };
+		98A4720819AC84F40068B5C8 /* InterstitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterstitialViewController.h; sourceTree = "<group>"; };
+		98A4720919AC84F40068B5C8 /* InterstitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterstitialViewController.m; sourceTree = "<group>"; };
+		98A4720C19AC86850068B5C8 /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
+		98A4720D19AC86850068B5C8 /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
 		98AAAAB51998FB8100B7E2B2 /* SALoginWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SALoginWebViewController.xib; sourceTree = "<group>"; };
 		98AAAAB819991A8000B7E2B2 /* SABannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SABannerView.h; sourceTree = "<group>"; };
 		98AAAAB919991A8000B7E2B2 /* SABannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SABannerView.m; sourceTree = "<group>"; };
@@ -132,7 +148,6 @@
 		98CF2009198B91D000FD5896 /* SALoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SALoginViewController.m; sourceTree = "<group>"; };
 		98CF200D198B926100FD5896 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		98CF200E198B926100FD5896 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		98CF200F198B926100FD5896 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		98CF2012198B9EE600FD5896 /* SALoginWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SALoginWebViewController.h; sourceTree = "<group>"; };
 		98CF2013198B9EE600FD5896 /* SALoginWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SALoginWebViewController.m; sourceTree = "<group>"; };
 		98FF7A541990DF66003E87B0 /* sa_login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sa_login.png; sourceTree = "<group>"; };
@@ -196,6 +211,17 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		984B379219A60A98005386CC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				984B378C19A605E4005386CC /* SAServerResponse.h */,
+				984B378D19A605E4005386CC /* SAServerResponse.m */,
+				984B378F19A60678005386CC /* SAAdPlacement.h */,
+				984B379019A60678005386CC /* SAAdPlacement.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		9856D9821987D86B00B6804C = {
 			isa = PBXGroup;
 			children = (
@@ -252,17 +278,16 @@
 		9856D9941987D86B00B6804C /* SAMobileSDK */ = {
 			isa = PBXGroup;
 			children = (
+				98A471C219AC02BF0068B5C8 /* Storyboard.storyboard */,
+				9856D9A01987D86B00B6804C /* Images.xcassets */,
 				9856D99D1987D86B00B6804C /* AppDelegate.h */,
 				9856D99E1987D86B00B6804C /* AppDelegate.m */,
-				98CF200D198B926100FD5896 /* ViewController.h */,
-				98CF200E198B926100FD5896 /* ViewController.m */,
-				98CF200F198B926100FD5896 /* ViewController.xib */,
+				98A4720B19AC85060068B5C8 /* ViewControllers */,
 				980E88AF199399EB009393DD /* NSString+URLEncode.h */,
 				980E88B0199399EB009393DD /* NSString+URLEncode.m */,
 				980E88AE199397AC009393DD /* Models */,
 				98613FE01988EA3D00C1E004 /* Classes */,
 				98613FE91988ECC900C1E004 /* Resources */,
-				9856D9A01987D86B00B6804C /* Images.xcassets */,
 				9856D9951987D86B00B6804C /* Supporting Files */,
 			);
 			path = SAMobileSDK;
@@ -303,6 +328,7 @@
 				98613FE41988EA3D00C1E004 /* SuperAwesome.h */,
 				98613FE51988EA3D00C1E004 /* SuperAwesome.m */,
 				98AAAABF19991E6200B7E2B2 /* Categories */,
+				984B379219A60A98005386CC /* Models */,
 				98AD4D21199A1EC000915410 /* Advertising */,
 				98AD4D22199A1ED900915410 /* Loyalty */,
 			);
@@ -320,6 +346,21 @@
 				98613FEB1988ECC900C1E004 /* ADTECHMobileSDK.bundle */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		98A4720B19AC85060068B5C8 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				98CF200D198B926100FD5896 /* ViewController.h */,
+				98CF200E198B926100FD5896 /* ViewController.m */,
+				98A4720C19AC86850068B5C8 /* SignInViewController.h */,
+				98A4720D19AC86850068B5C8 /* SignInViewController.m */,
+				98A4720519AC84DD0068B5C8 /* BannerViewController.h */,
+				98A4720619AC84DD0068B5C8 /* BannerViewController.m */,
+				98A4720819AC84F40068B5C8 /* InterstitialViewController.h */,
+				98A4720919AC84F40068B5C8 /* InterstitialViewController.m */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 		98AAAAB71999195300B7E2B2 /* Login */ = {
@@ -456,13 +497,13 @@
 			files = (
 				980E5F3C198FCD2000608828 /* login in Resources */,
 				98AAAAB61998FB8100B7E2B2 /* SALoginWebViewController.xib in Resources */,
-				98CF2011198B926100FD5896 /* ViewController.xib in Resources */,
 				987FF08F19890B8700578014 /* SABannerViewController.xib in Resources */,
 				9856D9991987D86B00B6804C /* InfoPlist.strings in Resources */,
 				98613FED1988ECC900C1E004 /* ADTECHMobileSDK.bundle in Resources */,
 				9856D9A11987D86B00B6804C /* Images.xcassets in Resources */,
 				98613FEC1988ECC900C1E004 /* ADTECHAdConfiguration.plist in Resources */,
 				98FF7A551990DF66003E87B0 /* sa_login.png in Resources */,
+				98A471C319AC02BF0068B5C8 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,6 +557,8 @@
 			files = (
 				98CF2010198B926100FD5896 /* ViewController.m in Sources */,
 				980E88AA199396D7009393DD /* SATokenResponse.m in Sources */,
+				98A4720A19AC84F40068B5C8 /* InterstitialViewController.m in Sources */,
+				98A4720E19AC86850068B5C8 /* SignInViewController.m in Sources */,
 				98AD4D1E199A1EA000915410 /* SAInterstitialView.m in Sources */,
 				98CF200B198B91D000FD5896 /* SALoginViewController.m in Sources */,
 				9856D99F1987D86B00B6804C /* AppDelegate.m in Sources */,
@@ -524,8 +567,11 @@
 				98613FE81988EA3D00C1E004 /* SuperAwesome.m in Sources */,
 				98AAAABA19991A8000B7E2B2 /* SABannerView.m in Sources */,
 				9856D99B1987D86B00B6804C /* main.m in Sources */,
+				984B379119A60678005386CC /* SAAdPlacement.m in Sources */,
 				98AAAABE19991E5D00B7E2B2 /* UIView+FindUIViewController.m in Sources */,
+				984B378E19A605E4005386CC /* SAServerResponse.m in Sources */,
 				98CF2015198B9EE600FD5896 /* SALoginWebViewController.m in Sources */,
+				98A4720719AC84DD0068B5C8 /* BannerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -654,6 +700,7 @@
 				INFOPLIST_FILE = "SAMobileSDK/SAMobileSDK-Info.plist";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -673,6 +720,7 @@
 				INFOPLIST_FILE = "SAMobileSDK/SAMobileSDK-Info.plist";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

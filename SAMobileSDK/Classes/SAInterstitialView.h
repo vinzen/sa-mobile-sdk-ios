@@ -9,10 +9,16 @@
 #import <Foundation/Foundation.h>
 #import <ADTECHMobileSDK/ADTECHMobileSDK.h>
 
+typedef NS_ENUM(NSUInteger, SAInterstitialType) {
+    kInterstitialSmall,
+    kInterstitialLarge
+};
+
 @class SAInterstitialView;
 
 @protocol SAInterstitialViewDelegate <NSObject>
 @optional
+- (void)didSuccessfullyFetchInterstitialAd:(SAInterstitialView *)interstitialView;
 - (void)didHideInterstitialView:(SAInterstitialView *)interstitialView;
 @end
 

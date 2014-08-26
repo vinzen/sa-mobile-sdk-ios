@@ -8,10 +8,16 @@
 
 #import "SABannerView.h"
 #import "UIView+FindUIViewController.h"
+#import "SuperAwesome.h"
 
 @interface SABannerView ()
 
 @property (nonatomic,strong) ATBannerView *bannerView;
+
+- (ATAdtechAdConfiguration *)configurationForType:(SABannerType)bannerType;
+- (ATAdtechAdConfiguration *)defaultConfigurationForType:(SABannerType)bannerType;
+- (CGSize)bannerSizeForType:(SABannerType)type;
+- (SABannerType)bannerTypeForSize:(CGSize)size;
 
 @end
 
@@ -36,22 +42,95 @@
     return self;
 }
 
+- (ATAdtechAdConfiguration *)defaultConfigurationForType:(SABannerType)bannerType
+{
+    if(bannerType == kBannerSmall){
+        ATAdtechAdConfiguration *configuration = [ATAdtechAdConfiguration configuration];
+        configuration.networkID = 1486;
+        configuration.subNetworkID = 1;
+        configuration.alias = @"706332-300x50-5";
+        return configuration;
+    }else if (bannerType == kBannerMedium){
+        ATAdtechAdConfiguration *configuration = [ATAdtechAdConfiguration configuration];
+        configuration.networkID = 1486;
+        configuration.subNetworkID = 1;
+        configuration.alias = @"706332-320x50-5";
+        return configuration;
+    }else if (bannerType == kBannerLarge){
+        ATAdtechAdConfiguration *configuration = [ATAdtechAdConfiguration configuration];
+        configuration.networkID = 1486;
+        configuration.subNetworkID = 1;
+        configuration.alias = @"706332-728x90-5";
+        return configuration;
+    }
+    return nil;
+}
+
+- (ATAdtechAdConfiguration *)configurationForType:(SABannerType)bannerType
+{
+    CGSize size = [self bannerSizeForType:bannerType];
+    SAAdPlacement *placement = [[SuperAwesome sharedManager] placementForSize:size];
+    if(placement){
+        ATAdtechAdConfiguration *configuration = [ATAdtechAdConfiguration configuration];
+        configuration.networkID = [placement.networkId unsignedIntegerValue];
+        configuration.subNetworkID = [placement.subNetworkId unsignedIntegerValue];
+        configuration.alias = placement.alias;
+        return configuration;
+    }
+    return [self defaultConfigurationForType:bannerType];
+}
+
+- (CGSize)bannerSizeForType:(SABannerType)type
+{
+    if(type == kBannerLarge){
+        return CGSizeMake(728,90);
+    }else if (type == kBannerMedium){
+        return CGSizeMake(320,50);
+    }else if (type == kBannerSmall){
+        return CGSizeMake(300,50);
+    }
+    return CGSizeMake(0, 0);
+}
+
+- (SABannerType)bannerTypeForSize:(CGSize)size
+{
+    if(size.height>=90 && size.width>=728){
+        return kBannerLarge;
+    }else if(size.height>=50 && size.width>=320){
+        return kBannerMedium;
+    }else if(size.height>=50 && size.width>=300){
+        return kBannerSmall;
+    }
+    return kBannerSmall;
+}
+
+- (void)configLoadedNotification:(NSNotification *) notification
+{
+    if ([[notification name] isEqualToString:@"SuperAwesomeConfigLoaded"]){
+        [self initBanner];
+    }
+}
+
 - (void)commonInit
 {
-    self.bannerView = [[ATBannerView alloc] initWithFrame:CGRectMake(0,0,320,50)];
-    ATAdtechAdConfiguration *configuration = [ATAdtechAdConfiguration configuration];
-    
-//    configuration.networkID = 23;
-//    configuration.subNetworkID = 4;
-//    configuration.alias = @"home-top-5";
+    if([[SuperAwesome sharedManager] isLoadingConfiguration]){
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(configLoadedNotification:) name:@"SuperAwesomeConfigLoaded" object:nil];
+    }else{
+        [self initBanner];
+    }
+}
 
-    configuration.networkID = 1486;
-    configuration.subNetworkID = 1;
-    configuration.alias = @"default-320x50-5";
-
-    self.bannerView.configuration = configuration;
+- (void)initBanner
+{
+    self.bannerView = [[ATBannerView alloc] initWithFrame:self.bounds];
+    SABannerType type = [self bannerTypeForSize:self.bounds.size];
+    self.bannerView.configuration = [self configurationForType:type];
     self.bannerView.delegate = self;
     [self addSubview:self.bannerView];
+}
+
+- (void)layoutSubviews{
+    [super layoutSubviews];
 }
 
 - (void)didMoveToWindow
@@ -73,6 +152,11 @@
 {
     _visible = visible;
     self.bannerView.visible = visible;
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 #pragma mark ATBannerViewDelegate

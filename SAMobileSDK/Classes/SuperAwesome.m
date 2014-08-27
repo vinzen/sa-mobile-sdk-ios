@@ -49,7 +49,8 @@
     NSError *error;
     
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration delegate:self delegateQueue:nil];
+    [configuration setRequestCachePolicy:NSURLRequestReturnCacheDataElseLoad];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
     NSURL *url = [NSURL URLWithString:@"http://dashboard-staging.superawesome.tv/api/sdk/ads"];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
     
@@ -64,6 +65,7 @@
     NSURLSessionDataTask *postDataTask = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         SAServerResponse *resp = [[SAServerResponse alloc] initWithData:data error:&error];
         if(resp.success){
+            NSLog(@"Ad settings loaded from server");
             self.placements = resp.ads;
         }
         

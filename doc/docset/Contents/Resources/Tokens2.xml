@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/SABannerView.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/SABannerView</TokenIdentifier>
+			<Abstract type="html">Represents one ad banner that you place on one of your views.</Abstract>
+			<DeclaredIn>SABannerView.h</DeclaredIn>
+            
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/intf/SABannerViewDelegate</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<NodeRef refid="2"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SABannerView/setDelegate:</TokenIdentifier>
+			<Abstract type="html">The delegate gets notified of different events in the lifecycle of the ad. It is not required to be set.</Abstract>
+			<DeclaredIn>SABannerView.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/intf/SABannerViewDelegate</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, weak) id&lt;SABannerViewDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SABannerView/delegate</TokenIdentifier>
+			<Abstract type="html">The delegate gets notified of different events in the lifecycle of the ad. It is not required to be set.</Abstract>
+			<DeclaredIn>SABannerView.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/intf/SABannerViewDelegate</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, weak) id&lt;SABannerViewDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SABannerView/delegate</TokenIdentifier>
+			<Abstract type="html">The delegate gets notified of different events in the lifecycle of the ad. It is not required to be set.</Abstract>
+			<DeclaredIn>SABannerView.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/intf/SABannerViewDelegate</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, weak) id&lt;SABannerViewDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SABannerView/setVisible:</TokenIdentifier>
+			<Abstract type="html">Set the value to reflect the visibility of the ad on screen.</Abstract>
+			<DeclaredIn>SABannerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign, getter=isVisible) BOOL visible</Declaration>
+			
+			
+			<Anchor>//api/name/visible</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SABannerView/isVisible</TokenIdentifier>
+			<Abstract type="html">Set the value to reflect the visibility of the ad on screen.</Abstract>
+			<DeclaredIn>SABannerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign, getter=isVisible) BOOL visible</Declaration>
+			
+			
+			<Anchor>//api/name/visible</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SABannerView/visible</TokenIdentifier>
+			<Abstract type="html">Set the value to reflect the visibility of the ad on screen.</Abstract>
+			<DeclaredIn>SABannerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign, getter=isVisible) BOOL visible</Declaration>
+			
+			
+			<Anchor>//api/name/visible</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SABannerView/setViewController:</TokenIdentifier>
+			<Abstract type="html">The view controller that is the owner of the ad view being shown.</Abstract>
+			<DeclaredIn>SABannerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) UIViewController *viewController</Declaration>
+			
+			
+			<Anchor>//api/name/viewController</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SABannerView/viewController</TokenIdentifier>
+			<Abstract type="html">The view controller that is the owner of the ad view being shown.</Abstract>
+			<DeclaredIn>SABannerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) UIViewController *viewController</Declaration>
+			
+			
+			<Anchor>//api/name/viewController</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SABannerView/viewController</TokenIdentifier>
+			<Abstract type="html">The view controller that is the owner of the ad view being shown.</Abstract>
+			<DeclaredIn>SABannerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) UIViewController *viewController</Declaration>
+			
+			
+			<Anchor>//api/name/viewController</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SABannerView/setBannerView:</TokenIdentifier>
+			<Abstract type="html">The internal ADTECH banner view that is being used</Abstract>
+			<DeclaredIn>SABannerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) ATBannerView *bannerView</Declaration>
+			
+			
+			<Anchor>//api/name/bannerView</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SABannerView/bannerView</TokenIdentifier>
+			<Abstract type="html">The internal ADTECH banner view that is being used</Abstract>
+			<DeclaredIn>SABannerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) ATBannerView *bannerView</Declaration>
+			
+			
+			<Anchor>//api/name/bannerView</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SABannerView/bannerView</TokenIdentifier>
+			<Abstract type="html">The internal ADTECH banner view that is being used</Abstract>
+			<DeclaredIn>SABannerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) ATBannerView *bannerView</Declaration>
+			
+			
+			<Anchor>//api/name/bannerView</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

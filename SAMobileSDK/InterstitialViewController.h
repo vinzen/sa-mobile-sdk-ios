@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SAInterstitialView.h"
+#import "SuperAwesome.h"
 
 @interface InterstitialViewController : UIViewController <SAInterstitialViewDelegate>
 

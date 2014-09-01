@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/SAInterstitialView.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/SAInterstitialView</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>SAInterstitialView.h</DeclaredIn>
+            
+			
+			<NodeRef refid="3"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SAInterstitialView/setDelegate:</TokenIdentifier>
+			<Abstract type="html">The delegate gets notified of different events in the lifecycle of the ad.
+Your presenting view controller should register itself as delegate of the ad view.</Abstract>
+			<DeclaredIn>SAInterstitialView.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/intf/SAInterstitialViewDelegate</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, weak) id&lt;SAInterstitialViewDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SAInterstitialView/delegate</TokenIdentifier>
+			<Abstract type="html">The delegate gets notified of different events in the lifecycle of the ad.
+Your presenting view controller should register itself as delegate of the ad view.</Abstract>
+			<DeclaredIn>SAInterstitialView.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/intf/SAInterstitialViewDelegate</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, weak) id&lt;SAInterstitialViewDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SAInterstitialView/delegate</TokenIdentifier>
+			<Abstract type="html">The delegate gets notified of different events in the lifecycle of the ad.
+Your presenting view controller should register itself as delegate of the ad view.</Abstract>
+			<DeclaredIn>SAInterstitialView.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/intf/SAInterstitialViewDelegate</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, weak) id&lt;SAInterstitialViewDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SAInterstitialView/initWithViewController:</TokenIdentifier>
+			<Abstract type="html">Initialises the interstitial ad in the given view controller</Abstract>
+			<DeclaredIn>SAInterstitialView.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithViewController:(id)viewController</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>viewController</Name>
+					<Abstract type="html">The view controller that is the owner of the ad view being shown.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">New interstitial instance</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithViewController:</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SAInterstitialView/present</TokenIdentifier>
+			<Abstract type="html">Presents the interstitial view modally on top of the view controller.
+Call this method after receiving the [SAInterstitialViewDelegate didSuccessfullyFetchInterstitialAd:] callback in order
+to present the interstitial. It will be automatically dismissed after the refresh interval or when the user chooses to close it.
+Calling this method before receiving the above callbacks will have no effect.</Abstract>
+			<DeclaredIn>SAInterstitialView.h</DeclaredIn>
+			
+			<Declaration>- (void)present</Declaration>
+			
+			
+			<Anchor>//api/name/present</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

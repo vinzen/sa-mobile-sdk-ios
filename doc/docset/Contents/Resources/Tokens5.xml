@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Protocols/SABannerViewDelegate.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intf/SABannerViewDelegate</TokenIdentifier>
+			<Abstract type="html">Implement this protocol to be notified of different events in the lifecycle of the ad.</Abstract>
+			<DeclaredIn>SABannerView.h</DeclaredIn>
+            
+			
+			<NodeRef refid="5"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/SABannerViewDelegate/shouldSuspendForAd:</TokenIdentifier>
+			<Abstract type="html">Called when the ad will take over the screen in order to give the application the chance to pause ongoing activities.
+This is in response for user interaction with the ad.</Abstract>
+			<DeclaredIn>SABannerView.h</DeclaredIn>
+			
+			<Declaration>- (void)shouldSuspendForAd:(id)view</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>view</Name>
+					<Abstract type="html">The ad view that will take over the screen.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/shouldSuspendForAd:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/SABannerViewDelegate/shouldResumeForAd:</TokenIdentifier>
+			<Abstract type="html">Called when the ad will relinquish control of the screen as a result of the user dismissing it.</Abstract>
+			<DeclaredIn>SABannerView.h</DeclaredIn>
+			
+			<Declaration>- (void)shouldResumeForAd:(id)view</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>view</Name>
+					<Abstract type="html">The ad view that had control of the screen.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/shouldResumeForAd:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/SABannerViewDelegate/willLeaveApplicationForAd:</TokenIdentifier>
+			<Abstract type="html">Called when the user interaction with the ad triggers leaving the application.
+This can be, for example, opening a URL in Safari or Maps or another application registered to handle the URL specified by the ad.
+You should save the state of the application when you get this call.</Abstract>
+			<DeclaredIn>SABannerView.h</DeclaredIn>
+			
+			<Declaration>- (void)willLeaveApplicationForAd:(id)view</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>view</Name>
+					<Abstract type="html">The ad view that triggered leaving the application.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/willLeaveApplicationForAd:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

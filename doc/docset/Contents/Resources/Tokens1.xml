@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/SAVideoViewController.html">
+	<File path="Classes/InterstitialViewController.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/SAVideoViewController</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/cl/InterstitialViewController</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>SAVideoViewController.h</DeclaredIn>
+			<DeclaredIn>InterstitialViewController.h</DeclaredIn>
             
 			
 			<NodeRef refid="1"/>
@@ -13,16 +13,20 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SAVideoViewController/didReceiveMemoryWarning</TokenIdentifier>
-			<Abstract type="html">/    configuration.networkID = YOURNETWORKID; // if different from the default value set in the ADTECHAdConfiguration.plist file
-/    configuration.subNetworkID = YOURSUBNETWORK_ID; // if different from the default value set in the ADTECHAdConfiguration.plist file
-/    configuration.alias = YOUR_ALIAS;</Abstract>
-			<DeclaredIn>SAVideoViewController.m</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/InterstitialViewController/didSuccessfullyFetchInterstitialAd:</TokenIdentifier>
+			<Abstract type="html">Called when the interstial ad is fetched from a campaign and available to be displayed.
+You should put up the ad on the screen at this time.</Abstract>
+			<DeclaredIn>InterstitialViewController.m</DeclaredIn>
 			
-			<Declaration>- (void)didReceiveMemoryWarning</Declaration>
+			<Declaration>- (void)didSuccessfullyFetchInterstitialAd:(id)interstitialView</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>view</Name>
+					<Abstract type="html">The interstitial ad view that fetched the ad.</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/didReceiveMemoryWarning</Anchor>
+			<Anchor>//api/name/didSuccessfullyFetchInterstitialAd:</Anchor>
             <NodeRef refid="1"/>
 		</Token>
 		

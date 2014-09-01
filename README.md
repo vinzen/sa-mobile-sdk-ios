@@ -36,6 +36,7 @@ To configure the SuperAwesome library you have to set your application ID on the
 // Override point for customization after application launch.
 [[SuperAwesome sharedManager] setAppID:@"your-app-id"];
 ```
+If you haven't got an appId go to http://dashboard.superawesome.tv and register you app.
 
 Integrating the SuperAwesome Platform
 -------------------------------------
@@ -68,7 +69,7 @@ By implementing the SALoginViewControllerDelegate protocol you can get notified 
 ```
 
 ### Awarding SuperAwesome Points
-TBD
+Coming soon
 
 Integrating SuperAwesome Advertising
 ------------------------------------
@@ -157,6 +158,19 @@ Playback can be started at any time by calling
 or by letting the user start playback using the controls embedded on the player view.
 You can register for all the notifications provided by the MPMoviePlayerController system class and you can use any of the public methods and properties provided by it, with the exception of the `shouldAutoplay` property. Autoplay is not allowed on ATMoviePlayerController instances.
 
+Other Resources
+===============
+API Documentation
+-----------------
+Appledoc generated documentation can be found in the docs folder of the project.
+Screencasts
+-----------
+1. [Project Setup](https://drive.google.com/file/d/0B7_6h2LS4t4Cc0pyall6Rko5d1E/edit?usp=sharing)
+
 Technical Support
 =================
 If you have any questions or you need technical support, please, do not hesitate to contact us at devsupport@superawesome.tv. We will make every attempt to answer your inquiry as quickly as possible.
+
+License
+=======
+See the LICENSE.txt file for more information.

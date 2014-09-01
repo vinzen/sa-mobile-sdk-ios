@@ -36,6 +36,7 @@ To configure the SuperAwesome library you have to set your application ID on the
 // Override point for customization after application launch.
 [[SuperAwesome sharedManager] setAppID:@"your-app-id"];
 ```
+If you haven't got an appId go to http://dashboard.superawesome.tv and register you app.
 
 Integrating the SuperAwesome Platform
 -------------------------------------
@@ -68,7 +69,7 @@ By implementing the SALoginViewControllerDelegate protocol you can get notified 
 ```
 
 ### Awarding SuperAwesome Points
-TBD
+Coming soon
 
 Integrating SuperAwesome Advertising
 ------------------------------------
@@ -160,3 +161,7 @@ You can register for all the notifications provided by the MPMoviePlayerControll
 Technical Support
 =================
 If you have any questions or you need technical support, please, do not hesitate to contact us at devsupport@superawesome.tv. We will make every attempt to answer your inquiry as quickly as possible.
+
+License
+=======
+See the LICENSE.txt file for more information.

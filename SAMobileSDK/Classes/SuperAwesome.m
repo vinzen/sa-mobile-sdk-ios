@@ -51,7 +51,7 @@
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     [configuration setRequestCachePolicy:NSURLRequestReturnCacheDataElseLoad];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
-    NSURL *url = [NSURL URLWithString:@"http://dashboard-staging.superawesome.tv/api/sdk/ads"];
+    NSURL *url = [NSURL URLWithString:@"http://dashboard.superawesome.tv/api/sdk/ads"];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
     
     [request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];

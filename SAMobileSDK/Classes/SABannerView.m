@@ -13,6 +13,7 @@
 @interface SABannerView ()
 
 @property (nonatomic,strong) ATBannerView *bannerView;
+@property (nonatomic,assign) BOOL isBannerConfigured;
 
 - (ATAdtechAdConfiguration *)configurationForType:(SABannerType)bannerType;
 - (ATAdtechAdConfiguration *)defaultConfigurationForType:(SABannerType)bannerType;
@@ -77,6 +78,7 @@
         configuration.alias = placement.alias;
         return configuration;
     }
+    NSLog(@"Warning: Falling back to default placement");
     return [self defaultConfigurationForType:bannerType];
 }
 
@@ -107,26 +109,47 @@
 - (void)configLoadedNotification:(NSNotification *) notification
 {
     if ([[notification name] isEqualToString:@"SuperAwesomeConfigLoaded"]){
-        [self initBanner];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self configureBanner];
+            [self loadBanner];
+        });
     }
 }
 
 - (void)commonInit
 {
+    [self initBanner];
     if([[SuperAwesome sharedManager] isLoadingConfiguration]){
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(configLoadedNotification:) name:@"SuperAwesomeConfigLoaded" object:nil];
     }else{
-        [self initBanner];
+        [self configureBanner];
     }
 }
 
 - (void)initBanner
 {
     self.bannerView = [[ATBannerView alloc] initWithFrame:self.bounds];
-    SABannerType type = [self bannerTypeForSize:self.bounds.size];
-    self.bannerView.configuration = [self configurationForType:type];
     self.bannerView.delegate = self;
     [self addSubview:self.bannerView];
+}
+
+- (void)configureBanner
+{
+    SABannerType type = [self bannerTypeForSize:self.bounds.size];
+    self.bannerView.configuration = [self configurationForType:type];
+    self.isBannerConfigured = YES;
+}
+
+- (void)loadBanner
+{
+    if(self.isBannerConfigured == NO) return;
+    
+    if(self.viewController == nil){
+        UIViewController *vc = [self firstAvailableUIViewController];
+        self.viewController = vc;
+    }
+    
+    [self.bannerView load];
 }
 
 - (void)layoutSubviews{
@@ -141,17 +164,21 @@
         return;
     }
     
-    if(self.viewController == nil){
-        self.bannerView.viewController = [self firstAvailableUIViewController];
+    if(self.bannerView){
+        [self loadBanner];
     }
-    
-    [self.bannerView load];
 }
 
 - (void)setVisible:(BOOL)visible
 {
     _visible = visible;
     self.bannerView.visible = visible;
+}
+
+- (void)setViewController:(UIViewController *)viewController
+{
+    _viewController = viewController;
+    self.bannerView.viewController = viewController;
 }
 
 - (void)dealloc

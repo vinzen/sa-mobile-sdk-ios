@@ -55,6 +55,7 @@
 		98A4720719AC84DD0068B5C8 /* BannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A4720619AC84DD0068B5C8 /* BannerViewController.m */; };
 		98A4720A19AC84F40068B5C8 /* InterstitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A4720919AC84F40068B5C8 /* InterstitialViewController.m */; };
 		98A4720E19AC86850068B5C8 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A4720D19AC86850068B5C8 /* SignInViewController.m */; };
+		98A4721119ACD3D10068B5C8 /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A4721019ACD3D10068B5C8 /* VideoViewController.m */; };
 		98AAAAB61998FB8100B7E2B2 /* SALoginWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98AAAAB51998FB8100B7E2B2 /* SALoginWebViewController.xib */; };
 		98AAAABA19991A8000B7E2B2 /* SABannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 98AAAAB919991A8000B7E2B2 /* SABannerView.m */; };
 		98AAAABE19991E5D00B7E2B2 /* UIView+FindUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98AAAABD19991E5D00B7E2B2 /* UIView+FindUIViewController.m */; };
@@ -62,6 +63,7 @@
 		98CF200B198B91D000FD5896 /* SALoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98CF2009198B91D000FD5896 /* SALoginViewController.m */; };
 		98CF2010198B926100FD5896 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98CF200E198B926100FD5896 /* ViewController.m */; };
 		98CF2015198B9EE600FD5896 /* SALoginWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98CF2013198B9EE600FD5896 /* SALoginWebViewController.m */; };
+		98F7671819B74FC4004559BD /* SAVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 98F7671719B74FC4004559BD /* SAVideoView.m */; };
 		98FF7A551990DF66003E87B0 /* sa_login.png in Resources */ = {isa = PBXBuildFile; fileRef = 98FF7A541990DF66003E87B0 /* sa_login.png */; };
 /* End PBXBuildFile section */
 
@@ -137,6 +139,8 @@
 		98A4720919AC84F40068B5C8 /* InterstitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterstitialViewController.m; sourceTree = "<group>"; };
 		98A4720C19AC86850068B5C8 /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
 		98A4720D19AC86850068B5C8 /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
+		98A4720F19ACD3D10068B5C8 /* VideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoViewController.h; sourceTree = "<group>"; };
+		98A4721019ACD3D10068B5C8 /* VideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoViewController.m; sourceTree = "<group>"; };
 		98AAAAB51998FB8100B7E2B2 /* SALoginWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SALoginWebViewController.xib; sourceTree = "<group>"; };
 		98AAAAB819991A8000B7E2B2 /* SABannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SABannerView.h; sourceTree = "<group>"; };
 		98AAAAB919991A8000B7E2B2 /* SABannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SABannerView.m; sourceTree = "<group>"; };
@@ -150,6 +154,8 @@
 		98CF200E198B926100FD5896 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		98CF2012198B9EE600FD5896 /* SALoginWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SALoginWebViewController.h; sourceTree = "<group>"; };
 		98CF2013198B9EE600FD5896 /* SALoginWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SALoginWebViewController.m; sourceTree = "<group>"; };
+		98F7671619B74FC4004559BD /* SAVideoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAVideoView.h; sourceTree = "<group>"; };
+		98F7671719B74FC4004559BD /* SAVideoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAVideoView.m; sourceTree = "<group>"; };
 		98FF7A541990DF66003E87B0 /* sa_login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sa_login.png; sourceTree = "<group>"; };
 		A60F40D7A3D540608A9F4B27 /* libPods-SAMobileSDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SAMobileSDK.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -360,6 +366,8 @@
 				98A4720619AC84DD0068B5C8 /* BannerViewController.m */,
 				98A4720819AC84F40068B5C8 /* InterstitialViewController.h */,
 				98A4720919AC84F40068B5C8 /* InterstitialViewController.m */,
+				98A4720F19ACD3D10068B5C8 /* VideoViewController.h */,
+				98A4721019ACD3D10068B5C8 /* VideoViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -407,6 +415,7 @@
 			children = (
 				98AAAABB19991A8B00B7E2B2 /* Banner */,
 				98AD4D1F199A1EA400915410 /* Interstitial */,
+				98F7671519B74F98004559BD /* VIdeo */,
 			);
 			name = Advertising;
 			sourceTree = "<group>";
@@ -417,6 +426,15 @@
 				98AAAAB71999195300B7E2B2 /* Login */,
 			);
 			name = Loyalty;
+			sourceTree = "<group>";
+		};
+		98F7671519B74F98004559BD /* VIdeo */ = {
+			isa = PBXGroup;
+			children = (
+				98F7671619B74FC4004559BD /* SAVideoView.h */,
+				98F7671719B74FC4004559BD /* SAVideoView.m */,
+			);
+			name = VIdeo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -558,6 +576,7 @@
 			files = (
 				98CF2010198B926100FD5896 /* ViewController.m in Sources */,
 				980E88AA199396D7009393DD /* SATokenResponse.m in Sources */,
+				98A4721119ACD3D10068B5C8 /* VideoViewController.m in Sources */,
 				98A4720A19AC84F40068B5C8 /* InterstitialViewController.m in Sources */,
 				98A4720E19AC86850068B5C8 /* SignInViewController.m in Sources */,
 				98AD4D1E199A1EA000915410 /* SAInterstitialView.m in Sources */,
@@ -572,6 +591,7 @@
 				98AAAABE19991E5D00B7E2B2 /* UIView+FindUIViewController.m in Sources */,
 				984B378E19A605E4005386CC /* SAServerResponse.m in Sources */,
 				98CF2015198B9EE600FD5896 /* SALoginWebViewController.m in Sources */,
+				98F7671819B74FC4004559BD /* SAVideoView.m in Sources */,
 				98A4720719AC84DD0068B5C8 /* BannerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

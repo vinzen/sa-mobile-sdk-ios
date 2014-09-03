@@ -13,6 +13,7 @@
 //Advertising Classes
 #import "SABannerView.h"
 #import "SAInterstitialView.h"
+#import "SAVideoView.h"
 
 //Loyalty Classes
 #import "SALoginViewController.h"

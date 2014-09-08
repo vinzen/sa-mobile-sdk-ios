@@ -45,23 +45,29 @@
 
 - (ATAdtechAdConfiguration *)defaultConfigurationForType:(SABannerType)bannerType
 {
-    if(bannerType == kBannerSmall){
+    if(bannerType == kBanner300x50){
         ATAdtechAdConfiguration *configuration = [ATAdtechAdConfiguration configuration];
         configuration.networkID = 1486;
         configuration.subNetworkID = 1;
         configuration.alias = @"706332-300x50-5";
         return configuration;
-    }else if (bannerType == kBannerMedium){
+    }else if (bannerType == kBanner320x50){
         ATAdtechAdConfiguration *configuration = [ATAdtechAdConfiguration configuration];
         configuration.networkID = 1486;
         configuration.subNetworkID = 1;
         configuration.alias = @"706332-320x50-5";
         return configuration;
-    }else if (bannerType == kBannerLarge){
+    }else if (bannerType == kBanner728x90){
         ATAdtechAdConfiguration *configuration = [ATAdtechAdConfiguration configuration];
         configuration.networkID = 1486;
         configuration.subNetworkID = 1;
         configuration.alias = @"706332-728x90-5";
+        return configuration;
+    }else if (bannerType == kBanner300x250){
+        ATAdtechAdConfiguration *configuration = [ATAdtechAdConfiguration configuration];
+        configuration.networkID = 1486;
+        configuration.subNetworkID = 1;
+        configuration.alias = @"706332-300x250-5";
         return configuration;
     }
     return nil;
@@ -84,12 +90,14 @@
 
 - (CGSize)bannerSizeForType:(SABannerType)type
 {
-    if(type == kBannerLarge){
+    if(type == kBanner728x90){
         return CGSizeMake(728,90);
-    }else if (type == kBannerMedium){
+    }else if (type == kBanner320x50){
         return CGSizeMake(320,50);
-    }else if (type == kBannerSmall){
+    }else if (type == kBanner300x50){
         return CGSizeMake(300,50);
+    }else if (type == kBanner300x250){
+        return CGSizeMake(300,250);
     }
     return CGSizeMake(0, 0);
 }
@@ -97,13 +105,15 @@
 - (SABannerType)bannerTypeForSize:(CGSize)size
 {
     if(size.height>=90 && size.width>=728){
-        return kBannerLarge;
+        return kBanner728x90;
+    }else if(size.height>=250 && size.width>=300){
+        return kBanner300x250;
     }else if(size.height>=50 && size.width>=320){
-        return kBannerMedium;
+        return kBanner320x50;
     }else if(size.height>=50 && size.width>=300){
-        return kBannerSmall;
+        return kBanner300x50;
     }
-    return kBannerSmall;
+    return kBanner300x50;
 }
 
 - (void)configLoadedNotification:(NSNotification *) notification

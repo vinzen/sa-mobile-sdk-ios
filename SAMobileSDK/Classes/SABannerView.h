@@ -10,9 +10,10 @@
 #import <ADTECHMobileSDK/ADTECHMobileSDK.h>
 
 typedef NS_ENUM(NSUInteger, SABannerType) {
-    kBannerSmall,
-    kBannerMedium,
-    kBannerLarge
+    kBanner300x50,
+    kBanner320x50,
+    kBanner728x90,
+    kBanner300x250
 };
 
 @class SABannerView;

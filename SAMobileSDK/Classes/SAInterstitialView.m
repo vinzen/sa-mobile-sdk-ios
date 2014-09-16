@@ -12,6 +12,8 @@
 @interface SAInterstitialView ()
 
 @property (nonatomic,strong) ATInterstitialView *interstitialView;
+@property (nonatomic,strong) SAParentalGate *gate;
+@property (nonatomic,strong) NSURL *adURL;
 
 - (ATAdtechAdConfiguration *)defaultConfigurationForType:(SAInterstitialType)type;
 - (ATAdtechAdConfiguration *)configurationForType:(SAInterstitialType)type;
@@ -111,5 +113,26 @@
         [self.delegate didHideInterstitialView:self];
     }
 }
+
+- (BOOL)shouldOpenLandingPageForAd:(ATInterstitialView*)view withURL:(NSURL*)URL useBrowser:(ATBrowserViewController *__autoreleasing *)browserViewController;
+{
+    if(self.useParentalGate){
+        if(self.gate == nil){
+            self.gate = [[SAParentalGate alloc] init];
+            self.gate.delegate = self;
+        }
+        [self.gate show];
+        self.adURL = URL;
+        
+        return NO;
+    }
+    return YES;
+}
+
+- (void)didGetThroughParentalGate:(SAParentalGate *)parentalGate
+{
+    [[UIApplication sharedApplication] openURL:self.adURL];
+}
+
 
 @end

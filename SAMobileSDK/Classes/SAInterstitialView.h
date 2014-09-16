@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <ADTECHMobileSDK/ADTECHMobileSDK.h>
+#import "SAParentalGate.h"
 
 typedef NS_ENUM(NSUInteger, SAInterstitialType) {
     kInterstitialSmall,
@@ -44,7 +45,7 @@ typedef NS_ENUM(NSUInteger, SAInterstitialType) {
 @end
 
 
-@interface SAInterstitialView : NSObject <ATInterstitialViewDelegate>
+@interface SAInterstitialView : NSObject <ATInterstitialViewDelegate, SAParentalGateDelegate>
 
 /**
  * The delegate gets notified of different events in the lifecycle of the ad.
@@ -70,5 +71,10 @@ typedef NS_ENUM(NSUInteger, SAInterstitialType) {
  * Calling this method before receiving the above callbacks will have no effect.
  */
 - (void)present;
+
+/**
+ *  Sets if the SDK should display a parantal gate when the ad is tapped
+ */
+@property (nonatomic,assign) BOOL useParentalGate;
 
 @end

@@ -14,6 +14,8 @@
 
 @property (nonatomic,strong) ATBannerView *bannerView;
 @property (nonatomic,assign) BOOL isBannerConfigured;
+@property (nonatomic,strong) SAParentalGate *gate;
+@property (nonatomic,strong) NSURL *adURL;
 
 - (ATAdtechAdConfiguration *)configurationForType:(SABannerType)bannerType;
 - (ATAdtechAdConfiguration *)defaultConfigurationForType:(SABannerType)bannerType;
@@ -129,6 +131,7 @@
 - (void)commonInit
 {
     [self initBanner];
+    
     if([[SuperAwesome sharedManager] isLoadingConfiguration]){
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(configLoadedNotification:) name:@"SuperAwesomeConfigLoaded" object:nil];
     }else{
@@ -228,6 +231,26 @@
 {
     NSLog(@"SA AD Fail");
     
+}
+
+- (BOOL)shouldOpenLandingPageForAd:(ATBannerView *)view withURL:(NSURL *)URL useBrowser:(ATBrowserViewController *__autoreleasing *)browserViewController
+{
+    if(self.useParentalGate){
+        if(self.gate == nil){
+            self.gate = [[SAParentalGate alloc] init];
+            self.gate.delegate = self;
+        }
+        [self.gate show];
+        self.adURL = URL;
+        
+        return NO;
+    }
+    return YES;
+}
+
+- (void)didGetThroughParentalGate:(SAParentalGate *)parentalGate
+{
+    [[UIApplication sharedApplication] openURL:self.adURL];
 }
 
 @end

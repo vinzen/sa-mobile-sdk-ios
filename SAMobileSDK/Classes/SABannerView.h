@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SAParentalGate.h"
 #import <ADTECHMobileSDK/ADTECHMobileSDK.h>
 
 typedef NS_ENUM(NSUInteger, SABannerType) {
@@ -57,7 +58,7 @@ typedef NS_ENUM(NSUInteger, SABannerType) {
  *
  *  @see SABannerViewDelegate
  */
-@interface SABannerView : UIView <ATBannerViewDelegate>
+@interface SABannerView : UIView <ATBannerViewDelegate, SAParentalGateDelegate>
 
 /**
  * The delegate gets notified of different events in the lifecycle of the ad. It is not required to be set.
@@ -93,5 +94,9 @@ typedef NS_ENUM(NSUInteger, SABannerType) {
  * @warning Ideally, you should not directly access this property.
  */
 @property (nonatomic,strong,readonly) ATBannerView *bannerView;
+/**
+ *  Sets if the SDK should display a parantal gate when the ad is tapped
+ */
+@property (nonatomic,assign) BOOL useParentalGate;
 
 @end

@@ -72,9 +72,4 @@ typedef NS_ENUM(NSUInteger, SAInterstitialType) {
  */
 - (void)present;
 
-/**
- *  Sets if the SDK should display a parantal gate when the ad is tapped
- */
-@property (nonatomic,assign) BOOL useParentalGate;
-
 @end

@@ -94,9 +94,5 @@ typedef NS_ENUM(NSUInteger, SABannerType) {
  * @warning Ideally, you should not directly access this property.
  */
 @property (nonatomic,strong,readonly) ATBannerView *bannerView;
-/**
- *  Sets if the SDK should display a parantal gate when the ad is tapped
- */
-@property (nonatomic,assign) BOOL useParentalGate;
 
 @end

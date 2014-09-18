@@ -13,9 +13,8 @@
 		980E88AD1993974A009393DD /* SAUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 980E88AC1993974A009393DD /* SAUser.m */; };
 		980E88B1199399EB009393DD /* NSString+URLEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = 980E88B0199399EB009393DD /* NSString+URLEncode.m */; };
 		9830FD1519C87A6500B01FC9 /* SAParentalGate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9830FD1419C87A6500B01FC9 /* SAParentalGate.m */; };
-		9830FD1919C88C8E00B01FC9 /* SAAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9830FD1819C88C8E00B01FC9 /* SAAlertView.m */; };
 		984B378E19A605E4005386CC /* SAServerResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 984B378D19A605E4005386CC /* SAServerResponse.m */; };
-		984B379119A60678005386CC /* SAAdPlacement.m in Sources */ = {isa = PBXBuildFile; fileRef = 984B379019A60678005386CC /* SAAdPlacement.m */; };
+		984D3B6B19C9E55100E9325C /* SAAdPlacement.m in Sources */ = {isa = PBXBuildFile; fileRef = 984D3B6A19C9E55100E9325C /* SAAdPlacement.m */; };
 		9856D98F1987D86B00B6804C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9856D98E1987D86B00B6804C /* Foundation.framework */; };
 		9856D9911987D86B00B6804C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9856D9901987D86B00B6804C /* CoreGraphics.framework */; };
 		9856D9931987D86B00B6804C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9856D9921987D86B00B6804C /* UIKit.framework */; };
@@ -90,12 +89,10 @@
 		980E88B0199399EB009393DD /* NSString+URLEncode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEncode.m"; sourceTree = "<group>"; };
 		9830FD1319C87A6500B01FC9 /* SAParentalGate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAParentalGate.h; sourceTree = "<group>"; };
 		9830FD1419C87A6500B01FC9 /* SAParentalGate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAParentalGate.m; sourceTree = "<group>"; };
-		9830FD1719C88C8E00B01FC9 /* SAAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAAlertView.h; sourceTree = "<group>"; };
-		9830FD1819C88C8E00B01FC9 /* SAAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAAlertView.m; sourceTree = "<group>"; };
 		984B378C19A605E4005386CC /* SAServerResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAServerResponse.h; sourceTree = "<group>"; };
 		984B378D19A605E4005386CC /* SAServerResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAServerResponse.m; sourceTree = "<group>"; };
-		984B378F19A60678005386CC /* SAAdPlacement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAAdPlacement.h; sourceTree = "<group>"; };
-		984B379019A60678005386CC /* SAAdPlacement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAAdPlacement.m; sourceTree = "<group>"; };
+		984D3B6919C9E55100E9325C /* SAAdPlacement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAAdPlacement.h; sourceTree = "<group>"; };
+		984D3B6A19C9E55100E9325C /* SAAdPlacement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAAdPlacement.m; sourceTree = "<group>"; };
 		9856D98B1987D86B00B6804C /* SAMobileSDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SAMobileSDK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9856D98E1987D86B00B6804C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9856D9901987D86B00B6804C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -228,8 +225,6 @@
 			children = (
 				9830FD1319C87A6500B01FC9 /* SAParentalGate.h */,
 				9830FD1419C87A6500B01FC9 /* SAParentalGate.m */,
-				9830FD1719C88C8E00B01FC9 /* SAAlertView.h */,
-				9830FD1819C88C8E00B01FC9 /* SAAlertView.m */,
 			);
 			name = ParentalGate;
 			sourceTree = "<group>";
@@ -237,10 +232,10 @@
 		984B379219A60A98005386CC /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				984D3B6919C9E55100E9325C /* SAAdPlacement.h */,
+				984D3B6A19C9E55100E9325C /* SAAdPlacement.m */,
 				984B378C19A605E4005386CC /* SAServerResponse.h */,
 				984B378D19A605E4005386CC /* SAServerResponse.m */,
-				984B378F19A60678005386CC /* SAAdPlacement.h */,
-				984B379019A60678005386CC /* SAAdPlacement.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -392,6 +387,7 @@
 		98AAAAB71999195300B7E2B2 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				98F7671519B74F98004559BD /* VIdeo */,
 				98CF2008198B91D000FD5896 /* SALoginViewController.h */,
 				98CF2009198B91D000FD5896 /* SALoginViewController.m */,
 				98CF2012198B9EE600FD5896 /* SALoginWebViewController.h */,
@@ -433,7 +429,6 @@
 				9830FD1619C87A8100B01FC9 /* ParentalGate */,
 				98AAAABB19991A8B00B7E2B2 /* Banner */,
 				98AD4D1F199A1EA400915410 /* Interstitial */,
-				98F7671519B74F98004559BD /* VIdeo */,
 			);
 			name = Advertising;
 			sourceTree = "<group>";
@@ -602,15 +597,14 @@
 				98CF200B198B91D000FD5896 /* SALoginViewController.m in Sources */,
 				9856D99F1987D86B00B6804C /* AppDelegate.m in Sources */,
 				980E88B1199399EB009393DD /* NSString+URLEncode.m in Sources */,
+				984D3B6B19C9E55100E9325C /* SAAdPlacement.m in Sources */,
 				980E88AD1993974A009393DD /* SAUser.m in Sources */,
 				98613FE81988EA3D00C1E004 /* SuperAwesome.m in Sources */,
 				98AAAABA19991A8000B7E2B2 /* SABannerView.m in Sources */,
 				9856D99B1987D86B00B6804C /* main.m in Sources */,
-				984B379119A60678005386CC /* SAAdPlacement.m in Sources */,
 				98AAAABE19991E5D00B7E2B2 /* UIView+FindUIViewController.m in Sources */,
 				984B378E19A605E4005386CC /* SAServerResponse.m in Sources */,
 				98CF2015198B9EE600FD5896 /* SALoginWebViewController.m in Sources */,
-				9830FD1919C88C8E00B01FC9 /* SAAlertView.m in Sources */,
 				98F7671819B74FC4004559BD /* SAVideoView.m in Sources */,
 				98A4720719AC84DD0068B5C8 /* BannerViewController.m in Sources */,
 			);

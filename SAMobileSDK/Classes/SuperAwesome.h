@@ -37,6 +37,10 @@
  *  Flag that shows configuration loading
  */
 @property (nonatomic,assign,readonly,getter = isLoadingConfiguration) BOOL loadingConfiguration;
+/**
+ *  Sets if the SDK should display a parantal gate when the ad is tapped
+ */
+@property (nonatomic,assign) BOOL useParentalGate;
 
 /**
  *  Returns ad placement instance for given placement size

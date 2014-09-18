@@ -29,7 +29,7 @@
 - (void)show
 {
     [self newQuestion];
-    NSString *msg = [NSString stringWithFormat:@"Solve the following sum to continue: %@ + %@ = ?", @(self.number1), @(self.number2)];
+    NSString *msg = [NSString stringWithFormat:@"Solve the following problem to continue:\n%@ + %@ = ?", @(self.number1), @(self.number2)];
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Parental Gate" message:msg delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Continue", nil];
     alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
     UITextField *textField = [alertView textFieldAtIndex:0];

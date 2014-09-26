@@ -182,6 +182,13 @@
     }
 }
 
+- (void)removeFromSuperview
+{
+    [super removeFromSuperview];
+    
+    [self.bannerView removeFromSuperview];
+}
+
 - (void)setVisible:(BOOL)visible
 {
     _visible = visible;

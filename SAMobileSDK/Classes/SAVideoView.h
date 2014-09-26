@@ -9,18 +9,28 @@
 #import <UIKit/UIKit.h>
 #import <ADTECHMobileSDK/ADTECHMobileSDK.h>
 #import "UIView+FindUIViewController.h"
+#import "IMAAdsLoader.h"
 
-typedef NS_ENUM(NSUInteger, SAVideoAdType) {
-    kVideoAdPreRoll,
-    kVideoAdMidRoll,
-    kVideoAdPostRoll
-};
 
-@interface SAVideoView : UIView
+@class SAVideoView;
 
-@property (nonatomic,strong) ATMoviePlayerController *moviePlayerController;
+@protocol SAVideoViewDelegate <NSObject>
+@optional
 
-- (void)playVideo:(NSURL *)url;
-- (void)enableAdType:(SAVideoAdType)adType;
+- (void)didLoadVideoAd:(SAVideoView *)videoAd;
+- (void)didStartPlayingVideoAd:(SAVideoView *)videoAd;
+- (void)didFinishPlayingVideoAd:(SAVideoView *)videoAd;
+
+@end
+
+
+@interface SAVideoView : UIView <IMAAdsLoaderDelegate, IMAAdsManagerDelegate>
+
+@property (nonatomic,weak) id<SAVideoViewDelegate> delegate;
+@property (nonatomic,assign) BOOL autoplay;
+@property (nonatomic,strong) NSNumber *placementId;
+
+- (void)play;
+- (void)stop;
 
 @end

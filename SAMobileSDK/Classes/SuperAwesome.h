@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <ADTECHMobileSDK/ADTECHMobileSDK.h>
 #import "SAAdPlacement.h"
+#import "SAPreroll.h"
 
 //Advertising Classes
 #import "SABannerView.h"
@@ -33,6 +34,10 @@
  *  Ad placements
  */
 @property (nonatomic,strong) NSArray *placements;
+/**
+ *  Ad prerolls
+ */
+@property (nonatomic,strong) NSArray *prerolls;
 /**
  *  Flag that shows configuration loading
  */

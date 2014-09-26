@@ -13,4 +13,7 @@
 
 @property (nonatomic,strong) IBOutlet SAVideoView *videoView;
 
+- (IBAction)startVideAd:(id)sender;
+- (IBAction)stopVideAd:(id)sender;
+
 @end

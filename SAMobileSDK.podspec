@@ -12,12 +12,7 @@ Pod::Spec.new do |s|
   s.summary      = "A short description of SAMobileSDK."
 
   s.description  = <<-DESC
-                   A longer description of SAMobileSDK in Markdown format.
-
-                   * Think: Why did you write this? What is the focus? What does it do?
-                   * CocoaPods will be using this to generate tags, and improve search results.
-                   * Try to keep it short, snappy and to the point.
-                   * Finally, don't worry about the indent, CocoaPods strips it!
+                   The SuperAwesome Mobile SDK (Software Development Kit) lets you to easily add COPPAcompliant advertisements and other platform features, like user authentication and registration, to your apps. We try to make integration as easy as possible, so we provide all the necessary tools such as this guide, API documentation, screencasts and demo apps. Currently, the kit is available for iOS and Android.
                    DESC
 
   s.homepage     = "http://developers.superawesome.tv/docs/iossdk"

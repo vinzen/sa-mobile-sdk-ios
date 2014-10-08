@@ -13,6 +13,7 @@
 
 @property (nonatomic,assign,getter = isLoadingConfiguration) BOOL loadingConfiguration;
 
+- (NSString *)baseURL;
 - (void)loadSettings;
 
 @end
@@ -32,6 +33,7 @@
 - (instancetype)init
 {
     if(self = [super init]){
+        _configuration = SAConfigurationProduction;
         _loadingConfiguration = YES;
         [ATBaseConfiguration setLoggingLevel:kATLogOff];
     }
@@ -44,6 +46,15 @@
     [self loadSettings];
 }
 
+- (NSString *)baseURL
+{
+    if(self.configuration == SAConfigurationProduction){
+        return @"http://ads.superawesome.tv/ads/";
+    }else{
+        return @"http://staging.dashboard.superawesome.tv/api/sdk/ads";
+    }
+}
+
 - (void)loadSettings
 {
     NSError *error;
@@ -51,7 +62,7 @@
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     [configuration setRequestCachePolicy:NSURLRequestReturnCacheDataElseLoad];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
-    NSURL *url = [NSURL URLWithString:@"http://ads.superawesome.tv/ads/"];
+    NSURL *url = [NSURL URLWithString:self.baseURL];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
     
     [request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];

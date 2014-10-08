@@ -19,6 +19,11 @@
 //Loyalty Classes
 #import "SALoginViewController.h"
 
+typedef NS_ENUM(NSUInteger, SAConfiguration) {
+    SAConfigurationStaging,
+    SAConfigurationProduction
+};
+
 /**
  *  SuperAwesome Mobile SDK Main Class
  */
@@ -38,6 +43,10 @@
  *  Ad prerolls
  */
 @property (nonatomic,strong) NSArray *prerolls;
+/**
+ *  SDK client configuration
+ */
+@property (nonatomic,assign) SAConfiguration configuration;
 /**
  *  Flag that shows configuration loading
  */

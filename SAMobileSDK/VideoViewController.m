@@ -27,21 +27,35 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    [self.videoView setPlacementId:@0];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
     
-    NSURL *url = [NSURL URLWithString:@"http://www.quirksmode.org/html5/videos/big_buck_bunny.mp4"];
-    [self.videoView playVideo:url];
+    [self.videoView stop];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)startVideAd:(id)sender
+{
+    [self.videoView play];
+}
+
+- (IBAction)stopVideAd:(id)sender
+{
+    [self.videoView stop];
 }
 
 /*

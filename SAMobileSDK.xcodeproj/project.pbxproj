@@ -64,6 +64,7 @@
 		98CF200B198B91D000FD5896 /* SALoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98CF2009198B91D000FD5896 /* SALoginViewController.m */; };
 		98CF2010198B926100FD5896 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98CF200E198B926100FD5896 /* ViewController.m */; };
 		98CF2015198B9EE600FD5896 /* SALoginWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98CF2013198B9EE600FD5896 /* SALoginWebViewController.m */; };
+		98ECEAA719D47C1100DC9C88 /* SAPreroll.m in Sources */ = {isa = PBXBuildFile; fileRef = 98ECEAA619D47C1100DC9C88 /* SAPreroll.m */; };
 		98F7671819B74FC4004559BD /* SAVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 98F7671719B74FC4004559BD /* SAVideoView.m */; };
 		98FF7A551990DF66003E87B0 /* sa_login.png in Resources */ = {isa = PBXBuildFile; fileRef = 98FF7A541990DF66003E87B0 /* sa_login.png */; };
 /* End PBXBuildFile section */
@@ -157,6 +158,8 @@
 		98CF200E198B926100FD5896 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		98CF2012198B9EE600FD5896 /* SALoginWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SALoginWebViewController.h; sourceTree = "<group>"; };
 		98CF2013198B9EE600FD5896 /* SALoginWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SALoginWebViewController.m; sourceTree = "<group>"; };
+		98ECEAA519D47C1100DC9C88 /* SAPreroll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAPreroll.h; sourceTree = "<group>"; };
+		98ECEAA619D47C1100DC9C88 /* SAPreroll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAPreroll.m; sourceTree = "<group>"; };
 		98F7671619B74FC4004559BD /* SAVideoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAVideoView.h; sourceTree = "<group>"; };
 		98F7671719B74FC4004559BD /* SAVideoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAVideoView.m; sourceTree = "<group>"; };
 		98FF7A541990DF66003E87B0 /* sa_login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sa_login.png; sourceTree = "<group>"; };
@@ -234,6 +237,8 @@
 			children = (
 				984D3B6919C9E55100E9325C /* SAAdPlacement.h */,
 				984D3B6A19C9E55100E9325C /* SAAdPlacement.m */,
+				98ECEAA519D47C1100DC9C88 /* SAPreroll.h */,
+				98ECEAA619D47C1100DC9C88 /* SAPreroll.m */,
 				984B378C19A605E4005386CC /* SAServerResponse.h */,
 				984B378D19A605E4005386CC /* SAServerResponse.m */,
 			);
@@ -387,7 +392,6 @@
 		98AAAAB71999195300B7E2B2 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				98F7671519B74F98004559BD /* VIdeo */,
 				98CF2008198B91D000FD5896 /* SALoginViewController.h */,
 				98CF2009198B91D000FD5896 /* SALoginViewController.m */,
 				98CF2012198B9EE600FD5896 /* SALoginWebViewController.h */,
@@ -429,6 +433,7 @@
 				9830FD1619C87A8100B01FC9 /* ParentalGate */,
 				98AAAABB19991A8B00B7E2B2 /* Banner */,
 				98AD4D1F199A1EA400915410 /* Interstitial */,
+				98F7671519B74F98004559BD /* VIdeo */,
 			);
 			name = Advertising;
 			sourceTree = "<group>";
@@ -594,6 +599,7 @@
 				98A4720A19AC84F40068B5C8 /* InterstitialViewController.m in Sources */,
 				98A4720E19AC86850068B5C8 /* SignInViewController.m in Sources */,
 				98AD4D1E199A1EA000915410 /* SAInterstitialView.m in Sources */,
+				98ECEAA719D47C1100DC9C88 /* SAPreroll.m in Sources */,
 				98CF200B198B91D000FD5896 /* SALoginViewController.m in Sources */,
 				9856D99F1987D86B00B6804C /* AppDelegate.m in Sources */,
 				980E88B1199399EB009393DD /* NSString+URLEncode.m in Sources */,
@@ -734,7 +740,6 @@
 				GCC_PREFIX_HEADER = "SAMobileSDK/SAMobileSDK-Prefix.pch";
 				INFOPLIST_FILE = "SAMobileSDK/SAMobileSDK-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -755,7 +760,6 @@
 				GCC_PREFIX_HEADER = "SAMobileSDK/SAMobileSDK-Prefix.pch";
 				INFOPLIST_FILE = "SAMobileSDK/SAMobileSDK-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;

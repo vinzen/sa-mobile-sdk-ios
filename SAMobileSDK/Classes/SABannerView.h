@@ -48,6 +48,11 @@ typedef NS_ENUM(NSUInteger, SABannerType) {
  * @param view The ad view that triggered leaving the application.
  */
 - (void)willLeaveApplicationForAd:(SABannerView *)view;
+
+/**
+ * Called when the ad network did not serve any ads and custom mediation should be displayed.
+ */
+- (void)shouldDisplayCustomMediationForAd:(SABannerView *)view;
 @end
 
 /**

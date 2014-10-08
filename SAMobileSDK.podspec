@@ -1,11 +1,3 @@
-#
-#  Be sure to run `pod spec lint SAMobileSDK.podspec' to ensure this is a
-#  valid spec and to remove all comments including this before submitting the spec.
-#
-#  To learn more about Podspec attributes see http://docs.cocoapods.org/specification.html
-#  To see working Podspecs in the CocoaPods repo see https://github.com/CocoaPods/Specs/
-#
-
 Pod::Spec.new do |s|
 
   # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -16,19 +8,14 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "SAMobileSDK"
-  s.version      = "0.0.14"
+  s.version      = "1.0.0"
   s.summary      = "A short description of SAMobileSDK."
 
   s.description  = <<-DESC
-                   A longer description of SAMobileSDK in Markdown format.
-
-                   * Think: Why did you write this? What is the focus? What does it do?
-                   * CocoaPods will be using this to generate tags, and improve search results.
-                   * Try to keep it short, snappy and to the point.
-                   * Finally, don't worry about the indent, CocoaPods strips it!
+                   The SuperAwesome Mobile SDK (Software Development Kit) lets you to easily add COPPAcompliant advertisements and other platform features, like user authentication and registration, to your apps. We try to make integration as easy as possible, so we provide all the necessary tools such as this guide, API documentation, screencasts and demo apps. Currently, the kit is available for iOS and Android.
                    DESC
 
-  s.homepage     = "http://EXAMPLE/SAMobileSDK"
+  s.homepage     = "http://developers.superawesome.tv/docs/iossdk"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -39,8 +26,7 @@ Pod::Spec.new do |s|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  s.license      = "MIT (example)"
-  # s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
+  s.license      = { :type => "CREATIVE COMMONS PUBLIC LICENSE", :file => "LICENSE.txt" }
 
 
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -53,10 +39,7 @@ Pod::Spec.new do |s|
   #  profile URL.
   #
   
-  s.author             = { "Balázs Kiss" => "dev@balazskiss.name" }
-  # Or just: s.author    = "Balázs Kiss"
-  # s.authors            = { "Balázs Kiss" => "dev@balazskiss.name" }
-  # s.social_media_url   = "http://twitter.com/Balázs Kiss"
+  s.author             = { "Balázs Kiss" => "balazs@superawesome.tv" }
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -77,7 +60,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/balazskiss/SAMobileSDK", :tag => "0.0.1" }
+  s.source       = { :git => "https://github.com/SuperAwesomeLTD/sa-mobile-sdk-ios", :tag => "1.0.0" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -133,5 +116,6 @@ Pod::Spec.new do |s|
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   s.dependency "JSONModel"
+  s.dependency "GoogleAds-IMA-iOS-SDK", "~> 3.0.beta.7"
 
 end

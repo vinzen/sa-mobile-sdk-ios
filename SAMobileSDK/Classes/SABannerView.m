@@ -182,6 +182,13 @@
     }
 }
 
+- (void)removeFromSuperview
+{
+    [super removeFromSuperview];
+    
+    [self.bannerView removeFromSuperview];
+}
+
 - (void)setVisible:(BOOL)visible
 {
     _visible = visible;
@@ -230,7 +237,9 @@
 - (void)didFailFetchingAd:(ATBannerView*)view signals:(NSArray *)signals
 {
     NSLog(@"SA AD Fail");
-    
+    if(self.delegate && [self.delegate respondsToSelector:@selector(shouldDisplayCustomMediationForAd:)]){
+        [self.delegate shouldDisplayCustomMediationForAd:self];
+    }
 }
 
 - (BOOL)shouldOpenLandingPageForAd:(ATBannerView *)view withURL:(NSURL *)URL useBrowser:(ATBrowserViewController *__autoreleasing *)browserViewController
@@ -247,6 +256,16 @@
     }
     return YES;
 }
+
+- (void)didStopOnCustomMediation:(ATBannerView*)view
+{
+    NSLog(@"didStopOnCustomMediation");
+    if(self.delegate && [self.delegate respondsToSelector:@selector(shouldDisplayCustomMediationForAd:)]){
+        [self.delegate shouldDisplayCustomMediationForAd:self];
+    }
+}
+
+#pragma mark SAParentalGateDelegate
 
 - (void)didGetThroughParentalGate:(SAParentalGate *)parentalGate
 {

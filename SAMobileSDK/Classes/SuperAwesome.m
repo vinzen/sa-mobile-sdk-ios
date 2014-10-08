@@ -52,6 +52,7 @@
     [configuration setRequestCachePolicy:NSURLRequestReturnCacheDataElseLoad];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
     NSURL *url = [NSURL URLWithString:@"http://ads.superawesome.tv/ads/"];
+    url = [NSURL URLWithString:@"http://staging.dashboard.superawesome.tv/api/sdk/ads"];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
     
     [request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
@@ -66,7 +67,10 @@
         SAServerResponse *resp = [[SAServerResponse alloc] initWithData:data error:&error];
         if(resp.success){
             NSLog(@"Ad settings loaded from server");
+            NSString *dataStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+            NSLog(@"%@", dataStr);
             self.placements = resp.ads;
+            self.prerolls = resp.prerolls;
         }
         
         self.loadingConfiguration = NO;

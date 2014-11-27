@@ -31,10 +31,15 @@ typedef NS_ENUM(NSUInteger, ATVASTTrackingEvent)
     kATTrackingEventRewind,
     kATTrackingEventResume,
     kATTrackingEventFullscreen,
+    kATTrackingEventExitFullscreen,
     kATTrackingEventExpand,
     kATTrackingEventCollapse,
     kATTrackingEventAcceptInvitation,
+    kATTrackingEventAcceptInvitationLinear,
     kATTrackingEventClose,
+    kATTrackingEventCloseLinear,
+    kATTrackingEventSkip,
+    kATTrackingEventProgress,
     
     // ADTECH extension for events.
     kATTrackingEventNonIABReplay,
@@ -48,6 +53,31 @@ typedef NS_ENUM(NSUInteger, ATVASTProprietaryExtensionType)
     kATVASTExtensionTypeMidRollStartTime = 1,
 	kATVASTExtensionTypeLinearSkipTime = 2,
     
+};
+
+/**
+ * The display requirement for the companion views
+ *
+ * @since 3.6
+ */
+typedef NS_ENUM(NSUInteger, ATVASTCompanionDisplayRequirement)
+{
+    /** No requirement was specified in the ad response */
+    DisplayRequirementUnspecified,
+    /** At least one of the provided companions must be displayed by the video player */
+    DisplayRequirementAny,
+    /** All the provided companions must be displayed by the video player */
+    DisplayRequirementAll,
+    /** Any or no companions could be displayed by the video player */
+	DisplayRequirementNone,
+};
+
+typedef NS_ENUM(NSUInteger, ATVASTCreativeType)
+{
+    CreativeTypeInvalid,
+    CreativeTypeLinear,
+    CreativeTypeCompanion,
+    CreativeTypeNonLinear,
 };
 
 #endif

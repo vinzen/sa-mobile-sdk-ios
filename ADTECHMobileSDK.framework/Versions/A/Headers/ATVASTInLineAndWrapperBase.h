@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ATVASTEnums.h"
 
 @class ATVASTAdSystem;
 
@@ -16,7 +17,9 @@
 @property (nonatomic, readonly) NSMutableArray *errors; // array of NSURL objects
 @property (nonatomic, readonly) NSMutableArray *impressions; // array of ATVASTURL objects
 @property (nonatomic, readonly) NSMutableArray *creatives; // array of ATVASTCreative objects
-@property (nonatomic, readonly) NSMutableArray *extensions; // array of ADTECHCXMLNode objects containing any valid XML documents
+@property (nonatomic, readonly) NSMutableArray *extensions; // array of NSString objects containing any valid XML documents
 @property (nonatomic, readonly) NSMutableArray *adtechProprietaryExtensions;
+
+- (NSArray*)creativesOfType:(ATVASTCreativeType)type;
 
 @end

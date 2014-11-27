@@ -67,7 +67,7 @@
 
 /**
  * Fetches the parsed VAST document for the provided configuration and ad type. If successful, you are provided
- * the root of the VAST document as specified by http://www.iab.net/media/file/VAST-2_0-FINAL.pdf
+ * the root of the VAST document as specified by http://www.iab.net/media/file/VASTv3.0.pdf
  *
  * @param configuration The video configuration to use. If you want companion ads to be served with linear one, please
  *                      add the companion positions to the configuration and request a linear ad type.

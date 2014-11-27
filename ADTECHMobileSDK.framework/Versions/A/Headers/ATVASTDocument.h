@@ -12,5 +12,5 @@
 
 @property (nonatomic, copy) NSString *version;
 @property (nonatomic, strong) NSMutableArray *ads; // array of ATVASTAd objects
-
+@property (nonatomic, copy) NSURL *error;
 @end

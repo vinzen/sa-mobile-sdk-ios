@@ -27,7 +27,7 @@
 @interface SAVideoView : UIView <IMAAdsLoaderDelegate, IMAAdsManagerDelegate>
 
 @property (nonatomic,weak) id<SAVideoViewDelegate> delegate;
-@property (nonatomic,assign) BOOL autoplay;
+@property (nonatomic,assign) IBInspectable BOOL autoplay;
 @property (nonatomic,strong) NSNumber *placementId;
 
 - (void)play;

@@ -44,10 +44,12 @@
 - (void)requestAds
 {
     SAPreroll *preroll = [self preroll];
-    NSString *adTag = preroll.vast;
-    self.adDisplayContainer = [[IMAAdDisplayContainer alloc] initWithAdContainer:self companionSlots:nil];
-    IMAAdsRequest *request = [[IMAAdsRequest alloc] initWithAdTagUrl:adTag adDisplayContainer:self.adDisplayContainer userContext:nil];
-    [self.adsLoader requestAdsWithRequest:request];
+    if(preroll){
+        NSString *adTag = preroll.vast;
+        self.adDisplayContainer = [[IMAAdDisplayContainer alloc] initWithAdContainer:self companionSlots:nil];
+        IMAAdsRequest *request = [[IMAAdsRequest alloc] initWithAdTagUrl:adTag adDisplayContainer:self.adDisplayContainer userContext:nil];
+        [self.adsLoader requestAdsWithRequest:request];
+    }
 }
 
 - (id)initWithFrame:(CGRect)frame

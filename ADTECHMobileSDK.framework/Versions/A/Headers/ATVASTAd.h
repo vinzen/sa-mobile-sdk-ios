@@ -14,6 +14,9 @@
 @interface ATVASTAd : NSObject
 
 @property (nonatomic, copy) NSString *ID;
+
+@property (nonatomic) NSNumber *sequence;
+
 @property (nonatomic, strong) ATVASTInLine *inLineAd;
 @property (nonatomic, strong) ATVASTWrapper *wrapper;
 

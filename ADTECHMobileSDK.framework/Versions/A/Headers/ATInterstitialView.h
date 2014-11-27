@@ -52,6 +52,27 @@
  */
 @property (nonatomic, strong) ATAdConfiguration *configuration;
 
+/**
+ * Allows changing the background color for the interstitial.
+ * The default color is clear on iOS 8 and above and white on iOS 6 and 7.
+ *
+ * @since 3.6
+ * @see modalPresentationStyle
+ */
+@property (strong, nonatomic) UIColor *backgroundColor;
+
+/**
+ * Allows changing the presentation style for the interstitial.
+ *
+ * @note If the backgroundColor set is partially transparent, i.e. alpha is below 1, the SDK changes the presentation style
+ *       to UIModalPresentationOverFullScreen on iOS 8 and above. Transparent interstitials don't work with all
+ *       presentation styles. You can still change the modalPresentationStyle to something else after that.
+ *
+ * @since 3.6
+ * @see backgroundColor
+ */
+@property (assign, nonatomic) UIModalPresentationStyle modalPresentationStyle;
+
 /** 
  * Returns YES when an interstitial ad is ready to be presented.
  * The delegate's [ATInterstitialViewDelegate didSuccessfullyFetchInterstitialAd:] is called when the value switches from NO to YES.

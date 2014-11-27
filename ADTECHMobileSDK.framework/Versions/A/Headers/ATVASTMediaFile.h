@@ -22,11 +22,14 @@ typedef NS_ENUM(NSUInteger, ADTECHVASTDelivery)
 @property (nonatomic, assign) ADTECHVASTDelivery delivery;
 @property (nonatomic, copy) NSString *type;
 @property (nonatomic, assign) NSInteger bitrate;
+@property (nonatomic, assign) NSInteger minBitrate;
+@property (nonatomic, assign) NSInteger maxBitrate;
 @property (nonatomic, assign) NSInteger width;
 @property (nonatomic, assign) NSInteger height;
 @property (nonatomic, assign) ATVASTTriState scalable;
 @property (nonatomic, assign) ATVASTTriState maintainAspectRatio;
 @property (nonatomic, copy) NSString *apiFramework;
+@property (nonatomic, copy) NSString *codec;
 
 + (instancetype)URLWithString:(NSString*)urlString;
 + (ADTECHVASTDelivery)deliveryFromString:(NSString*)value;

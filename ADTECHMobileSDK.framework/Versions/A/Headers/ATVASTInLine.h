@@ -9,10 +9,18 @@
 #import <Foundation/Foundation.h>
 #import "ATVASTInLineAndWrapperBase.h"
 
+@class ATVASTPrice;
+@class ATVASTAdSystem;
+@class ATVASTCreative;
+
 @interface ATVASTInLine : ATVASTInLineAndWrapperBase
 
 @property (nonatomic, copy) NSString *adTitle;
 @property (nonatomic, copy) NSString *inLineDescription;
+@property (nonatomic, copy) NSString *advertiser;
 @property (nonatomic, copy) NSURL *survey;
+@property (nonatomic, strong) ATVASTPrice *pricing;
+
+- (ATVASTCreative *)creativeMatchingCreative:(ATVASTCreative *)creativeToMatch atIndex:(NSUInteger)index;
 
 @end

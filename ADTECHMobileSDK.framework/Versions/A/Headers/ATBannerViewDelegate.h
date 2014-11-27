@@ -269,10 +269,11 @@
  *
  * @param view The ad view that displays the ads.
  *
- * @warning See the logs in order to know the reason for the error. You will need to set the log level to at least kATLogError.
+ * @warning  Use didFailFetchingAd:signals:error: to see the error for fething the ad.
  *
  * @see [ATBannerView load]
  * @see didFailFetchingAd:signals:
+ * @see didFailFetchingAd:signals:error:
  *
  */
 - (void)didFailFetchingAd:(ATBannerView*)view;
@@ -295,12 +296,41 @@
  * @param view The ad view that displays the ads.
  * @param signals The signals that were sent with the ad. In case there were no signals with the ad, the value will be nil.
  *
- * @warning See the logs in order to know the reason for the error. You will need to set the log level to at least kATLogError.
+ * @warning Use didFailFetchingAd:signals:error: to see the error for fething the ad.
  *
  * @see [ATBannerView load]
  * @see didFailFetchingAd:
+ * @see didFailFetchingAd:signals:error:
  *
  */
 - (void)didFailFetchingAd:(ATBannerView*)view signals:(NSArray *)signals;
+
+/**
+ * Called when an ad could not be fetched. You will get one call each time an ad failed being fetched.
+ * The most common reason for failing to get an ad is connectivity issues.
+ * If the configuration allows auto-refresh, a new ad is requested automatically, after a default waiting period.
+ * The last shown ad (if any) remains shown until the next ad is successfully fetched.
+ *
+ * It includes the signal codes that came within the ad. In case this method is implemented,
+ * it takes precedence over didFailFetchingAd: and will be the only one called.
+ *
+ * It is possible to get signal codes on failures to fetch an ad when the server responds
+ * with a default ad that contains these signal codes. Default ads are considered failures to get
+ * a valid ad, but they could contain signal codes that could be useful for the app.
+ *
+ * This callback also includes the error on what has caused the ad to fail loading.
+ *
+ * @since 3.6
+ *
+ * @param view The ad view that displays the ads.
+ * @param signals The signals that were sent with the ad. In case there were no signals with the ad, the value will be nil.
+ * @param error The error that has caused the ad to fail fetching
+ *
+ * @see [ATBannerView load]
+ * @see didFailFetchingAd:
+ * @see didFailFetchingAd:signals:
+ *
+ */
+- (void)didFailFetchingAd:(ATBannerView*)view signals:(NSArray *)signals error:(NSError *)error;
 
 @end

@@ -498,13 +498,13 @@
             for (var i = 0; i < controls.length; i++) {
                 if (( controls[i] == "none" ) && ( i > 0 )) {
                     // error
-                    self.fireErrorEvent("none must be the only navigation element present.", "open");
+                    this.fireErrorEvent("none must be the only navigation element present.", "open");
                     return;
                 }
                 else if (controls[i] == "all") {
                     if (i > 0) {
                         // error
-                        self.fireErrorEvent("none must be the only navigation element present.", "open");
+                        this.fireErrorEvent("none must be the only navigation element present.", "open");
                         return;
                     }
 
@@ -559,8 +559,8 @@
      *
      */
     ormmaview.mraidResize = function () {
-        if (isNaN(resizeProperties.width) || isNaN(resizeProperties.height)) {
-            self.fireErrorEvent("resizeProperties were not set prior to calling resize.", "resize");
+        if (isNaN(resizeProperties.width) || isNaN(resizeProperties.height) || isNaN(resizeProperties.offsetX) || isNaN(resizeProperties.offsetY)) {
+            this.fireErrorEvent("resizeProperties were not set prior to calling resize.", "resize");
             return;
         }
 
@@ -586,7 +586,7 @@
             eval(cmd);
         }
         catch (e) {
-            self.fireErrorEvent("Resize failed.", "resize");
+            this.fireErrorEvent("Resize failed.", "resize");
         }
     };
 

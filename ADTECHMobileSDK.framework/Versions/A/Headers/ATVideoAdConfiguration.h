@@ -66,11 +66,13 @@ typedef NS_OPTIONS(NSUInteger, ATVideoAdType)
  * You create an instance of a specialized subclass of this object and set on it the needed values in order to receive and show video ads from a placement you have configured server side.
  * Set the configuration object on the ATMoviePlayerController that you use, once it is configured.
  * If you change the configuration while already playing video content, the changes will take effect only when fetching new ads.
- * Currently, there is only one specialized subclass that you can use: ATAdtechVideoAdConfiguration.
+ * For ads served by ADTECH use ATAdtechVideoAdConfiguration
+ * For ads served by AdapTV use ATAdapTVVideoAdConfiguration
  *
  * @since 2.2
  *
  * @see ATAdtechVideoAdConfiguration
+ * @see ATAdapTVVideoAdConfiguration
  */
 @interface ATVideoAdConfiguration : ATBaseConfiguration
 

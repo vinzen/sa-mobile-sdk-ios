@@ -15,12 +15,6 @@ typedef NS_ENUM(NSInteger, ATAdType)
 	kATAdTypeRich,
 	kATAdTypeMRAID,
 	kATAdTypeORMMA,
-	kATAdTypeAdMob,
-	kATAdTypeMillennial,
-	kATAdTypeiAd,
-	kATAdTypeGreystripe,
-	kATAdTypeVdopia,
-	kATAdTypeRubicon,
 };
 
 @interface ATBannerView (Reflection)

@@ -23,3 +23,11 @@ extern const NSInteger kATVASTErrorCodeInvalidConfiguration;
 extern const NSInteger kATVASTErrorCodeNoNonLinear;
 extern const NSInteger kATVASTErrorCodeTooManyWrapperRedirects;
 extern const NSInteger kATVASTErrorCodeEmptyCompanionView;
+
+extern const NSInteger kATVASTErrorCodeEmptyDocument;
+extern const NSInteger kATVASTErrorCodeFailedRequest;
+extern const NSInteger kATVASTErrorCodeFailedParsing;
+extern const NSInteger kATVASTErrorCodeVASTVersionUnsupported;
+
+extern const NSInteger kATVASTErrorCodeInvalidTimeInterval;
+

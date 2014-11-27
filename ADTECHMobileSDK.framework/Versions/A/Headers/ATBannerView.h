@@ -32,7 +32,7 @@
  *
  * @see ATBannerViewDelegate
  */
-@property (nonatomic, weak) id<ATBannerViewDelegate> delegate;
+@property (nonatomic, weak) IBOutlet id<ATBannerViewDelegate> delegate;
 
 /**
  * The view controller that is the owner of the ad view being shown.
@@ -41,7 +41,7 @@
  *
  * @warning *You must set this property before calling load. Ads won't get loaded without this property being set.*
  */
-@property (nonatomic, weak) UIViewController *viewController;
+@property (nonatomic, weak) IBOutlet UIViewController *viewController;
 
 /**
  * Allows configuring the ad and specifying different parameters for better targeting.

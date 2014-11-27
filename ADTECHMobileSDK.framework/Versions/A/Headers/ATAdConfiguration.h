@@ -11,11 +11,6 @@
 #import <Foundation/Foundation.h>
 #import "ATBaseConfiguration.h"
 
-#import "ATAdMobConfiguration.h"
-#import "ATMillennialConfiguration.h"
-#import "ATGreystripeConfiguration.h"
-#import "ATVdopiaConfiguration.h"
-#import "ATRubiconConfiguration.h"
 #import "ATCloseIndicator.h"
 
 /**
@@ -41,13 +36,6 @@
     
     BOOL allowLocationServices;
     BOOL enableImageBannerResize;
-    
-    ATAdMobConfiguration *adMobConfig;
-    ATMillennialConfiguration *millennialConfig;
-    BOOL isiAdEnabled;
-    ATGreystripeConfiguration *greystripeConfig;
-    ATVdopiaConfiguration *vdopiaConfig;
-	ATRubiconConfiguration *rubiconConfig;
 }
 
 /** 
@@ -136,62 +124,6 @@
  * @see ATCloseIndicator
  */
 @property(nonatomic,strong) ATCloseIndicator *closeIndicator;
-
-/**
- * Holds the configuration for the AdMob ads.
- *
- * Available in 2.0 and later.
- *
- * @see ATAdMobConfiguration
- */
-@property(nonatomic,copy,readonly) ATAdMobConfiguration *adMobConfig;
-
-/**
- * Holds the configuration for the Millennial Media ads.
- *
- * Available in 2.0 and later.
- *
- * @see ATMillennialConfiguration
- */
-@property(nonatomic,copy,readonly) ATMillennialConfiguration *millennialConfig;
-
-/**
- * Shows if iAd support is enabled or not in the SDK.
- *
- * iAd is configured using the iTunes Connect portal, but in order to know if the SDK should mediate also iAd or not,
- * you must put in the configuration file an empty section for it, named "iAdConfig". If the configuration file has this section
- * and your OS version is 4.0 or greater, iAd will be enabled.
- *
- * Available in 2.0 and later.
- */
-@property(nonatomic,readonly) BOOL isiAdEnabled;
-
-/**
- * Holds the configuration for the Greystripe ads.
- *
- * Available in 2.0 and later.
- *
- * @see ATGreystripeConfiguration
- */
-@property(nonatomic,copy,readonly) ATGreystripeConfiguration *greystripeConfig;
-
-/**
- * Holds the configuration for the Vdopia ads.
- *
- * Available in 2.0 and later.
- *
- * @see ATVdopiaConfiguration;
- */
-@property(nonatomic,copy,readonly) ATVdopiaConfiguration *vdopiaConfig;
-
-/**
- * Holds the configuration for the Rubicon (MobSmith) ads.
- *
- * Available in 3.2 and later.
- *
- * @see ATRubiconConfiguration;
- */
-@property(nonatomic,copy,readonly) ATRubiconConfiguration *rubiconConfig;
 
 /**
  * Returns the domain URL used when showing the location permission from within an ad.

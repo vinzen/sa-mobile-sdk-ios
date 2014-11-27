@@ -12,6 +12,7 @@
 @interface ATVASTTracking : NSURL
 
 @property (nonatomic, assign) ATVASTTrackingEvent event;
+@property (nonatomic, copy) NSString *offset;
 
 + (ATVASTTracking*)trackingWithURLString:(NSString*)url andEvent:(NSString*)eventValue;
 + (ATVASTTrackingEvent)eventFromString:(NSString*)value;

@@ -7,20 +7,23 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ATVASTTrackable.h"   
 #import "ATVASTEnums.h"
+
+
+extern const NSTimeInterval AT_VAST_INVALID_DURATION;
 
 @class ATVASTVideoClicks;
 @class ATVASTTracking;
 
-@interface ATVASTLinear : NSObject
+@interface ATVASTLinear : ATVASTTrackable
 
+@property (nonatomic, readonly) NSMutableArray *icons; // array of Icon
 @property (nonatomic, assign) NSTimeInterval duration;
-@property (nonatomic, readonly) NSMutableArray *trackingEvents; // array of ADTECHVASTTracking
 @property (nonatomic, copy) NSString *adParameters;
+@property (nonatomic, copy) NSString *skipOffset;
 @property (nonatomic, strong) ATVASTVideoClicks *videoClicks;
-@property (nonatomic, readonly) NSMutableArray *mediaFiles; // array of ADTECHVASTMediaFile
-
-- (BOOL)shouldTrack:(ATVASTTrackingEvent)event;
-- (NSArray*)trackingURLsForEvent:(ATVASTTrackingEvent)event;
+@property (nonatomic, readonly) NSMutableArray *mediaFiles; // array of ATVASTMediaFile
+@property (nonatomic, readonly) NSMutableArray *creativeExtensions; // array of NSString objects containing any valid XML documents
 
 @end

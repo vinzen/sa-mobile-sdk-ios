@@ -36,6 +36,7 @@
     if(self = [super init]){
         _clientConfiguration = SAClientConfigurationProduction;
         _apps = [NSMutableArray array];
+        _queue = [NSMutableDictionary dictionary];
         [ATBaseConfiguration setLoggingLevel:kATLogOff];
     }
     return self;
@@ -69,6 +70,8 @@
                 if(appQueue == nil){
                     appQueue = [NSMutableArray arrayWithObject:completion];
                     [self.queue setObject:appQueue forKey:appID];
+                }else{
+                    [appQueue addObject:completion];
                 }
             }else{
                 completion(app);

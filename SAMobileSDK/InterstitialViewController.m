@@ -30,7 +30,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.interstitial = [[SAInterstitialView alloc] initWithViewController:self];
+    self.interstitial = [[SAInterstitialView alloc] initWithViewController:self appID:@"161" placementID:@"5406848"];
     self.interstitial.delegate = self;
 }
 

@@ -8,62 +8,39 @@
 
 #import <Foundation/Foundation.h>
 #import <ADTECHMobileSDK/ADTECHMobileSDK.h>
-#import "SAAdPlacement.h"
-#import "SAPreroll.h"
+#import "SADisplayAd.h"
+#import "SAVideoAd.h"
 
 //Advertising Classes
 #import "SABannerView.h"
 #import "SAInterstitialView.h"
-#import "SAVideoView.h"
+#import "SAVideoAdView.h"
 
 //Loyalty Classes
 #import "SALoginViewController.h"
 
-typedef NS_ENUM(NSUInteger, SAConfiguration) {
-    SAConfigurationStaging,
-    SAConfigurationProduction
+typedef NS_ENUM(NSUInteger, SAClientConfiguration) {
+    SAClientConfigurationStaging,
+    SAClientConfigurationProduction
 };
 
 /**
  *  SuperAwesome Mobile SDK Main Class
  */
 @interface SuperAwesome : NSObject
-
-/**
- *  Application ID
- *
- * You can find your appID or create a new one on the SuperAwesome dashboard website.
- */
-@property (nonatomic,strong) NSString *appID;
-/**
- *  Ad placements
- */
-@property (nonatomic,strong) NSArray *placements;
-/**
- *  Ad prerolls
- */
-@property (nonatomic,strong) NSArray *prerolls;
 /**
  *  SDK client configuration
  */
-@property (nonatomic,assign) SAConfiguration configuration;
-/**
- *  Flag that shows configuration loading
- */
-@property (nonatomic,assign,readonly,getter = isLoadingConfiguration) BOOL loadingConfiguration;
+@property (nonatomic,assign) SAClientConfiguration clientConfiguration;
+
 /**
  *  Sets if the SDK should display a parantal gate when the ad is tapped
  */
 @property (nonatomic,assign) BOOL useParentalGate;
 
-/**
- *  Returns ad placement instance for given placement size
- *
- *  @param size Ad placement size
- *
- *  @return SAAdPlacement instance
- */
-- (SAAdPlacement *)placementForSize:(CGSize)size;
+
+- (void)displayAdForApp:(NSString *)appID placement:(NSString *)placementID completion:(void(^)(SADisplayAd *))completion;
+- (void)videoAdForApp:(NSString *)appID placement:(NSString *)placementID completion:(void(^)(SAVideoAd *))completion;
 
 /**
  *  Returns singleton instance

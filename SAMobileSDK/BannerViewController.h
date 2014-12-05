@@ -11,4 +11,6 @@
 
 @interface BannerViewController : UIViewController <SABannerViewDelegate>
 
+@property (nonatomic,strong) IBOutlet SABannerView *bannerView;
+
 @end

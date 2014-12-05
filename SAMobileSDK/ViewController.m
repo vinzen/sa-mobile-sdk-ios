@@ -20,7 +20,7 @@
 @implementation ViewController
 
 - (void)fetchToken:(NSString*)token {
-    NSString *url = [NSString stringWithFormat:@"http://172.16.0.3/jsonp/app/superawesomegames/%@/token", [token urlencode]];
+    NSString *url = [NSString stringWithFormat:@"http://ads.superawesome.tv/ads/", [token urlencode]];
     NSURL *jokesUrl = [NSURL URLWithString:url];
     
     [[[NSURLSession sharedSession] dataTaskWithURL:jokesUrl completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
@@ -54,7 +54,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    self.interstitial = [[SAInterstitialView alloc] initWithViewController:self];
 }
 
 - (void)didReceiveMemoryWarning

@@ -7,13 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <ADTECHMobileSDK/ADTECHMobileSDK.h>
+#import "SAPlacementView.h"
 #import "SAParentalGate.h"
-
-typedef NS_ENUM(NSUInteger, SAInterstitialType) {
-    kInterstitialSmall,
-    kInterstitialLarge
-};
 
 /**
  * Defines the interface the delegate of an interstitial ads
@@ -45,7 +40,7 @@ typedef NS_ENUM(NSUInteger, SAInterstitialType) {
 @end
 
 
-@interface SAInterstitialView : NSObject <ATInterstitialViewDelegate, SAParentalGateDelegate>
+@interface SAInterstitialView : SAPlacementView <ATInterstitialViewDelegate, SAParentalGateDelegate>
 
 /**
  * The delegate gets notified of different events in the lifecycle of the ad.
@@ -62,7 +57,7 @@ typedef NS_ENUM(NSUInteger, SAInterstitialType) {
  *
  *  @return New interstitial instance
  */
-- (instancetype)initWithViewController:(UIViewController *)viewController;
+- (instancetype)initWithViewController:(UIViewController *)viewController appID:(NSString *)appID placementID:(NSString *)placementID;
 
 /**
  * Presents the interstitial view modally on top of the view controller.

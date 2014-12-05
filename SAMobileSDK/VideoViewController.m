@@ -27,7 +27,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self.videoView setPlacementId:@0];
+    [self.videoView setPlacementID:@"0"];
 }
 
 - (void)viewDidAppear:(BOOL)animated

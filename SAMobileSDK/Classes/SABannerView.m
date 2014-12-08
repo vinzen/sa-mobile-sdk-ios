@@ -189,7 +189,7 @@
 
 - (BOOL)shouldOpenLandingPageForAd:(ATBannerView *)view withURL:(NSURL *)URL useBrowser:(ATBrowserViewController *__autoreleasing *)browserViewController
 {
-    if([[SuperAwesome sharedManager] useParentalGate]){
+    if([self isParentalGateEnabled]){
         if(self.gate == nil){
             self.gate = [[SAParentalGate alloc] init];
             self.gate.delegate = self;

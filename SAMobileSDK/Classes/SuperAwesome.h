@@ -28,18 +28,15 @@ typedef NS_ENUM(NSUInteger, SAClientConfiguration) {
  *  SuperAwesome Mobile SDK Main Class
  */
 @interface SuperAwesome : NSObject
+
 /**
  *  SDK client configuration
  */
 @property (nonatomic,assign) SAClientConfiguration clientConfiguration;
 
-/**
- *  Sets if the SDK should display a parantal gate when the ad is tapped
- */
-@property (nonatomic,assign) BOOL useParentalGate;
-
 
 - (void)displayAdForApp:(NSString *)appID placement:(NSString *)placementID completion:(void(^)(SADisplayAd *))completion;
+
 - (void)videoAdForApp:(NSString *)appID placement:(NSString *)placementID completion:(void(^)(SAVideoAd *))completion;
 
 /**

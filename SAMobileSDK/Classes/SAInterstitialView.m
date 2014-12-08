@@ -19,27 +19,43 @@
 
 @implementation SAInterstitialView
 
-- (instancetype)initWithViewController:(UIViewController *)viewController appID:(NSString *)appID placementID:(NSString *)placementID
+- (instancetype)initWithViewController:(UIViewController *)viewController
 {
     if(self = [super init]){
 
         self.interstitialView = [[ATInterstitialView alloc] init];
         self.interstitialView.delegate = self;
         self.interstitialView.viewController = viewController;
-        
-        [[SuperAwesome sharedManager] displayAdForApp:appID placement:placementID completion:^(SADisplayAd *displayAd) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                if(displayAd == nil){
-                    NSLog(@"SA: Could not find placement with the provided placement ID");
-                }else{
-                    self.interstitialView.configuration = [self configurationWithDisplayAd:displayAd];
-                    [self.interstitialView load];
-                }
-            });
-            
-        }];
     }
     return self;
+}
+
+- (void)setAppID:(NSString *)appID
+{
+    [super setAppID:appID];
+    [self tryToLoadAd];
+}
+
+- (void)setPlacementID:(NSString *)placementID
+{
+    [super setPlacementID:placementID];
+    [self tryToLoadAd];
+}
+
+- (void)tryToLoadAd
+{
+    if(self.appID == nil || self.placementID == nil) return;
+    
+    [[SuperAwesome sharedManager] displayAdForApp:self.appID placement:self.placementID completion:^(SADisplayAd *displayAd) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if(displayAd == nil){
+                NSLog(@"SA: Could not find placement with the provided placement ID");
+            }else{
+                self.interstitialView.configuration = [self configurationWithDisplayAd:displayAd];
+                [self.interstitialView load];
+            }
+        });
+    }];
 }
 
 - (void)present
@@ -67,7 +83,7 @@
 
 - (BOOL)shouldOpenLandingPageForAd:(ATInterstitialView*)view withURL:(NSURL*)URL useBrowser:(ATBrowserViewController *__autoreleasing *)browserViewController;
 {
-    if([[SuperAwesome sharedManager] useParentalGate]){
+    if([self isParentalGateEnabled]){
         if(self.gate == nil){
             self.gate = [[SAParentalGate alloc] init];
             self.gate.delegate = self;

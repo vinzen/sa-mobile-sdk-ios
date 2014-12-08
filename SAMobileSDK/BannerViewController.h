@@ -7,10 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SuperAwesome.h"
 
-@interface BannerViewController : UIViewController <SABannerViewDelegate>
-
-@property (nonatomic,strong) IBOutlet SABannerView *bannerView;
+@interface BannerViewController : UIViewController
 
 @end

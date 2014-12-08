@@ -19,8 +19,11 @@
 @optional
 
 - (void)didLoadVideoAd:(SAVideoAdView *)videoAd;
+- (void)didFailToLoadVideoAd:(SAVideoAdView *)videoAd;
+
 - (void)didStartPlayingVideoAd:(SAVideoAdView *)videoAd;
 - (void)didFinishPlayingVideoAd:(SAVideoAdView *)videoAd;
+- (void)didFailToPlayVideoAd:(SAVideoAdView *)videoAd;
 
 @end
 

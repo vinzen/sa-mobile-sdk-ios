@@ -92,7 +92,11 @@
 #pragma mark AdLoader
 
 - (void)adsLoader:(IMAAdsLoader *)loader adsLoadedWithData:(IMAAdsLoadedData *)adsLoadedData {
-    NSLog(@"Ad loaded");
+    NSLog(@"SA: Ad loaded");
+    if(self.delegate && [self.delegate respondsToSelector:@selector(didLoadVideoAd:)]){
+        [self.delegate didLoadVideoAd:self];
+    }
+    
     self.adsManager = adsLoadedData.adsManager;
     self.adsManager.delegate = self;
     
@@ -103,7 +107,10 @@
 
 - (void)adsLoader:(IMAAdsLoader *)loader failedWithErrorData:(IMAAdLoadingErrorData *)adErrorData {
     // Loading failed, log it.
-    NSLog(@"Ad loading error: %@", adErrorData.adError.message);
+    NSLog(@"SA: Ad loading error: %@", adErrorData.adError.message);
+    if(self.delegate && [self.delegate respondsToSelector:@selector(didFailToLoadVideoAd:)]){
+        [self.delegate didFailToLoadVideoAd:self];
+    }
 }
 
 #pragma mark AdPlayer
@@ -118,19 +125,28 @@
 
 // Process ad events.
 - (void)adsManager:(IMAAdsManager *)adsManager didReceiveAdEvent:(IMAAdEvent *)event {
-    NSLog(@"Received ad event.");
+    NSLog(@"SA: Received ad event.");
     // Perform different actions based on the event type.
     if (event.type == kIMAAdEvent_STARTED) {
-        NSLog(@"Ad has started.");
+        NSLog(@"SA: Ad has started.");
+        if(self.delegate && [self.delegate respondsToSelector:@selector(didStartPlayingVideoAd:)]){
+            [self.delegate didStartPlayingVideoAd:self];
+        }
     }else if(event.type == kIMAAdEvent_COMPLETE){
-        NSLog(@"Ad has completed");
+        NSLog(@"SA: Ad has completed");
+        if(self.delegate && [self.delegate respondsToSelector:@selector(didFinishPlayingVideoAd:)]){
+            [self.delegate didFinishPlayingVideoAd:self];
+        }
     }
 }
 
 // Process ad playing errors.
 - (void)adsManager:(IMAAdsManager *)adsManager didReceiveAdError:(IMAAdError *)error {
     // There was an error while playing the ad.
-//    NSLog(@"Error during ad playback: %@", error.message);
+    NSLog(@"Error during ad playback: %@", error.message);
+    if(self.delegate && [self.delegate respondsToSelector:@selector(didFailToPlayVideoAd:)]){
+        [self.delegate didFailToPlayVideoAd:self];
+    }
 }
 
 // Optional: receive updates about individual ad progress.

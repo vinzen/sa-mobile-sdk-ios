@@ -57,7 +57,7 @@
  *
  *  @return New interstitial instance
  */
-- (instancetype)initWithViewController:(UIViewController *)viewController appID:(NSString *)appID placementID:(NSString *)placementID;
+- (instancetype)initWithViewController:(UIViewController *)viewController;
 
 /**
  * Presents the interstitial view modally on top of the view controller.

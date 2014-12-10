@@ -56,7 +56,7 @@
  *
  *  @see SABannerViewDelegate
  */
-IB_DESIGNABLE
+//IB_DESIGNABLE
 @interface SABannerView : SAPlacementView <ATBannerViewDelegate, SAParentalGateDelegate>
 
 /**

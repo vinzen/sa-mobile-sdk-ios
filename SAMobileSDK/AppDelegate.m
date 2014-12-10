@@ -13,7 +13,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [[SuperAwesome sharedManager] setAppID:@"your-app-id"];
+    [(SuperAwesome *)[SuperAwesome sharedManager] setClientConfiguration:SAClientConfigurationStaging];
     
     return YES;
 }

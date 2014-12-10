@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 SuperAwesome Ltd. All rights reserved.
 //
 
-#import "SAPreroll.h"
+#import "SAVideoAd.h"
 
-@implementation SAPreroll
+@implementation SAVideoAd
 
 @end

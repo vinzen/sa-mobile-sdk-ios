@@ -8,12 +8,12 @@
 
 #import "JSONModel.h"
 
-@protocol SAPreroll
+@protocol SAVideoAd
 @end
 
-@interface SAPreroll : JSONModel
+@interface SAVideoAd : JSONModel
 
-@property (nonatomic,strong) NSNumber *id;
+@property (nonatomic,strong) NSString *id;
 @property (nonatomic,strong) NSString *vast;
 
 @end

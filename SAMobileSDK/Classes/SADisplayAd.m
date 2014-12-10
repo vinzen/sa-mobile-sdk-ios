@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 SuperAwesome Ltd. All rights reserved.
 //
 
-#import "SAAdPlacement.h"
+#import "SADisplayAd.h"
 
-@implementation SAAdPlacement
+@implementation SADisplayAd
 
 - (CGSize)size
 {

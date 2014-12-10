@@ -11,7 +11,7 @@
 
 @interface VideoViewController : UIViewController
 
-@property (nonatomic,strong) IBOutlet SAVideoView *videoView;
+@property (nonatomic,strong) IBOutlet SAVideoAdView *videoView;
 
 - (IBAction)startVideAd:(id)sender;
 - (IBAction)stopVideAd:(id)sender;

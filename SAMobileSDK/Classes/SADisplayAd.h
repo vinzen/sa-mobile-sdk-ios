@@ -8,12 +8,12 @@
 
 #import "JSONModel.h"
 
-@protocol SAAdPlacement
+@protocol SADisplayAd
 @end
 
-@interface SAAdPlacement : JSONModel
+@interface SADisplayAd : JSONModel
 
-@property (nonatomic,strong) NSNumber *id;
+@property (nonatomic,strong) NSString *id;
 @property (nonatomic,strong) NSString *name;
 @property (nonatomic,strong) NSNumber *networkId;
 @property (nonatomic,strong) NSNumber<Optional> *subNetworkId;

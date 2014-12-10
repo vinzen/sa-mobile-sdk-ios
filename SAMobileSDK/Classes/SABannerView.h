@@ -8,14 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "SAParentalGate.h"
-#import <ADTECHMobileSDK/ADTECHMobileSDK.h>
-
-typedef NS_ENUM(NSUInteger, SABannerType) {
-    kBanner300x50,
-    kBanner320x50,
-    kBanner728x90,
-    kBanner300x250
-};
+#import "SAPlacementView.h"
 
 @class SABannerView;
 
@@ -63,7 +56,8 @@ typedef NS_ENUM(NSUInteger, SABannerType) {
  *
  *  @see SABannerViewDelegate
  */
-@interface SABannerView : UIView <ATBannerViewDelegate, SAParentalGateDelegate>
+IB_DESIGNABLE
+@interface SABannerView : SAPlacementView <ATBannerViewDelegate, SAParentalGateDelegate>
 
 /**
  * The delegate gets notified of different events in the lifecycle of the ad. It is not required to be set.

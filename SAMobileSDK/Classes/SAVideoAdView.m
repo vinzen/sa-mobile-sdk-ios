@@ -6,10 +6,10 @@
 //  Copyright (c) 2014 SuperAwesome Ltd. All rights reserved.
 //
 
-#import "SAVideoView.h"
+#import "SAVideoAdView.h"
 #import "SuperAwesome.h"
 
-@interface SAVideoView ()
+@interface SAVideoAdView ()
 
 @property(nonatomic, strong) IMAAdsLoader *adsLoader;
 @property(nonatomic, strong) IMAAdsManager *adsManager;
@@ -17,40 +17,7 @@
 
 @end
 
-@implementation SAVideoView
-
-- (void)setPlacementId:(NSNumber *)placementId
-{
-    _placementId = placementId;
-    
-    if(![[SuperAwesome sharedManager] isLoadingConfiguration]){
-        [self requestAds];
-    }
-}
-
-- (SAPreroll *)preroll
-{
-    NSArray *prerolls = [[SuperAwesome sharedManager] prerolls];
-    if(self.placementId){
-        for(SAPreroll *preroll in prerolls){
-            if([self.placementId longValue] == [[preroll valueForKey:@"id"] longValue]){
-                return preroll;
-            }
-        }
-    }
-    return [prerolls firstObject];
-}
-
-- (void)requestAds
-{
-    SAPreroll *preroll = [self preroll];
-    if(preroll){
-        NSString *adTag = preroll.vast;
-        self.adDisplayContainer = [[IMAAdDisplayContainer alloc] initWithAdContainer:self companionSlots:nil];
-        IMAAdsRequest *request = [[IMAAdsRequest alloc] initWithAdTagUrl:adTag adDisplayContainer:self.adDisplayContainer userContext:nil];
-        [self.adsLoader requestAdsWithRequest:request];
-    }
-}
+@implementation SAVideoAdView
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -71,15 +38,6 @@
     return self;
 }
 
-- (void)configLoadedNotification:(NSNotification *) notification
-{
-    if ([[notification name] isEqualToString:@"SuperAwesomeConfigLoaded"]){
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self requestAds];
-        });
-    }
-}
-
 - (void)commonInit
 {
     IMASettings *settings = [[IMASettings alloc] init];
@@ -88,12 +46,37 @@
     
     self.adsLoader = [[IMAAdsLoader alloc] initWithSettings:settings];
     self.adsLoader.delegate = self;
+}
+
+- (void)didMoveToWindow
+{
+    [super didMoveToWindow];
     
-    if([[SuperAwesome sharedManager] isLoadingConfiguration]){
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(configLoadedNotification:) name:@"SuperAwesomeConfigLoaded" object:nil];
-    }else{
-        [self requestAds];
+    if(self.window == nil){
+        [self stop];
+        return;
     }
+    
+    [[SuperAwesome sharedManager] videoAdForApp:self.appID placement:self.placementID completion:^(SAVideoAd *videoAd) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if(videoAd == nil){
+                NSLog(@"SA: Could not find placement with the provided ID");
+            }else{
+                [self requestAdsWithVideoAd:videoAd];
+            }
+        });
+    }];
+}
+
+
+- (void)requestAdsWithVideoAd:(SAVideoAd *)videoAd
+{
+    if(videoAd == nil) return;
+    
+    NSString *adTag = videoAd.vast;
+    self.adDisplayContainer = [[IMAAdDisplayContainer alloc] initWithAdContainer:self companionSlots:nil];
+    IMAAdsRequest *request = [[IMAAdsRequest alloc] initWithAdTagUrl:adTag adDisplayContainer:self.adDisplayContainer userContext:nil];
+    [self.adsLoader requestAdsWithRequest:request];
 }
 
 - (void)play{
@@ -109,7 +92,11 @@
 #pragma mark AdLoader
 
 - (void)adsLoader:(IMAAdsLoader *)loader adsLoadedWithData:(IMAAdsLoadedData *)adsLoadedData {
-    NSLog(@"Ad loaded");
+    NSLog(@"SA: Ad loaded");
+    if(self.delegate && [self.delegate respondsToSelector:@selector(didLoadVideoAd:)]){
+        [self.delegate didLoadVideoAd:self];
+    }
+    
     self.adsManager = adsLoadedData.adsManager;
     self.adsManager.delegate = self;
     
@@ -120,7 +107,10 @@
 
 - (void)adsLoader:(IMAAdsLoader *)loader failedWithErrorData:(IMAAdLoadingErrorData *)adErrorData {
     // Loading failed, log it.
-    NSLog(@"Ad loading error: %@", adErrorData.adError.message);
+    NSLog(@"SA: Ad loading error: %@", adErrorData.adError.message);
+    if(self.delegate && [self.delegate respondsToSelector:@selector(didFailToLoadVideoAd:)]){
+        [self.delegate didFailToLoadVideoAd:self];
+    }
 }
 
 #pragma mark AdPlayer
@@ -135,19 +125,28 @@
 
 // Process ad events.
 - (void)adsManager:(IMAAdsManager *)adsManager didReceiveAdEvent:(IMAAdEvent *)event {
-    NSLog(@"Received ad event.");
+    NSLog(@"SA: Received ad event.");
     // Perform different actions based on the event type.
     if (event.type == kIMAAdEvent_STARTED) {
-        NSLog(@"Ad has started.");
+        NSLog(@"SA: Ad has started.");
+        if(self.delegate && [self.delegate respondsToSelector:@selector(didStartPlayingVideoAd:)]){
+            [self.delegate didStartPlayingVideoAd:self];
+        }
     }else if(event.type == kIMAAdEvent_COMPLETE){
-        NSLog(@"Ad has completed");
+        NSLog(@"SA: Ad has completed");
+        if(self.delegate && [self.delegate respondsToSelector:@selector(didFinishPlayingVideoAd:)]){
+            [self.delegate didFinishPlayingVideoAd:self];
+        }
     }
 }
 
 // Process ad playing errors.
 - (void)adsManager:(IMAAdsManager *)adsManager didReceiveAdError:(IMAAdError *)error {
     // There was an error while playing the ad.
-//    NSLog(@"Error during ad playback: %@", error.message);
+    NSLog(@"Error during ad playback: %@", error.message);
+    if(self.delegate && [self.delegate respondsToSelector:@selector(didFailToPlayVideoAd:)]){
+        [self.delegate didFailToPlayVideoAd:self];
+    }
 }
 
 // Optional: receive updates about individual ad progress.

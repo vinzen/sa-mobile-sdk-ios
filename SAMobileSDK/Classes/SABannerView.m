@@ -48,27 +48,27 @@
 }
 
 //#if TARGET_INTERFACE_BUILDER
-- (void)prepareForInterfaceBuilder
-{
-    if([self isSupportedSize:self.bounds.size]){
-        NSBundle *bundle = [NSBundle bundleForClass:self.class];
-        NSString *fileName = [bundle pathForResource:[NSString stringWithFormat:@"AdDemo%@x%@", @(self.bounds.size.width), @(self.bounds.size.height)] ofType:@"jpg"];
-        UIImage *image = [UIImage imageWithContentsOfFile:fileName];
-        UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
-        [imageView sizeToFit];
-        [self addSubview:imageView];
-    }else{
-        UIColor *saColor = [UIColor colorWithRed:0.8 green:0.17 blue:0.09 alpha:1];
-        UILabel *label = [[UILabel alloc] initWithFrame:self.bounds];
-        [label setText:@"Invalid size!\nCheck the documentation for the list of supported banner sizes."];
-        [label setTextColor:[UIColor whiteColor]];
-        [label setBackgroundColor:saColor];
-        [label setTextAlignment:NSTextAlignmentCenter];
-        [label setNumberOfLines:0];
-        [label setAdjustsFontSizeToFitWidth:YES];
-        [self addSubview:label];
-    }
-}
+//- (void)prepareForInterfaceBuilder
+//{
+//    if([self isSupportedSize:self.bounds.size]){
+//        NSBundle *bundle = [NSBundle bundleForClass:self.class];
+//        NSString *fileName = [bundle pathForResource:[NSString stringWithFormat:@"AdDemo%@x%@", @(self.bounds.size.width), @(self.bounds.size.height)] ofType:@"jpg"];
+//        UIImage *image = [UIImage imageWithContentsOfFile:fileName];
+//        UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+//        [imageView sizeToFit];
+//        [self addSubview:imageView];
+//    }else{
+//        UIColor *saColor = [UIColor colorWithRed:0.8 green:0.17 blue:0.09 alpha:1];
+//        UILabel *label = [[UILabel alloc] initWithFrame:self.bounds];
+//        [label setText:@"Invalid size!\nCheck the documentation for the list of supported banner sizes."];
+//        [label setTextColor:[UIColor whiteColor]];
+//        [label setBackgroundColor:saColor];
+//        [label setTextAlignment:NSTextAlignmentCenter];
+//        [label setNumberOfLines:0];
+//        [label setAdjustsFontSizeToFitWidth:YES];
+//        [self addSubview:label];
+//    }
+//}
 //#endif
 
 - (NSArray *)supportedBannerSizes

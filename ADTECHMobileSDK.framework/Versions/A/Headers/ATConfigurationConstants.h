@@ -26,7 +26,10 @@ typedef NS_ENUM(NSUInteger, ATLogLevel)
     kATLogInfo,
     
     /** detailed logging. */
-    kATLogVerbose
+    kATLogVerbose,
+    
+    /** complete logging. */
+    kATLogVerbosePlus
 };
 
 extern NSString *kATConfigErrorDomain;                          /// the error domain passed on when an error occures

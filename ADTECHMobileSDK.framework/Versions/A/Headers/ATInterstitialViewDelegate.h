@@ -81,11 +81,14 @@
  * Called when an ad fails to be fetched. Usually this happens because of networking conditions and in rare cases if an exceptions occurs on the server.
  * You can call load to try again, if you think the conditions leading to the error have changed.
  *
+ * @warning Use didFailFetchingInterstitialAd:signals:error: to see the error for fething the interstitial.
+ *
  * @since 1.0
  *
  * @param view The interstitial ad view that failed getting an ad.
  *
  * @see didFailFetchingInterstitialAd:signals:
+ * @see didFailFetchingInterstitialAd:signals:error:
  */
 - (void)didFailFetchingInterstitialAd:(ATInterstitialView*)view;
 
@@ -100,14 +103,42 @@
  * with a default ad that contains these signal codes. Default ads are considered failures to get
  * a valid ad, but they could contain signal codes that could be useful for the app.
  *
+ * @warning Use didFailFetchingInterstitialAd:signals:error: to see the error for fething the interstitial.
+ *
  * @since 3.5
  *
  * @param view The interstitial ad view that failed getting an ad.
  * @param signals The signals that were sent with the ad. In case there were no signals with the ad, the value will be nil.
  *
  * @see didFailFetchingInterstitialAd:
+ * @see didFailFetchingInterstitialAd:signals:error:
  */
 - (void)didFailFetchingInterstitialAd:(ATInterstitialView*)view signals:(NSArray *)signals;
+
+
+/**
+ * Called when an ad fails to be fetched. Usually this happens because of networking conditions and in rare cases if an exceptions occurs on the server.
+ * You can call load to try again, if you think the conditions leading to the error have changed.
+ *
+ * It includes the signals that came within the ad. In case this method is implemented,
+ * it takes precedence over didFailFetchingInterstitialAd: and will be the only one called.
+ *
+ * It is possible to get signal codes on failures to fetch an ad when the server responds
+ * with a default ad that contains these signal codes. Default ads are considered failures to get
+ * a valid ad, but they could contain signal codes that could be useful for the app.
+ *
+ * This callback also includes the error on what has caused the ad to fail loading.
+ *
+ * @since 3.6
+ *
+ * @param view The interstitial ad view that failed getting an ad.
+ * @param signals The signals that were sent with the ad. In case there were no signals with the ad, the value will be nil.
+ * @param error The error that caused the interstitial to fail fetching
+ *
+ * @see didFailFetchingInterstitialAd:
+ * @see didFailFetchingInterstitialAd:signals:
+ */
+- (void)didFailFetchingInterstitialAd:(ATInterstitialView*)view signals:(NSArray *)signals error:(NSError *)error;
 
 /**
  * Called when the user interaction with the ad triggers leaving the application.

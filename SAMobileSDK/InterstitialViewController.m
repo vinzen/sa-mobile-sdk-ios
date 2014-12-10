@@ -31,6 +31,8 @@
     // Do any additional setup after loading the view.
     
     self.interstitial = [[SAInterstitialView alloc] initWithViewController:self];
+    self.interstitial.appID = @"14";
+    self.interstitial.placementID = @"5247931";
     self.interstitial.delegate = self;
 }
 

@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "SAMobileSDK"
-  s.version      = "1.0.0"
+  s.version      = "1.1.0"
   s.summary      = "A short description of SAMobileSDK."
 
   s.description  = <<-DESC
@@ -116,6 +116,6 @@ Pod::Spec.new do |s|
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   s.dependency "JSONModel"
-  s.dependency "GoogleAds-IMA-iOS-SDK", "~> 3.0.beta.7"
+  s.dependency "GoogleAds-IMA-iOS-SDK", "~> 3.0.beta.10"
 
 end

@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Classes/SuperAwesome.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

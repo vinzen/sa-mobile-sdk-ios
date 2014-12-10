@@ -6,14 +6,17 @@
 //  Copyright (c) 2012 ADTECH AG. All rights reserved.
 //
 
-#import "ATVASTCompanionAndNonLinearBase.h"
+#import "ATVASTOverlay.h"
 #import "ATVASTEnums.h"
 
-@interface ATVASTNonLinear : ATVASTCompanionAndNonLinearBase
+@interface ATVASTNonLinear : ATVASTOverlay
 
-@property (nonatomic, copy) NSURL *nonLinearClickThrough;
 @property (nonatomic, assign) ATVASTTriState scalable;
 @property (nonatomic, assign) ATVASTTriState maintainAspectRatio;
 @property (nonatomic, assign) NSTimeInterval minSuggestedDuration;
+@property (nonatomic, assign) NSInteger expandedWidth;
+@property (nonatomic, assign) NSInteger expandedHeight;
+@property (nonatomic, copy) NSString *adParameters;
+@property (nonatomic, readonly) NSMutableArray *creativeExtensions; // array of NSString objects containing any valid XML documents
 
 @end

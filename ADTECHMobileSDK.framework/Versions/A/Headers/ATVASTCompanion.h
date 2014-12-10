@@ -6,17 +6,20 @@
 //  Copyright (c) 2012 ADTECH AG. All rights reserved.
 //
 
-#import "ATVASTCompanionAndNonLinearBase.h"
+#import "ATVASTOverlay.h"
+#import "ATVASTTracking.h"
 
-@class ATVASTTracking;
+@interface ATVASTCompanion : ATVASTOverlay
 
-@interface ATVASTCompanion : ATVASTCompanionAndNonLinearBase
+@property (nonatomic,readonly) NSMutableArray *creativeExtensions; // array of NSString objects containing any valid XML documents
 
-@property (nonatomic, copy) NSURL *companionClickThrough;
-@property (nonatomic, readonly) NSMutableArray *trackingEvents;
 @property (nonatomic, copy) NSString *altText;
+@property (nonatomic, assign) NSInteger assetWidth;
+@property (nonatomic, assign) NSInteger assetHeight;
+@property (nonatomic, copy) NSString *adSlotId;
+@property (nonatomic, assign) NSInteger expandedWidth;
+@property (nonatomic, assign) NSInteger expandedHeight;
+@property (nonatomic, copy) NSString *adParameters;
 
-- (BOOL)shouldTrack:(ATVASTTrackingEvent)event;
-- (NSArray*)trackingURLsForEvent:(ATVASTTrackingEvent)event;
 
 @end

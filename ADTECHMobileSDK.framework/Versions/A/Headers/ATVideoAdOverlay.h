@@ -65,10 +65,13 @@ typedef NS_ENUM(NSInteger, ATVideoAdOverlayDismissTime)
 /// The period of time during which the content is paused or scrubbed through will be subtracted and won't count towards showing the overlay.
 /// i.e. Only actual playback of content is tracked and can trigger the appearance of the overlay.
 ///
+/// Version 3.6 made the default value be 5 seconds.
+///
 /// Available in 2.2 and later.
 @property (nonatomic, assign) NSTimeInterval startTime;
 
 /// Time interval the overlay should be displayed for, in seconds.
+/// Version 3.6 made the default value be INFINITY (i.e. the whole duration of the content).
 ///
 /// Available in 2.2 and later.
 @property (nonatomic, assign) NSTimeInterval duration;
@@ -93,6 +96,8 @@ typedef NS_ENUM(NSInteger, ATVideoAdOverlayDismissTime)
 /// If you want the overlay to never be dismissable (for the duration of it being shown), use the kATOverlayDismissNotAllowed constant.
 /// If you set a value greater or equal to the duration, it will count as kATOverlayDismissNotAllowed.
 /// If the default value (kATOverlayDissmisDefault) is left in place, the overlay will be dismissable after half of the duration.
+///
+/// Version 3.6 changed the default value to kATOverlayDismissAllowedFromBeginning.
 ///
 /// Available in 2.2 and later.
 @property (nonatomic, assign) NSInteger secondsUntilDismissable;

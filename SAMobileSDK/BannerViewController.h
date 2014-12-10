@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SuperAwesome.h"
 
-@interface BannerViewController : UIViewController <SABannerViewDelegate>
+@interface BannerViewController : UIViewController
 
 @end

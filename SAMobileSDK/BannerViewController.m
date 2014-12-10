@@ -7,6 +7,7 @@
 //
 
 #import "BannerViewController.h"
+#import "SuperAwesome.h"
 
 @interface BannerViewController ()
 
@@ -27,6 +28,11 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    SABannerView *bannerView = [[SABannerView alloc] initWithFrame:CGRectMake(0, 100, 320, 50)];
+    bannerView.appID = @"14";
+    bannerView.placementID = @"5513681";
+    [self.view addSubview:bannerView];
 }
 
 - (void)didReceiveMemoryWarning

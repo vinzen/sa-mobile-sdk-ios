@@ -21,6 +21,7 @@
 #import "ATAdtechAdConfiguration.h"
 #import "ATGenericAdConfiguration.h"
 #import "ATAdtechVideoAdConfiguration.h"
+#import "ATAdapTVVideoAdConfiguration.h"
 #import "ATVideoAdOverlay.h"
 #import "ATMoviePlayerController.h"
 #import "ATBrowserViewController.h"
@@ -28,5 +29,6 @@
 #import "NSURL+ATLandingPage.h"
 
 #import "ATVASTModel.h"
+#import "ATAdErrorCodes.h"
 
 #endif

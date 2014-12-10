@@ -17,11 +17,6 @@
 @property (nonatomic,strong) SAParentalGate *gate;
 @property (nonatomic,strong) NSURL *adURL;
 
-- (ATAdtechAdConfiguration *)configurationForType:(SABannerType)bannerType;
-- (ATAdtechAdConfiguration *)defaultConfigurationForType:(SABannerType)bannerType;
-- (CGSize)bannerSizeForType:(SABannerType)type;
-- (SABannerType)bannerTypeForSize:(CGSize)size;
-
 @end
 
 @implementation SABannerView
@@ -45,112 +40,56 @@
     return self;
 }
 
-- (ATAdtechAdConfiguration *)defaultConfigurationForType:(SABannerType)bannerType
-{
-    if(bannerType == kBanner300x50){
-        ATAdtechAdConfiguration *configuration = [ATAdtechAdConfiguration configuration];
-        configuration.networkID = 1486;
-        configuration.subNetworkID = 1;
-        configuration.alias = @"706332-300x50-5";
-        return configuration;
-    }else if (bannerType == kBanner320x50){
-        ATAdtechAdConfiguration *configuration = [ATAdtechAdConfiguration configuration];
-        configuration.networkID = 1486;
-        configuration.subNetworkID = 1;
-        configuration.alias = @"706332-320x50-5";
-        return configuration;
-    }else if (bannerType == kBanner728x90){
-        ATAdtechAdConfiguration *configuration = [ATAdtechAdConfiguration configuration];
-        configuration.networkID = 1486;
-        configuration.subNetworkID = 1;
-        configuration.alias = @"706332-728x90-5";
-        return configuration;
-    }else if (bannerType == kBanner300x250){
-        ATAdtechAdConfiguration *configuration = [ATAdtechAdConfiguration configuration];
-        configuration.networkID = 1486;
-        configuration.subNetworkID = 1;
-        configuration.alias = @"706332-300x250-5";
-        return configuration;
-    }
-    return nil;
-}
-
-- (ATAdtechAdConfiguration *)configurationForType:(SABannerType)bannerType
-{
-    CGSize size = [self bannerSizeForType:bannerType];
-    SAAdPlacement *placement = [[SuperAwesome sharedManager] placementForSize:size];
-    if(placement){
-        ATAdtechAdConfiguration *configuration = [ATAdtechAdConfiguration configuration];
-        configuration.networkID = [placement.networkId unsignedIntegerValue];
-        configuration.subNetworkID = [placement.subNetworkId unsignedIntegerValue];
-        configuration.alias = placement.alias;
-        return configuration;
-    }
-    NSLog(@"Warning: Falling back to default placement");
-    return [self defaultConfigurationForType:bannerType];
-}
-
-- (CGSize)bannerSizeForType:(SABannerType)type
-{
-    if(type == kBanner728x90){
-        return CGSizeMake(728,90);
-    }else if (type == kBanner320x50){
-        return CGSizeMake(320,50);
-    }else if (type == kBanner300x50){
-        return CGSizeMake(300,50);
-    }else if (type == kBanner300x250){
-        return CGSizeMake(300,250);
-    }
-    return CGSizeMake(0, 0);
-}
-
-- (SABannerType)bannerTypeForSize:(CGSize)size
-{
-    if(size.height>=90 && size.width>=728){
-        return kBanner728x90;
-    }else if(size.height>=250 && size.width>=300){
-        return kBanner300x250;
-    }else if(size.height>=50 && size.width>=320){
-        return kBanner320x50;
-    }else if(size.height>=50 && size.width>=300){
-        return kBanner300x50;
-    }
-    return kBanner300x50;
-}
-
-- (void)configLoadedNotification:(NSNotification *) notification
-{
-    if ([[notification name] isEqualToString:@"SuperAwesomeConfigLoaded"]){
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self configureBanner];
-            [self loadBanner];
-        });
-    }
-}
-
 - (void)commonInit
-{
-    [self initBanner];
-    
-    if([[SuperAwesome sharedManager] isLoadingConfiguration]){
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(configLoadedNotification:) name:@"SuperAwesomeConfigLoaded" object:nil];
-    }else{
-        [self configureBanner];
-    }
-}
-
-- (void)initBanner
 {
     self.bannerView = [[ATBannerView alloc] initWithFrame:self.bounds];
     self.bannerView.delegate = self;
     [self addSubview:self.bannerView];
 }
 
-- (void)configureBanner
+//#if TARGET_INTERFACE_BUILDER
+//- (void)prepareForInterfaceBuilder
+//{
+//    if([self isSupportedSize:self.bounds.size]){
+//        NSBundle *bundle = [NSBundle bundleForClass:self.class];
+//        NSString *fileName = [bundle pathForResource:[NSString stringWithFormat:@"AdDemo%@x%@", @(self.bounds.size.width), @(self.bounds.size.height)] ofType:@"jpg"];
+//        UIImage *image = [UIImage imageWithContentsOfFile:fileName];
+//        UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+//        [imageView sizeToFit];
+//        [self addSubview:imageView];
+//    }else{
+//        UIColor *saColor = [UIColor colorWithRed:0.8 green:0.17 blue:0.09 alpha:1];
+//        UILabel *label = [[UILabel alloc] initWithFrame:self.bounds];
+//        [label setText:@"Invalid size!\nCheck the documentation for the list of supported banner sizes."];
+//        [label setTextColor:[UIColor whiteColor]];
+//        [label setBackgroundColor:saColor];
+//        [label setTextAlignment:NSTextAlignmentCenter];
+//        [label setNumberOfLines:0];
+//        [label setAdjustsFontSizeToFitWidth:YES];
+//        [self addSubview:label];
+//    }
+//}
+//#endif
+
+- (NSArray *)supportedBannerSizes
 {
-    SABannerType type = [self bannerTypeForSize:self.bounds.size];
-    self.bannerView.configuration = [self configurationForType:type];
-    self.isBannerConfigured = YES;
+    return @[[NSValue valueWithCGSize:CGSizeMake(320, 50)],
+             [NSValue valueWithCGSize:CGSizeMake(300, 50)],
+             [NSValue valueWithCGSize:CGSizeMake(300, 250)],
+             [NSValue valueWithCGSize:CGSizeMake(728, 90)],
+             [NSValue valueWithCGSize:CGSizeMake(768, 1024)],
+             [NSValue valueWithCGSize:CGSizeMake(320, 480)]];
+}
+
+- (BOOL)isSupportedSize:(CGSize)aSize
+{
+    NSArray *sizes = [self supportedBannerSizes];
+    for(NSValue *size in sizes){
+        if(CGSizeEqualToSize([size CGSizeValue], aSize)){
+            return YES;
+        }
+    }
+    return NO;
 }
 
 - (void)loadBanner
@@ -165,28 +104,34 @@
     [self.bannerView load];
 }
 
-- (void)layoutSubviews{
-    [super layoutSubviews];
-}
-
 - (void)didMoveToWindow
 {
     [super didMoveToWindow];
     
     if(self.window == nil){
+        self.visible = NO;
         return;
     }
     
-    if(self.bannerView){
-        [self loadBanner];
-    }
+    self.visible = YES;
+    [[SuperAwesome sharedManager] displayAdForApp:self.appID placement:self.placementID completion:^(SADisplayAd *displayAd) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if(displayAd == nil){
+                NSLog(@"SA: Could not find placement with the provided placement ID");
+            }else{
+                self.bannerView.configuration = [self configurationWithDisplayAd:displayAd];
+                self.isBannerConfigured = YES;
+                [self loadBanner];
+            }
+        });
+    }];
 }
 
 - (void)removeFromSuperview
 {
-    [super removeFromSuperview];
-    
     [self.bannerView removeFromSuperview];
+    
+    [super removeFromSuperview];
 }
 
 - (void)setVisible:(BOOL)visible
@@ -231,12 +176,12 @@
 
 - (void)didFetchNextAd:(ATBannerView*)view signals:(NSArray *)signals
 {
-    NSLog(@"SA AD Success");
+    NSLog(@"SA: Ad fetched from ad server");
 }
 
 - (void)didFailFetchingAd:(ATBannerView*)view signals:(NSArray *)signals
 {
-    NSLog(@"SA AD Fail");
+    NSLog(@"SA: Failed to load ad from server");
     if(self.delegate && [self.delegate respondsToSelector:@selector(shouldDisplayCustomMediationForAd:)]){
         [self.delegate shouldDisplayCustomMediationForAd:self];
     }
@@ -244,7 +189,7 @@
 
 - (BOOL)shouldOpenLandingPageForAd:(ATBannerView *)view withURL:(NSURL *)URL useBrowser:(ATBrowserViewController *__autoreleasing *)browserViewController
 {
-    if([[SuperAwesome sharedManager] useParentalGate]){
+    if([self isParentalGateEnabled]){
         if(self.gate == nil){
             self.gate = [[SAParentalGate alloc] init];
             self.gate.delegate = self;
@@ -259,7 +204,7 @@
 
 - (void)didStopOnCustomMediation:(ATBannerView*)view
 {
-    NSLog(@"didStopOnCustomMediation");
+    NSLog(@"SA: didStopOnCustomMediation");
     if(self.delegate && [self.delegate respondsToSelector:@selector(shouldDisplayCustomMediationForAd:)]){
         [self.delegate shouldDisplayCustomMediationForAd:self];
     }

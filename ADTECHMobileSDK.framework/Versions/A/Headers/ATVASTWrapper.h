@@ -12,5 +12,8 @@
 @interface ATVASTWrapper : ATVASTInLineAndWrapperBase
 
 @property (nonatomic, copy) NSURL *VASTAdTagURI;
+@property (nonatomic) BOOL followAdditionalWrappers;
+@property (nonatomic) BOOL allowMultipleAds;
+@property (nonatomic) BOOL fallBackOnNoAd;
 
 @end

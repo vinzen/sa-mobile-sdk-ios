@@ -16,6 +16,15 @@ extern NSString *const kATCompanionBottom;                      /// the companio
 extern NSString *const kATCompanionRight;                       /// the companion right ad key
 
 /**
+ * The key for the display requirements of the companions
+ * The possible values stored for this key are enumerated in ATVASTCompanionDisplayRequirement
+ *
+ * @since 3.6
+ */
+extern NSString *const kCompanionDisplayRequirement;
+
+
+/**
  * Implement this protocol to be notified of different events in the lifecycle of the movie player.
  *
  * @since 3.4
@@ -69,6 +78,8 @@ extern NSString *const kATCompanionRight;                       /// the companio
  * @param companionAds The companion ads that come with a linear ad. You can get the right companion
  *                     from the companionAds dictionary using the following constant keys:
  *                     kATCompanionTop, kATCompanionLeft, kATCompanionBottom, kATCompanionRight.
+ *                     Starting 3.6, you can get the display requirements for the companions using the key: kCompanionDisplayRequirement.
+ *                     See http://www.iab.net/media/file/VASTv3.0.pdf chapter 2.3.3.4 for understanding what the display requirement means.
  *
  * @discussion This callback has priority over playerWillStartPlayingLinearAdOfType:. If both of them are implemented,
  *             only this callback will be called.
@@ -110,5 +121,51 @@ extern NSString *const kATCompanionRight;                       /// the companio
  * @since 3.4
  */
 - (void)playerDidStopPlayingLinearAdOfType:(ATVideoAdType)type;
+
+/**
+ * Called when the users skips the playback of a linear ad by interacting with the skip button.
+ *
+ * @param type The linear ad type
+ *
+ * @since 3.6
+ */
+- (void)playerDidSkipLinearAdOfType:(ATVideoAdType)type;
+
+/**
+ * Called when the player is about to start playback of an ad break.
+ *
+ * @param type The linear ad type
+ * @param totalAds The total number of ads the player will play
+ *
+ * @since 3.6
+ */
+- (void)playerWillStartPlayingAdBreakOfType:(ATVideoAdType)type
+                                   totalAds:(NSInteger)totalAds;
+
+/**
+ * Called when the player progresses to the next ad inside an ad break.
+ *
+ * @param type The linear ad type
+ * @param adNumber The number of the ad the player has progressed to
+ * @param totalAds The total number of ads the player will play
+ *
+ * @since 3.6
+ */
+- (void)playerDidProgressPlayingAdBreakOfType:(ATVideoAdType)type
+                               toAdNumber:(NSInteger)adNumber
+                                   ofTotalAds:(NSInteger)totalAds;
+
+/**
+ * Called when the player ends the playback of an ad break. This can happen when the last linear ad inside the ad break
+ * naturally reaches the end of its content, when the last linear in an ad break is skipped, when the landing page is 
+ * shown and dismissed (the remaining part of the linear is skipped) and it is the last linear in the ad break or when the player is stopped.
+ *
+ * @param type The linear ad type
+ *
+ * @since 3.6
+ */
+- (void)playerDidStopPlayingAdBreakOfType:(ATVideoAdType)type;
+
+
 
 @end

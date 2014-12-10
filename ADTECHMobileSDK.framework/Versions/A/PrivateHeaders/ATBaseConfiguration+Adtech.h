@@ -34,6 +34,7 @@ extern BOOL kADTECHValidateSecureCertificates;
 + (NSBundle*)localizableBundle;
 
 - (id)initWithNoDefaults;
+- (void)mergeValuesFromInstance:(ATBaseConfiguration*)instance;
 - (void)copyValuesFromInstance:(ATBaseConfiguration*)instance;
 
 - (void)reset;

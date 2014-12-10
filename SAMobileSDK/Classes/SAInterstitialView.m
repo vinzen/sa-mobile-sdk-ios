@@ -15,65 +15,9 @@
 @property (nonatomic,strong) SAParentalGate *gate;
 @property (nonatomic,strong) NSURL *adURL;
 
-- (ATAdtechAdConfiguration *)defaultConfigurationForType:(SAInterstitialType)type;
-- (ATAdtechAdConfiguration *)configurationForType:(SAInterstitialType)type;
-- (SAInterstitialType)typeForSize:(CGSize)size;
-
 @end
 
 @implementation SAInterstitialView
-
-- (ATAdtechAdConfiguration *)defaultConfigurationForType:(SAInterstitialType)type
-{
-    if(type == kInterstitialSmall){
-        ATAdtechAdConfiguration *configuration = [ATAdtechAdConfiguration configuration];
-        configuration.networkID = 1486;
-        configuration.subNetworkID = 1;
-        configuration.alias = @"706332-320x480-5";
-        return configuration;
-    }else if(type == kInterstitialLarge){
-        ATAdtechAdConfiguration *configuration = [ATAdtechAdConfiguration configuration];
-        configuration.networkID = 1486;
-        configuration.subNetworkID = 1;
-        configuration.alias = @"706332-768x1024-5";
-        return configuration;
-    }
-    return nil;
-}
-
-- (ATAdtechAdConfiguration *)configurationForType:(SAInterstitialType)type
-{
-    CGSize size = [self sizeForType:type];
-    SAAdPlacement *placement = [[SuperAwesome sharedManager] placementForSize:size];
-    if(placement){
-        ATAdtechAdConfiguration *configuration = [ATAdtechAdConfiguration configuration];
-        configuration.networkID = [placement.networkId unsignedIntegerValue];
-        configuration.subNetworkID = [placement.subNetworkId unsignedIntegerValue];
-        configuration.alias = placement.alias;
-        return configuration;
-    }
-    NSLog(@"Warning: Falling back to default placement");
-    return [self defaultConfigurationForType:type];
-}
-
-- (SAInterstitialType)typeForSize:(CGSize)size
-{
-    if(size.height >= 1024 && size.width >= 768){
-        return kInterstitialLarge;
-    }
-    return kInterstitialSmall;
-}
-
-- (CGSize)sizeForType:(SAInterstitialType)type
-{
-    if(type == kInterstitialLarge){
-        return CGSizeMake(768, 1024);
-    }
-    if(type == kInterstitialSmall){
-        return CGSizeMake(320, 480);
-    }
-    return CGSizeMake(0, 0);
-}
 
 - (instancetype)initWithViewController:(UIViewController *)viewController
 {
@@ -82,13 +26,36 @@
         self.interstitialView = [[ATInterstitialView alloc] init];
         self.interstitialView.delegate = self;
         self.interstitialView.viewController = viewController;
-
-        SAInterstitialType type = [self typeForSize:[UIScreen mainScreen].bounds.size];
-        self.interstitialView.configuration = [self configurationForType:type];
-
-        [self.interstitialView load];
     }
     return self;
+}
+
+- (void)setAppID:(NSString *)appID
+{
+    [super setAppID:appID];
+    [self tryToLoadAd];
+}
+
+- (void)setPlacementID:(NSString *)placementID
+{
+    [super setPlacementID:placementID];
+    [self tryToLoadAd];
+}
+
+- (void)tryToLoadAd
+{
+    if(self.appID == nil || self.placementID == nil) return;
+    
+    [[SuperAwesome sharedManager] displayAdForApp:self.appID placement:self.placementID completion:^(SADisplayAd *displayAd) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if(displayAd == nil){
+                NSLog(@"SA: Could not find placement with the provided placement ID");
+            }else{
+                self.interstitialView.configuration = [self configurationWithDisplayAd:displayAd];
+                [self.interstitialView load];
+            }
+        });
+    }];
 }
 
 - (void)present
@@ -116,7 +83,7 @@
 
 - (BOOL)shouldOpenLandingPageForAd:(ATInterstitialView*)view withURL:(NSURL*)URL useBrowser:(ATBrowserViewController *__autoreleasing *)browserViewController;
 {
-    if([[SuperAwesome sharedManager] useParentalGate]){
+    if([self isParentalGateEnabled]){
         if(self.gate == nil){
             self.gate = [[SAParentalGate alloc] init];
             self.gate.delegate = self;

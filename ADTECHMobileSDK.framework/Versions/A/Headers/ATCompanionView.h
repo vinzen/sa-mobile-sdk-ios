@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 ADTECH GmbH. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "ATOverlayView.h"
 
 @protocol ATCompanionViewDelegate;
 
@@ -20,7 +20,7 @@
  *
  * @see ATCompanionViewDelegate
  */
-@interface ATCompanionView : UIView
+@interface ATCompanionView : ATOverlayView
 
 /**
  * The delegate gets notified of different events in the lifecycle of the companion ad. It is not required to be set.

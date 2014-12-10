@@ -13,7 +13,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [[SuperAwesome sharedManager] setAppID:@"your-app-id"];
     
     return YES;
 }

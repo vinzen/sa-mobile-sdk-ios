@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "SAMobileSDK"
-  s.version      = "1.0.0"
+  s.version      = "1.1.0"
   s.summary      = "A short description of SAMobileSDK."
 
   s.description  = <<-DESC

@@ -27,6 +27,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.videoView.delegate = self;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -55,6 +57,15 @@
 - (IBAction)stopVideAd:(id)sender
 {
     [self.videoView stop];
+}
+
+- (void)didStartPlayingVideoAd:(SAVideoAdView *)videoAd{
+    NSLog(@"Video playback started");
+}
+
+- (void)didFinishPlayingVideoAd:(SAVideoAdView *)videoAd
+{
+    NSLog(@"Video playback finished");
 }
 
 /*

@@ -89,6 +89,11 @@
     [self.adsManager destroy];
 }
 
+- (void)resume
+{
+    [self.adsManager resume];
+}
+
 #pragma mark AdLoader
 
 - (void)adsLoader:(IMAAdsLoader *)loader adsLoadedWithData:(IMAAdsLoadedData *)adsLoadedData {
@@ -117,10 +122,12 @@
 
 - (void)adsManagerDidRequestContentPause:(IMAAdsManager *)adsManager {
     // Pause the content.
+    NSLog(@"should pause");
 }
 
 - (void)adsManagerDidRequestContentResume:(IMAAdsManager *)adsManager {
     // Resume or start (if not started yet) the content.
+    NSLog(@"should resume");
 }
 
 // Process ad events.
@@ -136,6 +143,21 @@
         NSLog(@"SA: Ad has completed");
         if(self.delegate && [self.delegate respondsToSelector:@selector(didFinishPlayingVideoAd:)]){
             [self.delegate didFinishPlayingVideoAd:self];
+        }
+    }else if(event.type == kIMAAdEvent_CLICKED){
+        NSLog(@"SA: Ad has been clicked");
+        if(self.delegate && [self.delegate respondsToSelector:@selector(didFinishPlayingVideoAd:)]){
+            //[self.delegate didFinishPlayingVideoAd:self];
+        }
+    }else if(event.type == kIMAAdEvent_TAPPED){
+        NSLog(@"SA: Ad has been tapped");
+        if(self.delegate && [self.delegate respondsToSelector:@selector(didFinishPlayingVideoAd:)]){
+            //[self.delegate didFinishPlayingVideoAd:self];
+            if([self.adsManager.adPlaybackInfo isPlaying]){
+                [self.adsManager pause];
+            }else{
+                [self.adsManager resume];
+            }
         }
     }
 }

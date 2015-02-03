@@ -35,5 +35,6 @@
 
 - (void)play;
 - (void)stop;
+- (void)resume;
 
 @end

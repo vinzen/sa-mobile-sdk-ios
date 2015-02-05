@@ -11,6 +11,7 @@
 @interface FullscreenVideoViewController ()
 
 @property (nonatomic,strong) SAVideoAdView *videoView;
+@property (nonatomic,strong) UIActivityIndicatorView *activityIndicatorView;
 
 @end
 
@@ -27,6 +28,10 @@
     self.videoView.appID = @"14";
     self.videoView.placementID = @"314228";
     [self.view addSubview:self.videoView];
+    
+    self.activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    [self.activityIndicatorView startAnimating];
+    [self.view addSubview:self.activityIndicatorView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -41,6 +46,7 @@
 - (void)viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];
+    self.activityIndicatorView.center = self.view.center;
     self.videoView.frame = self.view.bounds;
 }
 
@@ -49,6 +55,7 @@
 - (void)didLoadVideoAd:(SAVideoAdView *)videoAd
 {
     dispatch_async(dispatch_get_main_queue(), ^{
+        [self.activityIndicatorView stopAnimating];
         [self.videoView play];
     });
 }

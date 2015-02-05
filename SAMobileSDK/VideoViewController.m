@@ -49,12 +49,12 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)startVideAd:(id)sender
+- (IBAction)startVideoAd:(id)sender
 {
     [self.videoView play];
 }
 
-- (IBAction)stopVideAd:(id)sender
+- (IBAction)stopVideoAd:(id)sender
 {
     [self.videoView stop];
 }

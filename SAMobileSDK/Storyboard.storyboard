@@ -269,7 +269,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="startVideAd:" destination="9WN-cW-xK1" eventType="touchUpInside" id="pQc-jM-lDH"/>
+                                    <action selector="startVideoAd:" destination="9WN-cW-xK1" eventType="touchUpInside" id="q8p-kY-c2j"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vOV-Bx-w1g">
@@ -278,7 +278,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="stopVideAd:" destination="9WN-cW-xK1" eventType="touchUpInside" id="rxA-Hm-AfY"/>
+                                    <action selector="stopVideoAd:" destination="9WN-cW-xK1" eventType="touchUpInside" id="BZ4-rC-CCS"/>
                                 </connections>
                             </button>
                         </subviews>

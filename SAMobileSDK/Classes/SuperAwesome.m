@@ -91,6 +91,9 @@
             for(void (^ myblock)(SAAppConfig *) in appQueue){
                 myblock(app);
             }
+            if(error){
+                [self.apps removeObject:app];
+            }
         }];
     }
 }

@@ -82,4 +82,18 @@
     });
 }
 
+- (void)didFailToLoadVideoAd:(SAVideoAdView *)videoAd
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self dismissViewControllerAnimated:YES completion:nil];
+    });
+}
+
+- (void)didFailToPlayVideoAd:(SAVideoAdView *)videoAd
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self dismissViewControllerAnimated:YES completion:nil];
+    });
+}
+
 @end

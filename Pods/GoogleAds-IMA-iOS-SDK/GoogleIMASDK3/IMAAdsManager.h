@@ -72,7 +72,7 @@
 - (void)adDidProgressToTime:(NSTimeInterval)mediaTime
                   totalTime:(NSTimeInterval)totalTime;
 
-/// Called providing time updates with the current ad time every 200ms.
+/// Called every 200ms to provide time updates for the current ad.
 - (void)adsManager:(IMAAdsManager *)adsManager
     adDidProgressToTime:(NSTimeInterval)mediaTime
               totalTime:(NSTimeInterval)totalTime;

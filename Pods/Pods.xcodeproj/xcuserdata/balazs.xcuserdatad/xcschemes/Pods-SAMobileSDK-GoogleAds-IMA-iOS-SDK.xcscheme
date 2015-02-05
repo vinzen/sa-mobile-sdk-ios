@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E9ACB0EDE3282AAA59B7F995"
+               BlueprintIdentifier = "94F8E7EFD36C8299D09A16EF"
                BuildableName = "libPods-SAMobileSDK-GoogleAds-IMA-iOS-SDK.a"
                BlueprintName = "Pods-SAMobileSDK-GoogleAds-IMA-iOS-SDK"
                ReferencedContainer = "container:Pods.xcodeproj">

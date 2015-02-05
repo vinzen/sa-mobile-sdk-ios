@@ -59,6 +59,11 @@
     return YES;
 }
 
+- (NSUInteger)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskAll;
+}
+
 - (void)viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8AF30A29655A4A9EB9B25A3E /* libPods-SAMobileSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A60F40D7A3D540608A9F4B27 /* libPods-SAMobileSDK.a */; };
-		980787F11A81372600F1BAE4 /* FullscreenVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 980787F01A81372600F1BAE4 /* FullscreenVideoViewController.m */; };
+		980787F11A81372600F1BAE4 /* SAVideoAdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 980787F01A81372600F1BAE4 /* SAVideoAdViewController.m */; };
 		980E5F3C198FCD2000608828 /* login in Resources */ = {isa = PBXBuildFile; fileRef = 980E5F3B198FCD2000608828 /* login */; };
 		980E88AA199396D7009393DD /* SATokenResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 980E88A9199396D7009393DD /* SATokenResponse.m */; };
 		980E88AD1993974A009393DD /* SAUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 980E88AC1993974A009393DD /* SAUser.m */; };
@@ -89,8 +89,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		980787EF1A81372600F1BAE4 /* FullscreenVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FullscreenVideoViewController.h; path = ../FullscreenVideoViewController.h; sourceTree = "<group>"; };
-		980787F01A81372600F1BAE4 /* FullscreenVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FullscreenVideoViewController.m; path = ../FullscreenVideoViewController.m; sourceTree = "<group>"; };
+		980787EF1A81372600F1BAE4 /* SAVideoAdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SAVideoAdViewController.h; path = ../SAVideoAdViewController.h; sourceTree = "<group>"; };
+		980787F01A81372600F1BAE4 /* SAVideoAdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SAVideoAdViewController.m; path = ../SAVideoAdViewController.m; sourceTree = "<group>"; };
 		980E5F3B198FCD2000608828 /* login */ = {isa = PBXFileReference; lastKnownFileType = folder; path = login; sourceTree = "<group>"; };
 		980E88A8199396D7009393DD /* SATokenResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SATokenResponse.h; sourceTree = "<group>"; };
 		980E88A9199396D7009393DD /* SATokenResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SATokenResponse.m; sourceTree = "<group>"; };
@@ -500,8 +500,8 @@
 			children = (
 				98F7671619B74FC4004559BD /* SAVideoAdView.h */,
 				98F7671719B74FC4004559BD /* SAVideoAdView.m */,
-				980787EF1A81372600F1BAE4 /* FullscreenVideoViewController.h */,
-				980787F01A81372600F1BAE4 /* FullscreenVideoViewController.m */,
+				980787EF1A81372600F1BAE4 /* SAVideoAdViewController.h */,
+				980787F01A81372600F1BAE4 /* SAVideoAdViewController.m */,
 			);
 			name = VIdeo;
 			sourceTree = "<group>";
@@ -660,7 +660,7 @@
 				98AD4D1E199A1EA000915410 /* SAInterstitialView.m in Sources */,
 				98ECEAA719D47C1100DC9C88 /* SAVideoAd.m in Sources */,
 				98CF200B198B91D000FD5896 /* SALoginViewController.m in Sources */,
-				980787F11A81372600F1BAE4 /* FullscreenVideoViewController.m in Sources */,
+				980787F11A81372600F1BAE4 /* SAVideoAdViewController.m in Sources */,
 				9856D99F1987D86B00B6804C /* AppDelegate.m in Sources */,
 				980E88B1199399EB009393DD /* NSString+URLEncode.m in Sources */,
 				984D3B6B19C9E55100E9325C /* SADisplayAd.m in Sources */,

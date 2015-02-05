@@ -1,14 +1,14 @@
 //
-//  FullscreenVideoViewController.m
+//  SAVideoAdViewController.m
 //  SAMobileSDK
 //
 //  Created by Balázs Kiss on 03/02/15.
 //  Copyright (c) 2015 SuperAwesome Ltd. All rights reserved.
 //
 
-#import "FullscreenVideoViewController.h"
+#import "SAVideoAdViewController.h"
 
-@interface FullscreenVideoViewController ()
+@interface SAVideoAdViewController ()
 
 @property (nonatomic,strong) NSString *appID;
 @property (nonatomic,strong) NSString *placementID;
@@ -17,7 +17,7 @@
 
 @end
 
-@implementation FullscreenVideoViewController
+@implementation SAVideoAdViewController
 
 - (instancetype)initWithAppID:(NSString *)appID placementID:(NSString *)placementID
 {

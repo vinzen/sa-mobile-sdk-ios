@@ -1,5 +1,5 @@
 //
-//  FullscreenVideoViewController.h
+//  SAVideoAdViewController
 //  SAMobileSDK
 //
 //  Created by Balázs Kiss on 03/02/15.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "SuperAwesome.h"
 
-@interface FullscreenVideoViewController : UIViewController <SAVideoAdViewDelegate>
+@interface SAVideoAdViewController : UIViewController <SAVideoAdViewDelegate>
 
 - (instancetype)initWithAppID:(NSString *)appID placementID:(NSString *)placementID;
 

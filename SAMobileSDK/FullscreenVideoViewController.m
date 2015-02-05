@@ -10,12 +10,23 @@
 
 @interface FullscreenVideoViewController ()
 
+@property (nonatomic,strong) NSString *appID;
+@property (nonatomic,strong) NSString *placementID;
 @property (nonatomic,strong) SAVideoAdView *videoView;
 @property (nonatomic,strong) UIActivityIndicatorView *activityIndicatorView;
 
 @end
 
 @implementation FullscreenVideoViewController
+
+- (instancetype)initWithAppID:(NSString *)appID placementID:(NSString *)placementID
+{
+    if(self = [super init]){
+        self.appID = appID;
+        self.placementID = placementID;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -25,8 +36,13 @@
     
     self.videoView = [[SAVideoAdView alloc] initWithFrame:self.view.bounds];
     self.videoView.delegate = self;
-    self.videoView.appID = @"14";
-    self.videoView.placementID = @"314228";
+    if(self.appID && self.placementID){
+        self.videoView.appID = self.appID;
+        self.videoView.placementID = self.placementID;
+    }else{
+        self.videoView.appID = @"14";
+        self.videoView.placementID = @"314228";
+    }
     [self.view addSubview:self.videoView];
     
     self.activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];

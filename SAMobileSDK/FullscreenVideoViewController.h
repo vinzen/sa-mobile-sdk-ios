@@ -11,4 +11,6 @@
 
 @interface FullscreenVideoViewController : UIViewController <SAVideoAdViewDelegate>
 
+- (instancetype)initWithAppID:(NSString *)appID placementID:(NSString *)placementID;
+
 @end

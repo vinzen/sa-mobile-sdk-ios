@@ -89,8 +89,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		980787EF1A81372600F1BAE4 /* FullscreenVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FullscreenVideoViewController.h; sourceTree = "<group>"; };
-		980787F01A81372600F1BAE4 /* FullscreenVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullscreenVideoViewController.m; sourceTree = "<group>"; };
+		980787EF1A81372600F1BAE4 /* FullscreenVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FullscreenVideoViewController.h; path = ../FullscreenVideoViewController.h; sourceTree = "<group>"; };
+		980787F01A81372600F1BAE4 /* FullscreenVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FullscreenVideoViewController.m; path = ../FullscreenVideoViewController.m; sourceTree = "<group>"; };
 		980E5F3B198FCD2000608828 /* login */ = {isa = PBXFileReference; lastKnownFileType = folder; path = login; sourceTree = "<group>"; };
 		980E88A8199396D7009393DD /* SATokenResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SATokenResponse.h; sourceTree = "<group>"; };
 		980E88A9199396D7009393DD /* SATokenResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SATokenResponse.m; sourceTree = "<group>"; };
@@ -433,8 +433,6 @@
 				98A4720919AC84F40068B5C8 /* InterstitialViewController.m */,
 				98A4720F19ACD3D10068B5C8 /* VideoViewController.h */,
 				98A4721019ACD3D10068B5C8 /* VideoViewController.m */,
-				980787EF1A81372600F1BAE4 /* FullscreenVideoViewController.h */,
-				980787F01A81372600F1BAE4 /* FullscreenVideoViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -502,6 +500,8 @@
 			children = (
 				98F7671619B74FC4004559BD /* SAVideoAdView.h */,
 				98F7671719B74FC4004559BD /* SAVideoAdView.m */,
+				980787EF1A81372600F1BAE4 /* FullscreenVideoViewController.h */,
+				980787F01A81372600F1BAE4 /* FullscreenVideoViewController.m */,
 			);
 			name = VIdeo;
 			sourceTree = "<group>";

@@ -29,6 +29,8 @@ typedef enum {
   kIMAAdEvent_PAUSE,
   /// Ad resumed.
   kIMAAdEvent_RESUME,
+  /// Ad has skipped.
+  kIMAAdEvent_SKIPPED,
   /// Ad has started.
   kIMAAdEvent_STARTED,
   /// Ad tapped.

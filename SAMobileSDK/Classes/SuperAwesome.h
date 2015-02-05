@@ -15,6 +15,7 @@
 #import "SABannerView.h"
 #import "SAInterstitialView.h"
 #import "SAVideoAdView.h"
+#import "SAVideoAdViewController.h"
 
 //Loyalty Classes
 #import "SALoginViewController.h"

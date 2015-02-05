@@ -8,11 +8,11 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "SAMobileSDK"
-  s.version      = "1.1.0"
-  s.summary      = "A short description of SAMobileSDK."
+  s.version      = "1.1.1"
+  s.summary      = "SuperAwesome Mobile SDK for iOS"
 
   s.description  = <<-DESC
-                   The SuperAwesome Mobile SDK (Software Development Kit) lets you to easily add COPPAcompliant advertisements and other platform features, like user authentication and registration, to your apps. We try to make integration as easy as possible, so we provide all the necessary tools such as this guide, API documentation, screencasts and demo apps. Currently, the kit is available for iOS and Android.
+                   The SuperAwesome Mobile SDK (Software Development Kit) lets you to easily add COPPAcompliant advertisements and other platform features, like user authentication and registration, to your apps. We try to make integration as easy as possible, so we provide all the necessary tools such as this guide, API documentation, screencasts and demo apps.
                    DESC
 
   s.homepage     = "http://developers.superawesome.tv/docs/iossdk"
@@ -60,7 +60,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/SuperAwesomeLTD/sa-mobile-sdk-ios", :tag => "1.0.1" }
+  s.source       = { :git => "https://github.com/SuperAwesomeLTD/sa-mobile-sdk-ios", :tag => "1.1.1" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -115,7 +115,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  s.dependency "JSONModel"
-  s.dependency "GoogleAds-IMA-iOS-SDK", "~> 3.0.beta.10"
+  s.dependency "JSONModel", "~> 1.0.2"
+  s.dependency "GoogleAds-IMA-iOS-SDK", "~> 3.0.beta.11"
 
 end

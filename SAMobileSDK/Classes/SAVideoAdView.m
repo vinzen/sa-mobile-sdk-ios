@@ -61,13 +61,15 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             if(videoAd == nil){
                 NSLog(@"SA: Could not find placement with the provided ID");
+                if(self.delegate && [self.delegate respondsToSelector:@selector(didFailToLoadVideoAd:)]){
+                    [self.delegate didFailToLoadVideoAd:self];
+                }
             }else{
                 [self requestAdsWithVideoAd:videoAd];
             }
         });
     }];
 }
-
 
 - (void)requestAdsWithVideoAd:(SAVideoAd *)videoAd
 {
@@ -87,6 +89,11 @@
 - (void)stop
 {
     [self.adsManager destroy];
+}
+
+- (void)resume
+{
+    [self.adsManager resume];
 }
 
 #pragma mark AdLoader
@@ -117,15 +124,18 @@
 
 - (void)adsManagerDidRequestContentPause:(IMAAdsManager *)adsManager {
     // Pause the content.
+    //NSLog(@"should pause content video file");
 }
 
 - (void)adsManagerDidRequestContentResume:(IMAAdsManager *)adsManager {
     // Resume or start (if not started yet) the content.
+    //NSLog(@"should resume content video file");
 }
 
 // Process ad events.
 - (void)adsManager:(IMAAdsManager *)adsManager didReceiveAdEvent:(IMAAdEvent *)event {
-    NSLog(@"SA: Received ad event.");
+    NSLog(@"SA: Received ad event: %i", event.type);
+    
     // Perform different actions based on the event type.
     if (event.type == kIMAAdEvent_STARTED) {
         NSLog(@"SA: Ad has started.");
@@ -136,6 +146,19 @@
         NSLog(@"SA: Ad has completed");
         if(self.delegate && [self.delegate respondsToSelector:@selector(didFinishPlayingVideoAd:)]){
             [self.delegate didFinishPlayingVideoAd:self];
+        }
+    }else if(event.type == kIMAAdEvent_CLICKED){
+        NSLog(@"SA: Ad has been clicked");
+        if(self.delegate && [self.delegate respondsToSelector:@selector(didClickVideoAd:)]){
+            [self.delegate didClickVideoAd:self];
+        }
+        
+    }else if(event.type == kIMAAdEvent_TAPPED){
+        NSLog(@"SA: Ad has been tapped");
+        if([self.adsManager.adPlaybackInfo isPlaying]){
+            [self.adsManager pause];
+        }else{
+            [self.adsManager resume];
         }
     }
 }
@@ -150,9 +173,9 @@
 }
 
 // Optional: receive updates about individual ad progress.
-- (void)adDidProgressToTime:(NSTimeInterval)mediaTime totalTime:(NSTimeInterval)totalTime {
-    // This can be very noisy log - called 5 times a second.
-//    NSLog(@"Current ad time: %lf", mediaTime);
-}
+//- (void)adDidProgressToTime:(NSTimeInterval)mediaTime totalTime:(NSTimeInterval)totalTime {
+//    // This can be very noisy log - called 5 times a second.
+////    NSLog(@"Current ad time: %lf", mediaTime);
+//}
 
 @end

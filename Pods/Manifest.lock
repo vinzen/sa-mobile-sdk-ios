@@ -1,16 +1,16 @@
 PODS:
-  - GoogleAds-IMA-iOS-SDK (3.0.beta.10)
-  - JSONModel (1.0.1)
+  - GoogleAds-IMA-iOS-SDK (3.0.beta.11)
+  - JSONModel (1.0.2)
   - WebViewJavascriptBridge (4.1.4)
 
 DEPENDENCIES:
-  - GoogleAds-IMA-iOS-SDK (= 3.0.beta.10)
-  - JSONModel
+  - GoogleAds-IMA-iOS-SDK (= 3.0.beta.11)
+  - JSONModel (= 1.0.2)
   - WebViewJavascriptBridge
 
 SPEC CHECKSUMS:
-  GoogleAds-IMA-iOS-SDK: 4c7b655b2296f78e8157e284dacf493e3a67de84
-  JSONModel: 634100aaacbd89811bc8a03da209356e5989c569
+  GoogleAds-IMA-iOS-SDK: 6c97c1d6cb6dc79a15c9b9a94bfe976c82919153
+  JSONModel: cbdef0fdff1cc70e913a860861d3072860efd3a1
   WebViewJavascriptBridge: 259a6c8c67b492bd8079c9944b6866d3476e16ac
 
 COCOAPODS: 0.35.0

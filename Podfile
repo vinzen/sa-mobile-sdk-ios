@@ -2,8 +2,8 @@
 # platform :ios, "6.0"
 
 target "SAMobileSDK" do
-pod 'JSONModel'
-pod 'GoogleAds-IMA-iOS-SDK', '3.0.beta.10'
+pod 'JSONModel', '1.0.2'
+pod 'GoogleAds-IMA-iOS-SDK', '3.0.beta.11'
 pod "WebViewJavascriptBridge"
 end
 

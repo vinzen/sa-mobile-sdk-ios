@@ -27,6 +27,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.videoView.delegate = self;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -47,14 +49,23 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)startVideAd:(id)sender
+- (IBAction)startVideoAd:(id)sender
 {
     [self.videoView play];
 }
 
-- (IBAction)stopVideAd:(id)sender
+- (IBAction)stopVideoAd:(id)sender
 {
     [self.videoView stop];
+}
+
+- (void)didStartPlayingVideoAd:(SAVideoAdView *)videoAd{
+    NSLog(@"Video playback started");
+}
+
+- (void)didFinishPlayingVideoAd:(SAVideoAdView *)videoAd
+{
+    NSLog(@"Video playback finished");
 }
 
 /*

@@ -68,6 +68,7 @@
 		98AAAABA19991A8000B7E2B2 /* SABannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 98AAAAB919991A8000B7E2B2 /* SABannerView.m */; };
 		98AAAABE19991E5D00B7E2B2 /* UIView+FindUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98AAAABD19991E5D00B7E2B2 /* UIView+FindUIViewController.m */; };
 		98AD4D1E199A1EA000915410 /* SAInterstitialView.m in Sources */ = {isa = PBXBuildFile; fileRef = 98AD4D1D199A1EA000915410 /* SAInterstitialView.m */; };
+		98BAE5D61A83D1A3007878A3 /* SAVideoAdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98BAE5D51A83D1A3007878A3 /* SAVideoAdViewController.m */; };
 		98C915B81A30ABAA00996881 /* SAAppConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 98C915B71A30ABAA00996881 /* SAAppConfig.m */; };
 		98CF200B198B91D000FD5896 /* SALoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98CF2009198B91D000FD5896 /* SALoginViewController.m */; };
 		98CF2010198B926100FD5896 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98CF200E198B926100FD5896 /* ViewController.m */; };
@@ -167,6 +168,8 @@
 		98AAAABD19991E5D00B7E2B2 /* UIView+FindUIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FindUIViewController.m"; sourceTree = "<group>"; };
 		98AD4D1C199A1EA000915410 /* SAInterstitialView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAInterstitialView.h; sourceTree = "<group>"; };
 		98AD4D1D199A1EA000915410 /* SAInterstitialView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAInterstitialView.m; sourceTree = "<group>"; };
+		98BAE5D41A83D1A3007878A3 /* SAVideoAdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAVideoAdViewController.h; sourceTree = "<group>"; };
+		98BAE5D51A83D1A3007878A3 /* SAVideoAdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAVideoAdViewController.m; sourceTree = "<group>"; };
 		98C915B61A30ABAA00996881 /* SAAppConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAAppConfig.h; sourceTree = "<group>"; };
 		98C915B71A30ABAA00996881 /* SAAppConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAAppConfig.m; sourceTree = "<group>"; };
 		98CF2008198B91D000FD5896 /* SALoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SALoginViewController.h; sourceTree = "<group>"; };
@@ -497,6 +500,8 @@
 			children = (
 				98F7671619B74FC4004559BD /* SAVideoAdView.h */,
 				98F7671719B74FC4004559BD /* SAVideoAdView.m */,
+				98BAE5D41A83D1A3007878A3 /* SAVideoAdViewController.h */,
+				98BAE5D51A83D1A3007878A3 /* SAVideoAdViewController.m */,
 			);
 			name = VIdeo;
 			sourceTree = "<group>";
@@ -663,6 +668,7 @@
 				98AAAABA19991A8000B7E2B2 /* SABannerView.m in Sources */,
 				9856D99B1987D86B00B6804C /* main.m in Sources */,
 				98AAAABE19991E5D00B7E2B2 /* UIView+FindUIViewController.m in Sources */,
+				98BAE5D61A83D1A3007878A3 /* SAVideoAdViewController.m in Sources */,
 				984B378E19A605E4005386CC /* SAServerResponse.m in Sources */,
 				98CF2015198B9EE600FD5896 /* SALoginWebViewController.m in Sources */,
 				98F7671819B74FC4004559BD /* SAVideoAdView.m in Sources */,

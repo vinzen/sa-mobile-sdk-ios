@@ -71,7 +71,6 @@
     }];
 }
 
-
 - (void)requestAdsWithVideoAd:(SAVideoAd *)videoAd
 {
     if(videoAd == nil) return;
@@ -150,6 +149,9 @@
         }
     }else if(event.type == kIMAAdEvent_CLICKED){
         NSLog(@"SA: Ad has been clicked");
+        if(self.delegate && [self.delegate respondsToSelector:@selector(didClickVideoAd:)]){
+            [self.delegate didClickVideoAd:self];
+        }
         
     }else if(event.type == kIMAAdEvent_TAPPED){
         NSLog(@"SA: Ad has been tapped");
@@ -171,9 +173,9 @@
 }
 
 // Optional: receive updates about individual ad progress.
-- (void)adDidProgressToTime:(NSTimeInterval)mediaTime totalTime:(NSTimeInterval)totalTime {
-    // This can be very noisy log - called 5 times a second.
-//    NSLog(@"Current ad time: %lf", mediaTime);
-}
+//- (void)adDidProgressToTime:(NSTimeInterval)mediaTime totalTime:(NSTimeInterval)totalTime {
+//    // This can be very noisy log - called 5 times a second.
+////    NSLog(@"Current ad time: %lf", mediaTime);
+//}
 
 @end

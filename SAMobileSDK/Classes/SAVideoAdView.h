@@ -24,6 +24,7 @@
 - (void)didStartPlayingVideoAd:(SAVideoAdView *)videoAd;
 - (void)didFinishPlayingVideoAd:(SAVideoAdView *)videoAd;
 - (void)didFailToPlayVideoAd:(SAVideoAdView *)videoAd;
+- (void)didClickVideoAd:(SAVideoAdView *)videoAd;
 
 @end
 

@@ -71,6 +71,19 @@
     self.videoView.frame = self.view.bounds;
 }
 
+- (void)appplicationDidBecomeActive:(NSNotification *)notification
+{
+    NSLog(@"Application Did Become Active");
+    [self.videoView resume];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationDidBecomeActiveNotification object:nil];
+}
+
 #pragma mark - SAVideoAdViewDelegate
 
 - (void)didLoadVideoAd:(SAVideoAdView *)videoAd
@@ -98,6 +111,13 @@
 {
     dispatch_async(dispatch_get_main_queue(), ^{
         [self dismissViewControllerAnimated:YES completion:nil];
+    });
+}
+
+- (void)didClickVideoAd:(SAVideoAdView *)videoAd
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appplicationDidBecomeActive:) name:UIApplicationDidBecomeActiveNotification object:nil];
     });
 }
 

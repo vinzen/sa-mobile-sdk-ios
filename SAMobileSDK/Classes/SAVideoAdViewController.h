@@ -12,6 +12,7 @@
 @interface SAVideoAdViewController : UIViewController <SAVideoAdViewDelegate>
 
 @property (nonatomic,strong) SAVideoAdView *videoView;
+@property (assign,nonatomic,getter=isParentalGateEnabled) BOOL parentalGateEnabled;
 
 - (instancetype)initWithAppID:(NSString *)appID placementID:(NSString *)placementID;
 

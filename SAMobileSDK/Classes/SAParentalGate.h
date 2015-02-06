@@ -13,6 +13,8 @@
 @protocol SAParentalGateDelegate <NSObject>
 @optional
 
+- (void)didCancelParentalGate:(SAParentalGate *)parentalGate;
+- (void)didFailChallengeForParentalGate:(SAParentalGate *)parentalGate;
 - (void)didGetThroughParentalGate:(SAParentalGate *)parentalGate;
 
 @end

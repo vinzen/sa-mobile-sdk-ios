@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <ADTECHMobileSDK/ADTECHMobileSDK.h>
 #import "SADisplayAd.h"
+#import "SAParentalGate.h"
 
 @interface SAPlacementView : UIView
 

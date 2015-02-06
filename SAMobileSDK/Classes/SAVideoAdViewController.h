@@ -11,6 +11,8 @@
 
 @interface SAVideoAdViewController : UIViewController <SAVideoAdViewDelegate>
 
+@property (nonatomic,strong) SAVideoAdView *videoView;
+
 - (instancetype)initWithAppID:(NSString *)appID placementID:(NSString *)placementID;
 
 @end

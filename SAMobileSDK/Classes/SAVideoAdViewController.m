@@ -12,7 +12,6 @@
 
 @property (nonatomic,strong) NSString *appID;
 @property (nonatomic,strong) NSString *placementID;
-@property (nonatomic,strong) SAVideoAdView *videoView;
 @property (nonatomic,strong) UIActivityIndicatorView *activityIndicatorView;
 
 @end

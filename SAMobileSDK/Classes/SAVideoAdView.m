@@ -11,9 +11,14 @@
 
 @interface SAVideoAdView ()
 
-@property(nonatomic, strong) IMAAdsLoader *adsLoader;
-@property(nonatomic, strong) IMAAdsManager *adsManager;
-@property(nonatomic, strong) IMAAdDisplayContainer *adDisplayContainer;
+@property (nonatomic,strong) IMAAdsLoader *adsLoader;
+@property (nonatomic,strong) IMAAdsManager *adsManager;
+@property (nonatomic,strong) IMAAdDisplayContainer *adDisplayContainer;
+@property (nonatomic,strong) IMAAdsRenderingSettings *adsRenderingSettings;
+
+@property (nonatomic,strong) SAParentalGate *gate;
+@property (nonatomic,strong) NSString *targetURL;
+@property (nonatomic,strong) UIButton *learnMoreButton;
 
 @end
 
@@ -46,6 +51,10 @@
     
     self.adsLoader = [[IMAAdsLoader alloc] initWithSettings:settings];
     self.adsLoader.delegate = self;
+    
+    self.learnMoreButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.learnMoreButton addTarget:self action:@selector(learnMoreButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    self.learnMoreButton.backgroundColor = [UIColor clearColor];
 }
 
 - (void)didMoveToWindow
@@ -71,6 +80,13 @@
     }];
 }
 
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    
+    [self.learnMoreButton setFrame:CGRectMake(0, 0, self.frame.size.width, 40)];
+}
+
 - (void)requestAdsWithVideoAd:(SAVideoAd *)videoAd
 {
     if(videoAd == nil) return;
@@ -81,7 +97,8 @@
     [self.adsLoader requestAdsWithRequest:request];
 }
 
-- (void)play{
+- (void)play
+{
     [self.adsManager initializeWithContentPlayhead:nil adsRenderingSettings:nil];
     [self.adsManager start];
 }
@@ -94,6 +111,51 @@
 - (void)resume
 {
     [self.adsManager resume];
+}
+
+- (void)learnMoreButtonTapped:(id)sender
+{
+    if(!self.targetURL) return;
+    
+    [self.adsManager pause];
+    
+    if([self isParentalGateEnabled]){
+        if(self.gate == nil){
+            self.gate = [[SAParentalGate alloc] init];
+            self.gate.delegate = self;
+        }
+        [self.gate show];
+    }else{
+        [self openTargetURL];
+    }
+}
+
+- (void)openTargetURL
+{
+    if(self.targetURL){
+        if(self.delegate && [self.delegate respondsToSelector:@selector(didClickVideoAd:)]){
+            [self.delegate didClickVideoAd:self];
+        }
+        
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.targetURL]];
+    }
+}
+
+#pragma mark SAParentalGate
+
+- (void)didGetThroughParentalGate:(SAParentalGate *)parentalGate
+{
+    [self openTargetURL];
+}
+
+- (void)didCancelParentalGate:(SAParentalGate *)parentalGate
+{
+    [self resume];
+}
+
+- (void)didFailChallengeForParentalGate:(SAParentalGate *)parentalGate
+{
+    [self resume];
 }
 
 #pragma mark AdLoader
@@ -137,13 +199,19 @@
     NSLog(@"SA: Received ad event: %i", event.type);
     
     // Perform different actions based on the event type.
-    if (event.type == kIMAAdEvent_STARTED) {
+    if (event.type == kIMAAdEvent_LOADED) {
+        NSLog(@"SA: Ad has been loaded.");
+        self.targetURL = [event.ad performSelector:@selector(clickThroughUrl)];
+        [self addSubview:self.learnMoreButton];
+        [self bringSubviewToFront:self.learnMoreButton];
+    }else if (event.type == kIMAAdEvent_STARTED) {
         NSLog(@"SA: Ad has started.");
         if(self.delegate && [self.delegate respondsToSelector:@selector(didStartPlayingVideoAd:)]){
             [self.delegate didStartPlayingVideoAd:self];
         }
     }else if(event.type == kIMAAdEvent_COMPLETE){
         NSLog(@"SA: Ad has completed");
+        self.targetURL = nil;
         if(self.delegate && [self.delegate respondsToSelector:@selector(didFinishPlayingVideoAd:)]){
             [self.delegate didFinishPlayingVideoAd:self];
         }

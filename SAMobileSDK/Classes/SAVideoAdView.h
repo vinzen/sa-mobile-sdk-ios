@@ -29,7 +29,7 @@
 @end
 
 
-@interface SAVideoAdView : SAPlacementView <IMAAdsLoaderDelegate, IMAAdsManagerDelegate>
+@interface SAVideoAdView : SAPlacementView <IMAAdsLoaderDelegate, IMAAdsManagerDelegate, SAParentalGateDelegate>
 
 @property (nonatomic,weak) id<SAVideoAdViewDelegate> delegate;
 @property (nonatomic,assign) IBInspectable BOOL autoplay;

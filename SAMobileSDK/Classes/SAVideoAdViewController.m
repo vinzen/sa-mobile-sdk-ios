@@ -12,7 +12,6 @@
 
 @property (nonatomic,strong) NSString *appID;
 @property (nonatomic,strong) NSString *placementID;
-@property (nonatomic,strong) SAVideoAdView *videoView;
 @property (nonatomic,strong) UIActivityIndicatorView *activityIndicatorView;
 
 @end
@@ -35,6 +34,7 @@
     self.view.backgroundColor = [UIColor blackColor];
     
     self.videoView = [[SAVideoAdView alloc] initWithFrame:self.view.bounds];
+    self.videoView.parentalGateEnabled = self.parentalGateEnabled;
     self.videoView.delegate = self;
     if(self.appID && self.placementID){
         self.videoView.appID = self.appID;

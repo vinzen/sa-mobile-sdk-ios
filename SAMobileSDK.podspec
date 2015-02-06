@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "SAMobileSDK"
-  s.version      = "1.1.1"
+  s.version      = "1.1.2"
   s.summary      = "SuperAwesome Mobile SDK for iOS"
 
   s.description  = <<-DESC
@@ -60,7 +60,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/SuperAwesomeLTD/sa-mobile-sdk-ios", :tag => "1.1.1" }
+  s.source       = { :git => "https://github.com/SuperAwesomeLTD/sa-mobile-sdk-ios", :tag => "1.1.2" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #

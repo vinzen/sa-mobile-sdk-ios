@@ -2,7 +2,7 @@
 //  ATAdapTVVideoAdConfiguration.h
 //  ADTECHMobileSDK
 //
-//  Created by Balint Dezso on 9/11/14.
+//  Created by ADTECH GmbH on 9/11/14.
 //  Copyright (c) 2014 ADTECH GmbH. All rights reserved.
 //
 

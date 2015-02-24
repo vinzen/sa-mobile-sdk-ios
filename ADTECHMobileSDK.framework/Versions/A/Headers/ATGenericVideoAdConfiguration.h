@@ -8,6 +8,7 @@
 
 #import <ADTECHMobileSDK/ADTECHMobileSDK.h>
 #import "ATVideoAdConfiguration.h"
+#import "GenericConfigurable.h"
 
 /**
  * Holds the placement configuration for video ads shown by ATMoviePlayerController that are served by ad.com.
@@ -17,16 +18,9 @@
  *
  * Available in 3.1 and later.
  */
-@interface ATGenericVideoAdConfiguration : ATVideoAdConfiguration<NSCopying>
+@interface ATGenericVideoAdConfiguration : ATVideoAdConfiguration<NSCopying, GenericConfigurable>
 {
 }
-
-/**
- * The mobile placement identifier. This value uniquely identifies a placement that is configured server-side.
- *
- * Available in 3.1 and later.
- */
-@property (nonatomic, copy) NSString *mpID;
 
 /**
  * Creates a new autoreleased instance of the configuration. This is a convenience method.

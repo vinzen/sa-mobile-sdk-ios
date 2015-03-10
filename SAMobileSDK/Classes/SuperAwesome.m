@@ -25,8 +25,10 @@
 {
     static SuperAwesome *sharedManager = nil;
     @synchronized(self) {
-        if (sharedManager == nil)
+        if (sharedManager == nil){
             sharedManager = [[self alloc] init];
+            NSLog(@"%@", [sharedManager version]);
+        }
     }
     return sharedManager;
 }
@@ -40,6 +42,11 @@
         [ATBaseConfiguration setLoggingLevel:kATLogOff];
     }
     return self;
+}
+
+- (NSString *)version
+{
+    return @"SuperAwesome iOS SDK version 1.1.2";
 }
 
 - (NSString *)baseURL

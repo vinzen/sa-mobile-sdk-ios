@@ -1,0 +1,22 @@
+{
+  "name": "sa-mobile-sdk-ios",
+  "version": "1.1.2",
+  "description": "SuperAwesome Mobile SDK for iOS",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SuperAwesomeLTD/sa-mobile-sdk-ios.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SuperAwesomeLTD/sa-mobile-sdk-ios/issues"
+  },
+  "homepage": "https://github.com/SuperAwesomeLTD/sa-mobile-sdk-ios"
+}

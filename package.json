@@ -1,5 +1,5 @@
 {
-  "name": "sa-mobile-sdk-ios",
+  "name": "sa-mobile-sdk-ios-docs",
   "version": "1.1.2",
   "description": "SuperAwesome Mobile SDK for iOS",
   "main": "index.js",
@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/SuperAwesomeLTD/sa-mobile-sdk-ios/issues"
   },
-  "homepage": "https://github.com/SuperAwesomeLTD/sa-mobile-sdk-ios"
+  "homepage": "https://github.com/SuperAwesomeLTD/sa-mobile-sdk-ios",
+  "files":[
+    "docs"
+  ]
 }

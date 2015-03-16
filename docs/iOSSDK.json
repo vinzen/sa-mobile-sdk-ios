@@ -1,0 +1,79 @@
+{
+    "name": "iOS SDK",
+    "text": "iOSSDK/iOS.md",
+    "sections":[
+        {
+            "name": "Getting Started",
+            "sections":[
+                {
+                    "name": "Registering Your App on the Dashboard",
+                    "text": "iOSSDK/GettingStarted.md"
+                },
+                {
+                    "name": "Integrating the SDK",
+                    "text": "iOSSDK/Integrate.md"
+                }
+            ]
+        },
+        
+        {
+            "name": "Banner Ads",
+            "sections":[
+                {
+                    "name": "Banner Ads With Interface Builder",
+                    "text": "iOSSDK/AddBanner.md"
+                },
+                {
+                    "name": "Banner Ads With Code",
+                    "text": "iOSSDK/AddBannerCode.md"
+                },
+                {
+                    "name": "Advanced Configuration",
+                    "text": "iOSSDK/BannerConfig.md"
+                }
+            ]
+        },
+        {
+            "name": "Interstitial Ads",
+            "text": "iOSSDK/AddInterstitial.md"
+        },
+        {
+            "name": "Video Ads",
+
+            "sections":[
+                {
+                    "name": "Video Ads With Interface Builder",
+                    "text": "iOSSDK/AddVideo.md"
+                },
+                {
+                    "name": "Video Ads With Code",
+                    "text": "iOSSDK/AddVideoCode.md"
+                },
+                {
+                    "name": "Fullscreen Video Ads",
+                    "text": "iOSSDK/VideoFullscreen.md"
+                },
+                {
+                    "name": "Advanced Configuration",
+                    "text": "iOSSDK/VideoConfig.md"
+                }
+            ]
+        },
+        {
+            "name": "Parental Gate",
+            "text": "iOSSDK/ParentalGate.md"
+        },
+        {
+            "name": "Other Resources",
+            "text": "iOSSDK/Other.md"
+        },
+        {
+            "name": "Technical Support",
+            "text": "iOSSDK/Support.md"
+        },
+        {
+            "name": "License",
+            "text": "iOSSDK/License.md"
+        }
+    ]
+}

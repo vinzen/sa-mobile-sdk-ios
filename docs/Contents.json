@@ -1,17 +1,17 @@
 {
     "name": "iOS SDK",
-    "text": "iOSSDK/iOS.md",
+    "text": "00 Intro.md",
     "sections":[
         {
             "name": "Getting Started",
             "sections":[
                 {
                     "name": "Registering Your App on the Dashboard",
-                    "text": "iOSSDK/GettingStarted.md"
+                    "text": "01 Getting Started/01 GettingStarted.md"
                 },
                 {
                     "name": "Integrating the SDK",
-                    "text": "iOSSDK/Integrate.md"
+                    "text": "01 Getting Started/02 Integrate.md"
                 }
             ]
         },
@@ -21,21 +21,21 @@
             "sections":[
                 {
                     "name": "Banner Ads With Interface Builder",
-                    "text": "iOSSDK/AddBanner.md"
+                    "text": "02 Banner Ads/01 AddBanner.md"
                 },
                 {
                     "name": "Banner Ads With Code",
-                    "text": "iOSSDK/AddBannerCode.md"
+                    "text": "02 Banner Ads/02 AddBannerCode.md"
                 },
                 {
                     "name": "Advanced Configuration",
-                    "text": "iOSSDK/BannerConfig.md"
+                    "text": "02 Banner Ads/03 BannerConfig.md"
                 }
             ]
         },
         {
             "name": "Interstitial Ads",
-            "text": "iOSSDK/AddInterstitial.md"
+            "text": "03 Interstitial Ads.md"
         },
         {
             "name": "Video Ads",
@@ -43,37 +43,37 @@
             "sections":[
                 {
                     "name": "Video Ads With Interface Builder",
-                    "text": "iOSSDK/AddVideo.md"
+                    "text": "04 Video Ads/01 AddVideo.md"
                 },
                 {
                     "name": "Video Ads With Code",
-                    "text": "iOSSDK/AddVideoCode.md"
+                    "text": "04 Video Ads/02 AddVideoCode.md"
                 },
                 {
                     "name": "Fullscreen Video Ads",
-                    "text": "iOSSDK/VideoFullscreen.md"
+                    "text": "04 Video Ads/03 VideoFullscreen.md"
                 },
                 {
                     "name": "Advanced Configuration",
-                    "text": "iOSSDK/VideoConfig.md"
+                    "text": "04 Video Ads/04 VideoConfig.md"
                 }
             ]
         },
         {
             "name": "Parental Gate",
-            "text": "iOSSDK/ParentalGate.md"
+            "text": "05 ParentalGate.md"
         },
         {
             "name": "Other Resources",
-            "text": "iOSSDK/Other.md"
+            "text": "06 Other Resources.md"
         },
         {
             "name": "Technical Support",
-            "text": "iOSSDK/Support.md"
+            "text": "07 Technical Support.md"
         },
         {
             "name": "License",
-            "text": "iOSSDK/License.md"
+            "text": "08 License.md"
         }
     ]
 }

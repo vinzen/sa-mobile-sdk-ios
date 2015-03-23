@@ -5,4 +5,4 @@ You can enable our parental gate on banners, interstitials and video views. You 
 [adView setParentalGateEnabled:YES];
 ```
 
-![](/doc_files/iOSSDK/parental_gate.png "Parental Gate on iOS")
+![](img/parental_gate.png "Parental Gate on iOS")

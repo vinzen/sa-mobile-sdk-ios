@@ -7,7 +7,7 @@
             "sections": [
                 {
                     "name": "Registering Your App on the Dashboard",
-                    "text": "<p>If you haven&#39;t registered your app on the SuperAwesome Dashboard yet, you can do that by going to <a href=\"http://dashboard.superawesome.tv\">http://dashboard.superawesome.tv</a> and creating a new app.</p>\n<p><img src=\"/doc_files/iOSSDK/dashboard.png\" alt=\"\" title=\"Registering an app on the dashboard\"></p>\n<p>Once your app is created, or if you already had an app registered, the app ID is shown in the dashboard page. Furthermore, if you are planning to use the advertising features of the SDK, you can customise the ad placements on this site.</p>\n<p>To get SuperAwesome ads working in your app you will have to note down two things from the Dashboard:</p>\n<ul>\n<li>App ID</li>\n<li>Placement ID</li>\n</ul>\n"
+                    "text": "<p>If you haven&#39;t registered your app on the SuperAwesome Dashboard yet, you can do that by going to <a href=\"http://dashboard.superawesome.tv\">http://dashboard.superawesome.tv</a> and creating a new app.</p>\n<p><img src=\"img/dashboard.png\" alt=\"\" title=\"Registering an app on the dashboard\"></p>\n<p>Once your app is created, or if you already had an app registered, the app ID is shown in the dashboard page. Furthermore, if you are planning to use the advertising features of the SDK, you can customise the ad placements on this site.</p>\n<p>To get SuperAwesome ads working in your app you will have to note down two things from the Dashboard:</p>\n<ul>\n<li>App ID</li>\n<li>Placement ID</li>\n</ul>\n"
                 },
                 {
                     "name": "Integrating the SDK",
@@ -20,7 +20,7 @@
             "sections": [
                 {
                     "name": "Banner Ads With Interface Builder",
-                    "text": "<p>Add the banner to the xib (or storyboard) file: Go to your xib file and add a UIView object to the view. In the Identity Inspector pane set the class of the view to SABannerView.</p>\n<p><img src=\"/doc_files/iOSSDK/custom_class.png\" alt=\"\" title=\"Setting custom class to UIView\"></p>\n<p>In the Size Inspector pane set the size of the banner. The following sizes are supported:</p>\n<ul>\n<li>320x50</li>\n<li>300x50</li>\n<li>728x90 (tablet)</li>\n<li>300x250</li>\n</ul>\n<p>Finally, fill the App ID and Placement ID fields in the Attributes Inspector pane. After you have set these values the ads should show up in your app.</p>\n<p><a href=\"http://www.youtube.com/embed/Rnpx3tA2quk\">http://www.youtube.com/embed/Rnpx3tA2quk</a></p>\n"
+                    "text": "<p>Add the banner to the xib (or storyboard) file: Go to your xib file and add a UIView object to the view. In the Identity Inspector pane set the class of the view to SABannerView.</p>\n<p><img src=\"img/custom_class.png\" alt=\"\" title=\"Setting custom class to UIView\"></p>\n<p>In the Size Inspector pane set the size of the banner. The following sizes are supported:</p>\n<ul>\n<li>320x50</li>\n<li>300x50</li>\n<li>728x90 (tablet)</li>\n<li>300x250</li>\n</ul>\n<p>Finally, fill the App ID and Placement ID fields in the Attributes Inspector pane. After you have set these values the ads should show up in your app.</p>\n<p><a href=\"http://www.youtube.com/embed/Rnpx3tA2quk\">http://www.youtube.com/embed/Rnpx3tA2quk</a></p>\n"
                 },
                 {
                     "name": "Banner Ads With Code",
@@ -41,7 +41,7 @@
             "sections": [
                 {
                     "name": "Video Ads With Interface Builder",
-                    "text": "<p>In order to use video ads in your app, first you have to add a preroll placement on the <a href=\"http://dashboard.superawesome.tv\">Dashboard</a>. Then, go to your xib file and add a UIView object to the view. In the Identity Inspector pane set the class of the view to SAVideoAdView.</p>\n<p><img src=\"/doc_files/iOSSDK/video_ad.png\" alt=\"\" title=\"Adding Video Ad in Interface Builder\"></p>\n<p>Set your App ID and Placement ID in the Attributes Inspector pane and if you wish to enable autoplay set the Autoplay setting to On.</p>\n<p>To start the video ad playback programatically call the <code>play</code> method on the SAVideoAdView. By implementing the SAVideoAdViewDelegate protocol your app can react to events that are emitted by the SAVideoAdView instance.</p>\n"
+                    "text": "<p>In order to use video ads in your app, first you have to add a preroll placement on the <a href=\"http://dashboard.superawesome.tv\">Dashboard</a>. Then, go to your xib file and add a UIView object to the view. In the Identity Inspector pane set the class of the view to SAVideoAdView.</p>\n<p><img src=\"img/video_ad.png\" alt=\"\" title=\"Adding Video Ad in Interface Builder\"></p>\n<p>Set your App ID and Placement ID in the Attributes Inspector pane and if you wish to enable autoplay set the Autoplay setting to On.</p>\n<p>To start the video ad playback programatically call the <code>play</code> method on the SAVideoAdView. By implementing the SAVideoAdViewDelegate protocol your app can react to events that are emitted by the SAVideoAdView instance.</p>\n"
                 },
                 {
                     "name": "Video Ads With Code",
@@ -59,7 +59,7 @@
         },
         {
             "name": "Parental Gate",
-            "text": "<p>Parental gates are used in apps targeted towards kids to prevent them from engaging in commerce or following links out of an app to websites, social networks, or other apps without the knowledge of their parent or guardian. A parental gate presents an adult level task which must be completed in order to continue.</p>\n<p>You can enable our parental gate on banners, interstitials and video views. You can either enable it in Interface Builder or by using the following code in your project:</p>\n<pre><code>[adView setParentalGateEnabled:YES];\n</code></pre><p><img src=\"/doc_files/iOSSDK/parental_gate.png\" alt=\"\" title=\"Parental Gate on iOS\"></p>\n"
+            "text": "<p>Parental gates are used in apps targeted towards kids to prevent them from engaging in commerce or following links out of an app to websites, social networks, or other apps without the knowledge of their parent or guardian. A parental gate presents an adult level task which must be completed in order to continue.</p>\n<p>You can enable our parental gate on banners, interstitials and video views. You can either enable it in Interface Builder or by using the following code in your project:</p>\n<pre><code>[adView setParentalGateEnabled:YES];\n</code></pre><p><img src=\"img/parental_gate.png\" alt=\"\" title=\"Parental Gate on iOS\"></p>\n"
         },
         {
             "name": "Other Resources",

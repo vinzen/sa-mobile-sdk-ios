@@ -13,11 +13,17 @@
 	<key>--keep-intermediate-files</key>
 	<true/>
 	<key>--output</key>
-	<string>./doc</string>
+	<string>./docs/appledoc</string>
 	<key>--ignore</key>
 	<array>
 		<string>Pods</string>
 		<string>ADTECHMobileSDK.framework</string>
 	</array>
+	<key>--search-undocumented-doc</key>
+	<true/>
+	<key>--keep-undocumented-members</key>
+	<true/>
+	<key>--keep-undocumented-objects</key>
+	<true/>
 </dict>
 </plist>

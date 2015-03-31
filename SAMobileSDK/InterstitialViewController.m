@@ -34,6 +34,7 @@
     self.interstitial.appID = @"14";
     self.interstitial.placementID = @"5247931";
     self.interstitial.delegate = self;
+    self.interstitial.backgroundColor = [UIColor lightGrayColor];
 }
 
 - (void)didReceiveMemoryWarning

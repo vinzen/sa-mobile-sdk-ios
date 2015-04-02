@@ -16,3 +16,4 @@ extern const NSInteger kATAdErrorCodeLoadCalledOnNonVisibleAd;
 extern const NSInteger kATAdErrorCodeInterstitialAlreadyBeingLoaded;
 extern const NSInteger kATAdErrorCodeFetchedDefaultAd;
 extern const NSInteger kATAdErrorCodeNotSetupForCustomMediation;
+extern const NSInteger kATAdErrorCodeAdFailedRendering;

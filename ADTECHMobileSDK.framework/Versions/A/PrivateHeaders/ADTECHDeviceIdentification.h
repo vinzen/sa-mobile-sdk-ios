@@ -12,8 +12,6 @@
 
 + (NSString*)deviceIdentifier;
 
-+ (NSString *)deviceIdentifierSource;
-
 + (BOOL)isTrackingEnabled;
 
 @end

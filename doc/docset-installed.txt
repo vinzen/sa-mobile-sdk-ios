@@ -1,4 +1,0 @@
-Documentation set was installed to Xcode!
-
-Path: /Users/balazs/Library/Developer/Shared/Documentation/DocSets/tv.superawesome.SuperAwesome-Mobile-SDK.docset
-Time: 2014-08-26 11:43:50 +0000

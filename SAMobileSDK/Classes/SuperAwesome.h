@@ -35,6 +35,7 @@ typedef NS_ENUM(NSUInteger, SAClientConfiguration) {
  */
 @property (nonatomic,assign) SAClientConfiguration clientConfiguration;
 
+- (NSString *)version;
 
 - (void)displayAdForApp:(NSString *)appID placement:(NSString *)placementID completion:(void(^)(SADisplayAd *))completion;
 

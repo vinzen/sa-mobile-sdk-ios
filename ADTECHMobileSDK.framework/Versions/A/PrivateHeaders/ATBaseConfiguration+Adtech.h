@@ -31,7 +31,6 @@ extern BOOL kADTECHValidateSecureCertificates;
 @property (nonatomic, readonly) NSDictionary *keyValueAdParams;
 
 + (NSBundle*)adtechBundle;
-+ (NSBundle*)localizableBundle;
 
 - (id)initWithNoDefaults;
 - (void)mergeValuesFromInstance:(ATBaseConfiguration*)instance;

@@ -30,6 +30,12 @@
     return self;
 }
 
+- (void)setBackgroundColor:(UIColor *)backgroundColor
+{
+    [super setBackgroundColor:backgroundColor];
+    [self.interstitialView setBackgroundColor:backgroundColor];
+}
+
 - (void)setAppID:(NSString *)appID
 {
     [super setAppID:appID];

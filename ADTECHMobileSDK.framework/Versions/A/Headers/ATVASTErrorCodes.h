@@ -23,6 +23,7 @@ extern const NSInteger kATVASTErrorCodeInvalidConfiguration;
 extern const NSInteger kATVASTErrorCodeNoNonLinear;
 extern const NSInteger kATVASTErrorCodeTooManyWrapperRedirects;
 extern const NSInteger kATVASTErrorCodeEmptyCompanionView;
+extern const NSInteger kATVASTErrorCodeNoSupportedMediaFileFound;
 
 extern const NSInteger kATVASTErrorCodeEmptyDocument;
 extern const NSInteger kATVASTErrorCodeFailedRequest;

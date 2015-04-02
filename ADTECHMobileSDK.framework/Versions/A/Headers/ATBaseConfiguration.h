@@ -23,6 +23,7 @@
 	NSString *domain;
 	NSUInteger port;
 	BOOL openLandingPagesThroughBrowser;
+    NSTimeZone *userTimeZone;
 }
 
 /**
@@ -36,6 +37,15 @@
  * You need to make sure the campaigns targeting this separate versions also have the same description for the targeted application.
  */
 @property(nonatomic,copy,readonly) NSString *hostApplicationName;
+
+/**
+ * Set the users home timezone. This should be the time zone the user has used to sign up for services provided by the app. Setting this parameter will allow for more accurate advertising
+ * to be served in case the user is abroad.
+ *
+ * Available in 3.7
+ *
+ */
+@property(nonatomic, copy) NSTimeZone *userTimeZone;
 
 /**
  * Holds the protocol schema to be used when creating the request for the ad. Typically its value will be either @"http" (kATProtocolSchemaHTTP) or @"https" (kATProtocolSchemaHTTPS).

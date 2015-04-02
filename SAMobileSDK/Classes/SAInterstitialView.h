@@ -67,4 +67,10 @@
  */
 - (void)present;
 
+/**
+ * Sets the background color for the interstitial.
+ * The default color is clear on iOS 8 and above and white on iOS 6 and 7.
+ */
+- (void)setBackgroundColor:(UIColor *)backgroundColor;
+
 @end

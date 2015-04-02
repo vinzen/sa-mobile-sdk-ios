@@ -1,0 +1,79 @@
+{
+    "name": "iOS SDK",
+    "text": "00 Intro.md",
+    "sections":[
+        {
+            "name": "Getting Started",
+            "sections":[
+                {
+                    "name": "Registering Your App on the Dashboard",
+                    "text": "01 Getting Started/01 GettingStarted.md"
+                },
+                {
+                    "name": "Integrating the SDK",
+                    "text": "01 Getting Started/02 Integrate.md"
+                }
+            ]
+        },
+        
+        {
+            "name": "Banner Ads",
+            "sections":[
+                {
+                    "name": "Banner Ads With Interface Builder",
+                    "text": "02 Banner Ads/01 AddBanner.md"
+                },
+                {
+                    "name": "Banner Ads With Code",
+                    "text": "02 Banner Ads/02 AddBannerCode.md"
+                },
+                {
+                    "name": "Advanced Configuration",
+                    "text": "02 Banner Ads/03 BannerConfig.md"
+                }
+            ]
+        },
+        {
+            "name": "Interstitial Ads",
+            "text": "03 Interstitial Ads.md"
+        },
+        {
+            "name": "Video Ads",
+
+            "sections":[
+                {
+                    "name": "Video Ads With Interface Builder",
+                    "text": "04 Video Ads/01 AddVideo.md"
+                },
+                {
+                    "name": "Video Ads With Code",
+                    "text": "04 Video Ads/02 AddVideoCode.md"
+                },
+                {
+                    "name": "Fullscreen Video Ads",
+                    "text": "04 Video Ads/03 VideoFullscreen.md"
+                },
+                {
+                    "name": "Advanced Configuration",
+                    "text": "04 Video Ads/04 VideoConfig.md"
+                }
+            ]
+        },
+        {
+            "name": "Parental Gate",
+            "text": "05 ParentalGate.md"
+        },
+        {
+            "name": "Other Resources",
+            "text": "06 Other Resources.md"
+        },
+        {
+            "name": "Technical Support",
+            "text": "07 Technical Support.md"
+        },
+        {
+            "name": "License",
+            "text": "08 License.md"
+        }
+    ]
+}

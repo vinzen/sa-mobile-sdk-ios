@@ -1,0 +1,77 @@
+{
+    "name": "iOS SDK",
+    "text": "<p>The SuperAwesome Mobile SDK (Software Development Kit) lets you to easily add COPPA compliant advertisements and other platform features, like user authentication and registration, to your apps. We try to make integration as easy as possible, so we provide all the necessary tools such as this guide, API documentation, screencasts and demo apps.</p>\n<p>This project is hosted on GitHub: <a href=\"https://github.com/SuperAwesomeLTD/sa-mobile-sdk-ios\">https://github.com/SuperAwesomeLTD/sa-mobile-sdk-ios</a></p>\n",
+    "sections": [
+        {
+            "name": "Getting Started",
+            "sections": [
+                {
+                    "name": "Registering Your App on the Dashboard",
+                    "text": "<p>If you haven&#39;t registered your app on the SuperAwesome Dashboard yet, you can do that by going to <a href=\"http://dashboard.superawesome.tv\">http://dashboard.superawesome.tv</a> and creating a new app.</p>\n<p><img src=\"img/dashboard.png\" alt=\"\" title=\"Registering an app on the dashboard\"></p>\n<p>Once your app is created, or if you already had an app registered, the app ID is shown in the dashboard page. Furthermore, if you are planning to use the advertising features of the SDK, you can customise the ad placements on this site.</p>\n<p>To get SuperAwesome ads working in your app you will have to note down two things from the Dashboard:</p>\n<ul>\n<li>App ID</li>\n<li>Placement ID</li>\n</ul>\n"
+                },
+                {
+                    "name": "Integrating the SDK",
+                    "text": "<p>We use <a href=\"http://cocoapods.org\">CocoaPods</a> in order to make installing and updating our SDK super easy. CocoaPods manages library dependencies for your Xcode projects.</p>\n<h3 id=\"installing-cocoapods\">Installing CocoaPods</h3>\n<p>If you have not got CocoaPods installed on your machine you can install it by using the following commands:</p>\n<pre><code>sudo gem install cocoapods\npod init # run in your project&#39;s directory\n</code></pre><h3 id=\"getting-the-sdk\">Getting the SDK</h3>\n<p>The dependencies for your projects are specified in a single text file called a Podfile. CocoaPods will resolve dependencies between libraries, fetch the resulting source code, then link it together in an Xcode workspace to build your project.\nTo download our SDK add the following line to your Podfile:</p>\n<pre><code>pod &#39;SAMobileSDK&#39;, :git =&gt; &#39;https://github.com/SuperAwesomeLTD/sa-mobile-sdk-ios.git&#39;\n</code></pre><p>After the pod source has been added, update your project&#39;s dependencies by running the following command in the terminal:</p>\n<pre><code>pod update\n</code></pre><p>Don&#39;t forget to use the .xcworkspace file to open your project in Xcode, instead of the .xcproj file, from here on out.</p>\n<p>We recommend using the stable releases of our SDK, but if you want to try out the developer preview versions modify your Podfile as follows:</p>\n<pre><code>pod &#39;SAMobileSDK&#39;, :git =&gt; &#39;https://github.com/SuperAwesomeLTD/sa-mobile-sdk-ios.git&#39;, :branch =&gt; &#39;develop&#39;\n</code></pre><p><a href=\"http://www.youtube.com/embed/A7JahwDe1iA\">http://www.youtube.com/embed/A7JahwDe1iA</a></p>\n"
+                }
+            ]
+        },
+        {
+            "name": "Banner Ads",
+            "sections": [
+                {
+                    "name": "Banner Ads With Interface Builder",
+                    "text": "<p>Add the banner to the xib (or storyboard) file: Go to your xib file and add a UIView object to the view. In the Identity Inspector pane set the class of the view to SABannerView.</p>\n<p><img src=\"img/custom_class.png\" alt=\"\" title=\"Setting custom class to UIView\"></p>\n<p>In the Size Inspector pane set the size of the banner. The following sizes are supported:</p>\n<ul>\n<li>320x50</li>\n<li>300x50</li>\n<li>728x90 (tablet)</li>\n<li>300x250</li>\n</ul>\n<p>Finally, fill the App ID and Placement ID fields in the Attributes Inspector pane. After you have set these values the ads should show up in your app.</p>\n<p><a href=\"http://www.youtube.com/embed/Rnpx3tA2quk\">http://www.youtube.com/embed/Rnpx3tA2quk</a></p>\n"
+                },
+                {
+                    "name": "Banner Ads With Code",
+                    "text": "<p>If you prefer using code in order to add banners to your app, you can use the following code snippet to do so:</p>\n<pre><code>SABannerView *bannerView = [[SABannerView alloc] initWithFrame:CGRectMake(0, 100, 320, 50)];\nbannerView.appID = @&quot;__YOUR_APP_ID__&quot;;\nbannerView.placementID = @&quot;__YOUR_PLACEMENT_ID__&quot;;\n[self.view addSubview:bannerView];\n</code></pre><p>Do not forget to replace the <code>__YOUR_APP_ID__</code> and the <code>__YOUR_PLACEMENT_ID__</code> strings with your app ID and placement ID.</p>\n"
+                },
+                {
+                    "name": "Advanced Configuration",
+                    "text": "<h4 id=\"implementing-sabannerviewdelegate\">Implementing SABannerViewDelegate</h4>\n<p>If you want to be notified of various events in the banner lifecycle, you can set its delegate to an object instance that implements the SABannerViewDelegate protocol. For example, you could add this protocol to your view controllers interface definition and optionally implement some of the methods defined in the protocol. At least shouldSuspendForAd and shoudResumeForAd method should be implemented so that you know when the host app should be suspended and resumed. (e.g. the user is playing a game then sees an attractive ad, it clicks on it and the ad expands covering the whole UI; the game going on in the host application should be suspended while the banner is expanded).</p>\n<p>SABannerViewDelegate provides the following methods:</p>\n<pre><code>- (void)shouldSuspendForAd:(SABannerView *)view;\n- (void)shouldResumeForAd:(SABannerView *)view;\n- (void)willLeaveApplicationForAd:(SABannerView *)view;\n</code></pre><h4 id=\"setting-the-visibility-flag-of-the-banner\">Setting the visibility flag of the banner</h4>\n<p>One last thing you need to do is keep the banners visibility flag up to date. This is important so that the banner knows when to work for you and refresh the ads and when to pause. Failing to set the visibility flag when needed, you might have your users miss important ads for their interests.</p>\n<p>You should keep the visibility flag on YES when the banner is displayed and viewable by the user, but when the banner gets off-screen (maybe through the user scrolling content and by navigating to another screen), you should set the visibility flag to NO. A good practice is to set the visibility flag is on viewDidDisappear and viewDidAppear methods.</p>\n<pre><code>- (void)viewDidDisappear:(BOOL)animated\n{\n [super viewDidDisappear:animated];\n banner.visible = NO;\n }\n\n- (void)viewDidAppear:(BOOL)animated\n{\n banner.visible = YES;\n [super viewDidAppear:animated];\n}\n</code></pre>"
+                }
+            ]
+        },
+        {
+            "name": "Interstitial Ads",
+            "text": "<p>The indicated place to load an interstitial is when you create a new screen. Depending on your needs, you might want to show the interstitial each time when you enter the screen or only once. You should start loading the interstitial inside your <code>viewDidLoad</code> method. After the interstitial is loaded (you get notified of this through the delegate) you need to call present on it to be presented.</p>\n<p>The interstitial is presented modally over the viewController you configured it with. This means that when it is presented, your <code>viewWillDisapper:</code> method gets called and <code>viewWillAppear:</code> is called when the interstitial is dismissed. It a good idea not to automatically present the interstitial on <code>viewWillAppear:</code> or to destroy it on <code>viewWillDisappear:</code>, because this will lead to infinite loop and early dismisses of the interstitial.</p>\n<pre><code>@interface ViewController ()\n@property (nonatomic,strong) SAInterstitialView *interstitial;\n@end\n\n...\n\n- (void)viewDidLoad\n{\n    [super viewDidLoad];\n    // Do any additional setup after loading the view from its nib.\n\n    self.interstitial = [[SAInterstitialView alloc] initWithViewController:self];\n    self.interstitial.appID = @&quot;__YOUR_APP_ID__&quot;;\n    self.interstitial.placementID = @&quot;__YOUR_PLACEMENT_ID__&quot;;\n}\n\n- (IBAction)presentInterstitionalAd:(id)sender\n{\n    [self.interstitial present];\n}\n</code></pre><p>Do not forget to replace the <code>__YOUR_APP_ID__</code> and the <code>__YOUR_PLACEMENT_ID__</code> strings with your app ID and placement ID.</p>\n"
+        },
+        {
+            "name": "Video Ads",
+            "sections": [
+                {
+                    "name": "Video Ads With Interface Builder",
+                    "text": "<p>In order to use video ads in your app, first you have to add a preroll placement on the <a href=\"http://dashboard.superawesome.tv\">Dashboard</a>. Then, go to your xib file and add a UIView object to the view. In the Identity Inspector pane set the class of the view to SAVideoAdView.</p>\n<p><img src=\"img/video_ad.png\" alt=\"\" title=\"Adding Video Ad in Interface Builder\"></p>\n<p>Set your App ID and Placement ID in the Attributes Inspector pane and if you wish to enable autoplay set the Autoplay setting to On.</p>\n<p>To start the video ad playback programatically call the <code>play</code> method on the SAVideoAdView. By implementing the SAVideoAdViewDelegate protocol your app can react to events that are emitted by the SAVideoAdView instance.</p>\n"
+                },
+                {
+                    "name": "Video Ads With Code",
+                    "text": "<p>If you prefer using code in order to add video ads to your app, you can use the following code snippet to do so:</p>\n<pre><code>@interface ViewController ()\n@property (nonatomic,strong) SAVideoAdView *videoAdView;\n@end\n\n...\n\n- (void)viewDidLoad\n{\n    [super viewDidLoad];\n    // Do any additional setup after loading the view from its nib.\n\n    self.videoAdView = [[SAVideoAdView alloc] initWithFrame:CGRectMake(0, 0, 320, 200)];\n    self.videoAdView.appID = @&quot;__YOUR_APP_ID__&quot;;\n    self.videoAdView.placementID = @&quot;__YOUR_PLACEMENT_ID__&quot;;\n    self.videoAdView.autoplay = YES;\n    [self.view addSubview:self.videoAdView];\n}\n</code></pre><p>Do not forget to replace the <code>__YOUR_APP_ID__</code> and the <code>__YOUR_PLACEMENT_ID__</code> strings with your app ID and placement ID.</p>\n"
+                },
+                {
+                    "name": "Fullscreen Video Ads",
+                    "text": "<p>If you just want to display a fullscreen video ad and not to worry about the delegate protocol, this is the easiest way to show a video ad:</p>\n<pre><code>SAVideoAdViewController *vc = [[SAVideoAdViewController alloc] initWithAppID:@&quot;__APP_ID__&quot; placementID:@&quot;__PLACEMENT_ID__&quot;];\n[vc setParentalGateEnabled:YES];\n[self presentViewController:vc animated:YES completion:nil];\n</code></pre><p>Do not forget to replace the <code>__YOUR_APP_ID__</code> and the <code>__YOUR_PLACEMENT_ID__</code> strings with your app ID and placement ID.</p>\n<p>The view controller will handle all the errors and will dismiss itself when the ad finishes.</p>\n"
+                },
+                {
+                    "name": "Advanced Configuration",
+                    "text": "<h4 id=\"implementing-savideoadviewdelegate\">Implementing SAVideoAdViewDelegate</h4>\n<p>If you want to be notified of various events in the vide ad&#39;s lifecycle, you can set its delegate to an object instance that implements the SAVideoAdViewDelegate protocol.</p>\n<p>The following methods are available in the protocol:</p>\n<pre><code>- (void)didLoadVideoAd:(SAVideoAdView *)videoAd;\n- (void)didFailToLoadVideoAd:(SAVideoAdView *)videoAd;\n\n- (void)didStartPlayingVideoAd:(SAVideoAdView *)videoAd;\n- (void)didFinishPlayingVideoAd:(SAVideoAdView *)videoAd;\n- (void)didFailToPlayVideoAd:(SAVideoAdView *)videoAd;\n- (void)didClickVideoAd:(SAVideoAdView *)videoAd;\n</code></pre>"
+                }
+            ]
+        },
+        {
+            "name": "Parental Gate",
+            "text": "<p>Parental gates are used in apps targeted towards kids to prevent them from engaging in commerce or following links out of an app to websites, social networks, or other apps without the knowledge of their parent or guardian. A parental gate presents an adult level task which must be completed in order to continue.</p>\n<p>You can enable our parental gate on banners, interstitials and video views. You can either enable it in Interface Builder or by using the following code in your project:</p>\n<pre><code>[adView setParentalGateEnabled:YES];\n</code></pre><p><img src=\"img/parental_gate.png\" alt=\"\" title=\"Parental Gate on iOS\"></p>\n"
+        },
+        {
+            "name": "Other Resources",
+            "text": "<h3 id=\"api-documentation\">API Documentation</h3>\n<p>Appledoc generated documentation can be found in the docs folder of the project.</p>\n"
+        },
+        {
+            "name": "Technical Support",
+            "text": "<p>If you have any questions or you need technical support, please, do not hesitate to contact us at <a href=\"mailto:devsupport@superawesome.tv\">devsupport@superawesome.tv</a>. We will make every attempt to answer your inquiry as quickly as possible.</p>\n"
+        },
+        {
+            "name": "License",
+            "text": "<p>See the LICENSE.txt file for more information.</p>\n"
+        }
+    ]
+}

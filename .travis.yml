@@ -1,0 +1,3 @@
+language: objective-c
+script:
+  - set -o pipefail && xcodebuild test -workspace demo/SuperAwesome\ Demo.xcworkspace -scheme "SuperAwesome Demo" -sdk iphonesimulator | xcpretty -c

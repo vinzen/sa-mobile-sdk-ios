@@ -24,6 +24,6 @@ Pod::Spec.new do |s|
   s.frameworks = 'AVFoundation', 'AudioToolbox', 'CFNetwork', 'CoreGraphics', 'CoreData', 'CoreLocation', 'CoreMedia', 'CoreMotion', 'CoreTelephony', 'EventKit', 'MediaPlayer', 'MessageUI', 'MobileCoreServices', 'QuartzCore', 'Security', 'SystemConfiguration', 'StoreKit', 'AdSupport', 'EventKitUI'
   s.libraries = "xml2", "z"
   s.dependency "JSONModel", "~> 1.0.2"
-  s.dependency "GoogleAds-IMA-iOS-SDK", "~> 3.0.beta.11"
+  s.dependency "GoogleAds-IMA-iOS-SDK", "~> 3.0.beta.12"
 
 end

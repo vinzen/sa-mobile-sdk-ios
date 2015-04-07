@@ -4,6 +4,7 @@
   "summary": "SuperAwesome Mobile SDK for iOS",
   "description": "                   The SuperAwesome Mobile SDK lets you to easily add COPPA compliant advertisements and other platform features, like user authentication and registration, to your apps. We try to make integration as easy as possible, so we provide all the necessary tools such as this guide, API documentation, screencasts and demo apps.\n",
   "homepage": "http://developers.superawesome.tv/docs/iossdk",
+  "documentation_url": "http://developers.superawesome.tv/docs/iossdk",
   "license": {
     "type": "CREATIVE COMMONS PUBLIC LICENSE",
     "file": "LICENSE.txt"
@@ -16,7 +17,7 @@
   },
   "requires_arc": true,
   "source": {
-    "git": "https://github.com/SuperAwesomeLTD/sa-mobile-sdk-ios",
+    "git": "https://github.com/SuperAwesomeLTD/sa-mobile-sdk-ios.git",
     "tag": "1.2.0"
   },
   "source_files": "SuperAwesome",
@@ -52,7 +53,7 @@
       "~> 1.0.2"
     ],
     "GoogleAds-IMA-iOS-SDK": [
-      "~> 3.0.beta.11"
+      "~> 3.0.beta.12"
     ]
   }
 }

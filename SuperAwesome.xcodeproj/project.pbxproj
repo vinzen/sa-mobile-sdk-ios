@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9857874C1ACDA5C100C4ABF4 /* ADTECHMobileSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9857874B1ACDA5C100C4ABF4 /* ADTECHMobileSDK.bundle */; };
+		980BEBC01AD3D9CD0017FC39 /* libGoogleIMA3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 98B992831ACD774C00EFFA27 /* libGoogleIMA3.a */; };
 		98B98FA51ACD5DD700EFFA27 /* SuperAwesome.h in Headers */ = {isa = PBXBuildFile; fileRef = 98B98FA41ACD5DD700EFFA27 /* SuperAwesome.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		98B98FAB1ACD5DD700EFFA27 /* SuperAwesome.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98B98F9F1ACD5DD700EFFA27 /* SuperAwesome.framework */; };
 		98B98FB21ACD5DD800EFFA27 /* SuperAwesomeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B98FB11ACD5DD800EFFA27 /* SuperAwesomeTests.m */; };
@@ -89,7 +89,6 @@
 		98B9927C1ACD6B2F00EFFA27 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98B9927B1ACD6B2F00EFFA27 /* StoreKit.framework */; };
 		98B9927E1ACD6B3800EFFA27 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98B9927D1ACD6B3800EFFA27 /* AdSupport.framework */; };
 		98B992801ACD6B3F00EFFA27 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98B9927F1ACD6B3F00EFFA27 /* EventKitUI.framework */; };
-		98B992841ACD774C00EFFA27 /* libGoogleIMA3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 98B992831ACD774C00EFFA27 /* libGoogleIMA3.a */; };
 		98B992861ACD776800EFFA27 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98B992851ACD776800EFFA27 /* WebKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -189,7 +188,7 @@
 		98B9927B1ACD6B2F00EFFA27 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		98B9927D1ACD6B3800EFFA27 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		98B9927F1ACD6B3F00EFFA27 /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
-		98B992831ACD774C00EFFA27 /* libGoogleIMA3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGoogleIMA3.a; path = Frameworks/GoogleIMASDK3/libGoogleIMA3.a; sourceTree = "<group>"; };
+		98B992831ACD774C00EFFA27 /* libGoogleIMA3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGoogleIMA3.a; path = "demo/Pods/GoogleAds-IMA-iOS-SDK/GoogleIMASDK3/libGoogleIMA3.a"; sourceTree = "<group>"; };
 		98B992851ACD776800EFFA27 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -198,10 +197,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				980BEBC01AD3D9CD0017FC39 /* libGoogleIMA3.a in Frameworks */,
 				98B990491ACD65FE00EFFA27 /* ADTECHMobileSDK.framework in Frameworks */,
 				98B992861ACD776800EFFA27 /* WebKit.framework in Frameworks */,
 				98B992801ACD6B3F00EFFA27 /* EventKitUI.framework in Frameworks */,
-				98B992841ACD774C00EFFA27 /* libGoogleIMA3.a in Frameworks */,
 				98B9927E1ACD6B3800EFFA27 /* AdSupport.framework in Frameworks */,
 				98B9927C1ACD6B2F00EFFA27 /* StoreKit.framework in Frameworks */,
 				98B9927A1ACD6B2800EFFA27 /* SystemConfiguration.framework in Frameworks */,
@@ -416,7 +415,7 @@
 				98B9921A1ACD664C00EFFA27 /* JSONModelTransformations */,
 			);
 			name = JSONModel;
-			path = Frameworks/JSONModel/JSONModel;
+			path = demo/Pods/JSONModel/JSONModel;
 			sourceTree = "<group>";
 		};
 		98B992061ACD664C00EFFA27 /* JSONModel */ = {
@@ -486,7 +485,7 @@
 				98B992481ACD68F400EFFA27 /* IMAUiElements.h */,
 			);
 			name = GoogleIMASDK3;
-			path = Frameworks/GoogleIMASDK3;
+			path = "demo/Pods/GoogleAds-IMA-iOS-SDK/GoogleIMASDK3";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -615,7 +614,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9857874C1ACDA5C100C4ABF4 /* ADTECHMobileSDK.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -778,7 +776,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Frameworks/GoogleIMASDK3",
+					"$(PROJECT_DIR)/demo/Pods/GoogleAds-IMA-iOS-SDK/GoogleIMASDK3",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -803,7 +801,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Frameworks/GoogleIMASDK3",
+					"$(PROJECT_DIR)/demo/Pods/GoogleAds-IMA-iOS-SDK/GoogleIMASDK3",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";

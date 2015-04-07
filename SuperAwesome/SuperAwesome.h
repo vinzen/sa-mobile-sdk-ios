@@ -17,9 +17,6 @@
 #import "SAVideoAdView.h"
 #import "SAVideoAdViewController.h"
 
-//Loyalty Classes
-#import "SALoginViewController.h"
-
 typedef NS_ENUM(NSUInteger, SAClientConfiguration) {
     SAClientConfigurationStaging,
     SAClientConfigurationProduction

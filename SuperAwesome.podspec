@@ -8,6 +8,7 @@ Pod::Spec.new do |s|
                    DESC
 
   s.homepage     = "http://developers.superawesome.tv/docs/iossdk"
+  s.documentation_url = 'http://developers.superawesome.tv/docs/iossdk'
   s.license      = { :type => "CREATIVE COMMONS PUBLIC LICENSE", :file => "LICENSE.txt" }
   s.author             = { "Balazs Kiss" => "balazs@superawesome.tv" }
 

@@ -7,10 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <SuperAwesome/SuperAwesome.h>
 
 @interface ViewController : UIViewController
-
 
 @end
 

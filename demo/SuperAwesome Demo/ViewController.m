@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "SuperAwesome.h"
 
 @interface ViewController ()
 
@@ -17,6 +18,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    SABannerView *bannerView = [[SABannerView alloc] initWithFrame:CGRectMake(0, 0, 320, 50)];
+    [bannerView setAppID:@"14"];
+    [bannerView setPlacementID:@"5247930"];
+    [self.view addSubview:bannerView];
 }
 
 - (void)didReceiveMemoryWarning {

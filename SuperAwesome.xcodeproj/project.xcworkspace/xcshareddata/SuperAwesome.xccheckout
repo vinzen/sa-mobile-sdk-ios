@@ -14,11 +14,11 @@
 		<string>github.com:SuperAwesomeLTD/sa-mobile-sdk-ios.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>SuperAwesome/SuperAwesome.xcodeproj</string>
+	<string>SuperAwesome.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>53034F648ECCED5C373BEF8E3B9F1678E270E102</key>
-		<string>../../..</string>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>github.com:SuperAwesomeLTD/sa-mobile-sdk-ios.git</string>

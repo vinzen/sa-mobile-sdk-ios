@@ -16,10 +16,10 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   s.source       = { :git => "https://github.com/SuperAwesomeLTD/sa-mobile-sdk-ios", :tag => "1.2.0" }
 
-  s.source_files  = "SAMobileSDK/Classes"
-  s.resources = "SAMobileSDK/Resources/*"
+  s.source_files  = "SuperAwesome"
+  s.resources = "SuperAwesome/Resources/*"
 
-  s.vendored_frameworks = 'ADTECHMobileSDK.framework'
+  s.vendored_frameworks = 'Frameworks/ADTECHMobileSDK.framework'
   s.frameworks = 'AVFoundation', 'AudioToolbox', 'CFNetwork', 'CoreGraphics', 'CoreData', 'CoreLocation', 'CoreMedia', 'CoreMotion', 'CoreTelephony', 'EventKit', 'MediaPlayer', 'MessageUI', 'MobileCoreServices', 'QuartzCore', 'Security', 'SystemConfiguration', 'StoreKit', 'AdSupport', 'EventKitUI'
   s.libraries = "xml2", "z"
   s.dependency "JSONModel", "~> 1.0.2"

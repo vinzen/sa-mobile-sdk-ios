@@ -19,10 +19,6 @@
 		98B9901F1ACD61AA00EFFA27 /* SADisplayAd.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B990041ACD61AA00EFFA27 /* SADisplayAd.m */; };
 		98B990201ACD61AA00EFFA27 /* SAInterstitialView.h in Headers */ = {isa = PBXBuildFile; fileRef = 98B990051ACD61AA00EFFA27 /* SAInterstitialView.h */; };
 		98B990211ACD61AA00EFFA27 /* SAInterstitialView.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B990061ACD61AA00EFFA27 /* SAInterstitialView.m */; };
-		98B990221ACD61AA00EFFA27 /* SALoginViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 98B990071ACD61AA00EFFA27 /* SALoginViewController.h */; };
-		98B990231ACD61AA00EFFA27 /* SALoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B990081ACD61AA00EFFA27 /* SALoginViewController.m */; };
-		98B990241ACD61AA00EFFA27 /* SALoginWebViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 98B990091ACD61AA00EFFA27 /* SALoginWebViewController.h */; };
-		98B990251ACD61AA00EFFA27 /* SALoginWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B9900A1ACD61AA00EFFA27 /* SALoginWebViewController.m */; };
 		98B990261ACD61AA00EFFA27 /* SAParentalGate.h in Headers */ = {isa = PBXBuildFile; fileRef = 98B9900B1ACD61AA00EFFA27 /* SAParentalGate.h */; };
 		98B990271ACD61AA00EFFA27 /* SAParentalGate.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B9900C1ACD61AA00EFFA27 /* SAParentalGate.m */; };
 		98B990281ACD61AA00EFFA27 /* SAPlacementView.h in Headers */ = {isa = PBXBuildFile; fileRef = 98B9900D1ACD61AA00EFFA27 /* SAPlacementView.h */; };
@@ -123,10 +119,6 @@
 		98B990041ACD61AA00EFFA27 /* SADisplayAd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SADisplayAd.m; sourceTree = "<group>"; };
 		98B990051ACD61AA00EFFA27 /* SAInterstitialView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAInterstitialView.h; sourceTree = "<group>"; };
 		98B990061ACD61AA00EFFA27 /* SAInterstitialView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAInterstitialView.m; sourceTree = "<group>"; };
-		98B990071ACD61AA00EFFA27 /* SALoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SALoginViewController.h; sourceTree = "<group>"; };
-		98B990081ACD61AA00EFFA27 /* SALoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SALoginViewController.m; sourceTree = "<group>"; };
-		98B990091ACD61AA00EFFA27 /* SALoginWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SALoginWebViewController.h; sourceTree = "<group>"; };
-		98B9900A1ACD61AA00EFFA27 /* SALoginWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SALoginWebViewController.m; sourceTree = "<group>"; };
 		98B9900B1ACD61AA00EFFA27 /* SAParentalGate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAParentalGate.h; sourceTree = "<group>"; };
 		98B9900C1ACD61AA00EFFA27 /* SAParentalGate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAParentalGate.m; sourceTree = "<group>"; };
 		98B9900D1ACD61AA00EFFA27 /* SAPlacementView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAPlacementView.h; sourceTree = "<group>"; };
@@ -242,6 +234,77 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		980BEBB91AD3D6560017FC39 /* Parental Gate */ = {
+			isa = PBXGroup;
+			children = (
+				98B9900B1ACD61AA00EFFA27 /* SAParentalGate.h */,
+				98B9900C1ACD61AA00EFFA27 /* SAParentalGate.m */,
+			);
+			name = "Parental Gate";
+			sourceTree = "<group>";
+		};
+		980BEBBA1AD3D6620017FC39 /* Interstitial */ = {
+			isa = PBXGroup;
+			children = (
+				98B990051ACD61AA00EFFA27 /* SAInterstitialView.h */,
+				98B990061ACD61AA00EFFA27 /* SAInterstitialView.m */,
+			);
+			name = Interstitial;
+			sourceTree = "<group>";
+		};
+		980BEBBB1AD3D6730017FC39 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				98B990111ACD61AA00EFFA27 /* SAVideoAd.h */,
+				98B990121ACD61AA00EFFA27 /* SAVideoAd.m */,
+				98B990131ACD61AA00EFFA27 /* SAVideoAdView.h */,
+				98B990141ACD61AA00EFFA27 /* SAVideoAdView.m */,
+				98B990151ACD61AA00EFFA27 /* SAVideoAdViewController.h */,
+				98B990161ACD61AA00EFFA27 /* SAVideoAdViewController.m */,
+			);
+			name = Video;
+			sourceTree = "<group>";
+		};
+		980BEBBC1AD3D6800017FC39 /* Banner */ = {
+			isa = PBXGroup;
+			children = (
+				98B990011ACD61AA00EFFA27 /* SABannerView.h */,
+				98B990021ACD61AA00EFFA27 /* SABannerView.m */,
+			);
+			name = Banner;
+			sourceTree = "<group>";
+		};
+		980BEBBD1AD3D6990017FC39 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				98B98FFF1ACD61AA00EFFA27 /* SAAppConfig.h */,
+				98B990001ACD61AA00EFFA27 /* SAAppConfig.m */,
+				98B9900F1ACD61AA00EFFA27 /* SAServerResponse.h */,
+				98B990101ACD61AA00EFFA27 /* SAServerResponse.m */,
+				98B990031ACD61AA00EFFA27 /* SADisplayAd.h */,
+				98B990041ACD61AA00EFFA27 /* SADisplayAd.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		980BEBBE1AD3D6AE0017FC39 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				98B990181ACD61AA00EFFA27 /* UIView+FindUIViewController.h */,
+				98B990191ACD61AA00EFFA27 /* UIView+FindUIViewController.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		980BEBBF1AD3D6B90017FC39 /* Base Class */ = {
+			isa = PBXGroup;
+			children = (
+				98B9900D1ACD61AA00EFFA27 /* SAPlacementView.h */,
+				98B9900E1ACD61AA00EFFA27 /* SAPlacementView.m */,
+			);
+			name = "Base Class";
+			sourceTree = "<group>";
+		};
 		9857874A1ACDA5A900C4ABF4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -274,33 +337,14 @@
 			isa = PBXGroup;
 			children = (
 				98B98FA41ACD5DD700EFFA27 /* SuperAwesome.h */,
-				98B98FFF1ACD61AA00EFFA27 /* SAAppConfig.h */,
-				98B990001ACD61AA00EFFA27 /* SAAppConfig.m */,
-				98B990011ACD61AA00EFFA27 /* SABannerView.h */,
-				98B990021ACD61AA00EFFA27 /* SABannerView.m */,
-				98B990031ACD61AA00EFFA27 /* SADisplayAd.h */,
-				98B990041ACD61AA00EFFA27 /* SADisplayAd.m */,
-				98B990051ACD61AA00EFFA27 /* SAInterstitialView.h */,
-				98B990061ACD61AA00EFFA27 /* SAInterstitialView.m */,
-				98B990071ACD61AA00EFFA27 /* SALoginViewController.h */,
-				98B990081ACD61AA00EFFA27 /* SALoginViewController.m */,
-				98B990091ACD61AA00EFFA27 /* SALoginWebViewController.h */,
-				98B9900A1ACD61AA00EFFA27 /* SALoginWebViewController.m */,
-				98B9900B1ACD61AA00EFFA27 /* SAParentalGate.h */,
-				98B9900C1ACD61AA00EFFA27 /* SAParentalGate.m */,
-				98B9900D1ACD61AA00EFFA27 /* SAPlacementView.h */,
-				98B9900E1ACD61AA00EFFA27 /* SAPlacementView.m */,
-				98B9900F1ACD61AA00EFFA27 /* SAServerResponse.h */,
-				98B990101ACD61AA00EFFA27 /* SAServerResponse.m */,
-				98B990111ACD61AA00EFFA27 /* SAVideoAd.h */,
-				98B990121ACD61AA00EFFA27 /* SAVideoAd.m */,
-				98B990131ACD61AA00EFFA27 /* SAVideoAdView.h */,
-				98B990141ACD61AA00EFFA27 /* SAVideoAdView.m */,
-				98B990151ACD61AA00EFFA27 /* SAVideoAdViewController.h */,
-				98B990161ACD61AA00EFFA27 /* SAVideoAdViewController.m */,
 				98B990171ACD61AA00EFFA27 /* SuperAwesome.m */,
-				98B990181ACD61AA00EFFA27 /* UIView+FindUIViewController.h */,
-				98B990191ACD61AA00EFFA27 /* UIView+FindUIViewController.m */,
+				980BEBBE1AD3D6AE0017FC39 /* Categories */,
+				980BEBBD1AD3D6990017FC39 /* Models */,
+				980BEBBF1AD3D6B90017FC39 /* Base Class */,
+				980BEBBC1AD3D6800017FC39 /* Banner */,
+				980BEBBA1AD3D6620017FC39 /* Interstitial */,
+				980BEBBB1AD3D6730017FC39 /* Video */,
+				980BEBB91AD3D6560017FC39 /* Parental Gate */,
 				98B98FA21ACD5DD700EFFA27 /* Supporting Files */,
 			);
 			path = SuperAwesome;
@@ -471,7 +515,6 @@
 				98B992541ACD68F400EFFA27 /* IMAAdsRequest.h in Headers */,
 				98B9901A1ACD61AA00EFFA27 /* SAAppConfig.h in Headers */,
 				98B992271ACD664C00EFFA27 /* NSArray+JSONModel.h in Headers */,
-				98B990221ACD61AA00EFFA27 /* SALoginViewController.h in Headers */,
 				98B9924B1ACD68F400EFFA27 /* IMAAd.h in Headers */,
 				98B992531ACD68F400EFFA27 /* IMAAdsRenderingSettings.h in Headers */,
 				98B9902C1ACD61AA00EFFA27 /* SAVideoAd.h in Headers */,
@@ -486,7 +529,6 @@
 				98B990301ACD61AA00EFFA27 /* SAVideoAdViewController.h in Headers */,
 				98B992321ACD664C00EFFA27 /* JSONValueTransformer.h in Headers */,
 				98B990331ACD61AA00EFFA27 /* UIView+FindUIViewController.h in Headers */,
-				98B990241ACD61AA00EFFA27 /* SALoginWebViewController.h in Headers */,
 				98B98FA51ACD5DD700EFFA27 /* SuperAwesome.h in Headers */,
 				98B992301ACD664C00EFFA27 /* JSONKeyMapper.h in Headers */,
 				98B992231ACD664C00EFFA27 /* JSONModelClassProperty.h in Headers */,
@@ -612,9 +654,7 @@
 				98B990311ACD61AA00EFFA27 /* SAVideoAdViewController.m in Sources */,
 				98B9922F1ACD664C00EFFA27 /* JSONModel+networking.m in Sources */,
 				98B9902D1ACD61AA00EFFA27 /* SAVideoAd.m in Sources */,
-				98B990251ACD61AA00EFFA27 /* SALoginWebViewController.m in Sources */,
 				98B9901B1ACD61AA00EFFA27 /* SAAppConfig.m in Sources */,
-				98B990231ACD61AA00EFFA27 /* SALoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

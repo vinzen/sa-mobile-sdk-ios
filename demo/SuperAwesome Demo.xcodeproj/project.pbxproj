@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D89FF0A295919F2A168AE98 /* libPods-SuperAwesome Demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EFA8DE86343AF7A5C634FCA /* libPods-SuperAwesome Demo.a */; };
 		98B98FCA1ACD5F0400EFFA27 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B98FC91ACD5F0400EFFA27 /* main.m */; };
 		98B98FCD1ACD5F0400EFFA27 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B98FCC1ACD5F0400EFFA27 /* AppDelegate.m */; };
 		98B98FD01ACD5F0400EFFA27 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B98FCF1ACD5F0400EFFA27 /* ViewController.m */; };
@@ -14,8 +15,6 @@
 		98B98FD51ACD5F0400EFFA27 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98B98FD41ACD5F0400EFFA27 /* Images.xcassets */; };
 		98B98FD81ACD5F0400EFFA27 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98B98FD61ACD5F0400EFFA27 /* LaunchScreen.xib */; };
 		98B98FE41ACD5F0400EFFA27 /* SuperAwesome_DemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B98FE31ACD5F0400EFFA27 /* SuperAwesome_DemoTests.m */; };
-		98B98FFC1ACD618500EFFA27 /* SuperAwesome.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98B98FF61ACD60DD00EFFA27 /* SuperAwesome.framework */; };
-		98B98FFD1ACD618500EFFA27 /* SuperAwesome.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 98B98FF61ACD60DD00EFFA27 /* SuperAwesome.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +34,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				98B98FFD1ACD618500EFFA27 /* SuperAwesome.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -43,6 +41,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5634DFB8E076111266332FE4 /* Pods-SuperAwesome Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperAwesome Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-SuperAwesome Demo/Pods-SuperAwesome Demo.release.xcconfig"; sourceTree = "<group>"; };
+		5EFA8DE86343AF7A5C634FCA /* libPods-SuperAwesome Demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SuperAwesome Demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		98B98FC41ACD5F0400EFFA27 /* SuperAwesome Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SuperAwesome Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		98B98FC81ACD5F0400EFFA27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		98B98FC91ACD5F0400EFFA27 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -56,7 +56,7 @@
 		98B98FDD1ACD5F0400EFFA27 /* SuperAwesome DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SuperAwesome DemoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		98B98FE21ACD5F0400EFFA27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		98B98FE31ACD5F0400EFFA27 /* SuperAwesome_DemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SuperAwesome_DemoTests.m; sourceTree = "<group>"; };
-		98B98FF61ACD60DD00EFFA27 /* SuperAwesome.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SuperAwesome.framework; path = "../build/Debug-iphoneos/SuperAwesome.framework"; sourceTree = "<group>"; };
+		FE6E04B6CF5B6CC2EAC29670 /* Pods-SuperAwesome Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperAwesome Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SuperAwesome Demo/Pods-SuperAwesome Demo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98B98FFC1ACD618500EFFA27 /* SuperAwesome.framework in Frameworks */,
+				6D89FF0A295919F2A168AE98 /* libPods-SuperAwesome Demo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +78,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4CE4A61138BBFB030F35D563 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FE6E04B6CF5B6CC2EAC29670 /* Pods-SuperAwesome Demo.debug.xcconfig */,
+				5634DFB8E076111266332FE4 /* Pods-SuperAwesome Demo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		98B98FBB1ACD5F0400EFFA27 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +94,7 @@
 				98B98FC61ACD5F0400EFFA27 /* SuperAwesome Demo */,
 				98B98FE01ACD5F0400EFFA27 /* SuperAwesome DemoTests */,
 				98B98FC51ACD5F0400EFFA27 /* Products */,
+				4CE4A61138BBFB030F35D563 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -141,7 +151,7 @@
 		98B98FF81ACD60E500EFFA27 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				98B98FF61ACD60DD00EFFA27 /* SuperAwesome.framework */,
+				5EFA8DE86343AF7A5C634FCA /* libPods-SuperAwesome Demo.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -153,10 +163,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 98B98FE71ACD5F0400EFFA27 /* Build configuration list for PBXNativeTarget "SuperAwesome Demo" */;
 			buildPhases = (
+				0719CC4BB74F35537714BBBE /* Check Pods Manifest.lock */,
 				98B98FC01ACD5F0400EFFA27 /* Sources */,
 				98B98FC11ACD5F0400EFFA27 /* Frameworks */,
 				98B98FC21ACD5F0400EFFA27 /* Resources */,
 				98B98FFE1ACD618500EFFA27 /* Embed Frameworks */,
+				1902F5F3E58E4725F562E787 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -241,6 +253,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0719CC4BB74F35537714BBBE /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		1902F5F3E58E4725F562E787 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SuperAwesome Demo/Pods-SuperAwesome Demo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		98B98FC01ACD5F0400EFFA27 /* Sources */ = {
@@ -369,6 +414,7 @@
 		};
 		98B98FE81ACD5F0400EFFA27 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE6E04B6CF5B6CC2EAC29670 /* Pods-SuperAwesome Demo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -383,6 +429,7 @@
 		};
 		98B98FE91ACD5F0400EFFA27 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5634DFB8E076111266332FE4 /* Pods-SuperAwesome Demo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (

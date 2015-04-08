@@ -19,22 +19,25 @@ Pod::Spec.new do |s|
   
   s.default_subspec = 'Default'
 
-  s.subspec 'Core' do |core|
-    core.dependency "JSONModel", "~> 1.0.2"
-    core.vendored_frameworks = 'Frameworks/ADTECHMobileSDK.framework'
-    core.frameworks = 'AVFoundation', 'AudioToolbox', 'CFNetwork', 'CoreGraphics', 'CoreData', 'CoreLocation', 'CoreMedia', 'CoreMotion', 'CoreTelephony', 'EventKit', 'MediaPlayer', 'MessageUI', 'MobileCoreServices', 'QuartzCore', 'Security', 'SystemConfiguration', 'StoreKit', 'AdSupport', 'EventKitUI'
-    core.libraries = "xml2", "z"
-    core.source_files  = "SuperAwesome"
-    core.resources = "SuperAwesome/Resources/*"
-  end
-
   s.subspec 'Default' do |default|
-    default.dependency 'SuperAwesome/Core'
+    default.dependency "JSONModel", "~> 1.0.2"
+    default.vendored_frameworks = 'Frameworks/ADTECHMobileSDK.framework'
+    default.frameworks = 'AVFoundation', 'AudioToolbox', 'CFNetwork', 'CoreGraphics', 'CoreData', 'CoreLocation', 'CoreMedia', 'CoreMotion', 'CoreTelephony', 'EventKit', 'MediaPlayer', 'MessageUI', 'MobileCoreServices', 'QuartzCore', 'Security', 'SystemConfiguration', 'StoreKit', 'AdSupport', 'EventKitUI'
+    default.libraries = "xml2", "z"
+    default.source_files  = "SuperAwesome"
+    default.resources = "SuperAwesome/Resources/*"
+
     default.dependency "GoogleAds-IMA-iOS-SDK", "~> 3.0.beta.12"
   end
 
   s.subspec 'AdMob' do |admob|
-    admob.dependency 'SuperAwesome/Core'
+    admob.dependency "JSONModel", "~> 1.0.2"
+    admob.vendored_frameworks = 'Frameworks/ADTECHMobileSDK.framework'
+    admob.frameworks = 'AVFoundation', 'AudioToolbox', 'CFNetwork', 'CoreGraphics', 'CoreData', 'CoreLocation', 'CoreMedia', 'CoreMotion', 'CoreTelephony', 'EventKit', 'MediaPlayer', 'MessageUI', 'MobileCoreServices', 'QuartzCore', 'Security', 'SystemConfiguration', 'StoreKit', 'AdSupport', 'EventKitUI'
+    admob.libraries = "xml2", "z"
+    admob.source_files  = "SuperAwesome"
+    admob.resources = "SuperAwesome/Resources/*"
+
     admob.dependency "GoogleAds-IMA-iOS-SDK-For-AdMob", "~> 3.0.beta.12"
   end
 end

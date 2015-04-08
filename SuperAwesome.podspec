@@ -23,7 +23,20 @@ Pod::Spec.new do |s|
   s.vendored_frameworks = 'Frameworks/ADTECHMobileSDK.framework'
   s.frameworks = 'AVFoundation', 'AudioToolbox', 'CFNetwork', 'CoreGraphics', 'CoreData', 'CoreLocation', 'CoreMedia', 'CoreMotion', 'CoreTelephony', 'EventKit', 'MediaPlayer', 'MessageUI', 'MobileCoreServices', 'QuartzCore', 'Security', 'SystemConfiguration', 'StoreKit', 'AdSupport', 'EventKitUI'
   s.libraries = "xml2", "z"
-  s.dependency "JSONModel", "~> 1.0.2"
-  s.dependency "GoogleAds-IMA-iOS-SDK", "~> 3.0.beta.12"
+  
+  spec.default_subspec = 'Default'
 
+  s.subspec 'Core' do |core|
+    core.dependency "JSONModel", "~> 1.0.2"
+  end
+
+  s.subspec 'Default' do |default|
+    default.dependency 'SuperAwesome/Core'
+    default.dependency "GoogleAds-IMA-iOS-SDK", "~> 3.0.beta.12"
+  end
+
+  s.subspec 'AdMob' do |admob|
+    admob.dependency 'SuperAwesome/Core'
+    admob.dependency "GoogleAds-IMA-iOS-SDK-For-AdMob", "~> 3.0.beta.12"
+  end
 end

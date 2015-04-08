@@ -25,3 +25,15 @@
 #define COCOAPODS_VERSION_MINOR_SuperAwesome 2
 #define COCOAPODS_VERSION_PATCH_SuperAwesome 0
 
+// SuperAwesome/Core
+#define COCOAPODS_POD_AVAILABLE_SuperAwesome_Core
+#define COCOAPODS_VERSION_MAJOR_SuperAwesome_Core 1
+#define COCOAPODS_VERSION_MINOR_SuperAwesome_Core 2
+#define COCOAPODS_VERSION_PATCH_SuperAwesome_Core 0
+
+// SuperAwesome/Default
+#define COCOAPODS_POD_AVAILABLE_SuperAwesome_Default
+#define COCOAPODS_VERSION_MAJOR_SuperAwesome_Default 1
+#define COCOAPODS_VERSION_MINOR_SuperAwesome_Default 2
+#define COCOAPODS_VERSION_PATCH_SuperAwesome_Default 0
+

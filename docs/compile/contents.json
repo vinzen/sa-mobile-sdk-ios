@@ -7,7 +7,7 @@
             "sections": [
                 {
                     "name": "Registering Your App on the Dashboard",
-                    "text": "<p>If you haven&#39;t registered your app on the SuperAwesome Dashboard yet, you can do that by going to <a href=\"http://dashboard.superawesome.tv\">http://dashboard.superawesome.tv</a> and creating a new app.</p>\n<p><img src=\"img/dashboard.png\" alt=\"\" title=\"Registering an app on the dashboard\"></p>\n<p>Once your app is created, or if you already had an app registered, the app ID is shown in the dashboard page. Furthermore, if you are planning to use the advertising features of the SDK, you can customise the ad placements on this site.</p>\n<p>To get SuperAwesome ads working in your app you will have to note down two things from the Dashboard:</p>\n<ul>\n<li>App ID</li>\n<li>Placement ID</li>\n</ul>\n"
+                    "text": "<p>If you haven&#39;t registered your app on the SuperAwesome Dashboard yet, you can do that by going to <a href=\"http://dashboard.superawesome.tv\">http://dashboard.superawesome.tv</a> and creating a new app. Before we approve your user, you can start testing with our <a href=\"/docs/iossdk/Demo%20Placements\">demo placements</a>.</p>\n<p><img src=\"img/dashboard.png\" alt=\"\" title=\"Registering an app on the dashboard\"></p>\n<p>Once your app is created, or if you already had an app registered, the app ID is shown in the dashboard page. Furthermore, if you are planning to use the advertising features of the SDK, you can customise the ad placements on this site.</p>\n<p>To get SuperAwesome ads working in your app you will have to note down two things from the Dashboard:</p>\n<ul>\n<li>App ID</li>\n<li>Placement ID</li>\n</ul>\n"
                 },
                 {
                     "name": "Integrating the SDK",
@@ -62,8 +62,8 @@
             "text": "<p>Parental gates are used in apps targeted towards kids to prevent them from engaging in commerce or following links out of an app to websites, social networks, or other apps without the knowledge of their parent or guardian. A parental gate presents an adult level task which must be completed in order to continue.</p>\n<p>You can enable our parental gate on banners, interstitials and video views. You can either enable it in Interface Builder or by using the following code in your project:</p>\n<pre><code>[adView setParentalGateEnabled:YES];\n</code></pre><p><img src=\"img/parental_gate.png\" alt=\"\" title=\"Parental Gate on iOS\"></p>\n"
         },
         {
-            "name": "Other Resources",
-            "text": "<h3 id=\"api-documentation\">API Documentation</h3>\n<p>Appledoc generated documentation can be found in the docs folder of the project.</p>\n"
+            "name": "Demo Placements",
+            "text": "<p>The following placements can be used for testing. These placements have a 100% fill rate.</p>\n<table>\n<thead>\n<tr>\n<th>App ID</th>\n<th>Placement ID</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>14</td>\n<td>5247930</td>\n<td>320x50 banner</td>\n</tr>\n<tr>\n<td>14</td>\n<td>5513681</td>\n<td>300x50 banner</td>\n</tr>\n<tr>\n<td>14</td>\n<td>5513680</td>\n<td>728x90 banner</td>\n</tr>\n<tr>\n<td>14</td>\n<td>5513682</td>\n<td>300x250 banner</td>\n</tr>\n<tr>\n<td>14</td>\n<td>5247931</td>\n<td>320x480 interstitial</td>\n</tr>\n<tr>\n<td>14</td>\n<td>5513683</td>\n<td>768x1024 interstitial</td>\n</tr>\n<tr>\n<td>14</td>\n<td>314228</td>\n<td>video</td>\n</tr>\n</tbody>\n</table>\n"
         },
         {
             "name": "Technical Support",

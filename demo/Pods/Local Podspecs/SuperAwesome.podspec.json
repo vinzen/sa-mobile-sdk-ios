@@ -1,6 +1,6 @@
 {
   "name": "SuperAwesome",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "summary": "SuperAwesome Mobile SDK for iOS",
   "description": "                   The SuperAwesome Mobile SDK lets you to easily add COPPA compliant advertisements and other platform features, like user authentication and registration, to your apps. We try to make integration as easy as possible, so we provide all the necessary tools such as this guide, API documentation, screencasts and demo apps.\n",
   "homepage": "http://developers.superawesome.tv/docs/iossdk",
@@ -18,52 +18,50 @@
   "requires_arc": true,
   "source": {
     "git": "https://github.com/SuperAwesomeLTD/sa-mobile-sdk-ios.git",
-    "tag": "1.2.0"
+    "tag": "2.0.0"
   },
   "default_subspecs": "Default",
+  "dependencies": {
+    "JSONModel": [
+      "~> 1.0.2"
+    ]
+  },
+  "vendored_frameworks": "Frameworks/ADTECHMobileSDK.framework",
+  "frameworks": [
+    "AVFoundation",
+    "AudioToolbox",
+    "CFNetwork",
+    "CoreGraphics",
+    "CoreData",
+    "CoreLocation",
+    "CoreMedia",
+    "CoreMotion",
+    "CoreTelephony",
+    "EventKit",
+    "MediaPlayer",
+    "MessageUI",
+    "MobileCoreServices",
+    "QuartzCore",
+    "Security",
+    "SystemConfiguration",
+    "StoreKit",
+    "AdSupport",
+    "EventKitUI"
+  ],
+  "libraries": [
+    "xml2",
+    "z"
+  ],
+  "resources": "SuperAwesome/Resources/*",
+  "source_files": [
+    "Frameworks/sourcekit-common-ios/src/**/*.{h,m}",
+    "Frameworks/sourcekit-mraid-ios/src/MRAID/**/*.{h,m}",
+    "SuperAwesome/*.{h,m}"
+  ],
   "subspecs": [
-    {
-      "name": "Core",
-      "dependencies": {
-        "JSONModel": [
-          "~> 1.0.2"
-        ]
-      },
-      "vendored_frameworks": "Frameworks/ADTECHMobileSDK.framework",
-      "frameworks": [
-        "AVFoundation",
-        "AudioToolbox",
-        "CFNetwork",
-        "CoreGraphics",
-        "CoreData",
-        "CoreLocation",
-        "CoreMedia",
-        "CoreMotion",
-        "CoreTelephony",
-        "EventKit",
-        "MediaPlayer",
-        "MessageUI",
-        "MobileCoreServices",
-        "QuartzCore",
-        "Security",
-        "SystemConfiguration",
-        "StoreKit",
-        "AdSupport",
-        "EventKitUI"
-      ],
-      "libraries": [
-        "xml2",
-        "z"
-      ],
-      "source_files": "SuperAwesome",
-      "resources": "SuperAwesome/Resources/*"
-    },
     {
       "name": "Default",
       "dependencies": {
-        "SuperAwesome/Core": [
-
-        ],
         "GoogleAds-IMA-iOS-SDK": [
           "~> 3.0.beta.12"
         ]
@@ -72,9 +70,6 @@
     {
       "name": "AdMob",
       "dependencies": {
-        "SuperAwesome/Core": [
-
-        ],
         "GoogleAds-IMA-iOS-SDK-For-AdMob": [
           "~> 3.0.beta.12"
         ]

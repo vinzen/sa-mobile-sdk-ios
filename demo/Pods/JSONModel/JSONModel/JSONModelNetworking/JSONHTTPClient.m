@@ -16,10 +16,6 @@
 
 #import "JSONHTTPClient.h"
 
-#ifdef __IPHONE_OS_VERSION_MAX_ALLOWED
-#import <UIKit/UIKit.h>
-#endif
-
 #pragma mark - constants
 NSString* const kHTTPMethodGET = @"GET";
 NSString* const kHTTPMethodPOST = @"POST";

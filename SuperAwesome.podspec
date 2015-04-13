@@ -19,25 +19,18 @@ Pod::Spec.new do |s|
   
   s.default_subspec = 'Default'
 
+  s.dependency "JSONModel", "~> 1.0.2"
+  s.vendored_frameworks = 'Frameworks/ADTECHMobileSDK.framework'
+  s.frameworks = 'AVFoundation', 'AudioToolbox', 'CFNetwork', 'CoreGraphics', 'CoreData', 'CoreLocation', 'CoreMedia', 'CoreMotion', 'CoreTelephony', 'EventKit', 'MediaPlayer', 'MessageUI', 'MobileCoreServices', 'QuartzCore', 'Security', 'SystemConfiguration', 'StoreKit', 'AdSupport', 'EventKitUI'
+  s.libraries = "xml2", "z"
+  s.source_files  = "Frameworks/sourcekit-common-ios/src/**/*.{h,m}", "Frameworks/sourcekit-mraid-ios/src/MRAID/**/*.{h,m}", "SuperAwesome/*.{h,m}"
+  s.resources = "SuperAwesome/Resources/*"
+  
   s.subspec 'Default' do |default|
-    default.dependency "JSONModel", "~> 1.0.2"
-    default.vendored_frameworks = 'Frameworks/ADTECHMobileSDK.framework'
-    default.frameworks = 'AVFoundation', 'AudioToolbox', 'CFNetwork', 'CoreGraphics', 'CoreData', 'CoreLocation', 'CoreMedia', 'CoreMotion', 'CoreTelephony', 'EventKit', 'MediaPlayer', 'MessageUI', 'MobileCoreServices', 'QuartzCore', 'Security', 'SystemConfiguration', 'StoreKit', 'AdSupport', 'EventKitUI'
-    default.libraries = "xml2", "z"
-    default.source_files  = "SuperAwesome"
-    default.resources = "SuperAwesome/Resources/*"
-
     default.dependency "GoogleAds-IMA-iOS-SDK", "~> 3.0.beta.12"
   end
 
   s.subspec 'AdMob' do |admob|
-    admob.dependency "JSONModel", "~> 1.0.2"
-    admob.vendored_frameworks = 'Frameworks/ADTECHMobileSDK.framework'
-    admob.frameworks = 'AVFoundation', 'AudioToolbox', 'CFNetwork', 'CoreGraphics', 'CoreData', 'CoreLocation', 'CoreMedia', 'CoreMotion', 'CoreTelephony', 'EventKit', 'MediaPlayer', 'MessageUI', 'MobileCoreServices', 'QuartzCore', 'Security', 'SystemConfiguration', 'StoreKit', 'AdSupport', 'EventKitUI'
-    admob.libraries = "xml2", "z"
-    admob.source_files  = "SuperAwesome"
-    admob.resources = "SuperAwesome/Resources/*"
-
     admob.dependency "GoogleAds-IMA-iOS-SDK-For-AdMob", "~> 3.0.beta.12"
   end
 end

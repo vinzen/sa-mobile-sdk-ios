@@ -1,1 +1,1 @@
-../../../../../SuperAwesome/SAParentalGate.h
+../../../../../SuperAwesome/Classes/SAParentalGate.h

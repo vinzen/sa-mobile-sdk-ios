@@ -32,21 +32,18 @@
     [super setBackgroundColor:backgroundColor];
 }
 
-- (void)setAppID:(NSString *)appID
-{
-    [super setAppID:appID];
-    [self tryToLoadAd];
-}
-
 - (void)setPlacementID:(NSString *)placementID
 {
     [super setPlacementID:placementID];
-    [self tryToLoadAd];
+    
+    [[[SuperAwesome sharedManager] adLoader] loadAd:placementID completion:^(NSError *error) {
+        
+    }];
 }
 
 - (void)tryToLoadAd
 {
-    if(self.appID == nil || self.placementID == nil) return;
+    if(self.placementID == nil) return;
     
     [[SuperAwesome sharedManager] displayAdForApp:self.appID placement:self.placementID completion:^(SADisplayAd *displayAd) {
         dispatch_async(dispatch_get_main_queue(), ^{

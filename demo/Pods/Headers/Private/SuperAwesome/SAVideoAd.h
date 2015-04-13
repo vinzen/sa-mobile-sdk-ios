@@ -1,1 +1,1 @@
-../../../../../SuperAwesome/SAVideoAd.h
+../../../../../SuperAwesome/Classes/Models/SAVideoAd.h

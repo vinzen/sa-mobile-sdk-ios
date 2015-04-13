@@ -32,7 +32,7 @@
     
     self.interstitial = [[SAInterstitialView alloc] initWithViewController:self];
     self.interstitial.appID = @"14";
-    self.interstitial.placementID = @"5247931";
+    self.interstitial.placementID = @"1194499";
     self.interstitial.delegate = self;
     self.interstitial.backgroundColor = [UIColor lightGrayColor];
 }

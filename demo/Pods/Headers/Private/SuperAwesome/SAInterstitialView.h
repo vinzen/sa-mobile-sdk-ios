@@ -1,1 +1,1 @@
-../../../../../SuperAwesome/SAInterstitialView.h
+../../../../../SuperAwesome/Classes/Interstitial/SAInterstitialView.h

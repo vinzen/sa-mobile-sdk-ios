@@ -1,1 +1,1 @@
-../../../../../SuperAwesome/SAServerResponse.h
+../../../../../SuperAwesome/Classes/Models/SAServerResponse.h

@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
   s.vendored_frameworks = 'Frameworks/ADTECHMobileSDK.framework'
   s.frameworks = 'AVFoundation', 'AudioToolbox', 'CFNetwork', 'CoreGraphics', 'CoreData', 'CoreLocation', 'CoreMedia', 'CoreMotion', 'CoreTelephony', 'EventKit', 'MediaPlayer', 'MessageUI', 'MobileCoreServices', 'QuartzCore', 'Security', 'SystemConfiguration', 'StoreKit', 'AdSupport', 'EventKitUI'
   s.libraries = "xml2", "z"
-  s.source_files  = "Frameworks/sourcekit-common-ios/src/**/*.{h,m}", "Frameworks/sourcekit-mraid-ios/src/MRAID/**/*.{h,m}", "SuperAwesome/*.{h,m}"
+  s.source_files  = "Frameworks/sourcekit-common-ios/src/**/*.{h,m}", "Frameworks/sourcekit-mraid-ios/src/MRAID/**/*.{h,m}", "SuperAwesome/Classes/**/*.{h,m}"
   s.resources = "SuperAwesome/Resources/*"
 
   s.default_subspec = 'Default'

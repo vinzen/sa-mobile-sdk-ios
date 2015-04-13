@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AdLoader.h"
 #import <ADTECHMobileSDK/ADTECHMobileSDK.h>
 #import "SADisplayAd.h"
 #import "SAVideoAd.h"
@@ -31,6 +32,8 @@ typedef NS_ENUM(NSUInteger, SAClientConfiguration) {
  *  SDK client configuration
  */
 @property (nonatomic,assign) SAClientConfiguration clientConfiguration;
+
+@property (nonatomic,strong) AdLoader *adLoader;
 
 - (NSString *)version;
 

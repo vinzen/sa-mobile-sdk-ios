@@ -1,1 +1,1 @@
-../../../../../SuperAwesome/SAAppConfig.h
+../../../../../SuperAwesome/Classes/Models/SAAppConfig.h

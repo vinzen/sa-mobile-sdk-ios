@@ -1,1 +1,1 @@
-../../../../../SuperAwesome/SAVideoAdViewController.h
+../../../../../SuperAwesome/Classes/Video/SAVideoAdViewController.h

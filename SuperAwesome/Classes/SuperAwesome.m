@@ -36,7 +36,9 @@
 - (instancetype)init
 {
     if(self = [super init]){
-        _clientConfiguration = SAClientConfigurationProduction;
+        _adLoader = [[AdLoader alloc] init];
+        [self setClientConfiguration:SAClientConfigurationStaging];
+        
         _apps = [NSMutableArray array];
         _queue = [NSMutableDictionary dictionary];
         [ATBaseConfiguration setLoggingLevel:kATLogOff];
@@ -55,6 +57,18 @@
         return @"http://ads.superawesome.tv/ads/";
     }else{
         return @"http://staging.dashboard.superawesome.tv/api/sdk/ads";
+    }
+}
+
+- (void)setClientConfiguration:(SAClientConfiguration)clientConfiguration
+{
+    _clientConfiguration = clientConfiguration;
+    
+    
+    if(self.clientConfiguration == SAClientConfigurationProduction){
+        self.adLoader.baseURL = @"http://beta.ads.superawesome.tv/v2";
+    }else{
+        self.adLoader.baseURL = @"http://staging.beta.ads.superawesome.tv/v2";
     }
 }
 

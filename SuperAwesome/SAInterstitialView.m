@@ -7,11 +7,10 @@
 //
 
 #import "SAInterstitialView.h"
-#import "SuperAwesome.h"
 
 @interface SAInterstitialView ()
 
-@property (nonatomic,strong) ATInterstitialView *interstitialView;
+@property (nonatomic,strong) SKMRAIDInterstitial *interstitialView;
 @property (nonatomic,strong) SAParentalGate *gate;
 @property (nonatomic,strong) NSURL *adURL;
 
@@ -22,10 +21,8 @@
 - (instancetype)initWithViewController:(UIViewController *)viewController
 {
     if(self = [super init]){
-
-        self.interstitialView = [[ATInterstitialView alloc] init];
-        self.interstitialView.delegate = self;
-        self.interstitialView.viewController = viewController;
+        
+        self.interstitialView = [[SKMRAIDInterstitial alloc] initWithSupportedFeatures:@[] withHtmlData:@"<script type=\"text/javascript\" src=\"http://staging.beta.ads.superawesome.tv/v2/ad.js?placement=1194499\"></script>" withBaseURL:[NSURL URLWithString:@"http://superawesome.tv"] delegate:self serviceDelegate:nil rootViewController:viewController];
     }
     return self;
 }
@@ -33,7 +30,6 @@
 - (void)setBackgroundColor:(UIColor *)backgroundColor
 {
     [super setBackgroundColor:backgroundColor];
-    [self.interstitialView setBackgroundColor:backgroundColor];
 }
 
 - (void)setAppID:(NSString *)appID
@@ -57,8 +53,7 @@
             if(displayAd == nil){
                 NSLog(@"SA: Could not find placement with the provided placement ID");
             }else{
-                self.interstitialView.configuration = [self configurationWithDisplayAd:displayAd];
-                [self.interstitialView load];
+
             }
         });
     }];
@@ -66,45 +61,60 @@
 
 - (void)present
 {
-    [self.interstitialView present];
+    [self.interstitialView show];
 }
 
-#pragma mark - ATInterstitialViewDelegate
+#pragma mark - SAParentalGateDelegate
 
-- (void)didSuccessfullyFetchInterstitialAd:(ATInterstitialView*)view
+- (void)didGetThroughParentalGate:(SAParentalGate *)parentalGate
 {
+    [[UIApplication sharedApplication] openURL:self.adURL];
+}
+
+#pragma mark - SKMRAIDInterstitialDelegate
+
+- (void)mraidInterstitialAdReady:(SKMRAIDInterstitial *)mraidInterstitial
+{
+    NSLog(@"Ad Ready");
+    
     if(self.delegate && [self.delegate respondsToSelector:@selector(didSuccessfullyFetchInterstitialAd:)]){
         [self.delegate didSuccessfullyFetchInterstitialAd:self];
     }
 }
 
-- (void)didHideInterstitialAd:(ATInterstitialView *)view
+- (void)mraidInterstitialAdFailed:(SKMRAIDInterstitial *)mraidInterstitial
 {
-    [self.interstitialView load];
+    NSLog(@"Ad Failed");
+}
+
+- (void)mraidInterstitialWillShow:(SKMRAIDInterstitial *)mraidInterstitial
+{
+    NSLog(@"will show");
+}
+
+- (void)mraidInterstitialDidHide:(SKMRAIDInterstitial *)mraidInterstitial
+{
+    NSLog(@"did hide");
     
     if(self.delegate && [self.delegate respondsToSelector:@selector(didHideInterstitialView:)]){
         [self.delegate didHideInterstitialView:self];
     }
 }
 
-- (BOOL)shouldOpenLandingPageForAd:(ATInterstitialView*)view withURL:(NSURL*)URL useBrowser:(ATBrowserViewController *__autoreleasing *)browserViewController;
+- (void)mraidInterstitialNavigate:(SKMRAIDInterstitial *)mraidInterstitial withURL:(NSURL *)url
 {
+    NSLog(@"navigate");
+    
     if([self isParentalGateEnabled]){
         if(self.gate == nil){
             self.gate = [[SAParentalGate alloc] init];
             self.gate.delegate = self;
         }
         [self.gate show];
-        self.adURL = URL;
-        
-        return NO;
+        self.adURL = url;
+    }else{
+        [[UIApplication sharedApplication] openURL:url];
     }
-    return YES;
-}
-
-- (void)didGetThroughParentalGate:(SAParentalGate *)parentalGate
-{
-    [[UIApplication sharedApplication] openURL:self.adURL];
 }
 
 

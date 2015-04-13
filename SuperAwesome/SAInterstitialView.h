@@ -7,8 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SuperAwesome.h"
 #import "SAPlacementView.h"
 #import "SAParentalGate.h"
+#import "SKMRAIDInterstitial.h"
 
 /**
  * Defines the interface the delegate of an interstitial ads
@@ -40,7 +42,7 @@
 @end
 
 
-@interface SAInterstitialView : SAPlacementView <ATInterstitialViewDelegate, SAParentalGateDelegate>
+@interface SAInterstitialView : SAPlacementView <SAParentalGateDelegate, SKMRAIDInterstitialDelegate>
 
 /**
  * The delegate gets notified of different events in the lifecycle of the ad.

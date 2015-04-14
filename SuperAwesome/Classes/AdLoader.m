@@ -8,48 +8,53 @@
 
 #import "AdLoader.h"
 
+@interface AdLoader ()
+
+@end
+
 @implementation AdLoader
 
 
-- (void)loadAd:(NSString *)placementID completion:(void(^)(NSError *error))completion
+- (void)loadAd:(SAAdRequest *)adRequest completion:(void(^)(SAAdResponse *response, NSError *error))completion
 {
-    NSError *error;
-    
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
-    NSString *urlString = [NSString stringWithFormat:@"%@/ad/%@", self.baseURL, placementID];
+    NSString *urlString = [NSString stringWithFormat:@"%@/ad/%@", self.baseURL, adRequest.placementID];
     NSURL *url = [NSURL URLWithString:urlString];
-    NSLog(@"%@", urlString);
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
+    [SKLogger debug:@"" withMessage:[NSString stringWithFormat:@"New request to %@", urlString]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10.0];
     
     [request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [request addValue:@"application/json" forHTTPHeaderField:@"Accept"];
     
     NSURLSessionDataTask *postDataTask = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        if(error != nil){
+            [SKLogger error:@"AdLoader" withMessage:[NSString stringWithFormat:@"Request failed (%@)", error.localizedDescription]];
+            completion(nil, error);
+            return;
+        }
         
         NSString *dataStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         NSLog(@"%@", dataStr);
         
-        SAServerResponse *resp = [[SAServerResponse alloc] initWithData:data error:&error];
+        SAAdResponse *resp = [[SAAdResponse alloc] initWithData:data error:&error];
         
-        if(resp == nil){
-            NSLog(@"SA: Could not load app configuration (%@)", error.localizedDescription);
-            completion(error);
-        }else{
-            if(resp.success){
-                NSLog(@"SA: App configuration has been loaded successfully ");
-                
-
-                completion(nil);
-            }else{
-                NSLog(@"SA: Could not load app configuration (%@)", resp.errorMessage);
-                completion([NSError errorWithDomain:@"SADashboard" code:[resp.errorCode integerValue] userInfo:@{}]);
-            }
+        if(error != nil){
+            [SKLogger error:@"AdLoader" withMessage:[NSString stringWithFormat:@"Request failed (%@)", error.localizedDescription]];
+            completion(nil, error);
+            return;
         }
+        
+        if(resp.error){
+            [SKLogger error:@"AdLoader" withMessage:[NSString stringWithFormat:@"Ad server error"]];
+            completion(resp, [NSError errorWithDomain:@"SuperAwesome" code:1000 userInfo:@{}]);
+            return;
+        }
+        
+        completion(resp, nil);
     }];
     
     [postDataTask resume];
-    
 }
 
 

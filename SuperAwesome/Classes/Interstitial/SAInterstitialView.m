@@ -36,7 +36,7 @@
 {
     [super setPlacementID:placementID];
     
-    [[[SuperAwesome sharedManager] adLoader] loadAd:placementID completion:^(NSError *error) {
+    [[[SuperAwesome sharedManager] adLoader] loadAd:[[SAAdRequest alloc] initWithPlacementId:placementID] completion:^(SAAdResponse *response, NSError *error) {
         
     }];
 }

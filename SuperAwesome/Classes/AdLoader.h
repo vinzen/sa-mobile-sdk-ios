@@ -7,12 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SAServerResponse.h"
+#import "SAAdRequest.h"
+#import "SAAdResponse.h"
+#import "SKLogger.h"
 
 @interface AdLoader : NSObject
 
 @property (nonatomic,strong) NSString *baseURL;
 
-- (void)loadAd:(NSString *)placementID completion:(void(^)(NSError *error))completion;
+- (void)loadAd:(SAAdRequest *)adRequest completion:(void(^)(SAAdResponse *response, NSError *error))completion;
 
 @end

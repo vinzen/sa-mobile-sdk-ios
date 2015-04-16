@@ -9,13 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "SAParentalGate.h"
 #import "SAPlacementView.h"
+#import "SKMRAIDView.h"
 
 @class SABannerView;
 
 /**
  * Implement this protocol to be notified of different events in the lifecycle of the ad.
  */
-@protocol SABannerViewDelegate <ATBannerViewDelegate>
+@protocol SABannerViewDelegate
 @optional
 
 /**
@@ -57,7 +58,7 @@
  *  @see SABannerViewDelegate
  */
 //IB_DESIGNABLE
-@interface SABannerView : SAPlacementView <ATBannerViewDelegate, SAParentalGateDelegate>
+@interface SABannerView : SAPlacementView <SKMRAIDViewDelegate, SAParentalGateDelegate>
 
 /**
  * The delegate gets notified of different events in the lifecycle of the ad. It is not required to be set.
@@ -92,6 +93,6 @@
  *
  * @warning Ideally, you should not directly access this property.
  */
-@property (nonatomic,strong,readonly) ATBannerView *bannerView;
+@property (nonatomic,strong,readonly) SKMRAIDView *bannerView;
 
 @end

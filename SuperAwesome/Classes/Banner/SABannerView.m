@@ -12,8 +12,7 @@
 
 @interface SABannerView ()
 
-@property (nonatomic,strong) ATBannerView *bannerView;
-@property (nonatomic,assign) BOOL isBannerConfigured;
+@property (nonatomic,strong) SKMRAIDView *bannerView;
 @property (nonatomic,strong) SAParentalGate *gate;
 @property (nonatomic,strong) NSURL *adURL;
 
@@ -42,9 +41,7 @@
 
 - (void)commonInit
 {
-    self.bannerView = [[ATBannerView alloc] initWithFrame:self.bounds];
-    self.bannerView.delegate = self;
-    [self addSubview:self.bannerView];
+    
 }
 
 //#if TARGET_INTERFACE_BUILDER
@@ -92,38 +89,26 @@
     return NO;
 }
 
-- (void)loadBanner
-{
-    if(self.isBannerConfigured == NO) return;
-    
-    if(self.viewController == nil){
-        UIViewController *vc = [self firstAvailableUIViewController];
-        self.viewController = vc;
-    }
-    
-    [self.bannerView load];
-}
-
 - (void)didMoveToWindow
 {
     [super didMoveToWindow];
     
     if(self.window == nil){
-        self.visible = NO;
         return;
     }
     
-    self.visible = YES;
-    [[SuperAwesome sharedManager] displayAdForApp:self.appID placement:self.placementID completion:^(SADisplayAd *displayAd) {
+    [[[SuperAwesome sharedManager] adLoader] loadAd:[[SAAdRequest alloc] initWithPlacementId:self.placementID] completion:^(SAAdResponse *response, NSError *error) {
+        if(error != nil){
+            NSLog(@"Could not load ad");
+            return ;
+        }
+        
         dispatch_async(dispatch_get_main_queue(), ^{
-            if(displayAd == nil){
-                NSLog(@"SA: Could not find placement with the provided placement ID");
-            }else{
-                self.bannerView.configuration = [self configurationWithDisplayAd:displayAd];
-                self.isBannerConfigured = YES;
-                [self loadBanner];
-            }
+            self.bannerView = [[SKMRAIDView alloc] initWithFrame:self.bounds withHtmlData:[response toHTML] withBaseURL:[NSURL URLWithString:@"http://superawesome.tv"] supportedFeatures:@[] delegate:self serviceDelegate:nil rootViewController:[self firstAvailableUIViewController]];
+            self.bannerView.backgroundColor = self.backgroundColor;
+            [self addSubview:self.bannerView];
         });
+        
     }];
 }
 
@@ -137,13 +122,13 @@
 - (void)setVisible:(BOOL)visible
 {
     _visible = visible;
-    self.bannerView.visible = visible;
+//    self.bannerView.visible = visible;
 }
 
 - (void)setViewController:(UIViewController *)viewController
 {
     _viewController = viewController;
-    self.bannerView.viewController = viewController;
+//    self.bannerView.viewController = viewController;
 }
 
 - (void)dealloc
@@ -151,43 +136,25 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-#pragma mark ATBannerViewDelegate
+#pragma mark - SKMRAIDViewDelegate
 
-- (void)shouldSuspendForAd:(ATBannerView *)view
+- (void)mraidViewAdReady:(SKMRAIDView *)mraidView
 {
-    if(self.delegate && [self.delegate respondsToSelector:@selector(shouldSuspendForAd:)]){
-        [self.delegate shouldSuspendForAd:self];
-    }
+    
 }
-
-- (void)shouldResumeForAd:(ATBannerView *)view
+- (void)mraidViewAdFailed:(SKMRAIDView *)mraidView
 {
-    if(self.delegate && [self.delegate respondsToSelector:@selector(shouldResumeForAd:)]){
-        [self.delegate shouldResumeForAd:self];
-    }
+    
 }
-
-- (void)willLeaveApplicationForAd:(ATBannerView *)view
+- (void)mraidViewWillExpand:(SKMRAIDView *)mraidView
 {
-    if(self.delegate && [self.delegate respondsToSelector:@selector(willLeaveApplicationForAd:)]){
-        [self.delegate willLeaveApplicationForAd:self];
-    }
+    
 }
-
-- (void)didFetchNextAd:(ATBannerView*)view signals:(NSArray *)signals
+- (void)mraidViewDidClose:(SKMRAIDView *)mraidView
 {
-    NSLog(@"SA: Ad fetched from ad server");
+    
 }
-
-- (void)didFailFetchingAd:(ATBannerView*)view signals:(NSArray *)signals
-{
-    NSLog(@"SA: Failed to load ad from server");
-    if(self.delegate && [self.delegate respondsToSelector:@selector(shouldDisplayCustomMediationForAd:)]){
-        [self.delegate shouldDisplayCustomMediationForAd:self];
-    }
-}
-
-- (BOOL)shouldOpenLandingPageForAd:(ATBannerView *)view withURL:(NSURL *)URL useBrowser:(ATBrowserViewController *__autoreleasing *)browserViewController
+- (void)mraidViewNavigate:(SKMRAIDView *)mraidView withURL:(NSURL *)url
 {
     if([self isParentalGateEnabled]){
         if(self.gate == nil){
@@ -195,20 +162,18 @@
             self.gate.delegate = self;
         }
         [self.gate show];
-        self.adURL = URL;
-        
-        return NO;
+        self.adURL = url;
+    }else{
+        [[UIApplication sharedApplication] openURL:url];
     }
+}
+
+// This callback is to ask permission to resize an ad.
+- (BOOL)mraidViewShouldResize:(SKMRAIDView *)mraidView toPosition:(CGRect)position allowOffscreen:(BOOL)allowOffscreen
+{
     return YES;
 }
 
-- (void)didStopOnCustomMediation:(ATBannerView*)view
-{
-    NSLog(@"SA: didStopOnCustomMediation");
-    if(self.delegate && [self.delegate respondsToSelector:@selector(shouldDisplayCustomMediationForAd:)]){
-        [self.delegate shouldDisplayCustomMediationForAd:self];
-    }
-}
 
 #pragma mark SAParentalGateDelegate
 

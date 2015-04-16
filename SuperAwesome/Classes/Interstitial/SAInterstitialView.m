@@ -10,6 +10,7 @@
 
 @interface SAInterstitialView ()
 
+@property (nonatomic,strong) UIViewController *viewController;
 @property (nonatomic,strong) SKMRAIDInterstitial *interstitialView;
 @property (nonatomic,strong) SAParentalGate *gate;
 @property (nonatomic,strong) NSURL *adURL;
@@ -21,8 +22,7 @@
 - (instancetype)initWithViewController:(UIViewController *)viewController
 {
     if(self = [super init]){
-        
-        self.interstitialView = [[SKMRAIDInterstitial alloc] initWithSupportedFeatures:@[] withHtmlData:@"<script type=\"text/javascript\" src=\"http://staging.beta.ads.superawesome.tv/v2/ad.js?placement=1194499\"></script>" withBaseURL:[NSURL URLWithString:@"http://superawesome.tv"] delegate:self serviceDelegate:nil rootViewController:viewController];
+        self.viewController = viewController;
     }
     return self;
 }
@@ -37,22 +37,16 @@
     [super setPlacementID:placementID];
     
     [[[SuperAwesome sharedManager] adLoader] loadAd:[[SAAdRequest alloc] initWithPlacementId:placementID] completion:^(SAAdResponse *response, NSError *error) {
+        if(error != nil){
+            NSLog(@"Could not load ad");
+            return ;
+        }
         
-    }];
-}
-
-- (void)tryToLoadAd
-{
-    if(self.placementID == nil) return;
-    
-    [[SuperAwesome sharedManager] displayAdForApp:self.appID placement:self.placementID completion:^(SADisplayAd *displayAd) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            if(displayAd == nil){
-                NSLog(@"SA: Could not find placement with the provided placement ID");
-            }else{
-
-            }
+            self.interstitialView = [[SKMRAIDInterstitial alloc] initWithSupportedFeatures:@[] withHtmlData:[response toHTML] withBaseURL:[NSURL URLWithString:@"http://superawesome.tv"] delegate:self serviceDelegate:nil rootViewController:self.viewController];
+            [self.interstitialView setBackgroundColor:self.backgroundColor];
         });
+        
     }];
 }
 

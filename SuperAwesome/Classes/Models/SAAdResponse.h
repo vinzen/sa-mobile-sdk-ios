@@ -17,4 +17,7 @@
 @property (nonatomic,strong) NSString *campaignID;
 @property (nonatomic,strong) NSDictionary *creative;
 
+
+- (NSString *)toHTML;
+
 @end

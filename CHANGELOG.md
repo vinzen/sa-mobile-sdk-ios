@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+1.2.1
+ - New delegate methods for SAInterstitialView
+
 1.2.0
  - New project structure (demo app is now a separated project)
  - AdMob subspec in podspec file

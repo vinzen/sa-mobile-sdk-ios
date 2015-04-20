@@ -16,24 +16,18 @@
 
 @implementation InterstitialViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.showButton.enabled = NO;
+    
     self.interstitial = [[SAInterstitialView alloc] initWithViewController:self];
     self.interstitial.appID = @"14";
     self.interstitial.placementID = @"5247931";
     self.interstitial.delegate = self;
+//    self.interstitial.parentalGateEnabled = YES;
     self.interstitial.backgroundColor = [UIColor lightGrayColor];
 }
 
@@ -48,20 +42,30 @@
     [self.interstitial present];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+#pragma mark - SAInterstitialViewDelegate methods
 
 - (void)didSuccessfullyFetchInterstitialAd:(SAInterstitialView *)interstitialView
 {
     NSLog(@"Interstitial loaded");
+    
+    self.showButton.enabled = YES;
+}
+
+- (void)didFailFetchingInterstitialAd:(SAInterstitialView *)interstitialView
+{
+    NSLog(@"Interstitial error");
+}
+
+- (void)didHideInterstitialView:(SAInterstitialView *)interstitialView
+{
+    NSLog(@"Interstitial hidden");
+    self.showButton.enabled = NO;
+    [self.interstitial load];
+}
+
+- (void)willLeaveApplicationForInterstitialAd:(SAInterstitialView *)interstitialView
+{
+    NSLog(@"Will leave app for interstitial");
 }
 
 @end

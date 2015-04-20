@@ -11,6 +11,8 @@
 
 @interface InterstitialViewController : UIViewController <SAInterstitialViewDelegate>
 
+@property (nonatomic,weak) IBOutlet UIButton *showButton;
+
 - (IBAction)presentInterstitial:(id)sender;
 
 @end

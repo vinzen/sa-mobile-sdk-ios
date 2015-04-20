@@ -30,6 +30,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.showButton.enabled = NO;
+    
     self.interstitial = [[SAInterstitialView alloc] initWithViewController:self];
     self.interstitial.appID = @"14";
     self.interstitial.placementID = @"5247931";
@@ -53,6 +55,8 @@
 - (void)didSuccessfullyFetchInterstitialAd:(SAInterstitialView *)interstitialView
 {
     NSLog(@"Interstitial loaded");
+    
+    self.showButton.enabled = YES;
 }
 
 - (void)didFailFetchingInterstitialAd:(SAInterstitialView *)interstitialView
@@ -63,6 +67,8 @@
 - (void)didHideInterstitialView:(SAInterstitialView *)interstitialView
 {
     NSLog(@"hidden");
+    self.showButton.enabled = NO;
+    [self.interstitial load];
 }
 
 

@@ -61,15 +61,25 @@
                 }
             }else{
                 self.interstitialView.configuration = [self configurationWithDisplayAd:displayAd];
-                [self.interstitialView load];
+                [self load];
             }
         });
     }];
 }
 
+- (void)load
+{
+    [self.interstitialView load];
+}
+
 - (void)present
 {
     [self.interstitialView present];
+}
+
+- (BOOL)isReady
+{
+    return self.interstitialView.isReady;
 }
 
 #pragma mark - ATInterstitialViewDelegate
@@ -90,8 +100,6 @@
 
 - (void)didHideInterstitialAd:(ATInterstitialView *)view
 {
-    [self.interstitialView load];
-    
     if(self.delegate && [self.delegate respondsToSelector:@selector(didHideInterstitialView:)]){
         [self.delegate didHideInterstitialView:self];
     }

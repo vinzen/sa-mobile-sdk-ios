@@ -12,8 +12,6 @@
 
 /**
  * Defines the interface the delegate of an interstitial ads
- *
- * @since 1.0
  */
 @class SAInterstitialView;
 
@@ -59,6 +57,14 @@
 @property (nonatomic,weak) id<SAInterstitialViewDelegate> delegate;
 
 /**
+ * Returns YES when an interstitial ad is ready to be presented.
+ * The delegate's  didSuccessfullyFetchInterstitialAd: is called when the value switches from NO to YES.
+ * Once an interstitial is presented, the value changes to NO. You need to load again in order
+ * to be able to present another interstitial view.
+ */
+@property (nonatomic, readonly) BOOL isReady;
+
+/**
  *  Initialises the interstitial ad in the given view controller
  *
  *  @param viewController The view controller that is the owner of the ad view being shown.
@@ -74,6 +80,11 @@
  * Calling this method before receiving the above callbacks will have no effect.
  */
 - (void)present;
+
+/**
+ * Begins loading a new ad. The view should be configured before calling this method.
+ */
+- (void)load;
 
 /**
  * Sets the background color for the interstitial.

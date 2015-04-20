@@ -120,8 +120,21 @@
     return YES;
 }
 
+- (void)willLeaveApplicationForInterstitialAd:(ATInterstitialView *)view
+{
+    if(self.delegate && [self.delegate respondsToSelector:@selector(willLeaveApplicationForInterstitialAd:)]){
+        [self.delegate willLeaveApplicationForInterstitialAd:self];
+    }
+}
+
+#pragma mark - SAParentalGateDelegate
+
 - (void)didGetThroughParentalGate:(SAParentalGate *)parentalGate
 {
+    if(self.delegate && [self.delegate respondsToSelector:@selector(willLeaveApplicationForInterstitialAd:)]){
+        [self.delegate willLeaveApplicationForInterstitialAd:self];
+    }
+    
     [[UIApplication sharedApplication] openURL:self.adURL];
 }
 

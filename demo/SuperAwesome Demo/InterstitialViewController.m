@@ -16,15 +16,6 @@
 
 @implementation InterstitialViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -36,6 +27,7 @@
     self.interstitial.appID = @"14";
     self.interstitial.placementID = @"5247931";
     self.interstitial.delegate = self;
+//    self.interstitial.parentalGateEnabled = YES;
     self.interstitial.backgroundColor = [UIColor lightGrayColor];
 }
 
@@ -66,11 +58,14 @@
 
 - (void)didHideInterstitialView:(SAInterstitialView *)interstitialView
 {
-    NSLog(@"hidden");
+    NSLog(@"Interstitial hidden");
     self.showButton.enabled = NO;
     [self.interstitial load];
 }
 
-
+- (void)willLeaveApplicationForInterstitialAd:(SAInterstitialView *)interstitialView
+{
+    NSLog(@"Will leave app for interstitial");
+}
 
 @end

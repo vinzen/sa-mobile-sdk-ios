@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SuperAwesome.h"
+#import "SAVideoAdView.h"
 
 @interface SAVideoAdViewController : UIViewController <SAVideoAdViewDelegate>
 

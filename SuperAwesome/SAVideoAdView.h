@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <ADTECHMobileSDK/ADTECHMobileSDK.h>
 #import "UIView+FindUIViewController.h"
-#import "IMAAdsLoader.h"
 #import "SAPlacementView.h"
+#import "SAVideoAdLoader.h"
 
 
 @class SAVideoAdView;
@@ -29,7 +29,7 @@
 @end
 
 
-@interface SAVideoAdView : SAPlacementView <IMAAdsLoaderDelegate, IMAAdsManagerDelegate, SAParentalGateDelegate>
+@interface SAVideoAdView : SAPlacementView <SAVideoAdLoaderDelegate, IMAAdsManagerDelegate, SAParentalGateDelegate>
 
 @property (nonatomic,weak) id<SAVideoAdViewDelegate> delegate;
 @property (nonatomic,assign) IBInspectable BOOL autoplay;

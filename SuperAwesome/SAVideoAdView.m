@@ -11,10 +11,9 @@
 
 @interface SAVideoAdView ()
 
-@property (nonatomic,strong) IMAAdsLoader *adsLoader;
+@property (nonatomic,strong) SAVideoAdLoader *adLoader;
 @property (nonatomic,strong) IMAAdsManager *adsManager;
-@property (nonatomic,strong) IMAAdDisplayContainer *adDisplayContainer;
-@property (nonatomic,strong) IMAAdsRenderingSettings *adsRenderingSettings;
+@property (nonatomic,strong) UIView *adContainerView;
 
 @property (nonatomic,strong) SAParentalGate *gate;
 @property (nonatomic,strong) NSString *targetURL;
@@ -45,13 +44,6 @@
 
 - (void)commonInit
 {
-    IMASettings *settings = [[IMASettings alloc] init];
-    settings.ppid = @"IMA_PPID_0";
-    settings.language = @"en";
-    
-    self.adsLoader = [[IMAAdsLoader alloc] initWithSettings:settings];
-    self.adsLoader.delegate = self;
-    
     self.learnMoreButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.learnMoreButton addTarget:self action:@selector(learnMoreButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
     self.learnMoreButton.backgroundColor = [UIColor clearColor];
@@ -65,36 +57,42 @@
         [self stop];
         return;
     }
+}
+
+- (void)setAppID:(NSString *)appID
+{
+    [super setAppID:appID];
+    [self tryToLoadAd];
+}
+
+- (void)setPlacementID:(NSString *)placementID
+{
+    [super setPlacementID:placementID];
+    [self tryToLoadAd];
+}
+
+- (void)tryToLoadAd
+{
+    if(self.adLoader != nil) return;
+    if(self.appID == nil || self.placementID == nil) return;
     
-    [[SuperAwesome sharedManager] videoAdForApp:self.appID placement:self.placementID completion:^(SAVideoAd *videoAd) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            if(videoAd == nil){
-                NSLog(@"SA: Could not find placement with the provided ID");
-                if(self.delegate && [self.delegate respondsToSelector:@selector(didFailToLoadVideoAd:)]){
-                    [self.delegate didFailToLoadVideoAd:self];
-                }
-            }else{
-                [self requestAdsWithVideoAd:videoAd];
-            }
-        });
-    }];
+    self.adLoader = [[SAVideoAdLoader alloc] initWithAppID:self.appID placementID:self.placementID];
+    [self.adLoader setDelegate:self];
+    [self.adLoader load];
 }
 
 - (void)layoutSubviews
 {
     [super layoutSubviews];
     
-    [self.learnMoreButton setFrame:CGRectMake(0, 0, self.frame.size.width, 40)];
-}
+    if(self.adContainerView){
+        [self.adContainerView setFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
 
-- (void)requestAdsWithVideoAd:(SAVideoAd *)videoAd
-{
-    if(videoAd == nil) return;
+    }
     
-    NSString *adTag = videoAd.vast;
-    self.adDisplayContainer = [[IMAAdDisplayContainer alloc] initWithAdContainer:self companionSlots:nil];
-    IMAAdsRequest *request = [[IMAAdsRequest alloc] initWithAdTagUrl:adTag adDisplayContainer:self.adDisplayContainer userContext:nil];
-    [self.adsLoader requestAdsWithRequest:request];
+    if(self.learnMoreButton){
+        [self.learnMoreButton setFrame:CGRectMake(0, 0, self.frame.size.width, 40)];
+    }
 }
 
 - (void)play
@@ -141,6 +139,33 @@
     }
 }
 
+#pragma Ad Loader
+
+- (void)didLoadVideoAd:(SAVideoAdLoader *)videoAdLoader
+{
+    self.adsManager = videoAdLoader.adsManager;
+    self.adsManager.delegate = self;
+    
+    self.adContainerView = videoAdLoader.adDisplayContainer;
+    [self addSubview:self.adContainerView];
+    [self setNeedsLayout];
+    
+    if(self.delegate && [self.delegate respondsToSelector:@selector(didLoadVideoAd:)]){
+        [self.delegate didLoadVideoAd:self];
+    }
+
+    if(self.autoplay){
+        [self play];
+    }
+}
+
+- (void)didFailToLoadVideoAd:(SAVideoAdLoader *)videoAdLoader
+{
+    if(self.delegate && [self.delegate respondsToSelector:@selector(didFailToLoadVideoAd:)]){
+        [self.delegate didFailToLoadVideoAd:self];
+    }
+}
+
 #pragma mark SAParentalGate
 
 - (void)didGetThroughParentalGate:(SAParentalGate *)parentalGate
@@ -156,30 +181,6 @@
 - (void)didFailChallengeForParentalGate:(SAParentalGate *)parentalGate
 {
     [self resume];
-}
-
-#pragma mark AdLoader
-
-- (void)adsLoader:(IMAAdsLoader *)loader adsLoadedWithData:(IMAAdsLoadedData *)adsLoadedData {
-    NSLog(@"SA: Ad loaded");
-    if(self.delegate && [self.delegate respondsToSelector:@selector(didLoadVideoAd:)]){
-        [self.delegate didLoadVideoAd:self];
-    }
-    
-    self.adsManager = adsLoadedData.adsManager;
-    self.adsManager.delegate = self;
-    
-    if(self.autoplay){
-        [self play];
-    }
-}
-
-- (void)adsLoader:(IMAAdsLoader *)loader failedWithErrorData:(IMAAdLoadingErrorData *)adErrorData {
-    // Loading failed, log it.
-    NSLog(@"SA: Ad loading error: %@", adErrorData.adError.message);
-    if(self.delegate && [self.delegate respondsToSelector:@selector(didFailToLoadVideoAd:)]){
-        [self.delegate didFailToLoadVideoAd:self];
-    }
 }
 
 #pragma mark AdPlayer

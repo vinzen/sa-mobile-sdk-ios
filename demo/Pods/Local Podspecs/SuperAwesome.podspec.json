@@ -23,10 +23,13 @@
   "default_subspecs": "Default",
   "subspecs": [
     {
-      "name": "Core",
+      "name": "Default",
       "dependencies": {
         "JSONModel": [
           "~> 1.0.2"
+        ],
+        "GoogleAds-IMA-iOS-SDK": [
+          "~> 3.0.beta.12"
         ]
       },
       "vendored_frameworks": "Frameworks/ADTECHMobileSDK.framework",
@@ -59,26 +62,43 @@
       "resources": "SuperAwesome/Resources/*"
     },
     {
-      "name": "Default",
-      "dependencies": {
-        "SuperAwesome/Core": [
-
-        ],
-        "GoogleAds-IMA-iOS-SDK": [
-          "~> 3.0.beta.12"
-        ]
-      }
-    },
-    {
       "name": "AdMob",
       "dependencies": {
-        "SuperAwesome/Core": [
-
+        "JSONModel": [
+          "~> 1.0.2"
         ],
         "GoogleAds-IMA-iOS-SDK-For-AdMob": [
           "~> 3.0.beta.12"
         ]
-      }
+      },
+      "vendored_frameworks": "Frameworks/ADTECHMobileSDK.framework",
+      "frameworks": [
+        "AVFoundation",
+        "AudioToolbox",
+        "CFNetwork",
+        "CoreGraphics",
+        "CoreData",
+        "CoreLocation",
+        "CoreMedia",
+        "CoreMotion",
+        "CoreTelephony",
+        "EventKit",
+        "MediaPlayer",
+        "MessageUI",
+        "MobileCoreServices",
+        "QuartzCore",
+        "Security",
+        "SystemConfiguration",
+        "StoreKit",
+        "AdSupport",
+        "EventKitUI"
+      ],
+      "libraries": [
+        "xml2",
+        "z"
+      ],
+      "source_files": "SuperAwesome",
+      "resources": "SuperAwesome/Resources/*"
     }
   ]
 }

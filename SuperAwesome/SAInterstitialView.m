@@ -56,6 +56,9 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             if(displayAd == nil){
                 NSLog(@"SA: Could not find placement with the provided placement ID");
+                if(self.delegate && [self.delegate respondsToSelector:@selector(didFailFetchingInterstitialAd:)]){
+                    [self.delegate didFailFetchingInterstitialAd:self];
+                }
             }else{
                 self.interstitialView.configuration = [self configurationWithDisplayAd:displayAd];
                 [self.interstitialView load];
@@ -75,6 +78,13 @@
 {
     if(self.delegate && [self.delegate respondsToSelector:@selector(didSuccessfullyFetchInterstitialAd:)]){
         [self.delegate didSuccessfullyFetchInterstitialAd:self];
+    }
+}
+
+- (void)didFailFetchingInterstitialAd:(ATInterstitialView *)view
+{
+    if(self.delegate && [self.delegate respondsToSelector:@selector(didFailFetchingInterstitialAd:)]){
+        [self.delegate didFailFetchingInterstitialAd:self];
     }
 }
 

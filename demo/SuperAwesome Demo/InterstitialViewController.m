@@ -48,20 +48,23 @@
     [self.interstitial present];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+#pragma mark - SAInterstitialViewDelegate methods
 
 - (void)didSuccessfullyFetchInterstitialAd:(SAInterstitialView *)interstitialView
 {
     NSLog(@"Interstitial loaded");
 }
+
+- (void)didFailFetchingInterstitialAd:(SAInterstitialView *)interstitialView
+{
+    NSLog(@"Interstitial error");
+}
+
+- (void)didHideInterstitialView:(SAInterstitialView *)interstitialView
+{
+    NSLog(@"hidden");
+}
+
+
 
 @end

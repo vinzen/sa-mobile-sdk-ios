@@ -37,6 +37,14 @@
  * @note You must implement and take action when this method is called on the delegate.
  */
 - (void)didHideInterstitialView:(SAInterstitialView *)interstitialView;
+
+/**
+ * Called when an ad fails to be fetched. Usually this happens because of networking conditions and in rare cases if an exceptions occurs on the server.
+ * You can call load to try again, if you think the conditions leading to the error have changed.
+ *
+ * @param view The interstitial ad view that fetched the ad.
+ */
+- (void)didFailFetchingInterstitialAd:(SAInterstitialView *)interstitialView;
 @end
 
 

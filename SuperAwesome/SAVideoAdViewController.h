@@ -15,5 +15,6 @@
 @property (assign,nonatomic,getter=isParentalGateEnabled) BOOL parentalGateEnabled;
 
 - (instancetype)initWithAppID:(NSString *)appID placementID:(NSString *)placementID;
+- (instancetype)initWithAdLoader:(SAVideoAdLoader *)adLoader;
 
 @end

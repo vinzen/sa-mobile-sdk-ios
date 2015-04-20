@@ -10,8 +10,6 @@
 
 @interface SAVideoAdViewController ()
 
-@property (nonatomic,strong) NSString *appID;
-@property (nonatomic,strong) NSString *placementID;
 @property (nonatomic,strong) UIActivityIndicatorView *activityIndicatorView;
 
 @end
@@ -21,10 +19,35 @@
 - (instancetype)initWithAppID:(NSString *)appID placementID:(NSString *)placementID
 {
     if(self = [super init]){
-        self.appID = appID;
-        self.placementID = placementID;
+        self.videoView = [[SAVideoAdView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
+        self.videoView.delegate = self;
+        if(appID && placementID){
+            self.videoView.appID = appID;
+            self.videoView.placementID = placementID;
+        }else{
+            self.videoView.appID = @"14";
+            self.videoView.placementID = @"314228";
+        }
     }
     return self;
+}
+
+- (instancetype)initWithAdLoader:(SAVideoAdLoader *)adLoader
+{
+    if(self = [super init]){
+        self.videoView = [[SAVideoAdView alloc] initWithAdLoader:adLoader];
+        self.videoView.delegate = self;
+        
+    }
+    return self;
+}
+
+- (void)setParentalGateEnabled:(BOOL)parentalGateEnabled
+{
+    _parentalGateEnabled = parentalGateEnabled;
+    if(self.videoView){
+        self.videoView.parentalGateEnabled = self.parentalGateEnabled;
+    }
 }
 
 - (void)viewDidLoad {
@@ -33,16 +56,6 @@
     
     self.view.backgroundColor = [UIColor blackColor];
     
-    self.videoView = [[SAVideoAdView alloc] initWithFrame:self.view.bounds];
-    self.videoView.parentalGateEnabled = self.parentalGateEnabled;
-    self.videoView.delegate = self;
-    if(self.appID && self.placementID){
-        self.videoView.appID = self.appID;
-        self.videoView.placementID = self.placementID;
-    }else{
-        self.videoView.appID = @"14";
-        self.videoView.placementID = @"314228";
-    }
     [self.view addSubview:self.videoView];
     
     self.activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];

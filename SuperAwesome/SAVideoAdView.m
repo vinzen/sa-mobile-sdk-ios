@@ -49,6 +49,16 @@
     self.learnMoreButton.backgroundColor = [UIColor clearColor];
 }
 
+- (instancetype)initWithAdLoader:(SAVideoAdLoader *)adLoader
+{
+    if (self = [super initWithFrame:CGRectMake(0, 0, 200, 120)]) {
+        _adLoader = adLoader;
+        _adLoader.delegate = self;
+        [_adLoader load];
+    }
+    return self;
+}
+
 - (void)didMoveToWindow
 {
     [super didMoveToWindow];

@@ -34,6 +34,7 @@
 @property (nonatomic,weak) id<SAVideoAdViewDelegate> delegate;
 @property (nonatomic,assign) IBInspectable BOOL autoplay;
 
+- (instancetype)initWithAdLoader:(SAVideoAdLoader *)adLoader;
 - (void)play;
 - (void)stop;
 - (void)resume;

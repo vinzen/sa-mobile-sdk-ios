@@ -20,11 +20,14 @@
 
 @end
 
+
 @interface SAVideoAdLoader : NSObject <IMAAdsLoaderDelegate>
 
 @property (nonatomic,weak) id<SAVideoAdLoaderDelegate> delegate;
 @property (nonatomic,strong) UIView *adDisplayContainer;
 @property (nonatomic,strong) IMAAdsManager *adsManager;
+@property (nonatomic,readonly) BOOL success;
+@property (nonatomic,readonly,getter=isLoading) BOOL loading;
 
 - (instancetype)initWithAppID:(NSString *)appID placementID:(NSString *)placementID;
 - (void)load;

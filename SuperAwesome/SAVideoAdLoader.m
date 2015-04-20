@@ -25,6 +25,8 @@
         _appID = appID;
         _placementID = placementID;
         _adDisplayContainer = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
+        _loading = YES;
+        _success = NO;
     }
     return self;
 }
@@ -69,6 +71,9 @@
 - (void)adsLoader:(IMAAdsLoader *)loader adsLoadedWithData:(IMAAdsLoadedData *)adsLoadedData {
     NSLog(@"SA: Ad loaded");
     
+    _loading = NO;
+    _success = YES;
+    
     self.adsManager = adsLoadedData.adsManager;
     
     if(self.delegate && [self.delegate respondsToSelector:@selector(didLoadVideoAd:)]){
@@ -78,6 +83,9 @@
 
 - (void)adsLoader:(IMAAdsLoader *)loader failedWithErrorData:(IMAAdLoadingErrorData *)adErrorData {
     NSLog(@"SA: Ad loading error: %@", adErrorData.adError.message);
+    
+    _loading = NO;
+    _success = NO;
     
     if(self.delegate && [self.delegate respondsToSelector:@selector(didFailToLoadVideoAd:)]){
         [self.delegate didFailToLoadVideoAd:self];

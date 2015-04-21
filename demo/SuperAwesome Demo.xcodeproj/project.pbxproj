@@ -20,6 +20,7 @@
 		98B98FD81ACD5F0400EFFA27 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98B98FD61ACD5F0400EFFA27 /* LaunchScreen.xib */; };
 		98B98FE41ACD5F0400EFFA27 /* SuperAwesome_DemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B98FE31ACD5F0400EFFA27 /* SuperAwesome_DemoTests.m */; };
 		98C827001AE664B800554FE4 /* FullscreenVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98C826FF1AE664B800554FE4 /* FullscreenVideoViewController.m */; };
+		98C827031AE6897900554FE4 /* BannerCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98C827021AE6897900554FE4 /* BannerCodeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,8 @@
 		98B98FE31ACD5F0400EFFA27 /* SuperAwesome_DemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SuperAwesome_DemoTests.m; sourceTree = "<group>"; };
 		98C826FE1AE664B800554FE4 /* FullscreenVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FullscreenVideoViewController.h; sourceTree = "<group>"; };
 		98C826FF1AE664B800554FE4 /* FullscreenVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullscreenVideoViewController.m; sourceTree = "<group>"; };
+		98C827011AE6897900554FE4 /* BannerCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerCodeViewController.h; sourceTree = "<group>"; };
+		98C827021AE6897900554FE4 /* BannerCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerCodeViewController.m; sourceTree = "<group>"; };
 		FE6E04B6CF5B6CC2EAC29670 /* Pods-SuperAwesome Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperAwesome Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SuperAwesome Demo/Pods-SuperAwesome Demo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,6 +123,8 @@
 			children = (
 				98A4EE3F1AD52474005FCE20 /* BannerViewController.h */,
 				98A4EE401AD52474005FCE20 /* BannerViewController.m */,
+				98C827011AE6897900554FE4 /* BannerCodeViewController.h */,
+				98C827021AE6897900554FE4 /* BannerCodeViewController.m */,
 			);
 			name = Banner;
 			sourceTree = "<group>";
@@ -347,6 +352,7 @@
 				98C827001AE664B800554FE4 /* FullscreenVideoViewController.m in Sources */,
 				98A4EE461AD524A4005FCE20 /* InterstitialViewController.m in Sources */,
 				98A4EE411AD52474005FCE20 /* BannerViewController.m in Sources */,
+				98C827031AE6897900554FE4 /* BannerCodeViewController.m in Sources */,
 				98B98FCA1ACD5F0400EFFA27 /* main.m in Sources */,
 				98B360EA1AE5204B004D1C8D /* FullscreenVideoPreloadViewController.m in Sources */,
 			);

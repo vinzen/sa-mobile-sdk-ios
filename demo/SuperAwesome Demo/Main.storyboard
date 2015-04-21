@@ -8,7 +8,7 @@
         <!--SuperAwesome Demo App-->
         <scene sceneID="s4o-hZ-maI">
             <objects>
-                <tableViewController id="euh-eT-OC1" sceneMemberID="viewController">
+                <tableViewController id="euh-eT-OC1" customClass="MainViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="gpw-Tm-hbn">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -27,7 +27,7 @@
                                                     <rect key="frame" x="15" y="0.0" width="270" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -47,7 +47,7 @@
                                                     <rect key="frame" x="15" y="0.0" width="270" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -67,7 +67,7 @@
                                                     <rect key="frame" x="15" y="0.0" width="270" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -87,13 +87,30 @@
                                                     <rect key="frame" x="15" y="0.0" width="270" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="GM4-4O-DxY" style="IBUITableViewCellStyleDefault" id="2ea-da-lqL">
+                                        <rect key="frame" x="0.0" y="284" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2ea-da-lqL" id="GVS-eA-fYY">
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Fullscreen Video Ad With Preloading" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GM4-4O-DxY">
+                                                    <rect key="frame" x="15" y="0.0" width="270" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="lFT-7D-Vul" kind="modal" id="MXX-gv-KL1"/>
+                                            <segue destination="Lbh-Hd-Y7a" kind="push" id="tzB-V3-yJM"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -124,7 +141,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wdz-hr-39R" customClass="SABannerView">
                                 <rect key="frame" x="0.0" y="430" width="320" height="50"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="CcS-5u-jLo"/>
                                     <constraint firstAttribute="width" constant="320" id="RXW-EF-GAF"/>
@@ -182,23 +199,54 @@
             </objects>
             <point key="canvasLocation" x="1255" y="-420"/>
         </scene>
-        <!--Video Ad View Controller-->
-        <scene sceneID="oC8-me-0lM">
+        <!--Fullscreen Video Ad With Preloading-->
+        <scene sceneID="bT2-i1-3nP">
             <objects>
-                <viewController id="lFT-7D-Vul" customClass="SAVideoAdViewController" sceneMemberID="viewController">
+                <viewController id="Lbh-Hd-Y7a" customClass="FullscreenVideoPreloadViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="1Bx-Px-oaV"/>
-                        <viewControllerLayoutGuide type="bottom" id="h3l-Ru-9Aa"/>
+                        <viewControllerLayoutGuide type="top" id="rw4-Kf-i4p"/>
+                        <viewControllerLayoutGuide type="bottom" id="ntY-Ht-6ah"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="98L-vv-ySJ">
+                    <view key="view" contentMode="scaleToFill" id="9wB-vd-vug">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pa4-bw-S7R">
+                                <rect key="frame" x="143" y="84" width="35" height="30"/>
+                                <state key="normal" title="Load">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="load:" destination="Lbh-Hd-Y7a" eventType="touchUpInside" id="R7M-3Y-JcG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1nE-CW-FNA">
+                                <rect key="frame" x="146" y="134" width="30" height="30"/>
+                                <state key="normal" title="Play">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="play:" destination="Lbh-Hd-Y7a" eventType="touchUpInside" id="9bl-00-LPg"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pa4-bw-S7R" firstAttribute="top" secondItem="rw4-Kf-i4p" secondAttribute="bottom" constant="20" id="G0d-2H-G0Q"/>
+                            <constraint firstItem="1nE-CW-FNA" firstAttribute="centerX" secondItem="pa4-bw-S7R" secondAttribute="centerX" id="hco-kt-4TZ"/>
+                            <constraint firstAttribute="centerX" secondItem="pa4-bw-S7R" secondAttribute="centerX" id="rHj-p3-eYY"/>
+                            <constraint firstItem="1nE-CW-FNA" firstAttribute="top" secondItem="pa4-bw-S7R" secondAttribute="bottom" constant="20" id="xIT-5O-ds8"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Fullscreen Video Ad With Preloading" id="mAS-mq-4ei"/>
+                    <connections>
+                        <outlet property="loadButton" destination="pa4-bw-S7R" id="3tc-Kc-TtQ"/>
+                        <outlet property="playButton" destination="1nE-CW-FNA" id="Jc1-wf-ZXO"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mv8-gT-9h2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nde-8P-QvX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="815" y="552"/>
+            <point key="canvasLocation" x="738" y="562"/>
         </scene>
         <!--Video Ads-->
         <scene sceneID="LUB-e1-5iK">

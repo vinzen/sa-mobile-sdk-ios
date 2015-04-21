@@ -32,7 +32,9 @@
 @interface SAVideoAdView : SAPlacementView <SAVideoAdLoaderDelegate, IMAAdsManagerDelegate, SAParentalGateDelegate>
 
 @property (nonatomic,weak) id<SAVideoAdViewDelegate> delegate;
+@property (nonatomic,strong,readonly) SAVideoAdLoader *adLoader;
 @property (nonatomic,assign) IBInspectable BOOL autoplay;
+@property (nonatomic,readonly,getter=isReady) BOOL ready;
 
 - (instancetype)initWithAdLoader:(SAVideoAdLoader *)adLoader;
 - (void)play;

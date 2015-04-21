@@ -91,6 +91,11 @@
     [self.adLoader load];
 }
 
+- (BOOL)isReady
+{
+    return !self.adLoader.isLoading && self.adLoader.success;
+}
+
 - (void)layoutSubviews
 {
     [super layoutSubviews];

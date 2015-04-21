@@ -21,13 +21,8 @@
     if(self = [super init]){
         self.videoView = [[SAVideoAdView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
         self.videoView.delegate = self;
-        if(appID && placementID){
-            self.videoView.appID = appID;
-            self.videoView.placementID = placementID;
-        }else{
-            self.videoView.appID = @"14";
-            self.videoView.placementID = @"314228";
-        }
+        self.videoView.appID = appID;
+        self.videoView.placementID = placementID;
     }
     return self;
 }
@@ -37,7 +32,6 @@
     if(self = [super init]){
         self.videoView = [[SAVideoAdView alloc] initWithAdLoader:adLoader];
         self.videoView.delegate = self;
-        
     }
     return self;
 }
@@ -80,6 +74,7 @@
 - (void)viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];
+    
     self.activityIndicatorView.center = self.view.center;
     self.videoView.frame = self.view.bounds;
 }
@@ -90,6 +85,15 @@
     [self.videoView resume];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    if(self.videoView.isReady){
+        [self start];
+    }
+}
+
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
@@ -97,14 +101,26 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationDidBecomeActiveNotification object:nil];
 }
 
+- (void)start
+{
+    [self.activityIndicatorView stopAnimating];
+    [self.videoView play];
+}
+
 #pragma mark - SAVideoAdViewDelegate
 
 - (void)didLoadVideoAd:(SAVideoAdView *)videoAd
 {
     dispatch_async(dispatch_get_main_queue(), ^{
-        [self.activityIndicatorView stopAnimating];
-        [self.videoView play];
+        // if VC is visible
+        if (self.isViewLoaded && self.view.window) {
+            [self start];
+        }
     });
+    
+    if(self.delegate && [self.delegate respondsToSelector:@selector(didLoadVideoAd:)]){
+        [self.delegate didLoadVideoAd:self];
+    }
 }
 
 - (void)didFinishPlayingVideoAd:(SAVideoAdView *)videoAd{
@@ -118,6 +134,10 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         [self dismissViewControllerAnimated:YES completion:nil];
     });
+    
+    if(self.delegate && [self.delegate respondsToSelector:@selector(didFailToLoadVideoAd:)]){
+        [self.delegate didFailToLoadVideoAd:self];
+    }
 }
 
 - (void)didFailToPlayVideoAd:(SAVideoAdView *)videoAd

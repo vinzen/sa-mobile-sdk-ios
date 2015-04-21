@@ -56,17 +56,30 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             if(displayAd == nil){
                 NSLog(@"SA: Could not find placement with the provided placement ID");
+                if(self.delegate && [self.delegate respondsToSelector:@selector(didFailFetchingInterstitialAd:)]){
+                    [self.delegate didFailFetchingInterstitialAd:self];
+                }
             }else{
                 self.interstitialView.configuration = [self configurationWithDisplayAd:displayAd];
-                [self.interstitialView load];
+                [self load];
             }
         });
     }];
 }
 
+- (void)load
+{
+    [self.interstitialView load];
+}
+
 - (void)present
 {
     [self.interstitialView present];
+}
+
+- (BOOL)isReady
+{
+    return self.interstitialView.isReady;
 }
 
 #pragma mark - ATInterstitialViewDelegate
@@ -78,10 +91,15 @@
     }
 }
 
+- (void)didFailFetchingInterstitialAd:(ATInterstitialView *)view
+{
+    if(self.delegate && [self.delegate respondsToSelector:@selector(didFailFetchingInterstitialAd:)]){
+        [self.delegate didFailFetchingInterstitialAd:self];
+    }
+}
+
 - (void)didHideInterstitialAd:(ATInterstitialView *)view
 {
-    [self.interstitialView load];
-    
     if(self.delegate && [self.delegate respondsToSelector:@selector(didHideInterstitialView:)]){
         [self.delegate didHideInterstitialView:self];
     }
@@ -102,8 +120,21 @@
     return YES;
 }
 
+- (void)willLeaveApplicationForInterstitialAd:(ATInterstitialView *)view
+{
+    if(self.delegate && [self.delegate respondsToSelector:@selector(willLeaveApplicationForInterstitialAd:)]){
+        [self.delegate willLeaveApplicationForInterstitialAd:self];
+    }
+}
+
+#pragma mark - SAParentalGateDelegate
+
 - (void)didGetThroughParentalGate:(SAParentalGate *)parentalGate
 {
+    if(self.delegate && [self.delegate respondsToSelector:@selector(willLeaveApplicationForInterstitialAd:)]){
+        [self.delegate willLeaveApplicationForInterstitialAd:self];
+    }
+    
     [[UIApplication sharedApplication] openURL:self.adURL];
 }
 

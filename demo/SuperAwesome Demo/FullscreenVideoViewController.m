@@ -11,8 +11,6 @@
 
 @interface FullscreenVideoViewController ()
 
-@property (nonatomic,strong) SAVideoAdViewController *vc;
-
 @end
 
 @implementation FullscreenVideoViewController
@@ -29,14 +27,11 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)viewDidAppear:(BOOL)animated
+
+- (IBAction)play:(id)sender
 {
-    [super viewDidAppear:animated];
-    
-    if(!self.vc){
-        self.vc = [[SAVideoAdViewController alloc] initWithAppID:@"14" placementID:@"314228"];
-        [self presentViewController:self.vc animated:YES completion:nil];
-    }
+    SAVideoAdViewController *vc = [[SAVideoAdViewController alloc] initWithAppID:@"14" placementID:@"314228"];
+    [self presentViewController:vc animated:YES completion:nil];
 }
 
 @end

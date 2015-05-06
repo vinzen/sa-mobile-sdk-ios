@@ -10,4 +10,6 @@
 
 @interface FullscreenVideoViewController : UIViewController
 
+- (IBAction)play:(id)sender;
+
 @end

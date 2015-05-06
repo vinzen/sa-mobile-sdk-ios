@@ -28,10 +28,7 @@
 {
     NSString *text = [[[tableView cellForRowAtIndexPath:indexPath] textLabel] text];
     
-    if([text isEqualToString:@"Fullscreen Video Ad"]){
-        FullscreenVideoViewController *vc = [[FullscreenVideoViewController alloc] init];
-        [self.navigationController pushViewController:vc animated:YES];
-    }
+    NSLog(@"Opened: %@", text);
 }
 
 @end

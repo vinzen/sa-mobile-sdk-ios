@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "SuperAwesome"
-  s.version      = "1.2.1"
+  s.version      = "1.2.2"
   s.summary      = "SuperAwesome Mobile SDK for iOS"
 
   s.description  = <<-DESC
@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "6.0"
   s.ios.deployment_target = "6.0"
   s.requires_arc = true
-  s.source       = { :git => "https://github.com/SuperAwesomeLTD/sa-mobile-sdk-ios.git", :tag => "1.2.1" }
+  s.source       = { :git => "https://github.com/SuperAwesomeLTD/sa-mobile-sdk-ios.git", :tag => "1.2.2" }
   
   s.default_subspec = 'Default'
 
@@ -27,7 +27,7 @@ Pod::Spec.new do |s|
     default.source_files  = "SuperAwesome"
     default.resources = "SuperAwesome/Resources/*"
 
-    default.dependency "GoogleAds-IMA-iOS-SDK", "~> 3.0.beta.12"
+    default.dependency "GoogleAds-IMA-iOS-SDK", "3.0.beta.12"
   end
 
   s.subspec 'AdMob' do |admob|
@@ -38,6 +38,6 @@ Pod::Spec.new do |s|
     admob.source_files  = "SuperAwesome"
     admob.resources = "SuperAwesome/Resources/*"
 
-    admob.dependency "GoogleAds-IMA-iOS-SDK-For-AdMob", "~> 3.0.beta.12"
+    admob.dependency "GoogleAds-IMA-iOS-SDK-For-AdMob", "3.0.beta.12"
   end
 end

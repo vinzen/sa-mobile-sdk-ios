@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+1.2.2
+ - Updated Google IMA Library version number in podspec file
+
 1.2.1
  - New delegate methods for SAInterstitialView
 

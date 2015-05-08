@@ -1,5 +1,5 @@
 //
-//  FullscreenVideoViewController.h
+//  BannerCodeViewController.h
 //  SuperAwesome Demo
 //
 //  Created by Balázs Kiss on 21/04/15.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FullscreenVideoViewController : UIViewController
-
-- (IBAction)play:(id)sender;
+@interface BannerCodeViewController : UIViewController
 
 @end

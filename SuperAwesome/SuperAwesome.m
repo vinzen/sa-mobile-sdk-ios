@@ -46,7 +46,7 @@
 
 - (NSString *)version
 {
-    return @"SuperAwesome iOS SDK version 1.2.1";
+    return @"SuperAwesome iOS SDK version 1.2.2";
 }
 
 - (NSString *)baseURL

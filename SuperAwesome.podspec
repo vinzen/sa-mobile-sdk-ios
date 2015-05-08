@@ -27,10 +27,10 @@ Pod::Spec.new do |s|
   s.default_subspec = 'Default'
   
   s.subspec 'Default' do |default|
-    default.dependency "GoogleAds-IMA-iOS-SDK", "~> 3.0.beta.12"
+    default.dependency "GoogleAds-IMA-iOS-SDK", "3.0.beta.12"
   end
 
   s.subspec 'AdMob' do |admob|
-    admob.dependency "GoogleAds-IMA-iOS-SDK-For-AdMob", "~> 3.0.beta.12"
+    admob.dependency "GoogleAds-IMA-iOS-SDK-For-AdMob", "3.0.beta.12"
   end
 end

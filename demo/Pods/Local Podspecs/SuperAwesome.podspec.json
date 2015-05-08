@@ -63,7 +63,7 @@
       "name": "Default",
       "dependencies": {
         "GoogleAds-IMA-iOS-SDK": [
-          "~> 3.0.beta.12"
+          "3.0.beta.12"
         ]
       }
     },
@@ -71,7 +71,7 @@
       "name": "AdMob",
       "dependencies": {
         "GoogleAds-IMA-iOS-SDK-For-AdMob": [
-          "~> 3.0.beta.12"
+          "3.0.beta.12"
         ]
       }
     }

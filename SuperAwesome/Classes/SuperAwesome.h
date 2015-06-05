@@ -18,6 +18,7 @@
 #import "SAVideoAdViewController.h"
 
 typedef NS_ENUM(NSUInteger, SAClientConfiguration) {
+    SAClientConfigurationDevelopment,
     SAClientConfigurationStaging,
     SAClientConfigurationProduction
 };

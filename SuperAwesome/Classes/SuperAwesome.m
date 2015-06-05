@@ -12,8 +12,6 @@
 
 @interface SuperAwesome ()
 
-- (NSString *)baseURL;
-
 @end
 
 @implementation SuperAwesome
@@ -34,7 +32,7 @@
 {
     if(self = [super init]){
         _adLoader = [[AdLoader alloc] init];
-        [self setClientConfiguration:SAClientConfigurationStaging];
+        [self setClientConfiguration:SAClientConfigurationDevelopment];
         
     }
     return self;
@@ -45,13 +43,20 @@
     return @"SuperAwesome iOS SDK version 2.0.0";
 }
 
-- (NSString *)baseURL
+
+- (void)setClientConfiguration:(SAClientConfiguration)clientConfiguration
 {
+    _clientConfiguration = clientConfiguration;
+    
+    
     if(self.clientConfiguration == SAClientConfigurationProduction){
-        return @"http://ads.superawesome.tv/ads/";
+        self.adLoader.baseURL = @"http://beta.ads.superawesome.tv/v2";
+    }else if(self.clientConfiguration == SAClientConfigurationStaging){
+        self.adLoader.baseURL = @"http://beta.ads.superawesome.tv/v2";
     }else{
-        return @"http://staging.dashboard.superawesome.tv/api/sdk/ads";
+        self.adLoader.baseURL = @"http://dev.ads.superawesome.tv/v2";
     }
 }
+
 
 @end

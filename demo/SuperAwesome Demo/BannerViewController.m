@@ -7,7 +7,6 @@
 //
 
 #import "BannerViewController.h"
-#import "SuperAwesome.h"
 
 @interface BannerViewController ()
 
@@ -29,10 +28,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    SABannerView *bannerView = [[SABannerView alloc] initWithFrame:CGRectMake(0, 100, 320, 250)];
-    bannerView.appID = @"14";
-    bannerView.placementID = @"1194499";
-    [self.view addSubview:bannerView];
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,16 +35,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

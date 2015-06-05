@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "AdLoader.h"
-#import <ADTECHMobileSDK/ADTECHMobileSDK.h>
 #import "SADisplayAd.h"
 #import "SAVideoAd.h"
 
@@ -36,10 +35,6 @@ typedef NS_ENUM(NSUInteger, SAClientConfiguration) {
 @property (nonatomic,strong) AdLoader *adLoader;
 
 - (NSString *)version;
-
-- (void)displayAdForApp:(NSString *)appID placement:(NSString *)placementID completion:(void(^)(SADisplayAd *))completion;
-
-- (void)videoAdForApp:(NSString *)appID placement:(NSString *)placementID completion:(void(^)(SAVideoAd *))completion;
 
 /**
  *  Returns singleton instance

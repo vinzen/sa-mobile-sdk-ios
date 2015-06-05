@@ -39,6 +39,24 @@
  * @note You must implement and take action when this method is called on the delegate.
  */
 - (void)didHideInterstitialView:(SAInterstitialView *)interstitialView;
+
+/**
+ * Called when an ad fails to be fetched. Usually this happens because of networking conditions and in rare cases if an exceptions occurs on the server.
+ * You can call load to try again, if you think the conditions leading to the error have changed.
+ *
+ * @param interstitialView The interstitial ad view that fetched the ad.
+ */
+- (void)didFailFetchingInterstitialAd:(SAInterstitialView *)interstitialView;
+
+/**
+ * Called when the user interaction with the ad triggers leaving the application.
+ * This can be, for example, opening a URL in Safari or Maps or another application registered to handle the URL specified by the ad.
+ * You should save the state of the application when you get this call.
+ *
+ * @param interstitialView The interstitial ad view that fetched the ad.
+ *
+ */
+- (void)willLeaveApplicationForInterstitialAd:(SAInterstitialView *)interstitialView;
 @end
 
 
@@ -51,6 +69,14 @@
  * @see SAInterstitialViewDelegate
  */
 @property (nonatomic,weak) id<SAInterstitialViewDelegate> delegate;
+
+/**
+ * Returns YES when an interstitial ad is ready to be presented.
+ * The delegate's  didSuccessfullyFetchInterstitialAd: is called when the value switches from NO to YES.
+ * Once an interstitial is presented, the value changes to NO. You need to load again in order
+ * to be able to present another interstitial view.
+ */
+@property (nonatomic, readonly) BOOL isReady;
 
 /**
  *  Initialises the interstitial ad in the given view controller
@@ -74,5 +100,7 @@
  * The default color is clear on iOS 8 and above and white on iOS 6 and 7.
  */
 - (void)setBackgroundColor:(UIColor *)backgroundColor;
+
+- (void)load;
 
 @end

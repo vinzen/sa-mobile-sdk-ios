@@ -36,18 +36,18 @@
 {
     [super setPlacementID:placementID];
     
-    [[[SuperAwesome sharedManager] adLoader] loadAd:[[SAAdRequest alloc] initWithPlacementId:placementID] completion:^(SAAdResponse *response, NSError *error) {
-        if(error != nil){
-            NSLog(@"Could not load ad");
-            return ;
-        }
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            self.interstitialView = [[SKMRAIDInterstitial alloc] initWithSupportedFeatures:@[] withHtmlData:[response toHTML] withBaseURL:[NSURL URLWithString:@"http://superawesome.tv"] delegate:self serviceDelegate:nil rootViewController:self.viewController];
-            [self.interstitialView setBackgroundColor:self.backgroundColor];
-        });
-        
-    }];
+//    [[[SuperAwesome sharedManager] adLoader] loadAd:[[SAAdRequest alloc] initWithPlacementId:placementID] completion:^(SAAdResponse *response, NSError *error) {
+//        if(error != nil){
+//            NSLog(@"Could not load ad");
+//            return ;
+//        }
+//        
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            self.interstitialView = [[SKMRAIDInterstitial alloc] initWithSupportedFeatures:@[] withHtmlData:[response toHTML] withBaseURL:[NSURL URLWithString:@"http://superawesome.tv"] delegate:self serviceDelegate:nil rootViewController:self.viewController];
+//            [self.interstitialView setBackgroundColor:self.backgroundColor];
+//        });
+//        
+//    }];
 }
 
 - (void)present
@@ -55,10 +55,23 @@
     [self.interstitialView show];
 }
 
+- (BOOL)isReady
+{
+    return YES;
+}
+
+- (void)load
+{
+    
+}
+
 #pragma mark - SAParentalGateDelegate
 
 - (void)didGetThroughParentalGate:(SAParentalGate *)parentalGate
 {
+    if(self.delegate && [self.delegate respondsToSelector:@selector(willLeaveApplicationForInterstitialAd:)]){
+        [self.delegate willLeaveApplicationForInterstitialAd:self];
+    }
     [[UIApplication sharedApplication] openURL:self.adURL];
 }
 
@@ -75,7 +88,9 @@
 
 - (void)mraidInterstitialAdFailed:(SKMRAIDInterstitial *)mraidInterstitial
 {
-    NSLog(@"Ad Failed");
+    if(self.delegate && [self.delegate respondsToSelector:@selector(didFailFetchingInterstitialAd:)]){
+        [self.delegate didFailFetchingInterstitialAd:self];
+    }
 }
 
 - (void)mraidInterstitialWillShow:(SKMRAIDInterstitial *)mraidInterstitial
@@ -104,6 +119,9 @@
         [self.gate show];
         self.adURL = url;
     }else{
+        if(self.delegate && [self.delegate respondsToSelector:@selector(willLeaveApplicationForInterstitialAd:)]){
+            [self.delegate willLeaveApplicationForInterstitialAd:self];
+        }
         [[UIApplication sharedApplication] openURL:url];
     }
 }

@@ -64,12 +64,6 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "../../SuperAwesome/Resources/AdDemo320x50.jpg"
   install_resource "../../SuperAwesome/Resources/AdDemo728x90.jpg"
   install_resource "../../SuperAwesome/Resources/AdDemo768x1024.jpg"
-  install_resource "../../SuperAwesome/Resources/ADTECHAdConfiguration.plist"
-  install_resource "../../SuperAwesome/Resources/sa_login.png"
-  install_resource "../../SuperAwesome/Resources/SABannerViewController.xib"
-  install_resource "../../SuperAwesome/Resources/SALoginWebViewController.xib"
-  install_resource "../../SuperAwesome/Resources/ADTECHMobileSDK.bundle"
-  install_resource "../../SuperAwesome/Resources/login"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "../../SuperAwesome/Resources/AdDemo300x250.jpg"
@@ -78,12 +72,6 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "../../SuperAwesome/Resources/AdDemo320x50.jpg"
   install_resource "../../SuperAwesome/Resources/AdDemo728x90.jpg"
   install_resource "../../SuperAwesome/Resources/AdDemo768x1024.jpg"
-  install_resource "../../SuperAwesome/Resources/ADTECHAdConfiguration.plist"
-  install_resource "../../SuperAwesome/Resources/sa_login.png"
-  install_resource "../../SuperAwesome/Resources/SABannerViewController.xib"
-  install_resource "../../SuperAwesome/Resources/SALoginWebViewController.xib"
-  install_resource "../../SuperAwesome/Resources/ADTECHMobileSDK.bundle"
-  install_resource "../../SuperAwesome/Resources/login"
 fi
 
 rsync -avr --copy-links --no-relative --exclude '*/.svn/*' --files-from="$RESOURCES_TO_COPY" / "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"

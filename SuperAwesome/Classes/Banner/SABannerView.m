@@ -97,7 +97,9 @@
         return;
     }
     
-    [[[SuperAwesome sharedManager] adLoader] loadAd:[[SAAdRequest alloc] initWithPlacementId:self.placementID] completion:^(SAAdResponse *response, NSError *error) {
+    AdLoader *adLoader = [[SuperAwesome sharedManager] adLoader];
+    SAAdRequest *adRequest = [[SAAdRequest alloc] initWithPlacementId:self.placementID];
+    [adLoader loadAd:adRequest completion:^(SAAdResponse *response, NSError *error) {
         if(error != nil){
             NSLog(@"Could not load ad");
             return ;

@@ -243,6 +243,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Interstitial Ad" id="j7o-6h-bqx"/>
+                    <connections>
+                        <outlet property="showButton" destination="S6G-qt-Hxb" id="sSu-Ct-zUl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L7p-ic-ODt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

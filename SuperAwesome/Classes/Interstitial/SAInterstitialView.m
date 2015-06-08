@@ -7,13 +7,18 @@
 //
 
 #import "SAInterstitialView.h"
+#import "SKLogger.h"
 
 @interface SAInterstitialView ()
 
 @property (nonatomic,strong) UIViewController *viewController;
 @property (nonatomic,strong) SKMRAIDInterstitial *interstitialView;
 @property (nonatomic,strong) SAParentalGate *gate;
+@property (nonatomic,strong) SAAdResponse *adResponse;
 @property (nonatomic,strong) NSURL *adURL;
+@property (nonatomic,readwrite,getter=isReady) BOOL ready;
+
+- (void)fetchAd;
 
 @end
 
@@ -22,6 +27,7 @@
 - (instancetype)initWithViewController:(UIViewController *)viewController
 {
     if(self = [super init]){
+        self.ready = NO;
         self.viewController = viewController;
     }
     return self;
@@ -32,22 +38,29 @@
     [super setBackgroundColor:backgroundColor];
 }
 
-- (void)setPlacementID:(NSString *)placementID
+- (void)fetchAd
 {
-    [super setPlacementID:placementID];
+    self.ready = NO;
     
-//    [[[SuperAwesome sharedManager] adLoader] loadAd:[[SAAdRequest alloc] initWithPlacementId:placementID] completion:^(SAAdResponse *response, NSError *error) {
-//        if(error != nil){
-//            NSLog(@"Could not load ad");
-//            return ;
-//        }
-//        
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            self.interstitialView = [[SKMRAIDInterstitial alloc] initWithSupportedFeatures:@[] withHtmlData:[response toHTML] withBaseURL:[NSURL URLWithString:@"http://superawesome.tv"] delegate:self serviceDelegate:nil rootViewController:self.viewController];
-//            [self.interstitialView setBackgroundColor:self.backgroundColor];
-//        });
-//        
-//    }];
+    SAAdManager *adLoader = [[SuperAwesome sharedManager] adManager];
+    SAAdRequest *adRequest = [[SAAdRequest alloc] initWithPlacementId:self.placementID];
+    [adLoader loadAd:adRequest completion:^(SAAdResponse *response, NSError *error) {
+        if(error != nil){
+            [SKLogger error:@"SAinterstitialView" withMessage:@"Failed to fetch ad"];
+            if(self.delegate && [self.delegate respondsToSelector:@selector(didFailFetchingInterstitialAd:)]){
+                [self.delegate didFailFetchingInterstitialAd:self];
+            }
+            return ;
+        }
+        
+        self.adResponse = response;
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSString *html = [self.adResponse.creative toHTML];
+            self.interstitialView = [[SKMRAIDInterstitial alloc] initWithSupportedFeatures:@[] withHtmlData:html withBaseURL:[NSURL URLWithString:@"http://superawesome.tv"] delegate:self serviceDelegate:nil rootViewController:self.viewController];
+            [self.interstitialView setBackgroundColor:self.backgroundColor];
+        });
+    }];
 }
 
 - (void)present
@@ -55,24 +68,9 @@
     [self.interstitialView show];
 }
 
-- (BOOL)isReady
-{
-    return YES;
-}
-
 - (void)load
 {
-    
-}
-
-#pragma mark - SAParentalGateDelegate
-
-- (void)didGetThroughParentalGate:(SAParentalGate *)parentalGate
-{
-    if(self.delegate && [self.delegate respondsToSelector:@selector(willLeaveApplicationForInterstitialAd:)]){
-        [self.delegate willLeaveApplicationForInterstitialAd:self];
-    }
-    [[UIApplication sharedApplication] openURL:self.adURL];
+    [self fetchAd];
 }
 
 #pragma mark - SKMRAIDInterstitialDelegate
@@ -80,10 +78,14 @@
 - (void)mraidInterstitialAdReady:(SKMRAIDInterstitial *)mraidInterstitial
 {
     NSLog(@"Ad Ready");
+    self.ready = YES;
     
-    if(self.delegate && [self.delegate respondsToSelector:@selector(didSuccessfullyFetchInterstitialAd:)]){
-        [self.delegate didSuccessfullyFetchInterstitialAd:self];
-    }
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if(self.delegate && [self.delegate respondsToSelector:@selector(didSuccessfullyFetchInterstitialAd:)]){
+            [self.delegate didSuccessfullyFetchInterstitialAd:self];
+        }
+    });
+    
 }
 
 - (void)mraidInterstitialAdFailed:(SKMRAIDInterstitial *)mraidInterstitial
@@ -108,9 +110,7 @@
 }
 
 - (void)mraidInterstitialNavigate:(SKMRAIDInterstitial *)mraidInterstitial withURL:(NSURL *)url
-{
-    NSLog(@"navigate");
-    
+{    
     if([self isParentalGateEnabled]){
         if(self.gate == nil){
             self.gate = [[SAParentalGate alloc] init];
@@ -126,5 +126,14 @@
     }
 }
 
+#pragma mark - SAParentalGateDelegate
+
+- (void)didGetThroughParentalGate:(SAParentalGate *)parentalGate
+{
+    if(self.delegate && [self.delegate respondsToSelector:@selector(willLeaveApplicationForInterstitialAd:)]){
+        [self.delegate willLeaveApplicationForInterstitialAd:self];
+    }
+    [[UIApplication sharedApplication] openURL:self.adURL];
+}
 
 @end

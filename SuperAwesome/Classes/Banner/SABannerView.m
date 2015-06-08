@@ -14,7 +14,11 @@
 
 @property (nonatomic,strong) SKMRAIDView *bannerView;
 @property (nonatomic,strong) SAParentalGate *gate;
+@property (nonatomic,strong) SAAdResponse *adResponse;
 @property (nonatomic,strong) NSURL *adURL;
+
+- (void)renderAd;
+- (void)sendImpressionEvent;
 
 @end
 
@@ -106,10 +110,10 @@
             return ;
         }
         
+        self.adResponse = response;
+        
         dispatch_async(dispatch_get_main_queue(), ^{
-            self.bannerView = [[SKMRAIDView alloc] initWithFrame:self.bounds withHtmlData:[response.creative toHTML] withBaseURL:[NSURL URLWithString:@"http://superawesome.tv"] supportedFeatures:@[] delegate:self serviceDelegate:nil rootViewController:[self firstAvailableUIViewController]];
-            self.bannerView.backgroundColor = self.backgroundColor;
-            [self addSubview:self.bannerView];
+            [self renderAd];
         });
         
     }];
@@ -139,17 +143,28 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-#pragma mark - SKMRAIDViewDelegate
-
-- (void)mraidViewAdReady:(SKMRAIDView *)mraidView
+- (void)renderAd
 {
-    
-    SAEventRequest *eventRequest = [[SAEventRequest alloc] init];
-    eventRequest.type = @"impression";
+    NSString *html = [self.adResponse.creative toHTML];
+    self.bannerView = [[SKMRAIDView alloc] initWithFrame:self.bounds withHtmlData:html withBaseURL:[NSURL URLWithString:@"http://superawesome.tv"] supportedFeatures:@[] delegate:self serviceDelegate:nil rootViewController:[self firstAvailableUIViewController]];
+    self.bannerView.backgroundColor = self.backgroundColor;
+    [self addSubview:self.bannerView];
+}
+
+- (void)sendImpressionEvent
+{
+    SAEventRequest *eventRequest = [[SAEventRequest alloc] initWithAdResponse:self.adResponse type:@"impression"];
     SAAdManager *adLoader = [[SuperAwesome sharedManager] adManager];
     [adLoader sendEvent:eventRequest completion:^(SAEventResponse *response, NSError *error) {
         
     }];
+}
+
+#pragma mark - SKMRAIDViewDelegate
+
+- (void)mraidViewAdReady:(SKMRAIDView *)mraidView
+{
+    [self sendImpressionEvent];
 }
 - (void)mraidViewAdFailed:(SKMRAIDView *)mraidView
 {

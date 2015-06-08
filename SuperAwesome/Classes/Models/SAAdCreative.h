@@ -10,7 +10,7 @@
 
 @interface SAAdCreative : JSONModel
 
-@property (nonatomic,assign) NSInteger creativeID;
+@property (nonatomic,strong) NSString *creativeID;
 @property (nonatomic,strong) NSString *format;
 @property (nonatomic,strong) NSString *clickURL;
 @property (nonatomic,strong) NSDictionary *details;

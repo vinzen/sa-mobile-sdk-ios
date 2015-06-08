@@ -77,7 +77,7 @@
 
 - (void)mraidInterstitialAdReady:(SKMRAIDInterstitial *)mraidInterstitial
 {
-    NSLog(@"Ad Ready");
+    [SKLogger debug:@"SAInterstitialView" withMessage:@"Ad is ready to display"];
     self.ready = YES;
     
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -97,12 +97,12 @@
 
 - (void)mraidInterstitialWillShow:(SKMRAIDInterstitial *)mraidInterstitial
 {
-    NSLog(@"will show");
+    [SKLogger debug:@"SAInterstitialView" withMessage:@"Ad will show"];
 }
 
 - (void)mraidInterstitialDidHide:(SKMRAIDInterstitial *)mraidInterstitial
 {
-    NSLog(@"did hide");
+    [SKLogger debug:@"SAInterstitialView" withMessage:@"Ad did hide"];
     
     if(self.delegate && [self.delegate respondsToSelector:@selector(didHideInterstitialView:)]){
         [self.delegate didHideInterstitialView:self];

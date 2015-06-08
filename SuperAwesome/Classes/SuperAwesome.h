@@ -41,6 +41,8 @@ typedef NS_ENUM(NSUInteger, SALoggingLevel) {
  */
 @property (nonatomic,assign) SAClientConfiguration clientConfiguration;
 
+@property (nonatomic,assign,getter=isTestModeEnabled) BOOL testModeEnabled;
+
 @property (nonatomic,strong) SAAdManager *adManager;
 
 @property (nonatomic,assign) SALoggingLevel loggingLevel;

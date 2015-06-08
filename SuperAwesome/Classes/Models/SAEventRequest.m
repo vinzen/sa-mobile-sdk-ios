@@ -33,10 +33,4 @@
     };
 }
 
-- (NSString *)JSONValue
-{
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:self.dictionaryValue options:0 error:nil];
-    return  [[NSString alloc] initWithBytes:[jsonData bytes] length:[jsonData length] encoding:NSUTF8StringEncoding];
-}
-
 @end

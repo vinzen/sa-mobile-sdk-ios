@@ -163,8 +163,10 @@
 #pragma mark - SKMRAIDViewDelegate
 
 - (void)mraidViewAdReady:(SKMRAIDView *)mraidView
-{
-    [self sendImpressionEvent];
+{    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self sendImpressionEvent];
+    });
 }
 - (void)mraidViewAdFailed:(SKMRAIDView *)mraidView
 {

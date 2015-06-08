@@ -11,36 +11,62 @@
 
 @interface SAAdManager ()
 
+- (NSURLRequest *)requestWithPath:(NSString *)path data:(NSObject *)data;
+- (NSURLSessionDataTask *)sendRequest:(NSURLRequest *)request completionHandler:(void(^)(NSData *data, NSURLResponse *response, NSError *error))completionHandler;
+
 @end
 
 @implementation SAAdManager
 
-
-- (void)loadAd:(SAAdRequest *)adRequest completion:(void(^)(SAAdResponse *response, NSError *error))completion
+- (NSURLRequest *)requestWithPath:(NSString *)path data:(NSObject *)data
 {
-    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
-    NSString *urlString = [NSString stringWithFormat:@"%@/ad/%@", self.baseURL, adRequest.placementID];
+    NSString *urlString = [NSString stringWithFormat:@"%@/%@", self.baseURL, path];
     NSURL *url = [NSURL URLWithString:urlString];
-    [SKLogger debug:@"" withMessage:[NSString stringWithFormat:@"New request to %@", urlString]];
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10.0];
+    [SKLogger debug:@"SAAdManager" withMessage:[NSString stringWithFormat:@"New request to %@", urlString]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData timeoutInterval:10.0];
     
     [request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [request addValue:@"application/json" forHTTPHeaderField:@"Accept"];
     
-    [SKLogger debug:@"SAAdManager" withMessage:urlString];
+    if(data != nil) {
+        NSError *error;
+        [request setHTTPMethod:@"POST"];
+        NSData *postData = [NSJSONSerialization dataWithJSONObject:data options:0 error:&error];
+        [request setHTTPBody:postData];
+    }
     
+    return request;
+}
+
+- (NSURLSessionDataTask *)sendRequest:(NSURLRequest *)request completionHandler:(void(^)(NSData *data, NSURLResponse *response, NSError *error))completionHandler
+{
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
     NSURLSessionDataTask *postDataTask = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         if(error != nil){
             [SKLogger error:@"SAAdManager" withMessage:[NSString stringWithFormat:@"Request failed (%@)", error.localizedDescription]];
+        }
+        NSString *dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        [SKLogger debug:@"SAAdManager" withMessage:dataString];
+        completionHandler(data, response, error);
+    }];
+    [postDataTask resume];
+    return postDataTask;
+}
+
+- (void)loadAd:(SAAdRequest *)adRequest completion:(void(^)(SAAdResponse *response, NSError *error))completion
+{
+    NSString *path = [NSString stringWithFormat:@"ad/%@", adRequest.placementID];
+    NSURLRequest *request = [self requestWithPath:path data:nil];
+    
+    [self sendRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        if(error != nil){
             completion(nil, error);
             return;
         }
         
-        NSString *dataStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-        NSLog(@"%@", dataStr);
-        
         SAAdResponse *resp = [[SAAdResponse alloc] initWithData:data error:&error];
+        resp.placementID = adRequest.placementID;
         
         if(error != nil){
             [SKLogger error:@"SAAdManager" withMessage:[NSString stringWithFormat:@"Request failed (%@)", error.localizedDescription]];
@@ -56,14 +82,30 @@
         
         completion(resp, nil);
     }];
-    
-    [postDataTask resume];
 }
 
 - (void)sendEvent:(SAEventRequest *)event completion:(void(^)(SAEventResponse *response, NSError *error))completion
 {
-    //TODO: send event to ad server
+    NSString *path = @"event";
+    NSDictionary *data = [event dictionaryValue];
+    NSURLRequest *request = [self requestWithPath:path data:data];
+    
+    [self sendRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        if(error != nil){
+            completion(nil, error);
+            return;
+        }
+        
+        SAEventResponse *resp = [[SAEventResponse alloc] initWithData:data error:&error];
+        
+        if(error != nil){
+            [SKLogger error:@"SAAdManager" withMessage:[NSString stringWithFormat:@"Request failed (%@)", error.localizedDescription]];
+            completion(nil, error);
+            return;
+        }
+        
+        completion(resp, nil);
+    }];
 }
-
 
 @end

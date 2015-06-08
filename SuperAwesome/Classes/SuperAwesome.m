@@ -53,7 +53,7 @@
         [self setLoggingLevel:SALoggingLevelWarning];
     }else if(self.clientConfiguration == SAClientConfigurationStaging){
         self.adManager.baseURL = @"http://staging.beta.ads.superawesome.tv/v2";
-        [self setLoggingLevel:SALoggingLevelWarning];
+        [self setLoggingLevel:SALoggingLevelDebug];
     }else{
         self.adManager.baseURL = @"http://dev.ads.superawesome.tv/v2";
         [self setLoggingLevel:SALoggingLevelDebug];

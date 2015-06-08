@@ -18,6 +18,5 @@
 
 - (instancetype)initWithAdResponse:(SAAdResponse *)adResponse type:(NSString *)type;
 - (NSDictionary *)dictionaryValue;
-- (NSString *)JSONValue;
 
 @end

@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SAVideoAd.h"
 #import "IMAAdsLoader.h"
 
 @class SAVideoAdLoader;

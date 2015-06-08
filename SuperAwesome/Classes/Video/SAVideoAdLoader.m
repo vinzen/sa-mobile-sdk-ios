@@ -46,13 +46,10 @@
 }
 
 
-- (void)requestAdsWithVideoAd:(SAVideoAd *)videoAd
+- (void)requestAdsWithVAST:(NSString *)vastURL
 {
-    if(videoAd == nil) return;
-    
-    NSString *adTag = videoAd.vast;
     IMAAdDisplayContainer *adDisplayContainer = [[IMAAdDisplayContainer alloc] initWithAdContainer:self.adDisplayContainer companionSlots:nil];
-    IMAAdsRequest *request = [[IMAAdsRequest alloc] initWithAdTagUrl:adTag adDisplayContainer:adDisplayContainer userContext:nil];
+    IMAAdsRequest *request = [[IMAAdsRequest alloc] initWithAdTagUrl:vastURL adDisplayContainer:adDisplayContainer userContext:nil];
     
     IMASettings *settings = [[IMASettings alloc] init];
     settings.ppid = @"IMA_PPID_0";

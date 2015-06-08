@@ -7,8 +7,6 @@
 //
 
 #import "SuperAwesome.h"
-#import "SAServerResponse.h"
-#import "SAAppConfig.h"
 #import "SKLogger.h"
 
 @interface SuperAwesome ()

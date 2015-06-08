@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SADisplayAd.h"
 #import "SAParentalGate.h"
 
 @interface SAPlacementView : UIView

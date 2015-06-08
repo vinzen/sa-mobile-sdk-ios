@@ -8,10 +8,12 @@
 
 #import "SAVideoAdLoader.h"
 #import "SuperAwesome.h"
+#import "SKLogger.h"
 
 @interface SAVideoAdLoader ()
 
 @property (nonatomic,strong) NSString *placementID;
+@property (nonatomic,strong) SAAdResponse *adResponse;
 @property (nonatomic,strong) IMAAdsLoader *adsLoader;
 
 @end
@@ -31,20 +33,21 @@
 
 - (void)load
 {
-//    [[SuperAwesome sharedManager] videoAdForApp:self.appID placement:self.placementID completion:^(SAVideoAd *videoAd) {
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            if(videoAd == nil){
-//                NSLog(@"SA: Could not find placement with the provided ID");
-//                if(self.delegate && [self.delegate respondsToSelector:@selector(didFailToLoadVideoAd:)]){
-//                    [self.delegate didFailToLoadVideoAd:self];
-//                }
-//            }else{
-//                [self requestAdsWithVideoAd:videoAd];
-//            }
-//        });
-//    }];
+    SAAdManager *adLoader = [[SuperAwesome sharedManager] adManager];
+    SAAdRequest *adRequest = [[SAAdRequest alloc] initWithPlacementId:self.placementID];
+    [adLoader loadAd:adRequest completion:^(SAAdResponse *response, NSError *error) {
+        if(error != nil){
+            [SKLogger error:@"SAVideoAdLoader" withMessage:@"Failed to fetch ad"];
+            if(self.delegate && [self.delegate respondsToSelector:@selector(didFailToLoadVideoAd:)]){
+                [self.delegate didFailToLoadVideoAd:self];
+            }
+            return ;
+        }
+        
+        self.adResponse = response;
+        [self requestAdsWithVAST:[self.adResponse.creative.details objectForKey:@"vast"]];
+    }];
 }
-
 
 - (void)requestAdsWithVAST:(NSString *)vastURL
 {
@@ -64,7 +67,7 @@
 #pragma mark AdLoader
 
 - (void)adsLoader:(IMAAdsLoader *)loader adsLoadedWithData:(IMAAdsLoadedData *)adsLoadedData {
-    NSLog(@"SA: Ad loaded");
+    [SKLogger error:@"SAVideoAdLoader" withMessage:@"Ad has laoded"];
     
     _loading = NO;
     _success = YES;
@@ -77,7 +80,7 @@
 }
 
 - (void)adsLoader:(IMAAdsLoader *)loader failedWithErrorData:(IMAAdLoadingErrorData *)adErrorData {
-    NSLog(@"SA: Ad loading error: %@", adErrorData.adError.message);
+    [SKLogger error:@"SAVideoAdLoader" withMessage:@"Ad loading error"];
     
     _loading = NO;
     _success = NO;

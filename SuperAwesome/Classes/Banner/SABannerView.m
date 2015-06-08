@@ -9,6 +9,7 @@
 #import "SABannerView.h"
 #import "UIView+FindUIViewController.h"
 #import "SuperAwesome.h"
+#import "SKLogger.h"
 
 @interface SABannerView ()
 
@@ -17,6 +18,10 @@
 @property (nonatomic,strong) SAAdResponse *adResponse;
 @property (nonatomic,strong) NSURL *adURL;
 
+- (void)commonInit;
+- (NSArray *)supportedBannerSizes;
+- (BOOL)isSupportedSize:(CGSize)aSize;
+- (void)fetchAd;
 - (void)renderAd;
 - (void)sendImpressionEvent;
 
@@ -43,11 +48,6 @@
     return self;
 }
 
-- (void)commonInit
-{
-    
-}
-
 //#if TARGET_INTERFACE_BUILDER
 //- (void)prepareForInterfaceBuilder
 //{
@@ -72,6 +72,46 @@
 //}
 //#endif
 
+- (void)didMoveToWindow
+{
+    [super didMoveToWindow];
+    
+    if(self.window == nil){
+        return;
+    }
+    
+    [self fetchAd];
+}
+
+- (void)removeFromSuperview
+{
+    [self.bannerView removeFromSuperview];
+    
+    [super removeFromSuperview];
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+#pragma mark - Custom Methods
+
+- (void)commonInit
+{
+    
+}
+
+- (void)setVisible:(BOOL)visible
+{
+    _visible = visible;
+}
+
+- (void)setViewController:(UIViewController *)viewController
+{
+    _viewController = viewController;
+}
+
 - (NSArray *)supportedBannerSizes
 {
     return @[[NSValue valueWithCGSize:CGSizeMake(320, 50)],
@@ -93,54 +133,30 @@
     return NO;
 }
 
-- (void)didMoveToWindow
+- (void)fetchAd
 {
-    [super didMoveToWindow];
-    
-    if(self.window == nil){
-        return;
-    }
-    
     SAAdManager *adLoader = [[SuperAwesome sharedManager] adManager];
     SAAdRequest *adRequest = [[SAAdRequest alloc] initWithPlacementId:self.placementID];
     [adLoader loadAd:adRequest completion:^(SAAdResponse *response, NSError *error) {
         if(error != nil){
-            NSLog(@"Could not load ad");
-            //TODO: Call error delegate method
+            [SKLogger error:@"SABannerView" withMessage:@"Failed to fetch ad"];
+            if(self.delegate && [self.delegate respondsToSelector:@selector(didFailShowingAd:)]){
+                [self.delegate didFailShowingAd:self];
+            }
             return ;
         }
         
         self.adResponse = response;
+        
+        if(self.delegate && [self.delegate respondsToSelector:@selector(didFetchNextAd:)]){
+            [self.delegate didFetchNextAd:self];
+        }
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [self renderAd];
         });
         
     }];
-}
-
-- (void)removeFromSuperview
-{
-    [self.bannerView removeFromSuperview];
-    
-    [super removeFromSuperview];
-}
-
-- (void)setVisible:(BOOL)visible
-{
-    _visible = visible;
-//    self.bannerView.visible = visible;
-}
-
-- (void)setViewController:(UIViewController *)viewController
-{
-    _viewController = viewController;
-//    self.bannerView.viewController = viewController;
-}
-
-- (void)dealloc
-{
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)renderAd
@@ -170,7 +186,10 @@
 }
 - (void)mraidViewAdFailed:(SKMRAIDView *)mraidView
 {
-    //TODO: Call error delegate method
+    [SKLogger error:@"SABannerView" withMessage:@"Failed to render ad"];
+    if(self.delegate && [self.delegate respondsToSelector:@selector(didFailShowingAd:)]){
+        [self.delegate didFailShowingAd:self];
+    }
 }
 - (void)mraidViewWillExpand:(SKMRAIDView *)mraidView
 {

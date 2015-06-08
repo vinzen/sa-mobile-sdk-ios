@@ -19,6 +19,10 @@
 @protocol SABannerViewDelegate <NSObject>
 @optional
 
+- (void)didFetchNextAd:(SABannerView *)view;
+
+- (void)didFailShowingAd:(SABannerView *)view;
+
 /**
  * Called when the ad will take over the screen in order to give the application the chance to pause ongoing activities.
  * This is in response for user interaction with the ad.

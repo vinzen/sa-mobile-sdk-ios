@@ -17,7 +17,7 @@
 
 @implementation SAVideoAdViewController
 
-- (instancetype)initWithAppID:(NSString *)appID placementID:(NSString *)placementID
+- (instancetype)initWithPlacementID:(NSString *)placementID;
 {
     if(self = [super init]){
         self.videoView = [[SAVideoAdView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];

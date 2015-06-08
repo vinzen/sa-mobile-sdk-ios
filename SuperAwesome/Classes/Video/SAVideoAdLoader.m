@@ -45,12 +45,31 @@
         }
         
         self.adResponse = response;
-        [self requestAdsWithVAST:[self.adResponse.creative.details objectForKey:@"vast"]];
+        
+        if(![self.adResponse.creative.format isEqualToString:@"video"]){
+            [SKLogger error:@"SAVideoAdLoader" withMessage:@"Unsupported format received from ad server"];
+            if(self.delegate && [self.delegate respondsToSelector:@selector(didFailToLoadVideoAd:)]){
+                [self.delegate didFailToLoadVideoAd:self];
+            }
+            return ;
+        }
+        
+        NSString *vast = [self.adResponse.creative.details objectForKey:@"vast"];
+        if(vast == nil || [vast isEqualToString:@""]){
+            [SKLogger error:@"SAVideoAdLoader" withMessage:@"Ad response contained empty VAST tag"];
+            if(self.delegate && [self.delegate respondsToSelector:@selector(didFailToLoadVideoAd:)]){
+                [self.delegate didFailToLoadVideoAd:self];
+            }
+            return ;
+        }
+        
+        [self requestAdsWithVAST:vast];
     }];
 }
 
 - (void)requestAdsWithVAST:(NSString *)vastURL
 {
+    
     IMAAdDisplayContainer *adDisplayContainer = [[IMAAdDisplayContainer alloc] initWithAdContainer:self.adDisplayContainer companionSlots:nil];
     IMAAdsRequest *request = [[IMAAdsRequest alloc] initWithAdTagUrl:vastURL adDisplayContainer:adDisplayContainer userContext:nil];
     

@@ -25,7 +25,7 @@
 @property (nonatomic,strong) SAVideoAdView *videoView;
 @property (assign,nonatomic,getter=isParentalGateEnabled) BOOL parentalGateEnabled;
 
-- (instancetype)initWithAppID:(NSString *)appID placementID:(NSString *)placementID;
+- (instancetype)initWithPlacementID:(NSString *)placementID;
 - (instancetype)initWithAdLoader:(SAVideoAdLoader *)adLoader;
 
 @end

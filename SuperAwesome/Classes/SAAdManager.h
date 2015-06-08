@@ -11,7 +11,6 @@
 #import "SAEventRequest.h"
 #import "SAEventResponse.h"
 #import "SAAdResponse.h"
-#import "SKLogger.h"
 
 @interface SAAdManager : NSObject
 

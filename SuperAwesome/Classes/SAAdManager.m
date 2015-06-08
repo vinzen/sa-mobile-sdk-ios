@@ -7,6 +7,7 @@
 //
 
 #import "SAAdManager.h"
+#import "SKLogger.h"
 
 @interface SAAdManager ()
 

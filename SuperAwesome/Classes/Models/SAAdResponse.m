@@ -27,12 +27,4 @@
     return YES;
 }
 
-- (NSString *)toHTML
-{
-    NSString *img = [[self.creative objectForKey:@"details"] objectForKey:@"image"];
-    NSString *url = [self.creative objectForKey:@"click_url"];
-    
-    return [NSString stringWithFormat:@"<div><a href=\"%@\"><img src=\"%@\"></a></div>", url, img];
-}
-
 @end

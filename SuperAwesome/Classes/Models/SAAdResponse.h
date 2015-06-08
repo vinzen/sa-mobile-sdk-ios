@@ -7,6 +7,7 @@
 //
 
 #import "JSONModel.h"
+#import "SAAdCreative.h"
 
 @interface SAAdResponse : JSONModel
 
@@ -15,9 +16,6 @@
 @property (nonatomic,strong) NSString *placementID;
 @property (nonatomic,strong) NSString *lineItemID;
 @property (nonatomic,strong) NSString *campaignID;
-@property (nonatomic,strong) NSDictionary *creative;
-
-
-- (NSString *)toHTML;
+@property (nonatomic,strong) SAAdCreative *creative;
 
 @end

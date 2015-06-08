@@ -20,7 +20,7 @@
     // Do any additional setup after loading the view.
     
     SABannerView *bannerView = [[SABannerView alloc] initWithFrame:CGRectMake(0, 100, 320, 50)];
-    bannerView.placementID = @"26";
+    bannerView.placementID = @"271";
     [self.view addSubview:bannerView];
 }
 

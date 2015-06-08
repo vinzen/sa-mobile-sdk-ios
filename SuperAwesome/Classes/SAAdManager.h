@@ -8,13 +8,16 @@
 
 #import <Foundation/Foundation.h>
 #import "SAAdRequest.h"
+#import "SAEventRequest.h"
+#import "SAEventResponse.h"
 #import "SAAdResponse.h"
 #import "SKLogger.h"
 
-@interface AdLoader : NSObject
+@interface SAAdManager : NSObject
 
 @property (nonatomic,strong) NSString *baseURL;
 
 - (void)loadAd:(SAAdRequest *)adRequest completion:(void(^)(SAAdResponse *response, NSError *error))completion;
+- (void)sendEvent:(SAEventRequest *)event completion:(void(^)(SAEventResponse *response, NSError *error))completion;
 
 @end

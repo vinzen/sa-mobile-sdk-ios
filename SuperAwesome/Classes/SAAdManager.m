@@ -6,13 +6,13 @@
 //
 //
 
-#import "AdLoader.h"
+#import "SAAdManager.h"
 
-@interface AdLoader ()
+@interface SAAdManager ()
 
 @end
 
-@implementation AdLoader
+@implementation SAAdManager
 
 
 - (void)loadAd:(SAAdRequest *)adRequest completion:(void(^)(SAAdResponse *response, NSError *error))completion
@@ -27,9 +27,11 @@
     [request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [request addValue:@"application/json" forHTTPHeaderField:@"Accept"];
     
+    [SKLogger debug:@"SAAdManager" withMessage:urlString];
+    
     NSURLSessionDataTask *postDataTask = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         if(error != nil){
-            [SKLogger error:@"AdLoader" withMessage:[NSString stringWithFormat:@"Request failed (%@)", error.localizedDescription]];
+            [SKLogger error:@"SAAdManager" withMessage:[NSString stringWithFormat:@"Request failed (%@)", error.localizedDescription]];
             completion(nil, error);
             return;
         }
@@ -40,13 +42,13 @@
         SAAdResponse *resp = [[SAAdResponse alloc] initWithData:data error:&error];
         
         if(error != nil){
-            [SKLogger error:@"AdLoader" withMessage:[NSString stringWithFormat:@"Request failed (%@)", error.localizedDescription]];
+            [SKLogger error:@"SAAdManager" withMessage:[NSString stringWithFormat:@"Request failed (%@)", error.localizedDescription]];
             completion(nil, error);
             return;
         }
         
         if(resp.error){
-            [SKLogger error:@"AdLoader" withMessage:[NSString stringWithFormat:@"Ad server error"]];
+            [SKLogger error:@"SAAdManager" withMessage:[NSString stringWithFormat:@"Ad server error"]];
             completion(resp, [NSError errorWithDomain:@"SuperAwesome" code:1000 userInfo:@{}]);
             return;
         }
@@ -55,6 +57,11 @@
     }];
     
     [postDataTask resume];
+}
+
+- (void)sendEvent:(SAEventRequest *)event completion:(void(^)(SAEventResponse *response, NSError *error))completion
+{
+    //TODO: send event to ad server
 }
 
 

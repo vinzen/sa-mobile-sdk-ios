@@ -14,8 +14,8 @@ The interstitial is presented modally over the viewController you configured it 
     // Do any additional setup after loading the view from its nib.
     
     self.interstitial = [[SAInterstitialView alloc] initWithViewController:self];
-    self.interstitial.appID = @"__YOUR_APP_ID__";
     self.interstitial.placementID = @"__YOUR_PLACEMENT_ID__";
+    [self.interstitial load];
 }
 
 - (IBAction)presentInterstitionalAd:(id)sender
@@ -24,4 +24,4 @@ The interstitial is presented modally over the viewController you configured it 
 }
 ```
 
-Do not forget to replace the `__YOUR_APP_ID__` and the `__YOUR_PLACEMENT_ID__` strings with your app ID and placement ID.
+Do not forget to replace the `__YOUR_PLACEMENT_ID__` string with your placement ID.

@@ -22,5 +22,3 @@ We recommend using the stable releases of our SDK, but if you want to try out th
 ```
 pod 'SuperAwesome', :git => 'https://github.com/SuperAwesomeLTD/sa-mobile-sdk-ios.git', :branch => 'develop'
 ```
-
-http://www.youtube.com/embed/A7JahwDe1iA

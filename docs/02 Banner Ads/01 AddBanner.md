@@ -8,6 +8,4 @@ In the Size Inspector pane set the size of the banner. The following sizes are s
   * 728x90 (tablet)
   * 300x250
  
-Finally, fill the App ID and Placement ID fields in the Attributes Inspector pane. After you have set these values the ads should show up in your app.
-
-http://www.youtube.com/embed/Rnpx3tA2quk
+Finally, fill in Placement ID field in the Attributes Inspector pane. After you have set these values the ads should show up in your app.

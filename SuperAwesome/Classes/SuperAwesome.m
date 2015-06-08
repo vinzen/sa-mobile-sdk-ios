@@ -16,13 +16,12 @@
 
 @implementation SuperAwesome
 
-+ (id)sharedManager
++ (SuperAwesome *)sharedManager
 {
     static SuperAwesome *sharedManager = nil;
     @synchronized(self) {
         if (sharedManager == nil){
             sharedManager = [[self alloc] init];
-            NSLog(@"%@", [sharedManager version]);
         }
     }
     return sharedManager;
@@ -31,9 +30,9 @@
 - (instancetype)init
 {
     if(self = [super init]){
-        _adLoader = [[AdLoader alloc] init];
-        [self setClientConfiguration:SAClientConfigurationDevelopment];
-        
+        _adManager = [[SAAdManager alloc] init];
+        NSLog(@"%@", [self version]);
+        [self setClientConfiguration:SAClientConfigurationStaging];
     }
     return self;
 }
@@ -48,14 +47,42 @@
 {
     _clientConfiguration = clientConfiguration;
     
-    
     if(self.clientConfiguration == SAClientConfigurationProduction){
-        self.adLoader.baseURL = @"http://beta.ads.superawesome.tv/v2";
+        self.adManager.baseURL = @"http://beta.ads.superawesome.tv/v2";
+        [self setLoggingLevel:SALoggingLevelWarning];
     }else if(self.clientConfiguration == SAClientConfigurationStaging){
-        self.adLoader.baseURL = @"http://beta.ads.superawesome.tv/v2";
+        self.adManager.baseURL = @"http://staging.beta.ads.superawesome.tv/v2";
+        [self setLoggingLevel:SALoggingLevelWarning];
     }else{
-        self.adLoader.baseURL = @"http://dev.ads.superawesome.tv/v2";
+        self.adManager.baseURL = @"http://dev.ads.superawesome.tv/v2";
+        [self setLoggingLevel:SALoggingLevelDebug];
     }
+}
+
+- (void)setLoggingLevel:(SALoggingLevel)loggingLevel
+{
+    _loggingLevel = loggingLevel;
+    
+    switch (loggingLevel) {
+        case SALoggingLevelNone:
+            [SKLogger setLogLevel:SourceKitLogLevelNone];
+            break;
+        case SALoggingLevelError:
+            [SKLogger setLogLevel:SourceKitLogLevelError];
+            break;
+        case SALoggingLevelWarning:
+            [SKLogger setLogLevel:SourceKitLogLevelWarning];
+            break;
+        case SALoggingLevelInfo:
+            [SKLogger setLogLevel:SourceKitLogLevelInfo];
+            break;
+        case SALoggingLevelDebug:
+            [SKLogger setLogLevel:SourceKitLogLevelDebug];
+            break;
+        default:
+            break;
+    }
+    
 }
 
 

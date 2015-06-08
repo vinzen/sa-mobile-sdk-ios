@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AdLoader.h"
+#import "SAAdManager.h"
 #import "SADisplayAd.h"
 #import "SAVideoAd.h"
 
@@ -23,6 +23,14 @@ typedef NS_ENUM(NSUInteger, SAClientConfiguration) {
     SAClientConfigurationProduction
 };
 
+typedef NS_ENUM(NSUInteger, SALoggingLevel) {
+    SALoggingLevelNone,
+    SALoggingLevelError,
+    SALoggingLevelWarning,
+    SALoggingLevelInfo,
+    SALoggingLevelDebug
+};
+
 /**
  *  SuperAwesome Mobile SDK Main Class
  */
@@ -33,7 +41,9 @@ typedef NS_ENUM(NSUInteger, SAClientConfiguration) {
  */
 @property (nonatomic,assign) SAClientConfiguration clientConfiguration;
 
-@property (nonatomic,strong) AdLoader *adLoader;
+@property (nonatomic,strong) SAAdManager *adManager;
+
+@property (nonatomic,assign) SALoggingLevel loggingLevel;
 
 - (NSString *)version;
 
@@ -42,6 +52,6 @@ typedef NS_ENUM(NSUInteger, SAClientConfiguration) {
  *
  *  @return singleton instance
  */
-+ (id)sharedManager;
++ (SuperAwesome *)sharedManager;
 
 @end

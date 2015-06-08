@@ -16,7 +16,7 @@
 /**
  * Implement this protocol to be notified of different events in the lifecycle of the ad.
  */
-@protocol SABannerViewDelegate
+@protocol SABannerViewDelegate <NSObject>
 @optional
 
 /**

@@ -76,7 +76,7 @@
  * Once an interstitial is presented, the value changes to NO. You need to load again in order
  * to be able to present another interstitial view.
  */
-@property (nonatomic, readonly) BOOL isReady;
+@property (nonatomic,readonly) BOOL isReady;
 
 /**
  *  Initialises the interstitial ad in the given view controller

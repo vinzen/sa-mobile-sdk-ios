@@ -97,16 +97,17 @@
         return;
     }
     
-    AdLoader *adLoader = [[SuperAwesome sharedManager] adLoader];
+    SAAdManager *adLoader = [[SuperAwesome sharedManager] adManager];
     SAAdRequest *adRequest = [[SAAdRequest alloc] initWithPlacementId:self.placementID];
     [adLoader loadAd:adRequest completion:^(SAAdResponse *response, NSError *error) {
         if(error != nil){
             NSLog(@"Could not load ad");
+            //TODO: Call error delegate method
             return ;
         }
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            self.bannerView = [[SKMRAIDView alloc] initWithFrame:self.bounds withHtmlData:[response toHTML] withBaseURL:[NSURL URLWithString:@"http://superawesome.tv"] supportedFeatures:@[] delegate:self serviceDelegate:nil rootViewController:[self firstAvailableUIViewController]];
+            self.bannerView = [[SKMRAIDView alloc] initWithFrame:self.bounds withHtmlData:[response.creative toHTML] withBaseURL:[NSURL URLWithString:@"http://superawesome.tv"] supportedFeatures:@[] delegate:self serviceDelegate:nil rootViewController:[self firstAvailableUIViewController]];
             self.bannerView.backgroundColor = self.backgroundColor;
             [self addSubview:self.bannerView];
         });
@@ -143,16 +144,18 @@
 - (void)mraidViewAdReady:(SKMRAIDView *)mraidView
 {
     
+    SAEventRequest *eventRequest = [[SAEventRequest alloc] init];
+    eventRequest.type = @"impression";
+    SAAdManager *adLoader = [[SuperAwesome sharedManager] adManager];
+    [adLoader sendEvent:eventRequest completion:^(SAEventResponse *response, NSError *error) {
+        
+    }];
 }
 - (void)mraidViewAdFailed:(SKMRAIDView *)mraidView
 {
-    
+    //TODO: Call error delegate method
 }
 - (void)mraidViewWillExpand:(SKMRAIDView *)mraidView
-{
-    
-}
-- (void)mraidViewDidClose:(SKMRAIDView *)mraidView
 {
     
 }
@@ -166,6 +169,9 @@
         [self.gate show];
         self.adURL = url;
     }else{
+        if(self.delegate && [self.delegate respondsToSelector:@selector(willLeaveApplicationForAd:)]){
+            [self.delegate willLeaveApplicationForAd:self];
+        }
         [[UIApplication sharedApplication] openURL:url];
     }
 }
@@ -181,6 +187,9 @@
 
 - (void)didGetThroughParentalGate:(SAParentalGate *)parentalGate
 {
+    if(self.delegate && [self.delegate respondsToSelector:@selector(willLeaveApplicationForAd:)]){
+        [self.delegate willLeaveApplicationForAd:self];
+    }
     [[UIApplication sharedApplication] openURL:self.adURL];
 }
 

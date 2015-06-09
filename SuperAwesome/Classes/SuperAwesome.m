@@ -58,6 +58,12 @@
     }
 }
 
+- (void)setTestModeEnabled:(BOOL)testModeEnabled
+{
+    _testModeEnabled = testModeEnabled;
+    self.adManager.testModeEnabled = testModeEnabled;
+}
+
 - (void)setLoggingLevel:(SALoggingLevel)loggingLevel
 {
     _loggingLevel = loggingLevel;

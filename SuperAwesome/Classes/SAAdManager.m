@@ -57,6 +57,7 @@
 - (void)loadAd:(SAAdRequest *)adRequest completion:(void(^)(SAAdResponse *response, NSError *error))completion
 {
     NSString *path = [NSString stringWithFormat:@"ad/%@", adRequest.placementID];
+    if(self.isTestModeEnabled) path = [path stringByAppendingString:@"?test=true"];
     NSURLRequest *request = [self requestWithPath:path data:nil];
     
     [self sendRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {

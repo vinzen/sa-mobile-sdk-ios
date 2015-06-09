@@ -21,6 +21,11 @@
                                                        }];
 }
 
++ (BOOL)propertyIsOptional:(NSString*)propertyName
+{
+    if([propertyName isEqualToString:@"clickURL"]) return YES; //TODO: Should not be optional
+    return NO;
+}
 
 - (NSString *)toHTML
 {

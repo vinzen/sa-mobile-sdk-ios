@@ -24,7 +24,7 @@
     self.showButton.enabled = NO;
     
     self.interstitial = [[SAInterstitialView alloc] initWithViewController:self];
-    self.interstitial.placementID = @"271";
+    self.interstitial.placementID = @"5692";
     self.interstitial.delegate = self;
 //    self.interstitial.parentalGateEnabled = YES;
     self.interstitial.backgroundColor = [UIColor lightGrayColor];

@@ -33,7 +33,7 @@
 - (IBAction)load:(id)sender
 {
     self.playButton.enabled = NO;
-    self.vc = [[SAVideoAdViewController alloc] initWithPlacementID:@"271"];
+    self.vc = [[SAVideoAdViewController alloc] initWithPlacementID:@"5740"];
     self.vc.delegate = self;
 }
 

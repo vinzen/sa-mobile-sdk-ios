@@ -30,7 +30,7 @@
 
 - (IBAction)play:(id)sender
 {
-    SAVideoAdViewController *vc = [[SAVideoAdViewController alloc] initWithPlacementID:@"271"];
+    SAVideoAdViewController *vc = [[SAVideoAdViewController alloc] initWithPlacementID:@"5740"];
     [self presentViewController:vc animated:YES completion:nil];
 }
 

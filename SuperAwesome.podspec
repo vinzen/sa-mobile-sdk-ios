@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "SuperAwesome"
-  s.version      = "2.0-beta1"
+  s.version      = "2.0-beta1.1"
   s.summary      = "SuperAwesome Mobile SDK for iOS"
 
   s.description  = <<-DESC
@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "6.0"
   s.ios.deployment_target = "6.0"
   s.requires_arc = true
-  s.source       = { :git => "https://github.com/SuperAwesomeLTD/sa-mobile-sdk-ios.git", :tag => "2.0-beta1" }
+  s.source       = { :git => "https://github.com/SuperAwesomeLTD/sa-mobile-sdk-ios.git", :tag => "2.0-beta1.1" }
 
   s.dependency "JSONModel", "~> 1.0.2"
   s.frameworks = 'AVFoundation', 'AudioToolbox', 'CFNetwork', 'CoreGraphics', 'CoreData', 'CoreLocation', 'CoreMedia', 'CoreMotion', 'CoreTelephony', 'EventKit', 'MediaPlayer', 'MessageUI', 'MobileCoreServices', 'QuartzCore', 'Security', 'SystemConfiguration', 'StoreKit', 'AdSupport', 'EventKitUI'
@@ -26,10 +26,10 @@ Pod::Spec.new do |s|
   s.default_subspec = 'Default'
   
   s.subspec 'Default' do |default|
-    default.dependency "GoogleAds-IMA-iOS-SDK", "3.0.beta.15"
+    default.dependency "GoogleAds-IMA-iOS-SDK", "3.0.beta.12"
   end
 
   s.subspec 'AdMob' do |admob|
-    admob.dependency "GoogleAds-IMA-iOS-SDK-For-AdMob", "3.0.beta.15"
+    admob.dependency "GoogleAds-IMA-iOS-SDK-For-AdMob", "3.0.beta.12"
   end
 end

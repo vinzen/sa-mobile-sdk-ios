@@ -60,6 +60,10 @@
             ]
         },
         {
+            "name": "Parental Gate",
+            "text": "05 ParentalGate.md"
+        },
+        {
             "name": "Technical Support",
             "text": "07 Technical Support.md"
         },

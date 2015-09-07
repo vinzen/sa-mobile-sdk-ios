@@ -58,6 +58,10 @@
             ]
         },
         {
+            "name": "Parental Gate",
+            "text": "<p>Parental gates are used in apps targeted towards kids to prevent them from engaging in commerce or following links out of an app to websites, social networks, or other apps without the knowledge of their parent or guardian. A parental gate presents an adult level task which must be completed in order to continue.</p>\n<p>You can enable our parental gate on banners, interstitials and video views. You can either enable it in Interface Builder or by using the following code in your project:</p>\n<pre><code>[adView setParentalGateEnabled:YES];\n</code></pre><p><img src=\"img/parental_gate.png\" alt=\"\" title=\"Parental Gate on iOS\"></p>\n"
+        },
+        {
             "name": "Technical Support",
             "text": "<p>If you have any questions or you need technical support, please, do not hesitate to contact us at <a href=\"mailto:devsupport@superawesome.tv\">devsupport@superawesome.tv</a>. We will make every attempt to answer your inquiry as quickly as possible.</p>\n"
         },

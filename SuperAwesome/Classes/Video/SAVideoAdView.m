@@ -108,11 +108,13 @@
 {
     [self.adsManager initializeWithContentPlayhead:nil adsRenderingSettings:nil];
     [self.adsManager start];
+    [self setupPadlockButton:self];
 }
 
 - (void)stop
 {
     [self.adsManager destroy];
+    [self removePadlockButton];
 }
 
 - (void)resume

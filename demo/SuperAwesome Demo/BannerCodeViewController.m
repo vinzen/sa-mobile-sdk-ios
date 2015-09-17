@@ -21,6 +21,7 @@
     
     SABannerView *bannerView = [[SABannerView alloc] initWithFrame:CGRectMake(0, 100, 320, 50)];
     bannerView.placementID = @"5687";
+    bannerView.parentalGateEnabled = YES;
     [self.view addSubview:bannerView];
 }
 

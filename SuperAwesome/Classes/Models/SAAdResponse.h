@@ -16,6 +16,7 @@
 @property (nonatomic,strong) NSString *placementID;
 @property (nonatomic,strong) NSString *lineItemID;
 @property (nonatomic,strong) NSString *campaignID;
+@property (nonatomic,assign,getter=isFallback,setter=setIsFallback:) BOOL fallback;
 @property (nonatomic,strong) SAAdCreative *creative;
 
 @end

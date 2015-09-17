@@ -56,16 +56,25 @@
         self.adResponse = response;
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            NSString *html = [self.adResponse.creative toHTML];
-            self.interstitialView = [[SKMRAIDInterstitial alloc] initWithSupportedFeatures:@[] withHtmlData:html withBaseURL:[NSURL URLWithString:@"http://superawesome.tv"] delegate:self serviceDelegate:nil rootViewController:self.viewController];
-            [self.interstitialView setBackgroundColor:self.backgroundColor];
+            [self renderAd];
         });
     }];
 }
 
-- (void)present
+- (void) renderAd {
+    NSString *html = [self.adResponse.creative toHTML];
+    self.interstitialView = [[SKMRAIDInterstitial alloc] initWithSupportedFeatures:@[] withHtmlData:html withBaseURL:[NSURL URLWithString:@"http://superawesome.tv"] delegate:self serviceDelegate:nil rootViewController:self.viewController];
+    [self.interstitialView setBackgroundColor:self.backgroundColor];
+}
+
+- (void) present
 {
     [self.interstitialView show];
+    
+    // present the interstitial view's padlock
+    if (!_adResponse.isFallback) {
+        [self setupPadlockButton:[[[UIApplication sharedApplication] delegate] window]];
+    }
 }
 
 - (void)load
@@ -106,6 +115,10 @@
     
     if(self.delegate && [self.delegate respondsToSelector:@selector(didHideInterstitialView:)]){
         [self.delegate didHideInterstitialView:self];
+    }
+    
+    if (!_adResponse.isFallback) {
+        [self removePadlockButton];
     }
 }
 

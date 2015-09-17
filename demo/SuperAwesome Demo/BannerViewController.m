@@ -7,8 +7,11 @@
 //
 
 #import "BannerViewController.h"
+#import <SuperAwesome.h>
 
-@interface BannerViewController ()
+@interface BannerViewController () <SABannerViewDelegate>
+
+@property (weak, nonatomic) IBOutlet SABannerView *bannerView;
 
 @end
 
@@ -19,6 +22,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        
     }
     return self;
 }
@@ -26,6 +30,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    _bannerView.delegate = self;
     // Do any additional setup after loading the view.
     
 }
@@ -34,6 +39,32 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark SABannerViewDelegate functions
+
+- (void) shouldSuspendForAd:(SABannerView *)view {
+//    NSLog(@"LIVIU TEST COMMENT: shouldSuspendForAd");
+}
+
+- (void) shouldResumeForAd:(SABannerView *)view {
+//    NSLog(@"LIVIU TEST COMMENT: shouldResumeForAd");
+}
+
+- (void) shouldDisplayCustomMediationForAd:(SABannerView *)view {
+//    NSLog(@"LIVIU TEST COMMENT: shouldDisplayCustomMediationForAd");
+}
+
+- (void) willLeaveApplicationForAd:(SABannerView *)view {
+//    NSLog(@"LIVIU TEST COMMENT: willLeaveApplicationForAd");
+}
+
+- (void) didFailShowingAd:(SABannerView *)view {
+//    NSLog(@"LIVIU TEST COMMENT: didFailShowingAd");
+}
+
+- (void) didFetchNextAd:(SABannerView *)view {
+//    NSLog(@"LIVIU TEST COMMENT: didFetchNextAd");
 }
 
 @end

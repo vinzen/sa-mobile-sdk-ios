@@ -10,6 +10,7 @@
 #import "UIView+FindUIViewController.h"
 #import "SuperAwesome.h"
 #import "SKLogger.h"
+#import "SAPadlockView.h"
 
 @interface SABannerView ()
 
@@ -138,14 +139,16 @@
     SAAdManager *adLoader = [[SuperAwesome sharedManager] adManager];
     SAAdRequest *adRequest = [[SAAdRequest alloc] initWithPlacementId:self.placementID];
     [adLoader loadAd:adRequest completion:^(SAAdResponse *response, NSError *error) {
-        if(error != nil){
+        
+        if(error != nil || response == nil){
             [SKLogger error:@"SABannerView" withMessage:@"Failed to fetch ad"];
             if(self.delegate && [self.delegate respondsToSelector:@selector(didFailShowingAd:)]){
                 [self.delegate didFailShowingAd:self];
             }
-            return ;
+            return;
         }
         
+        // go forward
         self.adResponse = response;
         
         if(self.delegate && [self.delegate respondsToSelector:@selector(didFetchNextAd:)]){
@@ -165,6 +168,11 @@
     self.bannerView = [[SKMRAIDView alloc] initWithFrame:self.bounds withHtmlData:html withBaseURL:[NSURL URLWithString:@"http://superawesome.tv"] supportedFeatures:@[] delegate:self serviceDelegate:nil rootViewController:[self firstAvailableUIViewController]];
     self.bannerView.backgroundColor = self.backgroundColor;
     [self addSubview:self.bannerView];
+    
+    // show padlock only for not-is fallback
+    if (!_adResponse.isFallback) {
+        [self setupPadlockButton:_bannerView];
+    }
 }
 
 - (void)sendImpressionEvent
@@ -227,6 +235,10 @@
         [self.delegate willLeaveApplicationForAd:self];
     }
     [[UIApplication sharedApplication] openURL:self.adURL];
+}
+
+- (void) didCancelParentalGate:(SAParentalGate *)parentalGate {
+    NSLog(@"Cancel");
 }
 
 @end

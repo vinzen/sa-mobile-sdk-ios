@@ -35,6 +35,7 @@
 {
     SAAdManager *adLoader = [[SuperAwesome sharedManager] adManager];
     SAAdRequest *adRequest = [[SAAdRequest alloc] initWithPlacementId:self.placementID];
+    
     [adLoader loadAd:adRequest completion:^(SAAdResponse *response, NSError *error) {
         if(error != nil){
             [SKLogger error:@"SAVideoAdLoader" withMessage:@"Failed to fetch ad"];

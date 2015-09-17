@@ -21,6 +21,7 @@
 - (NSURLRequest *)requestWithPath:(NSString *)path data:(NSObject *)data
 {
     NSString *urlString = [NSString stringWithFormat:@"%@/%@", self.baseURL, path];
+    NSLog(@"URL String %@", urlString);
     NSURL *url = [NSURL URLWithString:urlString];
     [SKLogger debug:@"SAAdManager" withMessage:[NSString stringWithFormat:@"New request to %@", urlString]];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData timeoutInterval:10.0];
@@ -66,6 +67,9 @@
             return;
         }
         
+        NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        NSLog(@"%@ - %@", path, str);
+        
         SAAdResponse *resp = [[SAAdResponse alloc] initWithData:data error:&error];
         resp.placementID = adRequest.placementID;
         
@@ -77,6 +81,13 @@
         
         if(resp.error){
             [SKLogger error:@"SAAdManager" withMessage:[NSString stringWithFormat:@"Ad server error"]];
+            completion(resp, [NSError errorWithDomain:@"SuperAwesome" code:1000 userInfo:@{}]);
+            return;
+        }
+        
+        // special case with no creative
+        if (!resp.creative) {
+            [SKLogger error:@"SAAdManager" withMessage:[NSString stringWithFormat:@"Ad server error no Creative returned for this request"]];
             completion(resp, [NSError errorWithDomain:@"SuperAwesome" code:1000 userInfo:@{}]);
             return;
         }

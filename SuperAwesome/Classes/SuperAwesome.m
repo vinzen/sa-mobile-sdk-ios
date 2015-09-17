@@ -31,7 +31,7 @@
     if(self = [super init]){
         _adManager = [[SAAdManager alloc] init];
         NSLog(@"%@", [self version]);
-        [self setClientConfiguration:SAClientConfigurationProduction];
+        [self setClientConfiguration:SAClientConfigurationStaging];
     }
     return self;
 }
@@ -47,7 +47,7 @@
     _clientConfiguration = clientConfiguration;
     
     if(self.clientConfiguration == SAClientConfigurationProduction){
-        self.adManager.baseURL = @"https://beta.ads.superawesome.tv/v2";
+        self.adManager.baseURL = @"https://ads.superawesome.tv/v2";
         [self setLoggingLevel:SALoggingLevelWarning];
     }else if(self.clientConfiguration == SAClientConfigurationStaging){
         self.adManager.baseURL = @"https://staging.beta.ads.superawesome.tv/v2";

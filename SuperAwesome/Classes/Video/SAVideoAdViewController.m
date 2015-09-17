@@ -105,6 +105,7 @@
 {
     [self.activityIndicatorView stopAnimating];
     [self.videoView play];
+    [_videoView setupPadlockButton:self.view];
 }
 
 

@@ -11,7 +11,22 @@
 
 @interface SAPlacementView : UIView
 
-@property (nonatomic,strong) IBInspectable NSString *placementID;
-@property (assign,nonatomic,getter=isParentalGateEnabled) IBInspectable BOOL parentalGateEnabled;
+/**
+ * set two important variables for the SAPlacementView, that will carry on to the
+ * subviews
+ */
+@property (nonatomic, strong) IBInspectable NSString *placementID;
+@property (assign, nonatomic, getter=isParentalGateEnabled) IBInspectable BOOL parentalGateEnabled;
+
+/**
+ * the common padlock button
+ */
+@property (nonatomic, strong) UIButton *padlockBtn;
+
+/**
+ * Method to setup the padlock button
+ */
+- (void) setupPadlockButton:(UIView*)parent;
+- (void) removePadlockButton;
 
 @end

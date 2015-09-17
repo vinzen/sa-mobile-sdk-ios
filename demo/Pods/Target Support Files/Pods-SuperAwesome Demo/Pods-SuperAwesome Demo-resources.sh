@@ -64,6 +64,11 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "../../SuperAwesome/Resources/AdDemo320x50.jpg"
   install_resource "../../SuperAwesome/Resources/AdDemo728x90.jpg"
   install_resource "../../SuperAwesome/Resources/AdDemo768x1024.jpg"
+  install_resource "../../SuperAwesome/Resources/SAPadlockView.xib"
+  install_resource "../../SuperAwesome/Resources/SALogo.png"
+  install_resource "../../SuperAwesome/Resources/start_notselected.png"
+  install_resource "../../SuperAwesome/Resources/start_selected.png"
+  install_resource "../../SuperAwesome/Resources/sa_padlock.png"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "../../SuperAwesome/Resources/AdDemo300x250.jpg"
@@ -72,6 +77,11 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "../../SuperAwesome/Resources/AdDemo320x50.jpg"
   install_resource "../../SuperAwesome/Resources/AdDemo728x90.jpg"
   install_resource "../../SuperAwesome/Resources/AdDemo768x1024.jpg"
+  install_resource "../../SuperAwesome/Resources/SAPadlockView.xib"
+  install_resource "../../SuperAwesome/Resources/SALogo.png"
+  install_resource "../../SuperAwesome/Resources/start_notselected.png"
+  install_resource "../../SuperAwesome/Resources/start_selected.png"
+  install_resource "../../SuperAwesome/Resources/sa_padlock.png"
 fi
 
 mkdir -p "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"

@@ -9,6 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "SAAdManager.h"
 
+// import parental gate
+#import "SAParentalGate.h"
+#import "SAPadlockView.h"
+
 //Advertising Classes
 #import "SABannerView.h"
 #import "SAInterstitialView.h"

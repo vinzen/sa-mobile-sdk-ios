@@ -16,6 +16,8 @@
 		117B7827BA62AE293BC727F4D5ABF93E /* SKMRAIDInterstitial.m in Sources */ = {isa = PBXBuildFile; fileRef = B0315301F22462F3B225EF0FBC610666 /* SKMRAIDInterstitial.m */; };
 		17FCF5264E4121397E9F0B1260C96BCA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5752350C37836AD8E3D4D28AC2BDD897 /* QuartzCore.framework */; };
 		1A503F8F8C661331ED0DB272CFC3A692 /* JSONModelError.m in Sources */ = {isa = PBXBuildFile; fileRef = 205C7571F2CA642DF05A533941D3CD50 /* JSONModelError.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		1B6CAACE1BA890140073A12B /* SAPadlockView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B6CAACB1BA890140073A12B /* SAPadlockView.h */; };
+		1B6CAAD01BA890140073A12B /* SAPadlockView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B6CAACC1BA890140073A12B /* SAPadlockView.m */; };
 		1E9D90519AB5B53BBB233A89E4B1D7B4 /* SKMRAIDModalViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = B378F2833375A3FFDCF5724ABCE39803 /* SKMRAIDModalViewController.h */; };
 		1F1687A8FBED84917D1DCBB623B6E393 /* SKMRAIDResizeProperties.h in Headers */ = {isa = PBXBuildFile; fileRef = 80072566B7C524636CFE818E321A1F3A /* SKMRAIDResizeProperties.h */; };
 		212D7C9F3A0C73708A03D97B0778AC19 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A528B18104EA41CB6F3D4812411FDDD /* Foundation.framework */; };
@@ -156,6 +158,13 @@
 		1601AD725FA5762A402D41FEBB494ACE /* JSONModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSONModel.h; path = JSONModel/JSONModel/JSONModel.h; sourceTree = "<group>"; };
 		16D30C8CDCC764F9660E1E49EDD06322 /* SAEventRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SAEventRequest.m; sourceTree = "<group>"; };
 		17B4790ECC977D34D9967A69D9DBA9A4 /* JSONModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSONModel.m; path = JSONModel/JSONModel/JSONModel.m; sourceTree = "<group>"; };
+		1B6CAACB1BA890140073A12B /* SAPadlockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAPadlockView.h; sourceTree = "<group>"; };
+		1B6CAACC1BA890140073A12B /* SAPadlockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAPadlockView.m; sourceTree = "<group>"; };
+		1B6CAAD11BA891C10073A12B /* sa_padlock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sa_padlock.png; sourceTree = "<group>"; };
+		1B6CAAD21BA891C10073A12B /* SALogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SALogo.png; sourceTree = "<group>"; };
+		1B6CAAD31BA891C10073A12B /* SAPadlockView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SAPadlockView.xib; sourceTree = "<group>"; };
+		1B6CAAD41BA891C10073A12B /* start_notselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = start_notselected.png; sourceTree = "<group>"; };
+		1B6CAAD51BA891C10073A12B /* start_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = start_selected.png; sourceTree = "<group>"; };
 		1E177CA06F0775C40537EF5F25014B1D /* SAPlacementView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SAPlacementView.m; sourceTree = "<group>"; };
 		1EB485DCAA7C3604941456DD9B9F4231 /* SKBrowser.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SKBrowser.m; sourceTree = "<group>"; };
 		205C7571F2CA642DF05A533941D3CD50 /* JSONModelError.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSONModelError.m; path = JSONModel/JSONModel/JSONModelError.m; sourceTree = "<group>"; };
@@ -383,9 +392,24 @@
 			path = Categories;
 			sourceTree = "<group>";
 		};
+		1B2C5D791B9F4893006BA12A /* Padlock */ = {
+			isa = PBXGroup;
+			children = (
+				1B6CAACB1BA890140073A12B /* SAPadlockView.h */,
+				1B6CAACC1BA890140073A12B /* SAPadlockView.m */,
+			);
+			path = Padlock;
+			sourceTree = "<group>";
+			usesTabs = 0;
+		};
 		270CCF9E057CBD004193FFD622EF4F9E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1B6CAAD11BA891C10073A12B /* sa_padlock.png */,
+				1B6CAAD21BA891C10073A12B /* SALogo.png */,
+				1B6CAAD31BA891C10073A12B /* SAPadlockView.xib */,
+				1B6CAAD41BA891C10073A12B /* start_notselected.png */,
+				1B6CAAD51BA891C10073A12B /* start_selected.png */,
 				E7A4174046E53A091870266D57B4D9B6 /* AdDemo300x250.jpg */,
 				528F0F42E56215A67EDB921DF4ED2759 /* AdDemo300x50.jpg */,
 				ECB7507BCC74A4D127CB1239A8722A44 /* AdDemo320x480.jpg */,
@@ -601,6 +625,7 @@
 				1E177CA06F0775C40537EF5F25014B1D /* SAPlacementView.m */,
 				8FA8092C467EBE9058AEDFCF2047B841 /* SuperAwesome.h */,
 				36CF5E4788974CDC6EC1D19FC389FE06 /* SuperAwesome.m */,
+				1B2C5D791B9F4893006BA12A /* Padlock */,
 				48D794BF2DC960448C10C83A8A3156C7 /* Banner */,
 				1981EB8BEF6766976438B5564B6C2671 /* Categories */,
 				E92D5FC6AAA1038858FF9886D82BB37A /* Interstitial */,
@@ -776,6 +801,7 @@
 				64CF2A4BC6ABB3B97C386D98B5A3E349 /* SAAdCreative.h in Headers */,
 				23BFFAF9DC86320559CDC2B0B6A23DF4 /* SAAdManager.h in Headers */,
 				8E8A1C622A45F009EF458D7F1FADD722 /* SAAdRequest.h in Headers */,
+				1B6CAACE1BA890140073A12B /* SAPadlockView.h in Headers */,
 				39CF071310DC74707CFDAAC2BCE11168 /* SAAdResponse.h in Headers */,
 				0D6F8CEE4DBC534831E779CF1E382C11 /* SABannerView.h in Headers */,
 				0190C59531ABBD80A5E0C71992CC666C /* SAEventRequest.h in Headers */,
@@ -948,6 +974,7 @@
 				B5398CA78C3DE1F206C9E30E98A2E173 /* SKMRAIDView.m in Sources */,
 				B18C49E3AF689B56CC8DBBF751E370C2 /* SKReachability.m in Sources */,
 				E5338AF3A553D1B281C6EAE25794BC82 /* SuperAwesome-dummy.m in Sources */,
+				1B6CAAD01BA890140073A12B /* SAPadlockView.m in Sources */,
 				7558BDEA35C3F2A1167396298EEE8453 /* SuperAwesome.m in Sources */,
 				D207FC680CAFB1FD422F8CCF0B04EE79 /* UIView+FindUIViewController.m in Sources */,
 			);

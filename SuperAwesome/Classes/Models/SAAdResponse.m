@@ -18,7 +18,8 @@
                                                        @"placement_id":@"placementID",
                                                        @"line_item_id": @"lineItemID",
                                                        @"creative": @"creative",
-                                                       @"campaign_id": @"campaignID"
+                                                       @"campaign_id": @"campaignID",
+                                                       @"fallback":@"is_fallback"
                                                        }];
 }
 

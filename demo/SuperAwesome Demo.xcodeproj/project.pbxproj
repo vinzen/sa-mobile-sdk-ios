@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6D89FF0A295919F2A168AE98 /* libPods-SuperAwesome Demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EFA8DE86343AF7A5C634FCA /* libPods-SuperAwesome Demo.a */; };
+		6D89FF0A295919F2A168AE98 /* libPods-SuperAwesome Demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EFA8DE86343AF7A5C634FCA /* libPods-SuperAwesome Demo.a */; settings = {ATTRIBUTES = (Required, ); }; };
 		98A4EE411AD52474005FCE20 /* BannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A4EE401AD52474005FCE20 /* BannerViewController.m */; };
 		98A4EE461AD524A4005FCE20 /* InterstitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A4EE431AD524A4005FCE20 /* InterstitialViewController.m */; };
 		98A4EE471AD524A4005FCE20 /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A4EE451AD524A4005FCE20 /* VideoViewController.m */; };
@@ -257,7 +257,7 @@
 		98B98FBC1ACD5F0400EFFA27 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0620;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "SuperAwesome Ltd";
 				TargetAttributes = {
 					98B98FC31ACD5F0400EFFA27 = {
@@ -390,6 +390,7 @@
 /* Begin XCBuildConfiguration section */
 		98B98FE51ACD5F0400EFFA27 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE6E04B6CF5B6CC2EAC29670 /* Pods-SuperAwesome Demo.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -408,6 +409,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -431,6 +433,7 @@
 		};
 		98B98FE61ACD5F0400EFFA27 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE6E04B6CF5B6CC2EAC29670 /* Pods-SuperAwesome Demo.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -473,25 +476,28 @@
 				INFOPLIST_FILE = "SuperAwesome Demo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "tv.superawesome.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
 		98B98FE91ACD5F0400EFFA27 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5634DFB8E076111266332FE4 /* Pods-SuperAwesome Demo.release.xcconfig */;
+			baseConfigurationReference = FE6E04B6CF5B6CC2EAC29670 /* Pods-SuperAwesome Demo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = "SuperAwesome Demo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "tv.superawesome.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
 		98B98FEB1ACD5F0400EFFA27 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE6E04B6CF5B6CC2EAC29670 /* Pods-SuperAwesome Demo.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -504,6 +510,7 @@
 				);
 				INFOPLIST_FILE = "SuperAwesome DemoTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "tv.superawesome.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SuperAwesome Demo.app/SuperAwesome Demo";
 			};
@@ -511,6 +518,7 @@
 		};
 		98B98FEC1ACD5F0400EFFA27 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE6E04B6CF5B6CC2EAC29670 /* Pods-SuperAwesome Demo.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -519,6 +527,7 @@
 				);
 				INFOPLIST_FILE = "SuperAwesome DemoTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "tv.superawesome.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SuperAwesome Demo.app/SuperAwesome Demo";
 			};

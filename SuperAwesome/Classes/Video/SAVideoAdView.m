@@ -1,261 +1,274 @@
 //
-//  SAVideoView.m
-//  SAMobileSDK
+//  SAVideoAdView2.m
+//  Pods
 //
-//  Created by Balázs Kiss on 03/09/14.
-//  Copyright (c) 2014 SuperAwesome Ltd. All rights reserved.
+//  Created by Gabriel Coman on 22/09/2015.
+//
 //
 
+// load header
 #import "SAVideoAdView.h"
+
+
 #import "SuperAwesome.h"
+#import "SKLogger.h"
+#import <MediaPlayer/MediaPlayer.h>
+#import "SAAdCreative.h"
+#import "SAEventManager.h"
 
-@interface SAVideoAdView ()
+@interface SAVideoAdView () <SAParentalGateDelegate>
 
-@property (nonatomic,strong) SAVideoAdLoader *adLoader;
-@property (nonatomic,strong) IMAAdsManager *adsManager;
-@property (nonatomic,strong) UIView *adContainerView;
+// the ad response
+@property (nonatomic, retain) SAAdResponse *adResponse;
+// and the viewo URL
+@property (nonatomic, strong) NSURL *videoURL;
+@property (nonatomic, strong) NSURL *adURL;
 
+// the movie player and other subviews
 @property (nonatomic,strong) SAParentalGate *gate;
-@property (nonatomic,strong) NSString *targetURL;
-@property (nonatomic,strong) UIButton *learnMoreButton;
+@property (nonatomic, strong) MPMoviePlayerController *moviePlayer;
+@property (nonatomic, strong) UIButton *learnMore;
+@property (nonatomic, strong) UILabel *counterLabel;
+
+// the actual counter
+@property (nonatomic, assign) NSInteger counter;
+@property (nonatomic, retain) NSTimer *timer;
 
 @end
 
 @implementation SAVideoAdView
 
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
-        [self commonInit];
+- (id) init {
+    if (self = [super init]) {
+        _isFullscreen = NO;
     }
     return self;
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder
-{
-    self = [super initWithCoder:aDecoder];
-    if (self) {
-        [self commonInit];
+- (id) initWithFrame:(CGRect)frame {
+    if (self = [super initWithFrame:frame]) {
+        _isFullscreen = NO;
     }
     return self;
 }
 
-- (void)commonInit
-{
-    self.learnMoreButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [self.learnMoreButton addTarget:self action:@selector(learnMoreButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
-    self.learnMoreButton.backgroundColor = [UIColor clearColor];
-}
-
-- (instancetype)initWithAdLoader:(SAVideoAdLoader *)adLoader
-{
-    if (self = [super initWithFrame:CGRectMake(0, 0, 200, 120)]) {
-        _adLoader = adLoader;
-        _adLoader.delegate = self;
-        [_adLoader load];
+- (id) initWithCoder:(NSCoder *)aDecoder {
+    if (self = [super initWithCoder:aDecoder]) {
+        _isFullscreen = NO;
     }
     return self;
 }
 
-- (void)didMoveToWindow
-{
+- (void) didMoveToWindow {
     [super didMoveToWindow];
     
-    if(self.window == nil){
-        [self stop];
-        return;
-    }
+    // preload data
+    [self fetchAd];
 }
 
-- (void)setPlacementID:(NSString *)placementID
-{
-    [super setPlacementID:placementID];
-    [self tryToLoadAd];
-}
+//////////////////////////////////////////////////////
+// Fetch ads
+//////////////////////////////////////////////////////
 
-- (void)tryToLoadAd
-{
-    if(self.adLoader != nil) return;
-    if(self.placementID == nil) return;
+- (void) fetchAd {
+    SAAdManager *adLoader = [[SuperAwesome sharedManager] adManager];
+    SAAdRequest *adRequest = [[SAAdRequest alloc] initWithPlacementId:self.placementID];
     
-    self.adLoader = [[SAVideoAdLoader alloc] initWithPlacementID:self.placementID];
-    [self.adLoader setDelegate:self];
-    [self.adLoader load];
-}
-
-- (BOOL)isReady
-{
-    return !self.adLoader.isLoading && self.adLoader.success;
-}
-
-- (void)layoutSubviews
-{
-    [super layoutSubviews];
-    
-    if(self.adContainerView){
-        [self.adContainerView setFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
+    [adLoader loadAd:adRequest completion:^(SAAdResponse *response, NSError *error) {
         
+        if(error != nil || response == nil){
+            [SKLogger error:@"SABannerView" withMessage:@"Failed to fetch ad"];
+            [[SAEventManager sharedInstance] LogAdFailed:_adResponse];
+            if(self.delegate && [self.delegate respondsToSelector:@selector(didFailShowingAd:)]){
+                [self.delegate didFailShowingAd:self];
+            }
+            return;
+        }
+        
+        // go forward
+        self.adResponse = response;
+        _videoURL = [NSURL URLWithString:[_adResponse.creative.details objectForKey:@"video"]];
+        _adURL = [NSURL URLWithString:@"http://www.superawesome.tv/en/"];
+        
+        // counter
+        if ([_adResponse.creative.details objectForKey:@"duration"]) {
+            _counter = [[_adResponse.creative.details objectForKey:@"duration"] intValue];
+        }
+        else {
+            _counter = 0;
+        }
+        
+        if(self.delegate && [self.delegate respondsToSelector:@selector(didFetchNextAd:)]){
+            [self.delegate didFetchNextAd:self];
+        }
+        
+        if(self.delegate && [self.delegate respondsToSelector:@selector(didLoadVideoAd:)]){
+            [self.delegate didLoadVideoAd:self];
+        }
+        
+        // create these
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self renderAd];
+            [self createAuxDecorations];
+            [self createTimerCount];
+        });
+    }];
+}
+
+- (void) createTimerCount {
+    _timer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(counterFunc:) userInfo:nil repeats:YES];
+    [_timer fire];
+}
+
+- (void) counterFunc:(NSTimer*)timer {
+    
+    if (_counter <= 0) {
+        [_timer invalidate];
+        _timer = NULL;
+        _counterLabel.text = @"Ad: 0";
+    }
+    else {
+        _counterLabel.text = [NSString stringWithFormat:@"Ad: %ld", _counter];
+        _counter--;
     }
     
-    if(self.learnMoreButton){
-        [self.learnMoreButton setFrame:CGRectMake(0, 0, self.frame.size.width, 40)];
+}
+
+- (void) renderAd {
+    _moviePlayer = [[MPMoviePlayerController alloc] initWithContentURL:_videoURL];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(moviePlayBackDidFinish:)
+                                                 name:MPMoviePlayerPlaybackDidFinishNotification
+                                               object:_moviePlayer];
+    
+    _moviePlayer.controlStyle   = MPMovieControlStyleNone;
+    _moviePlayer.shouldAutoplay = false;
+    _moviePlayer.view.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
+    [_moviePlayer setFullscreen:false animated:false];
+    [self addSubview:_moviePlayer.view];
+    
+    if (_shouldAutoplay) {
+        [_moviePlayer play];
+    }
+    
+    [[SAEventManager sharedInstance] LogViewableImpression:_adResponse];
+    if(self.delegate && [self.delegate respondsToSelector:@selector(didShowVideoAd:)]){
+        [self.delegate didShowVideoAd:self];
     }
 }
 
-- (void)play
-{
-    [self.adsManager initializeWithContentPlayhead:nil adsRenderingSettings:nil];
-    [self.adsManager start];
-    [self setupPadlockButton:self];
-}
-
-- (void)stop
-{
-    [self.adsManager destroy];
-    [self removePadlockButton];
-}
-
-- (void)resume
-{
-    [self.adsManager resume];
-}
-
-- (void)learnMoreButtonTapped:(id)sender
-{
-    if(!self.targetURL) return;
+- (void) createAuxDecorations {
+    CGFloat w = self.frame.size.width;
+    CGFloat h = self.frame.size.height;
+    CGFloat offset = (_isFullscreen ? 40 : 0);
     
-    [self.adsManager pause];
+    // step 1. learn more button
+    _learnMore = [[UIButton alloc] init];
+    [_learnMore setBackgroundColor:[UIColor clearColor]];
+    [_learnMore setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [_learnMore setTitle:@"Learn more" forState:UIControlStateNormal];
+    [[_learnMore titleLabel] setFont:[UIFont systemFontOfSize:12]];
+    _learnMore.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
+    _learnMore.contentEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 10);
+    [_learnMore setFrame:CGRectMake(w - 120, offset, 120, 22)];
+    [_learnMore addTarget:self action:@selector(gotoTargetURL:) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:_learnMore];
+    [self bringSubviewToFront:_learnMore];
     
+    // step 2. counter
+    _counterLabel = [[UILabel alloc] init];
+    [_counterLabel setBackgroundColor:[UIColor clearColor]];
+    [_counterLabel setTextColor:[UIColor whiteColor]];
+    [_counterLabel setFont:[UIFont systemFontOfSize:11]];
+    [_counterLabel setTextAlignment:NSTextAlignmentLeft];
+    _counterLabel.frame = CGRectMake(10, h-22, w-10, 22);
+    _counterLabel.text = @"Ad: 19";
+    [self addSubview:_counterLabel];
+    [self bringSubviewToFront:_counterLabel];
+    
+    // step 3. padlock
+    if (!_adResponse.isFallback) {
+        [self setupPadlockButton:self];
+    }
+}
+
+//////////////////////////////////////////////////////
+// Video Ad Controls & Actions
+//////////////////////////////////////////////////////
+
+- (void) play {
+    [_moviePlayer play];
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(didStartPlayingVideoAd:)]){
+        [self.delegate didStartPlayingVideoAd:self];
+    }
+}
+
+- (void) stop {
+    [_moviePlayer pause];
+}
+
+- (void) resume {
+    [_moviePlayer play];
+}
+
+- (IBAction)gotoTargetURL:(id)sender {
+    
+    // did click
+    if (self.delegate && [self.delegate respondsToSelector:@selector(didClickVideoAd:)]) {
+        [self.delegate didClickVideoAd:self];
+    }
+    
+    // use parental gatre
     if([self isParentalGateEnabled]){
         if(self.gate == nil){
-            self.gate = [[SAParentalGate alloc] init];
+            self.gate = [[SAParentalGate alloc] initWithAdResponse:_adResponse];
             self.gate.delegate = self;
         }
         [self.gate show];
     }else{
-        [self openTargetURL];
-    }
-}
-
-- (void)openTargetURL
-{
-    if(self.targetURL){
-        if(self.delegate && [self.delegate respondsToSelector:@selector(didClickVideoAd:)]){
-            [self.delegate didClickVideoAd:self];
-        }
+        // log a click
+        [[SAEventManager sharedInstance] LogClick:_adResponse];
         
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.targetURL]];
-    }
-}
-
-#pragma Ad Loader
-
-- (void)didLoadVideoAd:(SAVideoAdLoader *)videoAdLoader
-{
-    self.adsManager = videoAdLoader.adsManager;
-    self.adsManager.delegate = self;
-    
-    self.adContainerView = videoAdLoader.adDisplayContainer;
-    [self addSubview:self.adContainerView];
-    [self setNeedsLayout];
-    
-    if(self.delegate && [self.delegate respondsToSelector:@selector(didLoadVideoAd:)]){
-        [self.delegate didLoadVideoAd:self];
-    }
-    
-    if(self.autoplay){
-        [self play];
-    }
-}
-
-- (void)didFailToLoadVideoAd:(SAVideoAdLoader *)videoAdLoader
-{
-    if(self.delegate && [self.delegate respondsToSelector:@selector(didFailToLoadVideoAd:)]){
-        [self.delegate didFailToLoadVideoAd:self];
-    }
-}
-
-#pragma mark SAParentalGate
-
-- (void)didGetThroughParentalGate:(SAParentalGate *)parentalGate
-{
-    [self openTargetURL];
-}
-
-- (void)didCancelParentalGate:(SAParentalGate *)parentalGate
-{
-    [self resume];
-}
-
-- (void)didFailChallengeForParentalGate:(SAParentalGate *)parentalGate
-{
-    [self resume];
-}
-
-#pragma mark AdPlayer
-
-- (void)adsManagerDidRequestContentPause:(IMAAdsManager *)adsManager {
-    // Pause the content.
-    //NSLog(@"should pause content video file");
-}
-
-- (void)adsManagerDidRequestContentResume:(IMAAdsManager *)adsManager {
-    // Resume or start (if not started yet) the content.
-    //NSLog(@"should resume content video file");
-}
-
-// Process ad events.
-- (void)adsManager:(IMAAdsManager *)adsManager didReceiveAdEvent:(IMAAdEvent *)event {
-    NSLog(@"SA: Received ad event: %i", event.type);
-    
-    // Perform different actions based on the event type.
-    if (event.type == kIMAAdEvent_LOADED) {
-        NSLog(@"SA: Ad has been loaded.");
-        self.targetURL = [event.ad performSelector:@selector(clickThroughUrl)];
-        [self addSubview:self.learnMoreButton];
-        [self bringSubviewToFront:self.learnMoreButton];
-    }else if (event.type == kIMAAdEvent_STARTED) {
-        NSLog(@"SA: Ad has started.");
-        if(self.delegate && [self.delegate respondsToSelector:@selector(didStartPlayingVideoAd:)]){
-            [self.delegate didStartPlayingVideoAd:self];
+        if(self.delegate && [self.delegate respondsToSelector:@selector(willLeaveApplicationForAd:)]){
+            [self.delegate willLeaveApplicationForAd:self];
         }
-    }else if(event.type == kIMAAdEvent_COMPLETE){
-        NSLog(@"SA: Ad has completed");
-        self.targetURL = nil;
-        if(self.delegate && [self.delegate respondsToSelector:@selector(didFinishPlayingVideoAd:)]){
-            [self.delegate didFinishPlayingVideoAd:self];
-        }
-    }else if(event.type == kIMAAdEvent_CLICKED){
-        NSLog(@"SA: Ad has been clicked");
-        if(self.delegate && [self.delegate respondsToSelector:@selector(didClickVideoAd:)]){
-            [self.delegate didClickVideoAd:self];
-        }
-        
-    }else if(event.type == kIMAAdEvent_TAPPED){
-        NSLog(@"SA: Ad has been tapped");
-        if([self.adsManager.adPlaybackInfo isPlaying]){
-            [self.adsManager pause];
-        }else{
-            [self.adsManager resume];
-        }
+        [[UIApplication sharedApplication] openURL:_adURL];
     }
 }
 
-// Process ad playing errors.
-- (void)adsManager:(IMAAdsManager *)adsManager didReceiveAdError:(IMAAdError *)error {
-    // There was an error while playing the ad.
-    NSLog(@"Error during ad playback: %@", error.message);
-    if(self.delegate && [self.delegate respondsToSelector:@selector(didFailToPlayVideoAd:)]){
-        [self.delegate didFailToPlayVideoAd:self];
+- (void) moviePlayBackDidFinish: (id)sender {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(didFinishPlayingVideoAd:)]){
+        [self.delegate didFinishPlayingVideoAd:self];
     }
 }
 
-// Optional: receive updates about individual ad progress.
-//- (void)adDidProgressToTime:(NSTimeInterval)mediaTime totalTime:(NSTimeInterval)totalTime {
-//    // This can be very noisy log - called 5 times a second.
-////    NSLog(@"Current ad time: %lf", mediaTime);
-//}
+//////////////////////////////////////////////////////
+// Fetch SAParentalGateDelegate
+//////////////////////////////////////////////////////
+
+- (void)didGetThroughParentalGate:(SAParentalGate *)parentalGate {
+    if(self.delegate && [self.delegate respondsToSelector:@selector(willLeaveApplicationForAd:)]){
+        [self.delegate willLeaveApplicationForAd:self];
+    }
+    [[UIApplication sharedApplication] openURL:self.adURL];
+}
+
+- (void) didCancelParentalGate:(SAParentalGate *)parentalGate {
+    // do nothing
+}
+
+- (void) didFailChallengeForParentalGate:(SAParentalGate *)parentalGate {
+    // do nohting
+}
+
+/*
+// Only override drawRect: if you perform custom drawing.
+// An empty implementation adversely affects performance during animation.
+- (void)drawRect:(CGRect)rect {
+    // Drawing code
+}
+*/
 
 @end

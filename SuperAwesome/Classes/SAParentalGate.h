@@ -5,6 +5,7 @@ typedef void(^actionBlock) (UIAlertAction *action);
 typedef void(^interactionBlock) (NSString *adname);
 
 @class SAParentalGate;
+@class SAAdResponse;
 
 @protocol SAParentalGateDelegate <NSObject>
 
@@ -17,10 +18,20 @@ typedef void(^interactionBlock) (NSString *adname);
 
 @interface SAParentalGate : NSObject <UIAlertViewDelegate>
 
+// custom init
+- (id) initWithAdResponse:(SAAdResponse*)response;
+
+- (id) initWithPlacementId:(NSString*)placementID
+             andCreativeId:(NSString*)creativeID
+             andLineItemId:(NSString*)lineItemID;
+
+// delegate
 @property (nonatomic,weak) id<SAParentalGateDelegate> delegate;
 
+// show function
 - (void)show;
 
+// blocks
 - (void) addSuccessBlock:(interactionBlock)block;
 - (void) addCancelBlock:(interactionBlock)block;
 - (void) addErrorBlock:(interactionBlock)block;

@@ -8,7 +8,8 @@
 //
 
 #import "SAParentalGate.h"
-
+#import "SuperAwesome.h"
+#import "UIAlertController+Window.h"
 
 /**
  * SAParentalGate defines
@@ -46,9 +47,32 @@
 @property (nonatomic, assign) interactionBlock didCancelParentalGate;
 @property (nonatomic, assign) interactionBlock didFailChallengeForParentalGate;
 
+// the ad response
+@property (nonatomic, retain) SAAdResponse *response;
+
 @end
 
 @implementation SAParentalGate
+
+- (id) initWithAdResponse:(SAAdResponse *)response {
+    if (self = [super init]) {
+        _response = response;
+    }
+    
+    return self;
+}
+
+- (id) initWithPlacementId:(NSString*)placementID
+             andCreativeId:(NSString*)creativeID
+             andLineItemId:(NSString*)lineItemID {
+    if (self = [super init]) {
+        _response = [[SAAdResponse alloc] initWithPlacementId:placementID
+                                                andLineItemId:lineItemID
+                                                 andCreativId:creativeID];
+    }
+    
+    return self;
+}
 
 /**
  * This function initiates a new question
@@ -64,6 +88,9 @@
     
     // action block #1
     actionBlock cancelBlock = ^(UIAlertAction *action) {
+        // log the action
+        [[SAEventManager sharedInstance] LogUserCanceledParentalGate:_response];
+        
         #pragma mark Normal iOS behaviour
         if(self.delegate && [self.delegate respondsToSelector:@selector(didCancelParentalGate:)]){
             [self.delegate didCancelParentalGate:self];
@@ -87,6 +114,10 @@
         // what happens when you get a right solution
         if([input integerValue] == self.solution){
             
+            // send a server message
+            [[SAEventManager sharedInstance] LogUserSuccessWithParentalGate:_response];
+            [[SAEventManager sharedInstance] LogClick:_response];
+            
             #pragma mark Normal iOS behaviour
             if(self.delegate && [self.delegate respondsToSelector:@selector(didGetThroughParentalGate:)]){
                 [self.delegate didGetThroughParentalGate:self];
@@ -99,6 +130,9 @@
         }
         // or a bad solution
         else{
+            // log error
+            [[SAEventManager sharedInstance] LogUserErrorWithParentalGate:_response];
+            
             // ERROR
             _wrongAnswerAlertView = [[UIAlertView alloc] initWithTitle:SA_ERROR_ALERTVIEW_TITLE
                                                                message:SA_ERROR_ALERTVIEW_MESSAGE
@@ -137,13 +171,18 @@
     // add actions
     [_challangeAlertView addAction:cancelBtn];
     [_challangeAlertView addAction:continueBtn];
+    __block UITextField *localTextField;
+    
     [_challangeAlertView addTextFieldWithConfigurationHandler:^(UITextField *textField) {
-        textField.keyboardType = UIKeyboardTypeNumberPad;
+        localTextField = textField;
+        localTextField.keyboardType = UIKeyboardTypeNumberPad;
     }];
     
+    [_challangeAlertView show];
+    
     // display the alert controller
-    UIViewController *topController = [UIApplication sharedApplication].keyWindow.rootViewController;
-    [topController presentViewController:_challangeAlertView animated:YES completion:nil];
+//    UIViewController *topController = [UIApplication sharedApplication].keyWindow.rootViewController;
+//    [topController presentViewController:_challangeAlertView animated:YES completion:nil];
 }
 
 // internal random functions

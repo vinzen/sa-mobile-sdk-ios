@@ -23,7 +23,7 @@
     
     _padlockBtn = [[UIButton alloc] initWithFrame:padlock_frame];
     [_padlockBtn setImage:[UIImage imageNamed:@"sa_padlock"] forState:UIControlStateNormal];
-//    [_padlockBtn addTarget:self action:@selector(padlockBtnAction:) forControlEvents:UIControlEventTouchUpInside];
+    [_padlockBtn addTarget:self action:@selector(padlockBtnAction:) forControlEvents:UIControlEventTouchUpInside];
     [parent addSubview:_padlockBtn];
     [parent bringSubviewToFront:_padlockBtn];
 }

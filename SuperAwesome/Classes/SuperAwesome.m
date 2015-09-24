@@ -31,14 +31,14 @@
     if(self = [super init]){
         _adManager = [[SAAdManager alloc] init];
         NSLog(@"%@", [self version]);
-        [self setClientConfiguration:SAClientConfigurationStaging];
+        [self setClientConfiguration:SAClientConfigurationProduction];
     }
     return self;
 }
 
 - (NSString *)version
 {
-    return @"SuperAwesome iOS SDK version 2.0.1";
+    return @"SuperAwesome iOS SDK version 2.0.2";
 }
 
 

@@ -11,6 +11,8 @@
 #import "SuperAwesome.h"
 #import "SKLogger.h"
 #import "SAPadlockView.h"
+#import "../Events/SAEventManager.h"
+#import "SAAdCreative.h"
 
 @interface SABannerView ()
 
@@ -24,7 +26,6 @@
 - (BOOL)isSupportedSize:(CGSize)aSize;
 - (void)fetchAd;
 - (void)renderAd;
-- (void)sendImpressionEvent;
 
 @end
 
@@ -48,30 +49,6 @@
     }
     return self;
 }
-
-//#if TARGET_INTERFACE_BUILDER
-//- (void)prepareForInterfaceBuilder
-//{
-//    if([self isSupportedSize:self.bounds.size]){
-//        NSBundle *bundle = [NSBundle bundleForClass:self.class];
-//        NSString *fileName = [bundle pathForResource:[NSString stringWithFormat:@"AdDemo%@x%@", @(self.bounds.size.width), @(self.bounds.size.height)] ofType:@"jpg"];
-//        UIImage *image = [UIImage imageWithContentsOfFile:fileName];
-//        UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
-//        [imageView sizeToFit];
-//        [self addSubview:imageView];
-//    }else{
-//        UIColor *saColor = [UIColor colorWithRed:0.8 green:0.17 blue:0.09 alpha:1];
-//        UILabel *label = [[UILabel alloc] initWithFrame:self.bounds];
-//        [label setText:@"Invalid size!\nCheck the documentation for the list of supported banner sizes."];
-//        [label setTextColor:[UIColor whiteColor]];
-//        [label setBackgroundColor:saColor];
-//        [label setTextAlignment:NSTextAlignmentCenter];
-//        [label setNumberOfLines:0];
-//        [label setAdjustsFontSizeToFitWidth:YES];
-//        [self addSubview:label];
-//    }
-//}
-//#endif
 
 - (void)didMoveToWindow
 {
@@ -100,7 +77,6 @@
 
 - (void)commonInit
 {
-    
 }
 
 - (void)setVisible:(BOOL)visible
@@ -175,44 +151,37 @@
     }
 }
 
-- (void)sendImpressionEvent
-{
-    SAEventRequest *eventRequest = [[SAEventRequest alloc] initWithAdResponse:self.adResponse type:@"impression"];
-    SAAdManager *adLoader = [[SuperAwesome sharedManager] adManager];
-    [adLoader sendEvent:eventRequest completion:^(SAEventResponse *response, NSError *error) {
-        
-    }];
-}
-
 #pragma mark - SKMRAIDViewDelegate
 
-- (void)mraidViewAdReady:(SKMRAIDView *)mraidView
-{    
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self sendImpressionEvent];
-    });
+- (void)mraidViewAdReady:(SKMRAIDView *)mraidView {
+    [[SAEventManager sharedInstance] LogViewableImpression:_adResponse];
 }
-- (void)mraidViewAdFailed:(SKMRAIDView *)mraidView
-{
+
+- (void)mraidViewAdFailed:(SKMRAIDView *)mraidView {
     [SKLogger error:@"SABannerView" withMessage:@"Failed to render ad"];
+    [[SAEventManager sharedInstance] LogAdFailed:_adResponse];
+    
     if(self.delegate && [self.delegate respondsToSelector:@selector(didFailShowingAd:)]){
         [self.delegate didFailShowingAd:self];
     }
 }
-- (void)mraidViewWillExpand:(SKMRAIDView *)mraidView
-{
+
+- (void)mraidViewWillExpand:(SKMRAIDView *)mraidView {
     
 }
-- (void)mraidViewNavigate:(SKMRAIDView *)mraidView withURL:(NSURL *)url
-{
+
+- (void)mraidViewNavigate:(SKMRAIDView *)mraidView withURL:(NSURL *)url {
     if([self isParentalGateEnabled]){
         if(self.gate == nil){
-            self.gate = [[SAParentalGate alloc] init];
+            self.gate = [[SAParentalGate alloc] initWithAdResponse:_adResponse];
             self.gate.delegate = self;
         }
         [self.gate show];
         self.adURL = url;
     }else{
+        // log a click
+        [[SAEventManager sharedInstance] LogClick:_adResponse];
+        
         if(self.delegate && [self.delegate respondsToSelector:@selector(willLeaveApplicationForAd:)]){
             [self.delegate willLeaveApplicationForAd:self];
         }
@@ -238,7 +207,11 @@
 }
 
 - (void) didCancelParentalGate:(SAParentalGate *)parentalGate {
-    NSLog(@"Cancel");
+    // do nothing
+}
+
+- (void) didFailChallengeForParentalGate:(SAParentalGate *)parentalGate {
+    // do nothing
 }
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+
 #import "SAAdManager.h"
 
 // import parental gate
@@ -16,6 +17,9 @@
 //Advertising Classes
 #import "SABannerView.h"
 #import "SAInterstitialView.h"
+#import "SAAdResponse.h"
+#import "SAAdCreative.h"
+#import "SAEventManager.h"
 #import "SAVideoAdView.h"
 #import "SAVideoAdViewController.h"
 

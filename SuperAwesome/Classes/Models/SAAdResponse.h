@@ -7,7 +7,8 @@
 //
 
 #import "JSONModel.h"
-#import "SAAdCreative.h"
+
+@class SAAdCreative;
 
 @interface SAAdResponse : JSONModel
 
@@ -18,5 +19,7 @@
 @property (nonatomic,strong) NSString *campaignID;
 @property (nonatomic,assign,getter=isFallback,setter=setIsFallback:) BOOL fallback;
 @property (nonatomic,strong) SAAdCreative *creative;
+
+- (id) initWithPlacementId:(NSString*)placementID andLineItemId:(NSString*)lineIItemID andCreativId:(NSString*)creativeId;
 
 @end

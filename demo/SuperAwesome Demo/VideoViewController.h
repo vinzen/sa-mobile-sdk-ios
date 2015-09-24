@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "SuperAwesome.h"
 
-@interface VideoViewController : UIViewController <SAVideoAdViewDelegate>
+@interface VideoViewController : UIViewController <SAVideoAdViewProtocol>
 
 @property (nonatomic,strong) IBOutlet SAVideoAdView *videoView;
 

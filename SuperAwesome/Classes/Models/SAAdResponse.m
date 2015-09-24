@@ -7,8 +7,21 @@
 //
 
 #import "SAAdResponse.h"
+#import "SAAdCreative.h"
 
 @implementation SAAdResponse
+
+- (id) initWithPlacementId:(NSString *)placementID andLineItemId:(NSString *)lineIItemID andCreativId:(NSString *)creativeId {
+    
+    if (self = [super init]) {
+        self.placementID = placementID;
+        self.lineItemID = lineIItemID;
+        self.creative = [[SAAdCreative alloc] init];
+        self.creative.creativeID = creativeId;
+    }
+    
+    return self;
+}
 
 + (JSONKeyMapper*)keyMapper
 {

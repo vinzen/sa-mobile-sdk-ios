@@ -121,6 +121,15 @@ Click here for more information.
                                 <action selector="okBtnAction:" destination="-1" eventType="touchUpInside" id="oSo-2R-2Yo"/>
                             </connections>
                         </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RBB-SJ-dlQ" userLabel="hiddenHereButton">
+                            <rect key="frame" x="8" y="78" width="280" height="32"/>
+                            <state key="normal">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="hiddenHereButtonAction:" destination="-1" eventType="touchUpInside" id="TwL-IV-hsE"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>

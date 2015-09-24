@@ -1,31 +1,37 @@
 //
-//  SAVideoAdViewController
-//  SAMobileSDK
+//  SAVideoAdViewController2.h
+//  Pods
 //
-//  Created by Balázs Kiss on 03/02/15.
-//  Copyright (c) 2015 SuperAwesome Ltd. All rights reserved.
+//  Created by Gabriel Coman on 22/09/2015.
+//
 //
 
 #import <UIKit/UIKit.h>
-#import "SuperAwesome.h"
 
+// forward declaration
+@class SAVideoAdView;
 @class SAVideoAdViewController;
 
-@protocol SAVideoAdViewControllerDelegate <NSObject>
+// protocol
+@protocol SAVideoAdViewControllerProtocol <NSObject>
 @optional
-
 - (void)didLoadVideoAd:(SAVideoAdViewController *)videoAdViewController;
 - (void)didFailToLoadVideoAd:(SAVideoAdViewController *)videoAdViewController;
+- (void)didFinishPlayingVideoAd:(SAVideoAdViewController *)videoAdViewController;
 
 @end
 
-@interface SAVideoAdViewController : UIViewController <SAVideoAdViewDelegate>
+// interface
+@interface SAVideoAdViewController : UIViewController
 
-@property (nonatomic,weak) id<SAVideoAdViewControllerDelegate> delegate;
-@property (nonatomic,strong) SAVideoAdView *videoView;
-@property (assign,nonatomic,getter=isParentalGateEnabled) BOOL parentalGateEnabled;
+// inspectable
+@property (nonatomic, strong) IBInspectable NSString *placementID;
+@property (assign, nonatomic, getter=isParentalGateEnabled) IBInspectable BOOL parentalGateEnabled;
 
-- (instancetype)initWithPlacementID:(NSString *)placementID;
-- (instancetype)initWithAdLoader:(SAVideoAdLoader *)adLoader;
+// custom init
+- (id) initWithPlacementId:(NSString*)placementID;
+
+// delegate
+@property id<SAVideoAdViewControllerProtocol> delegate;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "SAPadlockView.h"
+#import "SAEventManager.h"
 
 /**
  * Defines constants for padlock texts
@@ -16,6 +17,7 @@
 #define SA_PADLOCKVIEW_SUBTITLE2 @"Rate this Ad"
 #define SA_PADLOCKVIEW_SUBTITLE3 @"Share your oppinion:"
 #define SA_PADLOCKVIEW_OKBUTTON_TITLE @"OK"
+#define SA_PADLOCK_URL @"http://www.superawesome.tv/en/"
 
 @interface SAPadlockView ()
 
@@ -32,12 +34,18 @@
 // touch responder to close
 @property (nonatomic, strong) UITapGestureRecognizer *tapToClose;
 
+// current rating
+@property (nonatomic, assign) int currentRating;
+
 @end
 
 @implementation SAPadlockView
 
 - (id) init {
     if (self = [super init]) {
+        // make current rating
+        _currentRating = -1;
+        
         // setup the pop-up frame
         self.frame = [UIScreen mainScreen].bounds;
         
@@ -54,10 +62,17 @@
         
         // setup texts
         _Title.text = SA_PADLOCKVIEW_TITLE;
-        _Subtitle1.text = SA_PADLOCKVIEW_SUBTITLE1;
         _Subtitle2.text = SA_PADLOCKVIEW_SUBTITLE2;
         _Subtitle3.text = SA_PADLOCKVIEW_SUBTITLE3;
         [_OKBtn setTitle:SA_PADLOCKVIEW_OKBUTTON_TITLE forState:UIControlStateNormal];
+        
+        // make subtitle text be attributed
+        NSRange range = [SA_PADLOCKVIEW_SUBTITLE1 rangeOfString:@"here"];
+        NSMutableAttributedString *attString=[[NSMutableAttributedString alloc] initWithString:SA_PADLOCKVIEW_SUBTITLE1];
+        [attString addAttribute:NSForegroundColorAttributeName value:[UIColor blueColor] range:range];
+        [attString addAttributes:@{NSUnderlineStyleAttributeName:[NSNumber numberWithInteger:NSUnderlineStyleSingle]} range:range];
+        
+        _Subtitle1.attributedText = attString;
         
         // setup tags
         short i = 0;
@@ -82,6 +97,7 @@
     
     for (short i = 0; i < [sender tag]; i++) {
         [_rateButtons[i] setSelected:true];
+        _currentRating = (i+1);
     }
 }
 
@@ -100,6 +116,11 @@
 // when pressing the OK button,
 // close the view
 - (IBAction)okBtnAction:(id)sender {
+    
+    if (_currentRating > 0) {
+        [[SAEventManager sharedInstance] LogRating:nil withValue:_currentRating];
+    }
+    
     [self closeThisView];
 }
 
@@ -109,6 +130,10 @@
         [v removeFromSuperview];
     }
     [self removeFromSuperview];
+}
+
+- (IBAction)hiddenHereButtonAction:(id)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:SA_PADLOCK_URL]];
 }
 
 /*

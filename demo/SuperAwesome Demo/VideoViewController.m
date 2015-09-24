@@ -9,6 +9,7 @@
 #import "VideoViewController.h"
 
 @interface VideoViewController ()
+//@property (weak, nonatomic) IBOutlet SAVideoAdView2 *viewAdView2;
 
 @end
 

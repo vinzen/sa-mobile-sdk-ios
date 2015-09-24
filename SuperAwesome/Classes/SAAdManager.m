@@ -68,7 +68,7 @@
         }
         
         NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-        NSLog(@"%@ - %@", path, str);
+        NSLog(@"%@ --> %@", path, str);
         
         SAAdResponse *resp = [[SAAdResponse alloc] initWithData:data error:&error];
         resp.placementID = adRequest.placementID;
@@ -89,30 +89,6 @@
         if (!resp.creative) {
             [SKLogger error:@"SAAdManager" withMessage:[NSString stringWithFormat:@"Ad server error no Creative returned for this request"]];
             completion(resp, [NSError errorWithDomain:@"SuperAwesome" code:1000 userInfo:@{}]);
-            return;
-        }
-        
-        completion(resp, nil);
-    }];
-}
-
-- (void)sendEvent:(SAEventRequest *)event completion:(void(^)(SAEventResponse *response, NSError *error))completion
-{
-    NSString *path = @"event";
-    NSDictionary *data = [event dictionaryValue];
-    NSURLRequest *request = [self requestWithPath:path data:data];
-    
-    [self sendRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        if(error != nil){
-            completion(nil, error);
-            return;
-        }
-        
-        SAEventResponse *resp = [[SAEventResponse alloc] initWithData:data error:&error];
-        
-        if(error != nil){
-            [SKLogger error:@"SAAdManager" withMessage:[NSString stringWithFormat:@"Request failed (%@)", error.localizedDescription]];
-            completion(nil, error);
             return;
         }
         

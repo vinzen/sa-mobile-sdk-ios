@@ -24,6 +24,7 @@
 + (BOOL)propertyIsOptional:(NSString*)propertyName
 {
     if([propertyName isEqualToString:@"clickURL"]) return YES; //TODO: Should not be optional
+    if ([propertyName isEqualToString:@"creativeID"]) return YES;
     return NO;
 }
 

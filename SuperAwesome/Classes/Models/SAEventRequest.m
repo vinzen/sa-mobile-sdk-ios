@@ -7,30 +7,34 @@
 //
 
 #import "SAEventRequest.h"
+#import "SAAdResponse.h"
+#import "SAAdCreative.h"
 
 @implementation SAEventRequest
 
-- (instancetype)initWithAdResponse:(SAAdResponse *)adResponse type:(NSString *)type
+- (instancetype)initWithAdResponse:(SAAdResponse *)adResponse
 {
     if(self = [super init]){
         _placementID = adResponse.placementID;
         _creativeID = adResponse.creative.creativeID;
         _lineItemID = adResponse.lineItemID;
-        _type = type;
+        _type = NoAd;
+        _detailValue = -1;
+        
     }
     return self;
 }
 
-- (NSDictionary *)dictionaryValue
-{
-    NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
-    f.numberStyle = NSNumberFormatterDecimalStyle;
-    return @{
-             @"line_item": [f numberFromString:self.lineItemID],
-             @"creative": [f numberFromString:self.creativeID],
-             @"placement":[f numberFromString:self.placementID],
-             @"type":self.type
-    };
+- (id) init {
+    if (self = [super init]) {
+        _placementID = nil;
+        _creativeID = nil;
+        _lineItemID = nil;
+        _type = NoAd;
+        _detailValue = -1;
+    }
+    
+    return self;
 }
 
 @end

@@ -8,6 +8,8 @@
 
 #import "SAInterstitialView.h"
 #import "SKLogger.h"
+#import "SAEventManager.h"
+#import "SAAdCreative.h"
 
 @interface SAInterstitialView ()
 
@@ -70,6 +72,7 @@
 - (void) present
 {
     [self.interstitialView show];
+    [[SAEventManager sharedInstance] LogViewableImpression:_adResponse];
     
     // present the interstitial view's padlock
     if (!_adResponse.isFallback) {
@@ -99,10 +102,13 @@
 
 - (void)mraidInterstitialAdFailed:(SKMRAIDInterstitial *)mraidInterstitial
 {
+    [[SAEventManager sharedInstance] LogAdFailed:_adResponse];
+    
     if(self.delegate && [self.delegate respondsToSelector:@selector(didFailFetchingInterstitialAd:)]){
         [self.delegate didFailFetchingInterstitialAd:self];
     }
 }
+
 
 - (void)mraidInterstitialWillShow:(SKMRAIDInterstitial *)mraidInterstitial
 {
@@ -126,12 +132,15 @@
 {    
     if([self isParentalGateEnabled]){
         if(self.gate == nil){
-            self.gate = [[SAParentalGate alloc] init];
+            self.gate = [[SAParentalGate alloc] initWithAdResponse:_adResponse];
             self.gate.delegate = self;
         }
         [self.gate show];
         self.adURL = url;
     }else{
+        // log a click
+        [[SAEventManager sharedInstance] LogClick:_adResponse];
+        
         if(self.delegate && [self.delegate respondsToSelector:@selector(willLeaveApplicationForInterstitialAd:)]){
             [self.delegate willLeaveApplicationForInterstitialAd:self];
         }
@@ -147,6 +156,14 @@
         [self.delegate willLeaveApplicationForInterstitialAd:self];
     }
     [[UIApplication sharedApplication] openURL:self.adURL];
+}
+
+- (void) didCancelParentalGate:(SAParentalGate *)parentalGate {
+    // do nothing
+}
+
+- (void) didFailChallengeForParentalGate:(SAParentalGate *)parentalGate {
+    // do nothing
 }
 
 @end

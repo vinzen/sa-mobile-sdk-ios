@@ -33,6 +33,7 @@
 // the actual counter
 @property (nonatomic, assign) NSInteger counter;
 @property (nonatomic, retain) NSTimer *timer;
+@property (nonatomic, assign) BOOL isRunning;
 
 @end
 
@@ -110,28 +111,8 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             [self renderAd];
             [self createAuxDecorations];
-            [self createTimerCount];
         });
     }];
-}
-
-- (void) createTimerCount {
-    _timer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(counterFunc:) userInfo:nil repeats:YES];
-    [_timer fire];
-}
-
-- (void) counterFunc:(NSTimer*)timer {
-    
-    if (_counter <= 0) {
-        [_timer invalidate];
-        _timer = NULL;
-        _counterLabel.text = @"Ad: 0";
-    }
-    else {
-        _counterLabel.text = [NSString stringWithFormat:@"Ad: %ld", _counter];
-        _counter--;
-    }
-    
 }
 
 - (void) renderAd {
@@ -149,7 +130,7 @@
     [self addSubview:_moviePlayer.view];
     
     if (_shouldAutoplay) {
-        [_moviePlayer play];
+        [self play];
     }
     
     [[SAEventManager sharedInstance] LogViewableImpression:_adResponse];
@@ -183,7 +164,7 @@
     [_counterLabel setFont:[UIFont systemFontOfSize:11]];
     [_counterLabel setTextAlignment:NSTextAlignmentLeft];
     _counterLabel.frame = CGRectMake(10, h-22, w-10, 22);
-    _counterLabel.text = @"Ad: 19";
+    _counterLabel.text = [NSString stringWithFormat:@"Ad: %ld", _counter];
     [self addSubview:_counterLabel];
     [self bringSubviewToFront:_counterLabel];
     
@@ -199,6 +180,7 @@
 
 - (void) play {
     [_moviePlayer play];
+    [self turnTimerOn];
     
     if (self.delegate && [self.delegate respondsToSelector:@selector(didStartPlayingVideoAd:)]){
         [self.delegate didStartPlayingVideoAd:self];
@@ -207,10 +189,42 @@
 
 - (void) stop {
     [_moviePlayer pause];
+    [self turnTimerOff];
 }
 
 - (void) resume {
     [_moviePlayer play];
+    [self turnTimerOn];
+}
+
+#pragma mark Switch Timer functions
+
+- (void) turnTimerOn {
+    if (_timer == nil) {
+        _timer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(counterFunc:) userInfo:nil repeats:YES];
+        [_timer fire];
+    }
+}
+
+- (void) turnTimerOff {
+    if (_timer){
+        [_timer invalidate];
+        _timer = nil;
+    }
+}
+
+- (void) counterFunc:(NSTimer*)timer {
+    
+    if (_counter <= 0) {
+        [_timer invalidate];
+        _timer = NULL;
+        _counterLabel.text = @"Ad: 0";
+    }
+    else {
+        _counterLabel.text = [NSString stringWithFormat:@"Ad: %ld", _counter];
+        _counter--;
+    }
+    
 }
 
 - (IBAction)gotoTargetURL:(id)sender {

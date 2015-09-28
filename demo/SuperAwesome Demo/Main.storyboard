@@ -356,8 +356,8 @@
                                     <constraint firstAttribute="height" constant="158" id="AVL-a3-7jj"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAutoplay" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isFullscreen" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAutoplay" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isFullscreen" value="NO"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="placementID" value="5740"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="parentalGateEnabled" value="YES"/>
                                 </userDefinedRuntimeAttributes>
@@ -368,6 +368,9 @@
                                     <constraint firstAttribute="height" constant="30" id="kcr-V3-EdH"/>
                                 </constraints>
                                 <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="startVideoAd:" destination="9WN-cW-xK1" eventType="touchUpInside" id="v7Z-0L-sIY"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TKE-Ia-LYv">
                                 <rect key="frame" x="175" y="331" width="32" height="30"/>
@@ -375,6 +378,9 @@
                                     <constraint firstAttribute="height" constant="30" id="4Sg-oW-i4n"/>
                                 </constraints>
                                 <state key="normal" title="Stop"/>
+                                <connections>
+                                    <action selector="stopVideoAd:" destination="9WN-cW-xK1" eventType="touchUpInside" id="wgo-L2-EQu"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -389,6 +395,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Video Ad" id="eWa-Ah-2oq"/>
+                    <connections>
+                        <outlet property="videoView" destination="6qV-eX-bwa" id="npu-xA-Yoc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i0k-ge-pYf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -11,7 +11,7 @@ Second, in the Size Inspector, make sure the view's size corresponds to one of t
 
 ![](img/adbanner_size.png "Setting a custom size")
 
-Thrid, in the Attributes Inspector, you need to assign one of the Placement IDs you created in the dashboard, to this ad.
+Thrid, in the Attributes Inspector, you need to assign one of the Placement IDs you created in the dashboard to this ad.
 
 ![](img/adbanner_attributes.png "Setting attributes")
 

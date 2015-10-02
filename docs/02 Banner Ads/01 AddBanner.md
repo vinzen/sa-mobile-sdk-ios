@@ -1,11 +1,18 @@
-Add the banner to the xib (or storyboard) file: Go to your xib file and add a UIView object to the view. In the Identity Inspector pane set the class of the view to SABannerView.
+To add a banner ad to your project using InterfaceBuilder, there are a couple of easy steps that you should follow.
+First, add a new UIView to your View Controller or view. Then, in the Identity Inspector, change it's class from UIView to SABannerView.
 
-![](img/custom_class.png "Setting custom class to UIView")
+![](img/adbanner_subview.png "Setting custom class to UIView")
 
-In the Size Inspector pane set the size of the banner. The following sizes are supported:
+Second, in the Size Inspector, make sure the view's size corresponds to one of the following supported sizes:
   * 320x50
   * 300x50
   * 728x90 (tablet)
   * 300x250
- 
-Finally, fill in Placement ID field in the Attributes Inspector pane. After you have set these values the ads should show up in your app.
+
+![](img/adbanner_size.png "Setting a custom size")
+
+Thrid, in the Attributes Inspector, you need to assign one of the Placement IDs you created in the dashboard, to this ad.
+
+![](img/adbanner_attributes.png "Setting attributes")
+
+After you have done this preliminary setup, you should run your project and an ad should appear.

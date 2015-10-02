@@ -1,4 +1,4 @@
-####Implementing SAVideoAdViewDelegate
+#### Implementing SAVideoAdViewDelegate
 If you want to be notified of various events in the vide ad's lifecycle, you can set its delegate to an object instance that implements the SAVideoAdViewDelegate protocol.
 
 The following methods are available in the protocol:

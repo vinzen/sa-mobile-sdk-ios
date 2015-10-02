@@ -35,7 +35,16 @@
         },
         {
             "name": "Interstitial Ads",
-            "text": "03 Interstitial Ads.md"
+            "sections": [
+                {
+                    "name":"Interstitial Ads With Code",
+                    "text":"03 Interstitial Ads/01 Interstitial Ads.md"
+                },
+                {
+                    "name":"Advanced Configuration",
+                    "text":"03 Interstitial Ads/02 Interstitial Config.md"
+                }
+            ]
         },
         {
             "name": "Video Ads",

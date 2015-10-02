@@ -2,7 +2,6 @@ If you just want to display a fullscreen video ad and not to worry about the del
 
 ```
 SAVideoAdViewController *vc = [[SAVideoAdViewController alloc] initWithPlacementID:@"__PLACEMENT_ID__"];
-[vc setParentalGateEnabled:YES];
 [self presentViewController:vc animated:YES completion:nil];
 ```
 

@@ -8,7 +8,7 @@ If you want to be notified of various events in the interstitial's lifecycle, th
 @end
 ```
 
-and the SAInterstitialView object's delegate property must be set to an object instance that implements the SABannerViewDelegate protocol, such as the MyCustomViewController.
+and the SAInterstitialView object's delegate property must be set to an object instance that implements the SAInterstitialViewDelegate protocol, such as the MyCustomViewController.
 
 ```
 @implementation MyCustomViewController

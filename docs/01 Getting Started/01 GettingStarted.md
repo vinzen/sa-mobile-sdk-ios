@@ -2,4 +2,4 @@ If you haven't registered your app on the SuperAwesome Dashboard yet, you can do
 
 ![](img/dashboard.png "Registering an app on the dashboard")
 
-Once your app is registered, you can create placements for it and use the documentation provided below to integrate these placements into your iOS app.
+Once your app is registered, you can create placements for it and use the documentation provided below to integrate these placements into your iOS application.

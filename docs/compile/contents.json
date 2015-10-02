@@ -7,7 +7,7 @@
             "sections": [
                 {
                     "name": "Registering Your App on the Dashboard",
-                    "text": "<p>If you haven&#39;t registered your app on the SuperAwesome Dashboard yet, you can do that by going to <a href=\"http://dashboard.superawesome.tv\">http://dashboard.superawesome.tv</a> and creating a new app.</p>\n<p><img src=\"img/dashboard.png\" alt=\"\" title=\"Registering an app on the dashboard\"></p>\n<p>Once your app is registered, you can create placements for it and use the documentation provided below to integrate these placements into your iOS app.</p>\n"
+                    "text": "<p>If you haven&#39;t registered your app on the SuperAwesome Dashboard yet, you can do that by going to <a href=\"http://dashboard.superawesome.tv\">http://dashboard.superawesome.tv</a> and creating a new app.</p>\n<p><img src=\"img/dashboard.png\" alt=\"\" title=\"Registering an app on the dashboard\"></p>\n<p>Once your app is registered, you can create placements for it and use the documentation provided below to integrate these placements into your iOS application.</p>\n"
                 },
                 {
                     "name": "Integrating the SDK",

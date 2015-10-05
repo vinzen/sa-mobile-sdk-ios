@@ -1,1 +1,1 @@
-../../../../../SuperAwesome/Classes/Banner/SABannerView.h
+../../../../../SuperAwesome/Classes/AdViews/SABannerView.h

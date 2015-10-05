@@ -7,11 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SuperAwesome.h"
 
-@interface VideoViewController : UIViewController <SAVideoAdViewProtocol>
+@interface VideoViewController : UIViewController
 
-@property (nonatomic,strong) IBOutlet SAVideoAdView *videoView;
 
 - (IBAction)startVideoAd:(id)sender;
 - (IBAction)stopVideoAd:(id)sender;

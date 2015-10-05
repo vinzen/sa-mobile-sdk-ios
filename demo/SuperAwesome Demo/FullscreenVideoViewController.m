@@ -7,7 +7,6 @@
 //
 
 #import "FullscreenVideoViewController.h"
-#import "SuperAwesome.h"
 
 @interface FullscreenVideoViewController ()
 
@@ -30,9 +29,6 @@
 
 - (IBAction)play:(id)sender
 {
-    SAVideoAdViewController *vc = [[SAVideoAdViewController alloc] initWithPlacementId:@"5740"];
-    vc.parentalGateEnabled = YES;
-    [self presentViewController:vc animated:YES completion:nil];
 }
 
 @end

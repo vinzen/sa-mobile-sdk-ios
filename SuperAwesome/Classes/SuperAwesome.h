@@ -1,65 +1,55 @@
 //
-//  SuperAwesome.h
-//  SAMobileSDK
+//  SuperAwesome2.h
+//  Pods
 //
-//  Created by Balázs Kiss on 29/07/14.
-//  Copyright (c) 2014 SuperAwesome Ltd. All rights reserved.
+//  Created by Gabriel Coman on 28/09/2015.
+//
 //
 
 #import <Foundation/Foundation.h>
+#import "SKLogger.h"
 
-#import "SAAdManager.h"
+// import all header files
+#import "SAAd.h"
+#import "SACreative.h"
+#import "SAImageDetials.h"
+#import "SAVideoDetails.h"
+#import "SAValueDetails.h"
+#import "SAEvent.h"
+#import "SANetwork.h"
+#import "SANetwork+Ad.h"
 
-// import parental gate
-#import "SAParentalGate.h"
-#import "SAPadlockView.h"
-
-//Advertising Classes
+// import views
+#import "SAAdView.h"
 #import "SABannerView.h"
 #import "SAInterstitialView.h"
-#import "SAAdResponse.h"
-#import "SAAdCreative.h"
-#import "SAEventManager.h"
-#import "SAVideoAdView.h"
-#import "SAVideoAdViewController.h"
+#import "SAVideoView.h"
 
-typedef NS_ENUM(NSUInteger, SAClientConfiguration) {
-    SAClientConfigurationDevelopment,
-    SAClientConfigurationStaging,
-    SAClientConfigurationProduction
+// typedef client configuration
+typedef NS_ENUM(NSUInteger, SAConfiguration) {
+    SAConfigurationDevelopment,
+    SAConfigurationStaging,
+    SAConfigurationProduction
 };
 
-typedef NS_ENUM(NSUInteger, SALoggingLevel) {
-    SALoggingLevelNone,
-    SALoggingLevelError,
-    SALoggingLevelWarning,
-    SALoggingLevelInfo,
-    SALoggingLevelDebug
-};
-
-/**
- *  SuperAwesome Mobile SDK Main Class
- */
+// interface declaration
 @interface SuperAwesome : NSObject
 
-/**
- *  SDK client configuration
- */
-@property (nonatomic,assign) SAClientConfiguration clientConfiguration;
-
-@property (nonatomic,assign,getter=isTestModeEnabled) BOOL testModeEnabled;
-
-@property (nonatomic,strong) SAAdManager *adManager;
-
-@property (nonatomic,assign) SALoggingLevel loggingLevel;
-
-- (NSString *)version;
-
-/**
- *  Returns singleton instance
- *
- *  @return singleton instance
- */
+// singleton instance (instead of init)
 + (SuperAwesome *)sharedManager;
+
+// other functions
+- (NSString*) version;
+
+// set configuration
+- (void) setConfigurationProduction;
+- (void) setConfigurationStaging;
+- (void) setConfigurationDevelopment;
+- (NSString*) getBaseURL;
+
+// test mode
+- (void) enableTestMode;
+- (void) disableTestMode;
+- (BOOL) isTestingEnabled;
 
 @end

@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SuperAwesome.h"
 
-@interface FullscreenVideoPreloadViewController : UIViewController <SAVideoAdViewControllerProtocol>
+@interface FullscreenVideoPreloadViewController : UIViewController
 
 @property (nonatomic,weak) IBOutlet UIButton *loadButton;
 @property (nonatomic,weak) IBOutlet UIButton *playButton;

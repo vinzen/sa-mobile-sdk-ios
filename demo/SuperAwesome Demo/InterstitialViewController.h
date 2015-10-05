@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SuperAwesome.h"
 
-@interface InterstitialViewController : UIViewController <SAInterstitialViewDelegate>
+@interface InterstitialViewController : UIViewController
 
 @property (nonatomic,weak) IBOutlet UIButton *showButton;
 

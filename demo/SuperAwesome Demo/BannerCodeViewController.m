@@ -11,18 +11,20 @@
 
 @interface BannerCodeViewController ()
 
+@property (nonatomic, strong) SABannerView *banner;
+
 @end
 
 @implementation BannerCodeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     
-    SABannerView *bannerView = [[SABannerView alloc] initWithFrame:CGRectMake(0, 100, 320, 50)];
-    bannerView.placementID = @"5687";
-    bannerView.parentalGateEnabled = YES;
-    [self.view addSubview:bannerView];
+    _banner = [[SABannerView alloc] initWithFrame:CGRectMake(0, 100, 320, 50)];
+    _banner.placementId = 10001;
+    [self.view addSubview:_banner];
+    
+    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {

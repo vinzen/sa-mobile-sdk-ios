@@ -7,11 +7,9 @@
 //
 
 #import "FullscreenVideoPreloadViewController.h"
-#import "SuperAwesome.h"
 
 @interface FullscreenVideoPreloadViewController ()
 
-@property (nonatomic,strong) SAVideoAdViewController *vc;
 
 @end
 
@@ -33,25 +31,10 @@
 - (IBAction)load:(id)sender
 {
     self.playButton.enabled = NO;
-    self.vc = [[SAVideoAdViewController alloc] initWithPlacementId:@"5740"];
-    self.vc.delegate = self;
 }
 
 - (IBAction)play:(id)sender
 {
-    [self presentViewController:self.vc animated:YES completion:nil];
-}
-
-#pragma mark - SAVideoViewControllerDelegate
-
-- (void)didLoadVideoAd:(SAVideoAdViewController *)videoAdViewController
-{
-    self.playButton.enabled = YES;
-}
-
-- (void)didFailToLoadVideoAd:(SAVideoAdViewController *)videoAdViewController
-{
-    NSLog(@"Ad Error");
 }
 
 

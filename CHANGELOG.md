@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+3.0 
+ - Rewriting the iOS SDK for better code
+
 2.1
  - Fixed issues with video-ads
  - Added parental gate to video-ads

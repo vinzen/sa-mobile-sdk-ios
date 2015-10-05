@@ -1,1 +1,1 @@
-../../../../../SuperAwesome/Classes/Padlock/SAPadlockView.h
+../../../../../SuperAwesome/Classes/AuxViews/SAPadlockView.h

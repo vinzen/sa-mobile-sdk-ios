@@ -19,7 +19,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    [[SuperAwesome sharedManager] setTestModeEnabled:YES];
+    [[SuperAwesome sharedManager] setConfigurationStaging];
+    [[SuperAwesome sharedManager] enableTestMode];
     
     return YES;
 }

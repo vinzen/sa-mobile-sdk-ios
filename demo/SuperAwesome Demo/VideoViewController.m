@@ -19,8 +19,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
-        _videoView.isFullscreen = false;
     }
     return self;
 }
@@ -28,9 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
-    self.videoView.delegate = self;
+    // Do any additional setup afte
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -42,7 +38,6 @@
 {
     [super viewDidDisappear:animated];
     
-    [self.videoView stop];
 }
 
 - (void)didReceiveMemoryWarning
@@ -53,21 +48,10 @@
 
 - (IBAction)startVideoAd:(id)sender
 {
-    [self.videoView play];
 }
 
 - (IBAction)stopVideoAd:(id)sender
 {
-    [self.videoView stop];
-}
-
-- (void)didStartPlayingVideoAd:(SAVideoAdView *)videoAd{
-    NSLog(@"Video playback started");
-}
-
-- (void)didFinishPlayingVideoAd:(SAVideoAdView *)videoAd
-{
-    NSLog(@"Video playback finished");
 }
 
 /*

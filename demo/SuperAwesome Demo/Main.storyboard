@@ -180,6 +180,7 @@
         <!--Banner Ad-->
         <scene sceneID="9S2-ss-n3B">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tyi-v3-hfR" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="WU7-N1-CSQ" customClass="BannerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vNn-AV-Jp8"/>
@@ -188,32 +189,11 @@
                     <view key="view" contentMode="scaleToFill" id="ot0-dr-pNm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wdz-hr-39R" customClass="SABannerView">
-                                <rect key="frame" x="0.0" y="430" width="320" height="50"/>
-                                <color key="backgroundColor" red="0.015825094775834048" green="0.46971170757312941" blue="1" alpha="0.35000000000000003" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="CcS-5u-jLo"/>
-                                    <constraint firstAttribute="width" constant="320" id="RXW-EF-GAF"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="placementID" value="5687"/>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="dI7-zc-PSP" firstAttribute="top" secondItem="Wdz-hr-39R" secondAttribute="bottom" id="HZQ-Cj-51S"/>
-                            <constraint firstAttribute="centerX" secondItem="Wdz-hr-39R" secondAttribute="centerX" id="Vrc-VS-2Lr"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Banner Ad" id="KFW-rm-Ngj"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
-                    <connections>
-                        <outlet property="bannerView" destination="Wdz-hr-39R" id="Zl1-XW-SlR"/>
-                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tyi-v3-hfR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="725" y="-1089"/>
         </scene>
@@ -348,56 +328,9 @@
                     <view key="view" contentMode="scaleToFill" id="dzL-LQ-eYn">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6qV-eX-bwa" customClass="SAVideoAdView">
-                                <rect key="frame" x="0.0" y="150" width="320" height="158"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="158" id="AVL-a3-7jj"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAutoplay" value="NO"/>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isFullscreen" value="NO"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="placementID" value="5740"/>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="parentalGateEnabled" value="YES"/>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rad-xa-XWM">
-                                <rect key="frame" x="114" y="331" width="34" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="kcr-V3-EdH"/>
-                                </constraints>
-                                <state key="normal" title="Start"/>
-                                <connections>
-                                    <action selector="startVideoAd:" destination="9WN-cW-xK1" eventType="touchUpInside" id="v7Z-0L-sIY"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TKE-Ia-LYv">
-                                <rect key="frame" x="175" y="331" width="32" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="4Sg-oW-i4n"/>
-                                </constraints>
-                                <state key="normal" title="Stop"/>
-                                <connections>
-                                    <action selector="stopVideoAd:" destination="9WN-cW-xK1" eventType="touchUpInside" id="wgo-L2-EQu"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="rad-xa-XWM" firstAttribute="leading" secondItem="dzL-LQ-eYn" secondAttribute="leading" constant="114" id="AUb-Ij-tZ6"/>
-                            <constraint firstItem="rad-xa-XWM" firstAttribute="top" secondItem="6qV-eX-bwa" secondAttribute="bottom" constant="23" id="AjQ-hF-3wm"/>
-                            <constraint firstAttribute="trailing" secondItem="6qV-eX-bwa" secondAttribute="trailing" id="GAp-zi-T3N"/>
-                            <constraint firstItem="TKE-Ia-LYv" firstAttribute="top" secondItem="6qV-eX-bwa" secondAttribute="bottom" constant="23" id="MGE-ud-LBc"/>
-                            <constraint firstAttribute="trailing" secondItem="TKE-Ia-LYv" secondAttribute="trailing" constant="113" id="cfA-oL-EfW"/>
-                            <constraint firstItem="6qV-eX-bwa" firstAttribute="leading" secondItem="dzL-LQ-eYn" secondAttribute="leading" id="iVg-OJ-XoH"/>
-                            <constraint firstItem="6qV-eX-bwa" firstAttribute="top" secondItem="xjD-So-cPx" secondAttribute="bottom" constant="86" id="nbs-BT-4Fo"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Video Ad" id="eWa-Ah-2oq"/>
-                    <connections>
-                        <outlet property="videoView" destination="6qV-eX-bwa" id="npu-xA-Yoc"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i0k-ge-pYf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

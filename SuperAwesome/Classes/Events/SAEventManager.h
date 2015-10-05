@@ -9,26 +9,22 @@
 #import <Foundation/Foundation.h>
 
 // predef classes
-@class SAEventRequest;
-@class SAAdResponse;
+@class SAEvent;
+@class SAAd;
 
 @interface SAEventManager : NSObject
 
 // singleton function
 + (id) sharedInstance;
 
-// other logging functions
-- (void) LogAdFetched:(SAAdResponse*) response;
-- (void) LogAdLoaded:(SAAdResponse*) response;
-- (void) LogViewableImpression:(SAAdResponse*) response;
-- (void) LogAdFailed:(SAAdResponse*) response;
-- (void) LogAdStart:(SAAdResponse*) response;
-- (void) LogAdStop:(SAAdResponse*) response;
-- (void) LogAdResume:(SAAdResponse*) response;
-- (void) LogUserCanceledParentalGate:(SAAdResponse*) response;
-- (void) LogUserSuccessWithParentalGate:(SAAdResponse*) response;
-- (void) LogUserErrorWithParentalGate:(SAAdResponse*) response;
-- (void) LogClick:(SAAdResponse*) response;
-- (void) LogRating:(SAAdResponse*) response withValue:(int)rating;
+- (void) LogAdLoad:(SAAd*) ad;
+- (void) LogAdFail:(SAAd*) ad;
+- (void) LogViewableImpression:(SAAd*) ad;
+- (void) LogAdStop:(SAAd*) ad;
+- (void) LogAdRate:(SAAd*) ad withValue:(NSInteger)value;
+- (void) LogPGCancel:(SAAd*) ad;
+- (void) LogPGSuccess:(SAAd*) ad;
+- (void) LogPGError:(SAAd*)ad;
+- (void) LogClick:(SAAd*)ad;
 
 @end

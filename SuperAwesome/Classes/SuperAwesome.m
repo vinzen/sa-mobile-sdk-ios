@@ -1,15 +1,25 @@
 //
-//  SuperAwesome.m
-//  SAMobileSDK
+//  SuperAwesome2.m
+//  Pods
 //
-//  Created by Balázs Kiss on 29/07/14.
-//  Copyright (c) 2014 SuperAwesome Ltd. All rights reserved.
+//  Created by Gabriel Coman on 28/09/2015.
+//
 //
 
+// import header
 #import "SuperAwesome.h"
-#import "SKLogger.h"
+
+// define
+#define BASE_URL_STAGING @"https://staging.beta.ads.superawesome.tv/v2"
+#define BASE_URL_DEVELOPMENT @"https://dev.ads.superawesome.tv/v2"
+#define BASE_URL_PRODUCTION @"https://ads.superawesome.tv/v2"
 
 @interface SuperAwesome ()
+
+// private vars
+@property (nonatomic, strong) NSString *baseURL;
+@property (nonatomic, assign) BOOL isTestEnabled;
+@property (nonatomic, assign) SAConfiguration configuration;
 
 @end
 
@@ -26,68 +36,72 @@
     return sharedManager;
 }
 
-- (instancetype)init
-{
-    if(self = [super init]){
-        _adManager = [[SAAdManager alloc] init];
-        NSLog(@"%@", [self version]);
-        [self setClientConfiguration:SAClientConfigurationProduction];
+- (instancetype) init {
+    if (self = [super init]) {
+        // do nothing
+        [self setConfiguration:SAConfigurationProduction];
+        [self disableTestMode];
     }
+    
     return self;
 }
 
-- (NSString *)version
-{
-    return @"SuperAwesome iOS SDK version 2.1";
+- (NSString*) version {
+    return @"3.0";
 }
 
-
-- (void)setClientConfiguration:(SAClientConfiguration)clientConfiguration
-{
-    _clientConfiguration = clientConfiguration;
-    
-    if(self.clientConfiguration == SAClientConfigurationProduction){
-        self.adManager.baseURL = @"https://ads.superawesome.tv/v2";
-        [self setLoggingLevel:SALoggingLevelWarning];
-    }else if(self.clientConfiguration == SAClientConfigurationStaging){
-        self.adManager.baseURL = @"https://staging.beta.ads.superawesome.tv/v2";
-        [self setLoggingLevel:SALoggingLevelDebug];
-    }else{
-        self.adManager.baseURL = @"https://dev.ads.superawesome.tv/v2";
-        [self setLoggingLevel:SALoggingLevelDebug];
-    }
+- (void) setLogging:(SourceKitLogLevel)loglevel {
+    [SKLogger setLogLevel:loglevel];
 }
 
-- (void)setTestModeEnabled:(BOOL)testModeEnabled
-{
-    _testModeEnabled = testModeEnabled;
-    self.adManager.testModeEnabled = testModeEnabled;
-}
-
-- (void)setLoggingLevel:(SALoggingLevel)loggingLevel
-{
-    _loggingLevel = loggingLevel;
-    
-    switch (loggingLevel) {
-        case SALoggingLevelNone:
-            [SKLogger setLogLevel:SourceKitLogLevelNone];
+- (void) setConfiguration:(SAConfiguration)configuration {
+    switch (configuration) {
+        case SAConfigurationProduction:{
+            _baseURL = BASE_URL_PRODUCTION;
+            [self setLogging:SourceKitLogLevelWarning];
             break;
-        case SALoggingLevelError:
-            [SKLogger setLogLevel:SourceKitLogLevelError];
+        }
+        case SAConfigurationDevelopment:{
+            _baseURL = BASE_URL_DEVELOPMENT;
+            [self setLogging:SourceKitLogLevelDebug];
             break;
-        case SALoggingLevelWarning:
-            [SKLogger setLogLevel:SourceKitLogLevelWarning];
+        }
+        case SAConfigurationStaging:{
+            _baseURL = BASE_URL_STAGING;
+            [self setLogging:SourceKitLogLevelDebug];
             break;
-        case SALoggingLevelInfo:
-            [SKLogger setLogLevel:SourceKitLogLevelInfo];
-            break;
-        case SALoggingLevelDebug:
-            [SKLogger setLogLevel:SourceKitLogLevelDebug];
-            break;
+        }
         default:
             break;
     }
-    
+}
+
+- (void) setConfigurationProduction {
+    [self setConfiguration:SAConfigurationProduction];
+}
+
+- (void) setConfigurationStaging {
+    [self setConfiguration:SAConfigurationStaging];
+}
+
+- (void) setConfigurationDevelopment {
+    [self setConfiguration:SAConfigurationDevelopment];
+}
+
+- (NSString*) getBaseURL {
+    return _baseURL;
+}
+
+- (void) enableTestMode {
+    _isTestEnabled = true;
+}
+
+- (void) disableTestMode {
+    _isTestEnabled = false;
+}
+
+- (BOOL) isTestingEnabled {
+    return _isTestEnabled;
 }
 
 

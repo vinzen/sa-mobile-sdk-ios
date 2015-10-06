@@ -6,7 +6,7 @@
 //
 //
 
-#import "SAAdView.h"
+#import "SAFullscreenAdView.h"
 
-@interface SAInterstitialView : SAAdView
+@interface SAInterstitialAd : SAFullscreenAdView
 @end

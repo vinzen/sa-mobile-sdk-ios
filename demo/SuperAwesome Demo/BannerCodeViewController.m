@@ -11,7 +11,7 @@
 
 @interface BannerCodeViewController ()
 
-@property (nonatomic, strong) SABannerView *banner;
+@property (nonatomic, strong) SABannerAd *banner;
 
 @end
 
@@ -20,8 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _banner = [[SABannerView alloc] initWithFrame:CGRectMake(0, 100, 320, 50)];
-    _banner.placementId = 10001;
+    _banner = [[SABannerAd alloc] initWithFrame:CGRectMake(0, 100, 320, 50) andPlacementId:10001];
     [self.view addSubview:_banner];
     
     // Do any additional setup after loading the view.

@@ -7,8 +7,11 @@
 //
 
 #import "BannerViewController.h"
+#import "SuperAwesome.h"
 
 @interface BannerViewController ()
+
+@property (weak, nonatomic) IBOutlet SABannerAd *banner;
 
 @end
 
@@ -20,6 +23,7 @@
     if (self) {
         // Custom initialization
         
+        
     }
     return self;
 }
@@ -27,6 +31,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [_banner play];
+    
     // Do any additional setup after loading the view.
     
 }

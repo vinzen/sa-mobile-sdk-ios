@@ -7,6 +7,7 @@
 //
 
 #import "VideoViewController.h"
+#import "SuperAwesome.h"
 
 @interface VideoViewController ()
 //@property (weak, nonatomic) IBOutlet SAVideoAdView2 *viewAdView2;
@@ -27,6 +28,9 @@
 {
     [super viewDidLoad];
     // Do any additional setup afte
+    
+    SAVideoAd *videoad = [[SAVideoAd alloc] initWithFrame:CGRectMake(20, 50, 320, 240) andPlacementId:10002];
+    [self.view addSubview:videoad];
 }
 
 - (void)viewDidAppear:(BOOL)animated

@@ -42,23 +42,18 @@
 // public mmeber variables
 @property (nonatomic, assign) IBInspectable NSInteger placementId;
 @property (nonatomic, assign) IBInspectable BOOL isParentalGateEnabled;
-@property (nonatomic, assign) IBInspectable BOOL isFullscreen;
-@property (nonatomic, assign) IBInspectable BOOL loadInstantly;
-@property (nonatomic, assign) IBInspectable BOOL startInstantly;
+@property (nonatomic, assign) IBInspectable BOOL playInstantly;
 @property (nonatomic, assign) IBInspectable NSInteger refreshPeriod;
 
 // major ad view functions
-- (void) load;
-- (void) show;
-- (void) play; // same as show
-- (void) close;
-- (void) stop; // same as close
+- (void) play;
+- (void) display;
 
 // aux creation functions
-- (void) createTimerViewWithParent:(UIView*)parent;
+//- (void) createTimerViewWithParent:(UIView*)parent;
 - (void) createPadlockButtonWithParent:(UIView*)parent;
 - (void) createTapButtonWithParent:(UIView*)parent;
-- (void) createLearnMoreButtonWithParent:(UIView*)parent;
-- (void) createCloseButtonWithParent:(UIView*)parent;
+//- (void) createLearnMoreButtonWithParent:(UIView*)parent;
+//- (void) createCloseButtonWithParent:(UIView*)parent;
 
 @end

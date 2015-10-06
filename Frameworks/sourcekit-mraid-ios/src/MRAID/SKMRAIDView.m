@@ -1039,14 +1039,14 @@ typedef enum {
     UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
     wv.autoresizesSubviews = YES;
     
-    if ([supportedFeatures containsObject:MRAIDSupportsInlineVideo]) {
+//    if ([supportedFeatures containsObject:MRAIDSupportsInlineVideo]) {
         wv.allowsInlineMediaPlayback = YES;
         wv.mediaPlaybackRequiresUserAction = NO;
-    } else {
-        wv.allowsInlineMediaPlayback = NO;
-        wv.mediaPlaybackRequiresUserAction = YES;
-        [SKLogger warning:@"MRAID - View" withMessage:[NSString stringWithFormat:@"No inline video support has been included, videos will play full screen without autoplay."]];
-    }
+//    } else {
+//        wv.allowsInlineMediaPlayback = NO;
+//        wv.mediaPlaybackRequiresUserAction = YES;
+//        [SKLogger warning:@"MRAID - View" withMessage:[NSString stringWithFormat:@"No inline video support has been included, videos will play full screen without autoplay."]];
+//    }
     
     // disable scrolling
     UIScrollView *scrollView;

@@ -38,11 +38,10 @@
 // custom init functions
 - (id) init {
     if (self = [super init]) {
+        // init defaults
         _placementId = 0;
         _isParentalGateEnabled = true;
-        _isFullscreen = true;
-        _loadInstantly = true;
-        _startInstantly = true;
+        _playInstantly = true;
         _refreshPeriod = 30;
     }
     
@@ -51,11 +50,10 @@
 
 - (id) initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]){
+        // init defaults
         _placementId = 0;
         _isParentalGateEnabled = true;
-        _isFullscreen = true;
-        _loadInstantly = true;
-        _startInstantly = true;
+        _playInstantly = true;
         _refreshPeriod = 30;
     }
     
@@ -64,27 +62,18 @@
 
 - (id) initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
+        // init defaults
         _placementId = 0;
         _isParentalGateEnabled = true;
-        _isFullscreen = true;
-        _loadInstantly = true;
-        _startInstantly = true;
+        _playInstantly = true;
         _refreshPeriod = 30;
     }
     
     return self;
 }
 
-- (void) didMoveToWindow {
-    [super didMoveToWindow];
+- (void) play {
     
-    // only load data if this is set to true
-    if (_loadInstantly) {
-        [self load];
-    }
-}
-
-- (void) load {
     // don't implement this here
     [SANetwork getAdWith:_placementId withSuccess:^(SAAd *ad) {
         // assign ad
@@ -96,9 +85,7 @@
         }
         
         // only show if it started instantly
-        if (_startInstantly) {
-            [self show];
-        }
+        [self display];
     } orFailure:^{
         // call to delegate
         if (_delegate && [_delegate respondsToSelector:@selector(adFailedToLoad:)]) {
@@ -107,38 +94,16 @@
     }];
 }
 
-- (void) show {
-    // do nothing for now
-    if (_ad == nil) {
-        _startInstantly = true;
-        [self load];
-        return;
-    }
-}
-
-- (void) play {
-    // the same as show
-    [self show];
-}
-
-- (void) close {
-    // don't implement this here
-    if (_delegate && [_delegate respondsToSelector:@selector(adWasClosed:)]) {
-        [_delegate adWasClosed:_ad.placementId];
-    }
-}
-
-- (void) stop {
-    // the same as close
-    [self close];
+- (void) display {
+    // do nothing here
 }
 
 #pragma mark Aux create functions
 
-- (void) createTimerViewWithParent:(UIView *)parent{
-    // no implementation now
-}
-
+//- (void) createTimerViewWithParent:(UIView *)parent{
+//    // no implementation now
+//}
+//
 - (void) createPadlockButtonWithParent:(UIView *)parent{
     // 2.
     // add the padlock button
@@ -155,7 +120,7 @@
     [parent addSubview:_padlockBtn];
     [parent bringSubviewToFront:_padlockBtn];
 }
-
+//
 - (void) createTapButtonWithParent:(UIView *)parent{
     // 1.
     // add the click button
@@ -166,35 +131,35 @@
     [parent addSubview:_clickBtn];
     [parent bringSubviewToFront:_clickBtn];
 }
-
-- (void) createLearnMoreButtonWithParent:(UIView *)parent{
-    CGFloat w = parent.frame.size.width;
-    CGFloat offset = (_isFullscreen ? 40 : 0);
-    
-    // step 1. learn more button
-    _learnMoreBtn = [[UIButton alloc] init];
-    [_learnMoreBtn setBackgroundColor:[UIColor clearColor]];
-    [_learnMoreBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [_learnMoreBtn setTitle:@"Learn more" forState:UIControlStateNormal];
-    [[_learnMoreBtn titleLabel] setFont:[UIFont systemFontOfSize:12]];
-    _learnMoreBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
-    _learnMoreBtn.contentEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 10);
-    [_learnMoreBtn setFrame:CGRectMake(w - 120, offset, 120, 22)];
-    [_learnMoreBtn addTarget:self action:@selector(onAdClick) forControlEvents:UIControlEventTouchUpInside];
-    [parent addSubview:_learnMoreBtn];
-    [parent bringSubviewToFront:_learnMoreBtn];
-}
-
-- (void) createCloseButtonWithParent:(UIView*)parent {
-    CGSize size = CGSizeMake(30, 30);
-    CGRect frame = CGRectMake(parent.frame.size.width - size.width, 0, size.width, size.height);
-    _closeBtn = [[UIButton alloc] initWithFrame:frame];
-    [_closeBtn setTitle:@"" forState:UIControlStateNormal];
-    [_closeBtn setImage:[UIImage imageNamed:@"close.png"] forState:UIControlStateNormal];
-    [_closeBtn addTarget:self action:@selector(close) forControlEvents:UIControlEventTouchUpInside];
-    [parent addSubview:_closeBtn];
-    [parent bringSubviewToFront:_closeBtn];
-}
+//
+//- (void) createLearnMoreButtonWithParent:(UIView *)parent{
+//    CGFloat w = parent.frame.size.width;
+//    CGFloat offset = (_isFullscreen ? 40 : 0);
+//    
+//    // step 1. learn more button
+//    _learnMoreBtn = [[UIButton alloc] init];
+//    [_learnMoreBtn setBackgroundColor:[UIColor clearColor]];
+//    [_learnMoreBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+//    [_learnMoreBtn setTitle:@"Learn more" forState:UIControlStateNormal];
+//    [[_learnMoreBtn titleLabel] setFont:[UIFont systemFontOfSize:12]];
+//    _learnMoreBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
+//    _learnMoreBtn.contentEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 10);
+//    [_learnMoreBtn setFrame:CGRectMake(w - 120, offset, 120, 22)];
+//    [_learnMoreBtn addTarget:self action:@selector(onAdClick) forControlEvents:UIControlEventTouchUpInside];
+//    [parent addSubview:_learnMoreBtn];
+//    [parent bringSubviewToFront:_learnMoreBtn];
+//}
+//
+//- (void) createCloseButtonWithParent:(UIView*)parent {
+//    CGSize size = CGSizeMake(30, 30);
+//    CGRect frame = CGRectMake(parent.frame.size.width - size.width, 0, size.width, size.height);
+//    _closeBtn = [[UIButton alloc] initWithFrame:frame];
+//    [_closeBtn setTitle:@"" forState:UIControlStateNormal];
+//    [_closeBtn setImage:[UIImage imageNamed:@"close.png"] forState:UIControlStateNormal];
+//    [_closeBtn addTarget:self action:@selector(close) forControlEvents:UIControlEventTouchUpInside];
+//    [parent addSubview:_closeBtn];
+//    [parent bringSubviewToFront:_closeBtn];
+//}
 
 #pragma mark On Click actions - ad and padlock
 

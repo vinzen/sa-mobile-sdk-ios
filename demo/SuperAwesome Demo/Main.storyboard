@@ -180,7 +180,6 @@
         <!--Banner Ad-->
         <scene sceneID="9S2-ss-n3B">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tyi-v3-hfR" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="WU7-N1-CSQ" customClass="BannerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vNn-AV-Jp8"/>
@@ -189,11 +188,37 @@
                     <view key="view" contentMode="scaleToFill" id="ot0-dr-pNm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v9S-yF-GnP" customClass="SABannerAd">
+                                <rect key="frame" x="0.0" y="106" width="320" height="50"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ifh-OX-hop"/>
+                                    <constraint firstAttribute="width" constant="320" id="jQC-id-lKJ"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="placementId">
+                                        <integer key="value" value="10001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="loadInstantly" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="startInstantly" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="playInstantly" value="NO"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="v9S-yF-GnP" firstAttribute="top" secondItem="vNn-AV-Jp8" secondAttribute="bottom" constant="42" id="Gpi-7h-Z9C"/>
+                            <constraint firstItem="v9S-yF-GnP" firstAttribute="centerX" secondItem="ot0-dr-pNm" secondAttribute="centerX" id="zPq-Lo-9fW"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Banner Ad" id="KFW-rm-Ngj"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="banner" destination="v9S-yF-GnP" id="o6s-Xx-Ehh"/>
+                    </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tyi-v3-hfR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="725" y="-1089"/>
         </scene>

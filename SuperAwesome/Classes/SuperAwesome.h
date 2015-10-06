@@ -21,9 +21,10 @@
 
 // import views
 #import "SAAdView.h"
-#import "SABannerView.h"
-#import "SAInterstitialView.h"
-#import "SAVideoView.h"
+#import "SABannerAd.h"
+#import "SAInterstitialAd.h"
+#import "SAVideoAd.h"
+#import "SAFullscreenVideoAd.h"
 
 // typedef client configuration
 typedef NS_ENUM(NSUInteger, SAConfiguration) {

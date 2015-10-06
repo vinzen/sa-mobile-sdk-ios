@@ -44,6 +44,6 @@
    serviceDelegate:(id<SKMRAIDServiceDelegate>)serviceDelegate
  rootViewController:(UIViewController *)rootViewController;
 
-- (void)cancel;
+- (void) cancel;
 
 @end

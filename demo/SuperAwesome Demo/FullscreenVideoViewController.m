@@ -7,9 +7,10 @@
 //
 
 #import "FullscreenVideoViewController.h"
+#import "SuperAwesome.h"
 
 @interface FullscreenVideoViewController ()
-
+@property (nonatomic, strong) SAFullscreenVideoAd *vad;
 @end
 
 @implementation FullscreenVideoViewController
@@ -17,8 +18,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
     self.title = @"Fullscreen Video Ad";
+    
+    _vad = [[SAFullscreenVideoAd alloc] initWithParentVC:self andPlcementId:10002];
+    [_vad play];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,6 +33,7 @@
 
 - (IBAction)play:(id)sender
 {
+    [_vad play];
 }
 
 @end

@@ -7,8 +7,11 @@
 //
 
 #import "InterstitialViewController.h"
+#import "SuperAwesome.h"
 
 @interface InterstitialViewController ()
+
+@property (nonatomic, strong) SAInterstitialAd *interstitial;
 
 @end
 
@@ -19,7 +22,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.showButton.enabled = NO;
+    _interstitial = [[SAInterstitialAd alloc] initWithParentVC:self andPlcementId:10029];
+//    _interstitial.placementId = 10002; // 10029; // 10002;
+//    [self.view addSubview:_interstitial];
     
 }
 
@@ -31,6 +36,8 @@
 
 - (IBAction)presentInterstitial:(id)sender
 {
+    [_interstitial play];
+//    [_interstitial showWithVC:self];
 }
 
 @end

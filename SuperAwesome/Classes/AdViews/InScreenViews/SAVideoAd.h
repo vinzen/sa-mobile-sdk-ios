@@ -6,8 +6,7 @@
 //
 //
 
-#import "SAAdView.h"
+#import "SAInScreenAdView.h"
 
-@interface SAVideoView : SAAdView
-
+@interface SAVideoAd : SAInScreenAdView
 @end

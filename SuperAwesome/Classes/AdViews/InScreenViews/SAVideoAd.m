@@ -11,7 +11,7 @@
 // import other headers
 #import "SAAd.h"
 #import "SACreative.h"
-#import "SAVideoDetails.h"
+#import "SADetails.h"
 #import "SKMRAIDView.h"
 #import "SKMRAIDServiceDelegate.h"
 
@@ -32,9 +32,12 @@
     }
     
     // form the HTML
-    NSString *advid = [(SAVideoDetails*)super.ad.creative.details video];
-    NSString *htmlRaw = [NSString stringWithFormat:@"<html><head></head><body><div><video autoplay='true' webkit-playsinline width='320' height='240'><source src='%@' type='video/mp4'/></video></div></body></html>", advid];
-    
+    NSString *advid = super.ad.creative.details.video;
+    NSString *fPath = [[NSBundle mainBundle] pathForResource:@"displayVideo" ofType:@"html"];
+    NSString *htmlRaw = [NSString stringWithContentsOfFile:fPath encoding:NSUTF8StringEncoding error:nil];
+    htmlRaw = [htmlRaw stringByReplacingOccurrencesOfString:@"videoURL" withString:advid];
+
+    // setup the MRAID view
     raidview = [[SKMRAIDView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)
                                      withHtmlData:htmlRaw
                                       withBaseURL:[NSURL URLWithString:super.ad.creative.clickURL]
@@ -42,6 +45,8 @@
                                          delegate:self
                                   serviceDelegate:nil
                                rootViewController:nil];
+    
+    // add to superview (self)
     [self addSubview:raidview];
 }
 

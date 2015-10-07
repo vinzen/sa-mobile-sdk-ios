@@ -8,36 +8,16 @@
 
 #import "SAFullscreenAdView.h"
 #import "SKMRAIDInterstitial.h"
+#import "UIViewController+Utils.h"
 
 @interface SAFullscreenAdView () <SKMRAIDInterstitialDelegate>
 @end
 
 @implementation SAFullscreenAdView
 
-//- (id) init {
-//    @throw [NSException exceptionWithName:NSInternalInconsistencyException
-//                                   reason:@"-init is not a valid initializer for the class SAFullscreenView"
-//                                 userInfo:nil];
-//    return nil;
-//}
-//
-//- (id) initWithFrame:(CGRect)frame {
-//    @throw [NSException exceptionWithName:NSInternalInconsistencyException
-//                                   reason:@"-initWithFrame is not a valid initializer for the class SAFullscreenView"
-//                                 userInfo:nil];
-//    return nil;
-//}
-//
-//- (id) initWithCoder:(NSCoder *)aDecoder {
-//    @throw [NSException exceptionWithName:NSInternalInconsistencyException
-//                                   reason:@"-initWithCoder is not a valid initializer for the class SAFullscreenView"
-//                                 userInfo:nil];
-//    return nil;
-//}
-
-- (id) initWithParentVC:(UIViewController *)parent andPlcementId:(NSInteger)placementId{
+- (id) initWithPlcementId:(NSInteger)placementId{
     if (self = [super init]) {
-        vc = parent;
+        vc = [UIViewController currentViewController];
         super.placementId = placementId;
         super.playInstantly = false;
     }
@@ -72,8 +52,8 @@
     }
 }
 
-- (void)mraidServicePlayVideoWithUrlString:(NSString *)urlString {
-    NSLog(@"Video %@", urlString);
+- (void) mraidInterstitialNavigate:(SKMRAIDInterstitial *)mraidInterstitial withURL:(NSURL *)url {
+    [self onAdClick];
 }
 
 @end

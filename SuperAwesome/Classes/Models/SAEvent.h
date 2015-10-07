@@ -10,7 +10,7 @@
 
 // forward declaration
 @class SAAd;
-@class SAValueDetails;
+@class SADetails;
 
 // specific events for the ads
 typedef NS_ENUM(NSUInteger, SAEventType) {
@@ -33,11 +33,11 @@ NSString *SAEventTypeFromValue(SAEventType evt);
 
 // member variables
 @property (nonatomic, strong) SAAd *ad;
-@property (nonatomic, strong) SAValueDetails *details;
+@property (nonatomic, strong) SADetails *details;
 @property (nonatomic, assign) SAEventType type;
 
 // custom init
-- (id) initWithAd:(SAAd*)ad andDetails:(SAValueDetails*)details andEventType:(SAEventType)type;
+- (id) initWithAd:(SAAd*)ad andDetails:(SADetails*)details andEventType:(SAEventType)type;
 
 // function that reansforms this into an NSMutableDictionary
 - (NSDictionary*) dictionaryFromModel;

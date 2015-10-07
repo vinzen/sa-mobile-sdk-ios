@@ -16,6 +16,6 @@
 }
 
 // custom initializer
-- (id) initWithParentVC:(UIViewController*)parent andPlcementId:(NSInteger)placementId;
+- (id) initWithPlcementId:(NSInteger)placementId;
 
 @end

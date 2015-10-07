@@ -11,7 +11,7 @@
 
 // import other header files
 #import "SAAd.h"
-#import "SAValueDetails.h"
+#import "SADetails.h"
 #import "SACreative.h"
 
 // function that transforms the event type enum into a string
@@ -36,7 +36,7 @@ NSString *SAEventTypeFromValue(SAEventType evt) {
 
 @implementation SAEvent
 
-- (id) initWithAd:(SAAd *)ad andDetails:(SAValueDetails *)details andEventType:(SAEventType)type {
+- (id) initWithAd:(SAAd *)ad andDetails:(SADetails *)details andEventType:(SAEventType)type {
     if (self = [super init]) {
         _ad = ad;
         _details = details;

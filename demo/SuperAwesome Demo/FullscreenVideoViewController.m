@@ -20,7 +20,7 @@
     // Do any additional setup after loading the view.
     self.title = @"Fullscreen Video Ad";
     
-    _vad = [[SAFullscreenVideoAd alloc] initWithParentVC:self andPlcementId:10002];
+    _vad = [[SAFullscreenVideoAd alloc] initWithPlcementId:10002];
     [_vad play];
     
 }

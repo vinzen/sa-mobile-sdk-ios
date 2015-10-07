@@ -48,11 +48,11 @@
 // major ad view functions
 - (void) play;
 - (void) display;
+- (void) onAdClick;
 
 // aux creation functions
 //- (void) createTimerViewWithParent:(UIView*)parent;
 - (void) createPadlockButtonWithParent:(UIView*)parent;
-- (void) createTapButtonWithParent:(UIView*)parent;
 //- (void) createLearnMoreButtonWithParent:(UIView*)parent;
 //- (void) createCloseButtonWithParent:(UIView*)parent;
 

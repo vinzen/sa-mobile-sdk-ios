@@ -81,7 +81,7 @@
 }
 
 - (void) LogAdRate:(SAAd*) ad  withValue:(NSInteger)value {
-    SAValueDetails *details = [[SAValueDetails alloc] init];
+    SADetails *details = [[SADetails alloc] init];
     details.value = value;
     
     _event = [[SAEvent alloc] initWithAd:ad andDetails:details andEventType:AdRate];

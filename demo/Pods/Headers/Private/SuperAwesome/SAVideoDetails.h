@@ -1,1 +1,0 @@
-../../../../../SuperAwesome/Classes/Models/SAVideoDetails.h

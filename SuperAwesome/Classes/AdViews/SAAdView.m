@@ -121,17 +121,6 @@
     [parent bringSubviewToFront:_padlockBtn];
 }
 //
-- (void) createTapButtonWithParent:(UIView *)parent{
-    // 1.
-    // add the click button
-    _clickBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, parent.frame.size.width, parent.frame.size.height)];
-    [_clickBtn addTarget:self action:@selector(onAdClick) forControlEvents:UIControlEventTouchUpInside];
-    [_clickBtn setBackgroundColor:[UIColor clearColor]];
-    [_clickBtn setTitle:@"" forState:UIControlStateNormal];
-    [parent addSubview:_clickBtn];
-    [parent bringSubviewToFront:_clickBtn];
-}
-//
 //- (void) createLearnMoreButtonWithParent:(UIView *)parent{
 //    CGFloat w = parent.frame.size.width;
 //    CGFloat offset = (_isFullscreen ? 40 : 0);

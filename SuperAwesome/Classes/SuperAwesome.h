@@ -12,15 +12,12 @@
 // import all header files
 #import "SAAd.h"
 #import "SACreative.h"
-#import "SAImageDetials.h"
-#import "SAVideoDetails.h"
-#import "SAValueDetails.h"
+#import "SADetails.h"
 #import "SAEvent.h"
 #import "SANetwork.h"
 #import "SANetwork+Ad.h"
 
 // import views
-#import "SAAdView.h"
 #import "SABannerAd.h"
 #import "SAInterstitialAd.h"
 #import "SAVideoAd.h"

@@ -22,10 +22,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    _interstitial = [[SAInterstitialAd alloc] initWithParentVC:self andPlcementId:10029];
-//    _interstitial.placementId = 10002; // 10029; // 10002;
-//    [self.view addSubview:_interstitial];
-    
+    _interstitial = [[SAInterstitialAd alloc] initWithPlcementId:10029];
 }
 
 - (void)didReceiveMemoryWarning

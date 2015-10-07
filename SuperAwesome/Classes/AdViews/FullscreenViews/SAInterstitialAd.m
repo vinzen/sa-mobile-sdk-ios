@@ -11,11 +11,12 @@
 // import other headers
 #import "SAAd.h"
 #import "SACreative.h"
-#import "SAImageDetials.h"
+#import "SADetails.h"
 #import "SKMRAIDInterstitial.h"
 #import "SKMRAIDServiceDelegate.h"
+#import "UIViewController+Utils.h"
 
-@interface SAInterstitialAd () <SKMRAIDInterstitialDelegate, SKMRAIDServiceDelegate>
+@interface SAInterstitialAd () <SKMRAIDInterstitialDelegate>
 @end
 
 @implementation SAInterstitialAd
@@ -25,11 +26,15 @@
     [super display];
     
     // form the HTML
-    NSString *adimg = [(SAImageDetials*)super.ad.creative.details image];
-    NSString *html = [NSString stringWithFormat:@"<html><head></head><body><div><a><img src=\"%@\"></a></div></body></html>", adimg];
+    NSString *adimg = super.ad.creative.details.image;
+    NSString *click = super.ad.creative.clickURL;
+    NSString *fPath = [[NSBundle mainBundle] pathForResource:@"displayImage" ofType:@"html"];
+    NSString *htmlRaw = [NSString stringWithContentsOfFile:fPath encoding:NSUTF8StringEncoding error:nil];
+    htmlRaw = [htmlRaw stringByReplacingOccurrencesOfString:@"hrefURL" withString:click];
+    htmlRaw = [htmlRaw stringByReplacingOccurrencesOfString:@"imgURL" withString:adimg];
     
     raidview = [[SKMRAIDInterstitial alloc] initWithSupportedFeatures:@[MRAIDSupportsInlineVideo]
-                                                         withHtmlData:html
+                                                         withHtmlData:htmlRaw
                                                           withBaseURL:[NSURL URLWithString:super.ad.creative.clickURL]
                                                              delegate:self
                                                       serviceDelegate:nil

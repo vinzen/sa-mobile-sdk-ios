@@ -8,10 +8,7 @@
 
 // import this model's header
 #import "SACreative.h"
-
-// import other model headers
-#import "SAImageDetials.h"
-#import "SAVideoDetails.h"
+#import "SADetails.h"
 
 // custom function to convert creative type to string
 NSString *SACreativeFormatToString(SACreativeFormat format) {
@@ -20,6 +17,10 @@ NSString *SACreativeFormatToString(SACreativeFormat format) {
     switch(format) {
             PROCESS_VAL(image_with_link);
             PROCESS_VAL(video);
+            PROCESS_VAL(rich_media);
+            PROCESS_VAL(rich_media_resizing);
+            PROCESS_VAL(swf);
+            PROCESS_VAL(tag);
     }
 #undef PROCESS_VAL
     
@@ -33,13 +34,19 @@ NSString *SACreativeFormatToString(SACreativeFormat format) {
     if (self = [super init]) {
         _Nullable id creativeIdObj = [dict objectForKey:@"creative_id"];
         _Nullable id nameObj = [dict objectForKey:@"name"];
+        _Nullable id cpmObj = [dict objectForKey:@"cpm"];
         _Nullable id formatObj = [dict objectForKey:@"format"];
+        _Nullable id impressionUrlObj = [dict objectForKey:@"impression_url"];
         _Nullable id clickUrlObj = [dict objectForKey:@"click_url"];
         _Nullable id detailsObj = [dict objectForKey:@"details"];
+        _Nullable id approvedObj = [dict objectForKey:@"approved"];
         
         _creativeId = (creativeIdObj != NULL ? [creativeIdObj integerValue] : -1);
+        _cpm = (cpmObj != NULL ? [cpmObj integerValue] : 0);
         _name = (nameObj != NULL ? nameObj : NULL);
+        _impressionURL = (impressionUrlObj != NULL ? impressionUrlObj : NULL);
         _clickURL = (clickUrlObj != NULL ? clickUrlObj : NULL);
+        _approved = (approvedObj != NULL ? [approvedObj boolValue] : false);
         
         // get format & assign details based on format contract
         if (formatObj != NULL) {
@@ -49,14 +56,23 @@ NSString *SACreativeFormatToString(SACreativeFormat format) {
             if ([formatObj isEqualToString:SACreativeFormatToString(video)]) {
                 _format = video;
             }
+            if ([formatObj isEqualToString:SACreativeFormatToString(rich_media)]) {
+                _format = rich_media;
+            }
+            if ([formatObj isEqualToString:SACreativeFormatToString(rich_media_resizing)]) {
+                _format = rich_media_resizing;
+            }
+            if ([formatObj isEqualToString:SACreativeFormatToString(swf)]) {
+                _format = swf;
+            }
+            if ([formatObj isEqualToString:SACreativeFormatToString(tag)]) {
+                _format = tag;
+            }
         }
+        
+        // go forward and parse Details
         if (detailsObj != NULL) {
-            if (_format == image_with_link) {
-                _details = [[SAImageDetials alloc] initWithDictionary:detailsObj];
-            }
-            if (_format == video) {
-                _details = [[SAVideoDetails alloc] initWithDictionary:detailsObj];
-            }
+            _details = [[SADetails alloc] initWithDictionary:detailsObj];
         }
     }
     

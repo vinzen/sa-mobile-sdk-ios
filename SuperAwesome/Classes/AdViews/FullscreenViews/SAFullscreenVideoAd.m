@@ -11,11 +11,12 @@
 // import other headers
 #import "SAAd.h"
 #import "SACreative.h"
-#import "SAVideoDetails.h"
+#import "SADetails.h"
 #import "SKMRAIDInterstitial.h"
 #import "SKMRAIDServiceDelegate.h"
+#import "UIViewController+Utils.h"
 
-@interface SAFullscreenVideoAd () <SKMRAIDInterstitialDelegate, SKMRAIDServiceDelegate>
+@interface SAFullscreenVideoAd () <SKMRAIDInterstitialDelegate>
 @end
 
 @implementation SAFullscreenVideoAd
@@ -25,9 +26,12 @@
     [super display];
     
     // form the HTML
-    NSString *advid = [(SAVideoDetails*)super.ad.creative.details video];
-    NSString *htmlRaw = [NSString stringWithFormat:@"<html><head></head><body><div><video autoplay='true' webkit-playsinline width='320' height='240'><source src='%@' type='video/mp4'/></video></div></body></html>", advid];
-    
+    NSString *advid = super.ad.creative.details.video;
+    NSString *fPath = [[NSBundle mainBundle] pathForResource:@"displayVideo" ofType:@"html"];
+    NSString *htmlRaw = [NSString stringWithContentsOfFile:fPath encoding:NSUTF8StringEncoding error:nil];
+    htmlRaw = [htmlRaw stringByReplacingOccurrencesOfString:@"videoURL" withString:advid];
+
+    // create the mraid webview
     raidview = [[SKMRAIDInterstitial alloc] initWithSupportedFeatures:@[MRAIDSupportsInlineVideo]
                                                          withHtmlData:htmlRaw
                                                           withBaseURL:[NSURL URLWithString:super.ad.creative.clickURL]

@@ -3,12 +3,17 @@
     <head>
         <meta charset="UTF-8">
         <title>SuperAwesome Video Template</title>
+        <style>
+            div#big { width: 320px; height:240px; }
+            div#more { position: absolute; right: 0px; top: 0px; width: 120px; height: 20px; text-align: right; padding-right: 5px; }
+            a#shormore: link, a#shormore: visited, a#shormore: link,  {
+        </style>
     </head>
     <body>
-        <div>
-            <video autoplay='true' webkit-playsinline width='320' height='240'>
-                <source src='videoURL' type='video/mp4'/>
-            </video>
+        <div id='big'>
+            <div id='more'>
+                <a id='showmore' href='hrefURL'>Show More</a>
+            </div>
         </div>
     </body>
 </html>

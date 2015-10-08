@@ -26,10 +26,7 @@
 @property (nonatomic, strong) SAPadlockView *pad;
 
 // the button to click in case of click on ad
-@property (nonatomic, strong) UIButton *clickBtn;
-@property (nonatomic, strong) UIButton *closeBtn;
 @property (nonatomic, strong) UIButton *padlockBtn;
-@property (nonatomic, strong) UIButton *learnMoreBtn;
 
 @end
 
@@ -120,35 +117,6 @@
     [parent addSubview:_padlockBtn];
     [parent bringSubviewToFront:_padlockBtn];
 }
-//
-//- (void) createLearnMoreButtonWithParent:(UIView *)parent{
-//    CGFloat w = parent.frame.size.width;
-//    CGFloat offset = (_isFullscreen ? 40 : 0);
-//    
-//    // step 1. learn more button
-//    _learnMoreBtn = [[UIButton alloc] init];
-//    [_learnMoreBtn setBackgroundColor:[UIColor clearColor]];
-//    [_learnMoreBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-//    [_learnMoreBtn setTitle:@"Learn more" forState:UIControlStateNormal];
-//    [[_learnMoreBtn titleLabel] setFont:[UIFont systemFontOfSize:12]];
-//    _learnMoreBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
-//    _learnMoreBtn.contentEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 10);
-//    [_learnMoreBtn setFrame:CGRectMake(w - 120, offset, 120, 22)];
-//    [_learnMoreBtn addTarget:self action:@selector(onAdClick) forControlEvents:UIControlEventTouchUpInside];
-//    [parent addSubview:_learnMoreBtn];
-//    [parent bringSubviewToFront:_learnMoreBtn];
-//}
-//
-//- (void) createCloseButtonWithParent:(UIView*)parent {
-//    CGSize size = CGSizeMake(30, 30);
-//    CGRect frame = CGRectMake(parent.frame.size.width - size.width, 0, size.width, size.height);
-//    _closeBtn = [[UIButton alloc] initWithFrame:frame];
-//    [_closeBtn setTitle:@"" forState:UIControlStateNormal];
-//    [_closeBtn setImage:[UIImage imageNamed:@"close.png"] forState:UIControlStateNormal];
-//    [_closeBtn addTarget:self action:@selector(close) forControlEvents:UIControlEventTouchUpInside];
-//    [parent addSubview:_closeBtn];
-//    [parent bringSubviewToFront:_closeBtn];
-//}
 
 #pragma mark On Click actions - ad and padlock
 

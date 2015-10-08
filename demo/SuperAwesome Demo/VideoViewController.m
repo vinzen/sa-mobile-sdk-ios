@@ -29,8 +29,7 @@
     [super viewDidLoad];
     // Do any additional setup afte
     
-    SAVideoAd *videoad = [[SAVideoAd alloc] initWithFrame:CGRectMake(20, 50, 320, 240) andPlacementId:21022];
-    // 10002 21022
+    SAVideoAd *videoad = [[SAVideoAd alloc] initWithFrame:CGRectMake(20, 150, 320, 240) andPlacementId:10002];
     [self.view addSubview:videoad];
 }
 

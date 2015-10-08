@@ -45,7 +45,7 @@ NSString *SACreativeFormatToString(SACreativeFormat format) {
         _cpm = (cpmObj != NULL ? [cpmObj integerValue] : 0);
         _name = (nameObj != NULL ? nameObj : NULL);
         _impressionURL = (impressionUrlObj != NULL ? impressionUrlObj : NULL);
-        _clickURL = (clickUrlObj != NULL ? clickUrlObj : NULL);
+        _clickURL = (clickUrlObj != NULL ? clickUrlObj : @"http://superawesome.tv");
         _approved = (approvedObj != NULL ? [approvedObj boolValue] : false);
         
         // get format & assign details based on format contract

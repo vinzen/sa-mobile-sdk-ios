@@ -53,7 +53,5 @@
 // aux creation functions
 //- (void) createTimerViewWithParent:(UIView*)parent;
 - (void) createPadlockButtonWithParent:(UIView*)parent;
-//- (void) createLearnMoreButtonWithParent:(UIView*)parent;
-//- (void) createCloseButtonWithParent:(UIView*)parent;
 
 @end

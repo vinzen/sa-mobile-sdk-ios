@@ -10,6 +10,7 @@
 #import <Foundation/Foundation.h>
 
 @class SKMRAIDInterstitial;
+@class SKMRAIDView;
 @protocol SKMRAIDServiceDelegate;
 
 // A delegate for MRAIDInterstitial to handle callbacks for the interstitial lifecycle.
@@ -33,6 +34,8 @@
 @property (nonatomic, unsafe_unretained, setter = setRootViewController:) UIViewController *rootViewController;
 @property (nonatomic, assign, getter = isViewable, setter = setIsViewable:) BOOL isViewable;
 @property (nonatomic, copy) UIColor *backgroundColor;
+
+@property (nonatomic, strong) SKMRAIDView *mraidView;;
 
 // IMPORTANT: This is the only valid initializer for an MRAIDInterstitial; -init will throw an exception
 - (id)initWithSupportedFeatures:(NSArray *)features

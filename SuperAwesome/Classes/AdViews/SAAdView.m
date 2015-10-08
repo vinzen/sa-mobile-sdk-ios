@@ -76,13 +76,20 @@
         // assign ad
         _ad = ad;
         
-        // call delegate
-        if (_delegate && [_delegate respondsToSelector:@selector(adWasLoaded:)]) {
-            [_delegate adWasLoaded:_placementId];
+        // good case
+        if ([_ad isAdDataComplete] == true) {
+            if (_delegate && [_delegate respondsToSelector:@selector(adWasLoaded:)]) {
+                [_delegate adWasLoaded:_placementId];
+            }
+            
+            [self display];
         }
-        
-        // only show if it started instantly
-        [self display];
+        // bad case
+        else {
+            if (_delegate && [_delegate respondsToSelector:@selector(adDataNotComplete:)]) {
+                [_delegate adDataNotComplete:_placementId];
+            }
+        }
     } orFailure:^{
         // call to delegate
         if (_delegate && [_delegate respondsToSelector:@selector(adFailedToLoad:)]) {
@@ -116,6 +123,10 @@
     [_padlockBtn addTarget:self action:@selector(onPadlockClick) forControlEvents:UIControlEventTouchUpInside];
     [parent addSubview:_padlockBtn];
     [parent bringSubviewToFront:_padlockBtn];
+}
+
+- (void) removePadlockButtonFromParent {
+    [_padlockBtn removeFromSuperview];
 }
 
 #pragma mark On Click actions - ad and padlock

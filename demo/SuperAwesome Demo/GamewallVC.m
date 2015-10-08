@@ -1,18 +1,18 @@
 //
-//  SAPopupViewController.m
-//  Pods
+//  GamewallVC.m
+//  SuperAwesome Demo
 //
-//  Created by Gabriel Coman on 29/09/2015.
-//
+//  Created by Gabriel Coman on 08/10/2015.
+//  Copyright © 2015 SuperAwesome Ltd. All rights reserved.
 //
 
-#import "SAPopupViewController.h"
+#import "GamewallVC.h"
 
-@interface SAPopupViewController ()
+@interface GamewallVC ()
 
 @end
 
-@implementation SAPopupViewController
+@implementation GamewallVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -24,8 +24,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (BOOL) prefersStatusBarHidden {
-    return true;
+- (IBAction)playAction:(id)sender {
 }
 
 /*

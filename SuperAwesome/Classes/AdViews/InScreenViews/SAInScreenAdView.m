@@ -46,55 +46,9 @@
         raidview = nil;
     }
     
-    // form HTML
-    NSString *htmlRaw = @"";
-
-    
-    // depending on the type of creative
-    switch (super.ad.creative.format) {
-        case image_with_link:{
-            
-            NSString *adimg = super.ad.creative.details.image;
-            NSString *click = super.ad.creative.clickURL;
-            NSString *fPath = [[NSBundle mainBundle] pathForResource:@"displayImage" ofType:@"html"];
-            htmlRaw = [NSString stringWithContentsOfFile:fPath encoding:NSUTF8StringEncoding error:nil];
-            htmlRaw = [htmlRaw stringByReplacingOccurrencesOfString:@"hrefURL" withString:click];
-            htmlRaw = [htmlRaw stringByReplacingOccurrencesOfString:@"imgURL" withString:adimg];
-            
-            break;
-        }
-        case video: {
-            
-            // form the HTML
-            NSString *advid = super.ad.creative.details.video;
-            NSString *click = super.ad.creative.clickURL;
-            NSString *fPath = [[NSBundle mainBundle] pathForResource:@"displayVideo" ofType:@"html"];
-            htmlRaw = [NSString stringWithContentsOfFile:fPath encoding:NSUTF8StringEncoding error:nil];
-            htmlRaw = [htmlRaw stringByReplacingOccurrencesOfString:@"videoURL" withString:advid];
-            htmlRaw = [htmlRaw stringByReplacingOccurrencesOfString:@"hrefURL" withString:click];
-            
-            break;
-        }
-        case tag: {
-            break;
-        }
-        case rich_media: {
-            break;
-        }
-        case rich_media_resizing: {
-            break;
-        }
-        case swf:{
-            break;
-        }
-            
-        default:
-            break;
-    }
-    
     // load MRAID HTML
     raidview = [[SKMRAIDView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)
-                                     withHtmlData:htmlRaw
+                                     withHtmlData:[super.ad createAdHTMLWithSizeDetails:self.frame.size]
                                       withBaseURL:[NSURL URLWithString:super.ad.creative.clickURL]
                                 supportedFeatures:@[]
                                          delegate:self

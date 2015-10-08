@@ -14,7 +14,6 @@
 @interface SKMRAIDInterstitial () <SKMRAIDViewDelegate, SKMRAIDServiceDelegate>
 {
     BOOL isReady;
-    SKMRAIDView *mraidView;
     NSArray* supportedFeatures;
 }
 
@@ -47,7 +46,7 @@
 
 - (void) dealloc
 {
-    mraidView = nil;
+    _mraidView = nil;
     supportedFeatures = nil;
 }
 
@@ -68,7 +67,7 @@
         
         
         CGRect screenRect = [[UIScreen mainScreen] bounds];
-        mraidView = [[SKMRAIDView alloc] initWithFrame:screenRect
+        _mraidView = [[SKMRAIDView alloc] initWithFrame:screenRect
                                         withHtmlData:htmlData
                                          withBaseURL:bsURL
                                       asInterstitial:YES
@@ -96,14 +95,14 @@
     
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wundeclared-selector"
-    [mraidView performSelector:@selector(showAsInterstitial)];
+    [_mraidView performSelector:@selector(showAsInterstitial)];
 #pragma clang diagnostic pop
 }
 
 -(void)setIsViewable:(BOOL)newIsViewable
 {
     [SKLogger debug:@"MRAID - Interstitial" withMessage:[NSString stringWithFormat: @"%@ %@", [self.class description], NSStringFromSelector(_cmd)]];
-    mraidView.isViewable=newIsViewable;
+    _mraidView.isViewable=newIsViewable;
 }
 
 -(BOOL)isViewable
@@ -114,13 +113,13 @@
 
 - (void)setRootViewController:(UIViewController *)newRootViewController
 {
-    mraidView.rootViewController = newRootViewController;
+    _mraidView.rootViewController = newRootViewController;
     [SKLogger debug:@"MRAID - Interstitial" withMessage:[NSString stringWithFormat:@"setRootViewController: %@", newRootViewController]];
 }
 
 -(void)setBackgroundColor:(UIColor *)backgroundColor
 {
-    mraidView.backgroundColor = backgroundColor;
+    _mraidView.backgroundColor = backgroundColor;
 }
 
 #pragma mark - MRAIDViewDelegate
@@ -157,9 +156,9 @@
     if ([self.delegate respondsToSelector:@selector(mraidInterstitialDidHide:)]) {
         [self.delegate mraidInterstitialDidHide:self];
     }
-    mraidView.delegate = nil;
-    mraidView.rootViewController = nil;
-    mraidView = nil;
+    _mraidView.delegate = nil;
+    _mraidView.rootViewController = nil;
+    _mraidView = nil;
     isReady = NO;
 }
 

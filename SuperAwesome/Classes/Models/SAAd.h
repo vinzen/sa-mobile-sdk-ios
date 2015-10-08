@@ -26,4 +26,10 @@
 // custom init
 - (id) initWithPlacementId:(NSInteger)placementId andWithDictionary:(NSDictionary*)dict;
 
+// other ad functions
+- (BOOL) isAdDataComplete;
+
+// parsing functions
+- (NSString*) createAdHTMLWithSizeDetails:(CGSize)screenSize;
+
 @end

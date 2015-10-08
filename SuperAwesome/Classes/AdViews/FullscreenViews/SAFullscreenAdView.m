@@ -9,6 +9,7 @@
 #import "SAFullscreenAdView.h"
 
 // import mraid
+#import "SKMRAIDView.h"
 #import "SKMRAIDInterstitial.h"
 #import "SKMRAIDServiceDelegate.h"
 
@@ -41,52 +42,9 @@
 - (void) display {
     [super display];
     
-    NSString *htmlRaw = @"";
-    
-    // depending on the type of creative
-    switch (super.ad.creative.format) {
-        case image_with_link:{
-            
-            // form the HTML
-            NSString *adimg = super.ad.creative.details.image;
-            NSString *click = super.ad.creative.clickURL;
-            NSString *fPath = [[NSBundle mainBundle] pathForResource:@"displayImage" ofType:@"html"];
-            htmlRaw = [NSString stringWithContentsOfFile:fPath encoding:NSUTF8StringEncoding error:nil];
-            htmlRaw = [htmlRaw stringByReplacingOccurrencesOfString:@"hrefURL" withString:click];
-            htmlRaw = [htmlRaw stringByReplacingOccurrencesOfString:@"imgURL" withString:adimg];
-            
-            break;
-        }
-        case video: {
-            
-            // video
-            NSString *advid = super.ad.creative.details.video;
-            NSString *fPath = [[NSBundle mainBundle] pathForResource:@"displayVideo" ofType:@"html"];
-            htmlRaw = [NSString stringWithContentsOfFile:fPath encoding:NSUTF8StringEncoding error:nil];
-            htmlRaw = [htmlRaw stringByReplacingOccurrencesOfString:@"videoURL" withString:advid];
-            
-            break;
-        }
-        case tag: {
-            break;
-        }
-        case rich_media: {
-            break;
-        }
-        case rich_media_resizing: {
-            break;
-        }
-        case swf:{
-            break;
-        }
-            
-        default:
-            break;
-    }
-    
     // create the mraid webview
     raidview = [[SKMRAIDInterstitial alloc] initWithSupportedFeatures:@[MRAIDSupportsInlineVideo]
-                                                         withHtmlData:htmlRaw
+                                                         withHtmlData:[super.ad createAdHTMLWithSizeDetails:vc.view.frame.size]
                                                           withBaseURL:[NSURL URLWithString:super.ad.creative.clickURL]
                                                              delegate:self
                                                       serviceDelegate:nil
@@ -97,6 +55,7 @@
 
 - (void)mraidInterstitialAdReady:(SKMRAIDInterstitial *)mraidInterstitial {
     [raidview show];
+    [self createPadlockButtonWithParent:[[[UIApplication sharedApplication] delegate] window]];
 }
 
 - (void) mraidInterstitialWillShow:(SKMRAIDInterstitial *)mraidInterstitial {
@@ -115,6 +74,8 @@
     if (super.delegate && [super.delegate respondsToSelector:@selector(adWasClosed:)]) {
         [super.delegate adWasClosed:super.placementId];
     }
+    
+    [super removePadlockButtonFromParent];
 }
 
 - (void) mraidInterstitialNavigate:(SKMRAIDInterstitial *)mraidInterstitial withURL:(NSURL *)url {

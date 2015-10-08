@@ -13,6 +13,7 @@
 
 // define the format of the Creative
 typedef NS_ENUM(NSUInteger, SACreativeFormat) {
+    format_unknown = -1,
     image_with_link = 0,
     video = 1,
     rich_media = 2,

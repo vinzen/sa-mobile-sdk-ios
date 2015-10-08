@@ -15,6 +15,7 @@ NSString *SACreativeFormatToString(SACreativeFormat format) {
     const char* c_str = 0;
 #define PROCESS_VAL(p) case(p): c_str = #p; break;
     switch(format) {
+            PROCESS_VAL(format_unknown);
             PROCESS_VAL(image_with_link);
             PROCESS_VAL(video);
             PROCESS_VAL(rich_media);
@@ -49,6 +50,7 @@ NSString *SACreativeFormatToString(SACreativeFormat format) {
         _approved = (approvedObj != NULL ? [approvedObj boolValue] : false);
         
         // get format & assign details based on format contract
+        _format = format_unknown;
         if (formatObj != NULL) {
             if ([formatObj isEqualToString:SACreativeFormatToString(image_with_link)]) {
                 _format = image_with_link;

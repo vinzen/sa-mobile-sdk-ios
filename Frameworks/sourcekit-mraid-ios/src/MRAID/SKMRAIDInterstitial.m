@@ -99,6 +99,13 @@
 #pragma clang diagnostic pop
 }
 
+- (void) close {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wundeclared-selector"
+    [_mraidView performSelector:@selector(close)];
+#pragma clang diagnostic pop
+}
+
 -(void)setIsViewable:(BOOL)newIsViewable
 {
     [SKLogger debug:@"MRAID - Interstitial" withMessage:[NSString stringWithFormat: @"%@ %@", [self.class description], NSStringFromSelector(_cmd)]];

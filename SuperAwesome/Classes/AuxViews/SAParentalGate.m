@@ -15,6 +15,7 @@
 
 // import other headers
 #import "SuperAwesome.h"
+#import "SAEventManager.h"
 #import "UIAlertController+Window.h"
 
 // parental gate defines
@@ -95,8 +96,9 @@
     // action block #1
     actionBlock cancelBlock = ^(UIAlertAction *action) {
         // log the action
-//        [[SAEventManager sharedInstance] LogUserPGCancel:_response];
+        [[SAEventManager sharedInstance] LogAdPGCancel:_ad];
         
+        // calls to delegate or blocks
 #pragma mark Normal iOS behaviour
         if(self.delegate && [self.delegate respondsToSelector:@selector(parentalGateWasCanceled)]){
             [self.delegate parentalGateWasCanceled];
@@ -121,9 +123,10 @@
         if([input integerValue] == self.solution){
             
             // send a server message
-//            [[SAEventManager sharedInstance] LogUserPGSuccess:_response];
-//            [[SAEventManager sharedInstance] LogClick:_response];
+            [[SAEventManager sharedInstance] LogAdPGSuccess:_ad];
+            [[SAEventManager sharedInstance] LogClick:_ad];
             
+            // call to delegate
 #pragma mark Normal iOS behaviour
             if(self.delegate && [self.delegate respondsToSelector:@selector(parentalGateWasSucceded)]){
                 [self.delegate parentalGateWasSucceded];
@@ -137,7 +140,7 @@
         // or a bad solution
         else{
             // log error
-//            [[SAEventManager sharedInstance] LogUserPGError:_response];
+            [[SAEventManager sharedInstance] LogAdPGError:_ad];
             
             // ERROR
             _wrongAnswerAlertView = [[UIAlertView alloc] initWithTitle:SA_ERROR_ALERTVIEW_TITLE
@@ -147,6 +150,7 @@
                                                      otherButtonTitles: nil];
             [_wrongAnswerAlertView show];
             
+            // call to delegate
 #pragma mark Normal iOS behaviour
             if(self.delegate && [self.delegate respondsToSelector:@selector(parentalGateWasFailed)]){
                 [self.delegate parentalGateWasFailed];
@@ -185,10 +189,6 @@
     }];
     
     [_challangeAlertView show];
-    
-    // display the alert controller
-    //    UIViewController *topController = [UIApplication sharedApplication].keyWindow.rootViewController;
-    //    [topController presentViewController:_challangeAlertView animated:YES completion:nil];
 }
 
 // internal random functions

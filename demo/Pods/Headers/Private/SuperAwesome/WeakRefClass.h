@@ -1,0 +1,1 @@
+../../../../../SuperAwesome/Classes/Utils/WeakRefClass.h

@@ -17,14 +17,12 @@
 // singleton function
 + (id) sharedInstance;
 
-- (void) LogAdLoad:(SAAd*) ad;
-- (void) LogAdFail:(SAAd*) ad;
-- (void) LogViewableImpression:(SAAd*) ad;
-- (void) LogAdStop:(SAAd*) ad;
+- (void) LogAdView:(SAAd*) ad;
+- (void) LogAdFailedToView:(SAAd*)ad;
 - (void) LogAdRate:(SAAd*) ad withValue:(NSInteger)value;
-- (void) LogPGCancel:(SAAd*) ad;
-- (void) LogPGSuccess:(SAAd*) ad;
-- (void) LogPGError:(SAAd*)ad;
+- (void) LogAdPGCancel:(SAAd*) ad;
+- (void) LogAdPGSuccess:(SAAd*) ad;
+- (void) LogAdPGError:(SAAd*)ad;
 - (void) LogClick:(SAAd*)ad;
 
 @end

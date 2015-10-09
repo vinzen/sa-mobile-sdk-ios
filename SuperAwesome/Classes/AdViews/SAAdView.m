@@ -14,10 +14,14 @@
 // import some models I would need
 #import "SAAd.h"
 #import "SACreative.h"
+#import "SADetails.h"
+#import "SAEventManager.h"
+#import "SAAdPreloader.h"
 
 // import parental gate
 #import "SAParentalGate.h"
 #import "SAPadlockView.h"
+#import "WeakRefClass.h"
 
 @interface SAAdView () <SAParentalGateProtocol>
 
@@ -38,8 +42,8 @@
         // init defaults
         _placementId = 0;
         _isParentalGateEnabled = true;
-        _playInstantly = true;
-        _refreshPeriod = 30;
+        _refreshPeriod = 5;
+        _playInstantly = false;
     }
     
     return self;
@@ -50,8 +54,8 @@
         // init defaults
         _placementId = 0;
         _isParentalGateEnabled = true;
-        _playInstantly = true;
-        _refreshPeriod = 30;
+        _refreshPeriod = 5;
+        _playInstantly = false;
     }
     
     return self;
@@ -62,53 +66,65 @@
         // init defaults
         _placementId = 0;
         _isParentalGateEnabled = true;
-        _playInstantly = true;
-        _refreshPeriod = 30;
+        _refreshPeriod = 5;
+        _playInstantly = false;
     }
     
     return self;
 }
 
-- (void) play {
-    
-    // don't implement this here
-    [SANetwork getAdWith:_placementId withSuccess:^(SAAd *ad) {
-        // assign ad
-        _ad = ad;
-        
-        // good case
-        if ([_ad isAdDataComplete] == true) {
-            if (_delegate && [_delegate respondsToSelector:@selector(adWasLoaded:)]) {
-                [_delegate adWasLoaded:_placementId];
-            }
-            
-            [self display];
-        }
-        // bad case
-        else {
-            if (_delegate && [_delegate respondsToSelector:@selector(adDataNotComplete:)]) {
-                [_delegate adDataNotComplete:_placementId];
-            }
-        }
-    } orFailure:^{
-        // call to delegate
-        if (_delegate && [_delegate respondsToSelector:@selector(adFailedToLoad:)]) {
-            [_delegate adFailedToLoad:_placementId];
-        }
-    }];
+- (void) dealloc {
+    if (_timer) {
+        [_timer invalidate];
+        _timer = nil;
+    }
 }
 
-- (void) display {
+- (void) assignAd:(SAAd *)_ad {
+    ad = _ad;
+}
+
+- (void) play {
     // do nothing here
+}
+
+- (void) playInstant {
+    [[SAAdPreloader sharedManager] loadAd:_placementId withSuccess:^(SAAd *_ad) {
+        ad = _ad;
+        [self play];
+    } orFailure:^{
+        // failure case
+    }];
 }
 
 #pragma mark Aux create functions
 
-//- (void) createTimerViewWithParent:(UIView *)parent{
-//    // no implementation now
+//- (void) createTimer{
+//    _currentRefresh = 0;
+//    
+//    if (_ad.creative.details.duration > 0) {
+//        _refreshPeriod = _ad.creative.details.duration;
+//    }
+//    
+//    if (_timer) {
+//        [_timer invalidate];
+//        _timer = nil;
+//    }
+//    
+//    _timer = [NSTimer scheduledTimerWithTimeInterval:1 target:[WeakRefClass getWeakReferenceOf:self] selector:@selector(timerFunc) userInfo:nil repeats:YES];
 //}
-//
+
+//- (void) timerFunc {
+//    // to be implemented in children
+//}
+
 - (void) createPadlockButtonWithParent:(UIView *)parent{
+    
+    // don't go any further is ad is fallback
+    if (ad.isFallback) {
+        return;
+    }
+    
     // 2.
     // add the padlock button
     CGRect main_frame = parent.frame;
@@ -137,7 +153,7 @@
     // follow URL
     if (_isParentalGateEnabled) {
         if(self.gate == nil){
-            _gate = [[SAParentalGate alloc] initWithAd:_ad];
+            _gate = [[SAParentalGate alloc] initWithAd:ad];
             _gate.delegate = self;
         }
         [self.gate show];
@@ -148,15 +164,18 @@
             [_delegate adFollowedURL:_placementId];
         }
         
+        // log
+        [[SAEventManager sharedInstance] LogClick:ad];
+        
         // open URL
-        NSURL *url = [NSURL URLWithString:_ad.creative.clickURL];
+        NSURL *url = [NSURL URLWithString:ad.creative.clickURL];
         [[UIApplication sharedApplication] openURL:url];
     }
 }
 
 - (void) onPadlockClick {
     if (!_pad) {
-        _pad = [[SAPadlockView alloc] init];
+        _pad = [[SAPadlockView alloc] initWithAd:ad];
     }
     
     // show this
@@ -168,23 +187,23 @@
 
 - (void) parentalGateWasCanceled {
     if (_delegate && [_delegate respondsToSelector:@selector(parentalGateWasCanceled:)]) {
-        [_delegate parentalGateWasCanceled:_ad.placementId];
+        [_delegate parentalGateWasCanceled:ad.placementId];
     }
 }
 
 - (void) parentalGateWasFailed {
     if (_delegate && [_delegate respondsToSelector:@selector(parentalGateWasFailed:)]) {
-        [_delegate parentalGateWasFailed:_ad.placementId];
+        [_delegate parentalGateWasFailed:ad.placementId];
     }
 }
 
 - (void) parentalGateWasSucceded {
     if (_delegate && [_delegate respondsToSelector:@selector(parentalGateWasSucceded:)]) {
-        [_delegate parentalGateWasSucceded:_ad.placementId];
+        [_delegate parentalGateWasSucceded:ad.placementId];
     }
     
     // open URL
-    NSURL *url = [NSURL URLWithString:_ad.creative.clickURL];
+    NSURL *url = [NSURL URLWithString:ad.creative.clickURL];
     [[UIApplication sharedApplication] openURL:url];
 }
 

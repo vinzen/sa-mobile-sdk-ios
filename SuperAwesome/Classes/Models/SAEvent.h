@@ -15,14 +15,12 @@
 // specific events for the ads
 typedef NS_ENUM(NSUInteger, SAEventType) {
     NoAd = -1,
-    AdLoad = 0,
-    AdFail,
-    viewable_impression,
-    AdStop,
+    viewable_impression = 0,
+    AdFailedToView = 1,
     AdRate,
-    UserPGCancel,
-    UserPGSuccess,
-    UserPGError
+    AdPGCancel,
+    AdPGSuccess,
+    AdPGError
 };
 
 // external function

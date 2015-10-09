@@ -25,8 +25,7 @@
 
 @implementation SuperAwesome
 
-+ (SuperAwesome *)sharedManager
-{
++ (SuperAwesome *)sharedManager {
     static SuperAwesome *sharedManager = nil;
     @synchronized(self) {
         if (sharedManager == nil){

@@ -20,14 +20,12 @@ NSString *SAEventTypeFromValue(SAEventType evt) {
 #define PROCESS_VAL(p) case(p): c_str = #p; break;
     switch(evt) {
             PROCESS_VAL(NoAd);
-            PROCESS_VAL(AdLoad);
-            PROCESS_VAL(AdFail);
             PROCESS_VAL(viewable_impression);
-            PROCESS_VAL(AdStop);
+            PROCESS_VAL(AdFailedToView);
             PROCESS_VAL(AdRate);
-            PROCESS_VAL(UserPGCancel);
-            PROCESS_VAL(UserPGSuccess);
-            PROCESS_VAL(UserPGError);
+            PROCESS_VAL(AdPGCancel);
+            PROCESS_VAL(AdPGSuccess);
+            PROCESS_VAL(AdPGError);
     }
 #undef PROCESS_VAL
     

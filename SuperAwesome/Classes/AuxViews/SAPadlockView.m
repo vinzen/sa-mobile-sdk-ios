@@ -7,8 +7,9 @@
 //
 
 #import "SAPadlockView.h"
-
-//#import "SAEventManager.h"
+#import "SAEventManager.h"
+#import "SAAd.h"
+#import "SACreative.h"
 
 /**
  * Defines constants for padlock texts
@@ -38,10 +39,14 @@
 // current rating
 @property (nonatomic, assign) int currentRating;
 
+// the internal ad
+@property (nonatomic, retain) SAAd *ad;
+
 @end
 
 @implementation SAPadlockView
 
+// designated init
 - (id) init {
     if (self = [super init]) {
         // make current rating
@@ -90,6 +95,30 @@
     return self;
 }
 
+// custom init functions
+- (id) initWithAd:(SAAd *)ad {
+    if (self = [self init]) {
+        _ad = ad;
+    }
+    
+    return self;
+}
+
+- (id) initWithPlacementId:(NSInteger)placementId
+             andCreativeId:(NSInteger)creativeId
+             andLineItemId:(NSInteger)lineItemId {
+    if (self = [self init]) {
+        // form the ad from bits and pieces
+        _ad = [[SAAd alloc] init];
+        _ad.creative = [[SACreative alloc] init];
+        _ad.placementId = placementId;
+        _ad.lineItemId = lineItemId;
+        _ad.creative.creativeId = creativeId;
+    }
+    
+    return self;
+}
+
 // rate the current ad
 - (IBAction) rateAction:(id)sender{
     for (UIButton *rateBtn in _rateButtons) {
@@ -118,9 +147,9 @@
 // close the view
 - (IBAction)okBtnAction:(id)sender {
     
-//    if (_currentRating > 0) {
-//        [[SAEventManager sharedInstance] LogAdRate:nil withValue:_currentRating];
-//    }
+    if (_currentRating > 0) {
+        [[SAEventManager sharedInstance] LogAdRate:_ad withValue:_currentRating];
+    }
     
     [self closeThisView];
 }

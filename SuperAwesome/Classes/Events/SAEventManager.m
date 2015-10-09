@@ -44,25 +44,7 @@
 ///////////////
 // Actual Logging functions
 
-- (void) LogAdLoad:(SAAd*) ad {
-    _event = [[SAEvent alloc] initWithAd:ad andDetails:nil andEventType:AdLoad];
-    [SANetwork postEvent:_event withSuccess:^{
-       // do nothing
-    } orFailure:^{
-        // do nohting
-    }];
-}
-
-- (void) LogAdFail:(SAAd*) ad {
-    _event = [[SAEvent alloc] initWithAd:ad andDetails:nil andEventType:AdFail];
-    [SANetwork postEvent:_event withSuccess:^{
-        // do nothing
-    } orFailure:^{
-        // do nohting
-    }];
-}
-
-- (void) LogViewableImpression:(SAAd*) ad {
+- (void) LogAdView:(SAAd *)ad {
     _event = [[SAEvent alloc] initWithAd:ad andDetails:nil andEventType:viewable_impression];
     [SANetwork postEvent:_event withSuccess:^{
         // do nothing
@@ -71,8 +53,8 @@
     }];
 }
 
-- (void) LogAdStop:(SAAd*) ad {
-    _event = [[SAEvent alloc] initWithAd:ad andDetails:nil andEventType:AdStop];
+- (void) LogAdFailedToView:(SAAd *)ad {
+    _event = [[SAEvent alloc] initWithAd:ad andDetails:nil andEventType:AdFailedToView];
     [SANetwork postEvent:_event withSuccess:^{
         // do nothing
     } orFailure:^{
@@ -92,8 +74,8 @@
     }];
 }
 
-- (void) LogPGCancel:(SAAd*) ad {
-    _event = [[SAEvent alloc] initWithAd:ad andDetails:nil andEventType:UserPGCancel];
+- (void) LogAdPGCancel:(SAAd*) ad {
+    _event = [[SAEvent alloc] initWithAd:ad andDetails:nil andEventType:AdPGCancel];
     [SANetwork postEvent:_event withSuccess:^{
         // do nothing
     } orFailure:^{
@@ -101,8 +83,8 @@
     }];
 }
 
-- (void) LogPGSuccess:(SAAd*) ad {
-    _event = [[SAEvent alloc] initWithAd:ad andDetails:nil andEventType:UserPGSuccess];
+- (void) LogAdPGSuccess:(SAAd*) ad {
+    _event = [[SAEvent alloc] initWithAd:ad andDetails:nil andEventType:AdPGSuccess];
     [SANetwork postEvent:_event withSuccess:^{
         // do nothing
     } orFailure:^{
@@ -110,8 +92,8 @@
     }];
 }
 
-- (void) LogPGError:(SAAd*)ad {
-    _event = [[SAEvent alloc] initWithAd:ad andDetails:nil andEventType:UserPGError];
+- (void) LogAdPGError:(SAAd*)ad {
+    _event = [[SAEvent alloc] initWithAd:ad andDetails:nil andEventType:AdPGError];
     [SANetwork postEvent:_event withSuccess:^{
         // do nothing
     } orFailure:^{

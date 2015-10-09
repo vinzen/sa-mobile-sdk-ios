@@ -7,6 +7,9 @@
 //
 
 #import "SAVideoAd.h"
+#import "SAAd.h"
+#import "SACreative.h"
+#import "SADetails.h"
 
 @implementation SAVideoAd
 @end

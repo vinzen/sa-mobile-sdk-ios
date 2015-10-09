@@ -16,12 +16,6 @@
 
 @optional
 
-// three protocol functions for loading ads correctly
-// or displaying error in case of ad not loading OK
-- (void) adWasLoaded:(NSInteger)placementId;
-- (void) adFailedToLoad:(NSInteger)placementId;
-- (void) adDataNotComplete:(NSInteger)placementId;
-
 // three protocol functions that are used to check the ad was
 // shown OK or just failed to show
 - (void) adWasShown:(NSInteger)placementId;
@@ -41,27 +35,30 @@
 @end
 
 // interface declaration
-@interface SAAdView : UIView
+@interface SAAdView : UIView {
+    SAAd *ad;
+}
 
 // delegate
 @property id<SAAdViewProtocol> delegate;
 
-// private member variables
-@property (nonatomic, strong) SAAd *ad;
-
 // public mmeber variables
 @property (nonatomic, assign) IBInspectable NSInteger placementId;
 @property (nonatomic, assign) IBInspectable BOOL isParentalGateEnabled;
-@property (nonatomic, assign) IBInspectable BOOL playInstantly;
 @property (nonatomic, assign) IBInspectable NSInteger refreshPeriod;
+@property (nonatomic, assign) IBInspectable BOOL playInstantly;
+
+@property (nonatomic, assign) NSInteger currentRefresh;
+@property (nonatomic, strong) NSTimer *timer;
 
 // major ad view functions
+- (void) assignAd:(SAAd*)ad;
 - (void) play;
-- (void) display;
-- (void) onAdClick;
+- (void) playInstant;
 
 // aux creation functions
-//- (void) createTimerViewWithParent:(UIView*)parent;
+- (void) onAdClick;
+//- (void) timerFunc;
 - (void) createPadlockButtonWithParent:(UIView*)parent;
 - (void) removePadlockButtonFromParent;
 

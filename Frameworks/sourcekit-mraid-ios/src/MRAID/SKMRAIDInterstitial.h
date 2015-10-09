@@ -46,5 +46,6 @@
              rootViewController:(UIViewController *)rootViewController;
 - (BOOL)isAdReady;
 - (void)show;
+- (void)close;
 
 @end

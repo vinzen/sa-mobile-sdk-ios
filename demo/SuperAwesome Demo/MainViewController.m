@@ -37,6 +37,10 @@
                   @"segue":@"ToFullscreenVideoSegue"},
                 @{@"name":@"Gamewall",
                   @"segue":@"ToGamewallSegue"}
+                ],
+        @"Complex Ad display":@[
+                @{@"name":@"Complex display",
+                  @"segue":@"ToComplexSegue"}
                 ]
     };
     _choices = choic;

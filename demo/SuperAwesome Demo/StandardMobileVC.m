@@ -1,44 +1,31 @@
 //
-//  VideoVC.m
+//  StandardMobileVC.m
 //  SuperAwesome Demo
 //
-//  Created by Gabriel Coman on 08/10/2015.
+//  Created by Gabriel Coman on 09/10/2015.
 //  Copyright © 2015 SuperAwesome Ltd. All rights reserved.
 //
 
-#import "VideoVC.h"
+#import "StandardMobileVC.h"
 #import "SuperAwesome.h"
 
-@interface VideoVC () <SAPreloadProtocol>
-@property (nonatomic, retain) SAFullscreenVideoAd *video;
+@interface StandardMobileVC ()
+
+@property (weak, nonatomic) IBOutlet SABannerAd *bannerAd;
 @end
 
-@implementation VideoVC
+@implementation StandardMobileVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [_bannerAd playInstant];
     
-    [[SAAdPreloader sharedManager] setDelegate:self];
-    [[SAAdPreloader sharedManager] preloadAd:21454];
-    
-    _video = [[SAFullscreenVideoAd alloc] initWithPlcementId:21454];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-- (IBAction) playAction:(id)sender {
-    [_video play];
-}
-
-- (void) didPreloadAd:(SAAd *)ad {
-    [_video assignAd:ad];
-}
-
-- (void) didFailToPreloadAd:(NSInteger)placementId {
-    // failure
 }
 
 /*

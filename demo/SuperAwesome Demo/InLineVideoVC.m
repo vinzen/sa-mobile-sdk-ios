@@ -1,44 +1,32 @@
 //
-//  VideoVC.m
+//  InLineVideoVC.m
 //  SuperAwesome Demo
 //
-//  Created by Gabriel Coman on 08/10/2015.
+//  Created by Gabriel Coman on 09/10/2015.
 //  Copyright © 2015 SuperAwesome Ltd. All rights reserved.
 //
 
-#import "VideoVC.h"
+#import "InLineVideoVC.h"
 #import "SuperAwesome.h"
 
-@interface VideoVC () <SAPreloadProtocol>
-@property (nonatomic, retain) SAFullscreenVideoAd *video;
+@interface InLineVideoVC ()
+
+@property (weak, nonatomic) IBOutlet SAVideoAd *videoAd;
+
 @end
 
-@implementation VideoVC
+@implementation InLineVideoVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [[SAAdPreloader sharedManager] setDelegate:self];
-    [[SAAdPreloader sharedManager] preloadAd:21454];
-    
-    _video = [[SAFullscreenVideoAd alloc] initWithPlcementId:21454];
+    [_videoAd playInstant];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-- (IBAction) playAction:(id)sender {
-    [_video play];
-}
-
-- (void) didPreloadAd:(SAAd *)ad {
-    [_video assignAd:ad];
-}
-
-- (void) didFailToPreloadAd:(NSInteger)placementId {
-    // failure
 }
 
 /*

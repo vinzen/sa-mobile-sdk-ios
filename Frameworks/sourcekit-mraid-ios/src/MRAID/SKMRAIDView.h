@@ -45,5 +45,6 @@
  rootViewController:(UIViewController *)rootViewController;
 
 - (void) cancel;
+- (void)close;
 
 @end

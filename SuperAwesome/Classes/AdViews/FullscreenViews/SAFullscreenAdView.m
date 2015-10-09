@@ -20,7 +20,7 @@
 #import "SACreative.h"
 #import "SAAd.h"
 #import "SADetails.h"
-
+#import "SAEventManager.h"
 
 @interface SAFullscreenAdView () <SKMRAIDInterstitialDelegate>
 @end
@@ -31,21 +31,24 @@
     if (self = [super init]) {
         vc = [UIViewController currentViewController];
         super.placementId = placementId;
-        super.playInstantly = false;
     }
     
     return self;
 }
 
-#pragma mark Display function
+#pragma mark Main Display Function
 
-- (void) display {
-    [super display];
+- (void) timerFunc {
+    // do nothing
+}
+
+- (void) play {
+    [super play];
     
     // create the mraid webview
     raidview = [[SKMRAIDInterstitial alloc] initWithSupportedFeatures:@[MRAIDSupportsInlineVideo]
-                                                         withHtmlData:[super.ad createAdHTMLWithSizeDetails:vc.view.frame.size]
-                                                          withBaseURL:[NSURL URLWithString:super.ad.creative.clickURL]
+                                                         withHtmlData:[ad createAdHTMLWithSizeDetails:vc.view.frame.size]
+                                                          withBaseURL:[NSURL URLWithString:ad.creative.clickURL]
                                                              delegate:self
                                                       serviceDelegate:nil
                                                    rootViewController:vc];
@@ -59,15 +62,23 @@
 }
 
 - (void) mraidInterstitialWillShow:(SKMRAIDInterstitial *)mraidInterstitial {
+    // delegate
     if (super.delegate && [super.delegate respondsToSelector:@selector(adWasShown:)]) {
         [super.delegate adWasShown:super.placementId];
     }
+    
+    // log
+    [[SAEventManager sharedInstance] LogAdView:ad];
 }
 
 - (void) mraidInterstitialAdFailed:(SKMRAIDInterstitial *)mraidInterstitial {
+    // delegate
     if (super.delegate && [super.delegate respondsToSelector:@selector(adFailedToShow:)]) {
         [super.delegate adFailedToShow:super.placementId];
     }
+    
+    // log
+    [[SAEventManager sharedInstance] LogAdFailedToView:ad];
 }
 
 - (void)mraidInterstitialDidHide:(SKMRAIDInterstitial *)mraidInterstitial {

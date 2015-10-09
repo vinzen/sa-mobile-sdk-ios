@@ -9,7 +9,7 @@
 #import "InterstitialVC.h"
 #import "SuperAwesome.h"
 
-@interface InterstitialVC ()
+@interface InterstitialVC () <SAPreloadProtocol>
 @property (nonatomic, retain) SAInterstitialAd *inter;
 @end
 
@@ -19,15 +19,26 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    [[SAAdPreloader sharedManager] setDelegate:self];
+    [[SAAdPreloader sharedManager] preloadAd:21450];
+    
     _inter = [[SAInterstitialAd alloc] initWithPlcementId:21450];
 }
 
-- (void)didReceiveMemoryWarning {
+- (void) didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-- (IBAction)playAction:(id)sender {
+
+- (IBAction) playAction:(id)sender {
     [_inter play];
+}
+
+- (void) didPreloadAd:(SAAd *)ad {
+    [_inter assignAd:ad];
+}
+
+- (void) didFailToPreloadAd:(NSInteger)placementId {
+    NSLog(@"Fail to load");
 }
 
 /*

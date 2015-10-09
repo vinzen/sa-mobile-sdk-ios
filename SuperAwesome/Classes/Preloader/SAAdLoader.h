@@ -8,26 +8,15 @@
 
 #import <Foundation/Foundation.h>
 #import "SANetwork+Ad.h"
+#import "SAAdPreloadProtocol.h"
 
-// forward declarations
-@class SAAd;
-
-@protocol SAPreloadProtocol <NSObject>
-
-// main protocol functions
-@optional
-- (void) didPreloadAd:(SAAd*)ad;
-- (void) didFailToPreloadAd:(NSInteger)placementId;
-
-@end
-
-@interface SAAdPreloader : NSObject
+@interface SAAdLoader : NSObject
 
 // delegate
-@property id<SAPreloadProtocol> delegate;
+@property id<SAAdPreloadProtocol> delegate;
 
 // singleton instance (instead of init)
-+ (SAAdPreloader *)sharedManager;
++ (SAAdLoader *)sharedManager;
 
 // preload ad function
 - (void) preloadAd:(NSInteger)placementId;

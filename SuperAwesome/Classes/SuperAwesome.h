@@ -22,7 +22,11 @@
 #import "SAInterstitialAd.h"
 #import "SAVideoAd.h"
 #import "SAFullscreenVideoAd.h"
-#import "SAAdPreloader.h"
+#import "SAAdLoader.h"
+
+// import protocol
+#import "SAAdViewProtocol.h"
+#import "SAAdPreloadProtocol.h"
 
 // typedef client configuration
 typedef NS_ENUM(NSUInteger, SAConfiguration) {

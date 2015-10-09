@@ -1,0 +1,1 @@
+../../../../../SuperAwesome/Classes/AdViews/SAAdViewProtocol.h

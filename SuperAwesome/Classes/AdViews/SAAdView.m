@@ -16,7 +16,7 @@
 #import "SACreative.h"
 #import "SADetails.h"
 #import "SAEventManager.h"
-#import "SAAdPreloader.h"
+#import "SAAdLoader.h"
 
 // import parental gate
 #import "SAParentalGate.h"
@@ -89,7 +89,7 @@
 }
 
 - (void) playInstant {
-    [[SAAdPreloader sharedManager] loadAd:_placementId withSuccess:^(SAAd *_ad) {
+    [[SAAdLoader sharedManager] loadAd:_placementId withSuccess:^(SAAd *_ad) {
         ad = _ad;
         [self play];
     } orFailure:^{

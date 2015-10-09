@@ -9,7 +9,7 @@
 #import "ComplexVC.h"
 #import "SuperAwesome.h"
 
-@interface ComplexVC () <SAPreloadProtocol>
+@interface ComplexVC () <SAAdPreloadProtocol>
 
 // four different types of Ads
 @property (weak, nonatomic) IBOutlet SABannerAd *leaderboardAd;
@@ -26,9 +26,9 @@
     // Do any additional setup after loading the view.
     
     // preload the banner, video and interstitial ads
-    [[SAAdPreloader sharedManager] setDelegate:self];
-    [[SAAdPreloader sharedManager] preloadAd:21863]; // banner
-    [[SAAdPreloader sharedManager] preloadAd:21925]; // video
+    [[SAAdLoader sharedManager] setDelegate:self];
+    [[SAAdLoader sharedManager] preloadAd:21863]; // banner
+    [[SAAdLoader sharedManager] preloadAd:21925]; // video
     
     _interstitialAd = [[SAInterstitialAd alloc] initWithPlcementId:21924];
     
@@ -43,27 +43,27 @@
 
 #pragma mark Button Actions
 
-- (IBAction)playPreloadedMovie:(id)sender {
+- (IBAction) playPreloadedMovie:(id)sender {
     [_videoAd play];
 }
 
-- (IBAction)openPreloadedInterstitial:(id)sender {
+- (IBAction) openPreloadedInterstitial:(id)sender {
     [_interstitialAd playInstant];
 }
 
 #pragma mark SA Protocol function implementations
 
-- (void) didPreloadAd:(SAAd *)ad {
-    if (ad.placementId == 21863) {
+- (void) didPreloadAd:(SAAd *)ad forPlacementId:(NSInteger)placementId{
+    if (placementId == 21863) {
         [_bannerAd assignAd:ad];
         [_bannerAd play];
     }
-    else if (ad.placementId == 21925){
+    else if (placementId == 21925){
         [_videoAd assignAd:ad];
     }
 }
 
-- (void) didFailToPreloadAd:(NSInteger)placementId {
+- (void) didFailToPreloadAdForPlacementId:(NSInteger)placementId {
     NSLog(@"Fail to load ad %ld", placementId);
 }
 

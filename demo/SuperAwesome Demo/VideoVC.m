@@ -9,7 +9,7 @@
 #import "VideoVC.h"
 #import "SuperAwesome.h"
 
-@interface VideoVC () <SAPreloadProtocol>
+@interface VideoVC () <SAAdPreloadProtocol>
 @property (nonatomic, retain) SAFullscreenVideoAd *video;
 @end
 
@@ -19,8 +19,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [[SAAdPreloader sharedManager] setDelegate:self];
-    [[SAAdPreloader sharedManager] preloadAd:21454];
+    [[SAAdLoader sharedManager] setDelegate:self];
+    [[SAAdLoader sharedManager] preloadAd:21454];
     
     _video = [[SAFullscreenVideoAd alloc] initWithPlcementId:21454];
 }
@@ -33,11 +33,11 @@
     [_video play];
 }
 
-- (void) didPreloadAd:(SAAd *)ad {
+- (void) didPreloadAd:(SAAd *)ad forPlacementId:(NSInteger)placementId{
     [_video assignAd:ad];
 }
 
-- (void) didFailToPreloadAd:(NSInteger)placementId {
+- (void) didFailToPreloadAdForPlacementId:(NSInteger)placementId {
     // failure
 }
 

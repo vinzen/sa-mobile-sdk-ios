@@ -7,337 +7,341 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0279C9BCBC61733DFD1F5E7C9B98791E /* SAAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF447810DB3536B6EAF541B0EFE47866 /* SAAdView.m */; };
-		041913E6CACFF0CAE9649B74F5926934 /* SuperAwesome-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B545A9EBC0C48866C3716167E9890F7 /* SuperAwesome-dummy.m */; };
-		05A748CA8748D9510568E68406DC734D /* SAFullscreenVideoAd.h in Headers */ = {isa = PBXBuildFile; fileRef = 41A8B9C48F355CB72533E5933471CD57 /* SAFullscreenVideoAd.h */; };
-		0A0D2158114542CD92A178EE92149499 /* SKMRAIDUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 154C960D07EDD7CE4A447777D96EFBBD /* SKMRAIDUtil.h */; };
-		0CA87BAFD4391C36109EBE9B21BD659F /* SKMRAIDOrientationProperties.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BE0F30C30134D7A1DB82CB18DC1C38B /* SKMRAIDOrientationProperties.h */; };
-		0FA446A6B4C043C78A009310C84ADE89 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 689C393E76E6DE80650BE41CDC476355 /* StoreKit.framework */; };
-		11E9C37331B3B01BDFA51C2A6DA89646 /* JSONModelClassProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 479FDE3899C9EB8629FA83685A44B6D7 /* JSONModelClassProperty.h */; };
-		12B9185B2090A5FD7DFEBCE1A263A9B0 /* SKMRAIDResizeProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 7597706729AA8D049EF12ADFBA9B7CAE /* SKMRAIDResizeProperties.m */; };
-		15005637B7300504D48FF2EBD3533FC5 /* UIAlertController+Window.m in Sources */ = {isa = PBXBuildFile; fileRef = C8EA8B23E3419D200951F7F3AECEE8ED /* UIAlertController+Window.m */; };
-		18643077FCA31144D784654790D89D6E /* SAEventManager.h in Headers */ = {isa = PBXBuildFile; fileRef = AA48BEA2AC9F7A6522468E82F3D138E1 /* SAEventManager.h */; };
-		187F6D74FD445781427C4693805A511A /* SAAd.m in Sources */ = {isa = PBXBuildFile; fileRef = 15D267071A73EDEBBFA293A4E52290C6 /* SAAd.m */; };
-		19C4411A2A27C760D902091C414FEDAB /* SACreative.m in Sources */ = {isa = PBXBuildFile; fileRef = 324F6D5881E86DAB0CB737A8077AE358 /* SACreative.m */; };
-		1FA7E73B366C748FA25917BD4802DDFA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 338B87707D4677C9FAD38A9A1529C2EE /* CoreLocation.framework */; };
-		207A06E92D44264CBE006F4E87DBC59D /* JSONHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = B134B9B0577D3268AF0F8917D0C5D7F0 /* JSONHTTPClient.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		212D7C9F3A0C73708A03D97B0778AC19 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5556EBDCA52D6714F3EF2491F188C0F /* Foundation.framework */; };
-		23988FD3F8CD952D63C28D36471D5FF8 /* SAAdView.h in Headers */ = {isa = PBXBuildFile; fileRef = 955D10EC109E146EE67A9314F4CB11FB /* SAAdView.h */; };
-		2424C1F1D704C28A73209FDAEF85A075 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7493F18DD8912A44273D6AAD2846CCEF /* SystemConfiguration.framework */; };
-		266AE2C4421072AE25AD6DF842C85909 /* SAEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 2951172F2AB1A78F002D54BBC108A6AD /* SAEvent.h */; };
-		2B7997BD764BBB1E962EBDEB8C7DAE5D /* SAAd.h in Headers */ = {isa = PBXBuildFile; fileRef = A1958D74C7D7955247AF43A038218B9D /* SAAd.h */; };
-		2C6A9793561939C179FD286CBC6E88B4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5556EBDCA52D6714F3EF2491F188C0F /* Foundation.framework */; };
-		2EC0C044F3EC370DE783581F684932FE /* SAEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 485B9112B64E0237792C112990574507 /* SAEvent.m */; };
-		3041B66DD947E27ACAC2905C9FF2341F /* SAFullscreenAdView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1116BA67EA48F2E094C55119746B69CD /* SAFullscreenAdView.h */; };
-		3D2377C4E2D11ADFCCF3C7B5A30E6B2D /* SKMRAIDInterstitial.h in Headers */ = {isa = PBXBuildFile; fileRef = C7E9F5FB606E30E7CCBD0BC348182455 /* SKMRAIDInterstitial.h */; };
-		3DD4A519F8CD824E8D6197A146658E4A /* SAAdPreloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F7059CD5BD9E6B2799A079FE4D2D4B4 /* SAAdPreloader.m */; };
-		41C754DE4F4DFCB3C7A8020241425A83 /* SAEventManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 93EC419FF05414309C7B0B7D79E40E9E /* SAEventManager.m */; };
-		451B4FC738B5BBF958E68D0EDD4976D2 /* MRAIDSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB274328206BFEB26A1AE68BC4A312B /* MRAIDSettings.m */; };
-		46FAB5AA05ACD0E324F6FA88FB8CCE88 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 446899E1043CE7C12E291FC7DA414851 /* AVFoundation.framework */; };
-		479649CAF8B9036F8271A59095D82BED /* SAFullscreenVideoAd.m in Sources */ = {isa = PBXBuildFile; fileRef = B776163DF5AA9BB1357D7BA7498B9055 /* SAFullscreenVideoAd.m */; };
-		4BCDAFAAD06759309B067C2FCD1039ED /* JSONKeyMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 723C6A912BBEF9D13E5E4363ABE8D684 /* JSONKeyMapper.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		4C5D03A0F9AB1DB75883D01D3FFAC6CB /* JSONKeyMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B0713759226D461A873CC80A4AD672A /* JSONKeyMapper.h */; };
-		4F76642F5765E04BA8449695B4C7B5FD /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 545390D185B9F3553DECD1A4E7E02976 /* CoreMedia.framework */; };
-		516B3929E1C04330E2ACBB1353E40644 /* SKBrowser.h in Headers */ = {isa = PBXBuildFile; fileRef = DC734B6C5312158CDA32403883496880 /* SKBrowser.h */; };
-		5570D6413823DEBB5F4F49392D911984 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ACE997DC065B9361A965131C185B944 /* Security.framework */; };
-		5E472B8277F3ADE572E1629AF105DAFC /* SANetwork+Ad.h in Headers */ = {isa = PBXBuildFile; fileRef = EF5011E339724A747B47E09C49A9EF7C /* SANetwork+Ad.h */; };
-		5E9B683A503E6179DE3C6609F1226427 /* JSONModelArray.h in Headers */ = {isa = PBXBuildFile; fileRef = DB95F92D3F2D85368E197946B626AFA8 /* JSONModelArray.h */; };
-		6006DF16243F34EAEB6212631E1F9B7E /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B66586285C9B5CD5EE808FBA88E7B70F /* EventKitUI.framework */; };
-		640FD5F159C3BC4C54ABA8D0EA90BE03 /* SKMRAIDView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3464DE71B0527C13D6593B86547E2EBD /* SKMRAIDView.m */; };
-		6520644E94DCE9FFD136FF4ADB947528 /* SKBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 57184A5486D76BE614F70AAB104B1594 /* SKBrowser.m */; };
-		66B4D2387135E2A54AB8EE42553CD629 /* MRAIDSettings.h in Headers */ = {isa = PBXBuildFile; fileRef = C815C363CDBBB8D0784CACB6DA8B0BF3 /* MRAIDSettings.h */; };
-		66C558FC77E89C7456FF0DC591CFAB69 /* NSArray+JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C5F9CFCF000C21876235928408A03C1 /* NSArray+JSONModel.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		6AE305AE0093A16AF8B63BCAC90ED2BD /* CloseButton.h in Headers */ = {isa = PBXBuildFile; fileRef = BFF1E85BF8C7227554BB2F4E242F1D1C /* CloseButton.h */; };
-		6CE2F1C1DAACB09B6BB72EDF6B2D7228 /* SKMRAIDModalViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = E52B9061772119ECAFD622498477B677 /* SKMRAIDModalViewController.h */; };
-		6D18B778E4B434F9C1ACFE7823D4C94C /* JSONModelError.h in Headers */ = {isa = PBXBuildFile; fileRef = C8941D9F18920AD2A78B3AFD6999F04E /* JSONModelError.h */; };
-		6F55EC7945B8092503C6AC0F6979C8CF /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BB5A120223162CBA103E2DD25A9DD7A /* CoreData.framework */; };
+		00EAE9807497F2E0CEB89D19F81B0E92 /* SADetails.h in Headers */ = {isa = PBXBuildFile; fileRef = B02C5EA9B5CA02137530B05A3BCCB94C /* SADetails.h */; };
+		01F0612FA81845B42093AFFB1305F665 /* JSONModelError.h in Headers */ = {isa = PBXBuildFile; fileRef = C432D15D857155A6E39745D3E2279460 /* JSONModelError.h */; };
+		062748EE71EAA3EA0CD6A22C1018FFF3 /* JSONAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 39ACA9EC7189768609F119FF71DD9056 /* JSONAPI.h */; };
+		0A9D165C4B90877E753241417A40A576 /* SAEventManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FC51CE8D5E7D543A9B265423D46AD6C2 /* SAEventManager.m */; };
+		0B58DAC53836C0C01C095AE6CDAB4A79 /* SAFullscreenAdView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9EDE5EC3CFFE53EE95CECA9155BA1F30 /* SAFullscreenAdView.h */; };
+		0E993F9236A5F11B602C1247963D070D /* SuperAwesome-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B21BD550FDE4F476FC7DEAED1965ACF5 /* SuperAwesome-dummy.m */; };
+		0EAA8D3867A739B67C8647F7E868CC30 /* SAEventManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 33261949CB67DCDB015207B1C7FA363B /* SAEventManager.h */; };
+		0EB686DE91F190C11ECE4ECE9BD39160 /* JSONValueTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = E5D338203015B264FBAF3459779AC0D8 /* JSONValueTransformer.h */; };
+		12E1D82EC8AFF5C1B8DA286BF159E093 /* SABannerAd.m in Sources */ = {isa = PBXBuildFile; fileRef = 7569CC69DF324DF9F07448B888ECA569 /* SABannerAd.m */; };
+		13E92198352B3A9EE98FB711916D0BFA /* SKReachability.h in Headers */ = {isa = PBXBuildFile; fileRef = E84BAE311F285C7E5F3AA5B7705CCD3A /* SKReachability.h */; };
+		149D69A3CC8973D7D3861DDE74DEF77A /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B00C661F6CC6F4DDB687512D935CD7CD /* CoreMedia.framework */; };
+		153EAF3BE3C930DCCAB41A9B127189F0 /* UIAlertController+Window.h in Headers */ = {isa = PBXBuildFile; fileRef = E386D3D84B695BB7134132089DB8ED96 /* UIAlertController+Window.h */; };
+		1AFE44ED030208802CEDE22D155E07EE /* SAAdLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 3061A6895044ECAFC81274A7D24768B3 /* SAAdLoader.h */; };
+		1D4229E35E4872AE42DD11A3CD76D448 /* UIViewController+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 79AC33226C8A9CDF153028673A219A40 /* UIViewController+Utils.m */; };
+		1F048C9D37271760175C3A24B5F8ED16 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C4D095456CDD1B0CF304BD39B339FDA /* Foundation.framework */; };
+		212D7C9F3A0C73708A03D97B0778AC19 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C4D095456CDD1B0CF304BD39B339FDA /* Foundation.framework */; };
+		2168D9C415B50A1BDE096F4AD3C8998B /* SACreative.m in Sources */ = {isa = PBXBuildFile; fileRef = 230C86D581EB977819EC76E02BA29B87 /* SACreative.m */; };
+		2453BB9BDFAC3A047F450AC5CE52E18C /* SKMRAIDOrientationProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCCD76BBEAFD1A4B46500B90B1DA58D /* SKMRAIDOrientationProperties.m */; };
+		262814F7E64F8C9BAC80612F6BB07187 /* JSONHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E08B078ECF080DEAEBB2EDCB5232A9 /* JSONHTTPClient.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		2C6A9793561939C179FD286CBC6E88B4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C4D095456CDD1B0CF304BD39B339FDA /* Foundation.framework */; };
+		324D075E5130F663E18E601C1ECD45ED /* JSONModelClassProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0185D59A8DCBC7457F01A568206A21 /* JSONModelClassProperty.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		3684F7ED2C12629D6E289CA3A67C6459 /* SKBrowserControlsView.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A5AE9AD7AB09B378EF67D32600B200F /* SKBrowserControlsView.h */; };
+		382E4CFED57733F27CE53E83D0CBE139 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFE5BA074EBEB7382C679F5E4D30C3E2 /* EventKit.framework */; };
+		3B176DC9F6AA9E89515802F343C1B231 /* MRAIDSettings.h in Headers */ = {isa = PBXBuildFile; fileRef = FA47D4875BD5D114D6F2B08A88000493 /* MRAIDSettings.h */; };
+		3B916E05012CC9D887A5A24F636E7963 /* SACreative.h in Headers */ = {isa = PBXBuildFile; fileRef = E25D44D72877D91AD5A006841C0CAFBA /* SACreative.h */; };
+		4747FD8A41F2EFFA101774BC99B49CE6 /* SKMRAIDResizeProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC58808488616287DBA6E321BCA316A /* SKMRAIDResizeProperties.m */; };
+		47BE44F042A97892EBE559E653E18EFE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24B8E32D3443A904DF5042DD54FBA340 /* Security.framework */; };
+		4B807387C61E928933F70CF0F6417838 /* SKMRAIDOrientationProperties.h in Headers */ = {isa = PBXBuildFile; fileRef = 4400EA63EB129C993357E83735DFFA12 /* SKMRAIDOrientationProperties.h */; };
+		4D6A84658F291C6BFD7DA082760FACC0 /* SAEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D7E6CB5E5BAC22D7B7551BF98CCBFB6 /* SAEvent.m */; };
+		4FFE7AE60593762D05DC9DD57A5B4D63 /* SAAdView.h in Headers */ = {isa = PBXBuildFile; fileRef = 20E34D96FDE67AF3F32D42AA049F854B /* SAAdView.h */; };
+		506BC9818F4637B2F259A998D8712064 /* mraidjs.h in Headers */ = {isa = PBXBuildFile; fileRef = C69C64D83E295AA47F401076CDD8F3CA /* mraidjs.h */; };
+		5165052C6A7FD3E57112328D9A4A47D2 /* WeakRefClass.h in Headers */ = {isa = PBXBuildFile; fileRef = 43F5272B23BCE526658DD8FCC24A916E /* WeakRefClass.h */; };
+		51E80C73F43B81CB2F830CEE4E0B789F /* SANetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DA464D8EEDA430BDC55A6E57B554F03 /* SANetwork.m */; };
+		56BC063F12AE11DC2B2F1F828B28B0FA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4116DE247B5FF37D917C6190FE807375 /* CoreLocation.framework */; };
+		57E759C1DE6C6074E071DC5391306672 /* SKBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB65176FBF3151757BBAD1E03082064 /* SKBrowser.m */; };
+		5AE3E54265F27FE6A25E3B82A07AD8CD /* SKMRAIDInterstitial.h in Headers */ = {isa = PBXBuildFile; fileRef = 785A904C3D3A5F52B1586F90CF305833 /* SKMRAIDInterstitial.h */; };
+		5B4ECF000B0E3CF90985525549C64EDA /* SAFullscreenVideoAd.h in Headers */ = {isa = PBXBuildFile; fileRef = 0ACA59A653C440F5282E5F5975615081 /* SAFullscreenVideoAd.h */; };
+		61A54F0877B75EABC0B058C20704AD74 /* JSONKeyMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 55CBD65430274EC3EE11F0A42E8013B1 /* JSONKeyMapper.h */; };
+		6956B368E8CB7F32EDF8D8CE4E9FF21E /* JSONModelArray.h in Headers */ = {isa = PBXBuildFile; fileRef = C39268A39EE6B2268380295CAD0699B4 /* JSONModelArray.h */; };
+		697B30888345330AF1B984F246DE6B6E /* UIAlertController+Window.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A8DEDEB2C85967ADBC0DD1BB784286 /* UIAlertController+Window.m */; };
+		6CE28A01735B95DF88CB7FAB3ABE6193 /* SAAd.m in Sources */ = {isa = PBXBuildFile; fileRef = C3AA9A1993E7E48BEF3F7088AE11AB6C /* SAAd.m */; };
 		717A07787402E103A7D130D6BF72CB07 /* Pods-SuperAwesome Demo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B49B2499A1AA233414DEB1845A8D89 /* Pods-SuperAwesome Demo-dummy.m */; };
-		7228FFD92A71B9B477F178D52831D10E /* SKReachability.h in Headers */ = {isa = PBXBuildFile; fileRef = 0264E257AEF04DE0CB688FB60A407E5A /* SKReachability.h */; };
-		73C5A80AE5A3E04184E44796ADE49795 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D567A330FE7D0B3289D7D6957327DA01 /* CoreGraphics.framework */; };
-		73EB66F1695D25EB1B4CFC236EF0F7BD /* SAPadlockView.m in Sources */ = {isa = PBXBuildFile; fileRef = D89657F5DDBDC11B8FEE8C7092D3C276 /* SAPadlockView.m */; };
-		755F6B9A4D14782D4E86844186277F31 /* SAInScreenAdView.h in Headers */ = {isa = PBXBuildFile; fileRef = 42F4381B1E20D64CBB8D647BDB540841 /* SAInScreenAdView.h */; };
-		7758DE37E75D7578B2FBF12730E460B4 /* JSONAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 48E1058EF56BA7ADA6AE3B5D1707A314 /* JSONAPI.h */; };
-		78B5FCE53422896120479EE094C25C85 /* SKMRAIDModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F216C7131FFEB5F65030952A5B4592E1 /* SKMRAIDModalViewController.m */; };
-		7A94D95B9795E2DAA077E2916346042F /* JSONHTTPClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 258CAB4F3D7A59CA098BAFDCF5C7841E /* JSONHTTPClient.h */; };
-		7D727CF9AA3F8EAF5AF1FEFD7B99F056 /* SKMRAIDInterstitial.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E195FD9B917292B79A0E8F9CCFC36AA /* SKMRAIDInterstitial.m */; };
-		80EDB9995E77FAFDC53E4E88FF3D135E /* SAAdPreloader.h in Headers */ = {isa = PBXBuildFile; fileRef = A0D55157AE82D0482141E5D84FBF9202 /* SAAdPreloader.h */; };
-		834D573E752E6E7AB2E3CAB55F199BFA /* UIViewController+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B543514100D281CBF2FF70A3F7F73 /* UIViewController+Utils.m */; };
-		8419F2955AB00F4DA0F640AE2843C8B1 /* SKMRAIDParser.m in Sources */ = {isa = PBXBuildFile; fileRef = A48851EFC346F6366CCEEDAA4EED0708 /* SKMRAIDParser.m */; };
-		84CE4EF14A7E4A73B51D1592298244ED /* JSONModelError.m in Sources */ = {isa = PBXBuildFile; fileRef = 666EEDA6CCA1E7FB3B07A84EAA3E425E /* JSONModelError.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		8668625C43ADFDF1131D0055291116AB /* JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7931F3CD59F4B1E538D60BECF65DF62E /* JSONModel.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		883FCE96BDEDDBDB850D167988DC9C8F /* SKLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 2832F82D94F6C00BF07E2BEC6BE9F6AE /* SKLogger.m */; };
-		88FB53C70DF5D3F7663F0EC5E416ADF6 /* SADetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 323FFAE8F5A4BAFDCCACDB11B936D49D /* SADetails.m */; };
-		8C71C6A668D98C595388C439653F4458 /* JSONModelLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 82498A70CBDCC0FF88BEAECFD5FA3E65 /* JSONModelLib.h */; };
-		8D2639DCE841296197CD1E5E9DE7EA84 /* SAVideoAd.m in Sources */ = {isa = PBXBuildFile; fileRef = ED2B9240D660E489034BDC6F7EF01445 /* SAVideoAd.m */; };
-		8D7E31755A3355E418485F577A63E054 /* SuperAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1ED82D40734C1CF40717D9A7AE0BBD /* SuperAwesome.m */; };
-		917D6C196ABC85910E9186E713C596D4 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85B041DE69C45DE7E44B115FAD26FAE2 /* MediaPlayer.framework */; };
-		91C3E9A71AA5471E7EC89C30D4DA9550 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D671D2EAEB8B634495077075168D664 /* QuartzCore.framework */; };
-		9522C6190E4C0CA6F45B99FA92688874 /* JSONModel+networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 33686F58C8AA02D79543444500E7D0C5 /* JSONModel+networking.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		968CBAF6088A852778EB9D4B94C15F21 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 312C832AFCEA0BA3D305FE0C2D0EFCFE /* MessageUI.framework */; };
-		977C935423E5228DB3D16BB2D4DCAE40 /* SAInterstitialAd.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8561A8BE1B963675085F6E66ED2C50 /* SAInterstitialAd.m */; };
-		999375AC89D3DADCACDCE8B54DCA73AD /* SKMRAIDParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 28DA743BBC492166B4C0E33FB4272EBC /* SKMRAIDParser.h */; };
-		9E48B466B5A3C9FE8339FBAB4D64E422 /* SKBrowserControlsView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8059DE8EADB68415A88E49B38057C7 /* SKBrowserControlsView.m */; };
-		A0BB6B826E84C05BE2580870906FA3BE /* SAPadlockView.h in Headers */ = {isa = PBXBuildFile; fileRef = 829E7B7E2C1408DDA0A66A4898ADDDE0 /* SAPadlockView.h */; };
-		A5443FFBADD385919A398D3E07B743AC /* NSArray+JSONModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A26CB47384A041D565A3094062A8101 /* NSArray+JSONModel.h */; };
-		A6D1DF94BF4862BFE06D0CD662CD18E5 /* JSONModel+networking.h in Headers */ = {isa = PBXBuildFile; fileRef = AF85F97F7B3262EEB7009B0B26B1D8AC /* JSONModel+networking.h */; };
-		A9E672CD4B31985884D67CE8DC3CA8AC /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEF96617D73BF57FB29BD68564BAB6E6 /* EventKit.framework */; };
-		AB951BAB769DF69B49778AC46D63BE4D /* SuperAwesome.h in Headers */ = {isa = PBXBuildFile; fileRef = 2770559DA80FAA151F873A5476482FBA /* SuperAwesome.h */; };
-		ABD8529AECEDEA1BD39C9FFB03803F67 /* SKMRAIDOrientationProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 5158EF49354FE73793B0551F19BDA9BA /* SKMRAIDOrientationProperties.m */; };
-		ACC14F03464D689AE87C1E28994A4977 /* SAVideoAd.h in Headers */ = {isa = PBXBuildFile; fileRef = 123149C03C83D502C7406A22701D93DD /* SAVideoAd.h */; };
-		AE1FCBE6F374F06DD7DF667FFBE4C417 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5556EBDCA52D6714F3EF2491F188C0F /* Foundation.framework */; };
-		B0E54D462A0A6D8C17BA467195B50B06 /* UIViewController+Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 46533842DBE9F68F2225BC680206678F /* UIViewController+Utils.h */; };
-		B1B8676A8C401934E00763FBA7C66C18 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 302CD9419CFD102F7E7DF2258EAD3BFB /* AdSupport.framework */; };
-		B2C2F2480EC90C7FA8B15841C7C32FA7 /* SAParentalGate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C80DB5087D4A63E6F42765394336F0 /* SAParentalGate.m */; };
-		B4095A8F8192E63B3B14C738D80291C9 /* WeakRefClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 87C40D4C88B93322781BC19427660899 /* WeakRefClass.m */; };
-		B74A05C380407AF323B257C5A77C6D5D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5556EBDCA52D6714F3EF2491F188C0F /* Foundation.framework */; };
-		B922B635E0CF0920E91944D80D3F81D2 /* SKMRAIDUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = EC70312D7CD8FD822C1A4BA9209A25AA /* SKMRAIDUtil.m */; };
-		C07350D3808CC44B396E2F606D2F58E1 /* SANetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = CADA18A70DAE00751CCA2145220365B3 /* SANetwork.m */; };
-		C2A7964B56F8750A46DFFAF4D8A65A6E /* SABannerAd.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1FD7C70D2A415BD87138BD4CF1909F /* SABannerAd.m */; };
-		C63786BE4D7DBECA9A256EDE8D7CD9DE /* SANetwork+Ad.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A8EDB13B493E6C37A60B729559B497A /* SANetwork+Ad.m */; };
-		C6F02C187A33B9D6A303FAE57A632A76 /* JSONModel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A055DD7A96BA7F7C3F6955D2D964211A /* JSONModel-dummy.m */; };
-		C73539A597456E0EA21D443C99E712C4 /* ForwardButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A936721B191A97947C56B6652C59A97 /* ForwardButton.h */; };
-		C7E154E265C2378CD2B08ED6CF8DF4AC /* SANetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = 8AE2AF7C938E4AB59FEDC9BCCB4C58F2 /* SANetwork.h */; };
-		C8B125E53F939BFD46F257A17B6D1080 /* SACreative.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B7E6C90AA3E6023E42DD66747BC1CDC /* SACreative.h */; };
-		CBD5714CA5FEE084B35070AFF4B2D6F7 /* JSONValueTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E5FFB4384F787763489D00802D5CB27 /* JSONValueTransformer.h */; };
-		CE645522BD0692E3936103B1445A4030 /* BackButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 48D7451B0DFDB432A645960DF1960259 /* BackButton.h */; };
-		CF1C080367615BC42B33AE715B5620CB /* SKMRAIDResizeProperties.h in Headers */ = {isa = PBXBuildFile; fileRef = 61D38AFE6F00144EF7BDD462C9C82CBB /* SKMRAIDResizeProperties.h */; };
-		CFCF375A78DD805962D698CD87FA7EFB /* SKCommonSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0C16BC4B8823B1535F673ED48C8D6E /* SKCommonSettings.m */; };
-		D1F0D584EFAD15A9E112AD19DAC440D5 /* SABannerAd.h in Headers */ = {isa = PBXBuildFile; fileRef = AFC5709256F2622330A180E16B964371 /* SABannerAd.h */; };
-		D21618E0E797B3B5A5379D6DBD8C4F71 /* SAFullscreenAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC43F15FCD4BB1F5395A4C2D7F02BFD /* SAFullscreenAdView.m */; };
-		D434EC21B308A522A1F32D24D2F9D7B3 /* JSONValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 066BD3D9B5A93BE725B45EEAA37568CB /* JSONValueTransformer.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		D48FAAA3C09B754B9D5EACC4645EECAC /* UIAlertController+Window.h in Headers */ = {isa = PBXBuildFile; fileRef = 454030F6ADF03C7A3817EFA30313F48C /* UIAlertController+Window.h */; };
-		D57BCF248D07571933DF300847D2A368 /* SKMRAIDView.h in Headers */ = {isa = PBXBuildFile; fileRef = 00A98B90BC1B65773ACCE76FF7963FCA /* SKMRAIDView.h */; };
-		D6B649EC3FE5F1334D98A9CEB64E6002 /* SAInScreenAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A94909E25A27B61EE7E62A64777CBC2 /* SAInScreenAdView.m */; };
-		D6C7A9AA2F3BD8BF7AD11CB2FE5E3BEA /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDF154A035AC958C46A2AAA95EBF1817 /* CoreMotion.framework */; };
-		D7193BF8383BE763B135ECFDF56C94E7 /* WeakRefClass.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BB46D142CB670B086EE858BB61CB75B /* WeakRefClass.h */; };
-		D748D047831F86EC02ED60525FF97BF3 /* SKMRAIDServiceDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = C85796ECB99CFDDCC7B647815DBBBAAC /* SKMRAIDServiceDelegate.h */; };
-		E067627C4427B525E7112D891317A9E8 /* SKCommonSettings.h in Headers */ = {isa = PBXBuildFile; fileRef = FF4CB171D4DA49EA8FCFE7DDA1BBEEB5 /* SKCommonSettings.h */; };
-		E08E1B926ECA00C670CE8819D090C549 /* SKReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 413E26783F7BD490BBFCD1C9C71D9213 /* SKReachability.m */; };
-		E2C3A83C17F8635C98D7767EFF91B093 /* JSONModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 2706DF70ACC1498ACAA8BDB4AAE6D060 /* JSONModel.h */; };
-		E84BF9BCD15A5A0D443B7CCFD276DFEB /* SAParentalGate.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F76C4A5803B56D46D6F8ACE3D405856 /* SAParentalGate.h */; };
+		77A2B5F8F93DEC5C82FA7C501EE52098 /* JSONModel+networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A8CA2E7F51005A92E2DCF26081D4516 /* JSONModel+networking.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		7805A247D0AD847AC2319F83C3062A1C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACE0953BD47A61C2BDE1E1A508C9A483 /* CoreGraphics.framework */; };
+		7C739B104E37AC7C5BA135B502F8281D /* JSONModelError.m in Sources */ = {isa = PBXBuildFile; fileRef = C46738BC7464EAA4B0F0590CCB9850DB /* JSONModelError.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		7E1096AB6D8C83055DF39106C4481964 /* SuperAwesome.h in Headers */ = {isa = PBXBuildFile; fileRef = D0B692F60D6C1F138A7AAEE7814E5BF3 /* SuperAwesome.h */; };
+		8063D74C880252FDB801395EE8080007 /* JSONKeyMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6061B2FF6FEF8D5E0C9D3B4AB223DA23 /* JSONKeyMapper.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		81851815C5CD0DB631D586F1485E85DE /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EE7B7E192F3237DC63B472A17188E3E /* CoreData.framework */; };
+		8195E889B11F5F9C976891CB7B8468C9 /* SAFullscreenVideoAd.m in Sources */ = {isa = PBXBuildFile; fileRef = AA60965AC1D529DDC717294DC25C546D /* SAFullscreenVideoAd.m */; };
+		8360E6BE58C192AB0DEF4228A6C6E796 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD430393A602F13A3F260B94B2ED83F1 /* MessageUI.framework */; };
+		83A84DB1730E413653543A544D2E49F3 /* SAParentalGate.h in Headers */ = {isa = PBXBuildFile; fileRef = FF4D8638DA3E7467DD6D01CCCEACB0FF /* SAParentalGate.h */; };
+		8529D4CD87FCC08E74AF210C33BA2D9B /* SuperAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 75884993DA099773D11121EE177E396D /* SuperAwesome.m */; };
+		85B067CA6A53E3AF0A9361E21DD49C99 /* JSONValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4652CCAE82ECC10B37933458B10FE4E3 /* JSONValueTransformer.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		862F8425510F15BC7FFA32DBBE589422 /* SABannerAd.h in Headers */ = {isa = PBXBuildFile; fileRef = 129A225698AA4F73ACCC5FE76109764B /* SABannerAd.h */; };
+		870671468B5521F5306C9A9E307DA5BC /* JSONModelArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F85E441E7CECF9F17339AF041ED3CE2 /* JSONModelArray.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		87154E5CA4CF072D4AFC02233C2231ED /* SKMRAIDUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = AD1E46A21FC593D3C11AAF884FCC4307 /* SKMRAIDUtil.h */; };
+		8C36DE7AA4B2DC4BD3F6D754AE1C7723 /* SADetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 985DE63AB410CE8D5BD2EF39022AF580 /* SADetails.m */; };
+		8C678B612BA03B4BF719E351BD831047 /* NSArray+JSONModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 55E81F14B5DBAC9EC61A5BE2C7AD5DC7 /* NSArray+JSONModel.h */; };
+		95C44FF20EB6CE48CF1B5F9A25AF2E8C /* SAVideoAd.m in Sources */ = {isa = PBXBuildFile; fileRef = 74DC736E41EAC480D58C6921F0D60F87 /* SAVideoAd.m */; };
+		97753DBF1A17578EEFFD86194EB6AAB5 /* JSONModel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F0FEF8990DF8FD60B40241D200FE9D /* JSONModel-dummy.m */; };
+		9930344B7B48142575B18887F40B86D3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F150266DEB144A8003529CE267CD658 /* AVFoundation.framework */; };
+		9979107ECDC2BE9FA7126D2708541AFA /* SANetwork+Ad.h in Headers */ = {isa = PBXBuildFile; fileRef = D107B2B3F844F3E0DF6C88B28A08F0B5 /* SANetwork+Ad.h */; };
+		9A68F9A62FCF73D61C966FA8D6E6C1BA /* ForwardButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 11FC571A25978006E93B060B57F35FB2 /* ForwardButton.h */; };
+		9AEA6B15CB5024B4745A4EFD011B3B13 /* SKReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E0CC5E3DFC43739B3CC4F1689CB96D /* SKReachability.m */; };
+		9C3930D1B5589F11A833D39C2F15B4F0 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA7CC16928B306EAB72B2E01F66791B9 /* MediaPlayer.framework */; };
+		A0670258949EB86A9AD0CC6318FF4087 /* SAInScreenAdView.h in Headers */ = {isa = PBXBuildFile; fileRef = 91229BA27C8C4FDA2F31E9F67EA81ADF /* SAInScreenAdView.h */; };
+		A0679B9143647181B00CA3088998B488 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB779CD360FA6FB2CA63442169343827 /* CoreMotion.framework */; };
+		A30C723E01DC161AB13BA114411AA526 /* JSONModelLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AF137CB71772E747B1375230613B001 /* JSONModelLib.h */; };
+		A323F12D9C994EC71D60DDB939B42C7B /* SKMRAIDResizeProperties.h in Headers */ = {isa = PBXBuildFile; fileRef = 49F0B58E8D9CFB6B947B05D63F64EE26 /* SKMRAIDResizeProperties.h */; };
+		A34F3E15C9195A65E96ECB57C0465581 /* BackButton.h in Headers */ = {isa = PBXBuildFile; fileRef = F4CF64CCC7337B931FECC54C1A34C4B5 /* BackButton.h */; };
+		A422422E4519F68F5536AA75F8097446 /* SKMRAIDParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BD605226B75DFD9C0336EF5FA8700C9 /* SKMRAIDParser.h */; };
+		A6FFA8B3B30E927863C8B0694F9D367A /* SAAdPreloadProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = F2DE56E66E1796BC3053B7FCD8D8D6B1 /* SAAdPreloadProtocol.h */; };
+		A7A8F67322A3694C90A006B82F91D713 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0CF906C1E9A445A32D80292ED8F376D /* EventKitUI.framework */; };
+		A98D9C5B5572BBEAC445E59D55A6C10C /* SKLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 5EDB3AF0C1A87E2592624240F6D0A047 /* SKLogger.h */; };
+		A9C1688C8A669D54A7B19E3B6379983C /* NSArray+JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D6309672617C4D93DE2A786FFBD562A1 /* NSArray+JSONModel.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		A9D69C3EAF1A5479D2EB934E0DDD4DEE /* CloseButton.h in Headers */ = {isa = PBXBuildFile; fileRef = A4B75BB8CDBC525BD3D79713D8BE5C64 /* CloseButton.h */; };
+		AA08B34DD6CC55886C2F254E7A323E1B /* JSONAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A6D28A68EBD6DE66EF2E46529725A2 /* JSONAPI.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		AAD75D63F73DC254616FB30BB1B9B3D7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26517C9F989382414E551761C001678C /* SystemConfiguration.framework */; };
+		AB8291FD698D78849C6A8CAA5ED051A8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9834145B1EECDE145FC61FB57DEF4322 /* QuartzCore.framework */; };
+		AB84DA0FFAB5628E7E7C65994236A427 /* SKBrowser.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CAEF7F94AFEDC43149513C7ED2AE1A9 /* SKBrowser.h */; };
+		B06C357D34CA4D04D2E58AF6FA554445 /* SKMRAIDInterstitial.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B143D6AE1F3D5D3E00F5D6B0859D21 /* SKMRAIDInterstitial.m */; };
+		B1B0217D55F424CDFE439AF1F54EAF62 /* SAVideoAd.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B97D15952D6BEFDB66518DCE0EE3CAF /* SAVideoAd.h */; };
+		B28CDDDBEA0A7C7CEBD0A0D3C2D72148 /* SKMRAIDServiceDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = A7A6306F2858ED98314BF1FD51072217 /* SKMRAIDServiceDelegate.h */; };
+		B2E885BE4F66DDEBED93CF45B6A3E622 /* MRAIDSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 64AB29E3B5ED2B7CAF164D23013B8BE8 /* MRAIDSettings.m */; };
+		B44E17344E73E928D0D795D9265A6523 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C4D095456CDD1B0CF304BD39B339FDA /* Foundation.framework */; };
+		B57BB588DC0CD9DA9B81D4698FA976EA /* SKMRAIDModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79A21D6599E1BA0C84EFC59A7EDD5351 /* SKMRAIDModalViewController.m */; };
+		B84E6DB561E803D90048663ADEBA344C /* SAFullscreenAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = CDD275203E5E88D9207869FCD9AF4A22 /* SAFullscreenAdView.m */; };
+		BA49F786B9D71CF6FFC79DE1534658EC /* SKMRAIDView.h in Headers */ = {isa = PBXBuildFile; fileRef = 89BB6DA268E8078F8E7FCA22E550668F /* SKMRAIDView.h */; };
+		BA81E9E9DECEC606D77C0DA807D71EA4 /* JSONModelClassProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 93DC3A8A485B3F85304C81ED37EFFB97 /* JSONModelClassProperty.h */; };
+		BB8877AA7FA1647BCAA116F3864E8953 /* SAAdLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C6245CAF327FB3D4F3BF2A46FD6243 /* SAAdLoader.m */; };
+		BD21FB5033A1C6CBB604DB85A8BC5AC8 /* JSONModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 5ACBF7B10D7B25EE635C0C95726C90DB /* JSONModel.h */; };
+		BFC8F40E6449944F6C6D5CDB9A0FBB7B /* SAPadlockView.h in Headers */ = {isa = PBXBuildFile; fileRef = EC5C7370233EC167EC6E36CCD232914C /* SAPadlockView.h */; };
+		C41E6B39ABC54BA41DD53F8D00582C28 /* SAInterstitialAd.m in Sources */ = {isa = PBXBuildFile; fileRef = A7111769084EDFD70A60C517B3AA3F6B /* SAInterstitialAd.m */; };
+		C6342DFCA64D86DBD3D6B1535D2C49B0 /* SAInterstitialAd.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E6E8C1F9766193C01015D6DC05BF6F7 /* SAInterstitialAd.h */; };
+		C97DDC97A295DB9D37CBB1E7755BBEA8 /* SANetwork+Ad.m in Sources */ = {isa = PBXBuildFile; fileRef = 289F8CADB83E3591B38A20EBA372F7E2 /* SANetwork+Ad.m */; };
+		CC5DB2794F1801ED9863972EF5D52FA5 /* SANetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = 81CD907169AFC84C861562ED0A8C88D7 /* SANetwork.h */; };
+		CE968BF4A53D15C8F2E544BC2F5BA67C /* SKCommonSettings.h in Headers */ = {isa = PBXBuildFile; fileRef = EE0D331A9D0298EC05FE82CF330D14D7 /* SKCommonSettings.h */; };
+		CF5C249C4F20C35D2665B73667580292 /* SAEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 63F0CE01284BC8A9799BFCBB1D85CD79 /* SAEvent.h */; };
+		D14E3F2438BE38EB721484308EBCB307 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 188D9A96E4531AD49C37485B4BADC782 /* CFNetwork.framework */; };
+		D15D91F492676614FF3D67CC4A590E6D /* UIViewController+Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CC4857AE22ACAFC0BFD983F89D8AACB /* UIViewController+Utils.h */; };
+		D49DC1B178C5CCB8C31EDAC1CA4F914B /* JSONModel+networking.h in Headers */ = {isa = PBXBuildFile; fileRef = 552B53F9118CB3B1EC59D17687DEAEAE /* JSONModel+networking.h */; };
+		D74DB5385C1202A8CEBDF34F1F8C3DC1 /* JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8AB307A9590CD25FA33E79B6C11691 /* JSONModel.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		DD3A5356E06E696A41F8988918D1AA48 /* SKCommonSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = C922A59B40EF51DBA956ED82E51A6F24 /* SKCommonSettings.m */; };
+		E1D0D7D59B4780DF28B47596D65390E7 /* JSONHTTPClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F8A82D5C9DB675639ED6ABC024F3317 /* JSONHTTPClient.h */; };
+		E1DFC3B2E22527A2BB00A4A41B263315 /* SKMRAIDParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3295C10818980C1A9DCD9ADCEA2E8118 /* SKMRAIDParser.m */; };
+		E3E75060EDFA2010EFDD1AB7589A549E /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8B7A88DC13EF1DDE7132F516A3C9EF /* MobileCoreServices.framework */; };
+		E44B30E6208E84AB0B9A04D279D36D2C /* SKBrowserControlsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 89734BEF283157A2FC319C4ACB09593F /* SKBrowserControlsView.m */; };
+		E4B43D17AC47002E0255F753B5BC0348 /* SAAd.h in Headers */ = {isa = PBXBuildFile; fileRef = FA6AB674E91577B7D66506022BF7C79A /* SAAd.h */; };
+		E78F0AADF575FD6C417843A46A2A176B /* SAAdViewProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 80475E7A1FB1EAE0568AA89999FA78AC /* SAAdViewProtocol.h */; };
+		E79629253DD4367A518B0CB25E217F03 /* SAAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE4FB3AB41703262621EA4FB72D0D3D /* SAAdView.m */; };
 		E9B0067247AE9F45F467E65776E96C53 /* Pods-SuperAwesome DemoTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D8DFD2F4CE04C049B04A86673E879F /* Pods-SuperAwesome DemoTests-dummy.m */; };
-		EC20E6725BAE7E6C5BA6CE186E1789C8 /* JSONModelClassProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 261280FDF1E9B78AC5B815303EC0E0A2 /* JSONModelClassProperty.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		EE6318507F4F0BF944544EB0FBA851D2 /* mraidjs.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BB788D714CAC63AE41EC4BF59673606 /* mraidjs.h */; };
-		F238522A89E70EAED999C9323F8C4A57 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACEECA8B0F3A57F8DA3AC3216B9C35ED /* AudioToolbox.framework */; };
-		F32EF20A263C3715E058B8F46FE886DE /* SKLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = DDD42B3231B0913E9F7AF93CEB1F36C2 /* SKLogger.h */; };
-		F37A7C8CB12FD0309D100D56EC9110A0 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC271750D31E9E782B2B1320A32F12E5 /* MobileCoreServices.framework */; };
-		F4EE7EEBB78298C2C4C882F9A4B7B70A /* SKBrowserControlsView.h in Headers */ = {isa = PBXBuildFile; fileRef = B3FFA5488EBF8B79F45AFD56A70C2322 /* SKBrowserControlsView.h */; };
-		F5132458874418A6DFB12E10FC7BED88 /* SADetails.h in Headers */ = {isa = PBXBuildFile; fileRef = 59FAC313A630142A9D116800C3BFC388 /* SADetails.h */; };
-		F8C02B3D67AEC997117704E1A59CAF08 /* SAInterstitialAd.h in Headers */ = {isa = PBXBuildFile; fileRef = F6CB65C27019FC8A45BA8B53A1EA3C0B /* SAInterstitialAd.h */; };
-		F9373BCA1FFCB25B921A8A3D6191BC65 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CC33C00F3E6AA5DF43983397A8F2C4E /* CFNetwork.framework */; };
-		F9799B38C657DCAC3470165DCE8407D8 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0349D8E1E6DAE0A6AE663C8FB84C8E82 /* CoreTelephony.framework */; };
-		FFB8A530546BB01FC3008D4607419E08 /* JSONAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = F28A5AD1B5A48B57BE2C7B4ABAF9C889 /* JSONAPI.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		FFE73A29E91C6F8857BEF685572FA093 /* JSONModelArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D90F9A313FF26FAE466837B2A63567C /* JSONModelArray.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		EA5E7D4FAA392AC6896A33E97032100C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F2310F575B061C7CBB38BBB7DAC21C0 /* StoreKit.framework */; };
+		ECAEBE87921C13D5EBA8D6E74509F31C /* SAInScreenAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A57855B5D183C3A94899637A9D88C7 /* SAInScreenAdView.m */; };
+		ED3F76378A8B1A53D4C4C199AE96F913 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBDDC6A0276FCF5B0C2BC5C5F2865C2 /* CoreTelephony.framework */; };
+		EEB28F00E35ABB2487545B043A42B75D /* SKMRAIDView.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A755C4DD32FDC1EE964DAB4B6C24A1 /* SKMRAIDView.m */; };
+		F03051EE3768E263B4D124CCA7A1F97F /* SAParentalGate.m in Sources */ = {isa = PBXBuildFile; fileRef = 175EEF657CCFB66B3D7974AEEB699342 /* SAParentalGate.m */; };
+		F467B97A4C49B2FA9E0555C1591FD0E4 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 381BA633086EFC7CF7E153BEC5790388 /* AdSupport.framework */; };
+		F66D2EBBE0985AB79EACB699B622A33C /* SKMRAIDUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = E90E0B42835C6786EC8409B242B14B2E /* SKMRAIDUtil.m */; };
+		F8950C08436C5646845FB9A6D1F15197 /* SKMRAIDModalViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 291DC671A598CA1E7417018A7F705D8E /* SKMRAIDModalViewController.h */; };
+		F8A18D62B7AEA5874A21F39CDAF6D465 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B747282A5AAA32D419280D12EDBB675 /* AudioToolbox.framework */; };
+		FD7973EC146E0E9C60846E7CDE975928 /* WeakRefClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 69BEF0D8214289F97105028449740153 /* WeakRefClass.m */; };
+		FE7D0D38CE61DEF1EB7AD0E488FCFBC1 /* SKLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BCBC7D29DDC06D57CDC221EA2749CB8 /* SKLogger.m */; };
+		FF970B0F31BD4F246F7E3864E68163D1 /* SAPadlockView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8273E2D6E9FC0E27410740B5FC5367B9 /* SAPadlockView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2B50D6BAA403395DE77E5E393C7B0F26 /* PBXContainerItemProxy */ = {
+		0925FEA39CFB2D925B6BB56E3C116110 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = EE0EEBB2EA9869AA66CD74A3263EAE63;
+			remoteGlobalIDString = 4E444B0F1C748CB823F1BAA1216FBA60;
 			remoteInfo = JSONModel;
 		};
-		37B033AC1DF26FD57C047894AF9F2D7D /* PBXContainerItemProxy */ = {
+		533C5E68548886F02F827546E1A56295 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = E090F4A852F2A629CCF50B6C3A185B62;
+			remoteGlobalIDString = 5FF390323D1E79F410565EEA721780C7;
 			remoteInfo = SuperAwesome;
 		};
-		451CEA64108D6B80838817E13557F61F /* PBXContainerItemProxy */ = {
+		9D754B1A5A95D0553D4693D8216E1961 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = E090F4A852F2A629CCF50B6C3A185B62;
-			remoteInfo = SuperAwesome;
-		};
-		8D364FC9EEB159428AB9B3DCF5111173 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = EE0EEBB2EA9869AA66CD74A3263EAE63;
+			remoteGlobalIDString = 4E444B0F1C748CB823F1BAA1216FBA60;
 			remoteInfo = JSONModel;
 		};
-		9D525214E6657E3D4049E2890DEFF83D /* PBXContainerItemProxy */ = {
+		D9F91D37D38DB940E401EF38631F794A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = EE0EEBB2EA9869AA66CD74A3263EAE63;
+			remoteGlobalIDString = 5FF390323D1E79F410565EEA721780C7;
+			remoteInfo = SuperAwesome;
+		};
+		F807B994C58C9076F4D48DC6DE01FF25 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4E444B0F1C748CB823F1BAA1216FBA60;
 			remoteInfo = JSONModel;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00A98B90BC1B65773ACCE76FF7963FCA /* SKMRAIDView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SKMRAIDView.h; sourceTree = "<group>"; };
 		01824232A2D90052E03DD89776AD3935 /* IMAAdPodInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IMAAdPodInfo.h; path = GoogleIMASDK3/IMAAdPodInfo.h; sourceTree = "<group>"; };
-		0264E257AEF04DE0CB688FB60A407E5A /* SKReachability.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SKReachability.h; sourceTree = "<group>"; };
 		030AEAD0522884E1D54696A99ABFF59D /* Pods-SuperAwesome Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SuperAwesome Demo.debug.xcconfig"; sourceTree = "<group>"; };
-		0349D8E1E6DAE0A6AE663C8FB84C8E82 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CoreTelephony.framework; sourceTree = DEVELOPER_DIR; };
+		03A78DAA9B12F7BF44D63043DB0197A4 /* JSONModel-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "JSONModel-Private.xcconfig"; sourceTree = "<group>"; };
 		041FCC37BB08146454C9DF95BF957CD7 /* Pods-SuperAwesome DemoTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SuperAwesome DemoTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		05FEFDD245A58DE198E4147C87E5429E /* SuperAwesome-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "SuperAwesome-Private.xcconfig"; sourceTree = "<group>"; };
-		066BD3D9B5A93BE725B45EEAA37568CB /* JSONValueTransformer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSONValueTransformer.m; path = JSONModel/JSONModelTransformations/JSONValueTransformer.m; sourceTree = "<group>"; };
 		08505B4C5FEEE5C0BB8983CA09B8079A /* IMAContentPlayhead.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IMAContentPlayhead.h; path = GoogleIMASDK3/IMAContentPlayhead.h; sourceTree = "<group>"; };
-		0A0C16BC4B8823B1535F673ED48C8D6E /* SKCommonSettings.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SKCommonSettings.m; sourceTree = "<group>"; };
-		0BB46D142CB670B086EE858BB61CB75B /* WeakRefClass.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = WeakRefClass.h; sourceTree = "<group>"; };
-		1116BA67EA48F2E094C55119746B69CD /* SAFullscreenAdView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SAFullscreenAdView.h; sourceTree = "<group>"; };
-		123149C03C83D502C7406A22701D93DD /* SAVideoAd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SAVideoAd.h; sourceTree = "<group>"; };
-		154C960D07EDD7CE4A447777D96EFBBD /* SKMRAIDUtil.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SKMRAIDUtil.h; sourceTree = "<group>"; };
-		15D267071A73EDEBBFA293A4E52290C6 /* SAAd.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SAAd.m; sourceTree = "<group>"; };
+		0ACA59A653C440F5282E5F5975615081 /* SAFullscreenVideoAd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SAFullscreenVideoAd.h; sourceTree = "<group>"; };
+		0AF137CB71772E747B1375230613B001 /* JSONModelLib.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSONModelLib.h; path = JSONModel/JSONModelLib.h; sourceTree = "<group>"; };
+		0CCCD76BBEAFD1A4B46500B90B1DA58D /* SKMRAIDOrientationProperties.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SKMRAIDOrientationProperties.m; sourceTree = "<group>"; };
+		0F150266DEB144A8003529CE267CD658 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		11A6D28A68EBD6DE66EF2E46529725A2 /* JSONAPI.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSONAPI.m; path = JSONModel/JSONModelNetworking/JSONAPI.m; sourceTree = "<group>"; };
+		11FC571A25978006E93B060B57F35FB2 /* ForwardButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ForwardButton.h; sourceTree = "<group>"; };
+		129A225698AA4F73ACCC5FE76109764B /* SABannerAd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SABannerAd.h; sourceTree = "<group>"; };
+		15E0CC5E3DFC43739B3CC4F1689CB96D /* SKReachability.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SKReachability.m; sourceTree = "<group>"; };
+		16A755C4DD32FDC1EE964DAB4B6C24A1 /* SKMRAIDView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SKMRAIDView.m; sourceTree = "<group>"; };
+		175EEF657CCFB66B3D7974AEEB699342 /* SAParentalGate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SAParentalGate.m; sourceTree = "<group>"; };
+		188D9A96E4531AD49C37485B4BADC782 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
+		1A8CA2E7F51005A92E2DCF26081D4516 /* JSONModel+networking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "JSONModel+networking.m"; path = "JSONModel/JSONModelNetworking/JSONModel+networking.m"; sourceTree = "<group>"; };
+		1BBDDC6A0276FCF5B0C2BC5C5F2865C2 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CoreTelephony.framework; sourceTree = DEVELOPER_DIR; };
+		1E6E8C1F9766193C01015D6DC05BF6F7 /* SAInterstitialAd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SAInterstitialAd.h; sourceTree = "<group>"; };
 		1E6FBBB40ABA4530407FCA511AB0E60C /* Pods-SuperAwesome Demo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SuperAwesome Demo-acknowledgements.markdown"; sourceTree = "<group>"; };
-		1EB274328206BFEB26A1AE68BC4A312B /* MRAIDSettings.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MRAIDSettings.m; sourceTree = "<group>"; };
-		258CAB4F3D7A59CA098BAFDCF5C7841E /* JSONHTTPClient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSONHTTPClient.h; path = JSONModel/JSONModelNetworking/JSONHTTPClient.h; sourceTree = "<group>"; };
-		261280FDF1E9B78AC5B815303EC0E0A2 /* JSONModelClassProperty.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSONModelClassProperty.m; path = JSONModel/JSONModel/JSONModelClassProperty.m; sourceTree = "<group>"; };
-		2706DF70ACC1498ACAA8BDB4AAE6D060 /* JSONModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSONModel.h; path = JSONModel/JSONModel/JSONModel.h; sourceTree = "<group>"; };
-		27409F15C55F1DBE40DBDFD0372FA4DA /* libSuperAwesome.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSuperAwesome.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		2770559DA80FAA151F873A5476482FBA /* SuperAwesome.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SuperAwesome.h; sourceTree = "<group>"; };
-		2832F82D94F6C00BF07E2BEC6BE9F6AE /* SKLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SKLogger.m; sourceTree = "<group>"; };
+		1F85E441E7CECF9F17339AF041ED3CE2 /* JSONModelArray.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSONModelArray.m; path = JSONModel/JSONModel/JSONModelArray.m; sourceTree = "<group>"; };
+		20E34D96FDE67AF3F32D42AA049F854B /* SAAdView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SAAdView.h; sourceTree = "<group>"; };
+		230C86D581EB977819EC76E02BA29B87 /* SACreative.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SACreative.m; sourceTree = "<group>"; };
+		24B8E32D3443A904DF5042DD54FBA340 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		26517C9F989382414E551761C001678C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
 		283869F4A4B4575314796690CD6C7103 /* displayVideo.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; path = displayVideo.html; sourceTree = "<group>"; };
-		28DA743BBC492166B4C0E33FB4272EBC /* SKMRAIDParser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SKMRAIDParser.h; sourceTree = "<group>"; };
-		2951172F2AB1A78F002D54BBC108A6AD /* SAEvent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SAEvent.h; sourceTree = "<group>"; };
-		2A26CB47384A041D565A3094062A8101 /* NSArray+JSONModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+JSONModel.h"; path = "JSONModel/JSONModelCategories/NSArray+JSONModel.h"; sourceTree = "<group>"; };
-		2B0713759226D461A873CC80A4AD672A /* JSONKeyMapper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSONKeyMapper.h; path = JSONModel/JSONModelTransformations/JSONKeyMapper.h; sourceTree = "<group>"; };
-		2B7E6C90AA3E6023E42DD66747BC1CDC /* SACreative.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SACreative.h; sourceTree = "<group>"; };
-		2BB788D714CAC63AE41EC4BF59673606 /* mraidjs.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = mraidjs.h; sourceTree = "<group>"; };
-		302CD9419CFD102F7E7DF2258EAD3BFB /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/AdSupport.framework; sourceTree = DEVELOPER_DIR; };
+		289F8CADB83E3591B38A20EBA372F7E2 /* SANetwork+Ad.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SANetwork+Ad.m"; sourceTree = "<group>"; };
+		291DC671A598CA1E7417018A7F705D8E /* SKMRAIDModalViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SKMRAIDModalViewController.h; sourceTree = "<group>"; };
+		2BD605226B75DFD9C0336EF5FA8700C9 /* SKMRAIDParser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SKMRAIDParser.h; sourceTree = "<group>"; };
+		3061A6895044ECAFC81274A7D24768B3 /* SAAdLoader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SAAdLoader.h; sourceTree = "<group>"; };
 		306AD4629BD3E0C4B10ECCF9E58A18ED /* start_selected.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = start_selected.png; sourceTree = "<group>"; };
-		312C832AFCEA0BA3D305FE0C2D0EFCFE /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/MessageUI.framework; sourceTree = DEVELOPER_DIR; };
 		321100AF45206433F5262AFD3F59CEFE /* IMAAdError.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IMAAdError.h; path = GoogleIMASDK3/IMAAdError.h; sourceTree = "<group>"; };
-		323FFAE8F5A4BAFDCCACDB11B936D49D /* SADetails.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SADetails.m; sourceTree = "<group>"; };
-		324F6D5881E86DAB0CB737A8077AE358 /* SACreative.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SACreative.m; sourceTree = "<group>"; };
-		33686F58C8AA02D79543444500E7D0C5 /* JSONModel+networking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "JSONModel+networking.m"; path = "JSONModel/JSONModelNetworking/JSONModel+networking.m"; sourceTree = "<group>"; };
-		338B87707D4677C9FAD38A9A1529C2EE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
-		33EFC2D4AA8AF71F27E82FDDA8BA60D2 /* libJSONModel.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libJSONModel.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		3464DE71B0527C13D6593B86547E2EBD /* SKMRAIDView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SKMRAIDView.m; sourceTree = "<group>"; };
+		3295C10818980C1A9DCD9ADCEA2E8118 /* SKMRAIDParser.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SKMRAIDParser.m; sourceTree = "<group>"; };
+		33261949CB67DCDB015207B1C7FA363B /* SAEventManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SAEventManager.h; sourceTree = "<group>"; };
 		355FDF206942C8EC12D1C3D159DF1A7F /* libPods-SuperAwesome DemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SuperAwesome DemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3CC33C00F3E6AA5DF43983397A8F2C4E /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
-		3D671D2EAEB8B634495077075168D664 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		381BA633086EFC7CF7E153BEC5790388 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/AdSupport.framework; sourceTree = DEVELOPER_DIR; };
+		39A8DEDEB2C85967ADBC0DD1BB784286 /* UIAlertController+Window.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+Window.m"; sourceTree = "<group>"; };
+		39ACA9EC7189768609F119FF71DD9056 /* JSONAPI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSONAPI.h; path = JSONModel/JSONModelNetworking/JSONAPI.h; sourceTree = "<group>"; };
+		3DA464D8EEDA430BDC55A6E57B554F03 /* SANetwork.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SANetwork.m; sourceTree = "<group>"; };
 		3DE5ABF1646BC3849DFBC5EF2DDB57C3 /* Pods-SuperAwesome Demo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SuperAwesome Demo-acknowledgements.plist"; sourceTree = "<group>"; };
-		3E5FFB4384F787763489D00802D5CB27 /* JSONValueTransformer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSONValueTransformer.h; path = JSONModel/JSONModelTransformations/JSONValueTransformer.h; sourceTree = "<group>"; };
-		3F7059CD5BD9E6B2799A079FE4D2D4B4 /* SAAdPreloader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SAAdPreloader.m; sourceTree = "<group>"; };
-		413E26783F7BD490BBFCD1C9C71D9213 /* SKReachability.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SKReachability.m; sourceTree = "<group>"; };
-		41A8B9C48F355CB72533E5933471CD57 /* SAFullscreenVideoAd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SAFullscreenVideoAd.h; sourceTree = "<group>"; };
-		42F4381B1E20D64CBB8D647BDB540841 /* SAInScreenAdView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SAInScreenAdView.h; sourceTree = "<group>"; };
-		446899E1043CE7C12E291FC7DA414851 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
-		454030F6ADF03C7A3817EFA30313F48C /* UIAlertController+Window.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+Window.h"; sourceTree = "<group>"; };
+		3EC58808488616287DBA6E321BCA316A /* SKMRAIDResizeProperties.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SKMRAIDResizeProperties.m; sourceTree = "<group>"; };
+		4116DE247B5FF37D917C6190FE807375 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
+		43F5272B23BCE526658DD8FCC24A916E /* WeakRefClass.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = WeakRefClass.h; sourceTree = "<group>"; };
+		4400EA63EB129C993357E83735DFFA12 /* SKMRAIDOrientationProperties.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SKMRAIDOrientationProperties.h; sourceTree = "<group>"; };
 		46074C6C2685F2437FA62D2BF3AC9C34 /* AdDemo768x1024.jpg */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.jpeg; path = AdDemo768x1024.jpg; sourceTree = "<group>"; };
-		46533842DBE9F68F2225BC680206678F /* UIViewController+Utils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Utils.h"; sourceTree = "<group>"; };
-		479FDE3899C9EB8629FA83685A44B6D7 /* JSONModelClassProperty.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSONModelClassProperty.h; path = JSONModel/JSONModel/JSONModelClassProperty.h; sourceTree = "<group>"; };
-		485B9112B64E0237792C112990574507 /* SAEvent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SAEvent.m; sourceTree = "<group>"; };
-		48D7451B0DFDB432A645960DF1960259 /* BackButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BackButton.h; sourceTree = "<group>"; };
-		48E1058EF56BA7ADA6AE3B5D1707A314 /* JSONAPI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSONAPI.h; path = JSONModel/JSONModelNetworking/JSONAPI.h; sourceTree = "<group>"; };
-		4A94909E25A27B61EE7E62A64777CBC2 /* SAInScreenAdView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SAInScreenAdView.m; sourceTree = "<group>"; };
-		4A99F6FB358041B2820CA87ABCE5E171 /* JSONModel-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "JSONModel-Private.xcconfig"; sourceTree = "<group>"; };
+		4652CCAE82ECC10B37933458B10FE4E3 /* JSONValueTransformer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSONValueTransformer.m; path = JSONModel/JSONModelTransformations/JSONValueTransformer.m; sourceTree = "<group>"; };
+		49F0B58E8D9CFB6B947B05D63F64EE26 /* SKMRAIDResizeProperties.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SKMRAIDResizeProperties.h; sourceTree = "<group>"; };
+		4B747282A5AAA32D419280D12EDBB675 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
 		4D54E86000F5198BE3122AD3C5962472 /* IMAAdDisplayContainer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IMAAdDisplayContainer.h; path = GoogleIMASDK3/IMAAdDisplayContainer.h; sourceTree = "<group>"; };
-		4E1ED82D40734C1CF40717D9A7AE0BBD /* SuperAwesome.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SuperAwesome.m; sourceTree = "<group>"; };
-		5158EF49354FE73793B0551F19BDA9BA /* SKMRAIDOrientationProperties.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SKMRAIDOrientationProperties.m; sourceTree = "<group>"; };
-		545390D185B9F3553DECD1A4E7E02976 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CoreMedia.framework; sourceTree = DEVELOPER_DIR; };
-		57184A5486D76BE614F70AAB104B1594 /* SKBrowser.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SKBrowser.m; sourceTree = "<group>"; };
+		4D8B7A88DC13EF1DDE7132F516A3C9EF /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
+		525C1CBDAACBF6BBB0C230DB72B9AFB6 /* libJSONModel.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libJSONModel.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		552B53F9118CB3B1EC59D17687DEAEAE /* JSONModel+networking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "JSONModel+networking.h"; path = "JSONModel/JSONModelNetworking/JSONModel+networking.h"; sourceTree = "<group>"; };
+		55CBD65430274EC3EE11F0A42E8013B1 /* JSONKeyMapper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSONKeyMapper.h; path = JSONModel/JSONModelTransformations/JSONKeyMapper.h; sourceTree = "<group>"; };
+		55E81F14B5DBAC9EC61A5BE2C7AD5DC7 /* NSArray+JSONModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+JSONModel.h"; path = "JSONModel/JSONModelCategories/NSArray+JSONModel.h"; sourceTree = "<group>"; };
+		56E08B078ECF080DEAEBB2EDCB5232A9 /* JSONHTTPClient.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSONHTTPClient.m; path = JSONModel/JSONModelNetworking/JSONHTTPClient.m; sourceTree = "<group>"; };
 		573E72145FFFC0FC61C8337DCD0AA466 /* IMAAdsLoader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IMAAdsLoader.h; path = GoogleIMASDK3/IMAAdsLoader.h; sourceTree = "<group>"; };
 		577DF308ACA3B85504B6462AF14E87D6 /* Pods-SuperAwesome DemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SuperAwesome DemoTests.debug.xcconfig"; sourceTree = "<group>"; };
-		59FAC313A630142A9D116800C3BFC388 /* SADetails.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SADetails.h; sourceTree = "<group>"; };
 		5A8356E0C9C92245182F1C35C7E46296 /* IMAUiElements.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IMAUiElements.h; path = GoogleIMASDK3/IMAUiElements.h; sourceTree = "<group>"; };
-		5A936721B191A97947C56B6652C59A97 /* ForwardButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ForwardButton.h; sourceTree = "<group>"; };
-		5B545A9EBC0C48866C3716167E9890F7 /* SuperAwesome-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SuperAwesome-dummy.m"; sourceTree = "<group>"; };
+		5ACBF7B10D7B25EE635C0C95726C90DB /* JSONModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSONModel.h; path = JSONModel/JSONModel/JSONModel.h; sourceTree = "<group>"; };
 		5C4EF92C234F8D5AB24B98FE686782DC /* Pods-SuperAwesome DemoTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SuperAwesome DemoTests-resources.sh"; sourceTree = "<group>"; };
 		5D76938C2758ECFAE00D8A3FB5E32F0F /* sa_padlock.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = sa_padlock.png; sourceTree = "<group>"; };
-		5D90F9A313FF26FAE466837B2A63567C /* JSONModelArray.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSONModelArray.m; path = JSONModel/JSONModel/JSONModelArray.m; sourceTree = "<group>"; };
-		5DC43F15FCD4BB1F5395A4C2D7F02BFD /* SAFullscreenAdView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SAFullscreenAdView.m; sourceTree = "<group>"; };
-		5E8561A8BE1B963675085F6E66ED2C50 /* SAInterstitialAd.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SAInterstitialAd.m; sourceTree = "<group>"; };
-		61D38AFE6F00144EF7BDD462C9C82CBB /* SKMRAIDResizeProperties.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SKMRAIDResizeProperties.h; sourceTree = "<group>"; };
+		5EDB3AF0C1A87E2592624240F6D0A047 /* SKLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SKLogger.h; sourceTree = "<group>"; };
+		5F8A82D5C9DB675639ED6ABC024F3317 /* JSONHTTPClient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSONHTTPClient.h; path = JSONModel/JSONModelNetworking/JSONHTTPClient.h; sourceTree = "<group>"; };
+		6061B2FF6FEF8D5E0C9D3B4AB223DA23 /* JSONKeyMapper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSONKeyMapper.m; path = JSONModel/JSONModelTransformations/JSONKeyMapper.m; sourceTree = "<group>"; };
+		63F0CE01284BC8A9799BFCBB1D85CD79 /* SAEvent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SAEvent.h; sourceTree = "<group>"; };
+		64AB29E3B5ED2B7CAF164D23013B8BE8 /* MRAIDSettings.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MRAIDSettings.m; sourceTree = "<group>"; };
 		65EE1332528F723552F605D50149D467 /* SALogo.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = SALogo.png; sourceTree = "<group>"; };
-		666EEDA6CCA1E7FB3B07A84EAA3E425E /* JSONModelError.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSONModelError.m; path = JSONModel/JSONModel/JSONModelError.m; sourceTree = "<group>"; };
-		689C393E76E6DE80650BE41CDC476355 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/StoreKit.framework; sourceTree = DEVELOPER_DIR; };
-		6A8EDB13B493E6C37A60B729559B497A /* SANetwork+Ad.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SANetwork+Ad.m"; sourceTree = "<group>"; };
-		6BE0F30C30134D7A1DB82CB18DC1C38B /* SKMRAIDOrientationProperties.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SKMRAIDOrientationProperties.h; sourceTree = "<group>"; };
-		6C5F9CFCF000C21876235928408A03C1 /* NSArray+JSONModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+JSONModel.m"; path = "JSONModel/JSONModelCategories/NSArray+JSONModel.m"; sourceTree = "<group>"; };
+		69B143D6AE1F3D5D3E00F5D6B0859D21 /* SKMRAIDInterstitial.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SKMRAIDInterstitial.m; sourceTree = "<group>"; };
+		69BEF0D8214289F97105028449740153 /* WeakRefClass.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = WeakRefClass.m; sourceTree = "<group>"; };
+		6CAEF7F94AFEDC43149513C7ED2AE1A9 /* SKBrowser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SKBrowser.h; sourceTree = "<group>"; };
 		71D48D2ECCE4A024026A4B7B25B6528E /* libPods-SuperAwesome Demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SuperAwesome Demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		723C6A912BBEF9D13E5E4363ABE8D684 /* JSONKeyMapper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSONKeyMapper.m; path = JSONModel/JSONModelTransformations/JSONKeyMapper.m; sourceTree = "<group>"; };
-		7493F18DD8912A44273D6AAD2846CCEF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
-		7597706729AA8D049EF12ADFBA9B7CAE /* SKMRAIDResizeProperties.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SKMRAIDResizeProperties.m; sourceTree = "<group>"; };
-		7931F3CD59F4B1E538D60BECF65DF62E /* JSONModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSONModel.m; path = JSONModel/JSONModel/JSONModel.m; sourceTree = "<group>"; };
-		7ACE997DC065B9361A965131C185B944 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
-		7BB5A120223162CBA103E2DD25A9DD7A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CoreData.framework; sourceTree = DEVELOPER_DIR; };
+		74DC736E41EAC480D58C6921F0D60F87 /* SAVideoAd.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SAVideoAd.m; sourceTree = "<group>"; };
+		7569CC69DF324DF9F07448B888ECA569 /* SABannerAd.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SABannerAd.m; sourceTree = "<group>"; };
+		75884993DA099773D11121EE177E396D /* SuperAwesome.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SuperAwesome.m; sourceTree = "<group>"; };
+		77A57855B5D183C3A94899637A9D88C7 /* SAInScreenAdView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SAInScreenAdView.m; sourceTree = "<group>"; };
+		785A904C3D3A5F52B1586F90CF305833 /* SKMRAIDInterstitial.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SKMRAIDInterstitial.h; sourceTree = "<group>"; };
+		79A21D6599E1BA0C84EFC59A7EDD5351 /* SKMRAIDModalViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SKMRAIDModalViewController.m; sourceTree = "<group>"; };
+		79AC33226C8A9CDF153028673A219A40 /* UIViewController+Utils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Utils.m"; sourceTree = "<group>"; };
+		7EE4FB3AB41703262621EA4FB72D0D3D /* SAAdView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SAAdView.m; sourceTree = "<group>"; };
+		80475E7A1FB1EAE0568AA89999FA78AC /* SAAdViewProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SAAdViewProtocol.h; sourceTree = "<group>"; };
 		81C558DD370A6BDAE9275E3A04926E79 /* displayImage.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; path = displayImage.html; sourceTree = "<group>"; };
-		82498A70CBDCC0FF88BEAECFD5FA3E65 /* JSONModelLib.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSONModelLib.h; path = JSONModel/JSONModelLib.h; sourceTree = "<group>"; };
-		829E7B7E2C1408DDA0A66A4898ADDDE0 /* SAPadlockView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SAPadlockView.h; sourceTree = "<group>"; };
+		81CD907169AFC84C861562ED0A8C88D7 /* SANetwork.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SANetwork.h; sourceTree = "<group>"; };
+		81D3B0CA6CEC3B2B95FDF0B9BD68C384 /* libSuperAwesome.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSuperAwesome.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8273E2D6E9FC0E27410740B5FC5367B9 /* SAPadlockView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SAPadlockView.m; sourceTree = "<group>"; };
 		82E27BBCDE65D8658B6379F048614A18 /* IMAAdEvent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IMAAdEvent.h; path = GoogleIMASDK3/IMAAdEvent.h; sourceTree = "<group>"; };
 		83B49B2499A1AA233414DEB1845A8D89 /* Pods-SuperAwesome Demo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SuperAwesome Demo-dummy.m"; sourceTree = "<group>"; };
 		84B92EB1167BBF34B17DC5C0475D18F2 /* displaSWF.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; path = displaSWF.html; sourceTree = "<group>"; };
-		85B041DE69C45DE7E44B115FAD26FAE2 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/MediaPlayer.framework; sourceTree = DEVELOPER_DIR; };
-		87C40D4C88B93322781BC19427660899 /* WeakRefClass.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = WeakRefClass.m; sourceTree = "<group>"; };
+		89734BEF283157A2FC319C4ACB09593F /* SKBrowserControlsView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SKBrowserControlsView.m; sourceTree = "<group>"; };
+		89BB6DA268E8078F8E7FCA22E550668F /* SKMRAIDView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SKMRAIDView.h; sourceTree = "<group>"; };
 		8A3CC502F2F6F7E3D064D4CE6D420B73 /* AdDemo320x50.jpg */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.jpeg; path = AdDemo320x50.jpg; sourceTree = "<group>"; };
-		8AE2AF7C938E4AB59FEDC9BCCB4C58F2 /* SANetwork.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SANetwork.h; sourceTree = "<group>"; };
-		8E195FD9B917292B79A0E8F9CCFC36AA /* SKMRAIDInterstitial.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SKMRAIDInterstitial.m; sourceTree = "<group>"; };
-		8F76C4A5803B56D46D6F8ACE3D405856 /* SAParentalGate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SAParentalGate.h; sourceTree = "<group>"; };
+		8A5AE9AD7AB09B378EF67D32600B200F /* SKBrowserControlsView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SKBrowserControlsView.h; sourceTree = "<group>"; };
+		8B97D15952D6BEFDB66518DCE0EE3CAF /* SAVideoAd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SAVideoAd.h; sourceTree = "<group>"; };
+		8BCBC7D29DDC06D57CDC221EA2749CB8 /* SKLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SKLogger.m; sourceTree = "<group>"; };
+		8D7E6CB5E5BAC22D7B7551BF98CCBFB6 /* SAEvent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SAEvent.m; sourceTree = "<group>"; };
+		8DD27C37CD3EFB27B71AB3EF97A76065 /* SuperAwesome-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "SuperAwesome-Private.xcconfig"; sourceTree = "<group>"; };
+		8EE7B7E192F3237DC63B472A17188E3E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CoreData.framework; sourceTree = DEVELOPER_DIR; };
 		8FF61811895946E469769C63D5659D47 /* JSONModel.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JSONModel.xcconfig; sourceTree = "<group>"; };
-		93EC419FF05414309C7B0B7D79E40E9E /* SAEventManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SAEventManager.m; sourceTree = "<group>"; };
-		955D10EC109E146EE67A9314F4CB11FB /* SAAdView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SAAdView.h; sourceTree = "<group>"; };
+		91229BA27C8C4FDA2F31E9F67EA81ADF /* SAInScreenAdView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SAInScreenAdView.h; sourceTree = "<group>"; };
+		91F0FEF8990DF8FD60B40241D200FE9D /* JSONModel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JSONModel-dummy.m"; sourceTree = "<group>"; };
+		93DC3A8A485B3F85304C81ED37EFFB97 /* JSONModelClassProperty.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSONModelClassProperty.h; path = JSONModel/JSONModel/JSONModelClassProperty.h; sourceTree = "<group>"; };
 		97DABEA8B1E530A090043D441ED3A14C /* IMAAVPlayerContentPlayhead.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IMAAVPlayerContentPlayhead.h; path = GoogleIMASDK3/IMAAVPlayerContentPlayhead.h; sourceTree = "<group>"; };
-		9F3B543514100D281CBF2FF70A3F7F73 /* UIViewController+Utils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Utils.m"; sourceTree = "<group>"; };
-		A055DD7A96BA7F7C3F6955D2D964211A /* JSONModel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JSONModel-dummy.m"; sourceTree = "<group>"; };
-		A0D55157AE82D0482141E5D84FBF9202 /* SAAdPreloader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SAAdPreloader.h; sourceTree = "<group>"; };
-		A1958D74C7D7955247AF43A038218B9D /* SAAd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SAAd.h; sourceTree = "<group>"; };
+		9834145B1EECDE145FC61FB57DEF4322 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		985DE63AB410CE8D5BD2EF39022AF580 /* SADetails.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SADetails.m; sourceTree = "<group>"; };
+		9C4D095456CDD1B0CF304BD39B339FDA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		9CC4857AE22ACAFC0BFD983F89D8AACB /* UIViewController+Utils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Utils.h"; sourceTree = "<group>"; };
+		9EDE5EC3CFFE53EE95CECA9155BA1F30 /* SAFullscreenAdView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SAFullscreenAdView.h; sourceTree = "<group>"; };
+		9F2310F575B061C7CBB38BBB7DAC21C0 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/StoreKit.framework; sourceTree = DEVELOPER_DIR; };
+		9FB65176FBF3151757BBAD1E03082064 /* SKBrowser.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SKBrowser.m; sourceTree = "<group>"; };
+		A0CF906C1E9A445A32D80292ED8F376D /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/EventKitUI.framework; sourceTree = DEVELOPER_DIR; };
 		A4166CD683B1F7780BCD300817439105 /* AdDemo320x480.jpg */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.jpeg; path = AdDemo320x480.jpg; sourceTree = "<group>"; };
-		A48851EFC346F6366CCEEDAA4EED0708 /* SKMRAIDParser.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SKMRAIDParser.m; sourceTree = "<group>"; };
+		A4B75BB8CDBC525BD3D79713D8BE5C64 /* CloseButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CloseButton.h; sourceTree = "<group>"; };
+		A7111769084EDFD70A60C517B3AA3F6B /* SAInterstitialAd.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SAInterstitialAd.m; sourceTree = "<group>"; };
+		A7A6306F2858ED98314BF1FD51072217 /* SKMRAIDServiceDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SKMRAIDServiceDelegate.h; sourceTree = "<group>"; };
 		A9D8DFD2F4CE04C049B04A86673E879F /* Pods-SuperAwesome DemoTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SuperAwesome DemoTests-dummy.m"; sourceTree = "<group>"; };
-		AA48BEA2AC9F7A6522468E82F3D138E1 /* SAEventManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SAEventManager.h; sourceTree = "<group>"; };
+		AA60965AC1D529DDC717294DC25C546D /* SAFullscreenVideoAd.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SAFullscreenVideoAd.m; sourceTree = "<group>"; };
 		AAF2551C40E67C2F837CD4737618EF49 /* IMAAd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IMAAd.h; path = GoogleIMASDK3/IMAAd.h; sourceTree = "<group>"; };
-		ACEECA8B0F3A57F8DA3AC3216B9C35ED /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
+		ACE0953BD47A61C2BDE1E1A508C9A483 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		AD1E46A21FC593D3C11AAF884FCC4307 /* SKMRAIDUtil.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SKMRAIDUtil.h; sourceTree = "<group>"; };
 		AE7DAFA30119856A22164678EEDE10E5 /* JSONModel-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JSONModel-prefix.pch"; sourceTree = "<group>"; };
-		AF85F97F7B3262EEB7009B0B26B1D8AC /* JSONModel+networking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "JSONModel+networking.h"; path = "JSONModel/JSONModelNetworking/JSONModel+networking.h"; sourceTree = "<group>"; };
-		AFC5709256F2622330A180E16B964371 /* SABannerAd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SABannerAd.h; sourceTree = "<group>"; };
+		AFE5BA074EBEB7382C679F5E4D30C3E2 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/EventKit.framework; sourceTree = DEVELOPER_DIR; };
+		B00C661F6CC6F4DDB687512D935CD7CD /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CoreMedia.framework; sourceTree = DEVELOPER_DIR; };
 		B0102BE9CB8B3BAD949E019BDC29A565 /* SAPadlockView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = SAPadlockView.xib; sourceTree = "<group>"; };
-		B134B9B0577D3268AF0F8917D0C5D7F0 /* JSONHTTPClient.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSONHTTPClient.m; path = JSONModel/JSONModelNetworking/JSONHTTPClient.m; sourceTree = "<group>"; };
-		B3FFA5488EBF8B79F45AFD56A70C2322 /* SKBrowserControlsView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SKBrowserControlsView.h; sourceTree = "<group>"; };
-		B5556EBDCA52D6714F3EF2491F188C0F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		B66586285C9B5CD5EE808FBA88E7B70F /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/EventKitUI.framework; sourceTree = DEVELOPER_DIR; };
-		B776163DF5AA9BB1357D7BA7498B9055 /* SAFullscreenVideoAd.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SAFullscreenVideoAd.m; sourceTree = "<group>"; };
+		B02C5EA9B5CA02137530B05A3BCCB94C /* SADetails.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SADetails.h; sourceTree = "<group>"; };
+		B21BD550FDE4F476FC7DEAED1965ACF5 /* SuperAwesome-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SuperAwesome-dummy.m"; sourceTree = "<group>"; };
+		B9C6245CAF327FB3D4F3BF2A46FD6243 /* SAAdLoader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SAAdLoader.m; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		BB779CD360FA6FB2CA63442169343827 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
 		BD57C978BAE229998277BF5654DDBD21 /* IMAAdPlaybackInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IMAAdPlaybackInfo.h; path = GoogleIMASDK3/IMAAdPlaybackInfo.h; sourceTree = "<group>"; };
-		BDF154A035AC958C46A2AAA95EBF1817 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
-		BF447810DB3536B6EAF541B0EFE47866 /* SAAdView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SAAdView.m; sourceTree = "<group>"; };
-		BFF1E85BF8C7227554BB2F4E242F1D1C /* CloseButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CloseButton.h; sourceTree = "<group>"; };
+		C39268A39EE6B2268380295CAD0699B4 /* JSONModelArray.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSONModelArray.h; path = JSONModel/JSONModel/JSONModelArray.h; sourceTree = "<group>"; };
+		C3AA9A1993E7E48BEF3F7088AE11AB6C /* SAAd.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SAAd.m; sourceTree = "<group>"; };
+		C432D15D857155A6E39745D3E2279460 /* JSONModelError.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSONModelError.h; path = JSONModel/JSONModel/JSONModelError.h; sourceTree = "<group>"; };
+		C46738BC7464EAA4B0F0590CCB9850DB /* JSONModelError.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSONModelError.m; path = JSONModel/JSONModel/JSONModelError.m; sourceTree = "<group>"; };
 		C575FFAD02C4C9CE5687CE4FD448784E /* AdDemo300x50.jpg */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.jpeg; path = AdDemo300x50.jpg; sourceTree = "<group>"; };
-		C7E9F5FB606E30E7CCBD0BC348182455 /* SKMRAIDInterstitial.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SKMRAIDInterstitial.h; sourceTree = "<group>"; };
-		C815C363CDBBB8D0784CACB6DA8B0BF3 /* MRAIDSettings.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MRAIDSettings.h; sourceTree = "<group>"; };
-		C85796ECB99CFDDCC7B647815DBBBAAC /* SKMRAIDServiceDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SKMRAIDServiceDelegate.h; sourceTree = "<group>"; };
-		C8941D9F18920AD2A78B3AFD6999F04E /* JSONModelError.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSONModelError.h; path = JSONModel/JSONModel/JSONModelError.h; sourceTree = "<group>"; };
+		C69C64D83E295AA47F401076CDD8F3CA /* mraidjs.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = mraidjs.h; sourceTree = "<group>"; };
 		C8E60F58757BDCAF46123936F741D7FE /* IMACompanionAdSlot.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IMACompanionAdSlot.h; path = GoogleIMASDK3/IMACompanionAdSlot.h; sourceTree = "<group>"; };
-		C8EA8B23E3419D200951F7F3AECEE8ED /* UIAlertController+Window.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+Window.m"; sourceTree = "<group>"; };
+		C922A59B40EF51DBA956ED82E51A6F24 /* SKCommonSettings.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SKCommonSettings.m; sourceTree = "<group>"; };
+		CA7CC16928B306EAB72B2E01F66791B9 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/MediaPlayer.framework; sourceTree = DEVELOPER_DIR; };
 		CAB364268AB9158FF6327488F8DD5AB8 /* AdDemo300x250.jpg */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.jpeg; path = AdDemo300x250.jpg; sourceTree = "<group>"; };
-		CADA18A70DAE00751CCA2145220365B3 /* SANetwork.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SANetwork.m; sourceTree = "<group>"; };
+		CB8AB307A9590CD25FA33E79B6C11691 /* JSONModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSONModel.m; path = JSONModel/JSONModel/JSONModel.m; sourceTree = "<group>"; };
 		CD8ABD392ABF62656963FE05FBFF28BC /* Pods-SuperAwesome Demo-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SuperAwesome Demo-resources.sh"; sourceTree = "<group>"; };
-		CE1FD7C70D2A415BD87138BD4CF1909F /* SABannerAd.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SABannerAd.m; sourceTree = "<group>"; };
-		CE8059DE8EADB68415A88E49B38057C7 /* SKBrowserControlsView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SKBrowserControlsView.m; sourceTree = "<group>"; };
-		CEF96617D73BF57FB29BD68564BAB6E6 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/EventKit.framework; sourceTree = DEVELOPER_DIR; };
+		CDD275203E5E88D9207869FCD9AF4A22 /* SAFullscreenAdView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SAFullscreenAdView.m; sourceTree = "<group>"; };
 		D01131897E2BF93487E645C03D5C11A9 /* IMAAdsManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IMAAdsManager.h; path = GoogleIMASDK3/IMAAdsManager.h; sourceTree = "<group>"; };
-		D0C80DB5087D4A63E6F42765394336F0 /* SAParentalGate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SAParentalGate.m; sourceTree = "<group>"; };
+		D0B692F60D6C1F138A7AAEE7814E5BF3 /* SuperAwesome.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SuperAwesome.h; sourceTree = "<group>"; };
+		D107B2B3F844F3E0DF6C88B28A08F0B5 /* SANetwork+Ad.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SANetwork+Ad.h"; sourceTree = "<group>"; };
 		D1DB41FB30687C85DA5C849519A31756 /* Pods-SuperAwesome Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SuperAwesome Demo.release.xcconfig"; sourceTree = "<group>"; };
 		D41691E74CC90729EBC69DFD7640F347 /* SuperAwesome.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SuperAwesome.xcconfig; sourceTree = "<group>"; };
-		D567A330FE7D0B3289D7D6957327DA01 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
 		D57D8CA14BCF7C5E6C840C64E0D765FC /* Pods-SuperAwesome DemoTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SuperAwesome DemoTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		D6309672617C4D93DE2A786FFBD562A1 /* NSArray+JSONModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+JSONModel.m"; path = "JSONModel/JSONModelCategories/NSArray+JSONModel.m"; sourceTree = "<group>"; };
 		D65A562704DB879119EB40DD021EF3F0 /* displayTag.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; path = displayTag.html; sourceTree = "<group>"; };
-		D89657F5DDBDC11B8FEE8C7092D3C276 /* SAPadlockView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SAPadlockView.m; sourceTree = "<group>"; };
-		DB95F92D3F2D85368E197946B626AFA8 /* JSONModelArray.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSONModelArray.h; path = JSONModel/JSONModel/JSONModelArray.h; sourceTree = "<group>"; };
-		DC734B6C5312158CDA32403883496880 /* SKBrowser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SKBrowser.h; sourceTree = "<group>"; };
-		DDD42B3231B0913E9F7AF93CEB1F36C2 /* SKLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SKLogger.h; sourceTree = "<group>"; };
+		DD430393A602F13A3F260B94B2ED83F1 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/MessageUI.framework; sourceTree = DEVELOPER_DIR; };
+		E25D44D72877D91AD5A006841C0CAFBA /* SACreative.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SACreative.h; sourceTree = "<group>"; };
 		E29005BE6FD04AC8F3A32772A668FC52 /* SuperAwesome-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SuperAwesome-prefix.pch"; sourceTree = "<group>"; };
-		E52B9061772119ECAFD622498477B677 /* SKMRAIDModalViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SKMRAIDModalViewController.h; sourceTree = "<group>"; };
-		EC271750D31E9E782B2B1320A32F12E5 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
-		EC70312D7CD8FD822C1A4BA9209A25AA /* SKMRAIDUtil.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SKMRAIDUtil.m; sourceTree = "<group>"; };
-		ED2B9240D660E489034BDC6F7EF01445 /* SAVideoAd.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SAVideoAd.m; sourceTree = "<group>"; };
-		EF5011E339724A747B47E09C49A9EF7C /* SANetwork+Ad.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SANetwork+Ad.h"; sourceTree = "<group>"; };
+		E386D3D84B695BB7134132089DB8ED96 /* UIAlertController+Window.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+Window.h"; sourceTree = "<group>"; };
+		E5D338203015B264FBAF3459779AC0D8 /* JSONValueTransformer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSONValueTransformer.h; path = JSONModel/JSONModelTransformations/JSONValueTransformer.h; sourceTree = "<group>"; };
+		E84BAE311F285C7E5F3AA5B7705CCD3A /* SKReachability.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SKReachability.h; sourceTree = "<group>"; };
+		E90E0B42835C6786EC8409B242B14B2E /* SKMRAIDUtil.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SKMRAIDUtil.m; sourceTree = "<group>"; };
+		EC0185D59A8DCBC7457F01A568206A21 /* JSONModelClassProperty.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSONModelClassProperty.m; path = JSONModel/JSONModel/JSONModelClassProperty.m; sourceTree = "<group>"; };
+		EC5C7370233EC167EC6E36CCD232914C /* SAPadlockView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SAPadlockView.h; sourceTree = "<group>"; };
+		EE0D331A9D0298EC05FE82CF330D14D7 /* SKCommonSettings.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SKCommonSettings.h; sourceTree = "<group>"; };
 		EFB80F0D5E111A46DE400ED0053C81B3 /* IMAAdsRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IMAAdsRequest.h; path = GoogleIMASDK3/IMAAdsRequest.h; sourceTree = "<group>"; };
 		F1FC2530A2D714F5049809AA71B6D384 /* displayRichMedia.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; path = displayRichMedia.html; sourceTree = "<group>"; };
-		F216C7131FFEB5F65030952A5B4592E1 /* SKMRAIDModalViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SKMRAIDModalViewController.m; sourceTree = "<group>"; };
-		F28A5AD1B5A48B57BE2C7B4ABAF9C889 /* JSONAPI.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSONAPI.m; path = JSONModel/JSONModelNetworking/JSONAPI.m; sourceTree = "<group>"; };
+		F2DE56E66E1796BC3053B7FCD8D8D6B1 /* SAAdPreloadProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SAAdPreloadProtocol.h; sourceTree = "<group>"; };
 		F30D9EC7C7F59B5780C6B1DF78476526 /* IMAAdsRenderingSettings.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IMAAdsRenderingSettings.h; path = GoogleIMASDK3/IMAAdsRenderingSettings.h; sourceTree = "<group>"; };
+		F4CF64CCC7337B931FECC54C1A34C4B5 /* BackButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BackButton.h; sourceTree = "<group>"; };
 		F5B880BA363FEA69D7F4C6CE69DE811F /* start_notselected.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = start_notselected.png; sourceTree = "<group>"; };
-		F6CB65C27019FC8A45BA8B53A1EA3C0B /* SAInterstitialAd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SAInterstitialAd.h; sourceTree = "<group>"; };
+		FA47D4875BD5D114D6F2B08A88000493 /* MRAIDSettings.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MRAIDSettings.h; sourceTree = "<group>"; };
+		FA6AB674E91577B7D66506022BF7C79A /* SAAd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SAAd.h; sourceTree = "<group>"; };
+		FC51CE8D5E7D543A9B265423D46AD6C2 /* SAEventManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SAEventManager.m; sourceTree = "<group>"; };
 		FE4AF6389FB075F1716C0E2F69288AC7 /* AdDemo728x90.jpg */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.jpeg; path = AdDemo728x90.jpg; sourceTree = "<group>"; };
 		FF0F302B4AA38EF7A9DB7B5D041F6E1C /* Pods-SuperAwesome DemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SuperAwesome DemoTests.release.xcconfig"; sourceTree = "<group>"; };
-		FF4CB171D4DA49EA8FCFE7DDA1BBEEB5 /* SKCommonSettings.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SKCommonSettings.h; sourceTree = "<group>"; };
+		FF4D8638DA3E7467DD6D01CCCEACB0FF /* SAParentalGate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SAParentalGate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -349,14 +353,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		061E0DDF699935367CA31C1BA22D8516 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B74A05C380407AF323B257C5A77C6D5D /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		1F2151770FB034296D76F0897D0EF4C6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -365,36 +361,53 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7EE0FA69F7D6063F26B6BB962E42CBC5 /* Frameworks */ = {
+		642FE1436ACF33A54955A0EB6AE6B1E6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46FAB5AA05ACD0E324F6FA88FB8CCE88 /* AVFoundation.framework in Frameworks */,
-				B1B8676A8C401934E00763FBA7C66C18 /* AdSupport.framework in Frameworks */,
-				F238522A89E70EAED999C9323F8C4A57 /* AudioToolbox.framework in Frameworks */,
-				F9373BCA1FFCB25B921A8A3D6191BC65 /* CFNetwork.framework in Frameworks */,
-				6F55EC7945B8092503C6AC0F6979C8CF /* CoreData.framework in Frameworks */,
-				73C5A80AE5A3E04184E44796ADE49795 /* CoreGraphics.framework in Frameworks */,
-				1FA7E73B366C748FA25917BD4802DDFA /* CoreLocation.framework in Frameworks */,
-				4F76642F5765E04BA8449695B4C7B5FD /* CoreMedia.framework in Frameworks */,
-				D6C7A9AA2F3BD8BF7AD11CB2FE5E3BEA /* CoreMotion.framework in Frameworks */,
-				F9799B38C657DCAC3470165DCE8407D8 /* CoreTelephony.framework in Frameworks */,
-				A9E672CD4B31985884D67CE8DC3CA8AC /* EventKit.framework in Frameworks */,
-				6006DF16243F34EAEB6212631E1F9B7E /* EventKitUI.framework in Frameworks */,
-				AE1FCBE6F374F06DD7DF667FFBE4C417 /* Foundation.framework in Frameworks */,
-				917D6C196ABC85910E9186E713C596D4 /* MediaPlayer.framework in Frameworks */,
-				968CBAF6088A852778EB9D4B94C15F21 /* MessageUI.framework in Frameworks */,
-				F37A7C8CB12FD0309D100D56EC9110A0 /* MobileCoreServices.framework in Frameworks */,
-				91C3E9A71AA5471E7EC89C30D4DA9550 /* QuartzCore.framework in Frameworks */,
-				5570D6413823DEBB5F4F49392D911984 /* Security.framework in Frameworks */,
-				0FA446A6B4C043C78A009310C84ADE89 /* StoreKit.framework in Frameworks */,
-				2424C1F1D704C28A73209FDAEF85A075 /* SystemConfiguration.framework in Frameworks */,
+				9930344B7B48142575B18887F40B86D3 /* AVFoundation.framework in Frameworks */,
+				F467B97A4C49B2FA9E0555C1591FD0E4 /* AdSupport.framework in Frameworks */,
+				F8A18D62B7AEA5874A21F39CDAF6D465 /* AudioToolbox.framework in Frameworks */,
+				D14E3F2438BE38EB721484308EBCB307 /* CFNetwork.framework in Frameworks */,
+				81851815C5CD0DB631D586F1485E85DE /* CoreData.framework in Frameworks */,
+				7805A247D0AD847AC2319F83C3062A1C /* CoreGraphics.framework in Frameworks */,
+				56BC063F12AE11DC2B2F1F828B28B0FA /* CoreLocation.framework in Frameworks */,
+				149D69A3CC8973D7D3861DDE74DEF77A /* CoreMedia.framework in Frameworks */,
+				A0679B9143647181B00CA3088998B488 /* CoreMotion.framework in Frameworks */,
+				ED3F76378A8B1A53D4C4C199AE96F913 /* CoreTelephony.framework in Frameworks */,
+				382E4CFED57733F27CE53E83D0CBE139 /* EventKit.framework in Frameworks */,
+				A7A8F67322A3694C90A006B82F91D713 /* EventKitUI.framework in Frameworks */,
+				1F048C9D37271760175C3A24B5F8ED16 /* Foundation.framework in Frameworks */,
+				9C3930D1B5589F11A833D39C2F15B4F0 /* MediaPlayer.framework in Frameworks */,
+				8360E6BE58C192AB0DEF4228A6C6E796 /* MessageUI.framework in Frameworks */,
+				E3E75060EDFA2010EFDD1AB7589A549E /* MobileCoreServices.framework in Frameworks */,
+				AB8291FD698D78849C6A8CAA5ED051A8 /* QuartzCore.framework in Frameworks */,
+				47BE44F042A97892EBE559E653E18EFE /* Security.framework in Frameworks */,
+				EA5E7D4FAA392AC6896A33E97032100C /* StoreKit.framework in Frameworks */,
+				AAD75D63F73DC254616FB30BB1B9B3D7 /* SystemConfiguration.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B285DF5707FA6793226733A4DE3CF784 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B44E17344E73E928D0D795D9265A6523 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0756B2079BB02FA8D4EC7B829353B41F /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				33261949CB67DCDB015207B1C7FA363B /* SAEventManager.h */,
+				FC51CE8D5E7D543A9B265423D46AD6C2 /* SAEventManager.m */,
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
 		097846B35F0FAD038EDDF2F097D4FDDC /* sourcekit-mraid-ios */ = {
 			isa = PBXGroup;
 			children = (
@@ -403,26 +416,13 @@
 			path = "sourcekit-mraid-ios";
 			sourceTree = "<group>";
 		};
-		0D279934C4713C5AD9600FE8404890E5 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				454030F6ADF03C7A3817EFA30313F48C /* UIAlertController+Window.h */,
-				C8EA8B23E3419D200951F7F3AECEE8ED /* UIAlertController+Window.m */,
-				46533842DBE9F68F2225BC680206678F /* UIViewController+Utils.h */,
-				9F3B543514100D281CBF2FF70A3F7F73 /* UIViewController+Utils.m */,
-				0BB46D142CB670B086EE858BB61CB75B /* WeakRefClass.h */,
-				87C40D4C88B93322781BC19427660899 /* WeakRefClass.m */,
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
 		1007E62E05876F187EF3D5027E8AFF14 /* properties */ = {
 			isa = PBXGroup;
 			children = (
-				6BE0F30C30134D7A1DB82CB18DC1C38B /* SKMRAIDOrientationProperties.h */,
-				5158EF49354FE73793B0551F19BDA9BA /* SKMRAIDOrientationProperties.m */,
-				61D38AFE6F00144EF7BDD462C9C82CBB /* SKMRAIDResizeProperties.h */,
-				7597706729AA8D049EF12ADFBA9B7CAE /* SKMRAIDResizeProperties.m */,
+				4400EA63EB129C993357E83735DFFA12 /* SKMRAIDOrientationProperties.h */,
+				0CCCD76BBEAFD1A4B46500B90B1DA58D /* SKMRAIDOrientationProperties.m */,
+				49F0B58E8D9CFB6B947B05D63F64EE26 /* SKMRAIDResizeProperties.h */,
+				3EC58808488616287DBA6E321BCA316A /* SKMRAIDResizeProperties.m */,
 			);
 			path = properties;
 			sourceTree = "<group>";
@@ -435,30 +435,43 @@
 			path = SuperAwesome;
 			sourceTree = "<group>";
 		};
+		19CDD074C9AEEDD6E383510C15CD9B7E /* FullscreenViews */ = {
+			isa = PBXGroup;
+			children = (
+				9EDE5EC3CFFE53EE95CECA9155BA1F30 /* SAFullscreenAdView.h */,
+				CDD275203E5E88D9207869FCD9AF4A22 /* SAFullscreenAdView.m */,
+				0ACA59A653C440F5282E5F5975615081 /* SAFullscreenVideoAd.h */,
+				AA60965AC1D529DDC717294DC25C546D /* SAFullscreenVideoAd.m */,
+				1E6E8C1F9766193C01015D6DC05BF6F7 /* SAInterstitialAd.h */,
+				A7111769084EDFD70A60C517B3AA3F6B /* SAInterstitialAd.m */,
+			);
+			path = FullscreenViews;
+			sourceTree = "<group>";
+		};
 		2EA87EC22C595AF03C467D4B09380041 /* JSONModel */ = {
 			isa = PBXGroup;
 			children = (
-				48E1058EF56BA7ADA6AE3B5D1707A314 /* JSONAPI.h */,
-				F28A5AD1B5A48B57BE2C7B4ABAF9C889 /* JSONAPI.m */,
-				258CAB4F3D7A59CA098BAFDCF5C7841E /* JSONHTTPClient.h */,
-				B134B9B0577D3268AF0F8917D0C5D7F0 /* JSONHTTPClient.m */,
-				2B0713759226D461A873CC80A4AD672A /* JSONKeyMapper.h */,
-				723C6A912BBEF9D13E5E4363ABE8D684 /* JSONKeyMapper.m */,
-				2706DF70ACC1498ACAA8BDB4AAE6D060 /* JSONModel.h */,
-				7931F3CD59F4B1E538D60BECF65DF62E /* JSONModel.m */,
-				AF85F97F7B3262EEB7009B0B26B1D8AC /* JSONModel+networking.h */,
-				33686F58C8AA02D79543444500E7D0C5 /* JSONModel+networking.m */,
-				DB95F92D3F2D85368E197946B626AFA8 /* JSONModelArray.h */,
-				5D90F9A313FF26FAE466837B2A63567C /* JSONModelArray.m */,
-				479FDE3899C9EB8629FA83685A44B6D7 /* JSONModelClassProperty.h */,
-				261280FDF1E9B78AC5B815303EC0E0A2 /* JSONModelClassProperty.m */,
-				C8941D9F18920AD2A78B3AFD6999F04E /* JSONModelError.h */,
-				666EEDA6CCA1E7FB3B07A84EAA3E425E /* JSONModelError.m */,
-				82498A70CBDCC0FF88BEAECFD5FA3E65 /* JSONModelLib.h */,
-				3E5FFB4384F787763489D00802D5CB27 /* JSONValueTransformer.h */,
-				066BD3D9B5A93BE725B45EEAA37568CB /* JSONValueTransformer.m */,
-				2A26CB47384A041D565A3094062A8101 /* NSArray+JSONModel.h */,
-				6C5F9CFCF000C21876235928408A03C1 /* NSArray+JSONModel.m */,
+				39ACA9EC7189768609F119FF71DD9056 /* JSONAPI.h */,
+				11A6D28A68EBD6DE66EF2E46529725A2 /* JSONAPI.m */,
+				5F8A82D5C9DB675639ED6ABC024F3317 /* JSONHTTPClient.h */,
+				56E08B078ECF080DEAEBB2EDCB5232A9 /* JSONHTTPClient.m */,
+				55CBD65430274EC3EE11F0A42E8013B1 /* JSONKeyMapper.h */,
+				6061B2FF6FEF8D5E0C9D3B4AB223DA23 /* JSONKeyMapper.m */,
+				5ACBF7B10D7B25EE635C0C95726C90DB /* JSONModel.h */,
+				CB8AB307A9590CD25FA33E79B6C11691 /* JSONModel.m */,
+				552B53F9118CB3B1EC59D17687DEAEAE /* JSONModel+networking.h */,
+				1A8CA2E7F51005A92E2DCF26081D4516 /* JSONModel+networking.m */,
+				C39268A39EE6B2268380295CAD0699B4 /* JSONModelArray.h */,
+				1F85E441E7CECF9F17339AF041ED3CE2 /* JSONModelArray.m */,
+				93DC3A8A485B3F85304C81ED37EFFB97 /* JSONModelClassProperty.h */,
+				EC0185D59A8DCBC7457F01A568206A21 /* JSONModelClassProperty.m */,
+				C432D15D857155A6E39745D3E2279460 /* JSONModelError.h */,
+				C46738BC7464EAA4B0F0590CCB9850DB /* JSONModelError.m */,
+				0AF137CB71772E747B1375230613B001 /* JSONModelLib.h */,
+				E5D338203015B264FBAF3459779AC0D8 /* JSONValueTransformer.h */,
+				4652CCAE82ECC10B37933458B10FE4E3 /* JSONValueTransformer.m */,
+				55E81F14B5DBAC9EC61A5BE2C7AD5DC7 /* NSArray+JSONModel.h */,
+				D6309672617C4D93DE2A786FFBD562A1 /* NSArray+JSONModel.m */,
 				D3368D7B07E1D5ACB38EC0404A845CB3 /* Support Files */,
 			);
 			path = JSONModel;
@@ -475,46 +488,50 @@
 		313888897F75254D0E8B1E6ECBDF4947 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				446899E1043CE7C12E291FC7DA414851 /* AVFoundation.framework */,
-				302CD9419CFD102F7E7DF2258EAD3BFB /* AdSupport.framework */,
-				ACEECA8B0F3A57F8DA3AC3216B9C35ED /* AudioToolbox.framework */,
-				3CC33C00F3E6AA5DF43983397A8F2C4E /* CFNetwork.framework */,
-				7BB5A120223162CBA103E2DD25A9DD7A /* CoreData.framework */,
-				D567A330FE7D0B3289D7D6957327DA01 /* CoreGraphics.framework */,
-				338B87707D4677C9FAD38A9A1529C2EE /* CoreLocation.framework */,
-				545390D185B9F3553DECD1A4E7E02976 /* CoreMedia.framework */,
-				BDF154A035AC958C46A2AAA95EBF1817 /* CoreMotion.framework */,
-				0349D8E1E6DAE0A6AE663C8FB84C8E82 /* CoreTelephony.framework */,
-				CEF96617D73BF57FB29BD68564BAB6E6 /* EventKit.framework */,
-				B66586285C9B5CD5EE808FBA88E7B70F /* EventKitUI.framework */,
-				B5556EBDCA52D6714F3EF2491F188C0F /* Foundation.framework */,
-				85B041DE69C45DE7E44B115FAD26FAE2 /* MediaPlayer.framework */,
-				312C832AFCEA0BA3D305FE0C2D0EFCFE /* MessageUI.framework */,
-				EC271750D31E9E782B2B1320A32F12E5 /* MobileCoreServices.framework */,
-				3D671D2EAEB8B634495077075168D664 /* QuartzCore.framework */,
-				7ACE997DC065B9361A965131C185B944 /* Security.framework */,
-				689C393E76E6DE80650BE41CDC476355 /* StoreKit.framework */,
-				7493F18DD8912A44273D6AAD2846CCEF /* SystemConfiguration.framework */,
+				0F150266DEB144A8003529CE267CD658 /* AVFoundation.framework */,
+				381BA633086EFC7CF7E153BEC5790388 /* AdSupport.framework */,
+				4B747282A5AAA32D419280D12EDBB675 /* AudioToolbox.framework */,
+				188D9A96E4531AD49C37485B4BADC782 /* CFNetwork.framework */,
+				8EE7B7E192F3237DC63B472A17188E3E /* CoreData.framework */,
+				ACE0953BD47A61C2BDE1E1A508C9A483 /* CoreGraphics.framework */,
+				4116DE247B5FF37D917C6190FE807375 /* CoreLocation.framework */,
+				B00C661F6CC6F4DDB687512D935CD7CD /* CoreMedia.framework */,
+				BB779CD360FA6FB2CA63442169343827 /* CoreMotion.framework */,
+				1BBDDC6A0276FCF5B0C2BC5C5F2865C2 /* CoreTelephony.framework */,
+				AFE5BA074EBEB7382C679F5E4D30C3E2 /* EventKit.framework */,
+				A0CF906C1E9A445A32D80292ED8F376D /* EventKitUI.framework */,
+				9C4D095456CDD1B0CF304BD39B339FDA /* Foundation.framework */,
+				CA7CC16928B306EAB72B2E01F66791B9 /* MediaPlayer.framework */,
+				DD430393A602F13A3F260B94B2ED83F1 /* MessageUI.framework */,
+				4D8B7A88DC13EF1DDE7132F516A3C9EF /* MobileCoreServices.framework */,
+				9834145B1EECDE145FC61FB57DEF4322 /* QuartzCore.framework */,
+				24B8E32D3443A904DF5042DD54FBA340 /* Security.framework */,
+				9F2310F575B061C7CBB38BBB7DAC21C0 /* StoreKit.framework */,
+				26517C9F989382414E551761C001678C /* SystemConfiguration.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		34C48E12FC322D511874ECD768F86E67 /* Network */ = {
+		31D0480D63283A064A11E54CBF253081 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				8AE2AF7C938E4AB59FEDC9BCCB4C58F2 /* SANetwork.h */,
-				CADA18A70DAE00751CCA2145220365B3 /* SANetwork.m */,
-				EF5011E339724A747B47E09C49A9EF7C /* SANetwork+Ad.h */,
-				6A8EDB13B493E6C37A60B729559B497A /* SANetwork+Ad.m */,
+				FA6AB674E91577B7D66506022BF7C79A /* SAAd.h */,
+				C3AA9A1993E7E48BEF3F7088AE11AB6C /* SAAd.m */,
+				E25D44D72877D91AD5A006841C0CAFBA /* SACreative.h */,
+				230C86D581EB977819EC76E02BA29B87 /* SACreative.m */,
+				B02C5EA9B5CA02137530B05A3BCCB94C /* SADetails.h */,
+				985DE63AB410CE8D5BD2EF39022AF580 /* SADetails.m */,
+				63F0CE01284BC8A9799BFCBB1D85CD79 /* SAEvent.h */,
+				8D7E6CB5E5BAC22D7B7551BF98CCBFB6 /* SAEvent.m */,
 			);
-			path = Network;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		34C8DCE85942E72907003ECB6BCBAE39 /* Reachability */ = {
 			isa = PBXGroup;
 			children = (
-				0264E257AEF04DE0CB688FB60A407E5A /* SKReachability.h */,
-				413E26783F7BD490BBFCD1C9C71D9213 /* SKReachability.m */,
+				E84BAE311F285C7E5F3AA5B7705CCD3A /* SKReachability.h */,
+				15E0CC5E3DFC43739B3CC4F1689CB96D /* SKReachability.m */,
 			);
 			path = Reachability;
 			sourceTree = "<group>";
@@ -522,9 +539,22 @@
 		37C155520E98AB463F2FD2F06331046E /* Logger */ = {
 			isa = PBXGroup;
 			children = (
-				2832F82D94F6C00BF07E2BEC6BE9F6AE /* SKLogger.m */,
+				8BCBC7D29DDC06D57CDC221EA2749CB8 /* SKLogger.m */,
 			);
 			path = Logger;
+			sourceTree = "<group>";
+		};
+		4866DC96E43CF9CAF4794E8ECE776264 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E386D3D84B695BB7134132089DB8ED96 /* UIAlertController+Window.h */,
+				39A8DEDEB2C85967ADBC0DD1BB784286 /* UIAlertController+Window.m */,
+				9CC4857AE22ACAFC0BFD983F89D8AACB /* UIViewController+Utils.h */,
+				79AC33226C8A9CDF153028673A219A40 /* UIViewController+Utils.m */,
+				43F5272B23BCE526658DD8FCC24A916E /* WeakRefClass.h */,
+				69BEF0D8214289F97105028449740153 /* WeakRefClass.m */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		69A2E44B854CC96E8F4E5FEADCDCCFE3 /* Resources */ = {
@@ -564,36 +594,12 @@
 			path = "Target Support Files/Pods-SuperAwesome Demo";
 			sourceTree = "<group>";
 		};
-		6DB41C49127E032D7EC27F118BA2EDCE /* Preloader */ = {
-			isa = PBXGroup;
-			children = (
-				A0D55157AE82D0482141E5D84FBF9202 /* SAAdPreloader.h */,
-				3F7059CD5BD9E6B2799A079FE4D2D4B4 /* SAAdPreloader.m */,
-			);
-			path = Preloader;
-			sourceTree = "<group>";
-		};
 		71B4300443EFB578E492C4FE73B4194C /* SuperAwesome */ = {
 			isa = PBXGroup;
 			children = (
-				8038C6ADABB21A05A5CD8032F279F262 /* Classes */,
+				9A1FEFA597F3CE7CAD8A637AB7C2C715 /* Classes */,
 			);
 			path = SuperAwesome;
-			sourceTree = "<group>";
-		};
-		7720DAA96F51EFCE59FF5938302297FA /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				A1958D74C7D7955247AF43A038218B9D /* SAAd.h */,
-				15D267071A73EDEBBFA293A4E52290C6 /* SAAd.m */,
-				2B7E6C90AA3E6023E42DD66747BC1CDC /* SACreative.h */,
-				324F6D5881E86DAB0CB737A8077AE358 /* SACreative.m */,
-				59FAC313A630142A9D116800C3BFC388 /* SADetails.h */,
-				323FFAE8F5A4BAFDCCACDB11B936D49D /* SADetails.m */,
-				2951172F2AB1A78F002D54BBC108A6AD /* SAEvent.h */,
-				485B9112B64E0237792C112990574507 /* SAEvent.m */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -608,33 +614,14 @@
 			);
 			sourceTree = "<group>";
 		};
-		8038C6ADABB21A05A5CD8032F279F262 /* Classes */ = {
+		85A31121B410DC241CD7BBF29CDD0893 /* Preloader */ = {
 			isa = PBXGroup;
 			children = (
-				2770559DA80FAA151F873A5476482FBA /* SuperAwesome.h */,
-				4E1ED82D40734C1CF40717D9A7AE0BBD /* SuperAwesome.m */,
-				96804BDA01332C22F9F1D9CCB621F5F9 /* AdViews */,
-				D164001C6115D239C6DC428DA1A4D94B /* AuxViews */,
-				C2BB5D0A5A21FBCEB544CDD0BE4E43A8 /* Events */,
-				7720DAA96F51EFCE59FF5938302297FA /* Models */,
-				34C48E12FC322D511874ECD768F86E67 /* Network */,
-				6DB41C49127E032D7EC27F118BA2EDCE /* Preloader */,
-				0D279934C4713C5AD9600FE8404890E5 /* Utils */,
+				3061A6895044ECAFC81274A7D24768B3 /* SAAdLoader.h */,
+				B9C6245CAF327FB3D4F3BF2A46FD6243 /* SAAdLoader.m */,
+				F2DE56E66E1796BC3053B7FCD8D8D6B1 /* SAAdPreloadProtocol.h */,
 			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		8E31EF9F7FCC56350F582BDAE5F83855 /* InScreenViews */ = {
-			isa = PBXGroup;
-			children = (
-				AFC5709256F2622330A180E16B964371 /* SABannerAd.h */,
-				CE1FD7C70D2A415BD87138BD4CF1909F /* SABannerAd.m */,
-				42F4381B1E20D64CBB8D647BDB540841 /* SAInScreenAdView.h */,
-				4A94909E25A27B61EE7E62A64777CBC2 /* SAInScreenAdView.m */,
-				123149C03C83D502C7406A22701D93DD /* SAVideoAd.h */,
-				ED2B9240D660E489034BDC6F7EF01445 /* SAVideoAd.m */,
-			);
-			path = InScreenViews;
+			path = Preloader;
 			sourceTree = "<group>";
 		};
 		91F4D34A2D2253FB1C7BFE2755E71C71 /* Frameworks */ = {
@@ -655,28 +642,20 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		961D67B89197659EBCDCA9EB5D5243D5 /* FullscreenViews */ = {
+		9A1FEFA597F3CE7CAD8A637AB7C2C715 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				1116BA67EA48F2E094C55119746B69CD /* SAFullscreenAdView.h */,
-				5DC43F15FCD4BB1F5395A4C2D7F02BFD /* SAFullscreenAdView.m */,
-				41A8B9C48F355CB72533E5933471CD57 /* SAFullscreenVideoAd.h */,
-				B776163DF5AA9BB1357D7BA7498B9055 /* SAFullscreenVideoAd.m */,
-				F6CB65C27019FC8A45BA8B53A1EA3C0B /* SAInterstitialAd.h */,
-				5E8561A8BE1B963675085F6E66ED2C50 /* SAInterstitialAd.m */,
+				D0B692F60D6C1F138A7AAEE7814E5BF3 /* SuperAwesome.h */,
+				75884993DA099773D11121EE177E396D /* SuperAwesome.m */,
+				AAAFFA8D167BC8DEEA48725C561B647A /* AdViews */,
+				F00C81C41AB55C86CB3FE9013C7BB611 /* AuxViews */,
+				0756B2079BB02FA8D4EC7B829353B41F /* Events */,
+				31D0480D63283A064A11E54CBF253081 /* Models */,
+				AC56C14DF6D6DC5305F942BC22B435C8 /* Network */,
+				85A31121B410DC241CD7BBF29CDD0893 /* Preloader */,
+				4866DC96E43CF9CAF4794E8ECE776264 /* Utils */,
 			);
-			path = FullscreenViews;
-			sourceTree = "<group>";
-		};
-		96804BDA01332C22F9F1D9CCB621F5F9 /* AdViews */ = {
-			isa = PBXGroup;
-			children = (
-				955D10EC109E146EE67A9314F4CB11FB /* SAAdView.h */,
-				BF447810DB3536B6EAF541B0EFE47866 /* SAAdView.m */,
-				961D67B89197659EBCDCA9EB5D5243D5 /* FullscreenViews */,
-				8E31EF9F7FCC56350F582BDAE5F83855 /* InScreenViews */,
-			);
-			path = AdViews;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		9A3B80757F32558AA387497C088C1A20 /* Pods-SuperAwesome DemoTests */ = {
@@ -693,6 +672,19 @@
 			path = "Target Support Files/Pods-SuperAwesome DemoTests";
 			sourceTree = "<group>";
 		};
+		9C5BB83C6E653B2DDBC80EF2C4489543 /* InScreenViews */ = {
+			isa = PBXGroup;
+			children = (
+				129A225698AA4F73ACCC5FE76109764B /* SABannerAd.h */,
+				7569CC69DF324DF9F07448B888ECA569 /* SABannerAd.m */,
+				91229BA27C8C4FDA2F31E9F67EA81ADF /* SAInScreenAdView.h */,
+				77A57855B5D183C3A94899637A9D88C7 /* SAInScreenAdView.m */,
+				8B97D15952D6BEFDB66518DCE0EE3CAF /* SAVideoAd.h */,
+				74DC736E41EAC480D58C6921F0D60F87 /* SAVideoAd.m */,
+			);
+			path = InScreenViews;
+			sourceTree = "<group>";
+		};
 		9F6F45AA0935FD0A018B613423C6E77A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -701,59 +693,73 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		AAAFFA8D167BC8DEEA48725C561B647A /* AdViews */ = {
+			isa = PBXGroup;
+			children = (
+				20E34D96FDE67AF3F32D42AA049F854B /* SAAdView.h */,
+				7EE4FB3AB41703262621EA4FB72D0D3D /* SAAdView.m */,
+				80475E7A1FB1EAE0568AA89999FA78AC /* SAAdViewProtocol.h */,
+				19CDD074C9AEEDD6E383510C15CD9B7E /* FullscreenViews */,
+				9C5BB83C6E653B2DDBC80EF2C4489543 /* InScreenViews */,
+			);
+			path = AdViews;
+			sourceTree = "<group>";
+		};
 		AAD04C02212D73F518EE6D78D198AFA4 /* Browser */ = {
 			isa = PBXGroup;
 			children = (
-				48D7451B0DFDB432A645960DF1960259 /* BackButton.h */,
-				5A936721B191A97947C56B6652C59A97 /* ForwardButton.h */,
-				DC734B6C5312158CDA32403883496880 /* SKBrowser.h */,
-				57184A5486D76BE614F70AAB104B1594 /* SKBrowser.m */,
-				B3FFA5488EBF8B79F45AFD56A70C2322 /* SKBrowserControlsView.h */,
-				CE8059DE8EADB68415A88E49B38057C7 /* SKBrowserControlsView.m */,
+				F4CF64CCC7337B931FECC54C1A34C4B5 /* BackButton.h */,
+				11FC571A25978006E93B060B57F35FB2 /* ForwardButton.h */,
+				6CAEF7F94AFEDC43149513C7ED2AE1A9 /* SKBrowser.h */,
+				9FB65176FBF3151757BBAD1E03082064 /* SKBrowser.m */,
+				8A5AE9AD7AB09B378EF67D32600B200F /* SKBrowserControlsView.h */,
+				89734BEF283157A2FC319C4ACB09593F /* SKBrowserControlsView.m */,
 			);
 			path = Browser;
+			sourceTree = "<group>";
+		};
+		AC56C14DF6D6DC5305F942BC22B435C8 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				81CD907169AFC84C861562ED0A8C88D7 /* SANetwork.h */,
+				3DA464D8EEDA430BDC55A6E57B554F03 /* SANetwork.m */,
+				D107B2B3F844F3E0DF6C88B28A08F0B5 /* SANetwork+Ad.h */,
+				289F8CADB83E3591B38A20EBA372F7E2 /* SANetwork+Ad.m */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		BC953F319901A3B68A51AFCF06968D50 /* MRAID */ = {
 			isa = PBXGroup;
 			children = (
-				BFF1E85BF8C7227554BB2F4E242F1D1C /* CloseButton.h */,
-				C815C363CDBBB8D0784CACB6DA8B0BF3 /* MRAIDSettings.h */,
-				1EB274328206BFEB26A1AE68BC4A312B /* MRAIDSettings.m */,
-				DDD42B3231B0913E9F7AF93CEB1F36C2 /* SKLogger.h */,
-				C7E9F5FB606E30E7CCBD0BC348182455 /* SKMRAIDInterstitial.h */,
-				8E195FD9B917292B79A0E8F9CCFC36AA /* SKMRAIDInterstitial.m */,
-				E52B9061772119ECAFD622498477B677 /* SKMRAIDModalViewController.h */,
-				F216C7131FFEB5F65030952A5B4592E1 /* SKMRAIDModalViewController.m */,
-				28DA743BBC492166B4C0E33FB4272EBC /* SKMRAIDParser.h */,
-				A48851EFC346F6366CCEEDAA4EED0708 /* SKMRAIDParser.m */,
-				C85796ECB99CFDDCC7B647815DBBBAAC /* SKMRAIDServiceDelegate.h */,
-				154C960D07EDD7CE4A447777D96EFBBD /* SKMRAIDUtil.h */,
-				EC70312D7CD8FD822C1A4BA9209A25AA /* SKMRAIDUtil.m */,
-				00A98B90BC1B65773ACCE76FF7963FCA /* SKMRAIDView.h */,
-				3464DE71B0527C13D6593B86547E2EBD /* SKMRAIDView.m */,
-				2BB788D714CAC63AE41EC4BF59673606 /* mraidjs.h */,
+				A4B75BB8CDBC525BD3D79713D8BE5C64 /* CloseButton.h */,
+				FA47D4875BD5D114D6F2B08A88000493 /* MRAIDSettings.h */,
+				64AB29E3B5ED2B7CAF164D23013B8BE8 /* MRAIDSettings.m */,
+				5EDB3AF0C1A87E2592624240F6D0A047 /* SKLogger.h */,
+				785A904C3D3A5F52B1586F90CF305833 /* SKMRAIDInterstitial.h */,
+				69B143D6AE1F3D5D3E00F5D6B0859D21 /* SKMRAIDInterstitial.m */,
+				291DC671A598CA1E7417018A7F705D8E /* SKMRAIDModalViewController.h */,
+				79A21D6599E1BA0C84EFC59A7EDD5351 /* SKMRAIDModalViewController.m */,
+				2BD605226B75DFD9C0336EF5FA8700C9 /* SKMRAIDParser.h */,
+				3295C10818980C1A9DCD9ADCEA2E8118 /* SKMRAIDParser.m */,
+				A7A6306F2858ED98314BF1FD51072217 /* SKMRAIDServiceDelegate.h */,
+				AD1E46A21FC593D3C11AAF884FCC4307 /* SKMRAIDUtil.h */,
+				E90E0B42835C6786EC8409B242B14B2E /* SKMRAIDUtil.m */,
+				89BB6DA268E8078F8E7FCA22E550668F /* SKMRAIDView.h */,
+				16A755C4DD32FDC1EE964DAB4B6C24A1 /* SKMRAIDView.m */,
+				C69C64D83E295AA47F401076CDD8F3CA /* mraidjs.h */,
 				1007E62E05876F187EF3D5027E8AFF14 /* properties */,
 			);
 			path = MRAID;
 			sourceTree = "<group>";
 		};
-		C2BB5D0A5A21FBCEB544CDD0BE4E43A8 /* Events */ = {
-			isa = PBXGroup;
-			children = (
-				AA48BEA2AC9F7A6522468E82F3D138E1 /* SAEventManager.h */,
-				93EC419FF05414309C7B0B7D79E40E9E /* SAEventManager.m */,
-			);
-			path = Events;
-			sourceTree = "<group>";
-		};
 		CCA510CFBEA2D207524CDA0D73C3B561 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				33EFC2D4AA8AF71F27E82FDDA8BA60D2 /* libJSONModel.a */,
+				525C1CBDAACBF6BBB0C230DB72B9AFB6 /* libJSONModel.a */,
 				71D48D2ECCE4A024026A4B7B25B6528E /* libPods-SuperAwesome Demo.a */,
 				355FDF206942C8EC12D1C3D159DF1A7F /* libPods-SuperAwesome DemoTests.a */,
-				27409F15C55F1DBE40DBDFD0372FA4DA /* libSuperAwesome.a */,
+				81D3B0CA6CEC3B2B95FDF0B9BD68C384 /* libSuperAwesome.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -766,23 +772,12 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D164001C6115D239C6DC428DA1A4D94B /* AuxViews */ = {
-			isa = PBXGroup;
-			children = (
-				829E7B7E2C1408DDA0A66A4898ADDDE0 /* SAPadlockView.h */,
-				D89657F5DDBDC11B8FEE8C7092D3C276 /* SAPadlockView.m */,
-				8F76C4A5803B56D46D6F8ACE3D405856 /* SAParentalGate.h */,
-				D0C80DB5087D4A63E6F42765394336F0 /* SAParentalGate.m */,
-			);
-			path = AuxViews;
-			sourceTree = "<group>";
-		};
 		D3368D7B07E1D5ACB38EC0404A845CB3 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
 				8FF61811895946E469769C63D5659D47 /* JSONModel.xcconfig */,
-				4A99F6FB358041B2820CA87ABCE5E171 /* JSONModel-Private.xcconfig */,
-				A055DD7A96BA7F7C3F6955D2D964211A /* JSONModel-dummy.m */,
+				03A78DAA9B12F7BF44D63043DB0197A4 /* JSONModel-Private.xcconfig */,
+				91F0FEF8990DF8FD60B40241D200FE9D /* JSONModel-dummy.m */,
 				AE7DAFA30119856A22164678EEDE10E5 /* JSONModel-prefix.pch */,
 			);
 			name = "Support Files";
@@ -800,8 +795,8 @@
 		D4193333EAC80426BDA7CBDEE074D980 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				FF4CB171D4DA49EA8FCFE7DDA1BBEEB5 /* SKCommonSettings.h */,
-				0A0C16BC4B8823B1535F673ED48C8D6E /* SKCommonSettings.m */,
+				EE0D331A9D0298EC05FE82CF330D14D7 /* SKCommonSettings.h */,
+				C922A59B40EF51DBA956ED82E51A6F24 /* SKCommonSettings.m */,
 				AAD04C02212D73F518EE6D78D198AFA4 /* Browser */,
 				2FAA90CB3D35FA3709C6C58864434503 /* External */,
 				37C155520E98AB463F2FD2F06331046E /* Logger */,
@@ -859,6 +854,17 @@
 			path = ../..;
 			sourceTree = "<group>";
 		};
+		F00C81C41AB55C86CB3FE9013C7BB611 /* AuxViews */ = {
+			isa = PBXGroup;
+			children = (
+				EC5C7370233EC167EC6E36CCD232914C /* SAPadlockView.h */,
+				8273E2D6E9FC0E27410740B5FC5367B9 /* SAPadlockView.m */,
+				FF4D8638DA3E7467DD6D01CCCEACB0FF /* SAParentalGate.h */,
+				175EEF657CCFB66B3D7974AEEB699342 /* SAParentalGate.m */,
+			);
+			path = AuxViews;
+			sourceTree = "<group>";
+		};
 		F5D9246F076150D4307FAF53EEB5A270 /* src */ = {
 			isa = PBXGroup;
 			children = (
@@ -871,8 +877,8 @@
 			isa = PBXGroup;
 			children = (
 				D41691E74CC90729EBC69DFD7640F347 /* SuperAwesome.xcconfig */,
-				05FEFDD245A58DE198E4147C87E5429E /* SuperAwesome-Private.xcconfig */,
-				5B545A9EBC0C48866C3716167E9890F7 /* SuperAwesome-dummy.m */,
+				8DD27C37CD3EFB27B71AB3EF97A76065 /* SuperAwesome-Private.xcconfig */,
+				B21BD550FDE4F476FC7DEAED1965ACF5 /* SuperAwesome-dummy.m */,
 				E29005BE6FD04AC8F3A32772A668FC52 /* SuperAwesome-prefix.pch */,
 			);
 			name = "Support Files";
@@ -882,74 +888,111 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		75F20908AAD71845630B26F8E02332B1 /* Headers */ = {
+		978EE4125B814FC35B025C108B1B78A6 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7758DE37E75D7578B2FBF12730E460B4 /* JSONAPI.h in Headers */,
-				7A94D95B9795E2DAA077E2916346042F /* JSONHTTPClient.h in Headers */,
-				4C5D03A0F9AB1DB75883D01D3FFAC6CB /* JSONKeyMapper.h in Headers */,
-				A6D1DF94BF4862BFE06D0CD662CD18E5 /* JSONModel+networking.h in Headers */,
-				E2C3A83C17F8635C98D7767EFF91B093 /* JSONModel.h in Headers */,
-				5E9B683A503E6179DE3C6609F1226427 /* JSONModelArray.h in Headers */,
-				11E9C37331B3B01BDFA51C2A6DA89646 /* JSONModelClassProperty.h in Headers */,
-				6D18B778E4B434F9C1ACFE7823D4C94C /* JSONModelError.h in Headers */,
-				8C71C6A668D98C595388C439653F4458 /* JSONModelLib.h in Headers */,
-				CBD5714CA5FEE084B35070AFF4B2D6F7 /* JSONValueTransformer.h in Headers */,
-				A5443FFBADD385919A398D3E07B743AC /* NSArray+JSONModel.h in Headers */,
+				A34F3E15C9195A65E96ECB57C0465581 /* BackButton.h in Headers */,
+				A9D69C3EAF1A5479D2EB934E0DDD4DEE /* CloseButton.h in Headers */,
+				9A68F9A62FCF73D61C966FA8D6E6C1BA /* ForwardButton.h in Headers */,
+				3B176DC9F6AA9E89515802F343C1B231 /* MRAIDSettings.h in Headers */,
+				E4B43D17AC47002E0255F753B5BC0348 /* SAAd.h in Headers */,
+				1AFE44ED030208802CEDE22D155E07EE /* SAAdLoader.h in Headers */,
+				A6FFA8B3B30E927863C8B0694F9D367A /* SAAdPreloadProtocol.h in Headers */,
+				4FFE7AE60593762D05DC9DD57A5B4D63 /* SAAdView.h in Headers */,
+				E78F0AADF575FD6C417843A46A2A176B /* SAAdViewProtocol.h in Headers */,
+				862F8425510F15BC7FFA32DBBE589422 /* SABannerAd.h in Headers */,
+				3B916E05012CC9D887A5A24F636E7963 /* SACreative.h in Headers */,
+				00EAE9807497F2E0CEB89D19F81B0E92 /* SADetails.h in Headers */,
+				CF5C249C4F20C35D2665B73667580292 /* SAEvent.h in Headers */,
+				0EAA8D3867A739B67C8647F7E868CC30 /* SAEventManager.h in Headers */,
+				0B58DAC53836C0C01C095AE6CDAB4A79 /* SAFullscreenAdView.h in Headers */,
+				5B4ECF000B0E3CF90985525549C64EDA /* SAFullscreenVideoAd.h in Headers */,
+				A0670258949EB86A9AD0CC6318FF4087 /* SAInScreenAdView.h in Headers */,
+				C6342DFCA64D86DBD3D6B1535D2C49B0 /* SAInterstitialAd.h in Headers */,
+				9979107ECDC2BE9FA7126D2708541AFA /* SANetwork+Ad.h in Headers */,
+				CC5DB2794F1801ED9863972EF5D52FA5 /* SANetwork.h in Headers */,
+				BFC8F40E6449944F6C6D5CDB9A0FBB7B /* SAPadlockView.h in Headers */,
+				83A84DB1730E413653543A544D2E49F3 /* SAParentalGate.h in Headers */,
+				B1B0217D55F424CDFE439AF1F54EAF62 /* SAVideoAd.h in Headers */,
+				AB84DA0FFAB5628E7E7C65994236A427 /* SKBrowser.h in Headers */,
+				3684F7ED2C12629D6E289CA3A67C6459 /* SKBrowserControlsView.h in Headers */,
+				CE968BF4A53D15C8F2E544BC2F5BA67C /* SKCommonSettings.h in Headers */,
+				A98D9C5B5572BBEAC445E59D55A6C10C /* SKLogger.h in Headers */,
+				A98D9C5B5572BBEAC445E59D55A6C10C /* SKLogger.h in Headers */,
+				5AE3E54265F27FE6A25E3B82A07AD8CD /* SKMRAIDInterstitial.h in Headers */,
+				F8950C08436C5646845FB9A6D1F15197 /* SKMRAIDModalViewController.h in Headers */,
+				4B807387C61E928933F70CF0F6417838 /* SKMRAIDOrientationProperties.h in Headers */,
+				A422422E4519F68F5536AA75F8097446 /* SKMRAIDParser.h in Headers */,
+				A323F12D9C994EC71D60DDB939B42C7B /* SKMRAIDResizeProperties.h in Headers */,
+				B28CDDDBEA0A7C7CEBD0A0D3C2D72148 /* SKMRAIDServiceDelegate.h in Headers */,
+				87154E5CA4CF072D4AFC02233C2231ED /* SKMRAIDUtil.h in Headers */,
+				BA49F786B9D71CF6FFC79DE1534658EC /* SKMRAIDView.h in Headers */,
+				13E92198352B3A9EE98FB711916D0BFA /* SKReachability.h in Headers */,
+				7E1096AB6D8C83055DF39106C4481964 /* SuperAwesome.h in Headers */,
+				153EAF3BE3C930DCCAB41A9B127189F0 /* UIAlertController+Window.h in Headers */,
+				D15D91F492676614FF3D67CC4A590E6D /* UIViewController+Utils.h in Headers */,
+				5165052C6A7FD3E57112328D9A4A47D2 /* WeakRefClass.h in Headers */,
+				506BC9818F4637B2F259A998D8712064 /* mraidjs.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DE9BF9B78F8378A11CFAC923C079C921 /* Headers */ = {
+		A9723968C15E4112246EC6773890AD63 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE645522BD0692E3936103B1445A4030 /* BackButton.h in Headers */,
-				6AE305AE0093A16AF8B63BCAC90ED2BD /* CloseButton.h in Headers */,
-				C73539A597456E0EA21D443C99E712C4 /* ForwardButton.h in Headers */,
-				66B4D2387135E2A54AB8EE42553CD629 /* MRAIDSettings.h in Headers */,
-				2B7997BD764BBB1E962EBDEB8C7DAE5D /* SAAd.h in Headers */,
-				80EDB9995E77FAFDC53E4E88FF3D135E /* SAAdPreloader.h in Headers */,
-				23988FD3F8CD952D63C28D36471D5FF8 /* SAAdView.h in Headers */,
-				D1F0D584EFAD15A9E112AD19DAC440D5 /* SABannerAd.h in Headers */,
-				C8B125E53F939BFD46F257A17B6D1080 /* SACreative.h in Headers */,
-				F5132458874418A6DFB12E10FC7BED88 /* SADetails.h in Headers */,
-				266AE2C4421072AE25AD6DF842C85909 /* SAEvent.h in Headers */,
-				18643077FCA31144D784654790D89D6E /* SAEventManager.h in Headers */,
-				3041B66DD947E27ACAC2905C9FF2341F /* SAFullscreenAdView.h in Headers */,
-				05A748CA8748D9510568E68406DC734D /* SAFullscreenVideoAd.h in Headers */,
-				755F6B9A4D14782D4E86844186277F31 /* SAInScreenAdView.h in Headers */,
-				F8C02B3D67AEC997117704E1A59CAF08 /* SAInterstitialAd.h in Headers */,
-				5E472B8277F3ADE572E1629AF105DAFC /* SANetwork+Ad.h in Headers */,
-				C7E154E265C2378CD2B08ED6CF8DF4AC /* SANetwork.h in Headers */,
-				A0BB6B826E84C05BE2580870906FA3BE /* SAPadlockView.h in Headers */,
-				E84BF9BCD15A5A0D443B7CCFD276DFEB /* SAParentalGate.h in Headers */,
-				ACC14F03464D689AE87C1E28994A4977 /* SAVideoAd.h in Headers */,
-				516B3929E1C04330E2ACBB1353E40644 /* SKBrowser.h in Headers */,
-				F4EE7EEBB78298C2C4C882F9A4B7B70A /* SKBrowserControlsView.h in Headers */,
-				E067627C4427B525E7112D891317A9E8 /* SKCommonSettings.h in Headers */,
-				F32EF20A263C3715E058B8F46FE886DE /* SKLogger.h in Headers */,
-				F32EF20A263C3715E058B8F46FE886DE /* SKLogger.h in Headers */,
-				3D2377C4E2D11ADFCCF3C7B5A30E6B2D /* SKMRAIDInterstitial.h in Headers */,
-				6CE2F1C1DAACB09B6BB72EDF6B2D7228 /* SKMRAIDModalViewController.h in Headers */,
-				0CA87BAFD4391C36109EBE9B21BD659F /* SKMRAIDOrientationProperties.h in Headers */,
-				999375AC89D3DADCACDCE8B54DCA73AD /* SKMRAIDParser.h in Headers */,
-				CF1C080367615BC42B33AE715B5620CB /* SKMRAIDResizeProperties.h in Headers */,
-				D748D047831F86EC02ED60525FF97BF3 /* SKMRAIDServiceDelegate.h in Headers */,
-				0A0D2158114542CD92A178EE92149499 /* SKMRAIDUtil.h in Headers */,
-				D57BCF248D07571933DF300847D2A368 /* SKMRAIDView.h in Headers */,
-				7228FFD92A71B9B477F178D52831D10E /* SKReachability.h in Headers */,
-				AB951BAB769DF69B49778AC46D63BE4D /* SuperAwesome.h in Headers */,
-				D48FAAA3C09B754B9D5EACC4645EECAC /* UIAlertController+Window.h in Headers */,
-				B0E54D462A0A6D8C17BA467195B50B06 /* UIViewController+Utils.h in Headers */,
-				D7193BF8383BE763B135ECFDF56C94E7 /* WeakRefClass.h in Headers */,
-				EE6318507F4F0BF944544EB0FBA851D2 /* mraidjs.h in Headers */,
+				062748EE71EAA3EA0CD6A22C1018FFF3 /* JSONAPI.h in Headers */,
+				E1D0D7D59B4780DF28B47596D65390E7 /* JSONHTTPClient.h in Headers */,
+				61A54F0877B75EABC0B058C20704AD74 /* JSONKeyMapper.h in Headers */,
+				D49DC1B178C5CCB8C31EDAC1CA4F914B /* JSONModel+networking.h in Headers */,
+				BD21FB5033A1C6CBB604DB85A8BC5AC8 /* JSONModel.h in Headers */,
+				6956B368E8CB7F32EDF8D8CE4E9FF21E /* JSONModelArray.h in Headers */,
+				BA81E9E9DECEC606D77C0DA807D71EA4 /* JSONModelClassProperty.h in Headers */,
+				01F0612FA81845B42093AFFB1305F665 /* JSONModelError.h in Headers */,
+				A30C723E01DC161AB13BA114411AA526 /* JSONModelLib.h in Headers */,
+				0EB686DE91F190C11ECE4ECE9BD39160 /* JSONValueTransformer.h in Headers */,
+				8C678B612BA03B4BF719E351BD831047 /* NSArray+JSONModel.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		4E444B0F1C748CB823F1BAA1216FBA60 /* JSONModel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ADDD1A6CF281973305FD916BE9E51C81 /* Build configuration list for PBXNativeTarget "JSONModel" */;
+			buildPhases = (
+				D69179E6F3FF2DCE6BAAB028FEBD3B3D /* Sources */,
+				B285DF5707FA6793226733A4DE3CF784 /* Frameworks */,
+				A9723968C15E4112246EC6773890AD63 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JSONModel;
+			productName = JSONModel;
+			productReference = 525C1CBDAACBF6BBB0C230DB72B9AFB6 /* libJSONModel.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		5FF390323D1E79F410565EEA721780C7 /* SuperAwesome */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D6EB2F57C8F5D088914822E5A9340E01 /* Build configuration list for PBXNativeTarget "SuperAwesome" */;
+			buildPhases = (
+				FC467915183560419D2488CA6FB9CAFB /* Sources */,
+				642FE1436ACF33A54955A0EB6AE6B1E6 /* Frameworks */,
+				978EE4125B814FC35B025C108B1B78A6 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6E534EF1128816E68EF1F138348E617C /* PBXTargetDependency */,
+			);
+			name = SuperAwesome;
+			productName = SuperAwesome;
+			productReference = 81D3B0CA6CEC3B2B95FDF0B9BD68C384 /* libSuperAwesome.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 		90B3E6F34933D641238C93B6F0B7C01D /* Pods-SuperAwesome Demo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D0E0E972EA795A6A1779C59457136075 /* Build configuration list for PBXNativeTarget "Pods-SuperAwesome Demo" */;
@@ -960,8 +1003,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				D7612323F75EE20B7DC82E0A791F8190 /* PBXTargetDependency */,
-				CC5CC8367487DEE0EFE694A470A19FB9 /* PBXTargetDependency */,
+				A14CB1B2730EF99F666BC996F51980B3 /* PBXTargetDependency */,
+				47C02D0ADFE01000F5893B55BEE68ED3 /* PBXTargetDependency */,
 			);
 			name = "Pods-SuperAwesome Demo";
 			productName = "Pods-SuperAwesome Demo";
@@ -978,47 +1021,12 @@
 			buildRules = (
 			);
 			dependencies = (
-				5D72A6A38A1F013FEDC0956A37CB6ABC /* PBXTargetDependency */,
-				90FBEDD52F37FDF016E12C72262CA55F /* PBXTargetDependency */,
+				556EC061938ABEFC9C392EC58C93B019 /* PBXTargetDependency */,
+				266A704BBD5F8FBDFB28D881AE2EF412 /* PBXTargetDependency */,
 			);
 			name = "Pods-SuperAwesome DemoTests";
 			productName = "Pods-SuperAwesome DemoTests";
 			productReference = 355FDF206942C8EC12D1C3D159DF1A7F /* libPods-SuperAwesome DemoTests.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		E090F4A852F2A629CCF50B6C3A185B62 /* SuperAwesome */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C2957882752582A3B2A70A9F2150C576 /* Build configuration list for PBXNativeTarget "SuperAwesome" */;
-			buildPhases = (
-				C26043EDCF64ECEF1D88912D9911CB97 /* Sources */,
-				7EE0FA69F7D6063F26B6BB962E42CBC5 /* Frameworks */,
-				DE9BF9B78F8378A11CFAC923C079C921 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				2F17993F464A648779092B8E8384B4E6 /* PBXTargetDependency */,
-			);
-			name = SuperAwesome;
-			productName = SuperAwesome;
-			productReference = 27409F15C55F1DBE40DBDFD0372FA4DA /* libSuperAwesome.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		EE0EEBB2EA9869AA66CD74A3263EAE63 /* JSONModel */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 6793419A126D4B2E3A0695AFF5A95047 /* Build configuration list for PBXNativeTarget "JSONModel" */;
-			buildPhases = (
-				2F7338D2C07603B9E7DA9E8F5CF03C80 /* Sources */,
-				061E0DDF699935367CA31C1BA22D8516 /* Frameworks */,
-				75F20908AAD71845630B26F8E02332B1 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = JSONModel;
-			productName = JSONModel;
-			productReference = 33EFC2D4AA8AF71F27E82FDDA8BA60D2 /* libJSONModel.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -1042,80 +1050,20 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EE0EEBB2EA9869AA66CD74A3263EAE63 /* JSONModel */,
+				4E444B0F1C748CB823F1BAA1216FBA60 /* JSONModel */,
 				90B3E6F34933D641238C93B6F0B7C01D /* Pods-SuperAwesome Demo */,
 				B144CC9DB4792CFE427088DD01EBD522 /* Pods-SuperAwesome DemoTests */,
-				E090F4A852F2A629CCF50B6C3A185B62 /* SuperAwesome */,
+				5FF390323D1E79F410565EEA721780C7 /* SuperAwesome */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		2F7338D2C07603B9E7DA9E8F5CF03C80 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FFB8A530546BB01FC3008D4607419E08 /* JSONAPI.m in Sources */,
-				207A06E92D44264CBE006F4E87DBC59D /* JSONHTTPClient.m in Sources */,
-				4BCDAFAAD06759309B067C2FCD1039ED /* JSONKeyMapper.m in Sources */,
-				9522C6190E4C0CA6F45B99FA92688874 /* JSONModel+networking.m in Sources */,
-				C6F02C187A33B9D6A303FAE57A632A76 /* JSONModel-dummy.m in Sources */,
-				8668625C43ADFDF1131D0055291116AB /* JSONModel.m in Sources */,
-				FFE73A29E91C6F8857BEF685572FA093 /* JSONModelArray.m in Sources */,
-				EC20E6725BAE7E6C5BA6CE186E1789C8 /* JSONModelClassProperty.m in Sources */,
-				84CE4EF14A7E4A73B51D1592298244ED /* JSONModelError.m in Sources */,
-				D434EC21B308A522A1F32D24D2F9D7B3 /* JSONValueTransformer.m in Sources */,
-				66C558FC77E89C7456FF0DC591CFAB69 /* NSArray+JSONModel.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		33829AC4CE9892D33517256CD058D36D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				717A07787402E103A7D130D6BF72CB07 /* Pods-SuperAwesome Demo-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C26043EDCF64ECEF1D88912D9911CB97 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				451B4FC738B5BBF958E68D0EDD4976D2 /* MRAIDSettings.m in Sources */,
-				187F6D74FD445781427C4693805A511A /* SAAd.m in Sources */,
-				3DD4A519F8CD824E8D6197A146658E4A /* SAAdPreloader.m in Sources */,
-				0279C9BCBC61733DFD1F5E7C9B98791E /* SAAdView.m in Sources */,
-				C2A7964B56F8750A46DFFAF4D8A65A6E /* SABannerAd.m in Sources */,
-				19C4411A2A27C760D902091C414FEDAB /* SACreative.m in Sources */,
-				88FB53C70DF5D3F7663F0EC5E416ADF6 /* SADetails.m in Sources */,
-				2EC0C044F3EC370DE783581F684932FE /* SAEvent.m in Sources */,
-				41C754DE4F4DFCB3C7A8020241425A83 /* SAEventManager.m in Sources */,
-				D21618E0E797B3B5A5379D6DBD8C4F71 /* SAFullscreenAdView.m in Sources */,
-				479649CAF8B9036F8271A59095D82BED /* SAFullscreenVideoAd.m in Sources */,
-				D6B649EC3FE5F1334D98A9CEB64E6002 /* SAInScreenAdView.m in Sources */,
-				977C935423E5228DB3D16BB2D4DCAE40 /* SAInterstitialAd.m in Sources */,
-				C63786BE4D7DBECA9A256EDE8D7CD9DE /* SANetwork+Ad.m in Sources */,
-				C07350D3808CC44B396E2F606D2F58E1 /* SANetwork.m in Sources */,
-				73EB66F1695D25EB1B4CFC236EF0F7BD /* SAPadlockView.m in Sources */,
-				B2C2F2480EC90C7FA8B15841C7C32FA7 /* SAParentalGate.m in Sources */,
-				8D2639DCE841296197CD1E5E9DE7EA84 /* SAVideoAd.m in Sources */,
-				6520644E94DCE9FFD136FF4ADB947528 /* SKBrowser.m in Sources */,
-				9E48B466B5A3C9FE8339FBAB4D64E422 /* SKBrowserControlsView.m in Sources */,
-				CFCF375A78DD805962D698CD87FA7EFB /* SKCommonSettings.m in Sources */,
-				883FCE96BDEDDBDB850D167988DC9C8F /* SKLogger.m in Sources */,
-				7D727CF9AA3F8EAF5AF1FEFD7B99F056 /* SKMRAIDInterstitial.m in Sources */,
-				78B5FCE53422896120479EE094C25C85 /* SKMRAIDModalViewController.m in Sources */,
-				ABD8529AECEDEA1BD39C9FFB03803F67 /* SKMRAIDOrientationProperties.m in Sources */,
-				8419F2955AB00F4DA0F640AE2843C8B1 /* SKMRAIDParser.m in Sources */,
-				12B9185B2090A5FD7DFEBCE1A263A9B0 /* SKMRAIDResizeProperties.m in Sources */,
-				B922B635E0CF0920E91944D80D3F81D2 /* SKMRAIDUtil.m in Sources */,
-				640FD5F159C3BC4C54ABA8D0EA90BE03 /* SKMRAIDView.m in Sources */,
-				E08E1B926ECA00C670CE8819D090C549 /* SKReachability.m in Sources */,
-				041913E6CACFF0CAE9649B74F5926934 /* SuperAwesome-dummy.m in Sources */,
-				8D7E31755A3355E418485F577A63E054 /* SuperAwesome.m in Sources */,
-				15005637B7300504D48FF2EBD3533FC5 /* UIAlertController+Window.m in Sources */,
-				834D573E752E6E7AB2E3CAB55F199BFA /* UIViewController+Utils.m in Sources */,
-				B4095A8F8192E63B3B14C738D80291C9 /* WeakRefClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1127,42 +1075,118 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D69179E6F3FF2DCE6BAAB028FEBD3B3D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA08B34DD6CC55886C2F254E7A323E1B /* JSONAPI.m in Sources */,
+				262814F7E64F8C9BAC80612F6BB07187 /* JSONHTTPClient.m in Sources */,
+				8063D74C880252FDB801395EE8080007 /* JSONKeyMapper.m in Sources */,
+				77A2B5F8F93DEC5C82FA7C501EE52098 /* JSONModel+networking.m in Sources */,
+				97753DBF1A17578EEFFD86194EB6AAB5 /* JSONModel-dummy.m in Sources */,
+				D74DB5385C1202A8CEBDF34F1F8C3DC1 /* JSONModel.m in Sources */,
+				870671468B5521F5306C9A9E307DA5BC /* JSONModelArray.m in Sources */,
+				324D075E5130F663E18E601C1ECD45ED /* JSONModelClassProperty.m in Sources */,
+				7C739B104E37AC7C5BA135B502F8281D /* JSONModelError.m in Sources */,
+				85B067CA6A53E3AF0A9361E21DD49C99 /* JSONValueTransformer.m in Sources */,
+				A9C1688C8A669D54A7B19E3B6379983C /* NSArray+JSONModel.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC467915183560419D2488CA6FB9CAFB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2E885BE4F66DDEBED93CF45B6A3E622 /* MRAIDSettings.m in Sources */,
+				6CE28A01735B95DF88CB7FAB3ABE6193 /* SAAd.m in Sources */,
+				BB8877AA7FA1647BCAA116F3864E8953 /* SAAdLoader.m in Sources */,
+				E79629253DD4367A518B0CB25E217F03 /* SAAdView.m in Sources */,
+				12E1D82EC8AFF5C1B8DA286BF159E093 /* SABannerAd.m in Sources */,
+				2168D9C415B50A1BDE096F4AD3C8998B /* SACreative.m in Sources */,
+				8C36DE7AA4B2DC4BD3F6D754AE1C7723 /* SADetails.m in Sources */,
+				4D6A84658F291C6BFD7DA082760FACC0 /* SAEvent.m in Sources */,
+				0A9D165C4B90877E753241417A40A576 /* SAEventManager.m in Sources */,
+				B84E6DB561E803D90048663ADEBA344C /* SAFullscreenAdView.m in Sources */,
+				8195E889B11F5F9C976891CB7B8468C9 /* SAFullscreenVideoAd.m in Sources */,
+				ECAEBE87921C13D5EBA8D6E74509F31C /* SAInScreenAdView.m in Sources */,
+				C41E6B39ABC54BA41DD53F8D00582C28 /* SAInterstitialAd.m in Sources */,
+				C97DDC97A295DB9D37CBB1E7755BBEA8 /* SANetwork+Ad.m in Sources */,
+				51E80C73F43B81CB2F830CEE4E0B789F /* SANetwork.m in Sources */,
+				FF970B0F31BD4F246F7E3864E68163D1 /* SAPadlockView.m in Sources */,
+				F03051EE3768E263B4D124CCA7A1F97F /* SAParentalGate.m in Sources */,
+				95C44FF20EB6CE48CF1B5F9A25AF2E8C /* SAVideoAd.m in Sources */,
+				57E759C1DE6C6074E071DC5391306672 /* SKBrowser.m in Sources */,
+				E44B30E6208E84AB0B9A04D279D36D2C /* SKBrowserControlsView.m in Sources */,
+				DD3A5356E06E696A41F8988918D1AA48 /* SKCommonSettings.m in Sources */,
+				FE7D0D38CE61DEF1EB7AD0E488FCFBC1 /* SKLogger.m in Sources */,
+				B06C357D34CA4D04D2E58AF6FA554445 /* SKMRAIDInterstitial.m in Sources */,
+				B57BB588DC0CD9DA9B81D4698FA976EA /* SKMRAIDModalViewController.m in Sources */,
+				2453BB9BDFAC3A047F450AC5CE52E18C /* SKMRAIDOrientationProperties.m in Sources */,
+				E1DFC3B2E22527A2BB00A4A41B263315 /* SKMRAIDParser.m in Sources */,
+				4747FD8A41F2EFFA101774BC99B49CE6 /* SKMRAIDResizeProperties.m in Sources */,
+				F66D2EBBE0985AB79EACB699B622A33C /* SKMRAIDUtil.m in Sources */,
+				EEB28F00E35ABB2487545B043A42B75D /* SKMRAIDView.m in Sources */,
+				9AEA6B15CB5024B4745A4EFD011B3B13 /* SKReachability.m in Sources */,
+				0E993F9236A5F11B602C1247963D070D /* SuperAwesome-dummy.m in Sources */,
+				8529D4CD87FCC08E74AF210C33BA2D9B /* SuperAwesome.m in Sources */,
+				697B30888345330AF1B984F246DE6B6E /* UIAlertController+Window.m in Sources */,
+				1D4229E35E4872AE42DD11A3CD76D448 /* UIViewController+Utils.m in Sources */,
+				FD7973EC146E0E9C60846E7CDE975928 /* WeakRefClass.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		2F17993F464A648779092B8E8384B4E6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = JSONModel;
-			target = EE0EEBB2EA9869AA66CD74A3263EAE63 /* JSONModel */;
-			targetProxy = 8D364FC9EEB159428AB9B3DCF5111173 /* PBXContainerItemProxy */;
-		};
-		5D72A6A38A1F013FEDC0956A37CB6ABC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = JSONModel;
-			target = EE0EEBB2EA9869AA66CD74A3263EAE63 /* JSONModel */;
-			targetProxy = 2B50D6BAA403395DE77E5E393C7B0F26 /* PBXContainerItemProxy */;
-		};
-		90FBEDD52F37FDF016E12C72262CA55F /* PBXTargetDependency */ = {
+		266A704BBD5F8FBDFB28D881AE2EF412 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SuperAwesome;
-			target = E090F4A852F2A629CCF50B6C3A185B62 /* SuperAwesome */;
-			targetProxy = 37B033AC1DF26FD57C047894AF9F2D7D /* PBXContainerItemProxy */;
+			target = 5FF390323D1E79F410565EEA721780C7 /* SuperAwesome */;
+			targetProxy = 533C5E68548886F02F827546E1A56295 /* PBXContainerItemProxy */;
 		};
-		CC5CC8367487DEE0EFE694A470A19FB9 /* PBXTargetDependency */ = {
+		47C02D0ADFE01000F5893B55BEE68ED3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SuperAwesome;
-			target = E090F4A852F2A629CCF50B6C3A185B62 /* SuperAwesome */;
-			targetProxy = 451CEA64108D6B80838817E13557F61F /* PBXContainerItemProxy */;
+			target = 5FF390323D1E79F410565EEA721780C7 /* SuperAwesome */;
+			targetProxy = D9F91D37D38DB940E401EF38631F794A /* PBXContainerItemProxy */;
 		};
-		D7612323F75EE20B7DC82E0A791F8190 /* PBXTargetDependency */ = {
+		556EC061938ABEFC9C392EC58C93B019 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = JSONModel;
-			target = EE0EEBB2EA9869AA66CD74A3263EAE63 /* JSONModel */;
-			targetProxy = 9D525214E6657E3D4049E2890DEFF83D /* PBXContainerItemProxy */;
+			target = 4E444B0F1C748CB823F1BAA1216FBA60 /* JSONModel */;
+			targetProxy = 9D754B1A5A95D0553D4693D8216E1961 /* PBXContainerItemProxy */;
+		};
+		6E534EF1128816E68EF1F138348E617C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = JSONModel;
+			target = 4E444B0F1C748CB823F1BAA1216FBA60 /* JSONModel */;
+			targetProxy = 0925FEA39CFB2D925B6BB56E3C116110 /* PBXContainerItemProxy */;
+		};
+		A14CB1B2730EF99F666BC996F51980B3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = JSONModel;
+			target = 4E444B0F1C748CB823F1BAA1216FBA60 /* JSONModel */;
+			targetProxy = F807B994C58C9076F4D48DC6DE01FF25 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		24D0628AE4D9F7E8BA205F33F3FE36E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8DD27C37CD3EFB27B71AB3EF97A76065 /* SuperAwesome-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SuperAwesome/SuperAwesome-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
 		3649FF71765A96D8332DB7B3882F81A3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D1DB41FB30687C85DA5C849519A31756 /* Pods-SuperAwesome Demo.release.xcconfig */;
@@ -1178,22 +1202,6 @@
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
-		};
-		378C54DD2C48C0BF87910241D14E4FDB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4A99F6FB358041B2820CA87ABCE5E171 /* JSONModel-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/JSONModel/JSONModel-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
 		};
 		6569F07DC21AD8B72752685013E3D9D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1266,6 +1274,22 @@
 			};
 			name = Debug;
 		};
+		9D3F600B730D20655E7A60A3ABA75B28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 03A78DAA9B12F7BF44D63043DB0197A4 /* JSONModel-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/JSONModel/JSONModel-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
 		A14E2444F162A20E3776820E0ADFFB52 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1300,54 +1324,6 @@
 			};
 			name = Release;
 		};
-		AFF17ED7AAA6930E8A80A1D17B5E8176 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 05FEFDD245A58DE198E4147C87E5429E /* SuperAwesome-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/SuperAwesome/SuperAwesome-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		B6F3A42028716B69F92FB5E1F009E9EF /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4A99F6FB358041B2820CA87ABCE5E171 /* JSONModel-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/JSONModel/JSONModel-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		BE52F2D21A6B4051F2FC3563C0D33316 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 05FEFDD245A58DE198E4147C87E5429E /* SuperAwesome-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/SuperAwesome/SuperAwesome-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
 		C25F9E9D22892EFB27FD232BAE0AB73C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 030AEAD0522884E1D54696A99ABFF59D /* Pods-SuperAwesome Demo.debug.xcconfig */;
@@ -1364,6 +1340,38 @@
 			};
 			name = Debug;
 		};
+		C904ED5821BC19AB38C6E6D1E3DFA0D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 03A78DAA9B12F7BF44D63043DB0197A4 /* JSONModel-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/JSONModel/JSONModel-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		D6814FC90028662E6413090A9ADF16A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8DD27C37CD3EFB27B71AB3EF97A76065 /* SuperAwesome-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SuperAwesome/SuperAwesome-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1376,20 +1384,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6793419A126D4B2E3A0695AFF5A95047 /* Build configuration list for PBXNativeTarget "JSONModel" */ = {
+		ADDD1A6CF281973305FD916BE9E51C81 /* Build configuration list for PBXNativeTarget "JSONModel" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				378C54DD2C48C0BF87910241D14E4FDB /* Debug */,
-				B6F3A42028716B69F92FB5E1F009E9EF /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C2957882752582A3B2A70A9F2150C576 /* Build configuration list for PBXNativeTarget "SuperAwesome" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BE52F2D21A6B4051F2FC3563C0D33316 /* Debug */,
-				AFF17ED7AAA6930E8A80A1D17B5E8176 /* Release */,
+				9D3F600B730D20655E7A60A3ABA75B28 /* Debug */,
+				C904ED5821BC19AB38C6E6D1E3DFA0D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1408,6 +1407,15 @@
 			buildConfigurations = (
 				8B37AB134549740695F99C454CD92BFB /* Debug */,
 				6AA600799B65A364DC4B2907501922E6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D6EB2F57C8F5D088914822E5A9340E01 /* Build configuration list for PBXNativeTarget "SuperAwesome" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24D0628AE4D9F7E8BA205F33F3FE36E8 /* Debug */,
+				D6814FC90028662E6413090A9ADF16A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

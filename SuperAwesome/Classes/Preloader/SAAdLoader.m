@@ -13,6 +13,7 @@
 #import "SAAd.h"
 #import "SACreative.h"
 #import "SADetails.h"
+#import "SAAdHTMLParser.h"
 
 @implementation SAAdLoader
 
@@ -56,8 +57,42 @@
         
         // first check if the ad data is complete in all ways necesssary
         if ([_ad isAdDataComplete] == true) {
-            gotad(_ad);
             
+            // load additional HTML data
+            switch (ad.creative.format) {
+                case image_with_link: {
+                    _ad.adHTML = [NSString stringWithFormat:@"%@", _ad.creative.details.image];
+                    gotad(_ad);
+                    break;
+                }
+                case video: {
+                    _ad.adHTML = [NSString stringWithFormat:@"%@", _ad.creative.details.video];
+                    gotad(_ad);
+                    break;
+                }
+                case rich_media:{
+                    [SANetwork getAdHTMLWith:_ad.creative.details.url withsuccess:^(NSString *string) {
+                        _ad.adHTML = string;
+                        gotad(_ad);
+                    } orFailure:^{
+                        failure();
+                    }];
+                    break;
+                }
+                case rich_media_resizing: {
+                    // do nothing
+                    break;
+                }
+                case tag: {
+                    // do nothing
+                    break;
+                }
+                case swf:{
+                    break;
+                }
+                default:
+                    break;
+            }
         }
         // if not, it's better to call failure
         else {

@@ -9,6 +9,11 @@
 // import header
 #import "SuperAwesome.h"
 
+// load some more (private) headers
+#import "SKLogger.h"
+#import "SANetwork.h"
+#import "SANetwork+Ad.h"
+
 // define
 #define BASE_URL_STAGING @"https://staging.beta.ads.superawesome.tv/v2"
 #define BASE_URL_DEVELOPMENT @"https://dev.ads.superawesome.tv/v2"

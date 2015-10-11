@@ -14,6 +14,7 @@
 
 // typedef a Block specifically for the ad
 typedef void (^gotad)(SAAd *ad);
+typedef void (^gothtml)(NSString *string);
 typedef void (^postevent)();
 typedef void (^postclick)();
 
@@ -23,5 +24,6 @@ typedef void (^postclick)();
 + (void) getAdWith:(NSInteger)placementId withSuccess:(gotad)gotad orFailure:(failure)failure;
 + (void) postEvent:(SAEvent*)event withSuccess:(postevent)postevent orFailure:(failure)failure;
 + (void) postClick:(SAEvent*)event withSuccess:(postclick)postclick orFailure:(failure)failure;
++ (void) getAdHTMLWith:(NSString*)url withsuccess:(gothtml)gothtml orFailure:(failure)failure;
 
 @end

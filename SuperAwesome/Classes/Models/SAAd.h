@@ -22,14 +22,12 @@
 @property (nonatomic, assign) BOOL isFallback;
 @property (nonatomic, assign) BOOL isFill;
 @property (nonatomic, strong) SACreative *creative;
+@property (nonatomic, strong) NSString *adHTML;
 
 // custom init
 - (id) initWithPlacementId:(NSInteger)placementId andWithDictionary:(NSDictionary*)dict;
 
 // other ad functions
 - (BOOL) isAdDataComplete;
-
-// parsing functions
-- (NSString*) createAdHTMLWithSizeDetails:(CGSize)screenSize;
 
 @end

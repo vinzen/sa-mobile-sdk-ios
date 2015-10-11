@@ -10,7 +10,8 @@
 
 // define the format of the Creative
 typedef NS_ENUM(NSUInteger, SAPlacementFormat) {
-    web_display = 0
+    web_display = 0,
+    floor_display = 1
 };
 
 @interface SADetails : NSObject
@@ -27,6 +28,8 @@ typedef NS_ENUM(NSUInteger, SAPlacementFormat) {
 @property (nonatomic, strong) NSString *vast;
 @property (nonatomic, strong) NSString *tag;
 @property (nonatomic, assign) SAPlacementFormat placementFormat;
+@property (nonatomic, strong) NSString *zip;
+@property (nonatomic, strong) NSString *url;
 
 // custom init function
 - (id) initWithDictionary:(NSDictionary*)dict;

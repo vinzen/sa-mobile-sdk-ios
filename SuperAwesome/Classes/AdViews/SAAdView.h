@@ -11,10 +11,22 @@
 
 // forward declarations
 @class SAAd;
+@class SAPadlockView;
+@class SAParentalGate;
 
 // interface declaration
 @interface SAAdView : UIView {
+    // the ad model object
     SAAd *ad;
+    
+    // other interface elements
+    SAParentalGate *gate;
+    SAPadlockView *pad;
+    UIButton *padlockBtn;
+    
+    // some other variables
+    NSInteger currentRefresh;
+    NSTimer *timer;
 }
 
 // delegate
@@ -26,18 +38,9 @@
 @property (nonatomic, assign) IBInspectable NSInteger refreshPeriod;
 @property (nonatomic, assign) IBInspectable BOOL playInstantly;
 
-@property (nonatomic, assign) NSInteger currentRefresh;
-@property (nonatomic, strong) NSTimer *timer;
-
 // major ad view functions
 - (void) assignAd:(SAAd*)ad;
 - (void) play;
 - (void) playInstant;
-
-// aux creation functions
-- (void) onAdClick;
-//- (void) timerFunc;
-- (void) createPadlockButtonWithParent:(UIView*)parent;
-- (void) removePadlockButtonFromParent;
 
 @end

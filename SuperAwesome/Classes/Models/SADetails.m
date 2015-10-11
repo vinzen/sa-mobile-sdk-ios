@@ -14,6 +14,7 @@ NSString *SAPlacementFormatToString(SAPlacementFormat format) {
 #define PROCESS_VAL(p) case(p): c_str = #p; break;
     switch(format) {
             PROCESS_VAL(web_display);
+            PROCESS_VAL(floor_display);
     }
 #undef PROCESS_VAL
     
@@ -37,6 +38,8 @@ NSString *SAPlacementFormatToString(SAPlacementFormat format) {
         _Nullable id vastObj = [dict objectForKey:@"vast"];
         _Nullable id tagObj = [dict objectForKey:@"tag"];
         _Nullable id placementFormatObj = [dict objectForKey:@"placement_format"];
+        _Nullable id zipFileObj = [dict objectForKey:@"zip_file"];
+        _Nullable id urlObj = [dict objectForKey:@"url"];
         
         _width = (widthObj != NULL ? [widthObj integerValue] : 0);
         _height = (heightObj != NULL ? [heightObj integerValue] : 0);
@@ -48,10 +51,15 @@ NSString *SAPlacementFormatToString(SAPlacementFormat format) {
         _duration = (durationObj != NULL ? [durationObj integerValue] : 0);
         _vast = (vastObj != NULL ? vastObj : NULL);
         _tag = (tagObj != NULL ? tagObj : NULL);
+        _zip = (zipFileObj != NULL ? zipFileObj : NULL);
+        _url = (urlObj != NULL ? urlObj : NULL);
         
         if (placementFormatObj != NULL) {
             if ([placementFormatObj isEqualToString:SAPlacementFormatToString(web_display)]) {
                 _placementFormat = web_display;
+            }
+            if([placementFormatObj isEqualToString:@"floor"]){
+                _placementFormat = floor_display;
             }
         }
         

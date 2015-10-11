@@ -21,6 +21,8 @@
 #import "SAAd.h"
 #import "SADetails.h"
 #import "SAEventManager.h"
+#import "SAAdView+Protected.h"
+#import "SAAdHTMLParser.h"
 
 @interface SAFullscreenAdView () <SKMRAIDInterstitialDelegate>
 @end
@@ -45,9 +47,12 @@
 - (void) play {
     [super play];
     
+    // in case ad is bad
+    if (!ad) { return; }
+    
     // create the mraid webview
     raidview = [[SKMRAIDInterstitial alloc] initWithSupportedFeatures:@[MRAIDSupportsInlineVideo]
-                                                         withHtmlData:[ad createAdHTMLWithSizeDetails:vc.view.frame.size]
+                                                         withHtmlData:[SAAdHTMLParser parseHTMLForAd:ad withExtectedSize:vc.view.frame.size]
                                                           withBaseURL:[NSURL URLWithString:ad.creative.clickURL]
                                                              delegate:self
                                                       serviceDelegate:nil

@@ -14,6 +14,7 @@
 		1B2BFAC01BC7C6270081E8B5 /* StandardMobileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2BFABF1BC7C6270081E8B5 /* StandardMobileVC.m */; settings = {ASSET_TAGS = (); }; };
 		1B3AFE991BC7C9D500B45063 /* ComplexVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3AFE981BC7C9D500B45063 /* ComplexVC.m */; settings = {ASSET_TAGS = (); }; };
 		1B3AFE9D1BC7D71900B45063 /* InLineVideoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3AFE9C1BC7D71900B45063 /* InLineVideoVC.m */; settings = {ASSET_TAGS = (); }; };
+		1B3AFEB11BC7F0E900B45063 /* RichMediaVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3AFEB01BC7F0E900B45063 /* RichMediaVC.m */; settings = {ASSET_TAGS = (); }; };
 		6D89FF0A295919F2A168AE98 /* libPods-SuperAwesome Demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EFA8DE86343AF7A5C634FCA /* libPods-SuperAwesome Demo.a */; settings = {ATTRIBUTES = (Required, ); }; };
 		98A4EE491AD524B6005FCE20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98A4EE481AD524B6005FCE20 /* Main.storyboard */; };
 		98B360E11AE51C19004D1C8D /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B360E01AE51C19004D1C8D /* MainViewController.m */; };
@@ -60,6 +61,8 @@
 		1B3AFE981BC7C9D500B45063 /* ComplexVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComplexVC.m; sourceTree = "<group>"; };
 		1B3AFE9B1BC7D71900B45063 /* InLineVideoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InLineVideoVC.h; sourceTree = "<group>"; };
 		1B3AFE9C1BC7D71900B45063 /* InLineVideoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InLineVideoVC.m; sourceTree = "<group>"; };
+		1B3AFEAF1BC7F0E900B45063 /* RichMediaVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RichMediaVC.h; sourceTree = "<group>"; };
+		1B3AFEB01BC7F0E900B45063 /* RichMediaVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RichMediaVC.m; sourceTree = "<group>"; };
 		5634DFB8E076111266332FE4 /* Pods-SuperAwesome Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperAwesome Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-SuperAwesome Demo/Pods-SuperAwesome Demo.release.xcconfig"; sourceTree = "<group>"; };
 		5EFA8DE86343AF7A5C634FCA /* libPods-SuperAwesome Demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SuperAwesome Demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CB7E89D3831DF69FAF8A307 /* libPods-SuperAwesome DemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SuperAwesome DemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,6 +131,8 @@
 				1B3AFE981BC7C9D500B45063 /* ComplexVC.m */,
 				1B3AFE9B1BC7D71900B45063 /* InLineVideoVC.h */,
 				1B3AFE9C1BC7D71900B45063 /* InLineVideoVC.m */,
+				1B3AFEAF1BC7F0E900B45063 /* RichMediaVC.h */,
+				1B3AFEB01BC7F0E900B45063 /* RichMediaVC.m */,
 			);
 			name = ComplexVCs;
 			sourceTree = "<group>";
@@ -387,6 +392,7 @@
 				1B2BFAC01BC7C6270081E8B5 /* StandardMobileVC.m in Sources */,
 				98B98FCD1ACD5F0400EFFA27 /* AppDelegate.m in Sources */,
 				1B3AFE9D1BC7D71900B45063 /* InLineVideoVC.m in Sources */,
+				1B3AFEB11BC7F0E900B45063 /* RichMediaVC.m in Sources */,
 				98B360E11AE51C19004D1C8D /* MainViewController.m in Sources */,
 				98B98FCA1ACD5F0400EFFA27 /* main.m in Sources */,
 				1B0E7F0A1BC6C9FB003E24C8 /* VideoVC.m in Sources */,

@@ -7,11 +7,14 @@
 //
 
 #import "SAInScreenAdView.h"
+#import "SAAdView.h"
 #import "SKMRAIDView.h"
 #import "SAAd.h"
 #import "SACreative.h"
 #import "SADetails.h"
 #import "SAEventManager.h"
+#import "SAAdView+Protected.h"
+#import "SAAdHTMLParser.h"
 
 @interface SAInScreenAdView () <SKMRAIDViewDelegate>
 @end
@@ -76,12 +79,20 @@
     
     // load MRAID HTML
     raidview = [[SKMRAIDView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)
-                                     withHtmlData:[ad createAdHTMLWithSizeDetails:self.frame.size]
-                                      withBaseURL:[NSURL URLWithString:ad.creative.clickURL]
+                                     withHtmlData:[SAAdHTMLParser parseHTMLForAd:ad withExtectedSize:self.frame.size]
+                                      withBaseURL:[NSURL URLWithString:ad.creative.details.url]
                                 supportedFeatures:@[]
                                          delegate:self
                                   serviceDelegate:nil
                                rootViewController:nil];
+    
+//    raidview = [[SKMRAIDView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)
+//                                     withHtmlData:@"<!-- canvasSize:320x480 --><html><head><link rel='stylesheet' href='inpage-style.css'><script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script><script type='text/javascript' src='https://ads.superawesome.tv/v2/events.js'></script><script type='text/javascript' src='inpage-code.js'></script></head><body><div id='inpage-div'><div id='close-div'></div><div id='video-holder'><video id='video-player' controls='controls'><source src='video.mp4' type='video/mp4' /></video></div></div><a id='click-a' href='#'></a></body></html>"
+//                                      withBaseURL:[NSURL URLWithString:@"https://s3-eu-west-1.amazonaws.com/beta-ads-uploads/rich-media/upload_9b3744ed1cf0487b56c992dd1394f1d7/zdo5t3rJAYQjQGNv4oeHwxROAeArgrmQ/index.html"]
+//                                supportedFeatures:@[]
+//                                         delegate:self
+//                                  serviceDelegate:nil
+//                               rootViewController:nil];
     
     // add to view to actually display it
     [self addSubview:raidview];

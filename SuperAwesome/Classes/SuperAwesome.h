@@ -7,15 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SKLogger.h"
 
-// import all header files
+// import model header files
 #import "SAAd.h"
 #import "SACreative.h"
 #import "SADetails.h"
 #import "SAEvent.h"
-#import "SANetwork.h"
-#import "SANetwork+Ad.h"
 
 // import views
 #import "SABannerAd.h"
@@ -24,7 +21,7 @@
 #import "SAFullscreenVideoAd.h"
 #import "SAAdLoader.h"
 
-// import protocol
+// import protocols
 #import "SAAdViewProtocol.h"
 #import "SAAdPreloadProtocol.h"
 

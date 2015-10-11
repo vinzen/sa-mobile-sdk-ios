@@ -20,6 +20,9 @@
 		149D69A3CC8973D7D3861DDE74DEF77A /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B00C661F6CC6F4DDB687512D935CD7CD /* CoreMedia.framework */; };
 		153EAF3BE3C930DCCAB41A9B127189F0 /* UIAlertController+Window.h in Headers */ = {isa = PBXBuildFile; fileRef = E386D3D84B695BB7134132089DB8ED96 /* UIAlertController+Window.h */; };
 		1AFE44ED030208802CEDE22D155E07EE /* SAAdLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 3061A6895044ECAFC81274A7D24768B3 /* SAAdLoader.h */; };
+		1B3AFEAD1BC7ED9800B45063 /* SAAdView+Protected.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B3AFEAB1BC7ED9800B45063 /* SAAdView+Protected.h */; settings = {ASSET_TAGS = (); }; };
+		1B3AFEB41BC8092200B45063 /* SAAdHTMLParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B3AFEB21BC8092200B45063 /* SAAdHTMLParser.h */; settings = {ASSET_TAGS = (); }; };
+		1B3AFEB51BC8092200B45063 /* SAAdHTMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3AFEB31BC8092200B45063 /* SAAdHTMLParser.m */; settings = {ASSET_TAGS = (); }; };
 		1D4229E35E4872AE42DD11A3CD76D448 /* UIViewController+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 79AC33226C8A9CDF153028673A219A40 /* UIViewController+Utils.m */; };
 		1F048C9D37271760175C3A24B5F8ED16 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C4D095456CDD1B0CF304BD39B339FDA /* Foundation.framework */; };
 		212D7C9F3A0C73708A03D97B0778AC19 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C4D095456CDD1B0CF304BD39B339FDA /* Foundation.framework */; };
@@ -188,6 +191,9 @@
 		175EEF657CCFB66B3D7974AEEB699342 /* SAParentalGate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SAParentalGate.m; sourceTree = "<group>"; };
 		188D9A96E4531AD49C37485B4BADC782 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
 		1A8CA2E7F51005A92E2DCF26081D4516 /* JSONModel+networking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "JSONModel+networking.m"; path = "JSONModel/JSONModelNetworking/JSONModel+networking.m"; sourceTree = "<group>"; };
+		1B3AFEAB1BC7ED9800B45063 /* SAAdView+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SAAdView+Protected.h"; sourceTree = "<group>"; };
+		1B3AFEB21BC8092200B45063 /* SAAdHTMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAAdHTMLParser.h; sourceTree = "<group>"; };
+		1B3AFEB31BC8092200B45063 /* SAAdHTMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAAdHTMLParser.m; sourceTree = "<group>"; };
 		1BBDDC6A0276FCF5B0C2BC5C5F2865C2 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CoreTelephony.framework; sourceTree = DEVELOPER_DIR; };
 		1E6E8C1F9766193C01015D6DC05BF6F7 /* SAInterstitialAd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SAInterstitialAd.h; sourceTree = "<group>"; };
 		1E6FBBB40ABA4530407FCA511AB0E60C /* Pods-SuperAwesome Demo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SuperAwesome Demo-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -620,6 +626,8 @@
 				3061A6895044ECAFC81274A7D24768B3 /* SAAdLoader.h */,
 				B9C6245CAF327FB3D4F3BF2A46FD6243 /* SAAdLoader.m */,
 				F2DE56E66E1796BC3053B7FCD8D8D6B1 /* SAAdPreloadProtocol.h */,
+				1B3AFEB21BC8092200B45063 /* SAAdHTMLParser.h */,
+				1B3AFEB31BC8092200B45063 /* SAAdHTMLParser.m */,
 			);
 			path = Preloader;
 			sourceTree = "<group>";
@@ -675,10 +683,10 @@
 		9C5BB83C6E653B2DDBC80EF2C4489543 /* InScreenViews */ = {
 			isa = PBXGroup;
 			children = (
-				129A225698AA4F73ACCC5FE76109764B /* SABannerAd.h */,
-				7569CC69DF324DF9F07448B888ECA569 /* SABannerAd.m */,
 				91229BA27C8C4FDA2F31E9F67EA81ADF /* SAInScreenAdView.h */,
 				77A57855B5D183C3A94899637A9D88C7 /* SAInScreenAdView.m */,
+				129A225698AA4F73ACCC5FE76109764B /* SABannerAd.h */,
+				7569CC69DF324DF9F07448B888ECA569 /* SABannerAd.m */,
 				8B97D15952D6BEFDB66518DCE0EE3CAF /* SAVideoAd.h */,
 				74DC736E41EAC480D58C6921F0D60F87 /* SAVideoAd.m */,
 			);
@@ -699,6 +707,7 @@
 				20E34D96FDE67AF3F32D42AA049F854B /* SAAdView.h */,
 				7EE4FB3AB41703262621EA4FB72D0D3D /* SAAdView.m */,
 				80475E7A1FB1EAE0568AA89999FA78AC /* SAAdViewProtocol.h */,
+				1B3AFEAB1BC7ED9800B45063 /* SAAdView+Protected.h */,
 				19CDD074C9AEEDD6E383510C15CD9B7E /* FullscreenViews */,
 				9C5BB83C6E653B2DDBC80EF2C4489543 /* InScreenViews */,
 			);
@@ -911,6 +920,7 @@
 				A0670258949EB86A9AD0CC6318FF4087 /* SAInScreenAdView.h in Headers */,
 				C6342DFCA64D86DBD3D6B1535D2C49B0 /* SAInterstitialAd.h in Headers */,
 				9979107ECDC2BE9FA7126D2708541AFA /* SANetwork+Ad.h in Headers */,
+				1B3AFEAD1BC7ED9800B45063 /* SAAdView+Protected.h in Headers */,
 				CC5DB2794F1801ED9863972EF5D52FA5 /* SANetwork.h in Headers */,
 				BFC8F40E6449944F6C6D5CDB9A0FBB7B /* SAPadlockView.h in Headers */,
 				83A84DB1730E413653543A544D2E49F3 /* SAParentalGate.h in Headers */,
@@ -920,6 +930,7 @@
 				CE968BF4A53D15C8F2E544BC2F5BA67C /* SKCommonSettings.h in Headers */,
 				A98D9C5B5572BBEAC445E59D55A6C10C /* SKLogger.h in Headers */,
 				A98D9C5B5572BBEAC445E59D55A6C10C /* SKLogger.h in Headers */,
+				1B3AFEB41BC8092200B45063 /* SAAdHTMLParser.h in Headers */,
 				5AE3E54265F27FE6A25E3B82A07AD8CD /* SKMRAIDInterstitial.h in Headers */,
 				F8950C08436C5646845FB9A6D1F15197 /* SKMRAIDModalViewController.h in Headers */,
 				4B807387C61E928933F70CF0F6417838 /* SKMRAIDOrientationProperties.h in Headers */,
@@ -1127,6 +1138,7 @@
 				F66D2EBBE0985AB79EACB699B622A33C /* SKMRAIDUtil.m in Sources */,
 				EEB28F00E35ABB2487545B043A42B75D /* SKMRAIDView.m in Sources */,
 				9AEA6B15CB5024B4745A4EFD011B3B13 /* SKReachability.m in Sources */,
+				1B3AFEB51BC8092200B45063 /* SAAdHTMLParser.m in Sources */,
 				0E993F9236A5F11B602C1247963D070D /* SuperAwesome-dummy.m in Sources */,
 				8529D4CD87FCC08E74AF210C33BA2D9B /* SuperAwesome.m in Sources */,
 				697B30888345330AF1B984F246DE6B6E /* UIAlertController+Window.m in Sources */,

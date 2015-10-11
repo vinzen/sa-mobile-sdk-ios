@@ -40,7 +40,9 @@
                 ],
         @"Complex Ad display":@[
                 @{@"name":@"Complex display",
-                  @"segue":@"ToComplexSegue"}
+                  @"segue":@"ToComplexSegue"},
+                @{@"name":@"Rich media display",
+                  @"segue":@"ToRichMediaSegue"}
                 ]
     };
     _choices = choic;

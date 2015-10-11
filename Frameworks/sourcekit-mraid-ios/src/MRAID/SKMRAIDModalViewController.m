@@ -86,6 +86,8 @@
     
     [SKLogger debug:@"MRAID - ModalViewController" withMessage:[NSString stringWithFormat:@"%@ %@", [self.class description], NSStringFromSelector(_cmd)]];
 
+    [[UIApplication sharedApplication] setStatusBarHidden:YES];
+    
     isStatusBarHidden = [[UIApplication sharedApplication] isStatusBarHidden];
     if (SYSTEM_VERSION_LESS_THAN(@"7.0")) {
         [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
@@ -109,13 +111,15 @@
 {
     [super viewWillDisappear:animated];
     
+    [[UIApplication sharedApplication] setStatusBarHidden:NO];
+    
     if (SYSTEM_VERSION_LESS_THAN(@"7.0")){
         [[UIApplication sharedApplication] setStatusBarHidden:isStatusBarHidden withAnimation:UIStatusBarAnimationFade];
     }
 }
 
 // This is to hide the status bar on iOS 7.
-- (BOOL)prefersStatusBarHidden
+- (BOOL) prefersStatusBarHidden
 {
     return YES;
 }

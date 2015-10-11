@@ -69,4 +69,13 @@
     }];
 }
 
++ (void) getAdHTMLWith:(NSString *)url withsuccess:(gothtml)gothtml orFailure:(failure)failure {
+    [SANetwork sendGETtoEndpoint:url withQueryDict:@{} andSuccess:^(NSData *data) {
+        NSString *rawhtml = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        gothtml(rawhtml);
+    } orFailure:^{
+        failure();
+    }];
+}
+
 @end

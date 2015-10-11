@@ -10,6 +10,7 @@
 #import "SANetwork.h"
 
 // import other headers
+#import "SKLogger.h"
 #import "SuperAwesome.h"
 
 @implementation SANetwork
@@ -75,10 +76,15 @@
     
     // prepare the URL
     __block NSMutableString *_surl = [[NSMutableString alloc] init];
-    [_surl appendString:[[SuperAwesome sharedManager] getBaseURL]];
-    [_surl appendFormat:@"/%@", endpoint];
-    [_surl appendString:(GETDict.allKeys.count > 0 ? @"?" : @"")];
+    if ([endpoint rangeOfString:@"http"].location == NSNotFound && [endpoint rangeOfString:@"https"].location == NSNotFound) {
+        [_surl appendString:[[SuperAwesome sharedManager] getBaseURL]];
+        [_surl appendFormat:@"/%@", endpoint];
+    }
+    else {
+        [_surl appendFormat:@"%@", endpoint];
+    }
     
+    [_surl appendString:(GETDict.allKeys.count > 0 ? @"?" : @"")];
     NSMutableArray *getParams = [[NSMutableArray alloc] init];
     for (NSString *key in GETDict.allKeys) {
         [getParams addObject:[NSString stringWithFormat:@"%@=%@", key, [GETDict objectForKey:key]]];

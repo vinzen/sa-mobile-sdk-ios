@@ -24,14 +24,6 @@
 #import "WeakRefClass.h"
 
 @interface SAAdView () <SAParentalGateProtocol>
-
-// the parental gate
-@property (nonatomic, strong) SAParentalGate *gate;
-@property (nonatomic, strong) SAPadlockView *pad;
-
-// the button to click in case of click on ad
-@property (nonatomic, strong) UIButton *padlockBtn;
-
 @end
 
 @implementation SAAdView
@@ -74,9 +66,9 @@
 }
 
 - (void) dealloc {
-    if (_timer) {
-        [_timer invalidate];
-        _timer = nil;
+    if (timer) {
+        [timer invalidate];
+        timer = nil;
     }
 }
 
@@ -134,15 +126,15 @@
                                       padlock_size.width,
                                       padlock_size.height);
     
-    _padlockBtn = [[UIButton alloc] initWithFrame:padlock_frame];
-    [_padlockBtn setImage:[UIImage imageNamed:@"sa_padlock"] forState:UIControlStateNormal];
-    [_padlockBtn addTarget:self action:@selector(onPadlockClick) forControlEvents:UIControlEventTouchUpInside];
-    [parent addSubview:_padlockBtn];
-    [parent bringSubviewToFront:_padlockBtn];
+    padlockBtn = [[UIButton alloc] initWithFrame:padlock_frame];
+    [padlockBtn setImage:[UIImage imageNamed:@"sa_padlock"] forState:UIControlStateNormal];
+    [padlockBtn addTarget:self action:@selector(onPadlockClick) forControlEvents:UIControlEventTouchUpInside];
+    [parent addSubview:padlockBtn];
+    [parent bringSubviewToFront:padlockBtn];
 }
 
 - (void) removePadlockButtonFromParent {
-    [_padlockBtn removeFromSuperview];
+    [padlockBtn removeFromSuperview];
 }
 
 #pragma mark On Click actions - ad and padlock
@@ -151,12 +143,12 @@
     // perform delegate
     
     // follow URL
-    if (_isParentalGateEnabled) {
-        if(self.gate == nil){
-            _gate = [[SAParentalGate alloc] initWithAd:ad];
-            _gate.delegate = self;
+    if (self.isParentalGateEnabled) {
+        if(gate == nil){
+            gate = [[SAParentalGate alloc] initWithAd:ad];
+            gate.delegate = self;
         }
-        [self.gate show];
+        [gate show];
     }
     else {
         // call delegate
@@ -174,12 +166,12 @@
 }
 
 - (void) onPadlockClick {
-    if (!_pad) {
-        _pad = [[SAPadlockView alloc] initWithAd:ad];
+    if (!pad) {
+        pad = [[SAPadlockView alloc] initWithAd:ad];
     }
     
     // show this
-    [[[[UIApplication sharedApplication] delegate] window] addSubview:_pad];
+    [[[[UIApplication sharedApplication] delegate] window] addSubview:pad];
 }
 
 

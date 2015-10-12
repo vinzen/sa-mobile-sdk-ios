@@ -19,6 +19,8 @@
 		1505E774F24405E986A0BA5B2DDF305B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3307DC8406C2B3F8DCAE1F78F5513A98 /* CoreGraphics.framework */; };
 		18F02DA38891252E4E62268B526E38F6 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7BEBEFB2F3994B03700F9CB45206560 /* AVFoundation.framework */; };
 		196BDFD8052C01C1FA20885856FD9F48 /* SALogger.h in Headers */ = {isa = PBXBuildFile; fileRef = B047A302FB6C5F98536FCEB015945508 /* SALogger.h */; };
+		1B3734A81BCC27D3000CCAF2 /* NSString+Addition.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B3734A61BCC27D3000CCAF2 /* NSString+Addition.h */; settings = {ASSET_TAGS = (); }; };
+		1B3734A91BCC27D3000CCAF2 /* NSString+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3734A71BCC27D3000CCAF2 /* NSString+Addition.m */; settings = {ASSET_TAGS = (); }; };
 		1B61C4B61297F8D0FAD79692A2532E99 /* UIAlertController+Window.h in Headers */ = {isa = PBXBuildFile; fileRef = 465C652200FC6752BBF798F335D26CD0 /* UIAlertController+Window.h */; };
 		1B6573D1ADC191507DB1DA52A85354C9 /* SAStringifier.h in Headers */ = {isa = PBXBuildFile; fileRef = 35A003716A2D832CF69850BE48D4D5B7 /* SAStringifier.h */; };
 		1E2A1567C191BE01EC7FF58C522A744A /* SKMRAIDParser.h in Headers */ = {isa = PBXBuildFile; fileRef = FA7E547B9EBD88707FB38FC95B5FD730 /* SKMRAIDParser.h */; };
@@ -192,6 +194,8 @@
 		15151F96029531BB0BECB45E3EC6583B /* SKMRAIDOrientationProperties.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SKMRAIDOrientationProperties.m; sourceTree = "<group>"; };
 		15C66DB865ED800B7590D3EB9A3DB834 /* SuperAwesome.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SuperAwesome.h; sourceTree = "<group>"; };
 		169137DDE229D748B929750A40353BB1 /* ForwardButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ForwardButton.h; sourceTree = "<group>"; };
+		1B3734A61BCC27D3000CCAF2 /* NSString+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Addition.h"; sourceTree = "<group>"; };
+		1B3734A71BCC27D3000CCAF2 /* NSString+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Addition.m"; sourceTree = "<group>"; };
 		1B8F3CE2DF83F794B7E89BF398C156DE /* SKLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SKLogger.m; sourceTree = "<group>"; };
 		1BAECDED0239E9D30B64EB75A090B714 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CoreData.framework; sourceTree = DEVELOPER_DIR; };
 		1E266B8124C3C1225EE98090CF57318E /* SKMRAIDInterstitial.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SKMRAIDInterstitial.h; sourceTree = "<group>"; };
@@ -605,6 +609,8 @@
 				013E1927F87570BB409E42DE4C4C0C9A /* UIViewController+Utils.m */,
 				E2F8C48FCA604FE00933DEEE51E5C77D /* WeakRefClass.h */,
 				7A03C745FB737C1C996C50BBF8747600 /* WeakRefClass.m */,
+				1B3734A61BCC27D3000CCAF2 /* NSString+Addition.h */,
+				1B3734A71BCC27D3000CCAF2 /* NSString+Addition.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -938,6 +944,7 @@
 				DF195CC6ECD67CCF78E4739C64BA8CC1 /* SAAdViews.h in Headers */,
 				723EE8A4C3B63CE499AAA796D823D96E /* SABaseNetwork.h in Headers */,
 				F73EECEF2B850F8512FE243773818C35 /* SACreative.h in Headers */,
+				1B3734A81BCC27D3000CCAF2 /* NSString+Addition.h in Headers */,
 				95044ED5609F3810228A9CDDF6F15D72 /* SADetails.h in Headers */,
 				E72B8DE24CD870CD32D824C6B9F29248 /* SAFormatter.h in Headers */,
 				820091BCB2E98CAB86B4467A7637F8FD /* SAFullscreenView.h in Headers */,
@@ -1161,6 +1168,7 @@
 				85CB7234C97F4364BAB9437D63463E64 /* SKReachability.m in Sources */,
 				8FD3FF17952B70C95BBA61BC52BC7EB0 /* SuperAwesome-dummy.m in Sources */,
 				074E53C532D63C799FA2611825F1CDC2 /* SuperAwesome.m in Sources */,
+				1B3734A91BCC27D3000CCAF2 /* NSString+Addition.m in Sources */,
 				F0CD568C9076EF86C6828021B5B6AE03 /* UIAlertController+Window.m in Sources */,
 				ABCFA3B79496AF8D291956EBF34B6873 /* UIViewController+Utils.m in Sources */,
 				21446BBADCBA1296B50812958528D7CE /* WeakRefClass.m in Sources */,

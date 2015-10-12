@@ -9,48 +9,84 @@
 #import "SAFormatter.h"
 #import "SACreative.h"
 #import "SADetails.h"
+#import "NSString+Addition.h"
 
 @implementation SAFormatter
 
 + (NSString*) formatCreativeDataIntoAdHTML:(SACreative*)creative {
     
-    NSString *htmlString = @"";
-    
     switch (creative.format) {
         case image_with_link:{
-            NSString *imageURL = creative.details.image;
-            NSString *fPath = [[NSBundle mainBundle] pathForResource:@"displayImage" ofType:@"html"];
-            htmlString = [NSString stringWithContentsOfFile:fPath encoding:NSUTF8StringEncoding error:nil];
-            htmlString = [htmlString stringByReplacingOccurrencesOfString:@"imageURL" withString:imageURL];
+            return [self formatCreativeIntoImageHTML:creative];
             break;
         }
         case video:{
-            NSString *videoURL = creative.details.video;
-            NSString *fPath = [[NSBundle mainBundle] pathForResource:@"displayVideo" ofType:@"html"];
-            htmlString = [NSString stringWithContentsOfFile:fPath encoding:NSUTF8StringEncoding error:nil];
-            htmlString = [htmlString stringByReplacingOccurrencesOfString:@"videoURL" withString:videoURL];
+            return [self formatCreativeIntoVideoHTML:creative];
             break;
         }
         case rich_media:{
-            NSString *richMediaURL = creative.details.url;
-            NSString *fPath = [[NSBundle mainBundle] pathForResource:@"displayRichMedia" ofType:@"html"];
-            htmlString = [NSString stringWithContentsOfFile:fPath encoding:NSUTF8StringEncoding error:nil];
-            htmlString = [htmlString stringByReplacingOccurrencesOfString:@"richMediaURL" withString:richMediaURL];
+            return [self formatCreativeIntoRichMediaHTML:creative];
             break;
         }
         case rich_media_resizing:{
+            return [self formatCreativeIntoRichMediaResizingHTML:creative];
             break;
         }
         case swf:{
+            return [self formatCreativeIntoSWFHTML:creative];
             break;
         }
         case tag:{
+            return [self formatCreativeIntoTagHTML:creative];
             break;
         }
-        default:
+        default:{
+            return [self formatCreativeIntoImageHTML:creative];
             break;
+        }
     }
-    
+}
+
++ (NSString*) formatCreativeIntoImageHTML:(SACreative*)creative {
+    NSString *imageURL = creative.details.image;
+    NSString *fPath = [[NSBundle mainBundle] pathForResource:@"displayImage" ofType:@"html"];
+    NSString *htmlString = [NSString stringWithContentsOfFile:fPath encoding:NSUTF8StringEncoding error:nil];
+    htmlString = [htmlString stringByReplacingOccurrencesOfString:@"imageURL" withString:imageURL];
+    return htmlString;
+}
+
++ (NSString*) formatCreativeIntoVideoHTML:(SACreative*)creative {
+    NSString *videoURL = creative.details.video;
+    NSString *fPath = [[NSBundle mainBundle] pathForResource:@"displayVideo" ofType:@"html"];
+    NSString *htmlString = [NSString stringWithContentsOfFile:fPath encoding:NSUTF8StringEncoding error:nil];
+    htmlString = [htmlString stringByReplacingOccurrencesOfString:@"videoURL" withString:videoURL];
+    return htmlString;
+}
+
++ (NSString*) formatCreativeIntoRichMediaHTML:(SACreative*)creative {
+    NSString *richMediaURL = creative.details.url;
+    NSString *fPath = [[NSBundle mainBundle] pathForResource:@"displayRichMedia" ofType:@"html"];
+    NSString *htmlString = [NSString stringWithContentsOfFile:fPath encoding:NSUTF8StringEncoding error:nil];
+    htmlString = [htmlString stringByReplacingOccurrencesOfString:@"richMediaURL" withString:richMediaURL];
+    return htmlString;
+}
+
++ (NSString*) formatCreativeIntoRichMediaResizingHTML:(SACreative*)creative {
+    // tbd
+    return @"";
+}
+
++ (NSString*) formatCreativeIntoSWFHTML:(SACreative*)creative {
+    // unimplemented ever
+    return @"";
+}
+
++ (NSString*) formatCreativeIntoTagHTML:(SACreative*)creative {
+    NSString *javascriptData = creative.details.tag;
+    NSString *urlFromJS = [javascriptData stringBetweenString:@"src=\"" andString:@"\""];
+    NSString *fPath = [[NSBundle mainBundle] pathForResource:@"displayRichMedia" ofType:@"html"];
+    NSString *htmlString = [NSString stringWithContentsOfFile:fPath encoding:NSUTF8StringEncoding error:nil];
+    htmlString = [htmlString stringByReplacingOccurrencesOfString:@"richMediaURL" withString:urlFromJS];
     return htmlString;
 }
 

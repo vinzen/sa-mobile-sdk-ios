@@ -1,1 +1,1 @@
-../../../../../SuperAwesome/Classes/Models/SADetails.h
+../../../../../SuperAwesome/Classes/Data/Models/SADetails.h

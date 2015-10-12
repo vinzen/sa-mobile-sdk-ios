@@ -12,25 +12,11 @@
 #import "SAAd.h"
 #import "SACreative.h"
 #import "SADetails.h"
-#import "SAEvent.h"
 
 // import views
-#import "SABannerAd.h"
-#import "SAInterstitialAd.h"
-#import "SAVideoAd.h"
-#import "SAFullscreenVideoAd.h"
-#import "SAAdLoader.h"
-
-// import protocols
-#import "SAAdViewProtocol.h"
-#import "SAAdPreloadProtocol.h"
-
-// typedef client configuration
-typedef NS_ENUM(NSUInteger, SAConfiguration) {
-    SAConfigurationDevelopment,
-    SAConfigurationStaging,
-    SAConfigurationProduction
-};
+#import "SAAdViews.h"
+#import "SALoader.h"
+#import "SALoaderProtocol.h"
 
 // interface declaration
 @interface SuperAwesome : NSObject

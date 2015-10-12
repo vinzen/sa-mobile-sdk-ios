@@ -10,7 +10,9 @@
 #import "SAAd.h"
 #import "SACreative.h"
 #import "SADetails.h"
+#import "SAStringifier.h"
 
+// parser implementation
 @implementation SAParser
 
 + (SAAd*) parseAdWithDictionary:(NSDictionary*)dict {
@@ -33,7 +35,14 @@
     return ad;
 }
 
-+ (SACreative*) parseCreativeWithDictionary:(NSDictionary*)dict {
++ (SACreative*) parseCreativeWithDictionary:(NSDictionary*)maindict {
+    // check for empty failure
+    _Nullable id creativeObj = [maindict objectForKey:@"creative"];
+    if (creativeObj == NULL) {
+        return nil;
+    }
+    
+    NSDictionary *dict = (NSDictionary*)creativeObj;
     SACreative *creative = [[SACreative alloc] init];
     
     _Nullable id creativeIdObj = [dict objectForKey:@"creative_id"];
@@ -54,22 +63,22 @@
     // get format & assign details based on format contract
     creative.format = format_unknown;
     if (formatObj != NULL) {
-        if ([formatObj isEqualToString:SACreativeFormatToString(image_with_link)]) {
+        if ([formatObj isEqualToString:[SAStringifier creativeFormatToString:image_with_link]]) {
             creative.format = image_with_link;
         }
-        if ([formatObj isEqualToString:SACreativeFormatToString(video)]) {
+        if ([formatObj isEqualToString:[SAStringifier creativeFormatToString:video]]) {
             creative.format = video;
         }
-        if ([formatObj isEqualToString:SACreativeFormatToString(rich_media)]) {
+        if ([formatObj isEqualToString:[SAStringifier creativeFormatToString:rich_media]]) {
             creative.format = rich_media;
         }
-        if ([formatObj isEqualToString:SACreativeFormatToString(rich_media_resizing)]) {
+        if ([formatObj isEqualToString:[SAStringifier creativeFormatToString:rich_media_resizing]]) {
             creative.format = rich_media_resizing;
         }
-        if ([formatObj isEqualToString:SACreativeFormatToString(swf)]) {
+        if ([formatObj isEqualToString:[SAStringifier creativeFormatToString:swf]]) {
             creative.format = swf;
         }
-        if ([formatObj isEqualToString:SACreativeFormatToString(tag)]) {
+        if ([formatObj isEqualToString:[SAStringifier creativeFormatToString:tag]]) {
             creative.format = tag;
         }
     }
@@ -78,7 +87,19 @@
 }
 
 // function that parses the SADetails main data
-+ (SADetails*) parseDetailsWithDictionary:(NSDictionary*)dict {
++ (SADetails*) parseDetailsWithDictionary:(NSDictionary*)maindict {
+    // check for empty failure
+    _Nullable id creativeObj = [maindict objectForKey:@"creative"];
+    if (creativeObj == NULL) {
+        return nil;
+    }
+    
+    _Nullable id detailsObj = [(NSDictionary*)creativeObj objectForKey:@"details"];
+    if (detailsObj == NULL) {
+        return nil;
+    }
+    
+    NSDictionary *dict = (NSDictionary*)detailsObj;
     SADetails *details = [[SADetails alloc] init];
     
     // parse the info
@@ -110,7 +131,7 @@
     details.url = (urlObj != NULL ? urlObj : NULL);
     
     if (placementFormatObj != NULL) {
-        if ([placementFormatObj isEqualToString:SAPlacementFormatToString(web_display)]) {
+        if ([placementFormatObj isEqualToString:[SAStringifier placementFormatToString:web_display]]) {
             details.placementFormat = web_display;
         }
         if([placementFormatObj isEqualToString:@"floor"]){

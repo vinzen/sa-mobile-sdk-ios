@@ -1,1 +1,1 @@
-../../../../../SuperAwesome/Classes/Utils/UIAlertController+Window.h
+../../../../../SuperAwesome/Classes/Views/Utils/UIAlertController+Window.h

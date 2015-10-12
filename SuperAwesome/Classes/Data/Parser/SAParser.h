@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+// forward declarations
 @class SAAd;
 @class SACreative;
 @class SADetails;
@@ -18,9 +19,9 @@
 + (SAAd*) parseAdWithDictionary:(NSDictionary*)dict;
 
 // function that parses the SACreative main data, excepting the details
-+ (SACreative*) parseCreativeWithDictionary:(NSDictionary*)dict;
++ (SACreative*) parseCreativeWithDictionary:(NSDictionary*)maindict;
 
 // function that parses the SADetails main data
-+ (SADetails*) parseDetailsWithDictionary:(NSDictionary*)dict;
++ (SADetails*) parseDetailsWithDictionary:(NSDictionary*)maindict;
 
 @end

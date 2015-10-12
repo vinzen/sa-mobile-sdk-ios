@@ -9,11 +9,6 @@
 // import header
 #import "SuperAwesome.h"
 
-// load some more (private) headers
-#import "SKLogger.h"
-#import "SANetwork.h"
-#import "SANetwork+Ad.h"
-
 // define
 #define BASE_URL_STAGING @"https://staging.beta.ads.superawesome.tv/v2"
 #define BASE_URL_DEVELOPMENT @"https://dev.ads.superawesome.tv/v2"
@@ -24,7 +19,6 @@
 // private vars
 @property (nonatomic, strong) NSString *baseURL;
 @property (nonatomic, assign) BOOL isTestEnabled;
-@property (nonatomic, assign) SAConfiguration configuration;
 
 @end
 
@@ -43,7 +37,7 @@
 - (instancetype) init {
     if (self = [super init]) {
         // do nothing
-        [self setConfiguration:SAConfigurationProduction];
+        [self setConfigurationProduction];
         [self disableTestMode];
     }
     
@@ -54,42 +48,16 @@
     return @"3.0";
 }
 
-- (void) setLogging:(SourceKitLogLevel)loglevel {
-    [SKLogger setLogLevel:loglevel];
-}
-
-- (void) setConfiguration:(SAConfiguration)configuration {
-    switch (configuration) {
-        case SAConfigurationProduction:{
-            _baseURL = BASE_URL_PRODUCTION;
-            [self setLogging:SourceKitLogLevelWarning];
-            break;
-        }
-        case SAConfigurationDevelopment:{
-            _baseURL = BASE_URL_DEVELOPMENT;
-            [self setLogging:SourceKitLogLevelDebug];
-            break;
-        }
-        case SAConfigurationStaging:{
-            _baseURL = BASE_URL_STAGING;
-            [self setLogging:SourceKitLogLevelDebug];
-            break;
-        }
-        default:
-            break;
-    }
-}
-
 - (void) setConfigurationProduction {
-    [self setConfiguration:SAConfigurationProduction];
+    _baseURL = BASE_URL_PRODUCTION;
 }
 
 - (void) setConfigurationStaging {
-    [self setConfiguration:SAConfigurationStaging];
+    _baseURL = BASE_URL_DEVELOPMENT;
 }
 
 - (void) setConfigurationDevelopment {
-    [self setConfiguration:SAConfigurationDevelopment];
+    _baseURL = BASE_URL_STAGING;
 }
 
 - (NSString*) getBaseURL {

@@ -1,1 +1,0 @@
-../../../../../SuperAwesome/Classes/AdViews/InScreenViews/SAInScreenAdView.h

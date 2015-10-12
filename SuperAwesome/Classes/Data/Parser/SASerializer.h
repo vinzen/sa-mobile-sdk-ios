@@ -6,8 +6,12 @@
 //
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
+@class SAAd;
 
 @interface SASerializer : NSObject
+
++ (NSDictionary*) serializeAdEssentials:(SAAd*)ad;
 
 @end

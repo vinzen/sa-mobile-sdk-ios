@@ -11,7 +11,6 @@
 
 @implementation SABaseNetwork
 
-// private functions
 // Generic functions to GET & POST
 + (void) sendPOSTtoEndpoint:(NSString*)endpoint
                withBodyDict:(NSDictionary*)POSTDict

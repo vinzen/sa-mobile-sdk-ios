@@ -8,6 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-@interface SALoaderProtocol : NSObject
+@class SAAd;
+
+@protocol SALoaderProtocol <NSObject>
+
+// main protocol functions
+@optional
+- (void) didPreloadAd:(SAAd*)ad forPlacementId:(NSInteger)placementId;
+- (void) didFailToPreloadAdForPlacementId:(NSInteger)placementId;
 
 @end

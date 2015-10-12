@@ -22,6 +22,9 @@ typedef NS_ENUM(NSUInteger, SACreativeFormat) {
     tag = 5
 };
 
+// external functions
+NSString *SACreativeFormatToString(SACreativeFormat format);
+
 // define the Creative class
 @interface SACreative : NSObject
 

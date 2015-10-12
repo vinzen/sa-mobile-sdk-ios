@@ -14,6 +14,9 @@ typedef NS_ENUM(NSUInteger, SAPlacementFormat) {
     floor_display = 1
 };
 
+// string function
+NSString *SAPlacementFormatToString(SAPlacementFormat format);
+
 @interface SADetails : NSObject
 
 // member variables

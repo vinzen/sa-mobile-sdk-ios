@@ -20,6 +20,24 @@
 		149D69A3CC8973D7D3861DDE74DEF77A /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B00C661F6CC6F4DDB687512D935CD7CD /* CoreMedia.framework */; };
 		153EAF3BE3C930DCCAB41A9B127189F0 /* UIAlertController+Window.h in Headers */ = {isa = PBXBuildFile; fileRef = E386D3D84B695BB7134132089DB8ED96 /* UIAlertController+Window.h */; };
 		1AFE44ED030208802CEDE22D155E07EE /* SAAdLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 3061A6895044ECAFC81274A7D24768B3 /* SAAdLoader.h */; };
+		1B3734351BCA7C45000CCAF2 /* SABaseNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B3734331BCA7C45000CCAF2 /* SABaseNetwork.h */; settings = {ASSET_TAGS = (); }; };
+		1B3734361BCA7C45000CCAF2 /* SABaseNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3734341BCA7C45000CCAF2 /* SABaseNetwork.m */; settings = {ASSET_TAGS = (); }; };
+		1B3734391BCA7C56000CCAF2 /* SAAdvancedNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B3734371BCA7C56000CCAF2 /* SAAdvancedNetwork.h */; settings = {ASSET_TAGS = (); }; };
+		1B37343A1BCA7C56000CCAF2 /* SAAdvancedNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3734381BCA7C56000CCAF2 /* SAAdvancedNetwork.m */; settings = {ASSET_TAGS = (); }; };
+		1B37343E1BCA7CA0000CCAF2 /* SALogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B37343C1BCA7CA0000CCAF2 /* SALogger.h */; settings = {ASSET_TAGS = (); }; };
+		1B37343F1BCA7CA0000CCAF2 /* SALogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B37343D1BCA7CA0000CCAF2 /* SALogger.m */; settings = {ASSET_TAGS = (); }; };
+		1B3734421BCA8418000CCAF2 /* SAParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B3734401BCA8418000CCAF2 /* SAParser.h */; settings = {ASSET_TAGS = (); }; };
+		1B3734431BCA8418000CCAF2 /* SAParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3734411BCA8418000CCAF2 /* SAParser.m */; settings = {ASSET_TAGS = (); }; };
+		1B3734461BCA8421000CCAF2 /* SASerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B3734441BCA8421000CCAF2 /* SASerializer.h */; settings = {ASSET_TAGS = (); }; };
+		1B3734471BCA8421000CCAF2 /* SASerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3734451BCA8421000CCAF2 /* SASerializer.m */; settings = {ASSET_TAGS = (); }; };
+		1B37344A1BCA842F000CCAF2 /* SAValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B3734481BCA842F000CCAF2 /* SAValidator.h */; settings = {ASSET_TAGS = (); }; };
+		1B37344B1BCA842F000CCAF2 /* SAValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3734491BCA842F000CCAF2 /* SAValidator.m */; settings = {ASSET_TAGS = (); }; };
+		1B37344E1BCA8511000CCAF2 /* SALoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B37344C1BCA8511000CCAF2 /* SALoader.h */; settings = {ASSET_TAGS = (); }; };
+		1B37344F1BCA8511000CCAF2 /* SALoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B37344D1BCA8511000CCAF2 /* SALoader.m */; settings = {ASSET_TAGS = (); }; };
+		1B3734521BCA851A000CCAF2 /* SALoaderProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B3734501BCA851A000CCAF2 /* SALoaderProtocol.h */; settings = {ASSET_TAGS = (); }; };
+		1B3734531BCA851A000CCAF2 /* SALoaderProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3734511BCA851A000CCAF2 /* SALoaderProtocol.m */; settings = {ASSET_TAGS = (); }; };
+		1B3734561BCA8524000CCAF2 /* SASender.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B3734541BCA8524000CCAF2 /* SASender.h */; settings = {ASSET_TAGS = (); }; };
+		1B3734571BCA8524000CCAF2 /* SASender.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3734551BCA8524000CCAF2 /* SASender.m */; settings = {ASSET_TAGS = (); }; };
 		1B3AFEAD1BC7ED9800B45063 /* SAAdView+Protected.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B3AFEAB1BC7ED9800B45063 /* SAAdView+Protected.h */; settings = {ASSET_TAGS = (); }; };
 		1B3AFEB41BC8092200B45063 /* SAAdHTMLParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B3AFEB21BC8092200B45063 /* SAAdHTMLParser.h */; settings = {ASSET_TAGS = (); }; };
 		1B3AFEB51BC8092200B45063 /* SAAdHTMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3AFEB31BC8092200B45063 /* SAAdHTMLParser.m */; settings = {ASSET_TAGS = (); }; };
@@ -191,6 +209,24 @@
 		175EEF657CCFB66B3D7974AEEB699342 /* SAParentalGate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SAParentalGate.m; sourceTree = "<group>"; };
 		188D9A96E4531AD49C37485B4BADC782 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
 		1A8CA2E7F51005A92E2DCF26081D4516 /* JSONModel+networking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "JSONModel+networking.m"; path = "JSONModel/JSONModelNetworking/JSONModel+networking.m"; sourceTree = "<group>"; };
+		1B3734331BCA7C45000CCAF2 /* SABaseNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SABaseNetwork.h; sourceTree = "<group>"; };
+		1B3734341BCA7C45000CCAF2 /* SABaseNetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SABaseNetwork.m; sourceTree = "<group>"; };
+		1B3734371BCA7C56000CCAF2 /* SAAdvancedNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAAdvancedNetwork.h; sourceTree = "<group>"; };
+		1B3734381BCA7C56000CCAF2 /* SAAdvancedNetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAAdvancedNetwork.m; sourceTree = "<group>"; };
+		1B37343C1BCA7CA0000CCAF2 /* SALogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SALogger.h; sourceTree = "<group>"; };
+		1B37343D1BCA7CA0000CCAF2 /* SALogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SALogger.m; sourceTree = "<group>"; };
+		1B3734401BCA8418000CCAF2 /* SAParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAParser.h; sourceTree = "<group>"; };
+		1B3734411BCA8418000CCAF2 /* SAParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAParser.m; sourceTree = "<group>"; };
+		1B3734441BCA8421000CCAF2 /* SASerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SASerializer.h; sourceTree = "<group>"; };
+		1B3734451BCA8421000CCAF2 /* SASerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SASerializer.m; sourceTree = "<group>"; };
+		1B3734481BCA842F000CCAF2 /* SAValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAValidator.h; sourceTree = "<group>"; };
+		1B3734491BCA842F000CCAF2 /* SAValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAValidator.m; sourceTree = "<group>"; };
+		1B37344C1BCA8511000CCAF2 /* SALoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SALoader.h; sourceTree = "<group>"; };
+		1B37344D1BCA8511000CCAF2 /* SALoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SALoader.m; sourceTree = "<group>"; };
+		1B3734501BCA851A000CCAF2 /* SALoaderProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SALoaderProtocol.h; sourceTree = "<group>"; };
+		1B3734511BCA851A000CCAF2 /* SALoaderProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SALoaderProtocol.m; sourceTree = "<group>"; };
+		1B3734541BCA8524000CCAF2 /* SASender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SASender.h; sourceTree = "<group>"; };
+		1B3734551BCA8524000CCAF2 /* SASender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SASender.m; sourceTree = "<group>"; };
 		1B3AFEAB1BC7ED9800B45063 /* SAAdView+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SAAdView+Protected.h"; sourceTree = "<group>"; };
 		1B3AFEB21BC8092200B45063 /* SAAdHTMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAAdHTMLParser.h; sourceTree = "<group>"; };
 		1B3AFEB31BC8092200B45063 /* SAAdHTMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAAdHTMLParser.m; sourceTree = "<group>"; };
@@ -199,7 +235,7 @@
 		1E6FBBB40ABA4530407FCA511AB0E60C /* Pods-SuperAwesome Demo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SuperAwesome Demo-acknowledgements.markdown"; sourceTree = "<group>"; };
 		1F85E441E7CECF9F17339AF041ED3CE2 /* JSONModelArray.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSONModelArray.m; path = JSONModel/JSONModel/JSONModelArray.m; sourceTree = "<group>"; };
 		20E34D96FDE67AF3F32D42AA049F854B /* SAAdView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SAAdView.h; sourceTree = "<group>"; };
-		230C86D581EB977819EC76E02BA29B87 /* SACreative.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SACreative.m; sourceTree = "<group>"; };
+		230C86D581EB977819EC76E02BA29B87 /* SACreative.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SACreative.m; path = ../../Models/SACreative.m; sourceTree = "<group>"; };
 		24B8E32D3443A904DF5042DD54FBA340 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		26517C9F989382414E551761C001678C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
 		283869F4A4B4575314796690CD6C7103 /* displayVideo.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; path = displayVideo.html; sourceTree = "<group>"; };
@@ -279,7 +315,7 @@
 		93DC3A8A485B3F85304C81ED37EFFB97 /* JSONModelClassProperty.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSONModelClassProperty.h; path = JSONModel/JSONModel/JSONModelClassProperty.h; sourceTree = "<group>"; };
 		97DABEA8B1E530A090043D441ED3A14C /* IMAAVPlayerContentPlayhead.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IMAAVPlayerContentPlayhead.h; path = GoogleIMASDK3/IMAAVPlayerContentPlayhead.h; sourceTree = "<group>"; };
 		9834145B1EECDE145FC61FB57DEF4322 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
-		985DE63AB410CE8D5BD2EF39022AF580 /* SADetails.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SADetails.m; sourceTree = "<group>"; };
+		985DE63AB410CE8D5BD2EF39022AF580 /* SADetails.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SADetails.m; path = ../../Models/SADetails.m; sourceTree = "<group>"; };
 		9C4D095456CDD1B0CF304BD39B339FDA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		9CC4857AE22ACAFC0BFD983F89D8AACB /* UIViewController+Utils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Utils.h"; sourceTree = "<group>"; };
 		9EDE5EC3CFFE53EE95CECA9155BA1F30 /* SAFullscreenAdView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SAFullscreenAdView.h; sourceTree = "<group>"; };
@@ -299,14 +335,14 @@
 		AFE5BA074EBEB7382C679F5E4D30C3E2 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/EventKit.framework; sourceTree = DEVELOPER_DIR; };
 		B00C661F6CC6F4DDB687512D935CD7CD /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CoreMedia.framework; sourceTree = DEVELOPER_DIR; };
 		B0102BE9CB8B3BAD949E019BDC29A565 /* SAPadlockView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = SAPadlockView.xib; sourceTree = "<group>"; };
-		B02C5EA9B5CA02137530B05A3BCCB94C /* SADetails.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SADetails.h; sourceTree = "<group>"; };
+		B02C5EA9B5CA02137530B05A3BCCB94C /* SADetails.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SADetails.h; path = ../../Models/SADetails.h; sourceTree = "<group>"; };
 		B21BD550FDE4F476FC7DEAED1965ACF5 /* SuperAwesome-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SuperAwesome-dummy.m"; sourceTree = "<group>"; };
 		B9C6245CAF327FB3D4F3BF2A46FD6243 /* SAAdLoader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SAAdLoader.m; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BB779CD360FA6FB2CA63442169343827 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
 		BD57C978BAE229998277BF5654DDBD21 /* IMAAdPlaybackInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IMAAdPlaybackInfo.h; path = GoogleIMASDK3/IMAAdPlaybackInfo.h; sourceTree = "<group>"; };
 		C39268A39EE6B2268380295CAD0699B4 /* JSONModelArray.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSONModelArray.h; path = JSONModel/JSONModel/JSONModelArray.h; sourceTree = "<group>"; };
-		C3AA9A1993E7E48BEF3F7088AE11AB6C /* SAAd.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SAAd.m; sourceTree = "<group>"; };
+		C3AA9A1993E7E48BEF3F7088AE11AB6C /* SAAd.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SAAd.m; path = ../../Models/SAAd.m; sourceTree = "<group>"; };
 		C432D15D857155A6E39745D3E2279460 /* JSONModelError.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSONModelError.h; path = JSONModel/JSONModel/JSONModelError.h; sourceTree = "<group>"; };
 		C46738BC7464EAA4B0F0590CCB9850DB /* JSONModelError.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSONModelError.m; path = JSONModel/JSONModel/JSONModelError.m; sourceTree = "<group>"; };
 		C575FFAD02C4C9CE5687CE4FD448784E /* AdDemo300x50.jpg */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.jpeg; path = AdDemo300x50.jpg; sourceTree = "<group>"; };
@@ -327,7 +363,7 @@
 		D6309672617C4D93DE2A786FFBD562A1 /* NSArray+JSONModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+JSONModel.m"; path = "JSONModel/JSONModelCategories/NSArray+JSONModel.m"; sourceTree = "<group>"; };
 		D65A562704DB879119EB40DD021EF3F0 /* displayTag.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; path = displayTag.html; sourceTree = "<group>"; };
 		DD430393A602F13A3F260B94B2ED83F1 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/MessageUI.framework; sourceTree = DEVELOPER_DIR; };
-		E25D44D72877D91AD5A006841C0CAFBA /* SACreative.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SACreative.h; sourceTree = "<group>"; };
+		E25D44D72877D91AD5A006841C0CAFBA /* SACreative.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SACreative.h; path = ../../Models/SACreative.h; sourceTree = "<group>"; };
 		E29005BE6FD04AC8F3A32772A668FC52 /* SuperAwesome-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SuperAwesome-prefix.pch"; sourceTree = "<group>"; };
 		E386D3D84B695BB7134132089DB8ED96 /* UIAlertController+Window.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+Window.h"; sourceTree = "<group>"; };
 		E5D338203015B264FBAF3459779AC0D8 /* JSONValueTransformer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSONValueTransformer.h; path = JSONModel/JSONModelTransformations/JSONValueTransformer.h; sourceTree = "<group>"; };
@@ -343,7 +379,7 @@
 		F4CF64CCC7337B931FECC54C1A34C4B5 /* BackButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BackButton.h; sourceTree = "<group>"; };
 		F5B880BA363FEA69D7F4C6CE69DE811F /* start_notselected.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = start_notselected.png; sourceTree = "<group>"; };
 		FA47D4875BD5D114D6F2B08A88000493 /* MRAIDSettings.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MRAIDSettings.h; sourceTree = "<group>"; };
-		FA6AB674E91577B7D66506022BF7C79A /* SAAd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SAAd.h; sourceTree = "<group>"; };
+		FA6AB674E91577B7D66506022BF7C79A /* SAAd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SAAd.h; path = ../../Models/SAAd.h; sourceTree = "<group>"; };
 		FC51CE8D5E7D543A9B265423D46AD6C2 /* SAEventManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SAEventManager.m; sourceTree = "<group>"; };
 		FE4AF6389FB075F1716C0E2F69288AC7 /* AdDemo728x90.jpg */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.jpeg; path = AdDemo728x90.jpg; sourceTree = "<group>"; };
 		FF0F302B4AA38EF7A9DB7B5D041F6E1C /* Pods-SuperAwesome DemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SuperAwesome DemoTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -454,6 +490,124 @@
 			path = FullscreenViews;
 			sourceTree = "<group>";
 		};
+		1B3734281BCA7C30000CCAF2 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				1B37343B1BCA7C95000CCAF2 /* Logger */,
+				1B3734291BCA7C30000CCAF2 /* Loader */,
+				1B37342D1BCA7C30000CCAF2 /* Sender */,
+				1B37342A1BCA7C30000CCAF2 /* Models */,
+				1B37342B1BCA7C30000CCAF2 /* Network */,
+				1B37342C1BCA7C30000CCAF2 /* Parser */,
+				1B37342E1BCA7C30000CCAF2 /* Validator */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		1B3734291BCA7C30000CCAF2 /* Loader */ = {
+			isa = PBXGroup;
+			children = (
+				1B37344C1BCA8511000CCAF2 /* SALoader.h */,
+				1B37344D1BCA8511000CCAF2 /* SALoader.m */,
+				1B3734501BCA851A000CCAF2 /* SALoaderProtocol.h */,
+				1B3734511BCA851A000CCAF2 /* SALoaderProtocol.m */,
+			);
+			path = Loader;
+			sourceTree = "<group>";
+		};
+		1B37342A1BCA7C30000CCAF2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FA6AB674E91577B7D66506022BF7C79A /* SAAd.h */,
+				C3AA9A1993E7E48BEF3F7088AE11AB6C /* SAAd.m */,
+				E25D44D72877D91AD5A006841C0CAFBA /* SACreative.h */,
+				230C86D581EB977819EC76E02BA29B87 /* SACreative.m */,
+				B02C5EA9B5CA02137530B05A3BCCB94C /* SADetails.h */,
+				985DE63AB410CE8D5BD2EF39022AF580 /* SADetails.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1B37342B1BCA7C30000CCAF2 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				1B3734331BCA7C45000CCAF2 /* SABaseNetwork.h */,
+				1B3734341BCA7C45000CCAF2 /* SABaseNetwork.m */,
+				1B3734371BCA7C56000CCAF2 /* SAAdvancedNetwork.h */,
+				1B3734381BCA7C56000CCAF2 /* SAAdvancedNetwork.m */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		1B37342C1BCA7C30000CCAF2 /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				1B3734401BCA8418000CCAF2 /* SAParser.h */,
+				1B3734411BCA8418000CCAF2 /* SAParser.m */,
+				1B3734441BCA8421000CCAF2 /* SASerializer.h */,
+				1B3734451BCA8421000CCAF2 /* SASerializer.m */,
+			);
+			path = Parser;
+			sourceTree = "<group>";
+		};
+		1B37342D1BCA7C30000CCAF2 /* Sender */ = {
+			isa = PBXGroup;
+			children = (
+				1B3734541BCA8524000CCAF2 /* SASender.h */,
+				1B3734551BCA8524000CCAF2 /* SASender.m */,
+			);
+			path = Sender;
+			sourceTree = "<group>";
+		};
+		1B37342E1BCA7C30000CCAF2 /* Validator */ = {
+			isa = PBXGroup;
+			children = (
+				1B3734481BCA842F000CCAF2 /* SAValidator.h */,
+				1B3734491BCA842F000CCAF2 /* SAValidator.m */,
+			);
+			path = Validator;
+			sourceTree = "<group>";
+		};
+		1B37342F1BCA7C30000CCAF2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1B3734301BCA7C30000CCAF2 /* Aux */,
+				1B3734311BCA7C30000CCAF2 /* Main */,
+				1B3734321BCA7C30000CCAF2 /* Utils */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1B3734301BCA7C30000CCAF2 /* Aux */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Aux;
+			sourceTree = "<group>";
+		};
+		1B3734311BCA7C30000CCAF2 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		1B3734321BCA7C30000CCAF2 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		1B37343B1BCA7C95000CCAF2 /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				1B37343C1BCA7CA0000CCAF2 /* SALogger.h */,
+				1B37343D1BCA7CA0000CCAF2 /* SALogger.m */,
+			);
+			path = Logger;
+			sourceTree = "<group>";
+		};
 		2EA87EC22C595AF03C467D4B09380041 /* JSONModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -521,12 +675,6 @@
 		31D0480D63283A064A11E54CBF253081 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				FA6AB674E91577B7D66506022BF7C79A /* SAAd.h */,
-				C3AA9A1993E7E48BEF3F7088AE11AB6C /* SAAd.m */,
-				E25D44D72877D91AD5A006841C0CAFBA /* SACreative.h */,
-				230C86D581EB977819EC76E02BA29B87 /* SACreative.m */,
-				B02C5EA9B5CA02137530B05A3BCCB94C /* SADetails.h */,
-				985DE63AB410CE8D5BD2EF39022AF580 /* SADetails.m */,
 				63F0CE01284BC8A9799BFCBB1D85CD79 /* SAEvent.h */,
 				8D7E6CB5E5BAC22D7B7551BF98CCBFB6 /* SAEvent.m */,
 			);
@@ -653,6 +801,8 @@
 		9A1FEFA597F3CE7CAD8A637AB7C2C715 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				1B3734281BCA7C30000CCAF2 /* Data */,
+				1B37342F1BCA7C30000CCAF2 /* Views */,
 				D0B692F60D6C1F138A7AAEE7814E5BF3 /* SuperAwesome.h */,
 				75884993DA099773D11121EE177E396D /* SuperAwesome.m */,
 				AAAFFA8D167BC8DEEA48725C561B647A /* AdViews */,
@@ -902,6 +1052,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A34F3E15C9195A65E96ECB57C0465581 /* BackButton.h in Headers */,
+				1B3734521BCA851A000CCAF2 /* SALoaderProtocol.h in Headers */,
+				1B3734421BCA8418000CCAF2 /* SAParser.h in Headers */,
 				A9D69C3EAF1A5479D2EB934E0DDD4DEE /* CloseButton.h in Headers */,
 				9A68F9A62FCF73D61C966FA8D6E6C1BA /* ForwardButton.h in Headers */,
 				3B176DC9F6AA9E89515802F343C1B231 /* MRAIDSettings.h in Headers */,
@@ -909,7 +1061,9 @@
 				1AFE44ED030208802CEDE22D155E07EE /* SAAdLoader.h in Headers */,
 				A6FFA8B3B30E927863C8B0694F9D367A /* SAAdPreloadProtocol.h in Headers */,
 				4FFE7AE60593762D05DC9DD57A5B4D63 /* SAAdView.h in Headers */,
+				1B37344E1BCA8511000CCAF2 /* SALoader.h in Headers */,
 				E78F0AADF575FD6C417843A46A2A176B /* SAAdViewProtocol.h in Headers */,
+				1B3734391BCA7C56000CCAF2 /* SAAdvancedNetwork.h in Headers */,
 				862F8425510F15BC7FFA32DBBE589422 /* SABannerAd.h in Headers */,
 				3B916E05012CC9D887A5A24F636E7963 /* SACreative.h in Headers */,
 				00EAE9807497F2E0CEB89D19F81B0E92 /* SADetails.h in Headers */,
@@ -920,6 +1074,9 @@
 				A0670258949EB86A9AD0CC6318FF4087 /* SAInScreenAdView.h in Headers */,
 				C6342DFCA64D86DBD3D6B1535D2C49B0 /* SAInterstitialAd.h in Headers */,
 				9979107ECDC2BE9FA7126D2708541AFA /* SANetwork+Ad.h in Headers */,
+				1B3734461BCA8421000CCAF2 /* SASerializer.h in Headers */,
+				1B3734351BCA7C45000CCAF2 /* SABaseNetwork.h in Headers */,
+				1B37344A1BCA842F000CCAF2 /* SAValidator.h in Headers */,
 				1B3AFEAD1BC7ED9800B45063 /* SAAdView+Protected.h in Headers */,
 				CC5DB2794F1801ED9863972EF5D52FA5 /* SANetwork.h in Headers */,
 				BFC8F40E6449944F6C6D5CDB9A0FBB7B /* SAPadlockView.h in Headers */,
@@ -930,6 +1087,7 @@
 				CE968BF4A53D15C8F2E544BC2F5BA67C /* SKCommonSettings.h in Headers */,
 				A98D9C5B5572BBEAC445E59D55A6C10C /* SKLogger.h in Headers */,
 				A98D9C5B5572BBEAC445E59D55A6C10C /* SKLogger.h in Headers */,
+				1B3734561BCA8524000CCAF2 /* SASender.h in Headers */,
 				1B3AFEB41BC8092200B45063 /* SAAdHTMLParser.h in Headers */,
 				5AE3E54265F27FE6A25E3B82A07AD8CD /* SKMRAIDInterstitial.h in Headers */,
 				F8950C08436C5646845FB9A6D1F15197 /* SKMRAIDModalViewController.h in Headers */,
@@ -939,6 +1097,7 @@
 				B28CDDDBEA0A7C7CEBD0A0D3C2D72148 /* SKMRAIDServiceDelegate.h in Headers */,
 				87154E5CA4CF072D4AFC02233C2231ED /* SKMRAIDUtil.h in Headers */,
 				BA49F786B9D71CF6FFC79DE1534658EC /* SKMRAIDView.h in Headers */,
+				1B37343E1BCA7CA0000CCAF2 /* SALogger.h in Headers */,
 				13E92198352B3A9EE98FB711916D0BFA /* SKReachability.h in Headers */,
 				7E1096AB6D8C83055DF39106C4481964 /* SuperAwesome.h in Headers */,
 				153EAF3BE3C930DCCAB41A9B127189F0 /* UIAlertController+Window.h in Headers */,
@@ -1110,22 +1269,28 @@
 			files = (
 				B2E885BE4F66DDEBED93CF45B6A3E622 /* MRAIDSettings.m in Sources */,
 				6CE28A01735B95DF88CB7FAB3ABE6193 /* SAAd.m in Sources */,
+				1B3734531BCA851A000CCAF2 /* SALoaderProtocol.m in Sources */,
 				BB8877AA7FA1647BCAA116F3864E8953 /* SAAdLoader.m in Sources */,
 				E79629253DD4367A518B0CB25E217F03 /* SAAdView.m in Sources */,
 				12E1D82EC8AFF5C1B8DA286BF159E093 /* SABannerAd.m in Sources */,
 				2168D9C415B50A1BDE096F4AD3C8998B /* SACreative.m in Sources */,
 				8C36DE7AA4B2DC4BD3F6D754AE1C7723 /* SADetails.m in Sources */,
 				4D6A84658F291C6BFD7DA082760FACC0 /* SAEvent.m in Sources */,
+				1B3734361BCA7C45000CCAF2 /* SABaseNetwork.m in Sources */,
 				0A9D165C4B90877E753241417A40A576 /* SAEventManager.m in Sources */,
 				B84E6DB561E803D90048663ADEBA344C /* SAFullscreenAdView.m in Sources */,
 				8195E889B11F5F9C976891CB7B8468C9 /* SAFullscreenVideoAd.m in Sources */,
+				1B37344B1BCA842F000CCAF2 /* SAValidator.m in Sources */,
 				ECAEBE87921C13D5EBA8D6E74509F31C /* SAInScreenAdView.m in Sources */,
+				1B3734471BCA8421000CCAF2 /* SASerializer.m in Sources */,
+				1B37343F1BCA7CA0000CCAF2 /* SALogger.m in Sources */,
 				C41E6B39ABC54BA41DD53F8D00582C28 /* SAInterstitialAd.m in Sources */,
 				C97DDC97A295DB9D37CBB1E7755BBEA8 /* SANetwork+Ad.m in Sources */,
 				51E80C73F43B81CB2F830CEE4E0B789F /* SANetwork.m in Sources */,
 				FF970B0F31BD4F246F7E3864E68163D1 /* SAPadlockView.m in Sources */,
 				F03051EE3768E263B4D124CCA7A1F97F /* SAParentalGate.m in Sources */,
 				95C44FF20EB6CE48CF1B5F9A25AF2E8C /* SAVideoAd.m in Sources */,
+				1B37344F1BCA8511000CCAF2 /* SALoader.m in Sources */,
 				57E759C1DE6C6074E071DC5391306672 /* SKBrowser.m in Sources */,
 				E44B30E6208E84AB0B9A04D279D36D2C /* SKBrowserControlsView.m in Sources */,
 				DD3A5356E06E696A41F8988918D1AA48 /* SKCommonSettings.m in Sources */,
@@ -1139,10 +1304,13 @@
 				EEB28F00E35ABB2487545B043A42B75D /* SKMRAIDView.m in Sources */,
 				9AEA6B15CB5024B4745A4EFD011B3B13 /* SKReachability.m in Sources */,
 				1B3AFEB51BC8092200B45063 /* SAAdHTMLParser.m in Sources */,
+				1B37343A1BCA7C56000CCAF2 /* SAAdvancedNetwork.m in Sources */,
 				0E993F9236A5F11B602C1247963D070D /* SuperAwesome-dummy.m in Sources */,
 				8529D4CD87FCC08E74AF210C33BA2D9B /* SuperAwesome.m in Sources */,
 				697B30888345330AF1B984F246DE6B6E /* UIAlertController+Window.m in Sources */,
 				1D4229E35E4872AE42DD11A3CD76D448 /* UIViewController+Utils.m in Sources */,
+				1B3734431BCA8418000CCAF2 /* SAParser.m in Sources */,
+				1B3734571BCA8524000CCAF2 /* SASender.m in Sources */,
 				FD7973EC146E0E9C60846E7CDE975928 /* WeakRefClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

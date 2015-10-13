@@ -7,20 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SACreativeFormat.h"
 
 // forward declarations
 @class SADetails;
-
-// define the format of the Creative
-typedef NS_ENUM(NSUInteger, SACreativeFormat) {
-    format_unknown = -1,
-    image_with_link = 0,
-    video = 1,
-    rich_media = 2,
-    rich_media_resizing = 3,
-    swf = 4,
-    tag = 5
-};
 
 // define the Creative class
 @interface SACreative : NSObject

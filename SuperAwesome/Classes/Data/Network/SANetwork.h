@@ -1,5 +1,5 @@
 //
-//  SABaseNetwork.h
+//  SANetwork.h
 //  Pods
 //
 //  Created by Gabriel Coman on 11/10/2015.
@@ -18,7 +18,7 @@ typedef void (^success)(NSData *data);
 typedef void (^failure)();
 
 // implementation
-@interface SABaseNetwork : NSObject
+@interface SANetwork : NSObject
 
 // POST
 + (void) sendPOSTtoEndpoint:(NSString*)endpoint

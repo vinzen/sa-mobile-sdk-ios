@@ -55,7 +55,7 @@
     
     ////////////////////////////////////////////////////////////
     // 1. First GET request to get an Ad
-    [SABaseNetwork sendGETtoEndpoint:endpoint withQueryDict:dict andSuccess:^(NSData *data) {
+    [SANetwork sendGETtoEndpoint:endpoint withQueryDict:dict andSuccess:^(NSData *data) {
         
         // transfrom from raw data to dictionary
         NSError *jsonError;

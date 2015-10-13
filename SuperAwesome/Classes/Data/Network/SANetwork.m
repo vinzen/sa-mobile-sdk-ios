@@ -1,14 +1,14 @@
 //
-//  SABaseNetwork.m
+//  SANetwork.m
 //  Pods
 //
 //  Created by Gabriel Coman on 11/10/2015.
 //
 //
 
-#import "SABaseNetwork.h"
+#import "SANetwork.h"
 
-@implementation SABaseNetwork
+@implementation SANetwork
 
 // Generic functions to GET & POST
 + (void) sendPOSTtoEndpoint:(NSString*)endpoint

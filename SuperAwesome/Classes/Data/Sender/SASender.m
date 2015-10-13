@@ -18,7 +18,7 @@
 #import "SASerializer.h"
 #import "SuperAwesome.h"
 #import "SAStringifier.h"
-#import "SABaseNetwork.h"
+#import "SANetwork.h"
 
 @implementation SASender
 
@@ -47,7 +47,7 @@
     }
 
     // send data to net
-    [SABaseNetwork sendPOSTtoEndpoint:url withBodyDict:dict andSuccess:^(NSData *data) {
+    [SANetwork sendPOSTtoEndpoint:url withBodyDict:dict andSuccess:^(NSData *data) {
        // success
     } orFailure:^{
         // failure

@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SABaseNetwork.h"
+#import "SANetwork.h"
 #import "SALoaderProtocol.h"
 
 // predef classes

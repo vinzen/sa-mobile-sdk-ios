@@ -7,7 +7,6 @@
 //
 
 #import "SABaseNetwork.h"
-#import "SALogger.h"
 
 @implementation SABaseNetwork
 
@@ -39,19 +38,19 @@
     netresponse resp = ^(NSURLResponse * response, NSData * data, NSError * error) {
         
         if (error != nil) {
-            [SALogger LogNetworkErrorToURL:_surl andStatusCode:0];
+            NSLog(@"Network error %@", error);
             failure();
         }
         else {
             // only if status code is 200
             if (((NSHTTPURLResponse*)response).statusCode == 200) {
                 NSString *strData = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-                [SALogger LogNetworkSuccessToURL:_surl andResponse:strData];
+                NSLog(@"Success: %@ - %@", _surl, strData);
                 success(data);
             }
             // else call it failure
             else {
-                [SALogger LogNetworkErrorToURL:_surl andStatusCode:((NSHTTPURLResponse*)response).statusCode];
+                NSLog(@"Some other failure: %@ - %ld", _surl, ((NSHTTPURLResponse*)response).statusCode);
                 failure();
             }
         }
@@ -90,19 +89,19 @@
     netresponse resp = ^(NSURLResponse * response, NSData * data, NSError * error) {
         
         if (error != nil) {
-            [SALogger LogNetworkErrorToURL:_surl andStatusCode:0];
+            NSLog(@"Network error %@", error);
             failure();
         }
         else {
             // only if status code is 200
             if (((NSHTTPURLResponse*)response).statusCode == 200) {
                 NSString *strData = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-                [SALogger LogNetworkSuccessToURL:_surl andResponse:strData];
+                NSLog(@"Success: %@ - %@", _surl, strData);
                 success(data);
             }
             // else call it failure
             else {
-                [SALogger LogNetworkErrorToURL:_surl andStatusCode:((NSHTTPURLResponse*)response).statusCode];
+                NSLog(@"Some other failure: %@ - %ld", _surl, ((NSHTTPURLResponse*)response).statusCode);
                 failure();
             }
         }

@@ -106,7 +106,7 @@
     _Nullable id widthObj = [dict objectForKey:@"width"];
     _Nullable id heightObj = [dict objectForKey:@"height"];
     _Nullable id imageObj = [dict objectForKey:@"image"];
-    _Nullable id valueObj = [dict valueForKey:@"dict"];
+    _Nullable id valueObj = [dict valueForKey:@"value"];
     _Nullable id nameObj = [dict objectForKey:@"name"];
     _Nullable id videoObj = [dict objectForKey:@"video"];
     _Nullable id bitrateObj = [dict objectForKey:@"bitrate"];

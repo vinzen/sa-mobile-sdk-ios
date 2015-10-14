@@ -49,18 +49,23 @@
                 case rich_media:{
                     // 4.3. if Ad is rich media and no url can be found,
                     // then data is not valid
-                    if (ad.creative.details.url == NULL) {
+                    if (ad.creative.details.url == NULL)
                         return false;
-                    }
                     break;
                 }
                 case rich_media_resizing:{
+                    // 4.4. if Ad is rich media (resizing) and no url can be found,
+                    // then data is not valid
+                    if (ad.creative.details.url == NULL)
+                        return false;
                     break;
                 }
                 case swf:{
                     break;
                 }
                 case tag:{
+                    // 4.5. if Ad is tag and no tag can be found,
+                    // then data is not valid
                     if (ad.creative.details.tag == NULL)
                         return false;
                     break;

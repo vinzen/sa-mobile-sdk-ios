@@ -8,6 +8,8 @@
 
 #import "SANetwork.h"
 
+#define USER_AGENT @"Mozilla/5.0 (iPad; CPU OS 7_0 like Mac OS X) AppleWebKit/537.51.1 (KHTML, like Gecko) CriOS/30.0.1599.12 Mobile/11A465 Safari/8536.25 (3B92C18B-D9DE-4CB7-A02A-22FD2AF17C8F)"
+
 @implementation SANetwork
 
 // Generic functions to GET & POST
@@ -31,6 +33,7 @@
     [request setURL:url];
     [request setHTTPMethod:@"POST"];
     [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+    [request setValue:USER_AGENT forHTTPHeaderField:@"User-Agent"];
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [request setHTTPBody:postData];
     
@@ -83,6 +86,7 @@
     // create the request
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     [request setURL:url];
+    [request setValue:USER_AGENT forHTTPHeaderField:@"User-Agent"];
     [request setHTTPMethod:@"GET"];
     
     // form the response block to the POST

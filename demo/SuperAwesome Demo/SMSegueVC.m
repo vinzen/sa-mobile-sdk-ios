@@ -18,7 +18,7 @@
 - (void) viewDidLoad {
     [super viewDidLoad];
     
-    [[SALoader sharedManager] preloadAdForPlacementId:21924];
+    [[SALoader sharedManager] preloadAdForPlacementId:19310];
     [[SALoader sharedManager] setDelegate:self];
     
     _inter = [[SAInterstitialAd alloc] init];

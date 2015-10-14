@@ -57,6 +57,7 @@
                        delegate:(id<SKMRAIDInterstitialDelegate>)delegate
                serviceDelegate:(id<SKMRAIDServiceDelegate>)serviceDelegate
              rootViewController:(UIViewController *)rootViewController
+               andPlacementView:(CGRect)frame
 {
     self = [super init];
     if (self) {
@@ -65,9 +66,7 @@
         _serviceDelegate = serviceDelegate;
         _rootViewController = rootViewController;
         
-        
-        CGRect screenRect = [[UIScreen mainScreen] bounds];
-        _mraidView = [[SKMRAIDView alloc] initWithFrame:screenRect
+        _mraidView = [[SKMRAIDView alloc] initWithFrame:frame
                                         withHtmlData:htmlData
                                          withBaseURL:bsURL
                                       asInterstitial:YES

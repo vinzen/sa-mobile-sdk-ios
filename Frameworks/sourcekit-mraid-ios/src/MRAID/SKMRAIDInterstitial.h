@@ -43,7 +43,8 @@
                     withBaseURL:(NSURL*)bsURL
                        delegate:(id<SKMRAIDInterstitialDelegate>)delegate
                serviceDelegate:(id<SKMRAIDServiceDelegate>)serviceDelegate
-             rootViewController:(UIViewController *)rootViewController;
+             rootViewController:(UIViewController *)rootViewController
+               andPlacementView:(CGRect)frame;
 - (BOOL)isAdReady;
 - (void)show;
 - (void)close;

@@ -10,10 +10,13 @@
 
 #import "SKMRAIDView.h"
 #import "SAAd.h"
+#import "SACreative.h"
+#import "SADetails.h"
 #import "SASender.h"
 
 @interface SAView ()
 - (void) display;
+- (CGRect) arrangeAdInFrame:(CGRect)frame;
 - (void) clickOnAd;
 - (void) createPadlockButtonWithParent:(UIView *)parent;
 - (void) removePadlockButtonFromParent;
@@ -43,7 +46,9 @@
 - (void) display {
     [super display];
     
-    raidview = [[SKMRAIDView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)
+    CGRect frame = [self arrangeAdInFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
+    
+    raidview = [[SKMRAIDView alloc] initWithFrame:frame
                                      withHtmlData:ad.adHTML
                                       withBaseURL:[NSURL URLWithString:@""]
                                 supportedFeatures:@[]

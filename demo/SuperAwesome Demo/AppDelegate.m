@@ -20,7 +20,7 @@
     // Override point for customization after application launch.
     
     [[SuperAwesome sharedManager] setConfigurationProduction];
-    [[SuperAwesome sharedManager] disableTestMode];
+    [[SuperAwesome sharedManager] enableTestMode];
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     self.window.tintColor = [UIColor whiteColor];

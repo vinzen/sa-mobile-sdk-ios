@@ -69,6 +69,8 @@ typedef enum {
     
     UITapGestureRecognizer *tapGestureRecognizer;
     BOOL bonafideTapObserved;
+    
+    CGRect calculatedFrame;
 }
 
 // "hidden" method for interstitial support
@@ -159,6 +161,7 @@ typedef enum {
     self = [super initWithFrame:frame];
     if (self) {
         [self setUpTapGestureRecognizer];
+        calculatedFrame = frame;
         isInterstitial = isInter;
         _delegate = delegate;
         _serviceDelegate = serviceDelegate;
@@ -484,11 +487,11 @@ typedef enum {
     
     if (!urlString) {
         // 1-part expansion
-        webView.frame = frame;
+        webView.frame = calculatedFrame; // CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height); //frame;
         [webView removeFromSuperview];
     } else {
         // 2-part expansion
-        webViewPart2 = [[UIWebView alloc] initWithFrame:frame];
+        webViewPart2 = [[UIWebView alloc] initWithFrame:calculatedFrame];
         [self initWebView:webViewPart2];
         currentWebView = webViewPart2;
         bonafideTapObserved = YES; // by definition for 2 part expand a valid tap has occurred

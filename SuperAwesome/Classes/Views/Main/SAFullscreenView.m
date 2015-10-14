@@ -15,6 +15,7 @@
 
 @interface SAView ()
 - (void) display;
+- (CGRect) arrangeAdInFrame:(CGRect)frame;
 - (void) clickOnAd;
 - (void) createPadlockButtonWithParent:(UIView *)parent;
 - (void) removePadlockButtonFromParent;
@@ -47,13 +48,16 @@
 - (void) display {
     [super display];
     
+    CGRect frame = [self arrangeAdInFrame:[UIScreen mainScreen].bounds];
+    
     // create the mraid webview
     raidinterstitial = [[SKMRAIDInterstitial alloc] initWithSupportedFeatures:@[MRAIDSupportsInlineVideo]
-                                                         withHtmlData:ad.adHTML
-                                                          withBaseURL:[NSURL URLWithString:@""]
-                                                             delegate:self
-                                                      serviceDelegate:nil
-                                                   rootViewController:vc];
+                                                                 withHtmlData:ad.adHTML
+                                                                  withBaseURL:[NSURL URLWithString:@""]
+                                                                     delegate:self
+                                                              serviceDelegate:nil
+                                                           rootViewController:vc
+                                                             andPlacementView:frame];
 }
 
 #pragma mark MRAID Interstitial delegate

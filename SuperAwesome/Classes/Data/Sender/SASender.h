@@ -7,20 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SAEventType.h"
 
 // forward declaration
 @class SAAd;
-
-// specific events for the ads
-typedef NS_ENUM(NSUInteger, SAEventType) {
-    NoAd = -1,
-    viewable_impression = 0,
-    AdFailedToView = 1,
-    AdRate,
-    AdPGCancel,
-    AdPGSuccess,
-    AdPGError
-};
 
 @interface SASender : NSObject
 

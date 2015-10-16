@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SACreative.h"
-#import "SADetails.h"
-#import "SASender.h"
+#import "SACreativeFormat.h"
+#import "SAPlacementFormat.h"
+#import "SAEventType.h"
 
 @interface SAStringifier: NSObject
 

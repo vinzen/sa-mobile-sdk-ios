@@ -17,6 +17,7 @@
 #import "SuperAwesome.h"
 #import "SASender.h"
 #import "UIAlertController+Window.h"
+#import "Utils.h"
 
 // parental gate defines
 #define SA_CHALLANGE_ALERTVIEW 0
@@ -85,8 +86,8 @@
 
 // init a new question
 - (void) newQuestion {
-    _number1 = [self randomNumberBetween:SA_RAND_MIN maxNumber:SA_RAND_MAX];
-    _number2 = [self randomNumberBetween:SA_RAND_MIN maxNumber:SA_RAND_MAX];
+    _number1 = [Utils randomNumberBetween:SA_RAND_MIN maxNumber:SA_RAND_MAX];
+    _number2 = [Utils randomNumberBetween:SA_RAND_MIN maxNumber:SA_RAND_MAX];
     _solution = _number1 + _number2;
 }
 
@@ -189,11 +190,6 @@
     }];
     
     [_challangeAlertView show];
-}
-
-// internal random functions
-- (NSInteger)randomNumberBetween:(NSInteger)min maxNumber:(NSInteger)max {
-    return min + arc4random_uniform((uint32_t)(max - min + 1));
 }
 
 - (void) setAdName:(NSString *)adname {

@@ -6,25 +6,27 @@
 //
 //
 
-#import "SAFullscreenView.h"
+#import "SAInterstitialAd.h"
 #import "UIViewController+Utils.h"
 #import "SAAd.h"
 #import "SKMRAIDInterstitial.h"
 #import "SKMRAIDServiceDelegate.h"
 #import "SASender.h"
+#import "Utils.h"
+#import "SACreative.h"
+#import "SADetails.h"
 
 @interface SAView ()
 - (void) display;
-- (CGRect) arrangeAdInFrame:(CGRect)frame;
 - (void) clickOnAd;
 - (void) createPadlockButtonWithParent:(UIView *)parent;
 - (void) removePadlockButtonFromParent;
 @end
 
-@interface SAFullscreenView () <SKMRAIDInterstitialDelegate>
+@interface SAInterstitialAd () <SKMRAIDInterstitialDelegate>
 @end
 
-@implementation SAFullscreenView
+@implementation SAInterstitialAd
 
 - (id) init {
     if (self = [super init]) {
@@ -48,7 +50,9 @@
 - (void) display {
     [super display];
     
-    CGRect frame = [self arrangeAdInFrame:[UIScreen mainScreen].bounds];
+    
+    CGRect frame = [Utils arrangeAdInNewFrame:[UIScreen mainScreen].bounds
+                                    fromFrame:CGRectMake(0, 0, ad.creative.details.width, ad.creative.details.height)];
     
     // create the mraid webview
     raidinterstitial = [[SKMRAIDInterstitial alloc] initWithSupportedFeatures:@[MRAIDSupportsInlineVideo]

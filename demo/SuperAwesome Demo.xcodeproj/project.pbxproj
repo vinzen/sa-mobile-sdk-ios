@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0841B3AF02D845D7F4EDE258 /* libPods-SuperAwesome DemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CB7E89D3831DF69FAF8A307 /* libPods-SuperAwesome DemoTests.a */; };
-		1B3734A41BCC04AE000CCAF2 /* SMSegueVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3734A31BCC04AE000CCAF2 /* SMSegueVC.m */; settings = {ASSET_TAGS = (); }; };
+		1B1764CD1BD6794900B0FBCD /* TestVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B1764CC1BD6794900B0FBCD /* TestVCViewController.m */; settings = {ASSET_TAGS = (); }; };
 		6D89FF0A295919F2A168AE98 /* libPods-SuperAwesome Demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EFA8DE86343AF7A5C634FCA /* libPods-SuperAwesome Demo.a */; settings = {ATTRIBUTES = (Required, ); }; };
 		98A4EE491AD524B6005FCE20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98A4EE481AD524B6005FCE20 /* Main.storyboard */; };
 		98B360E11AE51C19004D1C8D /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B360E01AE51C19004D1C8D /* MainViewController.m */; };
@@ -43,8 +43,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1B3734A21BCC04AE000CCAF2 /* SMSegueVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMSegueVC.h; sourceTree = "<group>"; };
-		1B3734A31BCC04AE000CCAF2 /* SMSegueVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMSegueVC.m; sourceTree = "<group>"; };
+		1B1764CB1BD6794900B0FBCD /* TestVCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestVCViewController.h; sourceTree = "<group>"; };
+		1B1764CC1BD6794900B0FBCD /* TestVCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestVCViewController.m; sourceTree = "<group>"; };
 		5634DFB8E076111266332FE4 /* Pods-SuperAwesome Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperAwesome Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-SuperAwesome Demo/Pods-SuperAwesome Demo.release.xcconfig"; sourceTree = "<group>"; };
 		5EFA8DE86343AF7A5C634FCA /* libPods-SuperAwesome Demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SuperAwesome Demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CB7E89D3831DF69FAF8A307 /* libPods-SuperAwesome DemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SuperAwesome DemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,8 +87,8 @@
 		1B3734A51BCC0719000CCAF2 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				1B3734A21BCC04AE000CCAF2 /* SMSegueVC.h */,
-				1B3734A31BCC04AE000CCAF2 /* SMSegueVC.m */,
+				1B1764CB1BD6794900B0FBCD /* TestVCViewController.h */,
+				1B1764CC1BD6794900B0FBCD /* TestVCViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -342,8 +342,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B3734A41BCC04AE000CCAF2 /* SMSegueVC.m in Sources */,
 				98B98FCD1ACD5F0400EFFA27 /* AppDelegate.m in Sources */,
+				1B1764CD1BD6794900B0FBCD /* TestVCViewController.m in Sources */,
 				98B360E11AE51C19004D1C8D /* MainViewController.m in Sources */,
 				98B98FCA1ACD5F0400EFFA27 /* main.m in Sources */,
 			);

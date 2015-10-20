@@ -21,131 +21,72 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="SuperAwesome Demo App" id="UIF-CI-wT6"/>
                     <connections>
-                        <segue destination="oIZ-gK-iKm" kind="push" identifier="ToBannerSegue" id="5mr-Sb-zCA"/>
-                        <segue destination="OLM-AW-V4A" kind="push" identifier="ToSMSegue" id="xTQ-cK-hzZ"/>
+                        <segue destination="Kkm-Do-P8m" kind="push" identifier="TestSegue" id="Ry1-Ef-v38"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BKm-cs-Ov0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-164" y="-433"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="OKP-bI-5ez">
+        <!--TestVC View Controller-->
+        <scene sceneID="X6t-YS-h7f">
             <objects>
-                <viewController id="oIZ-gK-iKm" sceneMemberID="viewController">
+                <viewController id="Kkm-Do-P8m" customClass="TestVCViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="DFA-tv-6Yk"/>
-                        <viewControllerLayoutGuide type="bottom" id="bdy-IC-MmI"/>
+                        <viewControllerLayoutGuide type="top" id="fFz-R4-2Km"/>
+                        <viewControllerLayoutGuide type="bottom" id="b6T-Bw-joS"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="mmd-Bq-Ji1">
+                    <view key="view" contentMode="scaleToFill" id="dLf-u6-pBb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1OW-ib-Irq" customClass="SABannerAd">
-                                <rect key="frame" x="0.0" y="64" width="320" height="100"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="0CX-00-Vge"/>
-                                    <constraint firstAttribute="height" constant="100" id="oZr-c4-cte"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="playInstantly" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="placementId">
-                                        <integer key="value" value="21636"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isParentalGateEnabled" value="YES"/>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tor-7T-Has" customClass="SAVideoAd">
-                                <rect key="frame" x="40" y="296" width="240" height="128"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dcs-H8-Wk8">
+                                <rect key="frame" x="137" y="144" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonAction:" destination="Kkm-Do-P8m" eventType="touchUpInside" id="5fb-Gc-Bdj"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lEY-Qu-Wzn" customClass="SAVideoAd">
+                                <rect key="frame" x="40" y="235" width="240" height="190"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="placementId">
                                         <integer key="value" value="21022"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="playInstantly" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isParentalGateEnabled" value="YES"/>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fgf-nv-Se2" customClass="SABannerAd">
-                                <rect key="frame" x="0.0" y="518" width="320" height="50"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="placementId">
-                                        <integer key="value" value="21746"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="playInstantly" value="YES"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isParentalGateEnabled" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="playInstantly" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="1OW-ib-Irq" firstAttribute="centerX" secondItem="mmd-Bq-Ji1" secondAttribute="centerX" id="ZWZ-50-9sM"/>
-                            <constraint firstItem="1OW-ib-Irq" firstAttribute="top" secondItem="DFA-tv-6Yk" secondAttribute="bottom" id="sBO-u2-8vX"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="3A4-9q-DMZ"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DRB-RR-oVs" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="394" y="-587"/>
-        </scene>
-        <!--SegueVC-->
-        <scene sceneID="xyJ-on-ZhP">
-            <objects>
-                <viewController id="OLM-AW-V4A" customClass="SMSegueVC" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="neS-Ni-bTF"/>
-                        <viewControllerLayoutGuide type="bottom" id="SJQ-hq-WCe"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="CRd-4T-8wo">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VaW-gF-Q2Q">
-                                <rect key="frame" x="133" y="72" width="55" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="spL-ph-Rh6"/>
-                                    <constraint firstAttribute="width" constant="55" id="vJA-pg-MqY"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="openVC:" destination="OLM-AW-V4A" eventType="touchUpInside" id="vLE-VK-GPM"/>
-                                </connections>
-                            </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZRg-L3-kxv" customClass="SABannerAd">
-                                <rect key="frame" x="0.0" y="110" width="320" height="480"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U99-DX-0rO" customClass="SABannerAd">
+                                <rect key="frame" x="0.0" y="72" width="320" height="50"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="mN0-PO-5Vh"/>
-                                    <constraint firstAttribute="height" constant="480" id="xbC-yJ-6c9"/>
+                                    <constraint firstAttribute="width" constant="320" id="ehP-CS-Oev"/>
+                                    <constraint firstAttribute="height" constant="50" id="nYE-S1-Mte"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="placementId">
-                                        <integer key="value" value="21746"/>
-                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isParentalGateEnabled" value="NO"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="playInstantly" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isParentalGateEnabled" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="placementId">
+                                        <integer key="value" value="21863"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="VaW-gF-Q2Q" firstAttribute="centerX" secondItem="CRd-4T-8wo" secondAttribute="centerX" id="2HO-BK-lwD"/>
-                            <constraint firstItem="ZRg-L3-kxv" firstAttribute="top" secondItem="VaW-gF-Q2Q" secondAttribute="bottom" constant="8" id="RbZ-58-Jyo"/>
-                            <constraint firstItem="ZRg-L3-kxv" firstAttribute="centerX" secondItem="CRd-4T-8wo" secondAttribute="centerX" id="skd-Bg-Llf"/>
-                            <constraint firstItem="VaW-gF-Q2Q" firstAttribute="top" secondItem="neS-Ni-bTF" secondAttribute="bottom" constant="8" id="tss-X6-QAP"/>
+                            <constraint firstItem="U99-DX-0rO" firstAttribute="top" secondItem="fFz-R4-2Km" secondAttribute="bottom" constant="8" id="6dA-Pi-ax2"/>
+                            <constraint firstItem="U99-DX-0rO" firstAttribute="centerX" secondItem="dLf-u6-pBb" secondAttribute="centerX" id="rzS-mq-RbS"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="PCu-1u-iFE"/>
+                    <navigationItem key="navigationItem" id="a5n-H5-SmC"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NZC-jJ-mRh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zSf-99-cuf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="394" y="50"/>
+            <point key="canvasLocation" x="232" y="-436"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bmP-0n-1bu">

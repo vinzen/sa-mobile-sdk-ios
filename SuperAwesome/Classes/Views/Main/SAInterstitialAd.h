@@ -10,7 +10,7 @@
 
 @class SKMRAIDInterstitial;
 
-@interface SAFullscreenView : SAView {
+@interface SAInterstitialAd : SAView {
     // private vars
     UIViewController *vc;
     SKMRAIDInterstitial *raidinterstitial;

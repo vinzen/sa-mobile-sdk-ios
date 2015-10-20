@@ -64,27 +64,6 @@
     // do nothing here
 }
 
-- (CGRect) arrangeAdInFrame:(CGRect)frame {
-    
-    CGFloat SW = frame.size.width;
-    CGFloat SH = frame.size.height;
-    CGFloat AW = (CGFloat)ad.creative.details.width;
-    CGFloat AH = (CGFloat)ad.creative.details.height;
-    if (AW == 1 || AW == 0) { AW = SW; }
-    if (AH == 1 || AH == 0) { AH = SH; }
-    
-    CGFloat dW = MIN((CGFloat)SW/AW, 1);
-    CGFloat dH = MIN((CGFloat)SH/AH, 1);
-    CGFloat dT = MIN(dW, dH);
-    
-    CGFloat nW = AW * dT;
-    CGFloat nH = AH * dT;
-    CGFloat nX = (SW - nW) / 2.0f;
-    CGFloat nY = (SH - nH) / 2.0f;
-    
-    return CGRectMake(nX, nY, nW, nH);
-}
-
 #pragma mark Normal click
 
 - (void) clickOnAd {

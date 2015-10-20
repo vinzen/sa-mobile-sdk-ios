@@ -10,11 +10,10 @@
 
 @class SKMRAIDView;
 
-@interface SAHalfscreenView : SAView {
+@interface SABannerAd : SAView {
     SKMRAIDView *raidview;
 }
 
-// custom init
 - (id) initWithPlacementId:(NSInteger)placementId andFrame:(CGRect)frame;
 
 @end

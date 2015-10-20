@@ -19,8 +19,8 @@
     
     NSDictionary *choic = @{
         @"In view Ads":@[
-                @{@"name":@"Standard Mobile",
-                  @"segue": @"ToBannerSegue"},
+                @{@"name":@"Test",
+                  @"segue": @"TestSegue"},
                 @{@"name":@"SM Mobile",
                   @"segue":@"ToSMSegue"},
                 @{@"name":@"Leaderboard",

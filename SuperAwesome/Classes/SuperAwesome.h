@@ -14,9 +14,11 @@
 #import "SADetails.h"
 
 // import views
-#import "SAAdViews.h"
 #import "SALoader.h"
 #import "SALoaderProtocol.h"
+#import "SABannerAd.h"
+#import "SAInterstitialAd.h"
+#import "SAVideoAd.h"
 
 // interface declaration
 @interface SuperAwesome : NSObject

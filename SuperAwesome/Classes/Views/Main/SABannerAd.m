@@ -6,10 +6,11 @@
 //
 //
 
-#import "SAHalfscreenView.h"
+#import "SABannerAd.h"
 
 #import "SKMRAIDView.h"
 #import "SAAd.h"
+#import "Utils.h"
 #import "SACreative.h"
 #import "SADetails.h"
 #import "SASender.h"
@@ -22,10 +23,10 @@
 - (void) removePadlockButtonFromParent;
 @end
 
-@interface SAHalfscreenView () <SKMRAIDViewDelegate>
+@interface SABannerAd () <SKMRAIDViewDelegate>
 @end
 
-@implementation SAHalfscreenView
+@implementation SABannerAd
 
 - (id) initWithPlacementId:(NSInteger)placementId andFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
@@ -46,7 +47,8 @@
 - (void) display {
     [super display];
     
-    CGRect frame = [self arrangeAdInFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
+    CGRect frame = [Utils arrangeAdInNewFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)
+                                    fromFrame:CGRectMake(0, 0, ad.creative.details.width, ad.creative.details.height)];
     
     raidview = [[SKMRAIDView alloc] initWithFrame:frame
                                      withHtmlData:ad.adHTML

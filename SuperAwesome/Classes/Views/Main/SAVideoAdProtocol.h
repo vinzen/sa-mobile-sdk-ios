@@ -16,5 +16,6 @@
 - (void) videoReachedFirstQuartile:(NSInteger)placementId;
 - (void) videoReachedMidpoint:(NSInteger)placementId;
 - (void) videoReachedThirdQuartile:(NSInteger)placementId;
+- (void) videoSkipped:(NSInteger)placementId;
 
 @end

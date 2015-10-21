@@ -21,6 +21,7 @@
 - (void) clickOnAd;
 - (void) createPadlockButtonWithParent:(UIView *)parent;
 - (void) removePadlockButtonFromParent;
+- (void) resizeToFrame:(CGRect)toframe;
 @end
 
 @interface SABannerAd () <SKMRAIDViewDelegate>
@@ -82,6 +83,21 @@
 
 - (void) mraidViewNavigate:(SKMRAIDView *)mraidView withURL:(NSURL *)url {
     [self clickOnAd];
+}
+
+#pragma mark Resize
+
+- (void) resizeToFrame:(CGRect)toframe {
+    
+    self.frame = toframe;
+    
+    CGRect frame = [Utils arrangeAdInNewFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)
+                                    fromFrame:CGRectMake(0, 0, ad.creative.details.width, ad.creative.details.height)];
+    
+    raidview.frame = frame;
+    [padlockBtn removeFromSuperview];
+    padlockBtn = NULL;
+    [self createPadlockButtonWithParent:raidview];
 }
 
 @end

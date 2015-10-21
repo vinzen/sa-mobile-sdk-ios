@@ -152,4 +152,10 @@
     [[[[UIApplication sharedApplication] delegate] window] addSubview:pad];
 }
 
+#pragma mark Resize to Frame
+
+- (void) resizeToFrame:(CGRect)frame {
+    // do nothing
+}
+
 @end

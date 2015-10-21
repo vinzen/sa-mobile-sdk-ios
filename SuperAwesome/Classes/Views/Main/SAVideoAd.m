@@ -14,6 +14,7 @@
 #import "IMAAdsManager.h"
 #import "IMAAVPlayerContentPlayhead.h"
 #import "IMAAdDisplayContainer.h"
+#import "IMAUiElements.h"
 
 // import models
 #import "SAAd.h"
@@ -29,9 +30,10 @@
 - (void) clickOnAd;
 - (void) createPadlockButtonWithParent:(UIView *)parent;
 - (void) removePadlockButtonFromParent;
+- (void) resizeToFrame:(CGRect)toframe;
 @end
 
-@interface SAVideoAd () <IMAAdsLoaderDelegate, IMAAdsManagerDelegate>
+@interface SAVideoAd () <IMAAdsLoaderDelegate, IMAAdsManagerDelegate, IMAWebOpenerDelegate>
 
 // views
 @property (nonatomic, strong) AVPlayer *contentPlayer;
@@ -83,19 +85,22 @@
     IMAAdDisplayContainer *adDisplayContainer = [[IMAAdDisplayContainer alloc] initWithAdContainer:self companionSlots:nil];
     IMAAdsRequest *request = [[IMAAdsRequest alloc] initWithAdTagUrl:ad.creative.details.vast adDisplayContainer:adDisplayContainer userContext:nil];
     [_adsLoader requestAdsWithRequest:request];
+    
+    actionButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, 30.0f)];
+    [actionButton setTitle:@"" forState:UIControlStateNormal];
+    [actionButton addTarget:self action:@selector(gotoURL:) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:actionButton];
 }
 
 #pragma mark SAVideoAd functions
 
 - (void) createContentPlayhead {
-    _contentPlayhead = [[IMAAVPlayerContentPlayhead alloc] initWithAVPlayer:_contentPlayer];
-    [_notifCenter addObserver:self selector:@selector(contentDidFinishPlaying:) name:AVPlayerItemDidPlayToEndTimeNotification object:[_contentPlayer currentItem]];
+    
 }
 
 - (void)contentDidFinishPlaying:(NSNotification *)notification {
     // end of content
     if (notification.object == _contentPlayer.currentItem) {
-        NSLog(@"AD HAS ENDED");
         [_adsLoader contentComplete];
     }
 }
@@ -103,18 +108,30 @@
 #pragma mark AdsLoader Delegate
 
 - (void) adsLoader:(IMAAdsLoader *)loader adsLoadedWithData:(IMAAdsLoadedData *)adsLoadedData {
+    // get an ad manager and set it's delegate
     _adsManager = adsLoadedData.adsManager;
     _adsManager.delegate = self;
     
+    // create settings for the ad manager
     IMAAdsRenderingSettings *adsRenderingSettings = [[IMAAdsRenderingSettings alloc] init];
-    adsRenderingSettings.webOpenerPresentingController = [UIViewController currentViewController];
-    [self createContentPlayhead];
+    adsRenderingSettings.webOpenerPresentingController = nil;
+    
+    // create content playhead
+    _contentPlayhead = [[IMAAVPlayerContentPlayhead alloc] initWithAVPlayer:_contentPlayer];
+    [_notifCenter addObserver:self selector:@selector(contentDidFinishPlaying:) name:AVPlayerItemDidPlayToEndTimeNotification object:[_contentPlayer currentItem]];
+    
+    // initialize manager with playhead and settings
     [_adsManager initializeWithContentPlayhead:_contentPlayhead adsRenderingSettings:adsRenderingSettings];
 }
 
 - (void) adsLoader:(IMAAdsLoader *)loader failedWithErrorData:(IMAAdLoadingErrorData *)adErrorData {
-    NSLog(@"Error loading ads: %@", adErrorData.adError.message);
     [_contentPlayer play];
+    
+    [SASender postEventAdFailedToView:ad];
+    
+    if ([super.delegate respondsToSelector:@selector(adFailedToShow:)]) {
+        [super.delegate adFailedToShow:ad.placementId];
+    }
 }
 
 #pragma mark AdsManager Delegate
@@ -125,6 +142,7 @@
         case kIMAAdEvent_LOADED: {
             
             [adsManager start];
+            [self createPadlockButtonWithParent:self];
             
             break;
         }
@@ -174,6 +192,15 @@
             
             break;
         }
+        case kIMAAdEvent_SKIPPED:{
+            
+            if ([_videoDelegate respondsToSelector:@selector(videoSkipped:)]){
+                [_videoDelegate videoSkipped:ad.placementId];
+            }
+            
+            break;
+        }
+            
         default:
             break;
     }
@@ -195,6 +222,21 @@
 
 - (void)adsManagerDidRequestContentResume:(IMAAdsManager *)adsManager {
     [_contentPlayer play];
+}
+
+- (void) gotoURL: (id)sender {
+    [self clickOnAd];
+}
+
+#pragma mark Resize
+
+- (void) resizeToFrame:(CGRect)toframe {
+    
+    self.frame = toframe;
+    actionButton.frame = CGRectMake(0, 0, self.frame.size.width, 30.0f);
+    [padlockBtn removeFromSuperview];
+    padlockBtn = NULL;
+    [self createPadlockButtonWithParent:self];
 }
 
 @end

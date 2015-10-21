@@ -6,17 +6,7 @@
 //
 //
 
-#import "SAView.h"
+#import "SAViewController.h"
 
-@class SKMRAIDInterstitial;
-
-@interface SAInterstitialAd : SAView {
-    // private vars
-    UIViewController *vc;
-    SKMRAIDInterstitial *raidinterstitial;
-}
-
-// custom init
-- (id) initWithPlacementId:(NSInteger)placementId;
-
+@interface SAInterstitialAd : SAViewController
 @end

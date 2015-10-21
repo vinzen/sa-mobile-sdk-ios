@@ -10,7 +10,7 @@
 #import "SAVideoAdProtocol.h"
 
 @interface SAVideoAd : SAView {
-    
+    UIButton *actionButton;
 }
 
 // video delegate

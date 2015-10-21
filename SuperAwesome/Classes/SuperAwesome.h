@@ -19,6 +19,7 @@
 #import "SABannerAd.h"
 #import "SAInterstitialAd.h"
 #import "SAVideoAd.h"
+#import "SAFullscreenVideoAd.h"
 
 // interface declaration
 @interface SuperAwesome : NSObject

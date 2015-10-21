@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 // the view protocol
-#import "SAViewProtocol.h"
+#import "SAAdProtocol.h"
 
 @class SAAd;
 @class SAParentalGate;
@@ -26,7 +26,7 @@
 }
 
 // delegate of the SA View protocol
-@property id<SAViewProtocol> delegate;
+@property id<SAAdProtocol> delegate;
 
 // public mmeber variables
 @property (nonatomic, assign) IBInspectable NSInteger placementId;

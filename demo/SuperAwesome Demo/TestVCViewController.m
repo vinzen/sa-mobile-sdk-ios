@@ -9,7 +9,7 @@
 #import "TestVCViewController.h"
 #import "SuperAwesome.h"
 
-@interface TestVCViewController () <SALoaderProtocol, SAViewProtocol, SAVideoAdProtocol>
+@interface TestVCViewController () <SALoaderProtocol, SAAdProtocol, SAVideoAdProtocol>
 
 @property (nonatomic, strong) SAInterstitialAd *inter;
 @property (nonatomic, strong) SAFullscreenVideoAd *fvid;

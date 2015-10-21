@@ -1,6 +1,8 @@
 //
-//  SuperAwesome2.m
+//  SuperAwesome.h
 //  Pods
+//
+//  Copyright (c) 2015 SuperAwesome Ltd. All rights reserved.
 //
 //  Created by Gabriel Coman on 28/09/2015.
 //
@@ -9,7 +11,7 @@
 // import header
 #import "SuperAwesome.h"
 
-// define
+// define the three URL constants
 #define BASE_URL_STAGING @"https://staging.beta.ads.superawesome.tv/v2"
 #define BASE_URL_DEVELOPMENT @"https://dev.ads.superawesome.tv/v2"
 #define BASE_URL_PRODUCTION @"https://ads.superawesome.tv/v2"
@@ -36,7 +38,8 @@
 
 - (instancetype) init {
     if (self = [super init]) {
-        // do nothing
+        // by default configuration is set to production
+        // and test mode is disabled
         [self setConfigurationProduction];
         [self disableTestMode];
     }
@@ -45,7 +48,7 @@
 }
 
 - (NSString*) version {
-    return @"3.0";
+    return @"3.0 Beta";
 }
 
 - (void) setConfigurationProduction {

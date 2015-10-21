@@ -13,7 +13,7 @@
 @class SAAd;
 
 // import SAView Protocol
-#import "SAViewProtocol.h"
+#import "SAAdProtocol.h"
 
 @interface SAViewController : UIViewController {
     SAView *adview;
@@ -27,7 +27,7 @@
 - (id) initWithPlacementId:(NSInteger)placementId;
 
 // delegate of the SA View protocol
-@property id<SAViewProtocol> delegate;
+@property id<SAAdProtocol> delegate;
 
 // public mmeber variables
 @property (nonatomic, assign) IBInspectable NSInteger placementId;

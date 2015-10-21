@@ -2,12 +2,17 @@
 //  SANetwork.m
 //  Pods
 //
+//  Copyright (c) 2015 SuperAwesome Ltd. All rights reserved.
+//
 //  Created by Gabriel Coman on 11/10/2015.
 //
 //
 
 #import "SANetwork.h"
 
+// define a USER_AGENT string so the server knows that it was an iOS mobile
+// device who sent the GET or POST request, and can determine exactly which
+// ad to send
 #define USER_AGENT @"Mozilla/5.0 (iPad; CPU OS 7_0 like Mac OS X) AppleWebKit/537.51.1 (KHTML, like Gecko) CriOS/30.0.1599.12 Mobile/11A465 Safari/8536.25 (3B92C18B-D9DE-4CB7-A02A-22FD2AF17C8F)"
 
 @implementation SANetwork
@@ -42,7 +47,9 @@
         
         if (error != nil) {
             NSLog(@"Network error %@", error);
-            failure();
+            if (failure) {
+                failure();
+            }
         }
         else {
             // only if status code is 200
@@ -54,7 +61,9 @@
             // else call it failure
             else {
                 NSLog(@"Some other failure: %@ - %ld", _surl, ((NSHTTPURLResponse*)response).statusCode);
-                failure();
+                if (failure) {
+                    failure();
+                }
             }
         }
     };
@@ -94,7 +103,9 @@
         
         if (error != nil) {
             NSLog(@"Network error %@", error);
-            failure();
+            if (failure) {
+                failure();
+            }
         }
         else {
             // only if status code is 200
@@ -106,7 +117,9 @@
             // else call it failure
             else {
                 NSLog(@"Some other failure: %@ - %ld", _surl, ((NSHTTPURLResponse*)response).statusCode);
-                failure();
+                if (failure) {
+                    failure();
+                }
             }
         }
     };

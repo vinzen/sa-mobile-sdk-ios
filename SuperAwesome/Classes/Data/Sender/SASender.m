@@ -82,7 +82,14 @@
 }
 
 + (void) postEventClick:(SAAd*)ad {
-    [self postGenericEventToURL:@"click" forType:NoAd forAd:ad];
+    NSString *url = [NSString stringWithFormat:@"%@/%@", [[SuperAwesome sharedManager] getBaseURL], @"click"];
+    NSMutableDictionary *dict = [[SASerializer serializeAdEssentials:ad] mutableCopy];
+    
+    [SANetwork sendGETtoEndpoint:url withQueryDict:dict andSuccess:^(NSData *data) {
+       // send OK
+    } orFailure:^{
+        // send failure
+    }];
 }
 
 @end

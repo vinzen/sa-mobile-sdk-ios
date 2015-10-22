@@ -73,6 +73,17 @@
                                     <action selector="button2Action:" destination="Kkm-Do-P8m" eventType="touchUpInside" id="d7P-jd-m6l"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aDx-2s-JXv" customClass="SAVideoAd">
+                                <rect key="frame" x="40" y="196" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="placementId">
+                                        <integer key="value" value="24532"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="playInstantly" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isParentalGateEnabled" value="NO"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>

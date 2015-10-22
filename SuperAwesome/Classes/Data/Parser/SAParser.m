@@ -45,7 +45,7 @@
     NSDictionary *dict = (NSDictionary*)creativeObj;
     SACreative *creative = [[SACreative alloc] init];
     
-    _Nullable id creativeIdObj = [dict objectForKey:@"creative_id"];
+    _Nullable id creativeIdObj = [dict objectForKey:@"id"];
     _Nullable id nameObj = [dict objectForKey:@"name"];
     _Nullable id cpmObj = [dict objectForKey:@"cpm"];
     _Nullable id formatObj = [dict objectForKey:@"format"];

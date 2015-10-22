@@ -21,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [[SALoader sharedManager] preloadAdForPlacementId:21022];
+    [[SALoader sharedManager] preloadAdForPlacementId:24532];
     [[SALoader sharedManager] preloadAdForPlacementId:21924];
     [[SALoader sharedManager] setDelegate:self];
     
@@ -48,8 +48,8 @@
 }
 
 - (void) didPreloadAd:(SAAd *)ad forPlacementId:(NSInteger)placementId {
-    if (placementId == 21022) {
-        _fvid = [[SAFullscreenVideoAd alloc] initWithPlacementId:21022];
+    if (placementId == 24532) {
+        _fvid = [[SAFullscreenVideoAd alloc] init];
         [_fvid setAd:ad];
     }
     else if (placementId == 21924) {

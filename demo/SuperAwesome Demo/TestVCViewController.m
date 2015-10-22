@@ -12,7 +12,6 @@
 @interface TestVCViewController () <SALoaderProtocol, SAAdProtocol, SAVideoAdProtocol>
 
 @property (nonatomic, strong) SAInterstitialAd *inter;
-@property (nonatomic, strong) SAFullscreenVideoAd *fvid;
 
 @end
 
@@ -21,8 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [[SALoader sharedManager] preloadAdForPlacementId:24532];
-    [[SALoader sharedManager] preloadAdForPlacementId:21924];
+    [[SALoader sharedManager] preloadAdForPlacementId:24541];
     [[SALoader sharedManager] setDelegate:self];
     
 }
@@ -39,23 +37,18 @@
 }
 
 - (IBAction)button2Action:(id)sender {
-    _fvid.isParentalGateEnabled = YES;
-    _fvid.delegate = self;
-    _fvid.videoDelegate = self;
-    [self presentViewController:_fvid animated:YES completion:^{
-         [_fvid playPreloaded];
-    }];
+//    _fvid.isParentalGateEnabled = YES;
+//    _fvid.delegate = self;
+//    _fvid.videoDelegate = self;
+//    [self presentViewController:_fvid animated:YES completion:^{
+//         [_fvid playPreloaded];
+//    }];
 }
 
 - (void) didPreloadAd:(SAAd *)ad forPlacementId:(NSInteger)placementId {
-    if (placementId == 24532) {
-        _fvid = [[SAFullscreenVideoAd alloc] init];
-        [_fvid setAd:ad];
-    }
-    else if (placementId == 21924) {
-        _inter = [[SAInterstitialAd alloc] initWithPlacementId:21924];
-        [_inter setAd:ad];
-    }
+    
+    _inter = [[SAInterstitialAd alloc] init];
+    [_inter setAd:ad];
 }
 
 - (void) didFailToPreloadAdForPlacementId:(NSInteger)placementId {

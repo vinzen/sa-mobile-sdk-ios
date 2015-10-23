@@ -40,56 +40,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dcs-H8-Wk8">
-                                <rect key="frame" x="69" y="144" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IQg-6L-l0V">
+                                <rect key="frame" x="20" y="285" width="106" height="30"/>
                                 <state key="normal" title="Button">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="0.31372549020000001" green="0.31372549020000001" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="buttonAction:" destination="Kkm-Do-P8m" eventType="touchUpInside" id="5fb-Gc-Bdj"/>
+                                    <action selector="actiion:" destination="Kkm-Do-P8m" eventType="touchUpInside" id="pdi-tX-bny"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U99-DX-0rO" customClass="SABannerAd">
-                                <rect key="frame" x="0.0" y="72" width="320" height="50"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="ehP-CS-Oev"/>
-                                    <constraint firstAttribute="height" constant="50" id="nYE-S1-Mte"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isParentalGateEnabled" value="NO"/>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="playInstantly" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="placementId">
-                                        <integer key="value" value="21863"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zw3-vs-8Ke">
-                                <rect key="frame" x="187" y="144" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hvl-r8-zva">
+                                <rect key="frame" x="144" y="285" width="106" height="30"/>
                                 <state key="normal" title="Button">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="0.31372549020000001" green="0.31372549020000001" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="button2Action:" destination="Kkm-Do-P8m" eventType="touchUpInside" id="d7P-jd-m6l"/>
+                                    <action selector="action2:" destination="Kkm-Do-P8m" eventType="touchUpInside" id="YRa-EO-NTM"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aDx-2s-JXv" customClass="SAVideoAd">
-                                <rect key="frame" x="40" y="210" width="240" height="128"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="placementId">
-                                        <integer key="value" value="24532"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="playInstantly" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isParentalGateEnabled" value="NO"/>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="U99-DX-0rO" firstAttribute="top" secondItem="fFz-R4-2Km" secondAttribute="bottom" constant="8" id="6dA-Pi-ax2"/>
-                            <constraint firstItem="U99-DX-0rO" firstAttribute="centerX" secondItem="dLf-u6-pBb" secondAttribute="centerX" id="rzS-mq-RbS"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="a5n-H5-SmC"/>
                 </viewController>

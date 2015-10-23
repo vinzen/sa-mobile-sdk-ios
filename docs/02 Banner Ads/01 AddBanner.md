@@ -1,18 +1,15 @@
 To add a banner ad to your project using InterfaceBuilder, there are a couple of easy steps that you should follow.
-First, add a new UIView to your View Controller or view. Then, in the Identity Inspector, change it's class from UIView to SABannerView.
+First, add a new UIView to your View Controller or view. Then, in the Identity Inspector, change it's class from UIView to SABannerAd.
 
-![](img/adbanner_subview.png "Setting custom class to UIView")
+![](img/IMG_02_SABannerAd_1.png "Setting custom class to UIView")
 
-Second, in the Size Inspector, make sure the view's size corresponds to one of the following supported sizes:
-  * 320x50
-  * 300x50
-  * 728x90 (tablet)
-  * 300x250
+In the Size Inspector make sure to set the Ad's size to the one you specified in the Dashboard. If not, the SABannerAd will try to scale the ad but also maintain aspect ratio, so that it does not get distorted.
 
-![](img/adbanner_size.png "Setting a custom size")
+Finally, in the Attributes Inspector, there are several ad specific attributes that you need to configure.
 
-Thrid, in the Attributes Inspector, you need to assign one of the Placement IDs you created in the dashboard to this ad.
+![](img/IMG_03_SABannerAd_2.png "Setting attributes")
 
-![](img/adbanner_attributes.png "Setting attributes")
-
-After you have done this preliminary setup, you should run your project and an ad should appear.
+  * You must set the Placement Id to the one you created in the Dashboard.
+  * Select to turn Parntal Gate On or Off (more on that in the Parental Gate chapter).
+  * Select a Refresh Period for the Ad
+  * And select Play Instantly to be On (it's usually by default).

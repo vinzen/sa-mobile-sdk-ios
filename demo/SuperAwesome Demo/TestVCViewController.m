@@ -11,7 +11,7 @@
 
 @interface TestVCViewController () <SALoaderProtocol, SAAdProtocol, SAVideoAdProtocol>
 
-@property (nonatomic, strong) SAInterstitialAd *inter;
+@property (nonatomic, strong) SABannerAd *ad;
 
 @end
 
@@ -20,95 +20,41 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [[SALoader sharedManager] preloadAdForPlacementId:24541];
     [[SALoader sharedManager] setDelegate:self];
+    [[SALoader sharedManager] preloadAdForPlacementId:5811];
     
+    _ad = [[SABannerAd alloc] initWithFrame:CGRectMake(0, 0, 320, 50)];
+    
+//    _ad = [[SABannerAd alloc] initWithPlacementId:<#(NSInteger)#> andFrame:<#(CGRect)#>]
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (IBAction)buttonAction:(id)sender {
+- (IBAction)actiion:(id)sender {
     
-    [self presentViewController:_inter animated:YES completion:^{
-        [_inter playPreloaded];
+    SAInterstitialAd *iad = [[SAInterstitialAd alloc] initWithPlacementId:5692];
+    [self presentViewController:iad animated:YES completion:^{
+        [iad playInstant];
     }];
+    
 }
-
-- (IBAction)button2Action:(id)sender {
-//    _fvid.isParentalGateEnabled = YES;
-//    _fvid.delegate = self;
-//    _fvid.videoDelegate = self;
-//    [self presentViewController:_fvid animated:YES completion:^{
-//         [_fvid playPreloaded];
-//    }];
+- (IBAction)action2:(id)sender {
+    
+    SAFullscreenVideoAd *fvad = [[SAFullscreenVideoAd alloc] initWithPlacementId:5740];
+    [self presentViewController:fvad animated:YES completion:^{
+        [fvad playInstant];
+    }];
+    
 }
 
 - (void) didPreloadAd:(SAAd *)ad forPlacementId:(NSInteger)placementId {
     
-    _inter = [[SAInterstitialAd alloc] init];
-    [_inter setAd:ad];
 }
 
 - (void) didFailToPreloadAdForPlacementId:(NSInteger)placementId {
-    NSLog(@"Failed");
-}
-
-#pragma mark View Protocol
-
-- (void) adWasShown:(NSInteger)placementId {
-    NSLog(@"Ad %ld was shown", placementId);
-}
-
-- (void) adFailedToShow:(NSInteger)placementId {
-    NSLog(@"Ad %ld failed to show", placementId);
-}
-
-- (void) adWasClosed:(NSInteger)placementId {
-    NSLog(@"Ad %ld was closed", placementId);
-}
-
-- (void) adFollowedURL:(NSInteger)placementId {
-    NSLog(@"Ad %ld went to URL", placementId);
-}
-
-- (void)parentalGateWasCanceled:(NSInteger)placementId {
-    NSLog(@"Ad %ld canceled parental gate", placementId);
-}
-
-- (void)parentalGateWasFailed:(NSInteger)placementId {
-    NSLog(@"Ad %ld failed parental gate", placementId);
-}
-
-- (void)parentalGateWasSucceded:(NSInteger)placementId {
-    NSLog(@"Ad %ld OK parental gate", placementId);
-}
-
-#pragma mark Video Protocol
-
-- (void) videoStarted:(NSInteger)placementId {
-    NSLog(@"DELEGATE VIDEO STARTED %ld", placementId);
-}
-
-- (void) videoEnded:(NSInteger)placementId {
-    NSLog(@"DELEGATE VIDEO ENDED %ld", placementId);
-}
-
-- (void) videoReachedFirstQuartile:(NSInteger)placementId {
-    NSLog(@"DELEGATE VIDEO 1/4 %ld", placementId);
-}
-
-- (void) videoReachedMidpoint:(NSInteger)placementId {
-    NSLog(@"DELEGATE VIDEO 1/2 %ld", placementId);
-}
-
-- (void) videoReachedThirdQuartile:(NSInteger)placementId {
-   NSLog(@"DELEGATE VIDEO 3/4 %ld", placementId);
-}
-
-- (void) videoSkipped:(NSInteger)placementId {
-   NSLog(@"DELEGATE VIDEO SKIPPED %ld", placementId);
+    
 }
 
 @end

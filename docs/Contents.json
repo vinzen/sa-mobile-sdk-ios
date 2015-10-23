@@ -26,63 +26,62 @@
                 {
                     "name": "Banner Ads With Code",
                     "text": "02 Banner Ads/02 AddBannerCode.md"
-                },
-                {
-                    "name": "Advanced Configuration",
-                    "text": "02 Banner Ads/03 BannerConfig.md"
-                }
-            ]
-        },
-        {
-            "name": "Interstitial Ads",
-            "sections": [
-                {
-                    "name":"Interstitial Ads With Code",
-                    "text":"03 Interstitial Ads/01 Interstitial Ads.md"
-                },
-                {
-                    "name":"Advanced Configuration",
-                    "text":"03 Interstitial Ads/02 Interstitial Config.md"
                 }
             ]
         },
         {
             "name": "Video Ads",
-
             "sections":[
                 {
                     "name": "Video Ads With Interface Builder",
-                    "text": "04 Video Ads/01 AddVideo.md"
+                    "text": "03 Video Ads/01 AddVideo.md"
                 },
                 {
                     "name": "Video Ads With Code",
-                    "text": "04 Video Ads/02 AddVideoCode.md"
-                },
-                {
-                    "name": "Fullscreen Video Ads",
-                    "text": "04 Video Ads/03 VideoFullscreen.md"
-                },
-                {
-                    "name": "Advanced Configuration",
-                    "text": "04 Video Ads/04 VideoConfig.md"
+                    "text": "03 Video Ads/02 AddVideoCode.md"
                 }
             ]
         },
         {
+            "name": "Interstitial Ads",
+            "text": "04 Interstitial Ads.md"
+        },
+        {
+            "name": "Fullscreen Video Ads",
+            "text": "05 Fullscreen Video Ads.md"
+        },
+        {
+            "name": "Preloading Ads",
+            "text": "06 Preloading Ads.md"
+        },
+        {
             "name": "Parental Gate",
-            "text": "05 ParentalGate.md"
+            "text": "07 ParentalGate.md"
+        },
+        {
+            "name": "Ad Lifecycle Events",
+            "sections": [
+                {
+                    "name": "Common Events",
+                    "text": "08 Ad Lifecycle Events/01 Common Events.md"
+                },
+                {
+                    "name": "Video Events",
+                    "text": "08 Ad Lifecycle Events/02 Video Events.md"
+                }
+            ]
         },
         {
             "name": "Testing Placements",
-            "text": "06 Testing Placements.md"
+            "text": "09 Testing Placements.md"
         },
         {
             "name": "Technical Support",
-            "text": "07 Technical Support.md"
+            "text": "10 Technical Support.md"
         },
         {
             "name": "License",
-            "text": "08 License.md"
+            "text": "11 License.md"
         }
     ]
 }

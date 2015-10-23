@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-3.0 
+3.0 Beta
  - Rewriting the iOS SDK for better code
 
 2.1

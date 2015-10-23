@@ -2,6 +2,8 @@
 //  SAPadlockView2.m
 //  Pods
 //
+//  Copyright (c) 2015 SuperAwesome Ltd. All rights reserved.
+//
 //  Created by Gabriel Coman on 28/09/2015.
 //
 //
@@ -11,9 +13,7 @@
 #import "SACreative.h"
 #import "SASender.h"
 
-/**
- * Defines constants for padlock texts
- */
+// Defines constants for padlock texts
 #define SA_PADLOCKVIEW_TITLE @"About SA Ads"
 #define SA_PADLOCKVIEW_SUBTITLE1 @"This is SuperAwesome kid-safe ad. Click here for more information."
 #define SA_PADLOCKVIEW_SUBTITLE2 @"Rate this Ad"

@@ -2,11 +2,15 @@
 //  SAVideoAd.m
 //  Pods
 //
+//  Copyright (c) 2015 SuperAwesome Ltd. All rights reserved.
+//
 //  Created by Gabriel Coman on 20/10/2015.
 //
 //
 
 #import "SAVideoAd.h"
+
+#import <AdSupport/ASIdentifierManager.h>
 
 // import video stuff
 #import <AVFoundation/AVFoundation.h>
@@ -25,6 +29,7 @@
 // import utils
 #import "UIViewController+Utils.h"
 
+// Anon Category of SAView to maintain some functions private
 @interface SAView ()
 - (void) display;
 - (void) clickOnAd;
@@ -33,6 +38,8 @@
 - (void) resizeToFrame:(CGRect)toframe;
 @end
 
+// Anon Category of SAvideoAd to declare private variables and delegate
+// implementations, especially for google IMA ads
 @interface SAVideoAd () <IMAAdsLoaderDelegate, IMAAdsManagerDelegate, IMAWebOpenerDelegate>
 
 // views
@@ -48,7 +55,15 @@
 
 @end
 
+// Implementation of SAVideo Ad
 @implementation SAVideoAd
+
+- (id) initWithFrame:(CGRect)frame {
+    if (self = [super initWithFrame:frame]){
+        // do nothing
+    }
+    return self;
+}
 
 - (id) initWithPlacementId:(NSInteger)placementId andFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
@@ -81,15 +96,22 @@
     _adsLoader = [[IMAAdsLoader alloc] initWithSettings:nil];
     _adsLoader.delegate = self;
     
-    // request ads
+//    // request ads
+//    NSString *idfaString = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
+//    NSLog(@"%@", idfaString);
+////
+//    ad.creative.details.vast = @"https://ads.adaptv.advertising.com/a/h/WNt8wIqusvPaXH+x0Om1GQezaCibdmOnMYkASnUlZ+2g63SWosWzAw==?cb=123&pageUrl=http%3A%2F%2Ffyber.com&a.idfa=[[IDFA]]&eov=eov";
+//    ad.creative.details.vast = [ad.creative.details.vast stringByReplacingOccurrencesOfString:@"[[IDFA]]" withString:idfaString];
+//    NSLog(@"%@", ad.creative.details.vast);
+    
     IMAAdDisplayContainer *adDisplayContainer = [[IMAAdDisplayContainer alloc] initWithAdContainer:self companionSlots:nil];
     IMAAdsRequest *request = [[IMAAdsRequest alloc] initWithAdTagUrl:ad.creative.details.vast adDisplayContainer:adDisplayContainer userContext:nil];
     [_adsLoader requestAdsWithRequest:request];
     
-    actionButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, 30.0f)];
-    [actionButton setTitle:@"" forState:UIControlStateNormal];
-    [actionButton addTarget:self action:@selector(gotoURL:) forControlEvents:UIControlEventTouchUpInside];
-    [self addSubview:actionButton];
+//    actionButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, 30.0f)];
+//    [actionButton setTitle:@"" forState:UIControlStateNormal];
+//    [actionButton addTarget:self action:@selector(gotoURL:) forControlEvents:UIControlEventTouchUpInside];
+//    [self addSubview:actionButton];
 }
 
 #pragma mark SAVideoAd functions

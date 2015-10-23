@@ -2,6 +2,8 @@
 //  SASender.m
 //  Pods
 //
+//  Copyright (c) 2015 SuperAwesome Ltd. All rights reserved.
+//
 //  Created by Gabriel Coman on 11/10/2015.
 //
 //
@@ -85,6 +87,8 @@
     NSString *url = [NSString stringWithFormat:@"%@/%@", [[SuperAwesome sharedManager] getBaseURL], @"click"];
     NSMutableDictionary *dict = [[SASerializer serializeAdEssentials:ad] mutableCopy];
     
+    // Switched to GET for click eventfs, since it gets a lot better responses
+    // from the server than a POST, which sometimes responds with a 499
     [SANetwork sendGETtoEndpoint:url withQueryDict:dict andSuccess:^(NSData *data) {
        // send OK
     } orFailure:^{

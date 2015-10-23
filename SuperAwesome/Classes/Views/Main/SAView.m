@@ -2,6 +2,8 @@
 //  SAView.m
 //  Pods
 //
+//  Copyright (c) 2015 SuperAwesome Ltd. All rights reserved.
+//
 //  Created by Gabriel Coman on 12/10/2015.
 //
 //
@@ -21,15 +23,19 @@
 #import "SAParentalGate.h"
 #import "SAPadlockView.h"
 
+// Anon category of SA Loader to be able to access the loadAdForPlacementId
+// function and keep it private
 @interface SALoader ()
 - (void) loadAdForPlacementId:(NSInteger)placementId withAd:(gotad)gotad orFailure:(failure)failure;
 @end
 
+// Anon category of SAView that does not do much
 @interface SAView () <SAParentalGateProtocol>
 @end
 
 @implementation SAView
 
+// overwriting init functions
 - (id) initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
         _playInstantly = true;

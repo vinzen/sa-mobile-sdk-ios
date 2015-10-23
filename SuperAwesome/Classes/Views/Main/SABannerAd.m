@@ -2,19 +2,32 @@
 //  SAHalfscreenView.m
 //  Pods
 //
+//  Copyright (c) 2015 SuperAwesome Ltd. All rights reserved.
+//
 //  Created by Gabriel Coman on 12/10/2015.
 //
 //
 
+// impor theader
 #import "SABannerAd.h"
 
+// import actual SKMRAIDView class
 #import "SKMRAIDView.h"
+
+// import models
 #import "SAAd.h"
-#import "Utils.h"
 #import "SACreative.h"
 #import "SADetails.h"
+
+// import utils
+#import "Utils.h"
 #import "SASender.h"
 
+// Declaration of SAView anonymous category
+// basically making sure that all these functions stay "private" for the
+// SDK User
+// This declaration has to be repeated in every child of SAView that wants
+// to use these functions
 @interface SAView ()
 - (void) display;
 - (CGRect) arrangeAdInFrame:(CGRect)frame;
@@ -24,10 +37,19 @@
 - (void) resizeToFrame:(CGRect)toframe;
 @end
 
+// Internal category declaration of SABannerAd
 @interface SABannerAd () <SKMRAIDViewDelegate>
 @end
 
+// Actual implementation of SABannerAd
 @implementation SABannerAd
+
+- (id) initWithFrame:(CGRect)frame {
+    if (self = [super initWithFrame:frame]) {
+        // do nothing here
+    }
+    return self;
+}
 
 - (id) initWithPlacementId:(NSInteger)placementId andFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {

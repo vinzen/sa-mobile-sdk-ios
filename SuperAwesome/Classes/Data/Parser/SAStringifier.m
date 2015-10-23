@@ -2,6 +2,8 @@
 //  SAEnumToString.m
 //  Pods
 //
+//  Copyright (c) 2015 SuperAwesome Ltd. All rights reserved.
+//
 //  Created by Gabriel Coman on 12/10/2015.
 //
 //
@@ -10,7 +12,6 @@
 
 @implementation SAStringifier
 
-// custom function to convert creative type to string
 + (NSString*) creativeFormatToString:(SACreativeFormat) format {
     const char* c_str = 0;
 #define PROCESS_VAL(p) case(p): c_str = #p; break;
@@ -28,7 +29,6 @@
     return [NSString stringWithCString:c_str encoding:NSASCIIStringEncoding];
 }
 
-// custom function to convert creative type to string
 + (NSString*) placementFormatToString:(SAPlacementFormat) format {
     const char* c_str = 0;
 #define PROCESS_VAL(p) case(p): c_str = #p; break;
@@ -41,7 +41,6 @@
     return [NSString stringWithCString:c_str encoding:NSASCIIStringEncoding];
 }
 
-// function that transforms the event type enum into a string
 + (NSString*) eventTypeFromValue:(SAEventType) evt {
     const char* c_str = 0;
 #define PROCESS_VAL(p) case(p): c_str = #p; break;

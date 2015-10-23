@@ -2,28 +2,40 @@
 //  SAViewController.h
 //  Pods
 //
+//  Copyright (c) 2015 SuperAwesome Ltd. All rights reserved.
+//
 //  Created by Gabriel Coman on 21/10/2015.
 //
 //
 
 #import <UIKit/UIKit.h>
 
-// class SAView
+// forward declarations for SAView
 @class SAView;
 @class SAAd;
 
 // import SAView Protocol
 #import "SAAdProtocol.h"
 
+// @brief:
+// The SAViewController is the fullscreen equivalent to SAView
+// It also defines a number of private instance variables, around
+// a SAView object
 @interface SAViewController : UIViewController {
+    // internal SAView object
     SAView *adview;
+    
+    // other aux objects
     SAAd *ad;
+    UIButton *closeBtn;
+    
+    // frames that need to be private ivars because they are used in
+    // subclasses
     CGRect adviewFrame;
     CGRect buttonFrame;
-    UIButton *closeBtn;
 }
 
-// custom init
+// custom init with placement Id (used for instant loading)
 - (id) initWithPlacementId:(NSInteger)placementId;
 
 // delegate of the SA View protocol

@@ -2,6 +2,8 @@
 //  SAValidator.m
 //  Pods
 //
+//  Copyright (c) 2015 SuperAwesome Ltd. All rights reserved.
+//
 //  Created by Gabriel Coman on 11/10/2015.
 //
 //

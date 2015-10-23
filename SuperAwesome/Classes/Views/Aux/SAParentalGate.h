@@ -2,29 +2,26 @@
 //  SAParentalGate2.h
 //  Pods
 //
+//  Copyright (c) 2015 SuperAwesome Ltd. All rights reserved.
+//
 //  Created by Gabriel Coman on 28/09/2015.
 //
 //
 
 #import <UIKit/UIKit.h>
 
-// different blocks needed for the parental gate
+// import the parentla gate protocol
+#import "SAParentalGateProtocol.h"
+
+// define a block used by UIAlertActions
 typedef void(^actionBlock) (UIAlertAction *action);
+
+// define a block used for custom interactions
+// (mostly needed because of Unity plugin limitations)
 typedef void(^interactionBlock) (NSString *adname);
 
-// forward declarations
+// forward declaration of SAAd
 @class SAAd;
-
-// the custom delegate
-@protocol SAParentalGateProtocol <NSObject>
-
-// and optional functions
-@optional
-- (void)parentalGateWasCanceled;
-- (void)parentalGateWasFailed;
-- (void)parentalGateWasSucceded;
-
-@end
 
 // interface
 @interface SAParentalGate : NSObject <UIAlertViewDelegate>

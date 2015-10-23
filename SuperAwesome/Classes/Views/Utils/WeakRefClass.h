@@ -2,6 +2,8 @@
 //  WeakRefClass.h
 //  Pods
 //
+//  Copyright (c) 2015 SuperAwesome Ltd. All rights reserved.
+//
 //  Created by Gabriel Coman on 08/10/2015.
 //
 //

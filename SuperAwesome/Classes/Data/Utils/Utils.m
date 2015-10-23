@@ -2,6 +2,8 @@
 //  Utils.m
 //  Pods
 //
+//  Copyright (c) 2015 SuperAwesome Ltd. All rights reserved.
+//
 //  Created by Gabriel Coman on 20/10/2015.
 //
 //

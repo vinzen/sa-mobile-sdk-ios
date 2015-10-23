@@ -2,6 +2,8 @@
 //  SAFormatter.m
 //  Pods
 //
+//  Copyright (c) 2015 SuperAwesome Ltd. All rights reserved.
+//
 //  Created by Gabriel Coman on 12/10/2015.
 //
 //
@@ -56,11 +58,8 @@
 }
 
 + (NSString*) formatCreativeIntoVideoHTML:(SACreative*)creative {
-    NSString *videoURL = creative.details.video;
-    NSString *fPath = [[NSBundle mainBundle] pathForResource:@"displayVideo" ofType:@"html"];
-    NSString *htmlString = [NSString stringWithContentsOfFile:fPath encoding:NSUTF8StringEncoding error:nil];
-    htmlString = [htmlString stringByReplacingOccurrencesOfString:@"videoURL" withString:videoURL];
-    return htmlString;
+    // not implemented anymore
+    return @"";
 }
 
 + (NSString*) formatCreativeIntoRichMediaHTML:(SACreative*)creative {
@@ -77,7 +76,7 @@
 }
 
 + (NSString*) formatCreativeIntoSWFHTML:(SACreative*)creative {
-    // unimplemented ever
+    // not implemented anymore
     return @"";
 }
 

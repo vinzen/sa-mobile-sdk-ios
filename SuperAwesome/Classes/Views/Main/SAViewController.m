@@ -2,6 +2,8 @@
 //  SAViewController.m
 //  Pods
 //
+//  Copyright (c) 2015 SuperAwesome Ltd. All rights reserved.
+//
 //  Created by Gabriel Coman on 21/10/2015.
 //
 //
@@ -14,16 +16,19 @@
 #import "SABannerAd.h"
 #import "Utils.h"
 
+// Anon category for SAView to keep some functions private
 @interface SAView ()
 - (void) resizeToFrame:(CGRect)toframe;
 @end
 
+// Anon category for SAViewController
 @interface SAViewController ()
-
 @end
 
+// Actual implementation of SAViewController
 @implementation SAViewController
 
+// Different constructors for different needs
 - (id) init {
     if (self = [super init]) {
         _placementId = 0;
@@ -77,6 +82,8 @@
                                                object:nil];
 }
 
+// This private function is used to calculate X & Y positions and Width & Height
+// for each subview of the Ad, for auto-rotation cases
 - (void) setupCoordinates {
     CGRect frame = [UIScreen mainScreen].bounds;
     
@@ -95,6 +102,8 @@
     buttonFrame = CGRectMake(frame.size.width - cs, 0, cs, cs);
 }
 
+// Make sure that at View Will Appear / View Will Disappear the status bar
+// is hidden
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
@@ -109,6 +118,8 @@
     [super didReceiveMemoryWarning];
 }
 
+// These functions mainly are over the SAView ones
+
 - (void) setAd:(SAAd *)_ad {
     ad = _ad;
 }
@@ -120,6 +131,8 @@
 - (void) playPreloaded {
     [adview playPreloaded];
 }
+
+// Specific SAViewController functions and handles
 
 - (void) closeAction: (id)sender {
     [self dismissViewControllerAnimated:YES completion:^{
@@ -134,7 +147,6 @@
     [self setupCoordinates];
     
     closeBtn.frame = buttonFrame;
-    
     [adview resizeToFrame:adviewFrame];
 }
 

@@ -500,6 +500,13 @@
 			path = Loader;
 			sourceTree = "<group>";
 		};
+		1BD03A291BDE4C2D007E48F4 /* MoPubIntegration */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MoPubIntegration;
+			sourceTree = "<group>";
+		};
 		2CFBDED42060A5219ADCC79FACEA958F /* Validator */ = {
 			isa = PBXGroup;
 			children = (
@@ -610,6 +617,7 @@
 		4D54A5894D793D728897336F535878D3 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				1BD03A291BDE4C2D007E48F4 /* MoPubIntegration */,
 				CA429F1D8BC267C4A2B6E628AE5727D1 /* SuperAwesome.h */,
 				16B152EB96BCEF3B25F241EED1EE6931 /* SuperAwesome.m */,
 				11B1194E5015281965971B7EAF7B41EE /* Data */,

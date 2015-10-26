@@ -34,6 +34,8 @@
 
 - (void) didPreloadAd:(SAAd *)ad forPlacementId:(NSInteger)placementId {
     
+    NSLog(@"THIS WORKS");
+    
     _banner = [[SABannerAd alloc] initWithFrame:_bannerFrame];
     [_banner setAd:ad];
     [_banner setDelegate:self];

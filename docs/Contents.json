@@ -72,16 +72,20 @@
             ]
         },
         {
+            "name": "MoPub Integration",
+            "text": "09 MoPub Integration.md"
+        },
+        {
             "name": "Testing Placements",
-            "text": "09 Testing Placements.md"
+            "text": "10 Testing Placements.md"
         },
         {
             "name": "Technical Support",
-            "text": "10 Technical Support.md"
+            "text": "11 Technical Support.md"
         },
         {
             "name": "License",
-            "text": "11 License.md"
+            "text": "12 License.md"
         }
     ]
 }

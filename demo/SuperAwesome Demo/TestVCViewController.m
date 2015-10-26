@@ -42,7 +42,8 @@
 }
 - (IBAction)action2:(id)sender {
     
-    SAFullscreenVideoAd *fvad = [[SAFullscreenVideoAd alloc] initWithPlacementId:5740];
+    SAFullscreenVideoAd *fvad = [[SAFullscreenVideoAd alloc] initWithPlacementId:24532];
+    fvad.isParentalGateEnabled = YES;
     [self presentViewController:fvad animated:YES completion:^{
         [fvad playInstant];
     }];

@@ -40,7 +40,7 @@
 
 // Anon Category of SAvideoAd to declare private variables and delegate
 // implementations, especially for google IMA ads
-@interface SAVideoAd () <IMAAdsLoaderDelegate, IMAAdsManagerDelegate, IMAWebOpenerDelegate>
+@interface SAVideoAd () <IMAAdsLoaderDelegate, IMAAdsManagerDelegate, IMAWebOpenerDelegate, NSXMLParserDelegate>
 
 // views
 @property (nonatomic, strong) AVPlayer *contentPlayer;
@@ -52,6 +52,11 @@
 
 // notif center
 @property (nonatomic, strong) NSNotificationCenter *notifCenter;
+
+// create a XML parser
+@property (nonatomic, strong) NSXMLParser *parser;
+@property (nonatomic, strong) NSString *element;
+@property (nonatomic, strong) NSMutableString *tmpClickURL;
 
 @end
 
@@ -85,33 +90,53 @@
     [super display];
     
     // setup content player
-//    NSURL *contentURL = [NSURL URLWithString:ad.creative.details.video];
-//    _contentPlayer = [AVPlayer playerWithURL:contentURL];
-//    
-//    AVPlayerLayer *playerLayer = [AVPlayerLayer playerLayerWithPlayer:_contentPlayer];
-//    playerLayer.frame = self.layer.bounds;
-//    [self.layer addSublayer:playerLayer];
+    NSURL *url = [NSURL URLWithString:ad.creative.details.vast];
+    _parser = [[NSXMLParser alloc] initWithContentsOfURL:url];
+    _parser.delegate = self;
+    _parser.shouldResolveExternalEntities = NO;
+    [_parser parse];
+}
+
+#pragma mark <NSXMLParserDelegate>
+
+- (void) parserDidStartDocument:(NSXMLParser *)parser {
+    _element = @"";
+}
+
+- (void) parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary<NSString *,NSString *> *)attributeDict {
+    _element = elementName;
     
+    if ([_element isEqualToString:@"ClickThrough"]) {
+        _tmpClickURL = [[NSMutableString alloc] init];
+    }
+}
+
+- (void) parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
+    if ([_element isEqualToString:@"ClickThrough"]) {
+        [_tmpClickURL appendString:string];
+    }
+}
+
+- (void) parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
+    if ([_element isEqualToString:@"ClickThrough"]) {
+        ad.creative.clickURL = _tmpClickURL;
+    }
+}
+
+- (void) parserDidEndDocument:(NSXMLParser *)parser {
     // setup ads loader
     _adsLoader = [[IMAAdsLoader alloc] initWithSettings:nil];
     _adsLoader.delegate = self;
-    
-//    // request ads
-//    NSString *idfaString = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
-//    NSLog(@"%@", idfaString);
-////
-//    ad.creative.details.vast = @"https://ads.adaptv.advertising.com/a/h/WNt8wIqusvPaXH+x0Om1GQezaCibdmOnMYkASnUlZ+2g63SWosWzAw==?cb=123&pageUrl=http%3A%2F%2Ffyber.com&a.idfa=[[IDFA]]&eov=eov";
-//    ad.creative.details.vast = [ad.creative.details.vast stringByReplacingOccurrencesOfString:@"[[IDFA]]" withString:idfaString];
-//    NSLog(@"%@", ad.creative.details.vast);
     
     IMAAdDisplayContainer *adDisplayContainer = [[IMAAdDisplayContainer alloc] initWithAdContainer:self companionSlots:nil];
     IMAAdsRequest *request = [[IMAAdsRequest alloc] initWithAdTagUrl:ad.creative.details.vast adDisplayContainer:adDisplayContainer userContext:nil];
     [_adsLoader requestAdsWithRequest:request];
     
-//    actionButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, 30.0f)];
-//    [actionButton setTitle:@"" forState:UIControlStateNormal];
-//    [actionButton addTarget:self action:@selector(gotoURL:) forControlEvents:UIControlEventTouchUpInside];
-//    [self addSubview:actionButton];
+    // setup action button
+    actionButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, 30.0f)];
+    [actionButton setTitle:@"" forState:UIControlStateNormal];
+    [actionButton addTarget:self action:@selector(gotoURL:) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:actionButton];
 }
 
 #pragma mark SAVideoAd functions

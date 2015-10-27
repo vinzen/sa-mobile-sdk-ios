@@ -20,6 +20,7 @@
 
 @property (nonatomic, assign) CGRect bannerFrame;
 @property (nonatomic, strong) SABannerAd *banner;
+@property (nonatomic, assign) BOOL parentalGate;
 
 @end
 
@@ -31,12 +32,14 @@
     
     // variables received from the MoPub server
     BOOL testMode = false;
+    BOOL isParentalGateEnabled = true;
     NSInteger placementId = -1;
     
     id _Nullable testModeObj = [info objectForKey:@"testMode"];
     id _Nullable placementIdObj = [info objectForKey:@"placementId"];
+    id _Nullable parentalGateEnabledObj = [info objectForKey:@"parentalGateEnabled"];
     
-    if (testModeObj == NULL || placementIdObj == NULL) {
+    if (testModeObj == NULL || placementIdObj == NULL || parentalGateEnabledObj == NULL) {
         
         // then send this to bannerCustomEvent:didFailToLoadAdWithError:
         [self.delegate bannerCustomEvent:self
@@ -51,6 +54,8 @@
     // assign values, because they exist
     testMode = [testModeObj boolValue];
     placementId = [placementIdObj integerValue];
+    isParentalGateEnabled = [parentalGateEnabledObj boolValue];
+    _parentalGate = isParentalGateEnabled;
     
     // enable or disable test mode
     if (testMode) {
@@ -87,6 +92,7 @@
     _banner = [[SABannerAd alloc] initWithFrame:_bannerFrame];
     [_banner setAd:ad];
     [_banner setDelegate:self];
+    [_banner setIsParentalGateEnabled:_parentalGate];
     [_banner playPreloaded];
     
     // and then send it to bannerCustomEvent:didLoadAd:

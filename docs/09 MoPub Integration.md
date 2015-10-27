@@ -46,7 +46,8 @@ Custom Event Data is always required, and must be given in the form of  JSON:
 ```
 {
 	"placementId": 5692,
-	"testMode": true
+	"testMode": true,
+	"parentalGateEnabled": true
 }
 
 ```

@@ -19,6 +19,7 @@
 @interface SuperAwesomeInterstitialCustomEvent () <SALoaderProtocol, SAAdProtocol>
 
 @property (nonatomic, strong) SAInterstitialAd *interstitial;
+@property (nonatomic, assign) BOOL parentalGate;
 
 @end
 
@@ -28,12 +29,14 @@
     
     // variables received from the MoPub server
     BOOL testMode = false;
+    BOOL isParentalGateEnabled = true;
     NSInteger placementId = -1;
     
     id _Nullable testModeObj = [info objectForKey:@"testMode"];
     id _Nullable placementIdObj = [info objectForKey:@"placementId"];
+    id _Nullable parentalGateEnabledObj = [info objectForKey:@"parentalGateEnabled"];
     
-    if (testModeObj == NULL || placementIdObj == NULL) {
+    if (testModeObj == NULL || placementIdObj == NULL || parentalGateEnabledObj == NULL) {
         
         // then send this to bannerCustomEvent:didFailToLoadAdWithError:
         [self.delegate interstitialCustomEvent:self
@@ -48,6 +51,8 @@
     // assign values, because they exist
     testMode = [testModeObj boolValue];
     placementId = [placementIdObj integerValue];
+    isParentalGateEnabled = [parentalGateEnabledObj boolValue];
+    _parentalGate = isParentalGateEnabled;
 //    NSLog(@"Placement: %ld - %d", placementId]);
     
     // enable or disable test mode
@@ -92,6 +97,7 @@
 - (void) didPreloadAd:(SAAd *)ad forPlacementId:(NSInteger)placementId {
     // init interstitial
     _interstitial = [[SAInterstitialAd alloc] init];
+    [_interstitial setIsParentalGateEnabled:_parentalGate];
     [_interstitial setAd:ad];
     
     // call events

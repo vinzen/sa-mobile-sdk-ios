@@ -20,6 +20,10 @@
 #import "IMAAdDisplayContainer.h"
 #import "IMAUiElements.h"
 
+// import SAVASTParser and Protocol
+#import "SAVASTProtocol.h"
+#import "SAVASTParser.h"
+
 // import models
 #import "SAAd.h"
 #import "SACreative.h"
@@ -40,7 +44,12 @@
 
 // Anon Category of SAvideoAd to declare private variables and delegate
 // implementations, especially for google IMA ads
-@interface SAVideoAd () <IMAAdsLoaderDelegate, IMAAdsManagerDelegate, IMAWebOpenerDelegate, NSXMLParserDelegate>
+@interface SAVideoAd ()
+<IMAAdsLoaderDelegate,
+ IMAAdsManagerDelegate,
+ IMAWebOpenerDelegate,
+ NSXMLParserDelegate,
+ SAVASTProtocol>
 
 // views
 @property (nonatomic, strong) AVPlayer *contentPlayer;
@@ -54,9 +63,7 @@
 @property (nonatomic, strong) NSNotificationCenter *notifCenter;
 
 // create a XML parser
-@property (nonatomic, strong) NSXMLParser *parser;
-@property (nonatomic, strong) NSString *element;
-@property (nonatomic, strong) NSMutableString *tmpClickURL;
+@property (nonatomic, strong) SAVASTParser *parser;
 
 @end
 
@@ -89,41 +96,12 @@
 - (void) display {
     [super display];
     
-    // setup content player
-    NSURL *url = [NSURL URLWithString:ad.creative.details.vast];
-    _parser = [[NSXMLParser alloc] initWithContentsOfURL:url];
+    _parser = [[SAVASTParser alloc] init];
     _parser.delegate = self;
-    _parser.shouldResolveExternalEntities = NO;
-    [_parser parse];
+    [_parser findCorrectVASTClick:ad.creative.details.vast];
 }
 
-#pragma mark <NSXMLParserDelegate>
-
-- (void) parserDidStartDocument:(NSXMLParser *)parser {
-    _element = @"";
-}
-
-- (void) parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary<NSString *,NSString *> *)attributeDict {
-    _element = elementName;
-    
-    if ([_element isEqualToString:@"ClickThrough"]) {
-        _tmpClickURL = [[NSMutableString alloc] init];
-    }
-}
-
-- (void) parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
-    if ([_element isEqualToString:@"ClickThrough"]) {
-        [_tmpClickURL appendString:string];
-    }
-}
-
-- (void) parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
-    if ([_element isEqualToString:@"ClickThrough"]) {
-        ad.creative.clickURL = _tmpClickURL;
-    }
-}
-
-- (void) parserDidEndDocument:(NSXMLParser *)parser {
+- (void) delayedDisplay {
     // setup ads loader
     _adsLoader = [[IMAAdsLoader alloc] initWithSettings:nil];
     _adsLoader.delegate = self;
@@ -137,6 +115,13 @@
     [actionButton setTitle:@"" forState:UIControlStateNormal];
     [actionButton addTarget:self action:@selector(gotoURL:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:actionButton];
+}
+
+#pragma mark <SAVASTProtocol>
+
+- (void) didFindVASTClickURL:(NSString *)clickURL {
+    ad.creative.clickURL = clickURL;
+    [self delayedDisplay];
 }
 
 #pragma mark SAVideoAd functions

@@ -16,6 +16,7 @@ Next, you'll need to download a list of files called Adapters:
   * [SuperAwesomeInterstitialCustomEvent.m](https://raw.githubusercontent.com/SuperAwesomeLTD/sa-mobile-sdk-ios/develop_v3/SuperAwesome/MoPubIntegration/SuperAwesomeInterstitialCustomEvent.m)
 
 These will act as a convenient bridge between SuperAwesome and MoPub, so that you don't have to write any aditional line of code.
+You'll need to add these to your project, wherever is convenient.
 
 #### Setup a MoPub Custom Network
 

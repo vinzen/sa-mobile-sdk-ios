@@ -16,7 +16,7 @@
 #import "SAAdCreative.h"
 #import "SAEventManager.h"
 
-@interface SAVideoAdView () <SAParentalGateDelegate>
+@interface SAVideoAdView () <SAParentalGateDelegate, NSXMLParserDelegate>
 
 // the ad response
 @property (nonatomic, retain) SAAdResponse *adResponse;
@@ -34,6 +34,11 @@
 @property (nonatomic, assign) NSInteger counter;
 @property (nonatomic, retain) NSTimer *timer;
 @property (nonatomic, assign) BOOL isRunning;
+
+// the parser
+@property (nonatomic, strong) NSXMLParser *parser;
+@property (nonatomic, strong) NSString *element;
+@property (nonatomic, strong) NSMutableString *tmpClickURL;
 
 @end
 
@@ -116,6 +121,44 @@
 }
 
 - (void) renderAd {
+    // actually parse the VAST to get the correct clickURL!!!
+    NSString *vastURL = [_adResponse.creative.details objectForKey:@"vast"];
+    NSURL *url = [NSURL URLWithString:vastURL];
+    _parser = [[NSXMLParser alloc] initWithContentsOfURL:url];
+    _parser.delegate = self;
+    _parser.shouldResolveExternalEntities = NO;
+    [_parser parse];
+}
+
+#pragma mark <NSXMLParserDelegate>
+
+- (void) parserDidStartDocument:(NSXMLParser *)parser {
+    _element = @"";
+}
+
+- (void) parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary<NSString *,NSString *> *)attributeDict {
+    _element = elementName;
+    
+    if ([_element isEqualToString:@"ClickThrough"]) {
+        _tmpClickURL = [[NSMutableString alloc] init];
+    }
+}
+
+- (void) parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
+    if ([_element isEqualToString:@"ClickThrough"]) {
+        [_tmpClickURL appendString:string];
+    }
+}
+
+- (void) parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
+    if ([_element isEqualToString:@"ClickThrough"]) {
+        _adURL = [NSURL URLWithString:_tmpClickURL];
+    }
+}
+
+- (void) parserDidEndDocument:(NSXMLParser *)parser {
+    // now that the document has been parsed, start the video
+    // and render other stuffs
     _moviePlayer = [[MPMoviePlayerController alloc] initWithContentURL:_videoURL];
     
     [[NSNotificationCenter defaultCenter] addObserver:self

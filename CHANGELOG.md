@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+2.1.2
+ - Fixed a minor video click issue
+
 2.1.1
  - Added mobile user agent header to GET/POST requests
 

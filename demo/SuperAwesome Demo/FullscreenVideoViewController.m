@@ -30,8 +30,8 @@
 
 - (IBAction)play:(id)sender
 {
-    SAVideoAdViewController *vc = [[SAVideoAdViewController alloc] initWithPlacementId:@"5740"];
-    vc.parentalGateEnabled = YES;
+    SAVideoAdViewController *vc = [[SAVideoAdViewController alloc] initWithPlacementId:@"24532"];
+    vc.parentalGateEnabled = NO;
     [self presentViewController:vc animated:YES completion:nil];
 }
 

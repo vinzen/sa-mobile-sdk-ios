@@ -56,11 +56,11 @@
 }
 
 - (void) setConfigurationStaging {
-    _baseURL = BASE_URL_DEVELOPMENT;
+    _baseURL = BASE_URL_STAGING;
 }
 
 - (void) setConfigurationDevelopment {
-    _baseURL = BASE_URL_STAGING;
+    _baseURL = BASE_URL_DEVELOPMENT;
 }
 
 - (NSString*) getBaseURL {

@@ -13,7 +13,7 @@
 
 // define the three URL constants
 #define BASE_URL_STAGING @"https://staging.beta.ads.superawesome.tv/v2"
-#define BASE_URL_DEVELOPMENT @"https://dev.ads.superawesome.tv/v2"
+#define BASE_URL_DEVELOPMENT @"https://ads.dev.superawesome.tv/v2"
 #define BASE_URL_PRODUCTION @"https://ads.superawesome.tv/v2"
 
 @interface SuperAwesome ()

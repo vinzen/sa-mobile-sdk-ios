@@ -47,6 +47,8 @@
     if (ad.creative.details.value > 0) {
         [dict setObject:@{@"value":[NSNumber numberWithInteger:ad.creative.details.value]} forKey:@"details"];
     }
+    
+    NSLog(@"DICT TO SEND %@", dict);
 
     // send data to net
     [SANetwork sendPOSTtoEndpoint:url withBodyDict:dict andSuccess:^(NSData *data) {

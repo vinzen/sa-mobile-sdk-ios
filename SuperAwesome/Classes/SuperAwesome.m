@@ -38,7 +38,7 @@
 
 - (NSString *)version
 {
-    return @"SuperAwesome iOS SDK version 2.1.2";
+    return @"SuperAwesome iOS SDK version 2.1.3";
 }
 
 

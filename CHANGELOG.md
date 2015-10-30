@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+2.1.3
+ - Added the "Skip" option to videos
+
 2.1.2
  - Fixed a minor video click issue
 

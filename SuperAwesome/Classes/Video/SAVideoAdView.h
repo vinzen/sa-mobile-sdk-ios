@@ -19,6 +19,7 @@
 - (void) didShowVideoAd:(UIView*)view;
 - (void) didFailShowingAd:(UIView*)view; // not used
 - (void) didFetchNextAd:(UIView*)view;
+- (void) didPressOnSkip:(UIView*)view;
 - (void) willLeaveApplicationForAd:(UIView *)view;
 
 - (void)didStartPlayingVideoAd:(UIView *)videoAd;
@@ -40,6 +41,7 @@
 // should autoplay
 @property (nonatomic, assign, getter=shouldAutoplay) IBInspectable BOOL shouldAutoplay;
 @property (nonatomic, assign) BOOL isFullscreen;
+@property (nonatomic, assign) BOOL canSkip;
 
 // play, stop buttons
 - (void) play;

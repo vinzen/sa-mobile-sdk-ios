@@ -36,6 +36,7 @@
     _videoAd.placementID = _placementID;
     _videoAd.parentalGateEnabled = _parentalGateEnabled;
     _videoAd.delegate = self;
+    _videoAd.canSkip = true;
     [self.view addSubview:_videoAd];
 }
 
@@ -67,6 +68,16 @@
 }
 
 - (void) didFinishPlayingVideoAd:(UIView *)videoAd {
+    // dismiss & clear
+    [self.navigationController popViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(didFinishPlayingVideoAd:)]) {
+        [self.delegate didFinishPlayingVideoAd:self];
+    }
+}
+
+- (void) didPressOnSkip:(UIView *)view {
     // dismiss & clear
     [self.navigationController popViewControllerAnimated:YES];
     [self dismissViewControllerAnimated:YES completion:nil];

@@ -29,9 +29,11 @@
 @property (nonatomic, strong) MPMoviePlayerController *moviePlayer;
 @property (nonatomic, strong) UIButton *learnMore;
 @property (nonatomic, strong) UILabel *counterLabel;
+@property (nonatomic, strong) UIButton *skip;
 
 // the actual counter
 @property (nonatomic, assign) NSInteger counter;
+@property (nonatomic, assign) NSInteger counterHalf;
 @property (nonatomic, retain) NSTimer *timer;
 @property (nonatomic, assign) BOOL isRunning;
 
@@ -47,6 +49,7 @@
 - (id) init {
     if (self = [super init]) {
         _isFullscreen = NO;
+        _canSkip = false;
     }
     return self;
 }
@@ -54,6 +57,7 @@
 - (id) initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         _isFullscreen = NO;
+        _canSkip = false;
     }
     return self;
 }
@@ -61,6 +65,7 @@
 - (id) initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
         _isFullscreen = NO;
+        _canSkip = false;
     }
     return self;
 }
@@ -99,6 +104,7 @@
         // counter
         if ([_adResponse.creative.details objectForKey:@"duration"]) {
             _counter = [[_adResponse.creative.details objectForKey:@"duration"] intValue];
+            _counterHalf = (NSInteger)(_counter / 2);
         }
         else {
             _counter = 0;
@@ -200,6 +206,16 @@
     [self addSubview:_learnMore];
     [self bringSubviewToFront:_learnMore];
     
+    // skip btn
+    _skip = [[UIButton alloc] init];
+    [_skip setTitle:@"Skip" forState:UIControlStateNormal];
+    [[_skip titleLabel] setFont:[UIFont systemFontOfSize:11]];
+    [_skip addTarget:self action:@selector(pressOnSkip:) forControlEvents:UIControlEventTouchUpInside];
+    [_skip setFrame:CGRectMake(10, h-22, w-10, 22)];
+    _skip.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+    [self addSubview:_skip];
+    _skip.hidden = YES;
+    
     // step 2. counter
     _counterLabel = [[UILabel alloc] init];
     [_counterLabel setBackgroundColor:[UIColor clearColor]];
@@ -207,7 +223,7 @@
     [_counterLabel setFont:[UIFont systemFontOfSize:11]];
     [_counterLabel setTextAlignment:NSTextAlignmentLeft];
     _counterLabel.frame = CGRectMake(10, h-22, w-10, 22);
-    _counterLabel.text = [NSString stringWithFormat:@"Ad: %ld", _counter];
+    _counterLabel.text = [NSString stringWithFormat:@"Ad: %ld", (long)_counter];
     [self addSubview:_counterLabel];
     [self bringSubviewToFront:_counterLabel];
     
@@ -264,13 +280,19 @@
         _counterLabel.text = @"Ad: 0";
     }
     else {
-        _counterLabel.text = [NSString stringWithFormat:@"Ad: %ld", _counter];
+        _counterLabel.text = [NSString stringWithFormat:@"Ad: %ld", (long)_counter];
         _counter--;
+        
+        if (_counter < _counterHalf && _canSkip) {
+            _skip.hidden = NO;
+            _counterLabel.hidden = YES;
+            [self bringSubviewToFront:_skip];
+        }
     }
     
 }
 
-- (IBAction)gotoTargetURL:(id)sender {
+- (IBAction) gotoTargetURL:(id)sender {
     
     // did click
     if (self.delegate && [self.delegate respondsToSelector:@selector(didClickVideoAd:)]) {
@@ -297,6 +319,14 @@
 
 - (void) moviePlayBackDidFinish: (id)sender {
     if (self.delegate && [self.delegate respondsToSelector:@selector(didFinishPlayingVideoAd:)]){
+        [self.delegate didFinishPlayingVideoAd:self];
+    }
+}
+
+- (void) pressOnSkip:(id)sender {
+    [_delegate didPressOnSkip:self];
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(didFailToPlayVideoAd:)]) {
         [self.delegate didFinishPlayingVideoAd:self];
     }
 }

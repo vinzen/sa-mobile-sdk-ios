@@ -19,17 +19,9 @@
     NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
     
     if (ad) {
-        if (ad.placementId) {
-            [dict setObject:[NSNumber numberWithInteger:ad.placementId] forKey:@"placement"];
-        }
-        if (ad.lineItemId) {
-            [dict setObject:[NSNumber numberWithInteger:ad.lineItemId] forKey:@"line_item"];
-        }
-        if (ad.creative) {
-            if (ad.creative.creativeId) {
-                [dict setObject:[NSNumber numberWithInteger:ad.creative.creativeId] forKey:@"creative"];
-            }
-        }
+        [dict setObject:[NSNumber numberWithInteger:ad.lineItemId] forKey:@"placement"];
+        [dict setObject:[NSNumber numberWithInteger:ad.lineItemId] forKey:@"line_item"];
+        [dict setObject:[NSNumber numberWithInteger:ad.creative.creativeId] forKey:@"creative"];
     }
         
     return dict;

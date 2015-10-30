@@ -8,9 +8,9 @@
 //
 //
 
-#import "Utils.h"
+#import "SAUtils.h"
 
-@implementation Utils
+@implementation SAUtils
 
 + (CGRect) arrangeAdInNewFrame:(CGRect)frame fromFrame:(CGRect)oldframe {
     

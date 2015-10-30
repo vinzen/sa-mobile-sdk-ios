@@ -12,7 +12,7 @@
 
 // @brief:
 // A class containing a random assortment of functions for different uses
-@interface Utils : NSObject
+@interface SAUtils : NSObject
 
 // Aux function that basically projects a square into another square
 // @params:

@@ -54,7 +54,7 @@
 - (void) loadAdForPlacementId:(NSInteger)placementId withAd:(gotad)gotad orFailure:(failure)failure {
     
     // First thing to do is format the AA URL to get an ad, based on specs
-    NSString *endpoint = [NSString stringWithFormat:@"%@/ad/%ld", [[SuperAwesome sharedManager] getBaseURL], placementId];
+    NSString *endpoint = [NSString stringWithFormat:@"%@/ad/%ld", [[SuperAwesome sharedManager] getBaseURL], (long)placementId];
     BOOL isTest = [[SuperAwesome sharedManager] isTestingEnabled];
     NSDictionary *dict = @{@"test": [NSNumber numberWithBool:isTest]};
     

@@ -14,7 +14,7 @@
 #import "SAView.h"
 #import "SAAd.h"
 #import "SABannerAd.h"
-#import "Utils.h"
+#import "SAUtils.h"
 
 // Anon category for SAView to keep some functions private
 @interface SAView ()
@@ -91,7 +91,7 @@
     CGFloat tH = frame.size.height * 0.85;
     CGFloat tX = ( frame.size.width - tW ) / 2;
     CGFloat tY = ( frame.size.height - tH) / 2;
-    CGRect newR = [Utils arrangeAdInNewFrame:CGRectMake(tX, tY, tW, tH) fromFrame:frame ];
+    CGRect newR = [SAUtils arrangeAdInNewFrame:CGRectMake(tX, tY, tW, tH) fromFrame:frame ];
     newR.origin.x += tX;
     newR.origin.y += tY;
     

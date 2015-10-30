@@ -19,7 +19,7 @@
 #import "SuperAwesome.h"
 #import "SASender.h"
 #import "UIAlertController+Window.h"
-#import "Utils.h"
+#import "SAUtils.h"
 
 // parental gate defines
 #define SA_CHALLANGE_ALERTVIEW 0
@@ -88,8 +88,8 @@
 
 // init a new question
 - (void) newQuestion {
-    _number1 = [Utils randomNumberBetween:SA_RAND_MIN maxNumber:SA_RAND_MAX];
-    _number2 = [Utils randomNumberBetween:SA_RAND_MIN maxNumber:SA_RAND_MAX];
+    _number1 = [SAUtils randomNumberBetween:SA_RAND_MIN maxNumber:SA_RAND_MAX];
+    _number2 = [SAUtils randomNumberBetween:SA_RAND_MIN maxNumber:SA_RAND_MAX];
     _solution = _number1 + _number2;
 }
 

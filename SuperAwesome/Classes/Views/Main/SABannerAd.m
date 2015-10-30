@@ -20,7 +20,7 @@
 #import "SADetails.h"
 
 // import utils
-#import "Utils.h"
+#import "SAUtils.h"
 #import "SASender.h"
 
 // Declaration of SAView anonymous category
@@ -70,7 +70,7 @@
 - (void) display {
     [super display];
     
-    CGRect frame = [Utils arrangeAdInNewFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)
+    CGRect frame = [SAUtils arrangeAdInNewFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)
                                     fromFrame:CGRectMake(0, 0, ad.creative.details.width, ad.creative.details.height)];
     
     raidview = [[SKMRAIDView alloc] initWithFrame:frame
@@ -113,7 +113,7 @@
     
     self.frame = toframe;
     
-    CGRect frame = [Utils arrangeAdInNewFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)
+    CGRect frame = [SAUtils arrangeAdInNewFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)
                                     fromFrame:CGRectMake(0, 0, ad.creative.details.width, ad.creative.details.height)];
     
     raidview.frame = frame;

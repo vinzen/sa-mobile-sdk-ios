@@ -114,7 +114,7 @@
 		C665DAE7DA7D2D1286C6031A48794AAF /* SKMRAIDInterstitial.m in Sources */ = {isa = PBXBuildFile; fileRef = FDF5DD373C4E933A642616F60728E2CE /* SKMRAIDInterstitial.m */; };
 		CA9232506D145AF6182C9273BAF6271A /* SAStringifier.m in Sources */ = {isa = PBXBuildFile; fileRef = AA703CEC5FBDD395D211FA65D1FD25D4 /* SAStringifier.m */; };
 		CD6EB4BA6D8C59B51B2A906AFDED46DA /* MRAIDSettings.h in Headers */ = {isa = PBXBuildFile; fileRef = 7498AD432C963A04769A1EC86EA1C248 /* MRAIDSettings.h */; };
-		CE84ABDD037B6AFD791DC840A0078C64 /* Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 962326B1B2B53076426EC60A51DEB2F3 /* Utils.h */; };
+		CE84ABDD037B6AFD791DC840A0078C64 /* SAUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 962326B1B2B53076426EC60A51DEB2F3 /* SAUtils.h */; };
 		CEB0B78910FDD44CAFE3309F2DE18886 /* SKLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 11EEABA6160FEA096B7BFF327B899D68 /* SKLogger.h */; };
 		CEBBF3A089DCBFE8B8B7493D8B54949E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C9F6A12BF3709FC8B4F68F0740D91DA /* AVFoundation.framework */; };
 		CEEF13B6A0C6E14D7E46DC22073B3FC8 /* JSONModelArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D2FBA09F4BAC70031A9F2F46D929079 /* JSONModelArray.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
@@ -129,7 +129,7 @@
 		E1D46DB2C6F605318998BE744CE4F427 /* SAParentalGateProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 81CCD753C1C086D258F0A71538D5D2C5 /* SAParentalGateProtocol.h */; };
 		E23DDFD1732B450F5C890DA6809F16D1 /* JSONModelClassProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = D379AF922EF0FE4458894532C0F2F5E5 /* JSONModelClassProperty.h */; };
 		E27455D8EE45B15DA54A74CF5F394D99 /* SALoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E11EE0C43BB75A811637FC0B59819A3 /* SALoader.h */; };
-		E27638CB34897D254E8F3EAABB4E152E /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = E62491F71E50B32C5D2E9293A1740E6E /* Utils.m */; };
+		E27638CB34897D254E8F3EAABB4E152E /* SAUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E62491F71E50B32C5D2E9293A1740E6E /* SAUtils.m */; };
 		E9B0067247AE9F45F467E65776E96C53 /* Pods-SuperAwesome DemoTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D8DFD2F4CE04C049B04A86673E879F /* Pods-SuperAwesome DemoTests-dummy.m */; };
 		EB32164F0EFB94A0CDA0F6E739A60FD5 /* SKMRAIDInterstitial.h in Headers */ = {isa = PBXBuildFile; fileRef = F4A81388BF1C75AF39C785F6E32433E8 /* SKMRAIDInterstitial.h */; };
 		ED5C7D6459BE5C84182FDCCEED56AE09 /* SABannerAd.h in Headers */ = {isa = PBXBuildFile; fileRef = BF52E608150FEDA7802249AF939AAC26 /* SABannerAd.h */; };
@@ -299,7 +299,7 @@
 		92B5FA0FD556D6CF647C7DD5D34BBD26 /* SKMRAIDParser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SKMRAIDParser.h; sourceTree = "<group>"; };
 		92CFB3FD9ED682BD04C7F004BEF896E1 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CoreMedia.framework; sourceTree = DEVELOPER_DIR; };
 		95BA0F8E0636E4B43E654A720C2468B3 /* SKCommonSettings.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SKCommonSettings.h; sourceTree = "<group>"; };
-		962326B1B2B53076426EC60A51DEB2F3 /* Utils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		962326B1B2B53076426EC60A51DEB2F3 /* SAUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SAUtils.h; sourceTree = "<group>"; };
 		9633E63E61EC2E6BEC75D72F683E7467 /* start_notselected.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = start_notselected.png; sourceTree = "<group>"; };
 		97D098F96DB3862B0665E9F5FDF1393E /* SADetails.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SADetails.h; sourceTree = "<group>"; };
 		97DABEA8B1E530A090043D441ED3A14C /* IMAAVPlayerContentPlayhead.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IMAAVPlayerContentPlayhead.h; path = GoogleIMASDK3/IMAAVPlayerContentPlayhead.h; sourceTree = "<group>"; };
@@ -357,7 +357,7 @@
 		E1EBB8E92A5AB3013DE14D22A2ADEC6D /* SKMRAIDView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SKMRAIDView.m; sourceTree = "<group>"; };
 		E29005BE6FD04AC8F3A32772A668FC52 /* SuperAwesome-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SuperAwesome-prefix.pch"; sourceTree = "<group>"; };
 		E44DACA279EA051C8F6364567AD057F5 /* SKMRAIDOrientationProperties.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SKMRAIDOrientationProperties.h; sourceTree = "<group>"; };
-		E62491F71E50B32C5D2E9293A1740E6E /* Utils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		E62491F71E50B32C5D2E9293A1740E6E /* SAUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SAUtils.m; sourceTree = "<group>"; };
 		E7858903D5D8457D66F36858BD678365 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/MessageUI.framework; sourceTree = DEVELOPER_DIR; };
 		E7CC3A62F00BC1EA10F2366D0E30D1D0 /* SKMRAIDServiceDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SKMRAIDServiceDelegate.h; sourceTree = "<group>"; };
 		E97DAD7170BFEB24402171916B646AC2 /* SAAd.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SAAd.m; sourceTree = "<group>"; };
@@ -470,8 +470,8 @@
 		19C79FDAAF99FDEBCF04B8AD5B605C02 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				962326B1B2B53076426EC60A51DEB2F3 /* Utils.h */,
-				E62491F71E50B32C5D2E9293A1740E6E /* Utils.m */,
+				962326B1B2B53076426EC60A51DEB2F3 /* SAUtils.h */,
+				E62491F71E50B32C5D2E9293A1740E6E /* SAUtils.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1032,7 +1032,7 @@
 				33307B84579C359E448024E000E2DAED /* SuperAwesome.h in Headers */,
 				0EF041818B9CFB4585E6CCBAE6326509 /* UIAlertController+Window.h in Headers */,
 				8BCA36D5043174A8EBF36B7CB2BB2D39 /* UIViewController+Utils.h in Headers */,
-				CE84ABDD037B6AFD791DC840A0078C64 /* Utils.h in Headers */,
+				CE84ABDD037B6AFD791DC840A0078C64 /* SAUtils.h in Headers */,
 				D5BC62B5BDBD99D7430285AA2BA3E1C2 /* WeakRefClass.h in Headers */,
 				E0A148D86EE252BAD2B36E4B537C6AB7 /* mraidjs.h in Headers */,
 			);
@@ -1210,7 +1210,7 @@
 				5566E963EB4A78F0A26B6D08C4DD1DC4 /* SuperAwesome.m in Sources */,
 				BA72272C0688D56BB8EB7AD47C9B2603 /* UIAlertController+Window.m in Sources */,
 				3282FEAD3C741462A2AB5D4F620F5224 /* UIViewController+Utils.m in Sources */,
-				E27638CB34897D254E8F3EAABB4E152E /* Utils.m in Sources */,
+				E27638CB34897D254E8F3EAABB4E152E /* SAUtils.m in Sources */,
 				6DD89C4D8873FFDD6C67303E3D8C779A /* WeakRefClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

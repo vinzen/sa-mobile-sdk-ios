@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+2.1.4
+ - Updated Parental Gate copy
+
 2.1.3
  - Added the "Skip" option to videos
 

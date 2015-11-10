@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+2.1.7
+ - Fix issue when dureation isn't in the VAST tag
+
 2.1.6
  - Added extended video support for Unity Plugin
 

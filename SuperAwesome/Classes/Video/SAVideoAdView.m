@@ -382,6 +382,9 @@
     }
     else {
         _counter = 0;
+        _skip.hidden = NO;
+        _counterLabel.hidden = YES;
+        [self bringSubviewToFront:_skip];
     }
     
     if (_timer == nil) {

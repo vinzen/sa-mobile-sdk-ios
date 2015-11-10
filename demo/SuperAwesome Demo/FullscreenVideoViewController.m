@@ -9,7 +9,7 @@
 #import "FullscreenVideoViewController.h"
 #import "SuperAwesome.h"
 
-@interface FullscreenVideoViewController ()
+@interface FullscreenVideoViewController () <SAVideoAdViewControllerProtocol>
 
 @end
 
@@ -32,7 +32,39 @@
 {
     SAVideoAdViewController *vc = [[SAVideoAdViewController alloc] initWithPlacementId:@"5740"];
     vc.parentalGateEnabled = YES;
+    vc.delegate = self;
     [self presentViewController:vc animated:YES completion:nil];
+}
+
+- (void)didLoadVideoAd:(SAVideoAdViewController *)videoAdViewController {
+    NSLog(@"Video Delegate ---- Load video ad");
+}
+- (void)didFailToLoadVideoAd:(SAVideoAdViewController *)videoAdViewController {
+    NSLog(@"Video Delegate ---- fail to load video ad");
+}
+- (void)didPressOnSkip:(SAVideoAdViewController*)view {
+    NSLog(@"Video Delegate ---- press on skip");
+}
+- (void)didStartPlayingVideoAd:(SAVideoAdViewController *)videoAd {
+    NSLog(@"Video Delegate ---- start playing video ad");
+}
+- (void)didReachFirstQuartile:(SAVideoAdViewController*)videoAd {
+    NSLog(@"Video Delegate ---- reach 1/4");
+}
+- (void)didReachHalfpoint:(SAVideoAdViewController*)videoAd {
+    NSLog(@"Video Delegate ---- reach 1/2");
+}
+- (void)didReachThirdQuartile:(SAVideoAdViewController*)videoAd {
+    NSLog(@"Video Delegate ---- reach 3/4");
+}
+- (void)didFinishPlayingVideoAd:(SAVideoAdViewController *)videoAd {
+    NSLog(@"Video Delegate ---- reach end");
+}
+- (void)didFailToPlayVideoAd:(SAVideoAdViewController *)videoAd {
+    NSLog(@"Video Delegate ---- fail to play ad");
+}
+- (void)didClickVideoAd:(SAVideoAdViewController *)videoAd {
+    NSLog(@"Video Delegate ---- click on ad");
 }
 
 @end

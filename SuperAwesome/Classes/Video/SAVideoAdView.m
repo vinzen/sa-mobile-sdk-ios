@@ -419,11 +419,6 @@
 
 - (IBAction) gotoTargetURL:(id)sender {
     
-    // did click
-    if (self.delegate && [self.delegate respondsToSelector:@selector(didClickVideoAd:)]) {
-        [self.delegate didClickVideoAd:self];
-    }
-    
     // use parental gatre
     if([self isParentalGateEnabled]){
         if(self.gate == nil){
@@ -437,6 +432,11 @@
             [self.delegate willLeaveApplicationForAd:self];
         }
         [[UIApplication sharedApplication] openURL:_adURL];
+        
+        // did click
+        if (self.delegate && [self.delegate respondsToSelector:@selector(didClickVideoAd:)]) {
+            [self.delegate didClickVideoAd:self];
+        }
     }
 }
 
@@ -467,6 +467,11 @@
         [self.delegate willLeaveApplicationForAd:self];
     }
     [[UIApplication sharedApplication] openURL:self.adURL];
+    
+    // did click
+    if (self.delegate && [self.delegate respondsToSelector:@selector(didClickVideoAd:)]) {
+        [self.delegate didClickVideoAd:self];
+    }
 }
 
 - (void) didCancelParentalGate:(SAParentalGate *)parentalGate {

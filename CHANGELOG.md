@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+2.1.6
+ - Added extended video support for Unity Plugin
+
 2.1.5
  - Updated videos to use Google IMA
 

@@ -12,13 +12,16 @@
 @class SAVideoAdView;
 @class SAVideoAdViewController;
 
+typedef void(^videoBlock) (NSString *adname);
+
 // protocol
 @protocol SAVideoAdViewControllerProtocol <NSObject>
 @optional
+
 - (void)didLoadVideoAd:(SAVideoAdViewController *)videoAdViewController;
 - (void)didFailToLoadVideoAd:(SAVideoAdViewController *)videoAdViewController;
 
-- (void) didPressOnSkip:(SAVideoAdViewController*)view;
+- (void)didPressOnSkip:(SAVideoAdViewController*)view;
 - (void)didStartPlayingVideoAd:(SAVideoAdViewController *)videoAd;
 - (void)didReachFirstQuartile:(SAVideoAdViewController*)videoAd;
 - (void)didReachHalfpoint:(SAVideoAdViewController*)videoAd;
@@ -43,5 +46,14 @@
 
 // delegate
 @property id<SAVideoAdViewControllerProtocol> delegate;
+
+// add blocks
+- (void) setAdName:(NSString *)adname;
+- (void) addLoadVideoBlock:(videoBlock)block;
+- (void) addFailToLoadVideoBlock:(videoBlock)block;
+- (void) addStartVideoBlock:(videoBlock)block;
+- (void) addStopVideoBlock:(videoBlock)block;
+- (void) addFailToPlayVideoBlock:(videoBlock)block;
+- (void) addClickVideoBlock:(videoBlock)block;
 
 @end

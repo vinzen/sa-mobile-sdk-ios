@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+2.1.5
+ - Updated videos to use Google IMA
+
 2.1.4
  - Updated Parental Gate copy
 

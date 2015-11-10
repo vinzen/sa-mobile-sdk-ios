@@ -48,10 +48,13 @@
         [dict setObject:@{@"value":[NSNumber numberWithInteger:ad.creative.details.value]} forKey:@"details"];
     }
     
-    NSLog(@"DICT TO SEND %@", dict);
-
     // send data to net
     [SANetwork sendPOSTtoEndpoint:url withBodyDict:dict andSuccess:^(NSData *data) {
+        
+        NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        
+        NSLog(@"Sending to %@ with dict %@ and response %@", url, dict, str);
+        
        // success
     } orFailure:^{
         // failure

@@ -15,8 +15,24 @@
 #import <MediaPlayer/MediaPlayer.h>
 #import "SAAdCreative.h"
 #import "SAEventManager.h"
+#import "SAVASTParser.h"
 
-@interface SAVideoAdView () <SAParentalGateDelegate, NSXMLParserDelegate>
+#import <AdSupport/ASIdentifierManager.h>
+
+// import video stuff
+#import <AVFoundation/AVFoundation.h>
+#import "IMAAdsLoader.h"
+#import "IMAAdsManager.h"
+#import "IMAAVPlayerContentPlayhead.h"
+#import "IMAAdDisplayContainer.h"
+#import "IMAUiElements.h"
+
+@interface SAVideoAdView ()
+<SAParentalGateDelegate,
+ SAVASTProtocol,
+ IMAAdsLoaderDelegate,
+ IMAAdsManagerDelegate,
+ IMAWebOpenerDelegate>
 
 // the ad response
 @property (nonatomic, retain) SAAdResponse *adResponse;
@@ -26,7 +42,7 @@
 
 // the movie player and other subviews
 @property (nonatomic,strong) SAParentalGate *gate;
-@property (nonatomic, strong) MPMoviePlayerController *moviePlayer;
+//@property (nonatomic, strong) MPMoviePlayerController *moviePlayer;
 @property (nonatomic, strong) UIButton *learnMore;
 @property (nonatomic, strong) UILabel *counterLabel;
 @property (nonatomic, strong) UIButton *skip;
@@ -37,10 +53,25 @@
 @property (nonatomic, retain) NSTimer *timer;
 @property (nonatomic, assign) BOOL isRunning;
 
+/////////// VAST PART
+
+// views
+@property (nonatomic, strong) AVPlayer *contentPlayer;
+
+// google specific stuff
+@property (nonatomic, strong) IMAAdsLoader *adsLoader;
+@property (nonatomic, strong) IMAAVPlayerContentPlayhead *contentPlayhead;
+@property (nonatomic, strong) IMAAdsManager *adsManager;
+
 // the parser
-@property (nonatomic, strong) NSXMLParser *parser;
-@property (nonatomic, strong) NSString *element;
-@property (nonatomic, strong) NSMutableString *tmpClickURL;
+//@property (nonatomic, strong) NSXMLParser *parser;
+@property (nonatomic, strong) NSString *vastURL;
+
+// notif center
+@property (nonatomic, strong) NSNotificationCenter *notifCenter;
+
+// create a XML parser
+@property (nonatomic, strong) SAVASTParser *parser;
 
 @end
 
@@ -72,9 +103,6 @@
 
 - (void) didMoveToWindow {
     [super didMoveToWindow];
-    
-    // preload data
-    [self fetchAd];
 }
 
 //////////////////////////////////////////////////////
@@ -89,7 +117,7 @@
         
         if(error != nil || response == nil){
             [SKLogger error:@"SABannerView" withMessage:@"Failed to fetch ad"];
-            [[SAEventManager sharedInstance] LogAdFailed:_adResponse];
+//            [[SAEventManager sharedInstance] LogAdFailed:_adResponse];
             if(self.delegate && [self.delegate respondsToSelector:@selector(didFailShowingAd:)]){
                 [self.delegate didFailShowingAd:self];
             }
@@ -99,138 +127,230 @@
         // go forward
         self.adResponse = response;
         _videoURL = [NSURL URLWithString:[_adResponse.creative.details objectForKey:@"video"]];
+        _vastURL = [_adResponse.creative.details objectForKey:@"vast"];
         _adURL = [NSURL URLWithString:@"http://www.superawesome.tv/en/"];
         
-        // counter
-        if ([_adResponse.creative.details objectForKey:@"duration"]) {
-            _counter = [[_adResponse.creative.details objectForKey:@"duration"] intValue];
-            _counterHalf = (NSInteger)(_counter / 2);
-        }
-        else {
-            _counter = 0;
-        }
         
-        if(self.delegate && [self.delegate respondsToSelector:@selector(didFetchNextAd:)]){
-            [self.delegate didFetchNextAd:self];
-        }
-        
-        if(self.delegate && [self.delegate respondsToSelector:@selector(didLoadVideoAd:)]){
-            [self.delegate didLoadVideoAd:self];
-        }
         
         // create these
         dispatch_async(dispatch_get_main_queue(), ^{
+            
+//            if(self.delegate && [self.delegate respondsToSelector:@selector(didFetchNextAd:)]){
+//                [self.delegate didFetchNextAd:self];
+//            }
+            
+            if(self.delegate && [self.delegate respondsToSelector:@selector(didLoadVideoAd:)]){
+                [self.delegate didLoadVideoAd:self];
+            }
+            
             [self renderAd];
-            [self createAuxDecorations];
+            
+//            if (_isFullscreen) {
+//                [self renderAd];
+//            }
         });
     }];
 }
 
 - (void) renderAd {
     // actually parse the VAST to get the correct clickURL!!!
-    NSString *vastURL = [_adResponse.creative.details objectForKey:@"vast"];
-    NSURL *url = [NSURL URLWithString:vastURL];
-    _parser = [[NSXMLParser alloc] initWithContentsOfURL:url];
+    _parser = [[SAVASTParser alloc] init];
     _parser.delegate = self;
-    _parser.shouldResolveExternalEntities = NO;
-    [_parser parse];
+    [_parser findCorrectVASTClick:_vastURL];
 }
 
-#pragma mark <NSXMLParserDelegate>
+#pragma mark <SAVASTProtocol>
 
-- (void) parserDidStartDocument:(NSXMLParser *)parser {
-    _element = @"";
-}
-
-- (void) parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary<NSString *,NSString *> *)attributeDict {
-    _element = elementName;
+- (void) didFindVASTClickURL:(NSString *)clickURL {
+    _adURL = [NSURL URLWithString:clickURL];
     
-    if ([_element isEqualToString:@"ClickThrough"]) {
-        _tmpClickURL = [[NSMutableString alloc] init];
-    }
-}
-
-- (void) parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
-    if ([_element isEqualToString:@"ClickThrough"]) {
-        [_tmpClickURL appendString:string];
-    }
-}
-
-- (void) parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
-    if ([_element isEqualToString:@"ClickThrough"]) {
-        _adURL = [NSURL URLWithString:_tmpClickURL];
-    }
-}
-
-- (void) parserDidEndDocument:(NSXMLParser *)parser {
-    // now that the document has been parsed, start the video
-    // and render other stuffs
-    _moviePlayer = [[MPMoviePlayerController alloc] initWithContentURL:_videoURL];
+    // setup ads loader
+    _adsLoader = [[IMAAdsLoader alloc] initWithSettings:nil];
+    _adsLoader.delegate = self;
     
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(moviePlayBackDidFinish:)
-                                                 name:MPMoviePlayerPlaybackDidFinishNotification
-                                               object:_moviePlayer];
-    
-    _moviePlayer.controlStyle   = MPMovieControlStyleNone;
-    _moviePlayer.shouldAutoplay = false;
-    _moviePlayer.view.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
-    [_moviePlayer setFullscreen:false animated:false];
-    [self addSubview:_moviePlayer.view];
-    
-    if (_shouldAutoplay) {
-        [self play];
-    }
-    
-    [[SAEventManager sharedInstance] LogViewableImpression:_adResponse];
-    if(self.delegate && [self.delegate respondsToSelector:@selector(didShowVideoAd:)]){
-        [self.delegate didShowVideoAd:self];
-    }
+    IMAAdDisplayContainer *adDisplayContainer = [[IMAAdDisplayContainer alloc] initWithAdContainer:self companionSlots:nil];
+    IMAAdsRequest *request = [[IMAAdsRequest alloc] initWithAdTagUrl:_vastURL adDisplayContainer:adDisplayContainer userContext:nil];
+    [_adsLoader requestAdsWithRequest:request];
 }
 
 - (void) createAuxDecorations {
     CGFloat w = self.frame.size.width;
     CGFloat h = self.frame.size.height;
-    CGFloat offset = (_isFullscreen ? 40 : 0);
     
     // step 1. learn more button
-    _learnMore = [[UIButton alloc] init];
-    [_learnMore setBackgroundColor:[UIColor clearColor]];
-    [_learnMore setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [_learnMore setTitle:@"Learn more" forState:UIControlStateNormal];
-    [[_learnMore titleLabel] setFont:[UIFont systemFontOfSize:12]];
-    _learnMore.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
-    _learnMore.contentEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 10);
-    [_learnMore setFrame:CGRectMake(w - 120, offset, 120, 22)];
-    [_learnMore addTarget:self action:@selector(gotoTargetURL:) forControlEvents:UIControlEventTouchUpInside];
-    [self addSubview:_learnMore];
+    if (_learnMore == nil) {
+        _learnMore = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, 30.0f)];
+        [_learnMore setTitle:@"" forState:UIControlStateNormal];
+        [_learnMore addTarget:self action:@selector(gotoTargetURL:) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:_learnMore];
+    }
+    
     [self bringSubviewToFront:_learnMore];
     
-    // skip btn
-    _skip = [[UIButton alloc] init];
-    [_skip setTitle:@"Skip" forState:UIControlStateNormal];
-    [[_skip titleLabel] setFont:[UIFont systemFontOfSize:11]];
-    [_skip addTarget:self action:@selector(pressOnSkip:) forControlEvents:UIControlEventTouchUpInside];
-    [_skip setFrame:CGRectMake(10, h-22, w-10, 22)];
-    _skip.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-    [self addSubview:_skip];
-    _skip.hidden = YES;
+    // step 2. skip btn
+    if (_skip == nil) {
+        _skip = [[UIButton alloc] init];
+        [_skip setTitle:@"Skip" forState:UIControlStateNormal];
+        [[_skip titleLabel] setFont:[UIFont systemFontOfSize:11]];
+        [_skip addTarget:self action:@selector(pressOnSkip:) forControlEvents:UIControlEventTouchUpInside];
+        [_skip setFrame:CGRectMake(10, h-22, w-10, 22)];
+        _skip.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+        [self addSubview:_skip];
+        _skip.hidden = YES;
+    }
     
-    // step 2. counter
-    _counterLabel = [[UILabel alloc] init];
-    [_counterLabel setBackgroundColor:[UIColor clearColor]];
-    [_counterLabel setTextColor:[UIColor whiteColor]];
-    [_counterLabel setFont:[UIFont systemFontOfSize:11]];
-    [_counterLabel setTextAlignment:NSTextAlignmentLeft];
-    _counterLabel.frame = CGRectMake(10, h-22, w-10, 22);
-    _counterLabel.text = [NSString stringWithFormat:@"Ad: %ld", (long)_counter];
-    [self addSubview:_counterLabel];
+    // step 3. counter
+    if (_counterLabel == nil) {
+        _counterLabel = [[UILabel alloc] init];
+        [_counterLabel setBackgroundColor:[UIColor clearColor]];
+        [_counterLabel setTextColor:[UIColor whiteColor]];
+        [_counterLabel setFont:[UIFont systemFontOfSize:11]];
+        [_counterLabel setTextAlignment:NSTextAlignmentLeft];
+        _counterLabel.frame = CGRectMake(10, h-22, w-10, 22);
+        _counterLabel.text = [NSString stringWithFormat:@"Ad: %ld", (long)_counter];
+        [self addSubview:_counterLabel];
+    }
+    
     [self bringSubviewToFront:_counterLabel];
     
-    // step 3. padlock
+    // step 4. padlock
     if (!_adResponse.isFallback) {
         [self setupPadlockButton:self];
+        [self bringSubviewToFront:super.padlockBtn];
     }
+}
+
+#pragma mark SAVideoAd functions
+
+- (void) createContentPlayhead {
+    
+}
+
+- (void) contentDidFinishPlaying:(NSNotification *)notification {
+    // end of content
+    if (notification.object == _contentPlayer.currentItem) {
+        [_adsLoader contentComplete];
+    }
+}
+
+#pragma mark AdsLoader Delegate
+
+- (void) adsLoader:(IMAAdsLoader *)loader adsLoadedWithData:(IMAAdsLoadedData *)adsLoadedData {
+    // get an ad manager and set it's delegate
+    _adsManager = adsLoadedData.adsManager;
+    _adsManager.delegate = self;
+    
+    // create settings for the ad manager
+    IMAAdsRenderingSettings *adsRenderingSettings = [[IMAAdsRenderingSettings alloc] init];
+    adsRenderingSettings.webOpenerPresentingController = nil;
+    adsRenderingSettings.uiElements = @[];
+    
+    // create content playhead
+    _contentPlayhead = [[IMAAVPlayerContentPlayhead alloc] initWithAVPlayer:_contentPlayer];
+    [_notifCenter addObserver:self selector:@selector(contentDidFinishPlaying:) name:AVPlayerItemDidPlayToEndTimeNotification object:[_contentPlayer currentItem]];
+    
+    // initialize manager with playhead and settings
+    [_adsManager initializeWithContentPlayhead:_contentPlayhead adsRenderingSettings:adsRenderingSettings];
+}
+
+- (void) adsLoader:(IMAAdsLoader *)loader failedWithErrorData:(IMAAdLoadingErrorData *)adErrorData {
+    [_contentPlayer play];
+    
+//    [[SAEventManager sharedInstance] LogAdFailed:_adResponse];
+    if ([_delegate respondsToSelector:@selector(didFailToPlayVideoAd:)]) {
+        [_delegate didFailToPlayVideoAd:self];
+    }
+}
+
+#pragma mark AdsManager Delegate
+
+- (void)adsManager:(IMAAdsManager *)adsManager didReceiveAdEvent:(IMAAdEvent *)event {
+    // When the SDK notified us that ads have been loaded, play them.
+    switch (event.type) {
+        case kIMAAdEvent_LOADED: {
+            
+            [adsManager start];
+            
+            break;
+        }
+        case kIMAAdEvent_STARTED:{
+            
+            [self createAuxDecorations];
+            [self turnTimerOn];
+            
+            [[SAEventManager sharedInstance] LogViewableImpression:_adResponse];
+            if(self.delegate && [self.delegate respondsToSelector:@selector(didShowVideoAd:)]){
+                [self.delegate didShowVideoAd:self];
+            }
+            
+            if (self.delegate && [self.delegate respondsToSelector:@selector(didStartPlayingVideoAd:)]){
+                [self.delegate didStartPlayingVideoAd:self];
+            }
+            
+            break;
+        }
+        case kIMAAdEvent_FIRST_QUARTILE:{
+            
+            if (_delegate && [_delegate respondsToSelector:@selector(didReachFirstQuartile:)]) {
+                [_delegate didReachFirstQuartile:self];
+            }
+            
+            break;
+        }
+        case kIMAAdEvent_MIDPOINT: {
+            
+            if (_delegate && [_delegate respondsToSelector:@selector(didReachHalfpoint:)]) {
+                [_delegate didReachHalfpoint:self];
+            }
+            
+            break;
+        }
+        case kIMAAdEvent_THIRD_QUARTILE:{
+            
+            if (_delegate && [_delegate respondsToSelector:@selector(didReachThirdQuartile:)]) {
+                [_delegate didReachThirdQuartile:self];
+            }
+            
+            break;
+        }
+        case kIMAAdEvent_COMPLETE:{
+            
+            if (_delegate && [_delegate respondsToSelector:@selector(didFinishPlayingVideoAd:)]){
+                [_delegate didFinishPlayingVideoAd:self];
+            }
+            
+            break;
+        }
+        case kIMAAdEvent_SKIPPED:{
+            
+//            if ([_videoDelegate respondsToSelector:@selector(videoSkipped:)]){
+//                [_videoDelegate videoSkipped:ad.placementId];
+//            }
+            
+            break;
+        }
+            
+        default:
+            break;
+    }
+}
+
+- (void)adsManager:(IMAAdsManager *)adsManager didReceiveAdError:(IMAAdError *)error {
+    [_contentPlayer play];
+    
+//    [SASender postEventAdFailedToView:ad];
+//    
+//    if ([super.delegate respondsToSelector:@selector(adFailedToShow:)]) {
+//        [super.delegate adFailedToShow:ad.placementId];
+//    }
+}
+
+- (void)adsManagerDidRequestContentPause:(IMAAdsManager *)adsManager {
+    [_contentPlayer pause];
+}
+
+- (void)adsManagerDidRequestContentResume:(IMAAdsManager *)adsManager {
+    [_contentPlayer play];
 }
 
 //////////////////////////////////////////////////////
@@ -238,27 +358,32 @@
 //////////////////////////////////////////////////////
 
 - (void) play {
-    [_moviePlayer play];
-    [self turnTimerOn];
-    
-    if (self.delegate && [self.delegate respondsToSelector:@selector(didStartPlayingVideoAd:)]){
-        [self.delegate didStartPlayingVideoAd:self];
-    }
+    [self fetchAd];
 }
 
 - (void) stop {
-    [_moviePlayer pause];
     [self turnTimerOff];
+    [_adsManager destroy];
 }
 
 - (void) resume {
-    [_moviePlayer play];
-    [self turnTimerOn];
+
 }
 
 #pragma mark Switch Timer functions
 
 - (void) turnTimerOn {
+    [self turnTimerOff];
+    
+    // counter
+    if ([_adResponse.creative.details objectForKey:@"duration"]) {
+        _counter = [[_adResponse.creative.details objectForKey:@"duration"] intValue];
+        _counterHalf = (NSInteger)(_counter / 2);
+    }
+    else {
+        _counter = 0;
+    }
+    
     if (_timer == nil) {
         _timer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(counterFunc:) userInfo:nil repeats:YES];
         [_timer fire];
@@ -307,8 +432,6 @@
         }
         [self.gate show];
     }else{
-        // log a click
-        [[SAEventManager sharedInstance] LogClick:_adResponse];
         
         if(self.delegate && [self.delegate respondsToSelector:@selector(willLeaveApplicationForAd:)]){
             [self.delegate willLeaveApplicationForAd:self];
@@ -317,13 +440,17 @@
     }
 }
 
-- (void) moviePlayBackDidFinish: (id)sender {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(didFinishPlayingVideoAd:)]){
-        [self.delegate didFinishPlayingVideoAd:self];
-    }
-}
+//- (void) moviePlayBackDidFinish: (id)sender {
+//    if (self.delegate && [self.delegate respondsToSelector:@selector(didFinishPlayingVideoAd:)]){
+//        [self.delegate didFinishPlayingVideoAd:self];
+//    }
+//}
 
 - (void) pressOnSkip:(id)sender {
+    [self turnTimerOff];
+    [_adsManager skip];
+    [_adsManager destroy];
+    
     [_delegate didPressOnSkip:self];
     
     if (self.delegate && [self.delegate respondsToSelector:@selector(didFailToPlayVideoAd:)]) {
@@ -349,13 +476,5 @@
 - (void) didFailChallengeForParentalGate:(SAParentalGate *)parentalGate {
     // do nohting
 }
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
 
 @end

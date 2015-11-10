@@ -17,7 +17,17 @@
 @optional
 - (void)didLoadVideoAd:(SAVideoAdViewController *)videoAdViewController;
 - (void)didFailToLoadVideoAd:(SAVideoAdViewController *)videoAdViewController;
-- (void)didFinishPlayingVideoAd:(SAVideoAdViewController *)videoAdViewController;
+
+- (void) didPressOnSkip:(SAVideoAdViewController*)view;
+- (void)didStartPlayingVideoAd:(SAVideoAdViewController *)videoAd;
+- (void)didReachFirstQuartile:(SAVideoAdViewController*)videoAd;
+- (void)didReachHalfpoint:(SAVideoAdViewController*)videoAd;
+- (void)didReachThirdQuartile:(SAVideoAdViewController*)videoAd;
+- (void)didFinishPlayingVideoAd:(SAVideoAdViewController *)videoAd;
+- (void)didFailToPlayVideoAd:(SAVideoAdViewController *)videoAd; // not used
+- (void)didClickVideoAd:(SAVideoAdViewController *)videoAd;
+
+//- (void)didFinishPlayingVideoAd:(SAVideoAdViewController *)videoAdViewController;
 
 @end
 

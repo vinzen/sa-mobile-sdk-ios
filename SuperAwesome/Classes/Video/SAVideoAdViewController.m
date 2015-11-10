@@ -30,7 +30,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    _videoAd = [[SAVideoAdView alloc] initWithFrame:self.view.frame];
+    _videoAd = [[SAVideoAdView alloc] initWithFrame:CGRectMake(0, 25, self.view.frame.size.width, self.view.frame.size.height - 25.0f)];
     _videoAd.shouldAutoplay = false;
     _videoAd.isFullscreen = true;
     _videoAd.placementID = _placementID;
@@ -38,6 +38,7 @@
     _videoAd.delegate = self;
     _videoAd.canSkip = true;
     [self.view addSubview:_videoAd];
+    [_videoAd play];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -48,13 +49,14 @@
 #pragma mark SAVideoAdView2 delegate
 
 - (void) didLoadVideoAd:(UIView *)view {
+    
     if (self.delegate && [self.delegate respondsToSelector:@selector(didLoadVideoAd:)]) {
         [self.delegate didLoadVideoAd:self];
     }
 }
 
 - (void) didShowVideoAd:(UIView *)view {
-    [_videoAd play];
+    
 }
 
 - (void) didFailShowingAd:(UIView *)view {
@@ -67,9 +69,44 @@
     }
 }
 
+- (void)didStartPlayingVideoAd:(UIView *)videoAd {
+    if (_delegate && [_delegate respondsToSelector:@selector(didStartPlayingVideoAd:)]){
+        [_delegate didStartPlayingVideoAd:self];
+    }
+}
+- (void)didReachFirstQuartile:(UIView*)videoAd {
+    if (_delegate && [_delegate respondsToSelector:@selector(didReachFirstQuartile:)]){
+        [_delegate didReachFirstQuartile:self];
+    }
+}
+- (void)didReachHalfpoint:(UIView*)videoAd {
+    if (_delegate && [_delegate respondsToSelector:@selector(didReachHalfpoint:)]){
+        [_delegate didReachHalfpoint:self];
+    }
+}
+- (void)didReachThirdQuartile:(UIView*)videoAd {
+    if (_delegate && [_delegate respondsToSelector:@selector(didReachThirdQuartile:)]){
+        [_delegate didReachThirdQuartile:self];
+    }
+}
+- (void)didFailToPlayVideoAd:(UIView *)videoAd {
+    if (_delegate && [_delegate respondsToSelector:@selector(didFailToPlayVideoAd:)]){
+        [_delegate didFailToPlayVideoAd:self];
+    }
+}
+- (void)didClickVideoAd:(UIView *)videoAd {
+    if (_delegate && [_delegate respondsToSelector:@selector(didClickVideoAd:)]){
+        [_delegate didClickVideoAd:self];
+    }
+}
+
 - (void) didFinishPlayingVideoAd:(UIView *)videoAd {
     // dismiss & clear
-    [self.navigationController popViewControllerAnimated:YES];
+//    [_videoAd stop];
+//    [_videoAd removeFromSuperview];
+//    _videoAd = nil;
+
+//    [self.navigationController popViewControllerAnimated:YES];
     [self dismissViewControllerAnimated:YES completion:nil];
     
     if (self.delegate && [self.delegate respondsToSelector:@selector(didFinishPlayingVideoAd:)]) {
@@ -79,12 +116,20 @@
 
 - (void) didPressOnSkip:(UIView *)view {
     // dismiss & clear
-    [self.navigationController popViewControllerAnimated:YES];
+//    [_videoAd stop];
+//    [_videoAd removeFromSuperview];
+//    _videoAd = nil;
+    
+//    [self.navigationController popViewControllerAnimated:YES];
     [self dismissViewControllerAnimated:YES completion:nil];
     
-    if (self.delegate && [self.delegate respondsToSelector:@selector(didFinishPlayingVideoAd:)]) {
-        [self.delegate didFinishPlayingVideoAd:self];
+    if (_delegate && [_delegate respondsToSelector:@selector(didPressOnSkip:)]){
+        [_delegate didPressOnSkip:self];
     }
+    
+//    if (self.delegate && [self.delegate respondsToSelector:@selector(didFinishPlayingVideoAd:)]) {
+//        [self.delegate didFinishPlayingVideoAd:self];
+//    }
 }
 
 /*

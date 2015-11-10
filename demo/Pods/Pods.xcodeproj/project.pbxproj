@@ -14,6 +14,9 @@
 		0A56527638D471B60EAEF94DC599C64D /* JSONModelError.h in Headers */ = {isa = PBXBuildFile; fileRef = E57E88FC6F0176E07EBC92B154138142 /* JSONModelError.h */; };
 		16838A9BA6F886425481581A2AE2A1BB /* SKMRAIDResizeProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = EF6570386E70FE454E368D701B4B4B40 /* SKMRAIDResizeProperties.m */; };
 		183772A42EC5BA1286E5FE4F22CF568C /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F6204BBCAA25FF72611B276C3616C0A /* EventKit.framework */; };
+		1B3DFFD41BF20A2300C32213 /* SAVASTProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B3DFFD21BF20A2300C32213 /* SAVASTProtocol.h */; };
+		1B3DFFD81BF20A5400C32213 /* SAVASTParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B3DFFD61BF20A5400C32213 /* SAVASTParser.h */; };
+		1B3DFFD91BF20A5400C32213 /* SAVASTParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3DFFD71BF20A5400C32213 /* SAVASTParser.m */; };
 		1D6089F0D578CA1BF2CD1911D6DE34A7 /* SAPlacementView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2AA0F5B8EB2BF86E8DF5C976212B669 /* SAPlacementView.m */; };
 		1E72EC62B9AC15E939ABD78916453A79 /* CloseButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 0ED5623401D6540E7AD78053509F5919 /* CloseButton.h */; };
 		1EC7F81FBEEDA995DC0B4583640144A1 /* JSONValueTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = 76D791F52D206CE4410210717C540FE9 /* JSONValueTransformer.h */; };
@@ -176,6 +179,9 @@
 		1123B0E58DBCB64A9270563EE6C8E245 /* SABannerView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SABannerView.m; sourceTree = "<group>"; };
 		1459C8E2F22F9A98274480748598DAFB /* SAEventRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SAEventRequest.h; sourceTree = "<group>"; };
 		16D3511768AB0602E07F86053821BA0F /* SKLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SKLogger.h; sourceTree = "<group>"; };
+		1B3DFFD21BF20A2300C32213 /* SAVASTProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAVASTProtocol.h; sourceTree = "<group>"; };
+		1B3DFFD61BF20A5400C32213 /* SAVASTParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAVASTParser.h; sourceTree = "<group>"; };
+		1B3DFFD71BF20A5400C32213 /* SAVASTParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAVASTParser.m; sourceTree = "<group>"; };
 		1D36EF8994596A9D5BC13D4430D4E677 /* JSONModelLib.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSONModelLib.h; path = JSONModel/JSONModelLib.h; sourceTree = "<group>"; };
 		1E6FBBB40ABA4530407FCA511AB0E60C /* Pods-SuperAwesome Demo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SuperAwesome Demo-acknowledgements.markdown"; sourceTree = "<group>"; };
 		203A73C8DFC55721B7904A44E933FC72 /* JSONAPI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSONAPI.h; path = JSONModel/JSONModelNetworking/JSONAPI.h; sourceTree = "<group>"; };
@@ -805,6 +811,9 @@
 				D3F635D578159066B0D0FB2B5CB3061B /* SAVideoAdView.m */,
 				82B3D309BD87B507BF4F6289D97F6C5B /* SAVideoAdViewController.h */,
 				E4362C6103429857F6CF0F6B63ED46C3 /* SAVideoAdViewController.m */,
+				1B3DFFD21BF20A2300C32213 /* SAVASTProtocol.h */,
+				1B3DFFD61BF20A5400C32213 /* SAVASTParser.h */,
+				1B3DFFD71BF20A5400C32213 /* SAVASTParser.m */,
 			);
 			path = Video;
 			sourceTree = "<group>";
@@ -859,6 +868,7 @@
 				CE5E43C74365517172CE8F10D4984A47 /* ForwardButton.h in Headers */,
 				3BD621618C4F9A15A073B79469EBF9BA /* MRAIDSettings.h in Headers */,
 				D427F12CC9F45720E2076796BDE8BA3E /* SAAdCreative.h in Headers */,
+				1B3DFFD81BF20A5400C32213 /* SAVASTParser.h in Headers */,
 				BEBB63D0D5222CCA8AB2A28D3FD8FEB0 /* SAAdManager.h in Headers */,
 				FC9300451AA9857F60C543673D7B86E5 /* SAAdRequest.h in Headers */,
 				EF2EE1236BB181C7F58D75C9A92B88CF /* SAAdResponse.h in Headers */,
@@ -876,6 +886,7 @@
 				A3E6561B7BED2324BCFE1AEC97CFB2BF /* SKBrowserControlsView.h in Headers */,
 				BBCF0E93F1DE800BF94622EF746A06D1 /* SKCommonSettings.h in Headers */,
 				CB9FD5B49CCCE1FF7B8BECA1ABD8C0F0 /* SKLogger.h in Headers */,
+				1B3DFFD41BF20A2300C32213 /* SAVASTProtocol.h in Headers */,
 				CB9FD5B49CCCE1FF7B8BECA1ABD8C0F0 /* SKLogger.h in Headers */,
 				ACC2B078B9D4D9696981717203B58B9C /* SKMRAIDInterstitial.h in Headers */,
 				22B1BCA3038B0FDB4D0B295E1A83499C /* SKMRAIDModalViewController.h in Headers */,
@@ -1035,6 +1046,7 @@
 				9279889869234425B8738CBE952945A7 /* SABannerView.m in Sources */,
 				5BD087D5C69881EE1A50643E4B6F175C /* SAEventManager.m in Sources */,
 				231078DE947D2BDB95DE37203CA7058E /* SAEventRequest.m in Sources */,
+				1B3DFFD91BF20A5400C32213 /* SAVASTParser.m in Sources */,
 				9A843A0949197B17F51767456CC31D00 /* SAInterstitialView.m in Sources */,
 				D83EB848EE42668D34BE9E613AE90E81 /* SANetManager.m in Sources */,
 				86EA4B313DE5BAC098C12A1A304AA953 /* SAPadlockView.m in Sources */,

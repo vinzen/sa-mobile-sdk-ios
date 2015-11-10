@@ -18,11 +18,14 @@
 - (void) didLoadVideoAd:(UIView*)view;
 - (void) didShowVideoAd:(UIView*)view;
 - (void) didFailShowingAd:(UIView*)view; // not used
-- (void) didFetchNextAd:(UIView*)view;
+//- (void) didFetchNextAd:(UIView*)view;
 - (void) didPressOnSkip:(UIView*)view;
 - (void) willLeaveApplicationForAd:(UIView *)view;
 
 - (void)didStartPlayingVideoAd:(UIView *)videoAd;
+- (void)didReachFirstQuartile:(UIView*)videoAd;
+- (void)didReachHalfpoint:(UIView*)videoAd;
+- (void)didReachThirdQuartile:(UIView*)videoAd;
 - (void)didFinishPlayingVideoAd:(UIView *)videoAd;
 - (void)didFailToPlayVideoAd:(UIView *)videoAd; // not used
 - (void)didClickVideoAd:(UIView *)videoAd;

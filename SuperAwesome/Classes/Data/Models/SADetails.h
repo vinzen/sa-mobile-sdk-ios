@@ -9,7 +9,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SAPlacementFormat.h"
 
 // @brief:
 // The SADetails class contains fine grained information about the creative
@@ -50,7 +49,7 @@
 
 // this is the placement format, defined in SAPlacementFormat.h
 // as of now, it's kind of useless
-@property (nonatomic, assign) SAPlacementFormat placementFormat;
+@property (nonatomic, strong) NSString *placementFormat;
 
 // in case creative format is rich media, this is the URL to the zip with all
 // media resources; at the moment it's not used, but could be used when doing

@@ -9,8 +9,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SACreativeFormat.h"
-#import "SAPlacementFormat.h"
 #import "SAEventType.h"
 
 // @brief:
@@ -21,12 +19,6 @@
 // @return:
 // - NSString
 @interface SAStringifier: NSObject
-
-// class function that transforms a SACreativeFormat enum value to string
-+ (NSString*) creativeFormatToString:(SACreativeFormat) format;
-
-// class function that transforms a SAPlacementFormat enum value to string
-+ (NSString*) placementFormatToString:(SAPlacementFormat) format;
 
 // class function that transforms a SAEventType enum value to string
 + (NSString*) eventTypeFromValue:(SAEventType) evt;

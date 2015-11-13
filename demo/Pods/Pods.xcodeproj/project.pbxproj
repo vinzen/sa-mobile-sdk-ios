@@ -43,7 +43,6 @@
 		39AD11421CD3421A2F46E668CB8A2CD3 /* JSONModelClassProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 16F6580ED81E9643D66340ED7869A03F /* JSONModelClassProperty.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		3A2C74A85D6BFF7282167DAE2FA31E86 /* SuperAwesome-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E907AF903AFC65BF404F220DFBFC5AD /* SuperAwesome-dummy.m */; };
 		3A4D012F82B9AB301E8CBFB921EBB46A /* JSONModelLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 21CEA03FB9315590391896E4E1737FFF /* JSONModelLib.h */; };
-		3BCE64BBEC88BD7ACFAE5C5D160C3FD1 /* SACreativeFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = C60C448BD65890881E5DFE749ADC815D /* SACreativeFormat.h */; };
 		3FA2D4C502C05553957AD1DE768D7E38 /* SACreative.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D4537A9D458F07ECF55A8D2D80A8D0E /* SACreative.h */; };
 		3FB239F43136636B36A8024B1E70792A /* SASender.m in Sources */ = {isa = PBXBuildFile; fileRef = F8ACCE11BDA395181718BFE96B33E065 /* SASender.m */; };
 		41D9BC9D65A989CDCAC82B3BC6B880FD /* SKMRAIDUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FD695DFB1DFFCB4343EA5FD5D726018 /* SKMRAIDUtil.m */; };
@@ -102,7 +101,6 @@
 		A74B2A6CA963AA55D5EEC6A2ADAC3C2F /* MRAIDSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = DA56AC9AC8207BA949F020641AD7222F /* MRAIDSettings.m */; };
 		A951749EB910B76DD1FC3A216067C462 /* JSONModelArray.h in Headers */ = {isa = PBXBuildFile; fileRef = CD0EBC75E75DAAC2351BC2C9A1F633FF /* JSONModelArray.h */; };
 		ADEC3238975131DC890BC1324469164F /* JSONKeyMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 62CED2F0D9D3E5A8C36D15B2E99D5F15 /* JSONKeyMapper.h */; };
-		AF4A97D7697B0EEAF09E960FA55875C4 /* SAPlacementFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = A4B1CF722E9323765B49807F5F0B6FA2 /* SAPlacementFormat.h */; };
 		B09FDF136D1E28C21A703122D5548C03 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E182106AFEE920A1DF258C05CA5826 /* StoreKit.framework */; };
 		B7206D1820E99442DC8E05A83BEDEFF2 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92CFB3FD9ED682BD04C7F004BEF896E1 /* CoreMedia.framework */; };
 		B781BC2F011A40F0CFE3732D88C7722E /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117138DC146465C524A4AB353364245B /* MediaPlayer.framework */; };
@@ -308,7 +306,6 @@
 		9D49C53D46AED07841840190D33F2D4B /* JSONModel-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "JSONModel-Private.xcconfig"; sourceTree = "<group>"; };
 		9FD695DFB1DFFCB4343EA5FD5D726018 /* SKMRAIDUtil.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SKMRAIDUtil.m; sourceTree = "<group>"; };
 		A265AA55DEAD4266DFB83EB06CA64213 /* WeakRefClass.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = WeakRefClass.h; sourceTree = "<group>"; };
-		A4B1CF722E9323765B49807F5F0B6FA2 /* SAPlacementFormat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SAPlacementFormat.h; sourceTree = "<group>"; };
 		A68CF6B5CDC88AA9C5B5A515A39FF69E /* CloseButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CloseButton.h; sourceTree = "<group>"; };
 		A8B08432024C03958F733AC325319F0F /* SAVideoAd.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SAVideoAd.m; sourceTree = "<group>"; };
 		A9D8DFD2F4CE04C049B04A86673E879F /* Pods-SuperAwesome DemoTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SuperAwesome DemoTests-dummy.m"; sourceTree = "<group>"; };
@@ -328,7 +325,6 @@
 		BFBE45AF4968984CA89E6EC57A5B3D9C /* JSONModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSONModel.m; path = JSONModel/JSONModel/JSONModel.m; sourceTree = "<group>"; };
 		C249FF0C1D6E1594B36AADCA40ECBBE6 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CoreTelephony.framework; sourceTree = DEVELOPER_DIR; };
 		C49589BA12DE9E95BABE0BE774E623B2 /* SADetails.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SADetails.m; sourceTree = "<group>"; };
-		C60C448BD65890881E5DFE749ADC815D /* SACreativeFormat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SACreativeFormat.h; sourceTree = "<group>"; };
 		C891A3CC38503844D3A0871D6A192AD4 /* SASerializer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SASerializer.h; sourceTree = "<group>"; };
 		C8C7C5864F71812838640DD65053B168 /* SASender.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SASender.h; sourceTree = "<group>"; };
 		C8E60F58757BDCAF46123936F741D7FE /* IMACompanionAdSlot.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IMACompanionAdSlot.h; path = GoogleIMASDK3/IMACompanionAdSlot.h; sourceTree = "<group>"; };
@@ -914,10 +910,8 @@
 				E97DAD7170BFEB24402171916B646AC2 /* SAAd.m */,
 				0D4537A9D458F07ECF55A8D2D80A8D0E /* SACreative.h */,
 				4F7DCE96C3F74520D0926A432470BB13 /* SACreative.m */,
-				C60C448BD65890881E5DFE749ADC815D /* SACreativeFormat.h */,
 				97D098F96DB3862B0665E9F5FDF1393E /* SADetails.h */,
 				C49589BA12DE9E95BABE0BE774E623B2 /* SADetails.m */,
-				A4B1CF722E9323765B49807F5F0B6FA2 /* SAPlacementFormat.h */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -991,7 +985,6 @@
 				7AD85FF3AC644E6E30778954B9894B47 /* SAAdProtocol.h in Headers */,
 				ED5C7D6459BE5C84182FDCCEED56AE09 /* SABannerAd.h in Headers */,
 				3FA2D4C502C05553957AD1DE768D7E38 /* SACreative.h in Headers */,
-				3BCE64BBEC88BD7ACFAE5C5D160C3FD1 /* SACreativeFormat.h in Headers */,
 				6F86BF51A3F171DA3B5990921E5F0869 /* SADetails.h in Headers */,
 				7D6029AC6D1E14077E9DBF115582C4C1 /* SAEventType.h in Headers */,
 				47C7C647D1EE3608F81F74DCC2699D42 /* SAFormatter.h in Headers */,
@@ -1006,7 +999,6 @@
 				135C00F45FE8D3EABEE3AF0606F42105 /* SAParentalGate.h in Headers */,
 				E1D46DB2C6F605318998BE744CE4F427 /* SAParentalGateProtocol.h in Headers */,
 				373C80FD49426058AC0F4E38895412BC /* SAParser.h in Headers */,
-				AF4A97D7697B0EEAF09E960FA55875C4 /* SAPlacementFormat.h in Headers */,
 				6319F89EF46F98E4DBAB35DE51A9D10C /* SASender.h in Headers */,
 				DD44D44F61EB0AF499B4FA6A0C62EDA2 /* SASerializer.h in Headers */,
 				5CFABD1977CFBF9C9A0A5CAA1E9F62CE /* SAStringifier.h in Headers */,

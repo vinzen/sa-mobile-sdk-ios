@@ -34,4 +34,7 @@
 // function that parses the SADetails main data
 + (SADetails*) parseDetailsWithDictionary:(NSDictionary*)maindict;
 
+// function that finalises parsing of an object
++ (SAAd*) finishAdParsing:(SAAd*)ad;
+
 @end

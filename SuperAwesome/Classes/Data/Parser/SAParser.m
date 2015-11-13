@@ -13,6 +13,7 @@
 #import "SACreative.h"
 #import "SADetails.h"
 #import "SAStringifier.h"
+#import "SuperAwesome.h"
 
 // parser implementation
 @implementation SAParser
@@ -50,40 +51,18 @@
     _Nullable id creativeIdObj = [dict objectForKey:@"id"];
     _Nullable id nameObj = [dict objectForKey:@"name"];
     _Nullable id cpmObj = [dict objectForKey:@"cpm"];
-    _Nullable id formatObj = [dict objectForKey:@"format"];
+    _Nullable id baseFormatObj = [dict objectForKey:@"format"];
     _Nullable id impressionUrlObj = [dict objectForKey:@"impression_url"];
-    _Nullable id clickUrlObj = [dict objectForKey:@"click_url"];
+    _Nullable id targetUrlObj = [dict objectForKey:@"click_url"];
     _Nullable id approvedObj = [dict objectForKey:@"approved"];
     
     creative.creativeId = (creativeIdObj != NULL ? [creativeIdObj integerValue] : -1);
     creative.cpm = (cpmObj != NULL ? [cpmObj integerValue] : 0);
     creative.name = (nameObj != NULL ? nameObj : NULL);
     creative.impressionURL = (impressionUrlObj != NULL ? impressionUrlObj : NULL);
-    creative.clickURL = (clickUrlObj != NULL ? clickUrlObj : @"http://superawesome.tv");
+    creative.targetURL = (targetUrlObj != NULL ? targetUrlObj : @"http://superawesome.tv");
     creative.approved = (approvedObj != NULL ? [approvedObj boolValue] : false);
-    
-    // get format & assign details based on format contract
-    creative.format = format_unknown;
-    if (formatObj != NULL) {
-        if ([formatObj isEqualToString:[SAStringifier creativeFormatToString:image_with_link]]) {
-            creative.format = image_with_link;
-        }
-        if ([formatObj isEqualToString:[SAStringifier creativeFormatToString:video]]) {
-            creative.format = video;
-        }
-        if ([formatObj isEqualToString:[SAStringifier creativeFormatToString:rich_media]]) {
-            creative.format = rich_media;
-        }
-        if ([formatObj isEqualToString:[SAStringifier creativeFormatToString:rich_media_resizing]]) {
-            creative.format = rich_media_resizing;
-        }
-        if ([formatObj isEqualToString:[SAStringifier creativeFormatToString:swf]]) {
-            creative.format = swf;
-        }
-        if ([formatObj isEqualToString:[SAStringifier creativeFormatToString:tag]]) {
-            creative.format = tag;
-        }
-    }
+    creative.baseFormat = (baseFormatObj != NULL ? baseFormatObj : NULL);
     
     return creative;
 }
@@ -131,17 +110,31 @@
     details.tag = (tagObj != NULL ? tagObj : NULL);
     details.zip = (zipFileObj != NULL ? zipFileObj : NULL);
     details.url = (urlObj != NULL ? urlObj : NULL);
-    
-    if (placementFormatObj != NULL) {
-        if ([placementFormatObj isEqualToString:[SAStringifier placementFormatToString:web_display]]) {
-            details.placementFormat = web_display;
-        }
-        if([placementFormatObj isEqualToString:@"floor"]){
-            details.placementFormat = floor_display;
-        }
-    }
+    details.placementFormat = (placementFormatObj != NULL ? placementFormatObj : NULL);
     
     return details;
+}
+
++ (SAAd*) finishAdParsing:(SAAd *)_ad {
+    SAAd *ad = _ad;
+    
+    ad.creative.format = invalid;
+    if ([ad.creative.baseFormat isEqualToString:@"image_with_link"])   ad.creative.format = image;
+    else if ([ad.creative.baseFormat isEqualToString:@"video"])        ad.creative.format = video;
+    else if ([ad.creative.baseFormat containsString:@"rich_media"])    ad.creative.format = rich;
+    else if ([ad.creative.baseFormat isEqualToString:@"tag"])          ad.creative.format = tag;
+    
+    NSString *baseURL = [[SuperAwesome sharedManager] getBaseURL];
+    ad.creative.clickURL = [NSString stringWithFormat:@"%@/click?placement=%d&line_item=%d&creative=%d&redir=%@",
+                            [[SuperAwesome sharedManager] getBaseURL],
+                            ad.placementId,
+                            ad.lineItemId,
+                            ad.creative.creativeId,]
+    
+    NSString *abc = @"{\"placement\":5692,\"creative\":-1,\"line_item\":-1,\"type\":\"viewable_impression\"}";
+    
+    
+    return ad;
 }
 
 @end

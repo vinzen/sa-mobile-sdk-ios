@@ -9,10 +9,18 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SACreativeFormat.h"
 
 // forward declarations
 @class SADetails;
+
+// creative format typedef
+typedef enum SACreativeFormat {
+    invalid = -1,
+    image = 0,
+    video = 1,
+    rich = 2,
+    tag = 3
+}SACreativeFormat;
 
 // @brief:
 // The creative contains essential ad information like format, click url
@@ -30,13 +38,22 @@
 
 // the creative format defines the type of ad (image, video, rich media, tag, etc)
 // and is an enum defined in SACreativeFormat.h
+@property (nonatomic, strong) NSString *baseFormat;
 @property (nonatomic, assign) SACreativeFormat format;
 
 // the impression URL; not really useful
 @property (nonatomic, strong) NSString *impressionURL;
 
-// the click URL; used by the SDK to point users to the webpage behind the ad
+// the target URL - taken from the ad server; it's the direct target to
+// which the ad points
+@property (nonatomic, strong) NSString *targetURL;
+
+// the actual click URL - contains the base targetURL as well as a call to the
+// ad server to register the click
 @property (nonatomic, strong) NSString *clickURL;
+
+// the viewable impression URL; used by the SDK to track a viewable impression
+@property (nonatomic, strong) NSString *viewableImpressionURL;
 
 // must be always true for real ads
 @property (nonatomic, assign) BOOL approved;

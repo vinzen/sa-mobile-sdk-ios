@@ -23,7 +23,7 @@
     
     if (ad.creative != NULL) {
         // 2. if format is unknown, data is not valid
-        if (ad.creative.format == format_unknown)
+        if (ad.creative.format == invalid)
             return false;
         
         // 3. if creative has no details, data is not valid

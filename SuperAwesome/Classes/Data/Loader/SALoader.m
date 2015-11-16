@@ -25,34 +25,22 @@
 // import SA main Singleton
 #import "SuperAwesome.h"
 
-@interface SALoader ()
-- (void) loadAdForPlacementId:(NSInteger)placementId withAd:(gotad)gotad orFailure:(failure)failure;
-@end
-
 @implementation SALoader
 
-// Singleton implementation
-+ (SALoader *)getInstance {
-    static SALoader *sharedManager = nil;
+static id<SALoaderProtocol> delegate;
+
++ (id<SALoaderProtocol>) delegate {
     @synchronized(self) {
-        if (sharedManager == nil){
-            sharedManager = [[self alloc] init];
-        }
+        return delegate;
     }
-    return sharedManager;
+}
++ (void) setDelegate:(id<SALoaderProtocol>)del {
+    @synchronized(self) {
+        delegate = del;
+    }
 }
 
-// implementation of the main class' function
-// depends heavily on loadAdForPlacementId, which is a private method
-- (void) preloadAdForPlacementId:(NSInteger)placementId {
-    [self loadAdForPlacementId:placementId withAd:^(SAAd *ad) {
-        [_delegate didPreloadAd:ad forPlacementId:placementId];
-    } orFailure:^{
-        [_delegate didFailToPreloadAdForPlacementId:placementId];
-    }];
-}
-
-- (void) loadAdForPlacementId:(NSInteger)placementId withAd:(gotad)gotad orFailure:(failure)failure {
++ (void) loadAdForPlacementId:(NSInteger)placementId {
     
     // First thing to do is format the AA URL to get an ad, based on specs
     NSString *endpoint = [NSString stringWithFormat:@"%@/ad/%ld", [[SuperAwesome getInstance] getBaseURL], (long)placementId];
@@ -70,7 +58,9 @@
         
         // some error occured, probably the JSON string was badly formatted
         if (jsonError) {
-            failure();
+            if (SALoader.delegate != NULL){
+                [SALoader.delegate didFailToLoadAdForPlacementId:placementId];
+            }
         }
         // if there is no specific JSON Error, we can move forward to try to
         // create the Ad as it's needed by AA
@@ -94,22 +84,32 @@
                     ad.creative.clickURL = clickURL;
                     
                     if ([SAValidator isAdDataValid:ad]) {
-                        gotad(ad);
+                        if (SALoader.delegate != NULL) {
+                            [SALoader.delegate didLoadAd:ad];
+                        }
                     } else {
-                        failure();
+                        if (SALoader.delegate != NULL) {
+                            [SALoader.delegate didFailToLoadAdForPlacementId:placementId];
+                        }
                     }
                 }];
             } else {
                 if ([SAValidator isAdDataValid:ad]) {
-                    gotad(ad);
+                    if (SALoader.delegate != NULL) {
+                        [SALoader.delegate didLoadAd:ad];
+                    }
                 } else {
-                    failure();
+                    if (SALoader.delegate != NULL) {
+                        [SALoader.delegate didFailToLoadAdForPlacementId:placementId];
+                    }
                 }
             }
         }
         
     } orFailure:^{
-        failure();
+        if (SALoader.delegate != NULL) {
+            [SALoader.delegate didFailToLoadAdForPlacementId:placementId];
+        }
     }];
 }
 

@@ -22,10 +22,4 @@
     SKMRAIDView *raidview;
 }
 
-// simple constructor that should be used when preloading an ad
-- (id) initWithFrame:(CGRect)frame;
-
-// custom constructor that takes into account placement Id and frame
-- (id) initWithPlacementId:(NSInteger)placementId andFrame:(CGRect)frame;
-
 @end

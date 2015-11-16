@@ -21,10 +21,4 @@
 // video delegate
 @property id<SAVideoAdProtocol> videoDelegate;
 
-// custom init with frame function, for preloading
-- (id) initWithFrame:(CGRect)frame;
-
-// custom init function, that assigns placement Id and frame
-- (id) initWithPlacementId:(NSInteger)placementId andFrame:(CGRect)frame;
-
 @end

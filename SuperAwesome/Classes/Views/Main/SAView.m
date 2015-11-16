@@ -23,12 +23,6 @@
 #import "SAParentalGate.h"
 #import "SAPadlockView.h"
 
-// Anon category of SA Loader to be able to access the loadAdForPlacementId
-// function and keep it private
-@interface SALoader ()
-- (void) loadAdForPlacementId:(NSInteger)placementId withAd:(gotad)gotad orFailure:(failure)failure;
-@end
-
 // Anon category of SAView that does not do much
 @interface SAView () <SAParentalGateProtocol>
 @end
@@ -38,8 +32,8 @@
 // overwriting init functions
 - (id) initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
-        _playInstantly = true;
         _isParentalGateEnabled = YES;
+        _refreshPeriod = 30;
     }
     
     return self;
@@ -51,24 +45,10 @@
     ad = _ad;
 }
 
-- (void) playInstant {
-    [[SALoader getInstance] loadAdForPlacementId:_placementId withAd:^(SAAd *_ad) {
-        ad = _ad;
-        [self display];
-    } orFailure:^{
-        // call to delegate (probably)
-    }];
-}
-
-- (void) playPreloaded {
-    if (ad) {
-        [self display];
-    }
-}
-
-- (void) display {
+- (void) play {
     // do nothing here
 }
+
 
 #pragma mark Normal click
 
@@ -83,12 +63,9 @@
     }
     else {
         // call delegate
-        if (_delegate && [_delegate respondsToSelector:@selector(adFollowedURL:)]){
-            [_delegate adFollowedURL:_placementId];
+        if (_delegate && [_delegate respondsToSelector:@selector(adWasClicked:)]){
+            [_delegate adWasClicked:ad.placementId];
         }
-        
-        // log
-        [SASender postEventClick:ad];
         
         // open URL
         NSURL *url = [NSURL URLWithString:ad.creative.clickURL];
@@ -111,6 +88,10 @@
 }
 
 - (void) parentalGateWasSucceded {
+    if (_delegate && [_delegate respondsToSelector:@selector(adWasClicked:)]){
+        [_delegate adWasClicked:ad.placementId];
+    }
+    
     if (_delegate && [_delegate respondsToSelector:@selector(parentalGateWasSucceded:)]) {
         [_delegate parentalGateWasSucceded:ad.placementId];
     }

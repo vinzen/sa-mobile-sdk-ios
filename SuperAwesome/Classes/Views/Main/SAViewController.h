@@ -35,20 +35,15 @@
     CGRect buttonFrame;
 }
 
-// custom init with placement Id (used for instant loading)
-- (id) initWithPlacementId:(NSInteger)placementId;
-
 // delegate of the SA View protocol
 @property id<SAAdProtocol> delegate;
 
 // public mmeber variables
-@property (nonatomic, assign) IBInspectable NSInteger placementId;
 @property (nonatomic, assign) IBInspectable BOOL isParentalGateEnabled;
 @property (nonatomic, assign) IBInspectable NSInteger refreshPeriod;
 
 // important SAview functions
 - (void) setAd:(SAAd*)ad;
-- (void) playInstant;
-- (void) playPreloaded;
+- (void) play;
 
 @end

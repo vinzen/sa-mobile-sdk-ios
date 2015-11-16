@@ -35,7 +35,6 @@
 
 // Anon Category of SAView to maintain some functions private
 @interface SAView ()
-- (void) display;
 - (void) clickOnAd;
 - (void) createPadlockButtonWithParent:(UIView *)parent;
 - (void) removePadlockButtonFromParent;
@@ -47,9 +46,7 @@
 @interface SAVideoAd ()
 <IMAAdsLoaderDelegate,
  IMAAdsManagerDelegate,
- IMAWebOpenerDelegate,
- NSXMLParserDelegate,
- SAVASTProtocol>
+ IMAWebOpenerDelegate>
 
 // views
 @property (nonatomic, strong) AVPlayer *contentPlayer;
@@ -73,35 +70,14 @@
 - (id) initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]){
         // do nothing
-    }
-    return self;
-}
-
-- (id) initWithPlacementId:(NSInteger)placementId andFrame:(CGRect)frame {
-    if (self = [super initWithFrame:frame]) {
-        super.placementId = placementId;
         _notifCenter = [NSNotificationCenter defaultCenter];
     }
-    
     return self;
 }
 
-// specific to the halfscreen view
-- (void) didMoveToWindow {
-    if (super.playInstantly) {
-        [self playInstant];
-    }
-}
-
-- (void) display {
-    [super display];
+- (void) play {
+    [super play];
     
-    _parser = [[SAVASTParser alloc] init];
-//    _parser.delegate = self;
-//    [_parser findCorrectVASTClick:ad.creative.details.vast];
-}
-
-- (void) delayedDisplay {
     // setup ads loader
     _adsLoader = [[IMAAdsLoader alloc] initWithSettings:nil];
     _adsLoader.delegate = self;
@@ -115,13 +91,6 @@
     [actionButton setTitle:@"" forState:UIControlStateNormal];
     [actionButton addTarget:self action:@selector(gotoURL:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:actionButton];
-}
-
-#pragma mark <SAVASTProtocol>
-
-- (void) didFindVASTClickURL:(NSString *)clickURL {
-    ad.creative.clickURL = clickURL;
-    [self delayedDisplay];
 }
 
 #pragma mark SAVideoAd functions

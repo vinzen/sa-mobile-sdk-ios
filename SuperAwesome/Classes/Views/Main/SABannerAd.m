@@ -29,7 +29,6 @@
 // This declaration has to be repeated in every child of SAView that wants
 // to use these functions
 @interface SAView ()
-- (void) display;
 - (CGRect) arrangeAdInFrame:(CGRect)frame;
 - (void) clickOnAd;
 - (void) createPadlockButtonWithParent:(UIView *)parent;
@@ -51,24 +50,8 @@
     return self;
 }
 
-- (id) initWithPlacementId:(NSInteger)placementId andFrame:(CGRect)frame {
-    if (self = [super initWithFrame:frame]) {
-        super.placementId = placementId;
-        super.isParentalGateEnabled = YES;
-    }
-    
-    return self;
-}
-
-// specific to the halfscreen view
-- (void) didMoveToWindow {
-    if (super.playInstantly) {
-        [self playInstant];
-    }
-}
-
-- (void) display {
-    [super display];
+- (void) play {
+    [super play];
     
     CGRect frame = [SAUtils arrangeAdInNewFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)
                                     fromFrame:CGRectMake(0, 0, ad.creative.details.width, ad.creative.details.height)];

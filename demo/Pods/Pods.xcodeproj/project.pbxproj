@@ -217,7 +217,7 @@
 		238CEE4A0EDC5DD0532A3C5C4ACDA1AB /* SAAdProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SAAdProtocol.h; sourceTree = "<group>"; };
 		26151CFCAC0070E95BD9AE79ED3A89E8 /* SKCommonSettings.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SKCommonSettings.m; sourceTree = "<group>"; };
 		291C5E5E17F4CB4F9BE77AC0E8842713 /* SKBrowser.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SKBrowser.m; sourceTree = "<group>"; };
-		29971A0B6512345FCC8083B515018DB5 /* SALoader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SALoader.m; sourceTree = "<group>"; };
+		29971A0B6512345FCC8083B515018DB5 /* SALoader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SALoader.m; path = ../Loader/SALoader.m; sourceTree = "<group>"; };
 		2B9ED6AD0E7E881EC4F41958BB81D9D8 /* AdDemo300x250.jpg */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.jpeg; path = AdDemo300x250.jpg; sourceTree = "<group>"; };
 		2E9FE9CBB568998B1249BCF4DDDAD561 /* displayRichMedia.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; path = displayRichMedia.html; sourceTree = "<group>"; };
 		2EA57FA2CDC8866252C36B7966467549 /* UIViewController+Utils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Utils.m"; sourceTree = "<group>"; };
@@ -468,7 +468,6 @@
 			isa = PBXGroup;
 			children = (
 				5E11EE0C43BB75A811637FC0B59819A3 /* SALoader.h */,
-				29971A0B6512345FCC8083B515018DB5 /* SALoader.m */,
 				EF99B1BD5C19BD02333DD3100B502ECC /* SALoaderProtocol.h */,
 			);
 			path = Loader;
@@ -585,6 +584,7 @@
 		49078A299016DCCCFC71B32921C7F8F7 /* Formatter */ = {
 			isa = PBXGroup;
 			children = (
+				29971A0B6512345FCC8083B515018DB5 /* SALoader.m */,
 				871B56DBBB2CF63FEFB7C386FBC3F439 /* SAFormatter.h */,
 				6EE026F2318347591EA839E7684B4075 /* SAFormatter.m */,
 			);
@@ -751,19 +751,19 @@
 			isa = PBXGroup;
 			children = (
 				238CEE4A0EDC5DD0532A3C5C4ACDA1AB /* SAAdProtocol.h */,
-				BF52E608150FEDA7802249AF939AAC26 /* SABannerAd.h */,
-				5C0D92B236853B3ED7D54078DE2A78D0 /* SABannerAd.m */,
-				DF9E1ABF9E8BC8FBC2F0AC4C33276B6C /* SAFullscreenVideoAd.h */,
-				48C94055D1F9AFD17AFEE68B22DD3A0E /* SAFullscreenVideoAd.m */,
-				3EE89A7EE80937167A5AED1366210F64 /* SAInterstitialAd.h */,
-				358C5F7C34C5974CE55B3C857204D1A1 /* SAInterstitialAd.m */,
-				81F000189C3A793FF3DCBC4B8C8B3450 /* SAVideoAd.h */,
-				A8B08432024C03958F733AC325319F0F /* SAVideoAd.m */,
 				3EE555B68A34C7DEDD0A8D6F4C21D8C6 /* SAVideoAdProtocol.h */,
 				B580D19DF9CC60BFF96DC3898B9C2912 /* SAView.h */,
 				3940E44E8AF16FD714A2D1C7ED615457 /* SAView.m */,
+				BF52E608150FEDA7802249AF939AAC26 /* SABannerAd.h */,
+				5C0D92B236853B3ED7D54078DE2A78D0 /* SABannerAd.m */,
+				81F000189C3A793FF3DCBC4B8C8B3450 /* SAVideoAd.h */,
+				A8B08432024C03958F733AC325319F0F /* SAVideoAd.m */,
 				B09D7A31E1150AEFFB6A71C3A78DD19C /* SAViewController.h */,
 				6C092059601634E45994D69890159807 /* SAViewController.m */,
+				3EE89A7EE80937167A5AED1366210F64 /* SAInterstitialAd.h */,
+				358C5F7C34C5974CE55B3C857204D1A1 /* SAInterstitialAd.m */,
+				DF9E1ABF9E8BC8FBC2F0AC4C33276B6C /* SAFullscreenVideoAd.h */,
+				48C94055D1F9AFD17AFEE68B22DD3A0E /* SAFullscreenVideoAd.m */,
 			);
 			path = Main;
 			sourceTree = "<group>";

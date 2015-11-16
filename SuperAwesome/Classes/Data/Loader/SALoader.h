@@ -15,11 +15,8 @@
 // predef classes
 @class SAAd;
 
-// callback for a success method with AD response
-typedef void (^gotad)(SAAd *ad);
-
 // @brief:
-// This is a Singleton loader class that acts as Master loading class
+// This is a loader class that acts as Master loading class
 // It's main purpose if to be called either by the SDK user or by SAAd
 // to perform loading and preloading of ads
 //
@@ -29,16 +26,12 @@ typedef void (^gotad)(SAAd *ad);
 //
 @interface SALoader : NSObject
 
-// the delegate for the SALoader protocol
-@property id<SALoaderProtocol> delegate;
+// set delegate function
++ (void) setDelegate:(id<SALoaderProtocol>) delegate;
++ (id<SALoaderProtocol>) delegate;
 
-// singleton instance (instead of init)
-+ (SALoader *)getInstance;
-
-// preload ad function;
+// laod ad function;
 // does not return anything directly, but via the SALoaderProtocol delegate
-- (void) preloadAdForPlacementId:(NSInteger)placementId;
-
-- (void) loadAdForPlacementId:(NSInteger)placementId withAd:(gotad)gotad orFailure:(failure)failure;
++ (void) loadAdForPlacementId:(NSInteger)placementId;
 
 @end

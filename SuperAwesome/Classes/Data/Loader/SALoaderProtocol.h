@@ -25,10 +25,10 @@
 // function that gets called when an Ad is succesfully called
 // returns a valid SAAd object and it's associated placement Id
 // through two callbacks
-- (void) didPreloadAd:(SAAd*)ad forPlacementId:(NSInteger)placementId;
+- (void) didLoadAd:(SAAd*)ad;
 
 // function that gets called when an Ad has failed to load
 // it returns a placementId of the failing ad through callback
-- (void) didFailToPreloadAdForPlacementId:(NSInteger)placementId;
+- (void) didFailToLoadAdForPlacementId:(NSInteger)placementId;
 
 @end

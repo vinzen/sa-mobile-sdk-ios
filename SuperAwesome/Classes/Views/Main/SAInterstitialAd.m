@@ -16,7 +16,7 @@
 - (void) viewDidLoad {
     [super viewDidLoad];
     
-    adview = [[SABannerAd alloc] initWithPlacementId:super.placementId andFrame:adviewFrame];
+    adview = [[SABannerAd alloc] initWithFrame:adviewFrame];
     adview.delegate = super.delegate;
     [self.view addSubview:adview];
     

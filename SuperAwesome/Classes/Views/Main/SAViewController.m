@@ -31,7 +31,7 @@
 // Different constructors for different needs
 - (id) init {
     if (self = [super init]) {
-        _placementId = 0;
+        
     }
     
     return self;
@@ -39,23 +39,15 @@
 
 - (id) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-        _placementId = 0;
+        
     }
     return self;
 }
 
 - (id) initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
-        _placementId = 0;
+        
     }
-    return self;
-}
-
-- (id) initWithPlacementId:(NSInteger)placementId {
-    if (self = [super init]) {
-        _placementId = placementId;
-    }
-    
     return self;
 }
 
@@ -124,12 +116,8 @@
     ad = _ad;
 }
 
-- (void) playInstant {
-    [adview playInstant];
-}
-
-- (void) playPreloaded {
-    [adview playPreloaded];
+- (void) play {
+    [adview play];
 }
 
 // Specific SAViewController functions and handles
@@ -137,7 +125,7 @@
 - (void) closeAction: (id)sender {
     [self dismissViewControllerAnimated:YES completion:^{
         if ([adview.delegate respondsToSelector:@selector(adWasClosed:)]) {
-            [adview.delegate adWasClosed:_placementId];
+            [adview.delegate adWasClosed:ad.placementId];
         }
     }];
 }

@@ -30,7 +30,7 @@
 - (void) adWasClosed:(NSInteger)placementId;
 
 // this function is called when an ad is clicked
-- (void) adFollowedURL:(NSInteger)placementId;
+- (void) adWasClicked:(NSInteger)placementId;
 
 // this function is called when a parental gate pop-up "cancel" button is pressed
 - (void)parentalGateWasCanceled:(NSInteger)placementId;

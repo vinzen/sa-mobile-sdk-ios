@@ -19,7 +19,7 @@
     // setup a special background color
     self.view.backgroundColor = [UIColor blackColor];
     
-    adview = [[SAVideoAd alloc] initWithPlacementId:super.placementId andFrame:adviewFrame];
+    adview = [[SAVideoAd alloc] initWithFrame:adviewFrame];
     adview.delegate = super.delegate;
     [(SAVideoAd*)adview setVideoDelegate:_videoDelegate];
     [self.view addSubview:adview];
@@ -27,7 +27,6 @@
     // only <<IF>> ad is preloaded
     if (ad != NULL) {
         [adview setAd:ad];
-        [adview playPreloaded];
     }
     
     // also allow these to be copied

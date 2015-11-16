@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "SuperAwesome.h"
 
-@interface AppDelegate ()
+@interface AppDelegate () <SALoaderProtocol>
 
 @end
 
@@ -22,16 +22,18 @@
     [[SuperAwesome getInstance] setConfigurationProduction];
     [[SuperAwesome getInstance] disableTestMode];
     
-    [[SALoader getInstance] loadAdForPlacementId:24541 withAd:^(SAAd *ad) {
-        [ad print];
-    } orFailure:^{
-        NSLog(@"Failure to load");
-    }];
-    
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     self.window.tintColor = [UIColor whiteColor];
     
     return YES;
+}
+
+- (void) didLoadAd:(SAAd *)ad forPlacementId:(NSInteger)placementId {
+    [ad print];
+}
+
+- (void) didFailToPreloadAdForPlacementId:(NSInteger)placementId {
+    NSLog(@"Failed to load %ld", (long)placementId);
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

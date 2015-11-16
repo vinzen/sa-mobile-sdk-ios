@@ -75,7 +75,16 @@ static id<SALoaderProtocol> delegate;
             }
             
             ad = [SAParser finishAdParsing:ad];
-            ad.adHTML = [SAFormatter formatCreativeDataIntoAdHTML:ad.creative];
+            BOOL isValid = [SAValidator isAdDataValid:ad];
+            
+            if (isValid) {
+                ad.adHTML = [SAFormatter formatCreativeDataIntoAdHTML:ad.creative];
+            } else {
+                if (SALoader.delegate != NULL) {
+                    [SALoader.delegate didFailToLoadAdForPlacementId:placementId];
+                }
+                return;
+            }
             
             //
             if (ad.creative.format == video){
@@ -83,7 +92,7 @@ static id<SALoaderProtocol> delegate;
                 [parser findCorrectVASTClickFor:ad.creative.details.vast withResult:^(NSString *clickURL) {
                     ad.creative.clickURL = clickURL;
                     
-                    if ([SAValidator isAdDataValid:ad]) {
+                    if (isValid) {
                         if (SALoader.delegate != NULL) {
                             [SALoader.delegate didLoadAd:ad];
                         }
@@ -94,7 +103,7 @@ static id<SALoaderProtocol> delegate;
                     }
                 }];
             } else {
-                if ([SAValidator isAdDataValid:ad]) {
+                if (isValid) {
                     if (SALoader.delegate != NULL) {
                         [SALoader.delegate didLoadAd:ad];
                     }

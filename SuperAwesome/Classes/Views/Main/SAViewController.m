@@ -28,34 +28,11 @@
 // Actual implementation of SAViewController
 @implementation SAViewController
 
-// Different constructors for different needs
-- (id) init {
-    if (self = [super init]) {
-        
-    }
-    
-    return self;
-}
-
-- (id) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-        
-    }
-    return self;
-}
-
-- (id) initWithCoder:(NSCoder *)aDecoder {
-    if (self = [super initWithCoder:aDecoder]) {
-        
-    }
-    return self;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     // set bg color
-    self.view.backgroundColor = [UIColor lightGrayColor];
+    self.view.backgroundColor = [UIColor colorWithRed:239.0/255.0f green:239.0f/255.0f blue:239.0f/255.0f alpha:1];
     
     // setup coordinates
     [self setupCoordinates];

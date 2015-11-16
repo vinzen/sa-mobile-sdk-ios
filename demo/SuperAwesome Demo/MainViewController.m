@@ -21,7 +21,9 @@
     NSArray *coic = @[
         @{@"name":@"Banner Ad", @"segue":@"Segue1"},
         @{@"name":@"Video Ad", @"segue":@"Segue2"},
-        @{@"name":@"Interstitial Ad", @"segue":@""},
+        @{@"name":@"Image Interstitial Ad",@"segue":@""},
+        @{@"name":@"Tag Interstitial Ad", @"segue":@""},
+        @{@"name":@"Rich media Interstitial Ad", @"segue":@""},
         @{@"name":@"Fullscreen Video Ad", @"segue":@""}
     ];
     _choices = coic;
@@ -65,9 +67,17 @@
     } else {
         [SALoader setDelegate:self];
         
-        if (indexPath.row == 2) {
+        if (indexPath.row == 2){
+            [[SuperAwesome getInstance] enableTestMode];
             [SALoader loadAdForPlacementId:5692];
+        } else if (indexPath.row == 3) {
+            [[SuperAwesome getInstance] disableTestMode];
+            [SALoader loadAdForPlacementId:27741];
+        } else if (indexPath.row == 4) {
+            [[SuperAwesome getInstance] disableTestMode];
+            [SALoader loadAdForPlacementId:30025];
         } else {
+            [[SuperAwesome getInstance] disableTestMode];
             [SALoader loadAdForPlacementId:21022];
         }
     }
@@ -81,10 +91,23 @@
 
 - (void) didLoadAd:(SAAd *)ad {
     if (ad.placementId == 5692) {
-        SAInterstitialAd *interstitial = [[SAInterstitialAd alloc] init];
-        [interstitial setAd:ad];
-        [self presentViewController:interstitial animated:YES completion:^{
-            [interstitial play];
+        SAInterstitialAd *i1 = [[SAInterstitialAd alloc] init];
+        [i1 setAd:ad];
+        [self presentViewController:i1 animated:YES completion:^{
+            [i1 play];
+        }];
+    } else if (ad.placementId == 27741) {
+        SAInterstitialAd *i2 = [[SAInterstitialAd alloc] init];
+        [i2 setAd:ad];
+        [self presentViewController:i2 animated:YES completion:^{
+            [i2 play];
+        }];
+    } else if (ad.placementId == 30025) {
+        [ad print];
+        SAInterstitialAd *i3 = [[SAInterstitialAd alloc] init];
+        [i3 setAd:ad];
+        [self presentViewController:i3 animated:YES completion:^{
+            [i3 play];
         }];
     } else {
         SAFullscreenVideoAd *fvideo = [[SAFullscreenVideoAd alloc] init];

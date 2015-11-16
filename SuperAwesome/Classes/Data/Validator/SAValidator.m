@@ -42,8 +42,8 @@
                 case video:{
                     // 4.2. if Ad is video and either the video or the vast
                     // tags could not be found, data is not valid
-                    if (ad.creative.details.video == NULL)
-                        return false;
+//                    if (ad.creative.details.video == NULL)
+//                        return false;
                     if (ad.creative.details.vast == NULL)
                         return false;
                     break;

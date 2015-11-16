@@ -1041,6 +1041,9 @@ typedef enum {
     UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin |
     UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
     wv.autoresizesSubviews = YES;
+    wv.scalesPageToFit = YES;
+    wv.contentMode = UIViewContentModeScaleAspectFit;
+    wv.backgroundColor = [UIColor whiteColor];
     
 //    if ([supportedFeatures containsObject:MRAIDSupportsInlineVideo]) {
         wv.allowsInlineMediaPlayback = YES;

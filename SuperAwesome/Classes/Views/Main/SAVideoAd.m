@@ -128,8 +128,6 @@
 - (void) adsLoader:(IMAAdsLoader *)loader failedWithErrorData:(IMAAdLoadingErrorData *)adErrorData {
     [_contentPlayer play];
     
-    [SASender postEventAdFailedToView:ad];
-    
     if ([super.delegate respondsToSelector:@selector(adFailedToShow:)]) {
         [super.delegate adFailedToShow:ad.placementId];
     }
@@ -148,8 +146,6 @@
             break;
         }
         case kIMAAdEvent_STARTED:{
-            
-            [SASender postEventViewableImpression:ad];
             
             if ([super.delegate respondsToSelector:@selector(adWasShown:)]) {
                 [super.delegate adWasShown:ad.placementId];
@@ -209,8 +205,6 @@
 
 - (void)adsManager:(IMAAdsManager *)adsManager didReceiveAdError:(IMAAdError *)error {
     [_contentPlayer play];
-    
-    [SASender postEventAdFailedToView:ad];
     
     if ([super.delegate respondsToSelector:@selector(adFailedToShow:)]) {
         [super.delegate adFailedToShow:ad.placementId];

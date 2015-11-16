@@ -73,7 +73,6 @@
 		789F93928F2AF0CD244B8F54332125B0 /* JSONAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 631B6D202C2837CEDAF3423C649CDFAD /* JSONAPI.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		7AD85FF3AC644E6E30778954B9894B47 /* SAAdProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 238CEE4A0EDC5DD0532A3C5C4ACDA1AB /* SAAdProtocol.h */; };
 		7AE20BDC691445E9B51BFF84197D3E28 /* SKCommonSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 26151CFCAC0070E95BD9AE79ED3A89E8 /* SKCommonSettings.m */; };
-		7D6029AC6D1E14077E9DBF115582C4C1 /* SAEventType.h in Headers */ = {isa = PBXBuildFile; fileRef = 88B30DDA6B0D560440E8563AD6719A46 /* SAEventType.h */; };
 		7EB9ABACD9C131515B5D842D21AF3CF8 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 630449487A2A6A28555AE43878535E6B /* CoreData.framework */; };
 		82785769067BE6F023C2F92D7DAE3E38 /* JSONModel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CF66D46D62E339FDA898A8039BFE0AD1 /* JSONModel-dummy.m */; };
 		8A4DA9737D6E15AAC9BB89BB68F1F481 /* SAVideoAdProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EE555B68A34C7DEDD0A8D6F4C21D8C6 /* SAVideoAdProtocol.h */; };
@@ -285,7 +284,6 @@
 		83B49B2499A1AA233414DEB1845A8D89 /* Pods-SuperAwesome Demo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SuperAwesome Demo-dummy.m"; sourceTree = "<group>"; };
 		871B56DBBB2CF63FEFB7C386FBC3F439 /* SAFormatter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SAFormatter.h; sourceTree = "<group>"; };
 		8730A0B1F392D33A29F16274BA466F9C /* UIViewController+Utils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Utils.h"; sourceTree = "<group>"; };
-		88B30DDA6B0D560440E8563AD6719A46 /* SAEventType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SAEventType.h; sourceTree = "<group>"; };
 		8CB13F2EDB99CD08AC38F95504B241D7 /* SAParentalGate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SAParentalGate.m; sourceTree = "<group>"; };
 		8D0D231E95AB533C24F5327434D33785 /* start_selected.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = start_selected.png; sourceTree = "<group>"; };
 		8FF61811895946E469769C63D5659D47 /* JSONModel.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JSONModel.xcconfig; sourceTree = "<group>"; };
@@ -603,7 +601,6 @@
 		66A8343047D96ECDE620C5071F94BA67 /* Sender */ = {
 			isa = PBXGroup;
 			children = (
-				88B30DDA6B0D560440E8563AD6719A46 /* SAEventType.h */,
 				C8C7C5864F71812838640DD65053B168 /* SASender.h */,
 				F8ACCE11BDA395181718BFE96B33E065 /* SASender.m */,
 			);
@@ -970,7 +967,6 @@
 				ED5C7D6459BE5C84182FDCCEED56AE09 /* SABannerAd.h in Headers */,
 				3FA2D4C502C05553957AD1DE768D7E38 /* SACreative.h in Headers */,
 				6F86BF51A3F171DA3B5990921E5F0869 /* SADetails.h in Headers */,
-				7D6029AC6D1E14077E9DBF115582C4C1 /* SAEventType.h in Headers */,
 				47C7C647D1EE3608F81F74DCC2699D42 /* SAFormatter.h in Headers */,
 				A4CB47C882A885EBD1B9DAD43BBC8E4F /* SAFullscreenVideoAd.h in Headers */,
 				29EE74A73B6D57F111398613AE406F59 /* SAInterstitialAd.h in Headers */,

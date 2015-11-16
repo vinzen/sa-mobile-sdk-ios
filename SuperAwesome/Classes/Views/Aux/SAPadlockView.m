@@ -148,7 +148,7 @@
 - (IBAction)okBtnAction:(id)sender {
     
     if (_currentRating > 0) {
-        [SASender postEventAdRate:_ad withValue:_currentRating];
+//        [SASender postEventAdRate:_ad withValue:_currentRating];
     }
     
     [self closeThisView];

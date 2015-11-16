@@ -98,9 +98,6 @@
     
     // action block #1
     actionBlock cancelBlock = ^(UIAlertAction *action) {
-        // log the action
-        [SASender postEventPGCancel:_ad];
-        
         // calls to delegate or blocks
 #pragma mark Normal iOS behaviour
         if(self.delegate && [self.delegate respondsToSelector:@selector(parentalGateWasCanceled)]){
@@ -125,10 +122,6 @@
         // what happens when you get a right solution
         if([input integerValue] == self.solution){
             
-            // send a server message
-            [SASender postEventClick:_ad];
-            [SASender postEventPGSuccess:_ad];
-            
             // call to delegate
 #pragma mark Normal iOS behaviour
             if(self.delegate && [self.delegate respondsToSelector:@selector(parentalGateWasSucceded)]){
@@ -142,9 +135,6 @@
         }
         // or a bad solution
         else{
-            // log error
-            [SASender postEventPGError:_ad];
-            
             // ERROR
             _wrongAnswerAlertView = [[UIAlertView alloc] initWithTitle:SA_ERROR_ALERTVIEW_TITLE
                                                                message:SA_ERROR_ALERTVIEW_MESSAGE

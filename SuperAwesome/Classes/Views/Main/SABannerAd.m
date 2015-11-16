@@ -71,7 +71,7 @@
 #pragma mark MKRAID View delegate
 
 - (void) mraidViewAdReady:(SKMRAIDView *)mraidView {
-    [SASender postEventViewableImpression:ad];
+    [SASender sendEventForURL:ad.creative.viewableImpressionURL];
     
     if ([super.delegate respondsToSelector:@selector(adWasShown:)]) {
         [super.delegate adWasShown:ad.placementId];
@@ -79,7 +79,6 @@
 }
 
 - (void) mraidViewAdFailed:(SKMRAIDView *)mraidView {
-    [SASender postEventAdFailedToView:ad];
     
     if ([super.delegate respondsToSelector:@selector(adFailedToShow:)]) {
         [super.delegate adFailedToShow:ad.placementId];

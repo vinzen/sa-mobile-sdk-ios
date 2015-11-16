@@ -41,7 +41,7 @@
     // check for empty failure
     _Nullable id creativeObj = [maindict objectForKey:@"creative"];
     if (creativeObj == NULL) {
-        return nil;
+        return [[SACreative alloc] init];
     }
     
     NSDictionary *dict = (NSDictionary*)creativeObj;
@@ -71,12 +71,12 @@
     // check for empty failure
     _Nullable id creativeObj = [maindict objectForKey:@"creative"];
     if (creativeObj == NULL) {
-        return nil;
+        return [[SADetails alloc] init];
     }
     
     _Nullable id detailsObj = [(NSDictionary*)creativeObj objectForKey:@"details"];
     if (detailsObj == NULL) {
-        return nil;
+        return [[SADetails alloc] init];
     }
     
     NSDictionary *dict = (NSDictionary*)detailsObj;
@@ -139,7 +139,9 @@
                                                                                       NULL,
                                                                                       (__bridge CFStringRef)@"!*'\"();:@&=+$,/?%#[]% ",
                                                                                       CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding)));
-    ad.creative.viewableImpressionURL = [NSString stringWithFormat:@"https://ads.superawesome.tv/v2/event?data=%@", encodedJSON];
+    ad.creative.viewableImpressionURL = [NSString stringWithFormat:@"%@/event?data=%@",
+                                         [[SuperAwesome getInstance] getBaseURL],
+                                         encodedJSON];
     
     
     return ad;

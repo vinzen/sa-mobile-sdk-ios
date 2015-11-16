@@ -70,11 +70,9 @@ static id<SALoaderProtocol> delegate;
             SAAd *ad = [SAParser parseAdWithDictionary:json];
             ad.placementId = placementId;
             ad.creative = [SAParser parseCreativeWithDictionary:json];
-            if (ad.creative) {
-                ad.creative.details = [SAParser parseDetailsWithDictionary:json];
-            }
-            
+            ad.creative.details = [SAParser parseDetailsWithDictionary:json];
             ad = [SAParser finishAdParsing:ad];
+            
             BOOL isValid = [SAValidator isAdDataValid:ad];
             
             if (isValid) {
@@ -93,22 +91,22 @@ static id<SALoaderProtocol> delegate;
                     ad.creative.clickURL = clickURL;
                     
                     if (isValid) {
-                        if (SALoader.delegate != NULL) {
+                        if (SALoader.delegate != NULL && [SALoader.delegate respondsToSelector:@selector(didLoadAd:)]) {
                             [SALoader.delegate didLoadAd:ad];
                         }
                     } else {
-                        if (SALoader.delegate != NULL) {
+                        if (SALoader.delegate != NULL && [SALoader.delegate respondsToSelector:@selector(didFailToLoadAdForPlacementId:)]) {
                             [SALoader.delegate didFailToLoadAdForPlacementId:placementId];
                         }
                     }
                 }];
             } else {
                 if (isValid) {
-                    if (SALoader.delegate != NULL) {
+                    if (SALoader.delegate != NULL && [SALoader.delegate respondsToSelector:@selector(didLoadAd:)]) {
                         [SALoader.delegate didLoadAd:ad];
                     }
                 } else {
-                    if (SALoader.delegate != NULL) {
+                    if (SALoader.delegate != NULL && [SALoader.delegate respondsToSelector:@selector(didFailToLoadAdForPlacementId:)]) {
                         [SALoader.delegate didFailToLoadAdForPlacementId:placementId];
                     }
                 }

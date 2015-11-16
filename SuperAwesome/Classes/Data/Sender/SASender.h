@@ -20,6 +20,6 @@
 @interface SASender : NSObject
 
 // just send an event to a URL
-+ (void) sendEventForURL:(NSString*)url;
++ (void) sendEventToURL:(NSString*)url;
 
 @end

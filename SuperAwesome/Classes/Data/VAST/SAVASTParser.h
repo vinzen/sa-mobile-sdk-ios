@@ -10,9 +10,6 @@
 
 #import <Foundation/Foundation.h>
 
-// include the SAVASTProtocol
-#import "SAVASTProtocol.h"
-
 // callback for a success method with AD response
 typedef void (^parseResult)(NSString *clickURL);
 

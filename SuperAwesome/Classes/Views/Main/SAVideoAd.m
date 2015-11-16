@@ -20,10 +20,6 @@
 #import "IMAAdDisplayContainer.h"
 #import "IMAUiElements.h"
 
-// import SAVASTParser and Protocol
-#import "SAVASTProtocol.h"
-#import "SAVASTParser.h"
-
 // import models
 #import "SAAd.h"
 #import "SACreative.h"
@@ -58,9 +54,6 @@
 
 // notif center
 @property (nonatomic, strong) NSNotificationCenter *notifCenter;
-
-// create a XML parser
-@property (nonatomic, strong) SAVASTParser *parser;
 
 @end
 

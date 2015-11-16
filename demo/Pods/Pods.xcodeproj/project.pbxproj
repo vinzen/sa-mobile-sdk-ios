@@ -22,7 +22,6 @@
 		14C4A0BA503C5853BBFE75486F35FAF6 /* SKMRAIDResizeProperties.h in Headers */ = {isa = PBXBuildFile; fileRef = EA1861EBE997A8D69086FA7D522DE228 /* SKMRAIDResizeProperties.h */; };
 		181FBDB009C8A0565A60D8F8AB0CCAFA /* NSArray+JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 50D3029F82255646E4073215B98FA3B2 /* NSArray+JSONModel.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		185CFAB1606A253ACA87FEC2CCF4A64F /* SAParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1413023BBCFB832CA79B61738F825917 /* SAParser.m */; };
-		1BB8F6621BE1177A000103CD /* SAVASTProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BB8F6601BE1177A000103CD /* SAVASTProtocol.h */; };
 		1BB8F6661BE11784000103CD /* SAVASTParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BB8F6641BE11784000103CD /* SAVASTParser.h */; };
 		1BB8F6671BE11784000103CD /* SAVASTParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BB8F6651BE11784000103CD /* SAVASTParser.m */; };
 		1C53A2040FEDADA7D925E6403766182D /* NSArray+JSONModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A0FE9E66B7A876C55F6B9C1030BD496 /* NSArray+JSONModel.h */; };
@@ -206,7 +205,6 @@
 		16E1F88C029BF13585429179DE887B02 /* WeakRefClass.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = WeakRefClass.m; sourceTree = "<group>"; };
 		16F6580ED81E9643D66340ED7869A03F /* JSONModelClassProperty.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSONModelClassProperty.m; path = JSONModel/JSONModel/JSONModelClassProperty.m; sourceTree = "<group>"; };
 		18C1B3216CB5EEF01F641D1BD9871280 /* SKMRAIDModalViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SKMRAIDModalViewController.m; sourceTree = "<group>"; };
-		1BB8F6601BE1177A000103CD /* SAVASTProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAVASTProtocol.h; sourceTree = "<group>"; };
 		1BB8F6641BE11784000103CD /* SAVASTParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAVASTParser.h; sourceTree = "<group>"; };
 		1BB8F6651BE11784000103CD /* SAVASTParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAVASTParser.m; sourceTree = "<group>"; };
 		1E6FBBB40ABA4530407FCA511AB0E60C /* Pods-SuperAwesome Demo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SuperAwesome Demo-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -473,7 +471,6 @@
 		1BB8F65F1BE1174B000103CD /* VAST */ = {
 			isa = PBXGroup;
 			children = (
-				1BB8F6601BE1177A000103CD /* SAVASTProtocol.h */,
 				1BB8F6641BE11784000103CD /* SAVASTParser.h */,
 				1BB8F6651BE11784000103CD /* SAVASTParser.m */,
 			);
@@ -973,7 +970,6 @@
 				E27455D8EE45B15DA54A74CF5F394D99 /* SALoader.h in Headers */,
 				FAFDB5BCB91D004890E11F5265643F54 /* SALoaderProtocol.h in Headers */,
 				0A946A1F576327C91C02E608E4121F98 /* SANetwork.h in Headers */,
-				1BB8F6621BE1177A000103CD /* SAVASTProtocol.h in Headers */,
 				90D953F6C9D1B63BFE282FD8697A6CC7 /* SAPadlockView.h in Headers */,
 				1BB8F6661BE11784000103CD /* SAVASTParser.h in Headers */,
 				135C00F45FE8D3EABEE3AF0606F42105 /* SAParentalGate.h in Headers */,

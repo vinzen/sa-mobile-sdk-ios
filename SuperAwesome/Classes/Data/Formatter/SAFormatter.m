@@ -18,7 +18,7 @@
 + (NSString*) formatCreativeDataIntoAdHTML:(SACreative*)creative {
     
     switch (creative.format) {
-        case image_with_link:{
+        case image:{
             return [self formatCreativeIntoImageHTML:creative];
             break;
         }
@@ -26,16 +26,8 @@
             return [self formatCreativeIntoVideoHTML:creative];
             break;
         }
-        case rich_media:{
+        case rich:{
             return [self formatCreativeIntoRichMediaHTML:creative];
-            break;
-        }
-        case rich_media_resizing:{
-            return [self formatCreativeIntoRichMediaResizingHTML:creative];
-            break;
-        }
-        case swf:{
-            return [self formatCreativeIntoSWFHTML:creative];
             break;
         }
         case tag:{
@@ -68,16 +60,6 @@
     NSString *htmlString = [NSString stringWithContentsOfFile:fPath encoding:NSUTF8StringEncoding error:nil];
     htmlString = [htmlString stringByReplacingOccurrencesOfString:@"richMediaURL" withString:richMediaURL];
     return htmlString;
-}
-
-+ (NSString*) formatCreativeIntoRichMediaResizingHTML:(SACreative*)creative {
-    // tbd
-    return @"";
-}
-
-+ (NSString*) formatCreativeIntoSWFHTML:(SACreative*)creative {
-    // not implemented anymore
-    return @"";
 }
 
 + (NSString*) formatCreativeIntoTagHTML:(SACreative*)creative {

@@ -35,7 +35,7 @@
 @interface SuperAwesome : NSObject
 
 // singleton instance (instead of init)
-+ (SuperAwesome *)sharedManager;
++ (SuperAwesome *)getInstance;
 
 // current SDK version
 - (NSString*) version;

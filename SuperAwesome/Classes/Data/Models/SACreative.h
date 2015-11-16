@@ -61,4 +61,7 @@ typedef enum SACreativeFormat {
 // pointer to a SADetails object containing even more creative information
 @property (nonatomic, strong) SADetails *details;
 
+// aux print func
+- (void) print;
+
 @end

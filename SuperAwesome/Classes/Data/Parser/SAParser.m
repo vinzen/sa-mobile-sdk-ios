@@ -12,7 +12,6 @@
 #import "SAAd.h"
 #import "SACreative.h"
 #import "SADetails.h"
-#import "SAStringifier.h"
 #import "SuperAwesome.h"
 
 // parser implementation
@@ -23,7 +22,7 @@
     
     _Nullable id errorObj = [dict objectForKey:@"error"];
     _Nullable id lineItemIdObj = [dict objectForKey:@"line_item_id"];
-    _Nullable id campaignIdObj = [dict objectForKey:@"campaing_id"];
+    _Nullable id campaignIdObj = [dict objectForKey:@"campaign_id"];
     _Nullable id isTestObj = [dict objectForKey:@"test"];
     _Nullable id isFallbackObj = [dict objectForKey:@"is_fallback"];
     _Nullable id isFillObj = [dict objectForKey:@"is_fill"];
@@ -124,14 +123,23 @@
     else if ([ad.creative.baseFormat containsString:@"rich_media"])    ad.creative.format = rich;
     else if ([ad.creative.baseFormat isEqualToString:@"tag"])          ad.creative.format = tag;
     
-    NSString *baseURL = [[SuperAwesome sharedManager] getBaseURL];
-    ad.creative.clickURL = [NSString stringWithFormat:@"%@/click?placement=%d&line_item=%d&creative=%d&redir=%@",
-                            [[SuperAwesome sharedManager] getBaseURL],
-                            ad.placementId,
-                            ad.lineItemId,
-                            ad.creative.creativeId,]
+    ad.creative.clickURL = [NSString stringWithFormat:@"%@/click?placement=%ld&line_item=%ld&creative=%ld&redir=%@",
+                            [[SuperAwesome getInstance] getBaseURL],
+                            (long)ad.placementId,
+                            (long)ad.lineItemId,
+                            (long)ad.creative.creativeId,
+                            ad.creative.targetURL];
     
-    NSString *abc = @"{\"placement\":5692,\"creative\":-1,\"line_item\":-1,\"type\":\"viewable_impression\"}";
+    NSString *stringJOSN = [NSString stringWithFormat:@"{\"placement\":%ld,\"creative\":%ld,\"line_item\":%ld,\"type\":\"viewable_impression\"}",
+                            (long)ad.placementId,
+                            (long)ad.creative.creativeId,
+                            (long)ad.lineItemId];
+    NSString *encodedJSON = CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(NULL,
+                                                                                      (__bridge CFStringRef)stringJOSN,
+                                                                                      NULL,
+                                                                                      (__bridge CFStringRef)@"!*'\"();:@&=+$,/?%#[]% ",
+                                                                                      CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding)));
+    ad.creative.viewableImpressionURL = [NSString stringWithFormat:@"https://ads.superawesome.tv/v2/event?data=%@", encodedJSON];
     
     
     return ad;

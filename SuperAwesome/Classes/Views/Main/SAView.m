@@ -52,7 +52,7 @@
 }
 
 - (void) playInstant {
-    [[SALoader sharedManager] loadAdForPlacementId:_placementId withAd:^(SAAd *_ad) {
+    [[SALoader getInstance] loadAdForPlacementId:_placementId withAd:^(SAAd *_ad) {
         ad = _ad;
         [self display];
     } orFailure:^{

@@ -15,6 +15,7 @@
 #import "SAParser.h"
 #import "SAValidator.h"
 #import "SAFormatter.h"
+#import "SAVASTParser.h"
 
 // import model headers
 #import "SAAd.h"
@@ -31,7 +32,7 @@
 @implementation SALoader
 
 // Singleton implementation
-+ (SALoader *)sharedManager {
++ (SALoader *)getInstance {
     static SALoader *sharedManager = nil;
     @synchronized(self) {
         if (sharedManager == nil){
@@ -54,8 +55,8 @@
 - (void) loadAdForPlacementId:(NSInteger)placementId withAd:(gotad)gotad orFailure:(failure)failure {
     
     // First thing to do is format the AA URL to get an ad, based on specs
-    NSString *endpoint = [NSString stringWithFormat:@"%@/ad/%ld", [[SuperAwesome sharedManager] getBaseURL], (long)placementId];
-    BOOL isTest = [[SuperAwesome sharedManager] isTestingEnabled];
+    NSString *endpoint = [NSString stringWithFormat:@"%@/ad/%ld", [[SuperAwesome getInstance] getBaseURL], (long)placementId];
+    BOOL isTest = [[SuperAwesome getInstance] isTestingEnabled];
     NSDictionary *dict = @{@"test": [NSNumber numberWithBool:isTest]};
     
     // The second operation to perform is calling a SANetwork class function
@@ -83,17 +84,27 @@
                 ad.creative.details = [SAParser parseDetailsWithDictionary:json];
             }
             
-            // at the end, before we go on to parsing and returning the ad in
-            // a callback, we have to validate the ad one more time, to see
-            // if logically it makes any sense, using the SAValidator class
-            // function
-            if ([SAValidator isAdDataValid:ad]) {
-                ad.adHTML = [SAFormatter formatCreativeDataIntoAdHTML:ad.creative];
-                gotad(ad);
-            }
-            // utter failure case
-            else {
-                failure();
+            ad = [SAParser finishAdParsing:ad];
+            ad.adHTML = [SAFormatter formatCreativeDataIntoAdHTML:ad.creative];
+            
+            //
+            if (ad.creative.format == video){
+                SAVASTParser *parser = [[SAVASTParser alloc] init];
+                [parser findCorrectVASTClickFor:ad.creative.details.vast withResult:^(NSString *clickURL) {
+                    ad.creative.clickURL = clickURL;
+                    
+                    if ([SAValidator isAdDataValid:ad]) {
+                        gotad(ad);
+                    } else {
+                        failure();
+                    }
+                }];
+            } else {
+                if ([SAValidator isAdDataValid:ad]) {
+                    gotad(ad);
+                } else {
+                    failure();
+                }
             }
         }
         

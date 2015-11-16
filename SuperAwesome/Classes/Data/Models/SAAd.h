@@ -46,4 +46,7 @@
 // pointer to the creative data associated with the ad
 @property (nonatomic, strong) SACreative *creative;
 
+// aux print func
+- (void) print;
+
 @end

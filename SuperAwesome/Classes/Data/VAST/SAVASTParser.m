@@ -19,17 +19,19 @@
 @property (nonatomic, strong) NSXMLParser *parser;
 @property (nonatomic, strong) NSString *element;
 @property (nonatomic, strong) NSMutableString *tmpClickURL;
+@property (nonatomic, assign) parseResult localFunc;
 
 @end
 
 // proper implementation of the SAVAST parser object
 @implementation SAVASTParser
 
-- (void) findCorrectVASTClick:(NSString *)vastURL {
+- (void) findCorrectVASTClickFor:(NSString *)vastURL withResult:(parseResult)result {
     NSURL *url = [NSURL URLWithString:vastURL];
     _parser = [[NSXMLParser alloc] initWithContentsOfURL:url];
     _parser.delegate = self;
     _parser.shouldResolveExternalEntities = NO;
+    _localFunc = result;
     [_parser parse];
 }
 
@@ -58,9 +60,12 @@
 }
 
 - (void) parserDidEndDocument:(NSXMLParser *)parser {
-    if (_delegate != NULL && [_delegate respondsToSelector:@selector(didFindVASTClickURL:)]) {
-        [_delegate didFindVASTClickURL:_tmpClickURL];
+    if (_localFunc != NULL) {
+        _localFunc(_tmpClickURL);
     }
+//    if (_delegate != NULL && [_delegate respondsToSelector:@selector(didFindVASTClickURL:)]) {
+//        [_delegate didFindVASTClickURL:_tmpClickURL];
+//    }
 }
 
 @end

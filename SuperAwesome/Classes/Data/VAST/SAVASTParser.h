@@ -13,16 +13,16 @@
 // include the SAVASTProtocol
 #import "SAVASTProtocol.h"
 
+// callback for a success method with AD response
+typedef void (^parseResult)(NSString *clickURL);
+
 //
 // @brief: This is a wrapper around NSXMLParser
 // It's goal is to parse a standard VAST Tag and find the ClickThrough tag's
 // value, which is the correct clickURL in case of video ads
 @interface SAVASTParser : NSObject
 
-// delegate
-@property id<SAVASTProtocol> delegate;
-
 // static function that performs the VAST Tag parsing
-- (void) findCorrectVASTClick:(NSString*)vastURL;
+- (void) findCorrectVASTClickFor:(NSString*)vastURL withResult:(parseResult)result;
 
 @end

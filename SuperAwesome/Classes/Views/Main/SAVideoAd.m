@@ -97,8 +97,8 @@
     [super display];
     
     _parser = [[SAVASTParser alloc] init];
-    _parser.delegate = self;
-    [_parser findCorrectVASTClick:ad.creative.details.vast];
+//    _parser.delegate = self;
+//    [_parser findCorrectVASTClick:ad.creative.details.vast];
 }
 
 - (void) delayedDisplay {

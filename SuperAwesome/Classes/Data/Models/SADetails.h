@@ -62,4 +62,7 @@
 // aux value needed when sending ad data like rating and such
 @property (nonatomic, assign) NSInteger value;
 
+// aux print function
+- (void) print;
+
 @end

@@ -33,10 +33,12 @@ typedef void (^gotad)(SAAd *ad);
 @property id<SALoaderProtocol> delegate;
 
 // singleton instance (instead of init)
-+ (SALoader *)sharedManager;
++ (SALoader *)getInstance;
 
 // preload ad function;
 // does not return anything directly, but via the SALoaderProtocol delegate
 - (void) preloadAdForPlacementId:(NSInteger)placementId;
+
+- (void) loadAdForPlacementId:(NSInteger)placementId withAd:(gotad)gotad orFailure:(failure)failure;
 
 @end

@@ -19,8 +19,14 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    [[SuperAwesome sharedManager] setConfigurationProduction];
-    [[SuperAwesome sharedManager] enableTestMode];
+    [[SuperAwesome getInstance] setConfigurationProduction];
+    [[SuperAwesome getInstance] disableTestMode];
+    
+    [[SALoader getInstance] loadAdForPlacementId:24541 withAd:^(SAAd *ad) {
+        [ad print];
+    } orFailure:^{
+        NSLog(@"Failure to load");
+    }];
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     self.window.tintColor = [UIColor whiteColor];

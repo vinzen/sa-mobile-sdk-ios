@@ -31,7 +31,7 @@
 
 // Anon Category of SAView to maintain some functions private
 @interface SAView ()
-- (void) clickOnAd;
+- (void) tryToGoToURL:(NSURL*)url;
 - (void) createPadlockButtonWithParent:(UIView *)parent;
 - (void) removePadlockButtonFromParent;
 - (void) resizeToFrame:(CGRect)toframe;
@@ -213,7 +213,7 @@
 }
 
 - (void) gotoURL: (id)sender {
-    [self clickOnAd];
+    [self tryToGoToURL:NULL];
 }
 
 #pragma mark Resize

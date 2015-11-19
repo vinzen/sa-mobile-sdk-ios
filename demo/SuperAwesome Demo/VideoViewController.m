@@ -19,9 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [[SuperAwesome getInstance] enableTestMode];
     [SALoader setDelegate:self];
-    [SALoader loadAdForPlacementId:5740];
+    [SALoader loadAdForPlacementId:21245];
     
     // Do any additional setup after loading the view.
 }

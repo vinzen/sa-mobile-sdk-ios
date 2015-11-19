@@ -35,6 +35,9 @@ typedef void(^interactionBlock) (NSString *adname);
 // delegate
 @property (nonatomic,weak) id<SAParentalGateProtocol> delegate;
 
+// the URL the parental gate should go to
+@property (nonatomic, strong) NSURL *gotoURL;
+
 // show function
 - (void) show;
 

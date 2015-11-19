@@ -68,16 +68,12 @@
         [SALoader setDelegate:self];
         
         if (indexPath.row == 2){
-            [[SuperAwesome getInstance] enableTestMode];
-            [SALoader loadAdForPlacementId:5692];
+            [SALoader loadAdForPlacementId:10324];
         } else if (indexPath.row == 3) {
-            [[SuperAwesome getInstance] disableTestMode];
-            [SALoader loadAdForPlacementId:27741];
+            [SALoader loadAdForPlacementId:10278];
         } else if (indexPath.row == 4) {
-            [[SuperAwesome getInstance] disableTestMode];
             [SALoader loadAdForPlacementId:30025];
         } else {
-            [[SuperAwesome getInstance] disableTestMode];
             [SALoader loadAdForPlacementId:21022];
         }
     }
@@ -90,20 +86,22 @@
 #pragma mark <SALoaderProtocol>
 
 - (void) didLoadAd:(SAAd *)ad {
-    if (ad.placementId == 5692) {
+    [ad print];
+    
+    if (ad.placementId == 10324) {
         SAInterstitialAd *i1 = [[SAInterstitialAd alloc] init];
         [i1 setAd:ad];
         [self presentViewController:i1 animated:YES completion:^{
             [i1 play];
         }];
-    } else if (ad.placementId == 27741) {
+    } else if (ad.placementId == 10278) {
         SAInterstitialAd *i2 = [[SAInterstitialAd alloc] init];
         [i2 setAd:ad];
+//        i2.isParentalGateEnabled = true;
         [self presentViewController:i2 animated:YES completion:^{
             [i2 play];
         }];
     } else if (ad.placementId == 30025) {
-        [ad print];
         SAInterstitialAd *i3 = [[SAInterstitialAd alloc] init];
         [i3 setAd:ad];
         [self presentViewController:i3 animated:YES completion:^{

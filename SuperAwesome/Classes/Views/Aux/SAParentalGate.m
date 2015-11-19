@@ -124,8 +124,8 @@
             
             // call to delegate
 #pragma mark Normal iOS behaviour
-            if(self.delegate && [self.delegate respondsToSelector:@selector(parentalGateWasSucceded)]){
-                [self.delegate parentalGateWasSucceded];
+            if(self.delegate && [self.delegate respondsToSelector:@selector(parentalGateWasSuccededAndShouldGoTo:)]){
+                [self.delegate parentalGateWasSuccededAndShouldGoTo:_gotoURL];
             }
             
 #pragma mark Unity / iOS behaviour

@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+3.0 Beta 2
+ - Rewriting video and rich media ads
+ - Internal improvements
+
 3.0 Beta
  - Rewriting the iOS SDK for better code
 

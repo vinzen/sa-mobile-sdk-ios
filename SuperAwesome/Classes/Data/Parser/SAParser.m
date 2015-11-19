@@ -123,11 +123,14 @@
     else if ([ad.creative.baseFormat containsString:@"rich_media"])    ad.creative.format = rich;
     else if ([ad.creative.baseFormat isEqualToString:@"tag"])          ad.creative.format = tag;
     
-    ad.creative.clickURL = [NSString stringWithFormat:@"%@/click?placement=%ld&line_item=%ld&creative=%ld&redir=%@",
-                            [[SuperAwesome getInstance] getBaseURL],
-                            (long)ad.placementId,
-                            (long)ad.lineItemId,
-                            (long)ad.creative.creativeId,
+    ad.creative.trackingURL = [NSString stringWithFormat:@"%@/click?placement=%ld&line_item=%ld&creative=%ld",
+                               [[SuperAwesome getInstance] getBaseURL],
+                               (long)ad.placementId,
+                               (long)ad.lineItemId,
+                               (long)ad.creative.creativeId];
+    
+    ad.creative.clickURL = [NSString stringWithFormat:@"%@&redir=%@",
+                            ad.creative.trackingURL,
                             ad.creative.targetURL];
     
     NSString *stringJOSN = [NSString stringWithFormat:@"{\"placement\":%ld,\"creative\":%ld,\"line_item\":%ld,\"type\":\"viewable_impression\"}",

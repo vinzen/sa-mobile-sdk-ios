@@ -48,6 +48,9 @@ typedef enum SACreativeFormat {
 // which the ad points
 @property (nonatomic, strong) NSString *targetURL;
 
+// the tracking URL
+@property (nonatomic, strong) NSString *trackingURL;
+
 // the actual click URL - contains the base targetURL as well as a call to the
 // ad server to register the click
 @property (nonatomic, strong) NSString *clickURL;

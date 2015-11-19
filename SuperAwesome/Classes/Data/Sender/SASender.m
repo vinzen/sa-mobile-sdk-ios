@@ -24,7 +24,7 @@
 
 // (private) sa sender function
 
-+ (void) sendEventForURL:(NSString *)url {
++ (void) sendEventToURL:(NSString *)url {
     [SANetwork sendGETtoEndpoint:url withQueryDict:@{} andSuccess:^(NSData *data) {} orFailure:^{}];
 }
 

@@ -22,6 +22,7 @@
 // import utils
 #import "SAUtils.h"
 #import "SASender.h"
+#import "SAParentalGate.h"
 
 // Declaration of SAView anonymous category
 // basically making sure that all these functions stay "private" for the
@@ -30,7 +31,7 @@
 // to use these functions
 @interface SAView ()
 - (CGRect) arrangeAdInFrame:(CGRect)frame;
-- (void) clickOnAd;
+- (void) tryToGoToURL:(NSURL*)url;
 - (void) createPadlockButtonWithParent:(UIView *)parent;
 - (void) removePadlockButtonFromParent;
 - (void) resizeToFrame:(CGRect)toframe;
@@ -86,7 +87,13 @@
 }
 
 - (void) mraidViewNavigate:(SKMRAIDView *)mraidView withURL:(NSURL *)url {
-    [self clickOnAd];
+    
+    if (super.isParentalGateEnabled) {
+        gate.gotoURL = url;
+        [gate show];
+    } else {
+        [self tryToGoToURL:url];
+    }
 }
 
 #pragma mark Resize

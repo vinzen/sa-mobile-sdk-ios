@@ -25,6 +25,6 @@
 
 // called when parental gate btn "continue" is pressed, and the numbers match
 // (e..g user goes forward to ad)
-- (void)parentalGateWasSucceded;
+- (void)parentalGateWasSuccededAndShouldGoTo:(NSURL*)url;
 
 @end

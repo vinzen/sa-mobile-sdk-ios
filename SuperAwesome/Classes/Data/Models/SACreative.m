@@ -23,6 +23,7 @@
     NSLog(@"\t format: %ld", (long)_format);
     NSLog(@"\t impressionURL: %@", _impressionURL);
     NSLog(@"\t targetURL: %@", _targetURL);
+    NSLog(@"\t trackingURL: %@", _trackingURL);
     NSLog(@"\t clickURL: %@", _clickURL);
     NSLog(@"\t viewableImpressionURL: %@", _viewableImpressionURL);
     NSLog(@"\t approved: %d", _approved);

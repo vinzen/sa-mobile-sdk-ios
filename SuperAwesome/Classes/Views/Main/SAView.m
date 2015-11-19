@@ -43,6 +43,9 @@
 
 - (void) setAd:(SAAd *)_ad {
     ad = _ad;
+    
+    gate = [[SAParentalGate alloc] initWithAd:ad];
+    gate.delegate = self;
 }
 
 - (void) play {
@@ -52,24 +55,34 @@
 
 #pragma mark Normal click
 
-- (void) clickOnAd {
-    // follow URL
-    if (self.isParentalGateEnabled) {
-        if(gate == nil){
-            gate = [[SAParentalGate alloc] initWithAd:ad];
-            gate.delegate = self;
-        }
-        [gate show];
+- (void) tryToGoToURL:(NSURL*)url {
+    
+    // call delegate
+    if (_delegate && [_delegate respondsToSelector:@selector(adWasClicked:)]) {
+        [_delegate adWasClicked:ad.placementId];
     }
-    else {
-        // call delegate
-        if (_delegate && [_delegate respondsToSelector:@selector(adWasClicked:)]){
-            [_delegate adWasClicked:ad.placementId];
-        }
-        
-        // open URL
-        NSURL *url = [NSURL URLWithString:ad.creative.clickURL];
-        [[UIApplication sharedApplication] openURL:url];
+    
+    // simplest case scenario - image
+    if (ad.creative.format == image) {
+        NSURL *imgURL = [NSURL URLWithString:ad.creative.clickURL];
+        [[UIApplication sharedApplication] openURL:imgURL];
+    }
+    // edge case rich media
+    else if (ad.creative.format == rich) {
+        // do nothing here
+    }
+    // edge case tag ad
+    else if (ad.creative.format == tag) {
+        NSString *startURL = [url absoluteString];
+        NSString *okURL = [startURL substringFromIndex:[startURL rangeOfString:@"http"].location];
+        NSString *finalURL = [NSString stringWithFormat:@"%@&redir=%@", ad.creative.trackingURL, okURL];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:finalURL]];
+    }
+    // edge case video
+    else if (ad.creative.format == video) {
+        NSLog(@"CLICK: %@", ad.creative.clickURL);
+        NSURL *imgURL = [NSURL URLWithString:ad.creative.clickURL];
+        [[UIApplication sharedApplication] openURL:imgURL];
     }
 }
 
@@ -87,18 +100,12 @@
     }
 }
 
-- (void) parentalGateWasSucceded {
-    if (_delegate && [_delegate respondsToSelector:@selector(adWasClicked:)]){
-        [_delegate adWasClicked:ad.placementId];
-    }
-    
-    if (_delegate && [_delegate respondsToSelector:@selector(parentalGateWasSucceded:)]) {
+- (void) parentalGateWasSuccededAndShouldGoTo:(NSURL *)url {
+    if (_delegate && [_delegate respondsToSelector:@selector(parentalGateWasSucceded:)]){
         [_delegate parentalGateWasSucceded:ad.placementId];
     }
     
-    // open URL
-    NSURL *url = [NSURL URLWithString:ad.creative.clickURL];
-    [[UIApplication sharedApplication] openURL:url];
+    [self tryToGoToURL:url];
 }
 
 #pragma mark Padlock

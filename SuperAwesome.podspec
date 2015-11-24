@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "SuperAwesome"
-  s.version      = "3.0_beta2"
+  s.version      = "3.0-beta2"
   s.summary      = "SuperAwesome Mobile SDK for iOS"
 
   s.description  = <<-DESC
@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
   s.resources = "SuperAwesome/Resources/*"
 
   s.default_subspec = 'Default'
-  
+
   s.subspec 'Default' do |default|
     default.dependency "GoogleAds-IMA-iOS-SDK", "3.0.beta.12"
   end

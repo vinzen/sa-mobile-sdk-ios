@@ -10,10 +10,8 @@
 
 #import "SANetwork.h"
 
-// define a USER_AGENT string so the server knows that it was an iOS mobile
-// device who sent the GET or POST request, and can determine exactly which
-// ad to send
-#define USER_AGENT @"Mozilla/5.0 (iPad; CPU OS 7_0 like Mac OS X) AppleWebKit/537.51.1 (KHTML, like Gecko) CriOS/30.0.1599.12 Mobile/11A465 Safari/8536.25 (3B92C18B-D9DE-4CB7-A02A-22FD2AF17C8F)"
+// import user-agent lib
+#import "SAUserAgent.h"
 
 @implementation SANetwork
 
@@ -38,7 +36,7 @@
     [request setURL:url];
     [request setHTTPMethod:@"POST"];
     [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
-    [request setValue:USER_AGENT forHTTPHeaderField:@"User-Agent"];
+    [request setValue:[SAUserAgent getUserAgent] forHTTPHeaderField:@"User-Agent"];
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [request setHTTPBody:postData];
     
@@ -95,7 +93,7 @@
     // create the request
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     [request setURL:url];
-    [request setValue:USER_AGENT forHTTPHeaderField:@"User-Agent"];
+    [request setValue:[SAUserAgent getUserAgent] forHTTPHeaderField:@"User-Agent"];
     [request setHTTPMethod:@"GET"];
     
     // form the response block to the POST
@@ -110,7 +108,6 @@
         else {
             // only if status code is 200
             if (((NSHTTPURLResponse*)response).statusCode == 200) {
-//                NSString *strData = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
                 NSLog(@"Success: %@", _surl);
                 success(data);
             }

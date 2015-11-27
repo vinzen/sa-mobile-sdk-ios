@@ -22,6 +22,8 @@
 		14C4A0BA503C5853BBFE75486F35FAF6 /* SKMRAIDResizeProperties.h in Headers */ = {isa = PBXBuildFile; fileRef = EA1861EBE997A8D69086FA7D522DE228 /* SKMRAIDResizeProperties.h */; };
 		181FBDB009C8A0565A60D8F8AB0CCAFA /* NSArray+JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 50D3029F82255646E4073215B98FA3B2 /* NSArray+JSONModel.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		185CFAB1606A253ACA87FEC2CCF4A64F /* SAParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1413023BBCFB832CA79B61738F825917 /* SAParser.m */; };
+		1BA837031C08B41F00205CE0 /* SAUserAgent.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BA837011C08B41F00205CE0 /* SAUserAgent.h */; };
+		1BA837041C08B41F00205CE0 /* SAUserAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BA837021C08B41F00205CE0 /* SAUserAgent.m */; };
 		1BB8F6661BE11784000103CD /* SAVASTParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BB8F6641BE11784000103CD /* SAVASTParser.h */; };
 		1BB8F6671BE11784000103CD /* SAVASTParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BB8F6651BE11784000103CD /* SAVASTParser.m */; };
 		1C53A2040FEDADA7D925E6403766182D /* NSArray+JSONModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A0FE9E66B7A876C55F6B9C1030BD496 /* NSArray+JSONModel.h */; };
@@ -205,6 +207,8 @@
 		16E1F88C029BF13585429179DE887B02 /* WeakRefClass.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = WeakRefClass.m; sourceTree = "<group>"; };
 		16F6580ED81E9643D66340ED7869A03F /* JSONModelClassProperty.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSONModelClassProperty.m; path = JSONModel/JSONModel/JSONModelClassProperty.m; sourceTree = "<group>"; };
 		18C1B3216CB5EEF01F641D1BD9871280 /* SKMRAIDModalViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SKMRAIDModalViewController.m; sourceTree = "<group>"; };
+		1BA837011C08B41F00205CE0 /* SAUserAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAUserAgent.h; sourceTree = "<group>"; };
+		1BA837021C08B41F00205CE0 /* SAUserAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAUserAgent.m; sourceTree = "<group>"; };
 		1BB8F6641BE11784000103CD /* SAVASTParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAVASTParser.h; sourceTree = "<group>"; };
 		1BB8F6651BE11784000103CD /* SAVASTParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAVASTParser.m; sourceTree = "<group>"; };
 		1E6FBBB40ABA4530407FCA511AB0E60C /* Pods-SuperAwesome Demo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SuperAwesome Demo-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -672,6 +676,8 @@
 			children = (
 				1305A75B7CC7E70364B24DF1CFCC3277 /* SANetwork.h */,
 				ADD5E256003FB20568E3A628CDD9DBCD /* SANetwork.m */,
+				1BA837011C08B41F00205CE0 /* SAUserAgent.h */,
+				1BA837021C08B41F00205CE0 /* SAUserAgent.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -975,6 +981,7 @@
 				135C00F45FE8D3EABEE3AF0606F42105 /* SAParentalGate.h in Headers */,
 				E1D46DB2C6F605318998BE744CE4F427 /* SAParentalGateProtocol.h in Headers */,
 				373C80FD49426058AC0F4E38895412BC /* SAParser.h in Headers */,
+				1BA837031C08B41F00205CE0 /* SAUserAgent.h in Headers */,
 				6319F89EF46F98E4DBAB35DE51A9D10C /* SASender.h in Headers */,
 				8A8A55C0900C92A1FABDBA376B82338D /* SAValidator.h in Headers */,
 				0FF343DDD77468E317305656696914C3 /* SAVideoAd.h in Headers */,
@@ -1150,6 +1157,7 @@
 				9CE0D78061CDCAEA8EEFB1CB3A514B12 /* SALoader.m in Sources */,
 				4444E3AF99E8268B1A2AEC26FC6607E7 /* SANetwork.m in Sources */,
 				F0AC4D5248E3C0737DDE9C1A967F9FAE /* SAPadlockView.m in Sources */,
+				1BA837041C08B41F00205CE0 /* SAUserAgent.m in Sources */,
 				6CE279B98895DC9FFA98A809041FC6AE /* SAParentalGate.m in Sources */,
 				185CFAB1606A253ACA87FEC2CCF4A64F /* SAParser.m in Sources */,
 				3FB239F43136636B36A8024B1E70792A /* SASender.m in Sources */,

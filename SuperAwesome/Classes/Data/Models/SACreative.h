@@ -19,7 +19,8 @@ typedef enum SACreativeFormat {
     image = 0,
     video = 1,
     rich = 2,
-    tag = 3
+    tag = 3,
+    fallback_tag = 4
 }SACreativeFormat;
 
 // @brief:

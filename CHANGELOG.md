@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+3.1 
+ - Move out of Beta
+ - Imrovements to targeting
+
 3.0 Beta 2
  - Rewriting video and rich media ads
  - Internal improvements

@@ -24,7 +24,9 @@
         @{@"name":@"Image Interstitial Ad",@"segue":@""},
         @{@"name":@"Tag Interstitial Ad", @"segue":@""},
         @{@"name":@"Rich media Interstitial Ad", @"segue":@""},
-        @{@"name":@"Fullscreen Video Ad", @"segue":@""}
+        @{@"name":@"Fullscreen Video Ad", @"segue":@""},
+        @{@"name":@"PassBack Fallback Tag", @"segue":@""},
+        @{@"name":@"Sometimes SWF Video",@"segue":@""}
     ];
     _choices = coic;
     
@@ -73,8 +75,12 @@
             [SALoader loadAdForPlacementId:10278];
         } else if (indexPath.row == 4) {
             [SALoader loadAdForPlacementId:30025];
-        } else {
-            [SALoader loadAdForPlacementId:21022];
+        } else if (indexPath.row == 5){
+            [SALoader loadAdForPlacementId:28000];
+        } else if (indexPath.row == 6){
+            [SALoader loadAdForPlacementId:30077];
+        } else if (indexPath.row == 7){
+            [SALoader loadAdForPlacementId:7223];
         }
     }
 }
@@ -97,7 +103,6 @@
     } else if (ad.placementId == 10278) {
         SAInterstitialAd *i2 = [[SAInterstitialAd alloc] init];
         [i2 setAd:ad];
-//        i2.isParentalGateEnabled = true;
         [self presentViewController:i2 animated:YES completion:^{
             [i2 play];
         }];
@@ -107,11 +112,23 @@
         [self presentViewController:i3 animated:YES completion:^{
             [i3 play];
         }];
-    } else {
+    } else if (ad.placementId == 28000){
         SAFullscreenVideoAd *fvideo = [[SAFullscreenVideoAd alloc] init];
         [fvideo setAd:ad];
         [self presentViewController:fvideo animated:YES completion:^{
             [fvideo play];
+        }];
+    } else if (ad.placementId == 30077) {
+        SAInterstitialAd *i1 = [[SAInterstitialAd alloc] init];
+        [i1 setAd:ad];
+        [self presentViewController:i1 animated:YES completion:^{
+            [i1 play];
+        }];
+    } else if (ad.placementId == 7223) {
+        SAFullscreenVideoAd *vad = [[SAFullscreenVideoAd alloc] init];
+        [vad setAd:ad];
+        [self presentViewController:vad animated:YES completion:^{
+            [vad play];
         }];
     }
 }

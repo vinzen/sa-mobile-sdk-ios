@@ -118,10 +118,14 @@
     SAAd *ad = _ad;
     
     ad.creative.format = invalid;
+    // case "image_with_link"
     if ([ad.creative.baseFormat isEqualToString:@"image_with_link"])   ad.creative.format = image;
+    // case "video"
     else if ([ad.creative.baseFormat isEqualToString:@"video"])        ad.creative.format = video;
+    // case "rich_media" and "rich_media_resizing"
     else if ([ad.creative.baseFormat containsString:@"rich_media"])    ad.creative.format = rich;
-    else if ([ad.creative.baseFormat isEqualToString:@"tag"])          ad.creative.format = tag;
+    // case "tag" and "fallback_tag"
+    else if ([ad.creative.baseFormat containsString:@"tag"])          ad.creative.format = tag;
     
     ad.creative.trackingURL = [NSString stringWithFormat:@"%@/click?placement=%ld&line_item=%ld&creative=%ld",
                                [[SuperAwesome getInstance] getBaseURL],

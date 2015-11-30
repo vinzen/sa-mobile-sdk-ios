@@ -1,1 +1,0 @@
-../../../../../SuperAwesome/Classes/Data/Models/SAPlacementFormat.h
